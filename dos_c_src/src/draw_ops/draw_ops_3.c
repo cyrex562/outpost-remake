@@ -1087,8 +1087,8 @@ void pass1_1018_5b06(Struct132 *param_1, u16 param_2, u16 param_3, u16 param_4)
     puVar9  = (uVar13 >> 0x10);
     uVar4   = uVar13;
     puVar7  = puVar9;
-    uVar5   = uVar4;
-    mem_op_1000_179c(0x14, puVar9, SEG_1000);
+    uVar5 = uVar4;
+    mem_op_1000_179c(0x14, puVar9, 0);
     uVar10 = puVar7 | uVar5;
     if(uVar10 == 0x0)
     {
@@ -1280,7 +1280,7 @@ void unk_draw_op_1018_623e(u32 param_1, HWND16 param_2, u16 param_3)
         if((iVar17 + 0x1a) == 0x0)
         {
             uVar5 = (iVar17 + 0x30) << 0x3;
-            mem_op_1000_179c(uVar5, puVar9, SEG_1000);
+            mem_op_1000_179c(uVar5, puVar9, 0);
             (iVar17 + 0x1a) = uVar5;
             (iVar17 + 0x1c) = puVar9;
         }
@@ -1871,7 +1871,7 @@ i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3)
                 {
                     uVar9 = SEG_1000;
                     uVar5 = uVar4;
-                    mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+                    mem_op_1000_179c(0xb4, puVar7, 0);
                     puVar8 = (puVar7 | uVar5);
                     if(puVar8 == 0x0)
                     {
@@ -2130,7 +2130,7 @@ u16 draw_fn_1010_2a32(u16 param_1, u16 param_2, u16 *__return_storage_ptr__, i16
                 return (u16)puVar17;
             }
             uVar11 = uStack54;
-            mem_op_1000_179c(0x8, puVar17, SEG_1000);
+            mem_op_1000_179c(0x8, puVar17, 0);
             puStack46 = CONCAT22(puVar17, uVar11);
             puVar18   = (puVar17 | uVar11);
             if(puVar18 == 0x0)

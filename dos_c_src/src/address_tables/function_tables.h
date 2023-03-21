@@ -3,63 +3,63 @@
 #ifndef ADDRESS_TABLE_1_H_
 #define ADDRESS_TABLE_1_H_
 
-    #include "../fn_ptr_ops/fn_ptr_ops_6.h"
-    #include "../string_ops.h"
-    #include "../sys_ops/sys_ops_11.h"
-    #include "draw_ops/draw_ops_1.h"
-    #include "draw_ops/draw_ops_2.h"
-    #include "draw_ops/draw_ops_3.h"
-    #include "draw_ops/draw_ops_4.h"
-    #include "file_ops/file_ops_1.h"
-    #include "file_ops/file_ops_2.h"
-    #include "file_ops/file_ops_3.h"
-    #include "file_ops/file_ops_4.h"
-    #include "fn_ptr_ops/fn_ptr_ops_1.h"
-    #include "fn_ptr_ops/fn_ptr_ops_2.h"
-    #include "fn_ptr_ops/fn_ptr_ops_3.h"
-    #include "fn_ptr_ops/fn_ptr_ops_4.h"
-    #include "fn_ptr_ops/fn_ptr_ops_5.h"
-    #include "struct_ops/struct_ops_1.h"
-    #include "struct_ops/struct_ops_4.h"
-    #include "sys_ops/sys_ops_1.h"
-    #include "sys_ops/sys_ops_10.h"
-    #include "sys_ops/sys_ops_2.h"
-    #include "sys_ops/sys_ops_3.h"
-    #include "sys_ops/sys_ops_4.h"
-    #include "sys_ops/sys_ops_5.h"
-    #include "sys_ops/sys_ops_6.h"
-    #include "sys_ops/sys_ops_8.h"
-    #include "sys_ops/sys_ops_9.h"
-    #include "ui_ops/ui_ops_1.h"
-    #include "ui_ops/ui_ops_2.h"
-    #include "ui_ops/ui_ops_3.h"
-    #include "ui_ops/ui_ops_4.h"
-    #include "ui_ops/ui_ops_5.h"
-    #include "ui_ops/ui_ops_6.h"
-    #include "ui_ops/ui_ops_7.h"
-    #include "unk/unk_1.h"
-    #include "unk/unk_10.h"
-    #include "unk/unk_11.h"
-    #include "unk/unk_12.h"
-    #include "unk/unk_13.h"
-    #include "unk/unk_14.h"
-    #include "unk/unk_18.h"
-    #include "unk/unk_19.h"
-    #include "unk/unk_2.h"
-    #include "unk/unk_3.h"
-    #include "unk/unk_4.h"
-    #include "unk/unk_6.h"
-    #include "unk/unk_7.h"
-    #include "unk/unk_8.h"
-    #include "unk/unk_9.h"
-    #include "win_ops/win_msg_ops_1.h"
-    #include "win_ops/win_ops_1.h"
-    #include "win_ops/win_ops_2.h"
-    #include "win_ops/win_ops_3.h"
-    #include "win_ops/win_ops_4.h"
-    #include "win_ops/win_ops_5.h"
+#include "../fn_ptr_ops/fn_ptr_ops_6.h"
+#include "../string_ops.h"
+#include "../sys_ops/sys_ops_11.h"
+#include "draw_ops/draw_ops_1.h"
+#include "draw_ops/draw_ops_2.h"
+#include "draw_ops/draw_ops_3.h"
+#include "draw_ops/draw_ops_4.h"
+#include "file_ops/file_ops_1.h"
+#include "file_ops/file_ops_2.h"
+#include "file_ops/file_ops_3.h"
+#include "file_ops/file_ops_4.h"
+#include "fn_ptr_ops/fn_ptr_ops_1.h"
+#include "fn_ptr_ops/fn_ptr_ops_2.h"
+#include "fn_ptr_ops/fn_ptr_ops_3.h"
+#include "fn_ptr_ops/fn_ptr_ops_4.h"
+#include "fn_ptr_ops/fn_ptr_ops_5.h"
+#include "struct_ops/struct_ops_1.h"
+#include "struct_ops/struct_ops_4.h"
+#include "sys_ops/sys_ops_1.h"
+#include "sys_ops/sys_ops_10.h"
+#include "sys_ops/sys_ops_2.h"
+#include "sys_ops/sys_ops_3.h"
+#include "sys_ops/sys_ops_4.h"
+#include "sys_ops/sys_ops_5.h"
+#include "sys_ops/sys_ops_6.h"
+#include "sys_ops/sys_ops_8.h"
+#include "sys_ops/sys_ops_9.h"
+#include "ui_ops/ui_ops_1.h"
+#include "ui_ops/ui_ops_2.h"
+#include "ui_ops/ui_ops_3.h"
+#include "ui_ops/ui_ops_4.h"
+#include "ui_ops/ui_ops_5.h"
+#include "ui_ops/ui_ops_6.h"
+#include "ui_ops/ui_ops_7.h"
+#include "unk/unk_1.h"
+#include "unk/unk_10.h"
+#include "unk/unk_11.h"
+#include "unk/unk_12.h"
+#include "unk/unk_13.h"
+#include "unk/unk_14.h"
+#include "unk/unk_18.h"
+#include "unk/unk_19.h"
+#include "unk/unk_2.h"
+#include "unk/unk_3.h"
+#include "unk/unk_4.h"
+#include "unk/unk_6.h"
+#include "unk/unk_7.h"
+#include "unk/unk_8.h"
+#include "unk/unk_9.h"
+#include "win_ops/win_msg_ops_1.h"
+#include "win_ops/win_ops_1.h"
+#include "win_ops/win_ops_2.h"
+#include "win_ops/win_ops_3.h"
+#include "win_ops/win_ops_4.h"
+#include "win_ops/win_ops_5.h"
 
-    #include <stdint.h>
+#include <stdint.h>
 
 // - 1008:389a
 void *addr_table_1008_380a[]
@@ -1044,7 +1044,7 @@ void *addr_table_1018_6128[] = {
         set_text_bk_color_1040_7e5e, // 1018:615c
         unk_win_ui_op_1040_8158,     // 1018:6160
         check_dialog_msg_1040_81b6,  // 1018:6164
-  set_sys_modal_window_1040_81fe,         // 1018:6168
+        set_sys_modal_window_1040_81fe,         // 1018:6168
         0,                           // FUN_1018_60ea, // 1018:616c
         pass1_1040_824a,             // 1018:6170
         0,                           // FUN_1040_8266, // 1018:6174
@@ -5236,7 +5236,7 @@ void *addr_table_1020_1e7a[] = {
         set_text_bk_color_1040_7e5e, // 1020:1eae
         unk_win_ui_op_1040_8158,     // 1020:1eb2
         check_dialog_msg_1040_81b6,  // 1020:1eb6
-  set_sys_modal_window_1040_81fe,         // 1020:1eba
+        set_sys_modal_window_1040_81fe,         // 1020:1eba
         enable_window_1020_1bd4,     // 1020:1ebe
         pass1_1040_824a,             // 1020:1ec2
         0,                           // FUN_1040_8266, // 1020:1ec6
@@ -6414,7 +6414,7 @@ void *addr_table_1040_d8c4[] = {
         win_ui_op_1040_b372,        // 1040:d8f8
         unk_win_ui_op_1040_8158,    // 1040:d8fc
         check_dialog_msg_1040_81b6, // 1040:d900
-  set_sys_modal_window_1040_81fe,        // 1040:d904
+        set_sys_modal_window_1040_81fe,        // 1040:d904
         0,                          // FUN_1018_60ea, // 1040:d908
         pass1_1040_824a,            // 1040:d90c
         0,                          // FUN_1040_8266, // 1040:d910
@@ -6448,7 +6448,7 @@ void *addr_table_1040_d07c[] = {
         win_ui_op_1040_b372,        // 1040:d0b0
         unk_win_ui_op_1040_8158,    // 1040:d0b4
         check_dialog_msg_1040_81b6, // 1040:d0b8
-  set_sys_modal_window_1040_81fe,        // 1040:d0bc
+        set_sys_modal_window_1040_81fe,        // 1040:d0bc
         0,                          // FUN_1018_60ea, // 1040:d0c0
         pass1_1040_824a,            // 1040:d0c4
         0,                          // FUN_1040_8266, // 1040:d0c8
@@ -6491,7 +6491,7 @@ void *addr_table_1038_ae4e[] = {
         draw_op_1038_9dcc,          // 1038:ae82 cc 9d 38 10       addr
         unk_win_ui_op_1040_8158,    // 1038:ae86 58 81 40 10       addr
         check_dialog_msg_1040_81b6, // 1038:ae8a b6 81 40 10       addr
-  set_sys_modal_window_1040_81fe,        // 1038:ae8e fe 81 40 10       addr
+        set_sys_modal_window_1040_81fe,        // 1038:ae8e fe 81 40 10       addr
         0,                          // FUN_1018_60ea, // 1038:ae92 ea 60 18 10       addr
         pass1_1040_824a,            // 1038:ae96 4a 82 40 10       addr
         0,                          // FUN_1040_8266 // 1038:ae9a 66 82 40 10       addr
@@ -6531,7 +6531,7 @@ void *addr_table_1040_8ddc[] = {
         set_text_bk_color_1040_7e5e, // 1040:8e10
         unk_win_ui_op_1040_8158,     // 1040:8e14
         check_dialog_msg_1040_81b6,  // 1040:8e18
-  set_sys_modal_window_1040_81fe,         // 1040:8e1c
+        set_sys_modal_window_1040_81fe,         // 1040:8e1c
         NULL,                        // FUN_1018_60ea, // 1040:8e20
         pass1_1040_824a,             // 1040:8e24
         NULL,                        // FUN_1040_8266, // 1040:8e28
@@ -6600,7 +6600,7 @@ void *addr_table_1040_afc4[] = {
         win_ui_op_1040_b372,        // 1040:aff8
         unk_win_ui_op_1040_8158,    // 1040:affc
         check_dialog_msg_1040_81b6, // 1040:b000
-  set_sys_modal_window_1040_81fe,        // 1040:b004
+        set_sys_modal_window_1040_81fe,        // 1040:b004
         NULL,                       // FUN_1018_60ea, // 1040:b008
         pass1_1040_824a,            // 1040:b00c
         NULL,                       // FUN_1040_8266, // 1040:b010
@@ -6639,7 +6639,7 @@ void *addr_table_1040_d8b9[] = {
         win_ui_op_1040_b372,        // 1040:d8f8
         unk_win_ui_op_1040_8158,    // 1040:d8fc
         check_dialog_msg_1040_81b6, // 1040:d900
-  set_sys_modal_window_1040_81fe,        // 1040:d904
+        set_sys_modal_window_1040_81fe,        // 1040:d904
         NULL,                       // FUN_1018_60ea, // 1040:d908
         pass1_1040_824a,            // 1040:d90c
         NULL,                       // FUN_1040_8266, // 1040:d910
@@ -6675,29 +6675,6 @@ void *addr_table_1008_573a[] = {
         cleanup_palette_1008_56e2, // 1008:5746  e2  56  08  10       addr
 };
 
-void *addr_table_1010_3b3e[] = {
-        pass1_1010_3af2, // 1010:3b3e  f2  3a  10  10       addr
-        pass1_1010_3a86, // 1010:3b42  86  3a  10  10       addr
-        pass1_1010_394a, // 1010:3b46  4a  39  10  10       addr
-        pass1_1010_3a94, // 1010:3b4a  94  3a  10  10       addr
-        NULL,            // FUN_1010_3aa6, // 1010:3b4e  a6  3a  10  10       addr
-        pass1_1010_3adc, // 1010:3b52  dc  3a  10  10       addr
-        NULL,            // FUN_1010_3abc, // 1010:3b56  bc  3a  10  10       addr
-        pass1_1010_3ac2, // 1010:3b5a  c2  3a  10  10       addr
-        pass1_1010_3b18, // 1010:3b5e  18  3b  10  10       addr
-        pass1_1010_3a86, // 1010:3b62  86  3a  10  10       addr
-        pass1_1010_394a, // 1010:3b66  4a  39  10  10       addr
-        pass1_1010_3a94, // 1010:3b6a  94  3a  10  10       addr
-        NULL,            // FUN_1010_3aa6, // 1010:3b6e  a6  3a  10  10       addr
-        pass1_1010_3aaa, // 1010:3b72  aa  3a  10  10       addr
-        NULL,            // FUN_1010_3abc, // 1010:3b76  bc  3a  10  10       addr
-        pass1_1010_62ec, // 1010:6312  ec  62  10  10       addr
-        pass1_1010_1df2, // 1010:6316  f2  1d  10  10       addr
-        pass1_1010_5dc6, // 1010:631a  c6  5d  10  10       addr
-        pass1_1010_5e56, // 1010:631e  56  5e  10  10       addr
-        pass1_1010_62a4, // 1010:6322  a4  62  10  10       addr
-};
-
 void *addr_table_1010_66f0[] = {
         pass1_1010_66ca,         // 1010:66f0  ca  66  10  10       addr
         pass1_1010_1df2,         // 1010:66f4  f2  1d  10  10       addr
@@ -6731,7 +6708,7 @@ void *addr_table_1040_8f3c[] = {
         win_ui_op_1040_b372,        // 1040:8f70
         unk_win_ui_op_1040_8158,    // 1040:8f74
         check_dialog_msg_1040_81b6, // 1040:8f78
-  set_sys_modal_window_1040_81fe,        // 1040:8f7c
+        set_sys_modal_window_1040_81fe,        // 1040:8f7c
         NULL,                       // FUN_1018_60ea, // 1040:8f80
         pass1_1040_824a,            // 1040:8f84
         NULL,                       // FUN_1040_8266, // 1040:8f88
@@ -6766,7 +6743,7 @@ void *addr_table_1040_6f32[] = {
         win_ui_op_1040_b372,        // 1040:6f66
         unk_win_ui_op_1040_8158,    // 1040:6f6a
         check_dialog_msg_1040_81b6, // 1040:6f6e
-  set_sys_modal_window_1040_81fe,        // 1040:6f72
+        set_sys_modal_window_1040_81fe,        // 1040:6f72
         NULL,                       // FUN_1018_60ea, // 1040:6f76
         pass1_1040_824a,            // 1040:6f7a
         NULL,                       // FUN_1040_8266, // 1040:6f7e
@@ -6803,7 +6780,7 @@ void *addr_table_1040_55a2[] = {
         win_ui_op_1040_b372,        // 1040:55d6
         unk_win_ui_op_1040_8158,    // 1040:55da
         check_dialog_msg_1040_81b6, // 1040:55de
-  set_sys_modal_window_1040_81fe,        // 1040:55e2
+        set_sys_modal_window_1040_81fe,        // 1040:55e2
         NULL,                       // FUN_1018_60ea, // 1040:55e6
         pass1_1040_824a,            // 1040:55ea
         NULL,                       //  FUN_1040_8266, // 1040:55ee
@@ -6840,7 +6817,7 @@ void *addr_table_1040_2e26[] = {
         win_ui_op_1040_b372,        // 1040:2e5a
         unk_win_ui_op_1040_8158,    // 1040:2e5e
         check_dialog_msg_1040_81b6, // 1040:2e62
-  set_sys_modal_window_1040_81fe,        // 1040:2e66
+        set_sys_modal_window_1040_81fe,        // 1040:2e66
         NULL,                       // FUN_1018_60ea, // 1040:2e6a
         pass1_1040_824a,            // 1040:2e6e
         NULL,                       // FUN_1040_8266, // 1040:2e72
@@ -6874,7 +6851,7 @@ void *addr_table_1038_90c8[] = {
         win_ui_op_1040_b372,         // 1038:90fc
         unk_win_ui_op_1040_8158,     // 1038:9100
         check_dialog_msg_1040_81b6,  // 1038:9104
-  set_sys_modal_window_1040_81fe,         // 1038:9108
+        set_sys_modal_window_1040_81fe,         // 1038:9108
         NULL,                        // FUN_1018_60ea, // 1038:910c
         pass1_1040_824a,             // 1038:9110
         NULL,                        // FUN_1040_8266, // 1038:9114
@@ -7080,7 +7057,7 @@ void *addr_table_1040_beba[] = {
         win_ui_op_1040_b372,        // 1040:beee
         unk_win_ui_op_1040_8158,    // 1040:bef2
         check_dialog_msg_1040_81b6, // 1040:bef6
-  set_sys_modal_window_1040_81fe,        // 1040:befa
+        set_sys_modal_window_1040_81fe,        // 1040:befa
         NULL,                       // FUN_1018_60ea, // 1040:befe
         pass1_1040_824a,            // 1040:bf02
         NULL,                       //  FUN_1040_8266, // 1040:bf06
@@ -7117,7 +7094,7 @@ void *addr_table_1040_ac08[] = {
         draw_op_1040_a67e,          // 1040:ac3c
         unk_win_ui_op_1040_8158,    // 1040:ac40
         check_dialog_msg_1040_81b6, // 1040:ac44
-  set_sys_modal_window_1040_81fe,        // 1040:ac48
+        set_sys_modal_window_1040_81fe,        // 1040:ac48
         NULL,                       // FUN_1018_60ea, // 1040:ac4c
         pass1_1040_824a,            // 1040:ac50
         NULL,                       // FUN_1040_8266, // 1040:ac54
@@ -7152,7 +7129,7 @@ void *addr_table_1038_8c2e[] = {
         win_ui_op_1040_b372, // 1038:8c62
         unk_win_ui_op_1040_8158, // 1038:8c66
         check_dialog_msg_1040_81b6, // 1038:8c6a
-  set_sys_modal_window_1040_81fe, // 1038:8c6e
+        set_sys_modal_window_1040_81fe, // 1038:8c6e
         NULL, // FUN_1018_60ea, // 1038:8c72
         pass1_1040_824a, // 1038:8c76
         NULL, //   FUN_1040_8266, // 1038:8c7a
@@ -7187,7 +7164,7 @@ void *addr_table_1040_3ffc[] = {
         set_text_bk_color_1040_7e5e, // 1040:4030
         unk_win_ui_op_1040_8158,     // 1040:4034
         check_dialog_msg_1040_81b6,  // 1040:4038
-  set_sys_modal_window_1040_81fe,         // 1040:403c
+        set_sys_modal_window_1040_81fe,         // 1040:403c
         NULL,                        // FUN_1018_60ea, // 1040:4040
         pass1_1040_824a,             // 1040:4044
         NULL,                        // FUN_1040_8266, // 1040:4048
@@ -7214,7 +7191,7 @@ void *addr_table_1040_3ffc[] = {
         win_ui_op_1040_b372,         // 1040:55d6
         unk_win_ui_op_1040_8158,     // 1040:55da
         check_dialog_msg_1040_81b6,  // 1040:55de
-  set_sys_modal_window_1040_81fe,         // 1040:55e2
+        set_sys_modal_window_1040_81fe,         // 1040:55e2
         NULL,                        //   FUN_1018_60ea, // 1040:55e6
         pass1_1040_824a,             // 1040:55ea
         NULL,                        //  FUN_1040_8266, // 1040:55ee
@@ -7252,7 +7229,7 @@ void *addr_table_1028_a9ae[] = {
 void *addr_table_1028_ab22[] = {
         pass1_1028_aaf6, // 1028:ab22
         pass1_1028_a9f4, // 1028:ab26
-  NULL, // FUN_1028_d228, // 1028:ab2a
+        NULL, // FUN_1028_d228, // 1028:ab2a
         pass1_1028_aa68, // 1028:ab2e
 
 };
@@ -7260,7 +7237,7 @@ void *addr_table_1028_ab22[] = {
 void *addr_table_1028_aca6[] = {
         pass1_1028_ac7a, // 1028:aca6
         pass1_1028_ab68, // 1028:acaa
-  NULL, // FUN_1028_d228, // 1028:acae
+        NULL, // FUN_1028_d228, // 1028:acae
         pass1_1028_abec, // 1028:acb2
 
 };
@@ -7608,8 +7585,8 @@ void *addr_table_1028_59e0[] = {
         pass1_1028_bc02, // 1028:5a24
         pass1_1028_b5a8, // 1028:5a28
         pass1_1028_b5ca, // 1028:5a2c
-  NULL, //     FUN_1028_b4e6, // 1028:5a30
-  NULL, //      FUN_1028_b4ec, // 1028:5a34
+        NULL, //     FUN_1028_b4e6, // 1028:5a30
+        NULL, //      FUN_1028_b4ec, // 1028:5a34
         pass1_1028_b46e, // 1028:5a38
         pass1_1028_c64a, // 1028:5a3c
         pass1_1028_c522, // 1028:5a40
@@ -7628,9 +7605,9 @@ void *addr_table_1028_5bec[] = {
         pass1_1028_bc7e, // 1028:5c0c
         pass1_1028_b514, // 1028:5c10
         pass1_1028_5b42, // 1028:5c14
-  NULL, // FUN_1028_bf16, // 1028:5c18
-  NULL, // FUN_1028_bf1a, // 1028:5c1c
-  NULL, //   FUN_1028_bf1e, // 1028:5c20
+        NULL, // FUN_1028_bf16, // 1028:5c18
+        NULL, // FUN_1028_bf1a, // 1028:5c1c
+        NULL, //   FUN_1028_bf1e, // 1028:5c20
         pass1_1028_be9e, // 1028:5c24
         pass1_1028_bf22, // 1028:5c28
         pass1_1028_bbf0, // 1028:5c2c
@@ -8137,8 +8114,8 @@ void *addr_table_1028_341c[] = {
         pass1_1028_bc02, // 1028:3460
         pass1_1028_b5a8, // 1028:3464
         pass1_1028_b5ca, // 1028:3468
-  NULL, // FUN_1028_b4e6, // 1028:346c
-  NULL, // FUN_1028_b4ec, // 1028:3470
+        NULL, // FUN_1028_b4e6, // 1028:346c
+        NULL, // FUN_1028_b4ec, // 1028:3470
         pass1_1028_b46e, // 1028:3474
         pass1_1028_c64a, // 1028:3478
         pass1_1028_c522, // 1028:347c
@@ -8309,16 +8286,16 @@ void *addr_table_1040_b772[] = {
         win_ui_op_1040_b372, // 1040:b7a6
         unk_win_ui_op_1040_8158, // 1040:b7aa
         check_dialog_msg_1040_81b6, // 1040:b7ae
-  set_sys_modal_window_1040_81fe, // 1040:b7b2
-  NULL, // FUN_1018_60ea, // 1040:b7b6
+        set_sys_modal_window_1040_81fe, // 1040:b7b2
+        NULL, // FUN_1018_60ea, // 1040:b7b6
         pass1_1040_824a, // 1040:b7ba
-  NULL, //    FUN_1040_8266, // 1040:b7be
+        NULL, //    FUN_1040_8266, // 1040:b7be
         pass1_1040_78de, // 1040:b7c2
-  NULL, //     FUN_1018_60ee, // 1040:b7c6
-  NULL, //     FUN_1018_60f4, // 1040:b7ca
+        NULL, //     FUN_1018_60ee, // 1040:b7c6
+        NULL, //     FUN_1018_60f4, // 1040:b7ca
         pass1_1040_b4c8, // 1040:b7ce
-  NULL, //    FUN_1038_8842, // 1040:b7d2
-  NULL, //     FUN_1018_60fe, // 1040:b7d6
+        NULL, //    FUN_1038_8842, // 1040:b7d2
+        NULL, //     FUN_1018_60fe, // 1040:b7d6
         pass1_1040_807e, // 1040:b7da
         show_win_1040_b43c, // 1040:b7de
         pass1_1040_b45e, // 1040:b7e2
@@ -8344,16 +8321,16 @@ void *addr_table_1040_4466[] = {
         set_text_bk_color_1040_7e5e, // 1040:449a
         unk_win_ui_op_1040_8158, // 1040:449e
         check_dialog_msg_1040_81b6, // 1040:44a2
-  set_sys_modal_window_1040_81fe, // 1040:44a6
-  NULL, // FUN_1018_60ea, // 1040:44aa
+        set_sys_modal_window_1040_81fe, // 1040:44a6
+        NULL, // FUN_1018_60ea, // 1040:44aa
         pass1_1040_824a, // 1040:44ae
-  NULL, //    FUN_1040_8266, // 1040:44b2
+        NULL, //    FUN_1040_8266, // 1040:44b2
         pass1_1040_78de, // 1040:44b6
-  NULL, //     FUN_1018_60ee, // 1040:44ba
-  NULL, //     FUN_1018_60f4, // 1040:44be
-  NULL, //    FUN_1018_60fa, // 1040:44c2
-  NULL, //     FUN_1038_a2a4, // 1040:44c6
-  NULL, //    FUN_1018_60fe, // 1040:44ca
+        NULL, //     FUN_1018_60ee, // 1040:44ba
+        NULL, //     FUN_1018_60f4, // 1040:44be
+        NULL, //    FUN_1018_60fa, // 1040:44c2
+        NULL, //     FUN_1038_a2a4, // 1040:44c6
+        NULL, //    FUN_1018_60fe, // 1040:44ca
         pass1_1040_807e, // 1040:44ce
 
 };
@@ -8375,16 +8352,16 @@ void *addr_table_1040_840c[] = {
         set_text_bk_color_1040_7e5e, // 1040:8440
         unk_win_ui_op_1040_8158, // 1040:8444
         check_dialog_msg_1040_81b6, // 1040:8448
-  set_sys_modal_window_1040_81fe, // 1040:844c
-  NULL, // FUN_1018_60ea, // 1040:8450
+        set_sys_modal_window_1040_81fe, // 1040:844c
+        NULL, // FUN_1018_60ea, // 1040:8450
         pass1_1040_824a, // 1040:8454
-  NULL, //    FUN_1040_8266, // 1040:8458
+        NULL, //    FUN_1040_8266, // 1040:8458
         pass1_1040_78de, // 1040:845c
-  NULL, //    FUN_1018_60ee, // 1040:8460
-  NULL, //    FUN_1018_60f4, // 1040:8464
-  NULL, //    FUN_1018_60fa, // 1040:8468
-  NULL, //    FUN_1038_a2a4, // 1040:846c
-  NULL, //     FUN_1018_60fe, // 1040:8470
+        NULL, //    FUN_1018_60ee, // 1040:8460
+        NULL, //    FUN_1018_60f4, // 1040:8464
+        NULL, //    FUN_1018_60fa, // 1040:8468
+        NULL, //    FUN_1038_a2a4, // 1040:846c
+        NULL, //     FUN_1018_60fe, // 1040:8470
         pass1_1040_807e, // 1040:8474
 
 };
@@ -8406,16 +8383,16 @@ void *addr_table_1040_4824[] = {
         win_ui_op_1040_b372, // 1040:4858
         unk_win_ui_op_1040_8158, // 1040:485c
         check_dialog_msg_1040_81b6, // 1040:4860
-  set_sys_modal_window_1040_81fe, // 1040:4864
-  NULL, // FUN_1018_60ea, // 1040:4868
+        set_sys_modal_window_1040_81fe, // 1040:4864
+        NULL, // FUN_1018_60ea, // 1040:4868
         pass1_1040_824a, // 1040:486c
-  NULL, //      FUN_1040_8266, // 1040:4870
+        NULL, //      FUN_1040_8266, // 1040:4870
         pass1_1040_4766, // 1040:4874
-  NULL, //    FUN_1018_60ee, // 1040:4878
-  NULL, //    FUN_1018_60f4, // 1040:487c
+        NULL, //    FUN_1018_60ee, // 1040:4878
+        NULL, //    FUN_1018_60f4, // 1040:487c
         pass1_1040_b4c8, // 1040:4880
-  NULL, //    FUN_1038_8842, // 1040:4884
-  NULL, //    FUN_1018_60fe, // 1040:4888
+        NULL, //    FUN_1038_8842, // 1040:4884
+        NULL, //    FUN_1018_60fe, // 1040:4888
         pass1_1040_807e, // 1040:488c
         show_win_1040_b43c, // 1040:4890
         pass1_1040_b45e, // 1040:4894
@@ -8440,16 +8417,16 @@ void *addr_table_1040_2956[] = {
         draw_ui_op_1040_27cc, // 1040:298a
         unk_win_ui_op_1040_8158, // 1040:298e
         check_dialog_msg_1040_81b6, // 1040:2992
-  set_sys_modal_window_1040_81fe, // 1040:2996
-  NULL, // FUN_1018_60ea, // 1040:299a
+        set_sys_modal_window_1040_81fe, // 1040:2996
+        NULL, // FUN_1018_60ea, // 1040:299a
         pass1_1040_824a, // 1040:299e
-  NULL, //     FUN_1040_8266, // 1040:29a2
+        NULL, //     FUN_1040_8266, // 1040:29a2
         pass1_1040_78de, // 1040:29a6
-  NULL, //    FUN_1018_60ee, // 1040:29aa
-  NULL, //    FUN_1018_60f4, // 1040:29ae
-  NULL, //     FUN_1018_60fa, // 1040:29b2
-  NULL, //     FUN_1038_a2a4, // 1040:29b6
-  NULL, //      FUN_1018_60fe, // 1040:29ba
+        NULL, //    FUN_1018_60ee, // 1040:29aa
+        NULL, //    FUN_1018_60f4, // 1040:29ae
+        NULL, //     FUN_1018_60fa, // 1040:29b2
+        NULL, //     FUN_1038_a2a4, // 1040:29b6
+        NULL, //      FUN_1018_60fe, // 1040:29ba
         pass1_1040_288e, // 1040:29be
 
 };
@@ -8471,16 +8448,16 @@ void *addr_table_1040_3436[] = {
         set_text_bk_color_1040_7e5e, // 1040:346a
         unk_win_ui_op_1040_8158, // 1040:346e
         check_dialog_msg_1040_81b6, // 1040:3472
-  set_sys_modal_window_1040_81fe, // 1040:3476
-  NULL, // FUN_1018_60ea, // 1040:347a
+        set_sys_modal_window_1040_81fe, // 1040:3476
+        NULL, // FUN_1018_60ea, // 1040:347a
         pass1_1040_824a, // 1040:347e
-  NULL, //     FUN_1040_8266, // 1040:3482
+        NULL, //     FUN_1040_8266, // 1040:3482
         win_dlg_op_1040_2f90, // 1040:3486
-  NULL, //    FUN_1018_60ee, // 1040:348a
-  NULL, //     FUN_1018_60f4, // 1040:348e
-  NULL, //    FUN_1018_60fa, // 1040:3492
-  NULL, //    FUN_1038_a2a4, // 1040:3496
-  NULL, //     FUN_1018_60fe, // 1040:349a
+        NULL, //    FUN_1018_60ee, // 1040:348a
+        NULL, //     FUN_1018_60f4, // 1040:348e
+        NULL, //    FUN_1018_60fa, // 1040:3492
+        NULL, //    FUN_1038_a2a4, // 1040:3496
+        NULL, //     FUN_1018_60fe, // 1040:349a
         pass1_1040_807e, // 1040:349e
 
 };
@@ -8502,16 +8479,16 @@ void *addr_table_1040_38fa[] = {
         set_text_bk_color_1040_7e5e, // 1040:392e
         unk_win_ui_op_1040_8158, // 1040:3932
         check_dialog_msg_1040_81b6, // 1040:3936
-  set_sys_modal_window_1040_81fe, // 1040:393a
-  NULL, // FUN_1018_60ea, // 1040:393e
+        set_sys_modal_window_1040_81fe, // 1040:393a
+        NULL, // FUN_1018_60ea, // 1040:393e
         pass1_1040_824a, // 1040:3942
-  NULL, //    FUN_1040_8266, // 1040:3946
+        NULL, //    FUN_1040_8266, // 1040:3946
         set_win_text_1040_3590, // 1040:394a
-  NULL, //    FUN_1018_60ee, // 1040:394e
-  NULL, // FUN_1018_60f4, // 1040:3952
-  NULL, // FUN_1018_60fa, // 1040:3956
-  NULL, // FUN_1038_a2a4, // 1040:395a
-  NULL, // FUN_1018_60fe, // 1040:395e
+        NULL, //    FUN_1018_60ee, // 1040:394e
+        NULL, // FUN_1018_60f4, // 1040:3952
+        NULL, // FUN_1018_60fa, // 1040:3956
+        NULL, // FUN_1038_a2a4, // 1040:395a
+        NULL, // FUN_1018_60fe, // 1040:395e
         pass1_1040_807e, // 1040:3962
 
 };
@@ -8526,23 +8503,23 @@ void *addr_table_1040_17b0[] = {
         post_win_msg_1040_7f56, // 1040:17c8
         draw_op_1040_7bb2, // 1040:17cc
         post_win_msg_1040_7f1c, // 1040:17d0
-  NULL, // FUN_1040_1786, // 1040:17d4
+        NULL, // FUN_1040_1786, // 1040:17d4
         menu_ui_op_1040_7f86, // 1040:17d8
         win_help_1040_800c, // 1040:17dc
         pass1_1040_8054, // 1040:17e0
         set_text_bk_color_1040_7e5e, // 1040:17e4
         unk_win_ui_op_1040_8158, // 1040:17e8
         check_dialog_msg_1040_81b6, // 1040:17ec
-  set_sys_modal_window_1040_81fe, // 1040:17f0
-  NULL, //   FUN_1018_60ea, // 1040:17f4
+        set_sys_modal_window_1040_81fe, // 1040:17f0
+        NULL, //   FUN_1018_60ea, // 1040:17f4
         pass1_1040_824a, // 1040:17f8
-  NULL, //    FUN_1040_8266, // 1040:17fc
+        NULL, //    FUN_1040_8266, // 1040:17fc
         pass1_1040_78de, // 1040:1800
-  NULL, //    FUN_1018_60ee, // 1040:1804
-  NULL, //    FUN_1018_60f4, // 1040:1808
-  NULL, //     FUN_1018_60fa, // 1040:180c
-  NULL, //      FUN_1038_a2a4, // 1040:1810
-  NULL, //   FUN_1018_60fe, // 1040:1814
+        NULL, //    FUN_1018_60ee, // 1040:1804
+        NULL, //    FUN_1018_60f4, // 1040:1808
+        NULL, //     FUN_1018_60fa, // 1040:180c
+        NULL, //      FUN_1038_a2a4, // 1040:1810
+        NULL, //   FUN_1018_60fe, // 1040:1814
         pass1_1040_807e, // 1040:1818
 
 };
@@ -8557,23 +8534,23 @@ void *addr_table_1040_1c48[] = {
         post_win_msg_1040_7f56, // 1040:1c60
         draw_op_1040_7bb2, // 1040:1c64
         post_win_msg_1040_7f1c, // 1040:1c68
-  NULL, //    FUN_1040_1c1e, // 1040:1c6c
+        NULL, //    FUN_1040_1c1e, // 1040:1c6c
         menu_ui_op_1040_7f86, // 1040:1c70
         win_help_1040_800c, // 1040:1c74
         pass1_1040_8054, // 1040:1c78
         set_text_bk_color_1040_7e5e, // 1040:1c7c
         unk_win_ui_op_1040_8158, // 1040:1c80
         check_dialog_msg_1040_81b6, // 1040:1c84
-  set_sys_modal_window_1040_81fe, // 1040:1c88
-  NULL, // FUN_1018_60ea, // 1040:1c8c
+        set_sys_modal_window_1040_81fe, // 1040:1c88
+        NULL, // FUN_1018_60ea, // 1040:1c8c
         pass1_1040_824a, // 1040:1c90
-  NULL, //    FUN_1040_8266, // 1040:1c94
+        NULL, //    FUN_1040_8266, // 1040:1c94
         pass1_1040_78de, // 1040:1c98
-  NULL, //     FUN_1018_60ee, // 1040:1c9c
-  NULL, //     FUN_1018_60f4, // 1040:1ca0
-  NULL, //     FUN_1018_60fa, // 1040:1ca4
-  NULL, //     FUN_1038_a2a4, // 1040:1ca8
-  NULL, //     FUN_1018_60fe, // 1040:1cac
+        NULL, //     FUN_1018_60ee, // 1040:1c9c
+        NULL, //     FUN_1018_60f4, // 1040:1ca0
+        NULL, //     FUN_1018_60fa, // 1040:1ca4
+        NULL, //     FUN_1038_a2a4, // 1040:1ca8
+        NULL, //     FUN_1018_60fe, // 1040:1cac
         pass1_1040_807e, // 1040:1cb0
 
 };
@@ -8588,23 +8565,23 @@ void *addr_table_1040_1eee[] = {
         post_win_msg_1040_7f56, // 1040:1f06
         draw_op_1040_7bb2, // 1040:1f0a
         post_win_msg_1040_7f1c, // 1040:1f0e
-  NULL, //   FUN_1040_1ec4, // 1040:1f12
+        NULL, //   FUN_1040_1ec4, // 1040:1f12
         menu_ui_op_1040_7f86, // 1040:1f16
         win_help_1040_800c, // 1040:1f1a
         pass1_1040_8054, // 1040:1f1e
         set_text_bk_color_1040_7e5e, // 1040:1f22
         unk_win_ui_op_1040_8158, // 1040:1f26
         check_dialog_msg_1040_81b6, // 1040:1f2a
-  set_sys_modal_window_1040_81fe, // 1040:1f2e
-  NULL, // FUN_1018_60ea, // 1040:1f32
+        set_sys_modal_window_1040_81fe, // 1040:1f2e
+        NULL, // FUN_1018_60ea, // 1040:1f32
         pass1_1040_824a, // 1040:1f36
-  NULL, //    FUN_1040_8266, // 1040:1f3a
+        NULL, //    FUN_1040_8266, // 1040:1f3a
         pass1_1040_78de, // 1040:1f3e
-  NULL, //     FUN_1018_60ee, // 1040:1f42
-  NULL, //     FUN_1018_60f4, // 1040:1f46
-  NULL, //     FUN_1018_60fa, // 1040:1f4a
-  NULL, //     FUN_1038_a2a4, // 1040:1f4e
-  NULL, //      FUN_1018_60fe, // 1040:1f52
+        NULL, //     FUN_1018_60ee, // 1040:1f42
+        NULL, //     FUN_1018_60f4, // 1040:1f46
+        NULL, //     FUN_1018_60fa, // 1040:1f4a
+        NULL, //     FUN_1038_a2a4, // 1040:1f4e
+        NULL, //      FUN_1018_60fe, // 1040:1f52
         pass1_1040_807e, // 1040:1f56
 
 };
@@ -8626,16 +8603,16 @@ void *addr_table_1040_237e[] = {
         set_text_bk_color_1040_7e5e, // 1040:23b2
         unk_win_ui_op_1040_8158, // 1040:23b6
         check_dialog_msg_1040_81b6, // 1040:23ba
-  set_sys_modal_window_1040_81fe, // 1040:23be
-  NULL, // FUN_1018_60ea, // 1040:23c2
+        set_sys_modal_window_1040_81fe, // 1040:23be
+        NULL, // FUN_1018_60ea, // 1040:23c2
         pass1_1040_824a, // 1040:23c6
-  NULL, //    FUN_1040_8266, // 1040:23ca
+        NULL, //    FUN_1040_8266, // 1040:23ca
         pass1_1040_78de, // 1040:23ce
-  NULL, //     FUN_1018_60ee, // 1040:23d2
-  NULL, //      FUN_1018_60f4, // 1040:23d6
-  NULL, //      FUN_1018_60fa, // 1040:23da
+        NULL, //     FUN_1018_60ee, // 1040:23d2
+        NULL, //      FUN_1018_60f4, // 1040:23d6
+        NULL, //      FUN_1018_60fa, // 1040:23da
         mix_draw_op_1040_21d6, // 1040:23de
-  NULL, //      FUN_1018_60fe, // 1040:23e2
+        NULL, //      FUN_1018_60fe, // 1040:23e2
         pass1_1040_807e, // 1040:23e6
 
 };
@@ -8650,23 +8627,23 @@ void *addr_table_1038_e264[] = {
         post_win_msg_1040_7f56, // 1038:e27c
         draw_op_1040_7bb2, // 1038:e280
         post_win_msg_1040_7f1c, // 1038:e284
-  NULL, //      FUN_1038_e23a, // 1038:e288
+        NULL, //      FUN_1038_e23a, // 1038:e288
         menu_ui_op_1040_7f86, // 1038:e28c
         win_help_1040_800c, // 1038:e290
         pass1_1040_8054, // 1038:e294
         set_text_bk_color_1040_7e5e, // 1038:e298
         unk_win_ui_op_1040_8158, // 1038:e29c
         check_dialog_msg_1040_81b6, // 1038:e2a0
-  set_sys_modal_window_1040_81fe, // 1038:e2a4
-  NULL, //      FUN_1018_60ea, // 1038:e2a8
+        set_sys_modal_window_1040_81fe, // 1038:e2a4
+        NULL, //      FUN_1018_60ea, // 1038:e2a8
         pass1_1040_824a, // 1038:e2ac
-  NULL, //     FUN_1040_8266, // 1038:e2b0
+        NULL, //     FUN_1040_8266, // 1038:e2b0
         pass1_1040_78de, // 1038:e2b4
-  NULL, //     FUN_1018_60ee, // 1038:e2b8
-  NULL, //     FUN_1018_60f4, // 1038:e2bc
-  NULL, //    FUN_1018_60fa, // 1038:e2c0
-  NULL, //    FUN_1038_a2a4, // 1038:e2c4
-  NULL, //     FUN_1018_60fe, // 1038:e2c8
+        NULL, //     FUN_1018_60ee, // 1038:e2b8
+        NULL, //     FUN_1018_60f4, // 1038:e2bc
+        NULL, //    FUN_1018_60fa, // 1038:e2c0
+        NULL, //    FUN_1038_a2a4, // 1038:e2c4
+        NULL, //     FUN_1018_60fe, // 1038:e2c8
         pass1_1040_807e, // 1038:e2cc
 
 };
@@ -8688,16 +8665,16 @@ void *addr_table_1038_e62e[] = {
         set_text_bk_color_1040_7e5e, // 1038:e662
         unk_win_ui_op_1040_8158, // 1038:e666
         check_dialog_msg_1040_81b6, // 1038:e66a
-  set_sys_modal_window_1040_81fe, // 1038:e66e
-  NULL, // FUN_1018_60ea, // 1038:e672
+        set_sys_modal_window_1040_81fe, // 1038:e66e
+        NULL, // FUN_1018_60ea, // 1038:e672
         pass1_1040_824a, // 1038:e676
-  NULL, //   FUN_1040_8266, // 1038:e67a
+        NULL, //   FUN_1040_8266, // 1038:e67a
         pass1_1040_78de, // 1038:e67e
-  NULL, //     FUN_1018_60ee, // 1038:e682
-  NULL, //     FUN_1018_60f4, // 1038:e686
-  NULL, //     FUN_1018_60fa, // 1038:e68a
-  NULL, //   FUN_1038_a2a4, // 1038:e68e
-  NULL, //      FUN_1018_60fe, // 1038:e692
+        NULL, //     FUN_1018_60ee, // 1038:e682
+        NULL, //     FUN_1018_60f4, // 1038:e686
+        NULL, //     FUN_1018_60fa, // 1038:e68a
+        NULL, //   FUN_1038_a2a4, // 1038:e68e
+        NULL, //      FUN_1018_60fe, // 1038:e692
         pass1_1040_807e, // 1038:e696
 
 };
@@ -8712,23 +8689,23 @@ void *addr_table_1038_e92e[] = {
         post_win_msg_1040_7f56, // 1038:e946
         draw_op_1040_7bb2, // 1038:e94a
         post_win_msg_1040_7f1c, // 1038:e94e
-  NULL, //      FUN_1038_e904, // 1038:e952
+        NULL, //      FUN_1038_e904, // 1038:e952
         menu_ui_op_1040_7f86, // 1038:e956
         win_help_1040_800c, // 1038:e95a
         pass1_1040_8054, // 1038:e95e
         set_text_bk_color_1040_7e5e, // 1038:e962
         unk_win_ui_op_1040_8158, // 1038:e966
         check_dialog_msg_1040_81b6, // 1038:e96a
-  set_sys_modal_window_1040_81fe, // 1038:e96e
-  NULL, //   FUN_1018_60ea, // 1038:e972
+        set_sys_modal_window_1040_81fe, // 1038:e96e
+        NULL, //   FUN_1018_60ea, // 1038:e972
         pass1_1040_824a, // 1038:e976
-  NULL, //      FUN_1040_8266, // 1038:e97a
+        NULL, //      FUN_1040_8266, // 1038:e97a
         pass1_1040_78de, // 1038:e97e
-  NULL, //     FUN_1018_60ee, // 1038:e982
-  NULL, //     FUN_1018_60f4, // 1038:e986
-  NULL, //     FUN_1018_60fa, // 1038:e98a
-  NULL, //     FUN_1038_a2a4, // 1038:e98e
-  NULL, //     FUN_1018_60fe, // 1038:e992
+        NULL, //     FUN_1018_60ee, // 1038:e982
+        NULL, //     FUN_1018_60f4, // 1038:e986
+        NULL, //     FUN_1018_60fa, // 1038:e98a
+        NULL, //     FUN_1038_a2a4, // 1038:e98e
+        NULL, //     FUN_1018_60fe, // 1038:e992
         pass1_1040_807e, // 1038:e996
 
 };
@@ -8743,23 +8720,23 @@ void *addr_table_1038_eb32[] = {
         post_win_msg_1040_7f56, // 1038:eb4a
         draw_op_1040_7bb2, // 1038:eb4e
         post_win_msg_1040_7f1c, // 1038:eb52
-  NULL, //       FUN_1038_eb08, // 1038:eb56
+        NULL, //       FUN_1038_eb08, // 1038:eb56
         menu_ui_op_1040_7f86, // 1038:eb5a
         win_help_1040_800c, // 1038:eb5e
         pass1_1040_8054, // 1038:eb62
         set_text_bk_color_1040_7e5e, // 1038:eb66
         unk_win_ui_op_1040_8158, // 1038:eb6a
         check_dialog_msg_1040_81b6, // 1038:eb6e
-  set_sys_modal_window_1040_81fe, // 1038:eb72
-  NULL, //      FUN_1018_60ea, // 1038:eb76
+        set_sys_modal_window_1040_81fe, // 1038:eb72
+        NULL, //      FUN_1018_60ea, // 1038:eb76
         pass1_1040_824a, // 1038:eb7a
-  NULL, //    FUN_1040_8266, // 1038:eb7e
+        NULL, //    FUN_1040_8266, // 1038:eb7e
         pass1_1040_78de, // 1038:eb82
-  NULL, //    FUN_1018_60ee, // 1038:eb86
-  NULL, //      FUN_1018_60f4, // 1038:eb8a
-  NULL, //   FUN_1018_60fa, // 1038:eb8e
-  NULL, //    FUN_1038_a2a4, // 1038:eb92
-  NULL, //    FUN_1018_60fe, // 1038:eb96
+        NULL, //    FUN_1018_60ee, // 1038:eb86
+        NULL, //      FUN_1018_60f4, // 1038:eb8a
+        NULL, //   FUN_1018_60fa, // 1038:eb8e
+        NULL, //    FUN_1038_a2a4, // 1038:eb92
+        NULL, //    FUN_1018_60fe, // 1038:eb96
         pass1_1040_807e, // 1038:eb9a
 
 };
@@ -8767,7 +8744,7 @@ void *addr_table_1038_eb32[] = {
 void *addr_table_1038_ee6e[] = {
         pass1_1038_ee48, // 1038:ee6e
         pass1_1008_3a10, // 1038:ee72
-  NULL, //    FUN_1038_ec16, // 1038:ee76
+        NULL, //    FUN_1038_ec16, // 1038:ee76
         pass1_1040_79c0, // 1038:ee7a
         send_msg_1038_ed8a, // 1038:ee7e
         destroy_win_1040_7b98, // 1038:ee82
@@ -8781,16 +8758,16 @@ void *addr_table_1038_ee6e[] = {
         set_text_bk_color_1040_7e5e, // 1038:eea2
         unk_win_ui_op_1040_8158, // 1038:eea6
         check_dialog_msg_1040_81b6, // 1038:eeaa
-  set_sys_modal_window_1040_81fe, // 1038:eeae
-  NULL, // FUN_1018_60ea, // 1038:eeb2
+        set_sys_modal_window_1040_81fe, // 1038:eeae
+        NULL, // FUN_1018_60ea, // 1038:eeb2
         pass1_1040_824a, // 1038:eeb6
-  NULL, //    FUN_1040_8266, // 1038:eeba
+        NULL, //    FUN_1040_8266, // 1038:eeba
         pass1_1040_78de, // 1038:eebe
-  NULL, //    FUN_1018_60ee, // 1038:eec2
-  NULL, //    FUN_1018_60f4, // 1038:eec6
-  NULL, //   FUN_1018_60fa, // 1038:eeca
-  NULL, //    FUN_1038_a2a4, // 1038:eece
-  NULL, //     FUN_1018_60fe, // 1038:eed2
+        NULL, //    FUN_1018_60ee, // 1038:eec2
+        NULL, //    FUN_1018_60f4, // 1038:eec6
+        NULL, //   FUN_1018_60fa, // 1038:eeca
+        NULL, //    FUN_1038_a2a4, // 1038:eece
+        NULL, //     FUN_1018_60fe, // 1038:eed2
         pass1_1040_807e, // 1038:eed6
 
 };
@@ -8812,16 +8789,16 @@ void *addr_table_1038_cc9a[] = {
         set_text_bk_color_1040_7e5e, // 1038:ccce
         unk_win_ui_op_1040_8158, // 1038:ccd2
         check_dialog_msg_1040_81b6, // 1038:ccd6
-  set_sys_modal_window_1040_81fe, // 1038:ccda
-  NULL, // FUN_1018_60ea, // 1038:ccde
+        set_sys_modal_window_1040_81fe, // 1038:ccda
+        NULL, // FUN_1018_60ea, // 1038:ccde
         pass1_1040_824a, // 1038:cce2
-  NULL, //    FUN_1040_8266, // 1038:cce6
+        NULL, //    FUN_1040_8266, // 1038:cce6
         pass1_1040_78de, // 1038:ccea
-  NULL, //    FUN_1018_60ee, // 1038:ccee
-  NULL, //   FUN_1018_60f4, // 1038:ccf2
-  NULL, //   FUN_1018_60fa, // 1038:ccf6
-  NULL, //    FUN_1038_a2a4, // 1038:ccfa
-  NULL, //     FUN_1018_60fe, // 1038:ccfe
+        NULL, //    FUN_1018_60ee, // 1038:ccee
+        NULL, //   FUN_1018_60f4, // 1038:ccf2
+        NULL, //   FUN_1018_60fa, // 1038:ccf6
+        NULL, //    FUN_1038_a2a4, // 1038:ccfa
+        NULL, //     FUN_1018_60fe, // 1038:ccfe
         pass1_1040_807e, // 1038:cd02
 
 };
@@ -8836,21 +8813,21 @@ void *addr_table_1038_cf00[] = {
         post_win_msg_1040_7f56, // 1038:cf18
         draw_op_1040_7bb2, // 1038:cf1c
         post_win_msg_1040_7f1c, // 1038:cf20
-  NULL, //    FUN_1038_ced6, // 1038:cf24
+        NULL, //    FUN_1038_ced6, // 1038:cf24
         menu_ui_op_1040_7f86, // 1038:cf28
         win_help_1040_800c, // 1038:cf2c
         pass1_1040_8054, // 1038:cf30
         set_text_bk_color_1040_7e5e, // 1038:cf34
         unk_win_ui_op_1040_8158, // 1038:cf38
         check_dialog_msg_1040_81b6, // 1038:cf3c
-  set_sys_modal_window_1040_81fe, // 1038:cf40
-  NULL, // FUN_1018_60ea, // 1038:cf44
+        set_sys_modal_window_1040_81fe, // 1038:cf40
+        NULL, // FUN_1018_60ea, // 1038:cf44
         pass1_1040_824a, // 1038:cf48
-  NULL, //    FUN_1040_8266, // 1038:cf4c
+        NULL, //    FUN_1040_8266, // 1038:cf4c
         pass1_1040_78de, // 1038:cf50
-  NULL, //    FUN_1018_60ee, // 1038:cf54
-  NULL, //     FUN_1018_60f4, // 1038:cf58
-  NULL, //    FUN_1018_60fa, // 1038:cf5c
+        NULL, //    FUN_1018_60ee, // 1038:cf54
+        NULL, //     FUN_1018_60f4, // 1038:cf58
+        NULL, //    FUN_1018_60fa, // 1038:cf5c
         NULL, // FUN_1038_a2a4, // 1038:cf60
         NULL, // FUN_1018_60fe, // 1038:cf64
         pass1_1040_807e, // 1038:cf68
@@ -8877,7 +8854,7 @@ void *addr_table_1038_d6ea[] = {
         set_text_bk_color_1040_7e5e, // 1038:d71e
         unk_win_ui_op_1040_8158, // 1038:d722
         check_dialog_msg_1040_81b6, // 1038:d726
-  set_sys_modal_window_1040_81fe, // 1038:d72a
+        set_sys_modal_window_1040_81fe, // 1038:d72a
         NULL, // FUN_1018_60ea, // 1038:d72e
         pass1_1040_824a, // 1038:d732
         NULL, // FUN_1040_8266, // 1038:d736
@@ -8908,7 +8885,7 @@ void *addr_table_1038_e0d4[] = {
         set_text_bk_color_1040_7e5e, // 1038:e108
         unk_win_ui_op_1040_8158, // 1038:e10c
         check_dialog_msg_1040_81b6, // 1038:e110
-  set_sys_modal_window_1040_81fe, // 1038:e114
+        set_sys_modal_window_1040_81fe, // 1038:e114
         NULL, // FUN_1018_60ea, // 1038:e118
         pass1_1040_824a, // 1038:e11c
         NULL, // FUN_1040_8266, // 1038:e120
@@ -8939,7 +8916,7 @@ void *addr_table_1038_bd70[] = {
         set_text_bk_color_1040_7e5e, // 1038:bda4
         unk_win_ui_op_1040_8158, // 1038:bda8
         check_dialog_msg_1040_81b6, // 1038:bdac
-  set_sys_modal_window_1040_81fe, // 1038:bdb0
+        set_sys_modal_window_1040_81fe, // 1038:bdb0
         NULL, // FUN_1018_60ea, // 1038:bdb4
         pass1_1040_824a, // 1038:bdb8
         NULL, // FUN_1040_8266, // 1038:bdbc
@@ -8969,7 +8946,7 @@ void *addr_table_1038_c436[] = {
         set_text_bk_color_1040_7e5e, // 1038:c46a
         unk_win_ui_op_1040_8158, // 1038:c46e
         check_dialog_msg_1040_81b6, // 1038:c472
-  set_sys_modal_window_1040_81fe, // 1038:c476
+        set_sys_modal_window_1040_81fe, // 1038:c476
         NULL, // FUN_1018_60ea, // 1038:c47a
         pass1_1040_824a, // 1038:c47e
         NULL, // FUN_1040_8266, // 1038:c482
@@ -8999,7 +8976,7 @@ void *addr_table_1038_c74c[] = {
         set_text_bk_color_1040_7e5e, // 1038:c780
         unk_win_ui_op_1040_8158, // 1038:c784
         check_dialog_msg_1040_81b6, // 1038:c788
-  set_sys_modal_window_1040_81fe, // 1038:c78c
+        set_sys_modal_window_1040_81fe, // 1038:c78c
         NULL, // FUN_1018_60ea, // 1038:c790
         pass1_1040_824a, // 1038:c794
         NULL, // FUN_1040_8266, // 1038:c798
@@ -9029,7 +9006,7 @@ void *addr_table_1038_ca6c[] = {
         set_text_bk_color_1040_7e5e, // 1038:caa0
         unk_win_ui_op_1040_8158, // 1038:caa4
         check_dialog_msg_1040_81b6, // 1038:caa8
-  set_sys_modal_window_1040_81fe, // 1038:caac
+        set_sys_modal_window_1040_81fe, // 1038:caac
         NULL, // FUN_1018_60ea, // 1038:cab0
         pass1_1040_824a, // 1038:cab4
         NULL, // FUN_1040_8266, // 1038:cab8
@@ -9059,7 +9036,7 @@ void *addr_table_1038_a2d0[] = {
         set_text_bk_color_1040_7e5e, // 1038:a304
         unk_win_ui_op_1040_8158, // 1038:a308
         check_dialog_msg_1040_81b6, // 1038:a30c
-  set_sys_modal_window_1040_81fe, // 1038:a310
+        set_sys_modal_window_1040_81fe, // 1038:a310
         NULL, // FUN_1018_60ea, // 1038:a314
         pass1_1040_824a, // 1038:a318
         NULL, // FUN_1040_8266, // 1038:a31c
@@ -9089,7 +9066,7 @@ void *addr_table_1038_ad72[] = {
         unk_win_ui_op_1038_ac38, // 1038:ada6
         unk_win_ui_op_1040_8158, // 1038:adaa
         check_dialog_msg_1040_81b6, // 1038:adae
-  set_sys_modal_window_1040_81fe, // 1038:adb2
+        set_sys_modal_window_1040_81fe, // 1038:adb2
         NULL, // FUN_1018_60ea, // 1038:adb6
         pass1_1040_824a, // 1038:adba
         NULL, // FUN_1040_8266, // 1038:adbe
@@ -9119,7 +9096,7 @@ void *addr_table_1038_a0b6[] = {
         set_text_bk_color_1040_7e5e, // 1038:a0ea
         unk_win_ui_op_1040_8158, // 1038:a0ee
         check_dialog_msg_1040_81b6, // 1038:a0f2
-  set_sys_modal_window_1040_81fe, // 1038:a0f6
+        set_sys_modal_window_1040_81fe, // 1038:a0f6
         NULL, // FUN_1018_60ea, // 1038:a0fa
         pass1_1040_824a, // 1038:a0fe
         NULL, // FUN_1040_8266, // 1038:a102
@@ -9149,7 +9126,7 @@ void *addr_table_1038_99a2[] = {
         win_ui_op_1040_b372, // 1038:99d6
         unk_win_ui_op_1040_8158, // 1038:99da
         check_dialog_msg_1040_81b6, // 1038:99de
-  set_sys_modal_window_1040_81fe, // 1038:99e2
+        set_sys_modal_window_1040_81fe, // 1038:99e2
         NULL, // FUN_1018_60ea, // 1038:99e6
         pass1_1040_824a, // 1038:99ea
         NULL, // FUN_1040_8266, // 1038:99ee
@@ -9184,7 +9161,7 @@ void *addr_table_1038_8876[] = {
         win_ui_op_1040_b372, // 1038:88aa
         unk_win_ui_op_1040_8158, // 1038:88ae
         check_dialog_msg_1040_81b6, // 1038:88b2
-  set_sys_modal_window_1040_81fe, // 1038:88b6
+        set_sys_modal_window_1040_81fe, // 1038:88b6
         NULL, // FUN_1018_60ea, // 1038:88ba
         pass1_1040_824a, // 1038:88be
         NULL, // FUN_1040_8266, // 1038:88c2
@@ -9289,9 +9266,9 @@ void *addr_table_1040_c9f2[] = {
         draw_op_1040_c74c, // 1040:c9fe
         palette_op_1040_c886, // 1040:ca02
         pass1_1040_c94a, // 1040:ca06
-  NULL, // FUN_1008_3cd2, // 1040:ca0a
+        NULL, // FUN_1008_3cd2, // 1040:ca0a
         send_msg_1040_c85a, // 1040:ca0e
-  NULL, //   FUN_1040_c882, // 1040:ca12
+        NULL, //   FUN_1040_c882, // 1040:ca12
 
 };
 
@@ -9312,7 +9289,7 @@ void *addr_table_1040_67ba[] = {
         set_text_bk_color_1040_7e5e, // 1040:67ee
         unk_win_ui_op_1040_8158, // 1040:67f2
         check_dialog_msg_1040_81b6, // 1040:67f6
-  set_sys_modal_window_1040_81fe, // 1040:67fa
+        set_sys_modal_window_1040_81fe, // 1040:67fa
         NULL, // FUN_1018_60ea, // 1040:67fe
         pass1_1040_824a, // 1040:6802
         NULL, // FUN_1040_8266, // 1040:6806
@@ -9342,7 +9319,7 @@ void *addr_table_1040_76a4[] = {
         win_ui_op_1040_b372, // 1040:76d8
         unk_win_ui_op_1040_8158, // 1040:76dc
         check_dialog_msg_1040_81b6, // 1040:76e0
-  set_sys_modal_window_1040_81fe, // 1040:76e4
+        set_sys_modal_window_1040_81fe, // 1040:76e4
         NULL, // FUN_1018_60ea, // 1040:76e8
         pass1_1040_824a, // 1040:76ec
         NULL, // FUN_1040_8266, // 1040:76f0
@@ -9379,7 +9356,7 @@ void *addr_table_1040_6386[] = {
         win_ui_op_1040_b372, // 1040:63ba
         unk_win_ui_op_1040_8158, // 1040:63be
         check_dialog_msg_1040_81b6, // 1040:63c2
-  set_sys_modal_window_1040_81fe, // 1040:63c6
+        set_sys_modal_window_1040_81fe, // 1040:63c6
         NULL, // FUN_1018_60ea, // 1040:63ca
         pass1_1040_824a, // 1040:63ce
         NULL, // FUN_1040_8266, // 1040:63d2
@@ -9413,7 +9390,7 @@ void *addr_table_1038_a428[] = {
         set_text_bk_color_1040_7e5e, // 1038:a45c
         unk_win_ui_op_1040_8158, // 1038:a460
         check_dialog_msg_1040_81b6, // 1038:a464
-  set_sys_modal_window_1040_81fe, // 1038:a468
+        set_sys_modal_window_1040_81fe, // 1038:a468
         NULL, // FUN_1018_60ea, // 1038:a46c
         pass1_1040_824a, // 1038:a470
         NULL, // FUN_1040_8266, // 1038:a474
@@ -9443,7 +9420,7 @@ void *addr_table_1038_a62e[] = {
         set_text_bk_color_1040_7e5e, // 1038:a662
         unk_win_ui_op_1040_8158, // 1038:a666
         check_dialog_msg_1040_81b6, // 1038:a66a
-  set_sys_modal_window_1040_81fe, // 1038:a66e
+        set_sys_modal_window_1040_81fe, // 1038:a66e
         NULL, // FUN_1018_60ea, // 1038:a672
         pass1_1040_824a, // 1038:a676
         NULL, // FUN_1040_8266, // 1038:a67a
@@ -9473,7 +9450,7 @@ void *addr_table_1038_a832[] = {
         set_text_bk_color_1040_7e5e, // 1038:a866
         unk_win_ui_op_1040_8158, // 1038:a86a
         check_dialog_msg_1040_81b6, // 1038:a86e
-  set_sys_modal_window_1040_81fe, // 1038:a872
+        set_sys_modal_window_1040_81fe, // 1038:a872
         NULL, // FUN_1018_60ea, // 1038:a876
         pass1_1040_824a, // 1038:a87a
         NULL, // FUN_1040_8266, // 1038:a87e
@@ -9504,7 +9481,7 @@ void *addr_table_1038_ab16[] = {
         set_text_bk_color_1040_7e5e, // 1038:ab4a
         unk_win_ui_op_1040_8158, // 1038:ab4e
         check_dialog_msg_1040_81b6, // 1038:ab52
-  set_sys_modal_window_1040_81fe, // 1038:ab56
+        set_sys_modal_window_1040_81fe, // 1038:ab56
         NULL, // FUN_1018_60ea, // 1038:ab5a
         pass1_1040_824a, // 1038:ab5e
         NULL, // FUN_1040_8266, // 1038:ab62
@@ -9553,7 +9530,7 @@ void *addr_table_1040_a4e8[] = {
         win_ui_op_1040_b372, // 1040:a51c
         unk_win_ui_op_1040_8158, // 1040:a520
         check_dialog_msg_1040_81b6, // 1040:a524
-  set_sys_modal_window_1040_81fe, // 1040:a528
+        set_sys_modal_window_1040_81fe, // 1040:a528
         NULL, // FUN_1018_60ea, // 1040:a52c
         pass1_1040_824a, // 1040:a530
         NULL, // FUN_1040_8266, // 1040:a534
@@ -9561,8 +9538,8 @@ void *addr_table_1040_a4e8[] = {
         NULL, // FUN_1018_60ee, // 1040:a53c
         NULL, // FUN_1018_60f4, // 1040:a540
         pass1_1040_b4c8, // 1040:a544
-  NULL, //    FUN_1038_8842, // 1040:a548
-  NULL, //      FUN_1018_60fe, // 1040:a54c
+        NULL, //    FUN_1038_8842, // 1040:a548
+        NULL, //      FUN_1018_60fe, // 1040:a54c
         pass1_1040_807e, // 1040:a550
         show_win_1040_b43c, // 1040:a554
         get_dlg_item_1040_a3d0, // 1040:a558
@@ -9577,12 +9554,59 @@ void *addr_table_1040_9800[] = {
         pass1_1040_9422, // 1040:980c
         unk_draw_op_1040_9458, // 1040:9810
         draw_text_1040_94fc, // 1040:9814
-  NULL, // FUN_1008_3cd2, // 1040:9818
+        NULL, // FUN_1008_3cd2, // 1040:9818
         pass1_1040_93e6, // 1040:981c
         send_msg_1040_9404, // 1040:9820
 
 };
 
+void *addr_table_1008_051e[] = {
+        pass1_1008_04f8,            // 1008:051e
+        pass1_1008_049c,            // 1008:0522
+        mixed_win_sys_op_1008_016e, // 1008:0526
+        pass1_1008_04d2,            // 1008:052a
+        NULL,//  LAB_1008_9494,              // 1008:052e
+        NULL,//  LAB_1008_9490,              // 1008:0532
+};
+void *addr_table_1010_3b3e[] = {
+        pass1_1010_3af2, // 1010:3b3e
+        pass1_1010_3a86, // 1010:3b42
+        pass1_1010_394a, // 1010:3b46
+        pass1_1010_3a94, // 1010:3b4a
+//FUN_1010_3aa6, // 1010:3b4e
+        pass1_1010_3adc, // 1010:3b52
+//FUN_1010_3abc, // 1010:3b56
+        pass1_1010_3ac2, // 1010:3b5a
+        pass1_1010_3b18, // 1010:3b5e
+        pass1_1010_3a86, // 1010:3b62
+        pass1_1010_394a, // 1010:3b66
+        pass1_1010_3a94, // 1010:3b6a
+//FUN_1010_3aa6, // 1010:3b6e
+        pass1_1010_3aaa, // 1010:3b72
+//FUN_1010_3abc, // 1010:3b76
+};
+//void *addr_table_1010_3b3e[] = {
+//        pass1_1010_3af2, // 1010:3b3e  f2  3a  10  10       addr
+//        pass1_1010_3a86, // 1010:3b42  86  3a  10  10       addr
+//        pass1_1010_394a, // 1010:3b46  4a  39  10  10       addr
+//        pass1_1010_3a94, // 1010:3b4a  94  3a  10  10       addr
+//        NULL,            // FUN_1010_3aa6, // 1010:3b4e  a6  3a  10  10       addr
+//        pass1_1010_3adc, // 1010:3b52  dc  3a  10  10       addr
+//        NULL,            // FUN_1010_3abc, // 1010:3b56  bc  3a  10  10       addr
+//        pass1_1010_3ac2, // 1010:3b5a  c2  3a  10  10       addr
+//        pass1_1010_3b18, // 1010:3b5e  18  3b  10  10       addr
+//        pass1_1010_3a86, // 1010:3b62  86  3a  10  10       addr
+//        pass1_1010_394a, // 1010:3b66  4a  39  10  10       addr
+//        pass1_1010_3a94, // 1010:3b6a  94  3a  10  10       addr
+//        NULL,            // FUN_1010_3aa6, // 1010:3b6e  a6  3a  10  10       addr
+//        pass1_1010_3aaa, // 1010:3b72  aa  3a  10  10       addr
+//        NULL,            // FUN_1010_3abc, // 1010:3b76  bc  3a  10  10       addr
+//        pass1_1010_62ec, // 1010:6312  ec  62  10  10       addr
+//        pass1_1010_1df2, // 1010:6316  f2  1d  10  10       addr
+//        pass1_1010_5dc6, // 1010:631a  c6  5d  10  10       addr
+//        pass1_1010_5e56, // 1010:631e  56  5e  10  10       addr
+//        pass1_1010_62a4, // 1010:6322  a4  62  10  10       addr
+//};
 #endif // ADDRESS_TABLE_1_H_
 
 #pragma clang diagnostic pop

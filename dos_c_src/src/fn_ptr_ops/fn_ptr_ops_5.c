@@ -1639,9 +1639,9 @@ void  pass1_1018_0dc6(Struct91 *param_1, u16 param_2)
     {
         uVar9    = iVar13->field_0x92;
         uStack44 = uStack44 & 0xffff0000 | uVar9;
-        uVar3    = uVar9 * 0x6;
-        mem_op_1000_179c(uVar3, 0x0, SEG_1000);
-        p_stack32 = (Struct18 *)CONCAT22(puVar7, uVar3);
+        uVar3 = uVar9 * 0x6;
+        mem_op_1000_179c(uVar3, 0x0, 0);
+        p_stack32 = (Struct18 *) CONCAT22(puVar7, uVar3);
         puVar8    = (puVar7 | uVar3);
         if(puVar8 == 0x0)
         {
@@ -1657,9 +1657,9 @@ void  pass1_1018_0dc6(Struct91 *param_1, u16 param_2)
     {
         uVar9    = iVar13->field_0x98;
         uStack44 = uStack44 & 0xffff0000 | uVar9;
-        uVar3    = uVar9 * 0x6;
-        mem_op_1000_179c(uVar3, puVar8, SEG_1000);
-        p_stack32 = (Struct18 *)CONCAT22(puVar8, uVar3);
+        uVar3 = uVar9 * 0x6;
+        mem_op_1000_179c(uVar3, puVar8, 0);
+        p_stack32 = (Struct18 *) CONCAT22(puVar8, uVar3);
         if((puVar8 | uVar3) == 0x0)
         {
             iVar13->field_0x9a = 0x0;

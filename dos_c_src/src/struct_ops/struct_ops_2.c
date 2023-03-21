@@ -1599,7 +1599,7 @@ void  pass1_1030_6a2c(struct Struct382 *param_1, long param_2, u16 param_3, u8 *
     iVar4 = (struct Struct382 *)param_1;
     if(iVar4->field_0x3e == 0x0)
     {
-        mem_op_1000_179c(0xc, param_4, SEG_1000);
+        mem_op_1000_179c(0xc, param_4, 0);
         if((param_4 | param_3) == 0x0)
         {
             iVar4->field_0x3e = 0x0;
@@ -1696,7 +1696,7 @@ void  pass1_1030_6c66(Struct386 *param_1, i16 param_2, u32 param_3, u16 param_4,
     if(iVar7->field_0x3a == 0x0)
     {
         param_6 = SEG_1000;
-        mem_op_1000_179c(0xc, param_5, SEG_1000);
+        mem_op_1000_179c(0xc, param_5, 0);
         if((param_5 | param_4) == 0x0)
         {
             iVar7->field_0x3a = 0x0;

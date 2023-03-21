@@ -13,12 +13,13 @@
 #include "structs/structs_5xx/structs_58x.h"
 #include "structs/structs_6xx/struct_664.h"
 #include "structs/structs_6xx/struct_666.h"
+#include "structs/structs_1046.h"
 
 void string_1020_79b4(Globals *globals,
-                      u16      param_1,
-                      u32      param_2,
-                      i16      param_3,
-                      char    *param_4);
+                      u16 param_1,
+                      struct_1020_6e52_1 *param_2,
+                      i16 param_3,
+                      char *param_4);
 
 void pass1_1038_9a48(Globals *globals, Struct18 *param_1);
 
@@ -55,10 +56,10 @@ void  pass1_1020_78ac(Struct587 *pstruct_arg1, u16 hdc_arg2);
 void  struct_1020_790e(Struct271 *param_1, u32 param_2, u16 param_3, u32 param_4, u16 param_5);
 
 void string_1020_79b4(Globals *globals,
-                      u16      param_1,
-                      u32      param_2,
-                      i16      param_3,
-                      char    *param_4);
+                      u16 param_1,
+                      struct_1020_6e52_1 *param_2,
+                      i16 param_3,
+                      char *param_4);
 
 void pass1_1020_79e4(Globals *globals, u32 param_1, u16 hwnd_arg2, u16 param_3);
 

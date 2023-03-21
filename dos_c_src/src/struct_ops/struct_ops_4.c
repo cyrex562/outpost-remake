@@ -1926,7 +1926,7 @@ void  struct_1010_9172(Struct249 *param_1)
         ppcVar3 = *puVar1;
         paVar5  = (**ppcVar3)();
     }
-    mem_op_1000_179c(0x18, (paVar5 >> 0x10), SEG_1000);
+    mem_op_1000_179c(0x18, (paVar5 >> 0x10), 0);
     if(paVar5 == 0x0)
     {
         uVar6 = 0x0;

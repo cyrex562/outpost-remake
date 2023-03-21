@@ -229,9 +229,7 @@ void  pass1_1018_3d6c(Struct679 *param_1)
 }
 
 
-void  pass1_1018_3e8c(u16 param_1, u16 param_2, u16 *param_3, u16 *param_4)
-
-{
+void pass1_1018_3e8c(Struct263 *param_1, u16 param_2, u16 *param_3, u16 *param_4) {
     *param_4 = 0x1;
     *param_3 = 0x19;
     return;
@@ -261,16 +259,14 @@ void  pass1_1018_3ea4(u32 param_1)
     return;
 }
 
-void  pass1_1018_427c(u32 param_1)
-
-{
-    i16  iVar1;
-    u16  in_AX;
-    u16  in_DX;
-    u16  u_var2;
-    u16  uVar3;
-    u16  unaff_SS;
-    u32  uVar4;
+void pass1_1018_427c(Struct263 *param_1) {
+    i16 iVar1;
+    u16 in_AX;
+    u16 in_DX;
+    u16 u_var2;
+    u16 uVar3;
+    u16 unaff_SS;
+    u32 uVar4;
     long lVar5;
 
     uVar3 = (param_1 >> 0x10);
@@ -304,16 +300,13 @@ void  pass1_1018_427c(u32 param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1018_435e(u32 param_1, long param_2, i16 param_3, i16 param_4, u16 param_5, u16 param_6)
-
-{
+void pass1_1018_435e(Struct263 *param_1, long param_2, i16 param_3, i16 param_4, u16 param_5, u16 param_6) {
     u32 uVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u16        uVar4;
+    u16 u_var2;
+    u16 uVar3;
+    u16 uVar4;
 
-    if(param_3 < param_4)
-    {
+    if (param_3 < param_4) {
         param_4 = param_3;
     }
     u_var2 = 0x0;
@@ -2863,8 +2856,8 @@ void  pass1_1010_bf1e(u32 param_1, i16 *param_2, i16 param_3, u8 *param_4, u16 p
     bad_1010_bf08(param_1, (param_1 >> 0x10), 0x1000000);
     iStack4  = param_3 + -0x1;
     *param_2 = iStack4;
-    u_var2    = iStack4 * 0x18;
-    mem_op_1000_179c(u_var2, param_4, SEG_1000);
+    u_var2 = iStack4 * 0x18;
+    mem_op_1000_179c(u_var2, param_4, 0);
     uStack40 = CONCAT22(param_4, u_var2);
     uStack32 = param_4 | u_var2;
     iVar4    = param_2;

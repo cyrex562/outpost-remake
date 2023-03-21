@@ -410,7 +410,7 @@ void  pass1_1028_61c4(Struct315 *param_1, u32 param_2, u16 param_3)
         ppcVar3 = *puVar1;
         paVar5  = (**ppcVar3)();
     }
-    mem_op_1000_179c(0xc, (paVar5 >> 0x10), SEG_1000);
+    mem_op_1000_179c(0xc, (paVar5 >> 0x10), 0);
     if(paVar5 == 0x0)
     {
         uVar6 = 0x0;
@@ -1010,20 +1010,16 @@ void  pass1_1028_0582(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4, u8 p
                     *plVar2  = *plVar2 + 0x1;
                     uStack18 = uVar8;
                 }
-                else
-                {
-                    uStack18  = globals->PTR_LOOP_1050_68a2;
-                    paStack38 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                    uVar9     = (paStack38 >> 0x10);
-                    uVar6     = paStack38;
-                    if((uVar9 | uVar6) == 0x0)
-                    {
-                        paStack34 = (Struct99 *)0x0;
-                    }
-                    else
-                    {
+                else {
+                    uStack18 = globals->u32_ptr_1050_68a2;
+                    paStack38 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                    uVar9 = (paStack38 >> 0x10);
+                    uVar6 = paStack38;
+                    if ((uVar9 | uVar6) == 0x0) {
+                        paStack34 = (Struct99 *) 0x0;
+                    } else {
                         paStack38->fld0_addr_table = addr_table_1008_380a[36]; // 0x389a
-                        (uVar6 + 0x2)        = SEG_1008;
+                        (uVar6 + 0x2) = SEG_1008;
                         (uVar6 + 0x4)        = 0x0;
                         (uVar6 + 0x6)        = 0x0;
                         (uVar6 + 0x8)        = 0x0;
@@ -1064,20 +1060,16 @@ void  pass1_1028_0582(u32 *param_1, u32 *param_2, u16 param_3, u16 param_4, u8 p
             param_2 = &local_2a;
             ppcVar4 = (*param_1 + 0x40);
             (**ppcVar4)(param_3, param_1);
-            if(param_2 == 0x0)
-            {
-                uStack18  = globals->PTR_LOOP_1050_68a2;
-                paStack38 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar9     = (paStack38 >> 0x10);
-                uVar6     = paStack38;
-                if((uVar9 | uVar6) == 0x0)
-                {
-                    paStack34 = (Struct99 *)0x0;
-                }
-                else
-                {
+            if(param_2 == 0x0) {
+                uStack18 = globals->u32_ptr_1050_68a2;
+                paStack38 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar9 = (paStack38 >> 0x10);
+                uVar6 = paStack38;
+                if ((uVar9 | uVar6) == 0x0) {
+                    paStack34 = (Struct99 *) 0x0;
+                } else {
                     paStack38->fld0_addr_table = addr_table_1008_380a[36]; // 0x389a
-                    (uVar6 + 0x2)        = SEG_1008;
+                    (uVar6 + 0x2) = SEG_1008;
                     (uVar6 + 0x4)        = 0x0;
                     (uVar6 + 0x6)        = 0x0;
                     (uVar6 + 0x8)        = 0x0;

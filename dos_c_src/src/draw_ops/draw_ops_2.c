@@ -8,7 +8,7 @@
 #include "op_winapi.h"
 #include "op_windef.h"
 #include "string_ops.h"
-#include "struct_20.h"
+#include "structs/structs_0xx/struct_20.h"
 #include "structs/structs_0xx/structs_2x.h"
 #include "structs/structs_1xx/structs_12x.h"
 #include "sys_ops/sys_ops_9.h"
@@ -575,10 +575,10 @@ void struct_1020_790e(Struct271 *param_1,
 
 
 void string_1020_79b4(Globals *globals,
-                      u16      param_1,
-                      u32      param_2,
-                      i16      param_3,
-                      char    *param_4)
+                      u16 param_1,
+                      struct_1020_6e52_1 *param_2,
+                      i16 param_3,
+                      char *param_4)
 
 {
     unk_str_op_1000_3d3e((param_2 + 0xa), param_4);
@@ -2292,7 +2292,7 @@ void unk_draw_op_1020_2020(u32 param_1, HWND16 param_2, u16 param_3)
         if((iVar19 + 0x1a) == 0x0)
         {
             uVar4 = (iVar19 + 0x30) << 0x3;
-            mem_op_1000_179c(uVar4, puVar10, SEG_1000);
+            mem_op_1000_179c(uVar4, puVar10, 0);
             (iVar19 + 0x1a) = uVar4;
             (iVar19 + 0x1c) = puVar10;
         }

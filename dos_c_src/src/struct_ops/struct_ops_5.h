@@ -16,6 +16,7 @@
 #include "structs/structs_2xx/structs_23x.h"
 #include "structs/structs_6xx/structs_63x.h"
 #include "structs/structs_6xx/structs_64x.h"
+#include "structs/structs_1046.h"
 
 Struct79 *pass1_1010_3702(Struct79 *param_1, u16 param_3);
 
@@ -200,9 +201,7 @@ void struct_op_1008_4214(Struct76 *param_1, Struct83 *param_2);
 struct Struct20 *pass1_1008_3ab8(Struct20 *param_1);
 
 
-
-
-void struct_op_1008_0000(u16 *param_1);
+void struct_op_1008_0000(struct_1008_0000_1 *param_1);
 
 
 void* struct_op_1030_73a8(Globals *globals, Struct383 *param_1);

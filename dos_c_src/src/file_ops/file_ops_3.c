@@ -117,7 +117,7 @@ void pass1_1010_89f0(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HINSTAN
     {
         msg_box_op_1010_8bb4(param_1, param_2, uVar7, param_5, param_6);
     }
-    mem_op_1000_179c(0x8, puVar4, SEG_1000);
+    mem_op_1000_179c(0x8, puVar4, 0);
     puVar5 = (puVar4 | uVar3);
     if(puVar5 == 0x0)
     {
@@ -325,8 +325,8 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, u16 param_3, u8 *param_4, 
     {
         uVar4 = 0x102;
         SVar9 = 0x102;
-        mem_op_1000_179c(0x102, param_4, SEG_1000);
-        paStack10 = (Struct18 *)CONCAT22(param_4, param_3);
+        mem_op_1000_179c(0x102, param_4, 0);
+        paStack10 = (Struct18 *) CONCAT22(param_4, param_3);
         puVar6    = param_4;
         BVar1     = read_file_1008_7dee(uVar8, uVar10, param_3, uVar4, param_4, SVar9, SEG_1008);
         paStack18 = paStack10;
@@ -356,8 +356,8 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, u16 param_3, u8 *param_4, 
     {
         uVar5 = 0x2a;
         SVar9 = 0x2a;
-        mem_op_1000_179c(0x2a, param_4, SEG_1000);
-        paStack18 = (Struct18 *)CONCAT22(param_4, uVar4);
+        mem_op_1000_179c(0x2a, param_4, 0);
+        paStack18 = (Struct18 *) CONCAT22(param_4, uVar4);
         BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, SEG_1008);
         if(BVar1 == 0x0)
         {
@@ -739,7 +739,7 @@ void file_1010_0c7c(Globals   *globals,
                 if(local_6 <= paStack8)
                     break;
                 uVar4 = local_6;
-                mem_op_1000_179c(0xa, param_4, SEG_1000);
+                mem_op_1000_179c(0xa, param_4, 0);
                 puStack26 = CONCAT22(param_4, uVar4);
                 if((param_4 | uVar4) == 0x0)
                 {
@@ -927,7 +927,7 @@ void file_1008_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 }
                 uVar9 = 0x14;
                 uVar4 = local_4;
-                mem_op_1000_179c(0x14, param_4, SEG_1000);
+                mem_op_1000_179c(0x14, param_4, 0);
                 uVar5 = param_4 | uVar4;
                 if(uVar5 == 0x0)
                 {
@@ -1145,7 +1145,7 @@ void file_1008_bb5e(Globals   *globals,
                 return;
             }
             uVar14 = 0xc;
-            mem_op_1000_179c(0xc, param_4, SEG_1000);
+            mem_op_1000_179c(0xc, param_4, 0);
             if((param_4 | uVar5) == 0x0)
             {
                 uVar5  = 0x0;
@@ -1166,8 +1166,8 @@ void file_1008_bb5e(Globals   *globals,
                     return;
                 }
                 uVar13 = 0x12;
-                uVar4  = local_10[0];
-                mem_op_1000_179c(0x12, puVar8, SEG_1000);
+                uVar4 = local_10[0];
+                mem_op_1000_179c(0x12, puVar8, 0);
                 if((puVar8 | uVar4) == 0x0)
                 {
                     uVar4 = (Struct200 *)0x0;
@@ -1243,7 +1243,7 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
         if(*param_2 == 0x0)
         {
             param_3 = SEG_1000;
-            mem_op_1000_179c(0x1e, local_6, SEG_1000);
+            mem_op_1000_179c(0x1e, local_6, 0);
             uVar6 = local_6 | uVar4;
             if(uVar6 == 0x0)
             {
@@ -1302,7 +1302,7 @@ void file_1008_76e4(u32 param_1, long *param_2, u16 param_3, u16 param_4, u16 pa
         if(*param_2 == 0x0)
         {
             param_3 = SEG_1000;
-            mem_op_1000_179c(0x18, param_5, SEG_1000);
+            mem_op_1000_179c(0x18, param_5, 0);
             if((param_5 | u_var2) == 0x0)
             {
                 *param_2 = 0x0;
@@ -1362,7 +1362,7 @@ u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16
         if(*param_2 == 0x0)
         {
             param_4 = SEG_1000;
-            mem_op_1000_179c(0xa, param_3, SEG_1000);
+            mem_op_1000_179c(0xa, param_3, 0);
             uVar3 = param_3 | uVar1;
             if(uVar3 == 0x0)
             {

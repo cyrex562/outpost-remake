@@ -892,8 +892,8 @@ void  pass1_1028_ee54(u32 param_1, u16 param_2, u16 *param_3, u32 param_4)
     pu_stack6 = param_3;
     pass1_1030_64ce(unaff_SS, param_3, in_DX, globals->_PTR_LOOP_1050_5740, param_3, param_4, CONCAT22(unaff_SS, local_16));
     uStack10 = param_3;
-    p_var2   = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_5744);
-    uVar1    = (p_var2 >> 0x10);
+    p_var2 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_5744);
+    uVar1 = (p_var2 >> 0x10);
     uStack14 = p_var2;
     uStack12 = uVar1 | uStack14;
     if(uStack12 == 0x0)

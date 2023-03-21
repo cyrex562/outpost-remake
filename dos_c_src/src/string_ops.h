@@ -11,6 +11,8 @@
 #include "structs/structs_3xx/struct_385.h"
 #include "structs/structs_0xx/structs_8x.h"
 #include "structs/structs_1xx/structs_10x.h"
+#include "structs/structs_1046.h"
+#include "structs/structs_2xx/structs_26x.h"
 
 
 void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3);
@@ -28,7 +30,7 @@ void pass1_1038_4d3c(Struct385 *param_1, char *param_2, u16 param_3);
 void pass1_1030_4dbc(Struct386 *param_1, u32 param_2, long param_3);
 
 
-cstring pass1_1020_bd80(Globals *globals, u16 param_1);
+const char *pass1_1020_bd80(Globals *globals, u16 param_1);
 
 
 void string_1020_c0ca(Globals *globals, u16 param_1);
@@ -50,21 +52,21 @@ cstring *string_op_1020_c2f8(Globals *globals, u16 param_1);
 
 
 void pass1_1020_6e52(Globals *globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u16      param_3,
-                     i16      param_4,
-                     u16      param_5,
-                     i16      param_6);
+                     u16 param_1,
+                     u16 param_2,
+                     u16 param_3,
+                     u16 offset_param_4,
+                     u16 segment_param_5,
+                     i16 param_6);
 
 
-void sprintf_op_1018_34b6(Globals *globals, u32 param_1, u8 param_2);
+void sprintf_op_1018_34b6(Globals *globals, struct struct_1018_34b6_1 *param_1, u8 param_2);
 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_str_op_1018_35b0(u32 param_1, u16 param_2, u16 param_3);
+void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3);
 
 
 BOOL16 string_1018_39d8(u16 param_1, u32 param_2, u32 param_3, u32 param_4);
@@ -81,10 +83,10 @@ void pass1_1010_dc36(u16  param_1,
                      u16  param_6);
 
 
-void load_str_1010_ddf6(u32 param_1, u32 param_2);
+void load_str_1010_ddf6(Globals *globals, struct_1010_ddf6_1 *param_1, Struct383 *param_2);
 
 
-void pass1_1010_de78(u32 param_1, u32 param_2);
+void pass1_1010_de78(Globals *globals, struct_1010_ddf6_1 *param_1, u32 param_2);
 
 
 char *load_string_1010_ac92(HINSTANCE16 param_1, u16 param_2, u16 param_3, i16 param_4);
@@ -111,10 +113,10 @@ void load_string_1010_84ac(u16 param_1, HINSTANCE16 param_3);
 
 
 void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
-                           u16         param_2,
-                           u16         in_resc_id_3,
-                           char       *in_buffer_4,
-                           short       in_buf_len_5);
+                           char *param_2,
+                           u16 in_resc_id_3,
+                           char *in_buffer_4,
+                           short in_buf_len_5);
 
 
 void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3);

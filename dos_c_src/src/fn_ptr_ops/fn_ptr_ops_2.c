@@ -454,7 +454,7 @@ void pass1_1038_1482(Globals *globals,
                     {
                         puVar8 = local_46;
                         uVar10 = uVar5;
-                        mem_op_1000_179c(0xa, local_46, SEG_1000);
+                        mem_op_1000_179c(0xa, local_46, 0);
                         puVar9 = (puVar8 | uVar10);
                         if(puVar9 == 0x0)
                         {
@@ -631,7 +631,7 @@ void pass1_1038_16f2(Globals *globals,
                             if(plStack50 == (long *)0x0)
                             {
                                 puVar4 = puVar7;
-                                mem_op_1000_179c(0xa, puVar12, SEG_1000);
+                                mem_op_1000_179c(0xa, puVar12, 0);
                                 uVar13 = (puVar12 | puVar4);
                                 if((puVar12 | puVar4) == 0x0)
                                 {

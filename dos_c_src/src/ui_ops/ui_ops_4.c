@@ -893,7 +893,7 @@ void  msg_box_ui_op_1038_8a3a(u32 param_1, char *param_2, u8 *param_3, u16 param
     u8   *puStack262;
     char  local_104[0x102];
 
-    mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
+    mem_op_1000_179c(SEG_1000, param_3, 0);
     pcStack264 = param_2;
     puStack262 = param_3;
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
@@ -990,7 +990,7 @@ void  msg_box_op_1038_8dda(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_206[0x102];
     char local_104[0x102];
 
-    mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
+    mem_op_1000_179c(SEG_1000, param_3, 0);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x100, local_206, param_4);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
@@ -1444,7 +1444,7 @@ void  msg_box_op_1038_81be(u32 param_1, char *param_2, u8 *param_3, u16 param_4)
     char local_206[0x102];
     char local_104[0x102];
 
-    mem_op_1000_179c(SEG_1000, param_3, SEG_1000);
+    mem_op_1000_179c(SEG_1000, param_3, 0);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, local_206, param_4);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, param_2, (short)param_3);
     load_string_1010_84e0(SEG_1010, globals->dat_1050_14cc, globals->dat_1050_14cc >> 0x10), 0x3ff, local_104, param_4);
@@ -1929,8 +1929,8 @@ void  pass1_1020_8bcc(Struct285 *param_1, u16 param_2)
         {
             uStack20 = pass1_1008_4772(paStack10);
             puVar6   = (uStack20 >> 0x10);
-            uVar3    = uStack20;
-            mem_op_1000_179c(0x14, puVar6, SEG_1000);
+            uVar3 = uStack20;
+            mem_op_1000_179c(0x14, puVar6, 0);
             uVar7 = puVar6 | uVar3;
             if(uVar7 == 0x0)
             {
@@ -1951,8 +1951,8 @@ void  pass1_1020_8bcc(Struct285 *param_1, u16 param_2)
             struct_op_1008_3f92((Struct76 *)CONCAT22(param_2, local_58), (Struct83 *)CONCAT22(param_2, local_3a));
             uStack20 = pass1_1008_4772((Struct76 *)CONCAT22(param_2, local_58));
             puVar6   = (uStack20 >> 0x10);
-            uVar3    = uStack20;
-            mem_op_1000_179c(0x14, puVar6, SEG_1000);
+            uVar3 = uStack20;
+            mem_op_1000_179c(0x14, puVar6, 0);
             uVar7 = puVar6 | uVar3;
             if(uVar7 == 0x0)
             {

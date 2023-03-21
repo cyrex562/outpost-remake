@@ -63,7 +63,7 @@ void pass1_1040_d0f8(Globals *globals, Struct57 *param_1, u16 param_2)
     u16_var1          = u16_var3 | param_1->field_9c;
     if(u16_var1 == 0x0)
     {
-        mem_op_1000_179c(0xc, u16_var3, SEG_1000);
+        mem_op_1000_179c(0xc, u16_var3, 0);
         u16_var4 = (u16_var3 | u16_var1);
         if(u16_var4 == 0x0)
         {
@@ -491,7 +491,7 @@ void  pass1_1040_807e(Struct395 *param_1, u16 param_2, u16 param_3)
                 puVar6 = extraout_DX_00;
             }
         }
-        mem_op_1000_179c(0x14, puVar6, SEG_1000);
+        mem_op_1000_179c(0x14, puVar6, 0);
         puVar7 = (puVar6 | puVar4);
         if(puVar7 == 0x0)
         {

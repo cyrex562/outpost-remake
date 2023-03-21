@@ -43,7 +43,8 @@ u32  pass1_1008_b38c(Struct196 *param_1, u16 param_2, u8 *param_3);
 
 
 
-void  pass1_1008_a1f0(u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *param_5, u16 *param_6, u16 *param_7, u16 *param_8);
+void pass1_1008_a1f0(Globals *globals, u16 param_1, u16 param_2, u8 param_3, u32 param_4, u16 *param_5, u16 *param_6,
+                     u16 *param_7, u16 *param_8);
 
 
 

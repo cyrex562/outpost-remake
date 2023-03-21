@@ -1530,7 +1530,7 @@ void pass1_1038_2306(Globals *globals, u16 param_1, u16 param_2, u32 param_3)
             {
                 if(iVar12->field_0x8 != 0x0)
                 {
-                    mem_op_1000_179c(NULL, 0x2a, uStack24, SEG_1000);
+                    mem_op_1000_179c(NULL, 0x2a, SEG_1000);
                     uVar10 = uStack24 | puVar7;
                     uVar14 = uVar10;
                     if(uVar10 == 0x0)
@@ -1545,7 +1545,7 @@ void pass1_1038_2306(Globals *globals, u16 param_1, u16 param_2, u32 param_3)
             }
             else
             {
-                mem_op_1000_179c(NULL, 0x2a, uStack24, SEG_1000);
+                mem_op_1000_179c(NULL, 0x2a, SEG_1000);
                 uVar10 = uStack24 | puVar7;
                 uVar14 = uVar10;
                 if(uVar10 == 0x0)
@@ -1615,9 +1615,9 @@ void pass1_1038_24e8(Globals *globals,
     puStack12 = (u_stack6 + 0x28);
     uStack16  = 0x64;
     uStack18  = (puStack12 + 0x4);
-    u_var2    = uStack18;
-    mem_op_1000_179c(NULL, 0xa, puVar4, SEG_1000);
-    uVar1  = u_var2;
+    u_var2 = uStack18;
+    mem_op_1000_179c(NULL, 0xa, SEG_1000);
+    uVar1 = u_var2;
     puVar3 = (puVar4 | uVar1);
     if(puVar3 == 0x0)
     {
@@ -1664,7 +1664,7 @@ void pass1_1038_24e8(Globals *globals,
             uStack16 = uStack16 - u_var2;
             if(uStack16 == 0x0)
             {
-                mem_op_1000_179c(NULL, 0x2a, puVar3, SEG_1000);
+                mem_op_1000_179c(NULL, 0x2a, SEG_1000);
                 puVar4 = (puVar3 | u_var2);
                 if(puVar4 == 0x0)
                 {
@@ -1678,7 +1678,7 @@ void pass1_1038_24e8(Globals *globals,
                                     *(iVar5 + 0x4));
                 }
                 pass1_1038_7a5a(globals->_PTR_LOOP_1050_5a64);
-                mem_op_1000_179c(NULL, 0xa, puVar4, SEG_1000);
+                mem_op_1000_179c(NULL, 0xa, SEG_1000);
                 puVar3 = (puVar4 | u_var2);
                 if(puVar3 == 0x0)
                 {
@@ -1713,7 +1713,7 @@ void pass1_1038_24e8(Globals *globals,
     }
     else
     {
-        mem_op_1000_179c(NULL, 0x2a, puVar3, SEG_1000);
+        mem_op_1000_179c(NULL, 0x2a, SEG_1000);
         if((puVar3 | u_var2) != 0x0)
         {
             pass1_1038_666e((u_var2 & 0xffff | ZEXT24(puVar3) << 0x10),
@@ -1762,7 +1762,7 @@ void pass1_1038_26ee(Globals *globals,
     uStack12 = pass1_1028_0d80(uVar9);
     uVar3    = uStack12;
     uStack16 = 0x64;
-    mem_op_1000_179c(NULL, 0xa, puVar6, SEG_1000);
+    mem_op_1000_179c(NULL, 0xa, SEG_1000);
     puVar4 = (puVar6 | uVar3);
     if(puVar4 == 0x0)
     {
@@ -1811,7 +1811,7 @@ void pass1_1038_26ee(Globals *globals,
             uStack16 = uStack16 - uStack36;
             if(uStack16 == 0x0)
             {
-                mem_op_1000_179c(NULL, 0x2a, puVar4, SEG_1000);
+                mem_op_1000_179c(NULL, 0x2a, SEG_1000);
                 uStack10 = uStack36;
                 puVar6   = (puVar4 | uStack10);
                 if(puVar6 == 0x0)
@@ -1826,7 +1826,7 @@ void pass1_1038_26ee(Globals *globals,
                                     *(iVar7 + 0x4));
                 }
                 pass1_1038_7a5a(globals->_PTR_LOOP_1050_5a64);
-                mem_op_1000_179c(NULL, 0xa, puVar6, SEG_1000);
+                mem_op_1000_179c(NULL, 0xa, SEG_1000);
                 puVar4 = (puVar6 | uStack10);
                 if(puVar4 == 0x0)
                 {
@@ -1865,7 +1865,7 @@ void pass1_1038_26ee(Globals *globals,
     }
     else
     {
-        mem_op_1000_179c(NULL, 0x2a, puVar4, SEG_1000);
+        mem_op_1000_179c(NULL, 0x2a, SEG_1000);
         if((puVar4 | uStack10) != 0x0)
         {
             pass1_1038_666e(CONCAT22(puVar4, uStack10),

@@ -69,12 +69,14 @@ u16 POPCOUNT(u16 a)
     return 0;
 }
 
-i16 SCARRY1(i16 a, i16 b)
-{
+i16 SCARRY1(i16 a, i16 b) {
     return 0;
 }
 
-u32 SUB41(u32 a, u8 b)
-{
+u32 SUB41(u32 a, u8 b) {
     return 0;
+}
+
+void *ptr_from_addr_pair(u16 segment, u16 offset) {
+
 }

@@ -529,7 +529,7 @@ void pass1_1000_16ee(u16 param_1, u16 param_2, u16 param_3);
 u16 fn_ptr_op_1000_1708(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 param_5, u16 param_6);
 
 
-void mem_op_1000_179c(Globals *globals, u16 param_1, u8 *param_2, u16 param_3);
+void mem_op_1000_179c(Globals *globals, u16 param_1, u16 param_3);
 
 
 

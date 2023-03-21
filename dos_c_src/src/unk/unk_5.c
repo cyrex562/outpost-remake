@@ -183,7 +183,7 @@ void  pass1_1030_7c50(Struct305 *param_1, long param_2, i16 param_3, u16 param_4
     puVar6 = param_5;
     if(iVar8->field_0x1e == 0x0)
     {
-        mem_op_1000_179c(0x18, param_5, SEG_1000);
+        mem_op_1000_179c(0x18, param_5, 0);
         puVar6 = (param_5 | param_4);
         if(puVar6 == 0x0)
         {
@@ -528,7 +528,7 @@ void  pass1_1030_88ce(u16 *param_1, u32 param_2, u32 param_3, u16 param_4)
     iVar4->field_0x36 = puVar1;
     for(iStack34 = 0x0; iStack34 < 0x5; iStack34 = iStack34 + 0x1)
     {
-        mem_op_1000_179c(0x10, puVar1, SEG_1000);
+        mem_op_1000_179c(0x10, puVar1, 0);
         pu_var2 = (puVar1 | uVar4);
         if(pu_var2 == 0x0)
         {
@@ -1000,7 +1000,7 @@ void  pass1_1030_6522(u32 *param_1, u32 param_2, u32 param_3, u16 param_4)
         (**ppcVar1)();
         puVar4 = extraout_DX;
     }
-    mem_op_1000_179c(0x18, puVar4, SEG_1000);
+    mem_op_1000_179c(0x18, puVar4, 0);
     puStack54 = pu_var2;
     puStack52 = puVar4;
     if((puVar4 | pu_var2) == 0x0)

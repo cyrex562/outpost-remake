@@ -489,27 +489,25 @@ LAB_1000_2d71:
             }
             if(!bVar3)
             {
-                bVar3   = true;
+                bVar3 = true;
                 bStack8 = bStack8 | 0x40;
                 goto LAB_1000_2d71;
             }
         }
     }
-LAB_1000_2da4:
+    LAB_1000_2da4:
     bVar2 = false;
     goto LAB_1000_2d71;
 }
-u32  mem_op_1000_1b68(u16 param_1, u16 param_2, u16 u16_addr_lo, u16 u16_addr_hi)
 
-{
+u32 mem_op_1000_1b68(u16 param_1, u16 param_2, u32 u32_ptr) {
     u32 uVar1;
 
-    if((u16_addr_lo + 0x14) != -0x4153)
-    {
+    if ((u32_ptr + 0x14) != -0x4153) {
         pass1_1000_1e61(NULL, param_2, 0xa, 0x0, 0x0);
         return param_1 << 0x10;
     }
-    uVar1 = mem_op_1000_1b9a(0x0, u16_addr_lo, u16_addr_hi, param_2);
+    uVar1 = mem_op_1000_1b9a(0x0, u32_ptr, u16_addr_hi, param_2);
     return uVar1;
 }
 

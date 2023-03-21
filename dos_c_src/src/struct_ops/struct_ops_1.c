@@ -591,8 +591,8 @@ void  pass1_1038_709c(Struct618 *param_1, u32 param_2, u8 *param_3, u16 param_4)
                 {
                     return;
                 }
-                paStack40 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar8     = (paStack40 >> 0x10);
+                paStack40 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar8 = (paStack40 >> 0x10);
                 uVar3     = (Struct617 *)paStack40;
                 if((uVar8 | uVar3) == 0x0)
                 {
@@ -618,8 +618,8 @@ void  pass1_1038_709c(Struct618 *param_1, u32 param_2, u8 *param_3, u16 param_4)
             else
             {
                 pass1_1030_7c50(param_2, iVar8->field_0x16, iVar8->field_0x12, 0x0, param_3);
-                paStack40 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar8     = (paStack40 >> 0x10);
+                paStack40 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar8 = (paStack40 >> 0x10);
                 uVar4     = (Struct619 *)paStack40;
                 if((uVar8 | uVar4) == 0x0)
                 {
@@ -650,8 +650,8 @@ void  pass1_1038_709c(Struct618 *param_1, u32 param_2, u8 *param_3, u16 param_4)
         }
         else
         {
-            paStack40 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-            uVar8     = (paStack40 >> 0x10);
+            paStack40 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+            uVar8 = (paStack40 >> 0x10);
             uVar5     = (Struct620 *)paStack40;
             puVar9    = (uVar8 | uVar5);
             if(puVar9 == 0x0)
@@ -688,8 +688,8 @@ void  pass1_1038_709c(Struct618 *param_1, u32 param_2, u8 *param_3, u16 param_4)
             pass1_1020_bb16(iVar8->field_0xe, CONCAT22(param_4, &local_a), CONCAT22(param_4, &local_6), uStack12);
             if(local_a != 0x0)
             {
-                paStack16 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar8     = (paStack16 >> 0x10);
+                paStack16 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar8 = (paStack16 >> 0x10);
                 uVar6     = (Struct621 *)paStack16;
                 if((uVar8 | uVar6) == 0x0)
                 {
@@ -788,8 +788,8 @@ void  pass1_1038_7356(Struct615 *param_1, u32 param_2, u16 param_3, u16 param_4,
             {
                 if(iVar9->field_0x14 == 0x0)
                     goto LAB_1038_74e0;
-                paStack50 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar7     = (paStack50 >> 0x10);
+                paStack50 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar7 = (paStack50 >> 0x10);
                 uVar10    = (Struct622 *)paStack50;
                 if((uVar7 | uVar10) == 0x0)
                 {
@@ -815,8 +815,8 @@ void  pass1_1038_7356(Struct615 *param_1, u32 param_2, u16 param_3, u16 param_4,
             }
             else
             {
-                paStack26 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar7     = (paStack26 >> 0x10);
+                paStack26 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar7 = (paStack26 >> 0x10);
                 uVar8     = (Struct616 *)paStack26;
                 if((uVar7 | uVar8) == 0x0)
                 {
@@ -1080,7 +1080,7 @@ void  pass1_1038_4d6e(u32 param_1, u32 *param_2, u16 param_3, u8 *param_4)
     u32         uStack10;
     u32 *pu_stack6;
 
-    mem_op_1000_179c(0x18, param_4, SEG_1000);
+    mem_op_1000_179c(0x18, param_4, 0);
     if((param_4 | param_3) == 0x0)
     {
         param_3 = 0x0;
@@ -1166,7 +1166,7 @@ void  pass1_1038_4e78(u16 param_1, u8 *param_2, u32 param_3, u32 *param_4)
     u32         uStack10;
     u32 *pu_stack6;
 
-    mem_op_1000_179c(0x18, param_2, SEG_1000);
+    mem_op_1000_179c(0x18, param_2, 0);
     if((param_2 | param_1) == 0x0)
     {
         param_1 = 0x0;
@@ -1476,8 +1476,8 @@ void  pass1_1038_1d68(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
                             uStack44 = 0x0;
                             uStack78 = uVar5;
                         }
-                        paStack82 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                        uVar12    = (paStack82 >> 0x10);
+                        paStack82 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                        uVar12 = (paStack82 >> 0x10);
                         uVar13    = paStack82;
                         if((uVar12 | uVar13) == 0x0)
                         {
@@ -1625,7 +1625,7 @@ void  pass1_1038_201a(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 pa
                 uVar11   = uStack10;
             }
             uVar7 = uVar11;
-            mem_op_1000_179c(0x2a, uVar12, SEG_1000);
+            mem_op_1000_179c(0x2a, uVar12, 0);
             puVar10 = (uVar12 | uVar7);
             if(puVar10 == 0x0)
                 goto LAB_1038_20fa;
@@ -1654,7 +1654,7 @@ void  pass1_1038_201a(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 pa
                 uVar11   = uStack10;
             }
             uVar7 = uVar11;
-            mem_op_1000_179c(0x2a, uVar12, SEG_1000);
+            mem_op_1000_179c(0x2a, uVar12, 0);
             puVar10 = (uVar12 | uVar7);
             if(puVar10 == 0x0)
                 goto LAB_1038_20fa;
@@ -1682,7 +1682,7 @@ void  pass1_1038_201a(u16 param_1, u16 param_2, u32 param_3, u16 param_4, u16 pa
             uVar12   = uStack10;
         }
         uVar7 = uVar12;
-        mem_op_1000_179c(0x2a, uVar11, SEG_1000);
+        mem_op_1000_179c(0x2a, uVar11, 0);
         puVar10 = (uVar11 | uVar7);
         if(puVar10 == 0x0)
         {
@@ -2061,8 +2061,8 @@ void  pass1_1038_0f8c(u16 param_1, u16 param_2, u32 *param_3, u32 param_4, u16 p
                         uStack44 = 0x0;
                         uStack76 = uVar12;
                     }
-                    paStack80 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                    uVar12    = (paStack80 >> 0x10);
+                    paStack80 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                    uVar12 = (paStack80 >> 0x10);
                     uVar11    = paStack80;
                     if((uVar12 | uVar11) == 0x0)
                     {

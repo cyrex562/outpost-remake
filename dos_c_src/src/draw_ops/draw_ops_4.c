@@ -258,9 +258,9 @@ void  create_palette_1008_4e38(Struct13 *in_struct_1, LOGPALETTE *in_log_palette
     uVar4          = (in_struct_1->field_0xc + 0x2) * 0x4;
     if(in_struct_1->field_0xe == 0x0)
     {
-        in_log_palette_2 = (LOGPALETTE *)SEG_1000;
-        mem_op_1000_179c(uVar4, param_3, SEG_1000);
-        in_struct_1->field_0xe         = uVar4;
+        in_log_palette_2 = (LOGPALETTE *) SEG_1000;
+        mem_op_1000_179c(uVar4, param_3, 0);
+        in_struct_1->field_0xe = uVar4;
         (in_struct_1->field_0xe + 0x2) = param_3;
         *in_struct_1->field_0xe         = 0x300;
         uVar3                              = in_struct_1->field_0xe;
@@ -601,7 +601,7 @@ void set_sys_color_1008_357e(Globals  *globals,
     uStack48  = 0x8000;
     if(&param_1->field_0xf8 == 0x0)
     {
-        mem_op_1000_179c(0x54, 0x100, SEG_1000);
+        mem_op_1000_179c(0x54, 0x100, 0);
         param_1->field_0xf8 = uVar1;
         param_1->field_0xfa = iVar2;
         in_index_3        = SEG_1000;

@@ -1372,8 +1372,8 @@ void  pass1_1030_b9da(Struct402 *param_1, u32 param_2, u32 param_3, u32 param_4,
     iVar7  = (Struct402 *)param_1;
     if(iVar7->field_0xe == (long *)0x0)
     {
-        mem_op_1000_179c(0xa, puVar3, SEG_1000);
-        uVar4   = puVar3 | param_4;
+        mem_op_1000_179c(0xa, puVar3, 0);
+        uVar4 = puVar3 | param_4;
         param_3 = uVar4;
         if(uVar4 == 0x0)
         {

@@ -9,6 +9,7 @@
 
 #include <stdarg.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 void InitTask16(CONTEXT *context)
 {

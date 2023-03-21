@@ -32,23 +32,23 @@ void pass1_1018_3d44(Struct679 *param_1, u32 *param_2, u32 *param_3);
 void pass1_1018_3d6c(Struct679 *param_1);
 
 
-void pass1_1018_3e8c(u16 param_1, u16 param_2, u16 *param_3, u16 *param_4);
+void pass1_1018_3e8c(Struct263 *param_1, u16 param_2, u16 *param_3, u16 *param_4);
 
 
 void pass1_1018_3ea4(u32 param_1);
 
 
-void pass1_1018_427c(u32 param_1);
+void pass1_1018_427c(Struct263 *param_1);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1018_435e(u32  param_1,
+void pass1_1018_435e(Struct263 *param_1,
                      long param_2,
-                     i16  param_3,
-                     i16  param_4,
-                     u16  param_5,
-                     u16  param_6);
+                     i16 param_3,
+                     i16 param_4,
+                     u16 param_5,
+                     u16 param_6);
 
 
 u16 switch_1018_43ec(u16 param_1, u16 param_2, u16 param_3);

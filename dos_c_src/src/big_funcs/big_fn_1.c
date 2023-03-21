@@ -63,7 +63,7 @@ LAB_1008_162a:
     switch(param_5 + -0x1)
     {
     case 0x0:
-        mem_op_1000_179c(NULL, 0xec, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xec, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -82,7 +82,7 @@ LAB_1008_162a:
         fn_ptr_op_1000_24cd(NULL, 0x1, &stack0xfffe);
         goto LAB_1008_2b3a;
     case 0x2:
-        mem_op_1000_179c(NULL, 0xfa, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xfa, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -92,7 +92,7 @@ LAB_1008_162a:
         pass1_1018_e91e(p_stack32, (var3 + 0xcc), var3, param_3);
         break;
     case 0x3:
-        mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf6, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -102,7 +102,7 @@ LAB_1008_162a:
         pass1_1018_e230(param_3, p_stack32, (var3 + 0xcc), var3);
         break;
     case 0x4:
-        mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf6, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -112,7 +112,7 @@ LAB_1008_162a:
         struct_1020_7554(param_3, p_stack32, (var3 + 0xcc), var3);
         break;
     case 0x5:
-        mem_op_1000_179c(NULL, 0xf8, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf8, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -122,7 +122,7 @@ LAB_1008_162a:
         struct_1018_5840(NULL, p_stack32, (var3 + 0xcc), var3, param_3);
         break;
     case 0x6:
-        mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf6, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -132,7 +132,7 @@ LAB_1008_162a:
         struct_1020_2524(p_stack32, (var3 + 0xcc), var3, param_3);
         break;
     case 0x7:
-        mem_op_1000_179c(NULL, 0x118, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x118, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -142,7 +142,7 @@ LAB_1008_162a:
         unk_draw_op_1020_41c8(p_stack32, (var3 + 0xcc), var3, SEG_1020);
         break;
     case 0x8:
-        mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf6, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -152,7 +152,7 @@ LAB_1008_162a:
         pass1_1018_e5dc(NULL, param_3, p_stack32, (var3 + 0xcc), var3);
         break;
     case 0x9:
-        mem_op_1000_179c(NULL, 0xf6, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf6, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -163,8 +163,8 @@ LAB_1008_162a:
         break;
     case 0xa:
         win_1008_5c5c(param_3, param_1, var5, globals->_PTR_LOOP_1050_02a0, 0x1d3);
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
-        p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
+            mem_op_1000_179c(NULL, 0xf2, SEG_1000);
+            p_stack32 = (Struct20 *) CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
             goto LAB_1008_169a;
@@ -175,7 +175,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0xb:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -187,7 +187,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0xc:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -199,7 +199,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0xd:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -211,7 +211,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0xe:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -223,7 +223,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0xf:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -235,7 +235,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x10:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -247,7 +247,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x11:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -259,7 +259,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x12:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -271,7 +271,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x13:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -283,7 +283,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x14:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -295,7 +295,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x15:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -307,7 +307,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x16:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -319,7 +319,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x17:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -331,7 +331,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x18:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -343,7 +343,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x19:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -355,7 +355,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x1a:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -367,7 +367,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x1b:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -379,7 +379,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x1c:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -391,7 +391,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x1d:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -403,7 +403,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x1e:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -415,7 +415,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x20:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -427,7 +427,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x21:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -439,7 +439,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x22:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -451,7 +451,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x23:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -463,7 +463,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x24:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -475,7 +475,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x25:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -487,7 +487,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x26:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -499,7 +499,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x27:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -511,7 +511,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x28:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -523,7 +523,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x29:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -535,7 +535,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2a:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -547,7 +547,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2b:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -559,7 +559,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2c:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -571,7 +571,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2d:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -583,7 +583,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2e:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -595,7 +595,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x2f:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -607,7 +607,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x30:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -619,7 +619,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x31:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -631,7 +631,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x32:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -643,7 +643,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x33:
-        mem_op_1000_179c(NULL, 0x114, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0x114, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -655,7 +655,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x34:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -667,7 +667,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x35:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -679,7 +679,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x36:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -691,7 +691,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x37:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -703,7 +703,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x38:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -715,7 +715,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x39:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -727,7 +727,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3a:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -739,7 +739,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3b:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -751,7 +751,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3c:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -763,7 +763,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3d:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -775,7 +775,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3e:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -787,7 +787,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x3f:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -799,7 +799,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x40:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -811,7 +811,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x41:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -823,7 +823,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x42:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -835,7 +835,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x43:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -847,7 +847,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x44:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -859,7 +859,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x45:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -871,7 +871,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x46:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -883,7 +883,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x47:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -895,7 +895,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x48:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -907,7 +907,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x49:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -919,7 +919,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4a:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -931,7 +931,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4b:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -943,7 +943,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4c:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -955,7 +955,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4d:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -967,7 +967,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4e:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -979,7 +979,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x4f:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -991,7 +991,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x50:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1003,7 +1003,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x51:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1015,7 +1015,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x52:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1027,7 +1027,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x54:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1039,7 +1039,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x55:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1051,7 +1051,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x56:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1063,7 +1063,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x57:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1075,7 +1075,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x58:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1087,7 +1087,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x59:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1099,7 +1099,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5a:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1111,7 +1111,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5b:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1123,7 +1123,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5c:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1135,7 +1135,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5d:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1147,7 +1147,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5e:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1159,7 +1159,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x5f:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1171,7 +1171,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x60:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1183,7 +1183,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x61:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1195,7 +1195,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x62:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1207,7 +1207,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x63:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1219,7 +1219,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x64:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1231,7 +1231,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x65:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1243,7 +1243,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x66:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1255,7 +1255,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x67:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)
@@ -1267,7 +1267,7 @@ LAB_1008_162a:
         param_1 = p_var2;
         break;
     case 0x68:
-        mem_op_1000_179c(NULL, 0xf2, var5, SEG_1000);
+        mem_op_1000_179c(NULL, 0xf2, SEG_1000);
         p_stack32 = (Struct20 *)CONCAT22(var5, param_1);
         var5      = (var5 | param_1);
         if(var5 == 0x0)

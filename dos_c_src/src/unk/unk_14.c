@@ -595,8 +595,8 @@ void  pass1_1008_58a6(u32 param_1, u32 param_2)
     u16         uVar6;
     Struct99 *paStack6;
 
-    paStack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_029c);
-    uVar3    = (paStack6 >> 0x10);
+    paStack6 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_029c);
+    uVar3 = (paStack6 >> 0x10);
     u_var2    = paStack6;
     if((uVar3 | u_var2) == 0x0)
     {
@@ -648,8 +648,8 @@ void  pass1_1008_593c(u32 *param_1, u32 param_2)
         (**ppcVar2)();
         return;
     }
-    paStack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_029c);
-    uVar4    = (paStack6 >> 0x10);
+    paStack6 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_029c);
+    uVar4 = (paStack6 >> 0x10);
     uVar3    = paStack6;
     if((uVar4 | uVar3) == 0x0)
     {

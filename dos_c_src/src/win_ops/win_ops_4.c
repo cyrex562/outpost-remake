@@ -167,7 +167,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     iVar8                       = param_1;
     puVar4                      = (iVar8 + 0x8);
     globals->PTR_LOOP_1050_0396 = puVar4;
-    mem_op_1000_179c(0x12, param_2, SEG_1000);
+    mem_op_1000_179c(0x12, param_2, 0);
     puVar6 = (param_2 | puVar4);
     if(puVar6 != 0x0)
     {
@@ -175,7 +175,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
         puVar6  = (puVar11 >> 0x10);
         puVar4  = puVar11;
     }
-    mem_op_1000_179c(0x6, puVar6, SEG_1000);
+    mem_op_1000_179c(0x6, puVar6, 0);
     if((puVar6 | puVar4) == 0x0)
     {
         (iVar8 + 0xe0) = 0x0;
@@ -190,8 +190,8 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     (**ppcVar3)(SEG_1000, param_1, 0x0, 0x15a, SEG_1050);
     uVar10 = SEG_1000;
     puVar6 = extraout_DX_00;
-    mem_op_1000_179c(0xec, extraout_DX_00, SEG_1000);
-    paStack6 = (struct Struct20 *)CONCAT22(puVar6, puVar4);
+    mem_op_1000_179c(0xec, extraout_DX_00, 0);
+    paStack6 = (struct Struct20 *) CONCAT22(puVar6, puVar4);
     uVar7    = puVar6 | puVar4;
     if(uVar7 == 0x0)
     {

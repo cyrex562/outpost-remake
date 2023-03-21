@@ -92,9 +92,9 @@ void pass1_1028_858c(Struct318 *param_1,u8 *param_2, Struct319 *param_3)
     undefined2 uVar8;
     undefined2 *puStack_a;
 
-    paVar5 = (astruct_57 *)CONCAT22(in_register_0000000a,param_2);
-    mem_op_1000_179c(0x112,paVar5);
-    uVar4 = (uint)paVar5;
+    paVar5 = (astruct_57 *) CONCAT22(in_register_0000000a, param_2);
+    mem_op_1000_179c(0x112, paVar5, 0);
+    uVar4 = (uint) paVar5;
     puStack_a = (undefined2 *)CONCAT22(uVar4,param_1);
     if ((uVar4 | (uint)param_1) != 0) {
         *puStack_a = 0x389a;

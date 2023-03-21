@@ -1776,8 +1776,8 @@ void pass1_1020_c872(u32 param_1, u32 param_2, u32 param_3)
     Struct99 *pu_stack6;
     Struct99 *uVar5;
 
-    pu_stack6 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_4fb8);
-    uVar6    = (pu_stack6 >> 0x10);
+    pu_stack6 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_4fb8);
+    uVar6 = (pu_stack6 >> 0x10);
     uVar5    = (Struct99 *)pu_stack6;
     if((uVar6 | uVar5) == 0x0)
     {

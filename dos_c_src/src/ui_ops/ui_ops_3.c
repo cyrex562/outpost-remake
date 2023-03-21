@@ -93,7 +93,7 @@ void  win_ui_op_1040_0000(Struct1 *param_1, u8 *param_2, HWND16 param_3)
         rect     = (Struct160 *)&local_24;
         MapDialogRect16(param_3, (RECT16 *)rect);
         param_3 = SEG_1000;
-        mem_op_1000_179c(0x42, param_2, SEG_1000);
+        mem_op_1000_179c(0x42, param_2, 0);
         uVar1 = param_2 | rect;
         if(uVar1 == 0x0)
         {
@@ -679,8 +679,8 @@ void  win_ui_op_1038_e348(Struct1 *param_1)
         uStack30  = 0x1;
         uStack28  = 0x1;
         rect      = (Struct160 *)&local_22;
-        MapDialogRect16(SEG_1010, (RECT16 *)rect);
-        mem_op_1000_179c(0x42, puVar3, SEG_1000);
+        MapDialogRect16(SEG_1010, (RECT16 *) rect);
+        mem_op_1000_179c(0x42, puVar3, 0);
         uVar4 = puVar3 | rect;
         if(uVar4 == 0x0)
         {
@@ -1000,7 +1000,7 @@ void  show_win_1038_cb5c(Struct1 *param_1)
         puVar6 = pass1_1008_eb5c(uVar1, (uVar1 >> 0x10), iStack10);
         puVar3 = (puVar6 >> 0x10);
         puVar7 = puVar6;
-        mem_op_1000_179c(0x42, puVar3, SEG_1000);
+        mem_op_1000_179c(0x42, puVar3, 0);
         uVar4 = (puVar7 >> 0x10);
         in_DX = uVar4 | (Struct160 *)puVar7;
         if(puVar7 != 0x0)
@@ -1236,7 +1236,7 @@ void  win_ui_op_1038_d2a2(Struct1 *param_1)
         rect     = (Struct160 *)&local_16;
         MapDialogRect16(hwnd, (RECT16 *)rect);
         hwnd_00 = SEG_1000;
-        mem_op_1000_179c(0x42, in_DX, SEG_1000);
+        mem_op_1000_179c(0x42, in_DX, 0);
         puVar3 = (in_DX | rect);
         if(puVar3 == 0x0)
         {
@@ -1499,9 +1499,9 @@ void window_op_1038_d8b2(Globals *globals, i16 param_1, HINSTANCE16 param_2, u16
         (param_1 + -0x20) = 0x1;
         (param_1 + -0x1e) = 0x1;
         rect              = (Struct160 *)(param_1 + -0x24);
-        MapDialogRect16(SEG_1010, (RECT16 *)rect);
-        mem_op_1000_179c(0x42, puVar6, SEG_1000);
-        *(Struct160 **)(param_1 + -0x28) = rect;
+        MapDialogRect16(SEG_1010, (RECT16 *) rect);
+        mem_op_1000_179c(0x42, puVar6, 0);
+        *(Struct160 **) (param_1 + -0x28) = rect;
         (param_1 + -0x26)                  = puVar6;
         globals->dat_1050_5f2e             = (puVar6 | rect);
         if(globals->dat_1050_5f2e == 0x0)
@@ -1843,8 +1843,8 @@ u32  win_ui_op_1038_b922(u32 *param_1, u32 param_2, u16 param_3, u16 param_4, HW
             pcVar11 = load_string_1010_847eglobals->dat_1050_14cc, SEG_1010);
             puVar6  = (pcVar11 >> 0x10);
             uVar5   = wsprintf16(SEG_1010, local_414, &param_6->style);
-            uVar9   = SEG_1000;
-            mem_op_1000_179c(0xb4, puVar6, SEG_1000);
+            uVar9 = SEG_1000;
+            mem_op_1000_179c(0xb4, puVar6, 0);
             if((puVar6 | uVar5) == 0x0)
             {
                 paVar12 = 0x0;

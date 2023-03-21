@@ -142,7 +142,7 @@ void enable_window_1020_1bd4(Globals *globals, i16 param_1, u16 param_2, u16 par
     if(bVar2)
     {
         uVar5 = SEG_1000;
-        mem_op_1000_179c(0xb4, in_DX, SEG_1000);
+        mem_op_1000_179c(0xb4, in_DX, 0);
         puVar4 = (in_DX | in_AX);
         if(puVar4 == 0x0)
         {
@@ -598,8 +598,8 @@ void mixed_ui_op_1020_179c(Struct1 *param_1)
     ppcVar2         = ((iVar9 + 0x8e) + 0x10);
     (**ppcVar2)(SEG_1010, (iVar9 + 0x8e), uVar12, uStack8);
     puStack76 = extraout_DX;
-    mem_op_1000_179c(0x12, extraout_DX, SEG_1000);
-    puVar7   = (puStack76 | uVar8);
+    mem_op_1000_179c(0x12, extraout_DX, 0);
+    puVar7 = (puStack76 | uVar8);
     uStack78 = uVar8;
     if(puVar7 == 0x0)
     {
@@ -753,8 +753,8 @@ void win_ui_op_1018_5e9a(Struct1 *param_1, u16 param_2)
     uVar10          = (param_1 >> 0x10);
     iVar9           = param_1;
     *(iVar9 + 0x8e) = uVar7;
-    (iVar9 + 0x90)  = puVar5;
-    mem_op_1000_179c(0x12, puVar5, SEG_1000);
+    (iVar9 + 0x90) = puVar5;
+    mem_op_1000_179c(0x12, puVar5, 0);
     puVar6 = (puVar5 | uVar7);
     if(puVar6 == 0x0)
     {
@@ -902,7 +902,7 @@ void unk_win_ui_op_1018_4f18(Struct39 *param_1, u16 param_2, u32 param_3)
             puVar5 = extraout_DX_00;
         }
     }
-    mem_op_1000_179c(0x14, puVar5, SEG_1000);
+    mem_op_1000_179c(0x14, puVar5, 0);
     puVar6 = (puVar5 | pu_var2);
     if(puVar6 == 0x0)
     {
@@ -919,8 +919,8 @@ void unk_win_ui_op_1018_4f18(Struct39 *param_1, u16 param_2, u32 param_3)
     rect = &local_12;
     GetClientRect16(SEG_1008, rect);
     uVar9 = SEG_1000;
-    mem_op_1000_179c(0x1e, puVar6, SEG_1000);
-    paStack22 = (Struct76 *)CONCAT22(puVar6, rect);
+    mem_op_1000_179c(0x1e, puVar6, 0);
+    paStack22 = (Struct76 *) CONCAT22(puVar6, rect);
     uVar7     = puVar6 | rect;
     if(uVar7 == 0x0)
     {
@@ -1289,8 +1289,8 @@ Struct43 *unk_io_op_1010_830a(u32 param_1, u16 param_2, u16 param_3)
             return (Struct43 *)0x0;
         }
         pu32_var1 = &local_2e;
-        struct_op_1008_48fe((Struct81 *)CONCAT22(param_3, pu32_var1), 0x1, uStack10, uStack10);
-        mem_op_1000_179c(0x1e, (uStack10 >> 0x10), SEG_1000);
+        struct_op_1008_48fe((Struct81 *) CONCAT22(param_3, pu32_var1), 0x1, uStack10, uStack10);
+        mem_op_1000_179c(0x1e, (uStack10 >> 0x10), 0);
         uVar3 = (uStack10 >> 0x10) | pu32_var1;
         if(uVar3 == 0x0)
         {

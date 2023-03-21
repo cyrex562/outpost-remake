@@ -698,7 +698,7 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
     {
         if((iVar10 + 0xfe) == 0x0)
         {
-            mem_op_1000_179c(0xfc, param_5, SEG_1000);
+            mem_op_1000_179c(0xfc, param_5, 0);
             uVar14 = CONCAT22(param_5 | uVar7, uVar7);
             if((param_5 | uVar7) == 0x0)
             {
@@ -738,8 +738,8 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
                 *pi_var1 = *pi_var1 + 0x1;
                 u_var2   = (iVar10 + 0xcc);
                 uVar12  = 0xfe;
-                UVar6   = u_var2;
-                mem_op_1000_179c(0xfe, puVar9, SEG_1000);
+                UVar6 = u_var2;
+                mem_op_1000_179c(0xfe, puVar9, 0);
                 puVar8 = (puVar9 | UVar6);
                 if(puVar8 == 0x0)
                 {
@@ -783,7 +783,7 @@ void  ui_op_1020_536e(u32 param_1, u32 param_2, i16 param_3, i16 param_4, u8 *pa
         uVar7 = param_4 - 0x3;
         if((uVar7 == 0x0) && ((iVar10 + 0x102) == 0x0))
         {
-            mem_op_1000_179c(0xfc, param_5, SEG_1000);
+            mem_op_1000_179c(0xfc, param_5, 0);
             puVar9 = (param_5 | uVar7);
             if(puVar9 == 0x0)
             {
@@ -1323,7 +1323,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
     puStack18 = puVar4;
     if(puVar4 == 0x6b8)
     {
-        mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+        mem_op_1000_179c(0xb4, puVar7, 0);
         uStack42 = CONCAT22(puVar7, puVar4);
         puVar8   = (puVar7 | puVar4);
         if(puVar8 == 0x0)
@@ -1355,7 +1355,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
     {
         if(puVar4 == 0x6b4)
         {
-            mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+            mem_op_1000_179c(0xb4, puVar7, 0);
             uStack42 = CONCAT22(puVar7, puVar4);
             puVar8   = (puVar7 | puVar4);
             if(puVar8 == 0x0)
@@ -1395,7 +1395,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
                                   unaff_SS,
                                   in_AF);
             uVar12 = SEG_1000;
-            mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+            mem_op_1000_179c(0xb4, puVar7, 0);
             uStack42 = CONCAT22(puVar7, uVar6);
             if((puVar7 | uVar6) == 0x0)
             {
@@ -1443,7 +1443,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
         if(0x6b1 < puVar4)
         {
             uVar12 = SEG_1000;
-            mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+            mem_op_1000_179c(0xb4, puVar7, 0);
             uStack42 = CONCAT22(puVar7, puVar4);
             puVar8   = (puVar7 | puVar4);
             if(puVar8 == 0x0)
@@ -1468,7 +1468,7 @@ void win_ui_op_1020_5e76(Globals *globals, u32 param_1, u16 param_2, u16 param_3
             p_var2       = CONCAT22(puVar8, puVar10);
             goto LAB_1020_6027;
         }
-        mem_op_1000_179c(0xb4, puVar7, SEG_1000);
+        mem_op_1000_179c(0xb4, puVar7, 0);
         uStack42 = CONCAT22(puVar7, puVar4);
         puVar8   = (puVar7 | puVar4);
         if(puVar8 == 0x0)
@@ -1882,8 +1882,8 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
         if(param_2 == 0x102)
         {
             uVar16 = 0x0;
-            mem_op_1000_179c(0xb4, param_3, SEG_1000);
-            puVar8    = (param_3 | param_2);
+            mem_op_1000_179c(0xb4, param_3, 0);
+            puVar8 = (param_3 | param_2);
             uStack34  = param_2;
             puStack32 = param_3;
             if(puVar8 == 0x0)
@@ -1973,8 +1973,8 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
                 if(uStack22 == 0x0)
                 {
                     uVar16 = 0x0;
-                    mem_op_1000_179c(0xb4, puVar7, SEG_1000);
-                    puVar8    = (puVar7 | uStack22);
+                    mem_op_1000_179c(0xb4, puVar7, 0);
+                    puVar8 = (puVar7 | uStack22);
                     uStack34  = uStack22;
                     puStack32 = puVar7;
                     if(puVar8 == 0x0)
@@ -2051,7 +2051,7 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
                             return;
                         }
                         uVar16 = 0x0;
-                        mem_op_1000_179c(0xb4, puStack32, SEG_1000);
+                        mem_op_1000_179c(0xb4, puStack32, 0);
                         puVar8 = (puStack32 | uStack34);
                         if(puVar8 == 0x0)
                         {
@@ -2090,7 +2090,7 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
                         if(uStack34 != 0x0)
                         {
                             uVar16 = 0x0;
-                            mem_op_1000_179c(0xb4, puStack32, SEG_1000);
+                            mem_op_1000_179c(0xb4, puStack32, 0);
                             puVar8 = (puStack32 | uStack34);
                             if(puVar8 == 0x0)
                             {
@@ -2127,7 +2127,7 @@ void  win_sys_op_1020_493c(u32 *param_1, u16 param_2, u8 *param_3, u16 param_4, 
                             return;
                         }
                         uVar16 = 0x0;
-                        mem_op_1000_179c(0xb4, puStack32, SEG_1000);
+                        mem_op_1000_179c(0xb4, puStack32, 0);
                         puVar8 = (puStack32 | uStack34);
                         if(puVar8 == 0x0)
                         {
@@ -2446,7 +2446,7 @@ void win_ui_op_1020_2cf0(Globals *globals, Struct0 *param_1)
     ppcVar2                    = ((param_1->field_0xf2) + 0x30);
     (**ppcVar2)(LAST_SEGMENT, uVar1, (uVar1 >> 0x10), icon_handle_1, puVar12);
     puVar6 = extraout_DX;
-    mem_op_1000_179c(0x22, extraout_DX, SEG_1000);
+    mem_op_1000_179c(0x22, extraout_DX, 0);
     uVar7 = puVar6 | icon_handle_1;
     if(uVar7 == 0x0)
     {
@@ -2645,7 +2645,7 @@ void  window_op_1020_38aa(Struct0 *param_1)
     (**ppcVar1)(SEG_1010, (uVar11 + 0xfa), 0x0, u_var2, uVar8);
     puVar7 = extraout_DX;
     pass1_1018_1a8e(*(uVar11 + 0xfa), extraout_DX, unaff_DI, unaff_SS);
-    mem_op_1000_179c(0x20, puVar7, SEG_1000);
+    mem_op_1000_179c(0x20, puVar7, 0);
     puVar6 = (puVar7 | u_var2);
     if(puVar6 == 0x0)
     {
@@ -2660,8 +2660,8 @@ void  window_op_1020_38aa(Struct0 *param_1)
     }
     uVar4           = (uVar11 + 0xf6);
     (uVar11 + 0xe8) = uVar4;
-    mem_op_1000_179c(0x42, puVar6, SEG_1000);
-    paVar3 = (Struct160 *)uVar4;
+    mem_op_1000_179c(0x42, puVar6, 0);
+    paVar3 = (Struct160 *) uVar4;
     puVar7 = (puVar6 | paVar3);
     if(puVar7 == 0x0)
     {
@@ -2674,7 +2674,7 @@ void  window_op_1020_38aa(Struct0 *param_1)
         (uVar11 + 0x104)                  = puVar7;
     }
     HVar9 = SEG_1000;
-    mem_op_1000_179c(0x42, puVar7, SEG_1000);
+    mem_op_1000_179c(0x42, puVar7, 0);
     uVar8 = puVar7 | paVar3;
     if(uVar8 == 0x0)
     {
@@ -2692,8 +2692,8 @@ void  window_op_1020_38aa(Struct0 *param_1)
     (**ppcVar1)(HVar9, uVar4, (uVar4 >> 0x10));
     puVar7 = paVar3->field_0x2;
     uVar8  = MoveWindow16(HVar9, 0x1, &paVar3->field_0x6, &paVar3->field_0x4, (u16)puVar7, *(BOOL16 *)paVar3);
-    HVar9  = SEG_1000;
-    mem_op_1000_179c(0x8e, puVar7, SEG_1000);
+    HVar9 = SEG_1000;
+    mem_op_1000_179c(0x8e, puVar7, 0);
     u_var2 = puVar7 | uVar8;
     if(u_var2 == 0x0)
     {

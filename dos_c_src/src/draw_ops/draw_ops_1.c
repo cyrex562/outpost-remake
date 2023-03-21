@@ -1897,8 +1897,8 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
         if(paVar5 != (Struct18 *)0x0)
         {
             paStack10 = paVar5;
-            mem_op_1000_179c(0x18, puVar6, SEG_1000);
-            uVar3     = paVar5;
+            mem_op_1000_179c(0x18, puVar6, 0);
+            uVar3 = paVar5;
             paStack16 = (Struct18 *)(paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
             puVar7    = (puVar6 | uVar3);
             if(puVar7 == 0x0)
@@ -1914,9 +1914,9 @@ void draw_op_1038_92f6(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HWND1
             (param_1 + 0x92) = puVar7;
             (param_1 + 0x90) = 0x11;
             iStack12         = (param_1 + 0x90);
-            uVar3            = iStack12 * 0xa + 0x2;
-            mem_op_1000_179c(uVar3, puVar7, SEG_1000);
-            paStack16 = (Struct18 *)CONCAT22(puVar7, uVar3);
+            uVar3 = iStack12 * 0xa + 0x2;
+            mem_op_1000_179c(uVar3, puVar7, 0);
+            paStack16 = (Struct18 *) CONCAT22(puVar7, uVar3);
             if((puVar7 | uVar3) == 0x0)
             {
                 uVar1         = (param_1 + 0x90);

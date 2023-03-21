@@ -13,8 +13,10 @@ typedef u32 (*FnPtr2)(u16);
 
 typedef void(*FnPtr3)(u16, u16, u16, u16, u16);
 
-typedef void (*FnPtr4)(u32*, u32*, u8);
+typedef void (*FnPtr4)(u32 *, u32 *, u8);
 
-typedef u16(*Int21GetDosVersInfo)(void* dos_vers_info);
+typedef u16(*Int21GetDosVersInfo)(void *dos_vers_info);
+
+typedef void(*FnPtr5)(u16, u16, u16, u16, u16);
 
 #endif // OUTPOST_1_SRC_FN_PTR_DEFS_H_

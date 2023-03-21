@@ -60,7 +60,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
     iVar11 = param_1;
 //    uVar12 = (param_1 >> 0x10);
     create_window_ex_1008_9760(param_1, SEG_1008);
-    mem_op_1000_179c(0x42, in_DX, SEG_1000);
+    mem_op_1000_179c(0x42, in_DX, 0);
     puVar5 = (in_DX | in_AX);
     if(puVar5 != 0x0)
     {
@@ -79,7 +79,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0,
                         0);
     }
-    mem_op_1000_179c(0x42, puVar5, SEG_1000);
+    mem_op_1000_179c(0x42, puVar5, 0);
     puVar6 = (puVar5 | in_AX);
     if(puVar6 != 0x0)
     {
@@ -98,7 +98,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0,
                         0);
     }
-    mem_op_1000_179c(globals,0x42, puVar6, SEG_1000);
+    mem_op_1000_179c(globals, 0x42, SEG_1000);
     puVar5 = (puVar6 | in_AX);
     if(puVar5 != 0x0)
     {
@@ -130,7 +130,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
     ppcVar2                     = ((iVar11 + 0xf2) + 0x30);
     (**ppcVar2)(LAST_SEGMENT, uVar1, (uVar1 >> 0x10), uVar3, puVar10);
     puVar5 = extraout_DX;
-    mem_op_1000_179c(globals,0x24, extraout_DX, SEG_1000);
+    mem_op_1000_179c(globals, 0x24, SEG_1000);
     puVar6 = (puVar5 | uVar3);
     if(puVar6 == 0x0)
     {
@@ -176,7 +176,7 @@ void window_op_1020_2642(Globals *globals, Struct0 *param_1)
     //    uVar3 = (param_1 >> 0x10);
     //    iVar2 = param_1;
     get_dc_1018_4db0(*(param_1->field_0xf2), (param_1->field_0x8), SEG_1018);
-    mem_op_1000_179c(globals, 0x18, in_DX, SEG_1000);
+    mem_op_1000_179c(globals, 0x18, SEG_1000);
     uVar1 = in_DX | in_AX;
     if(uVar1 != 0x0)
     {

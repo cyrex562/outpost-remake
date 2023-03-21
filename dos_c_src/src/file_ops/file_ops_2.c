@@ -278,8 +278,8 @@ void pass1_1030_2c8a(Globals   *globals,
                     puVar8   = param_1->field_0x10;
                     unaff_DI = (puVar8 >> 0x10);
                     iVar8    = (Struct371 *)puVar8;
-                    uVar5    = iVar8->field_0x22 * 0x2;
-                    mem_op_1000_179c(uVar5, puVar6, SEG_1000);
+                    uVar5 = iVar8->field_0x22 * 0x2;
+                    mem_op_1000_179c(uVar5, puVar6, 0);
                     iVar8->field_0x24 = uVar5;
                     iVar8->field_0x26 = puVar6;
                     puVar8            = param_1->field_0x10;
@@ -490,8 +490,8 @@ u16 file_1030_1b18(Globals   *globals,
             }
             uVar3 = *piVar2 * 0x2;
             uVar6 = uVar3;
-            mem_op_1000_179c(uVar3, puVar7, SEG_1000);
-            piVar2           = param_1->field_0x10;
+            mem_op_1000_179c(uVar3, puVar7, 0);
+            piVar2 = param_1->field_0x10;
             uVar8            = (piVar2 >> 0x10);
             iVar7            = (Struct368 *)piVar2;
             iVar7->fld2_segment = uVar6;
@@ -1278,8 +1278,8 @@ void  pass1_1028_65e2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                 {
                     return;
                 }
-                paStack20 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                uVar5     = (paStack20 >> 0x10);
+                paStack20 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                uVar5 = (paStack20 >> 0x10);
                 u_var2     = paStack20;
                 if((uVar5 | u_var2) == 0x0)
                 {
@@ -1548,7 +1548,7 @@ BOOL16  file_1028_24a2(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 p
             uVar8 = 0x2a;
             uVar6 = local_4;
             uVar9 = param_2;
-            mem_op_1000_179c(0x2a, param_4, SEG_1000);
+            mem_op_1000_179c(0x2a, param_4, 0);
             puVar7 = (param_4 | uVar6);
             if(puVar7 == 0x0)
             {
@@ -1791,8 +1791,8 @@ void  pass1_1028_0374(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 pa
                     {
                         return;
                     }
-                    paStack20 = pass1_1000_07fc(SEG_1000, globals->PTR_LOOP_1050_68a2);
-                    uVar6     = (paStack20 >> 0x10);
+                    paStack20 = pass1_1000_07fc(SEG_1000, globals->u32_ptr_1050_68a2);
+                    uVar6 = (paStack20 >> 0x10);
                     u_var2     = (Struct728 *)paStack20;
                     if((uVar6 | u_var2) == 0x0)
                     {

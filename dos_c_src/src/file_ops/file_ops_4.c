@@ -34,9 +34,9 @@ void  file_1008_6414(u32 *param_1, u32 param_2, u16 param_3, u8 *param_4)
     param_1->field_0x0 = 0x0;
     (iVar4 + 0x4) = 0x0;
     pu_var2        = local_26;
-    struct_op_1008_48fe((Struct81 *)CONCAT22(param_3, pu_var2), 0x1, param_2, param_4);
-    mem_op_1000_179c(0x1e, param_4, SEG_1000);
-    paStack42 = (Struct76 *)CONCAT22(param_4, pu_var2);
+    struct_op_1008_48fe((Struct81 *) CONCAT22(param_3, pu_var2), 0x1, param_2, param_4);
+    mem_op_1000_179c(0x1e, param_4, 0);
+    paStack42 = (Struct76 *) CONCAT22(param_4, pu_var2);
     uVar3     = param_4 | pu_var2;
     if(uVar3 == 0x0)
     {
@@ -164,7 +164,7 @@ u16  read_file_1008_49e8(u32 param_1, u16 param_2, u16 param_3)
                 *(iVar7 + 0x12) = uVar3 | iVar2 + 0xe;
                 uVar3           = uVar3 | iVar2 + 0x436;
                 *(iVar7 + 0x16) = uVar3;
-                mem_op_1000_179c(0x14, puVar5, SEG_1000);
+                mem_op_1000_179c(0x14, puVar5, 0);
                 puVar6 = (puVar5 | uVar3);
                 if(puVar6 == 0x0)
                 {

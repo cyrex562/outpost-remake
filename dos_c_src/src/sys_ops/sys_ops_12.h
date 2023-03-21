@@ -42,7 +42,7 @@ void mem_1000_2ce8(i16 *param_1, u16 param_2, u16 param_3);
 u16 *pass1_1000_2d34(u16 param_1, u16 param_2, u8 *param_3, u8 param_4, u16 *param_5, i16 param_6);
 
 
-u32  mem_op_1000_1b68(u16 param_1, u16 param_2, u16 u16_addr_lo, u16 u16_addr_hi);
+u32 mem_op_1000_1b68(u16 param_1, u16 param_2, u32 u32_ptr);
 
 
 

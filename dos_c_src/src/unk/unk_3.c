@@ -323,8 +323,8 @@ void  pass1_1038_3ba0(u32 param_1) {
     uVar6   = uVar6 + 0x1;
     uVar13  = SEG_1000;
     puVar10 = extraout_DX;
-    uVar7   = uVar6;
-    mem_op_1000_179c(0x1c, extraout_DX, SEG_1000);
+    uVar7 = uVar6;
+    mem_op_1000_179c(0x1c, extraout_DX, 0);
     uVar11 = puVar10 | uVar7;
     if(uVar11 == 0x0) {
         iVar13->field_0x210 = 0x0;
@@ -705,7 +705,7 @@ void  pass1_1038_0000(u32 param_1, u16 param_2, u8 *param_3) {
     //     Preload
     //     Impure (Non-shareable)
     //
-    mem_op_1000_179c(0x108, param_3, SEG_1000);
+    mem_op_1000_179c(0x108, param_3, 0);
     puStack10 = CONCAT22(param_3, param_2);
     if((param_3 | param_2) != 0x0) {
         *puStack10      = addr_table_1008_380a[36]; // 0x389a

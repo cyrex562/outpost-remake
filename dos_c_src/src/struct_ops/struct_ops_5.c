@@ -17,13 +17,14 @@
 #include "unk/unk_15.h"
 #include "unk/unk_6.h"
 #include "utils.h"
+#include "structs/structs_1046.h"
+#include "function_tables.h"
 
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-Struct79                *pass1_1010_3702(Struct79 *param_1, u16 param_3)
 
-{
+Struct79 *pass1_1010_3702(Struct79 *param_1, u16 param_3) {
     struct_op_1010_1d48(param_1, param_3);
     param_1->field_0xa = 0x0;
     param_1->field_0x0 = addr_table_1010_37c4; // 0x37c4;
@@ -199,7 +200,7 @@ void struct_1010_0f9c(Struct232 *param_1, u16 param_2, u16 param_3)
     puVar7 = extraout_DX;
     pass1_1028_dc52((Struct92 *)CONCAT22(param_3, local_14), 0x1, 0x0, 0x700);
     u_var2 = iVar8->field_0x68 * 0x18;
-    mem_op_1000_179c(NULL, u_var2, puVar7, SEG_1000);
+    mem_op_1000_179c(NULL, u_var2, SEG_1000);
     iVar8->field_0x60 = u_var2;
     iVar8->field_0x62 = puVar7;
     puStack28         = CONCAT22(puVar7, iVar8->field_0x60);
@@ -250,7 +251,7 @@ void struct_1010_0f9c(Struct232 *param_1, u16 param_2, u16 param_3)
     } while(uStack30 != 0x0);
 LAB_1010_10ca:
     u_var2 = iVar8->field_0x68 << 0x2;
-    mem_op_1000_179c(NULL, u_var2, puVar7, SEG_1000);
+    mem_op_1000_179c(NULL, u_var2, SEG_1000);
     iVar8->field_0x64 = u_var2;
     iVar8->field_0x66 = puVar7;
     iStack32          = 0x0;
@@ -552,7 +553,7 @@ void pass1_1008_e164(Struct214 *param_1, u16 param_2, u8 param_3)
         pass1_1008_e852(uVar11, uVar10, uVar11->field_0x1a_addr_offset, param_2, puVar5);
         paVar9 = paVar3;
         puVar7 = puVar6;
-        mem_op_1000_179c(NULL, 0x14, puVar6, SEG_1000);
+        mem_op_1000_179c(NULL, 0x14, SEG_1000);
         uVar8 = puVar7 | paVar9;
         if(uVar8 == 0x0)
         {
@@ -1142,10 +1143,10 @@ u16 str_op_1008_60e8(char *param_1)
     {
         uVar1 = str_op_1000_3da4(param_1);
         uVar1 = uVar1 + 0x1;
-        mem_op_1000_179c(NULL, uVar1, param_2, SEG_1000);
+        mem_op_1000_179c(NULL, uVar1, SEG_1000);
         if((param_2 | uVar1) != 0x0)
         {
-            unk_str_op_1000_3d3e(CONCAT22(param_2, uVar1), param_1);
+            unk_str_op_1000_3d3e(uVar1, param_1);
             return uVar1;
         }
     }
@@ -1333,32 +1334,30 @@ struct Struct20 *pass1_1008_3ab8(struct Struct20 *param_1)
 }
 
 
-void struct_op_1008_0000(u16 *param_1)
-
-{
-    i16 iVar1;
-    u16 u_var2;
-
-    // Segment:    2
-    // Offset:     000060e0
-    // Length:     efe0
-    // Min Alloc:  efe0
-    // Flags:      0d50
-    //     Code
-    //     Moveable
-    //     Preload
-    //     Impure (Non-shareable)
-    //
-    u_var2 = (param_1 >> 0x10);
-    iVar1 = param_1;
+void struct_op_1008_0000(struct_1008_0000_1 *param_1) {
+//    i16 iVar1;
+//    u16 u_var2;
+//
+//    // Segment:    2
+//    // Offset:     000060e0
+//    // Length:     efe0
+//    // Min Alloc:  efe0
+//    // Flags:      0d50
+//    //     Code
+//    //     Moveable
+//    //     Preload
+//    //     Impure (Non-shareable)
+//    //
+//    u_var2 = (param_1 >> 0x10);
+//    iVar1 = param_1;
     param_1->field_0x0 = addr_table_1008_051e[3]//0x052a;
-            (iVar1 + 0x2) = SEG_1008;
-    (iVar1 + 0x4) = 0x0;
-    (iVar1 + 0x8) = 0x0;
+            (param_1->field_0x2) = SEG_1008;
+    (param_1->field_0x4) = 0x0;
+    (param_1->field_0x8) = 0x0;
     param_1->field_0x0 = addr_table_1008_051e;//0x51e;
-    (iVar1 + 0x2) = SEG_1008;
-    return;
+    (param_1->field_0x2) = SEG_1008;
 }
+
 SegmentAddress struct_op_1030_73a8(Globals *globals, Struct383 *param_1)
 
 {
