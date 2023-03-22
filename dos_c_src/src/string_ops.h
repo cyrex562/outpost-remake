@@ -69,7 +69,7 @@ void sprintf_op_1018_34b6(Globals *globals, struct struct_1018_34b6_1 *param_1, 
 void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3);
 
 
-BOOL16 string_1018_39d8(u16 param_1, u32 param_2, u32 param_3, u32 param_4);
+BOOL16 string_1018_39d8(Globals *globals, u16 param_1, u32 param_2, u32 param_3, u32 param_4);
 
 
 u32 pass1_1018_3a7a(u32 param_1, u32 param_2, u16 param_3, u16 param_4);

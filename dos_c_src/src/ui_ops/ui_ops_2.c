@@ -1181,7 +1181,7 @@ void  enable_win_1040_32a8(u32 param_1)
     uStack12  = param_1 & 0xffff0000 | lp_string;
     pass1_1018_3a5c(*(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), param_1 & 0xffff0000 | lp_string, unaff_SS);
     SetWindowText16(SEG_1018, lp_string);
-    BVar1 = string_1018_39d8(unaff_SS, *(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), uStack12);
+    BVar1 = string_1018_39d8(NULL, unaff_SS, *(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), uStack12);
     EnableWindow16(SEG_1018, BVar1 & 0x1);
     return;
 }

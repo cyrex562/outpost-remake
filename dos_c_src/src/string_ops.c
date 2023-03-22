@@ -522,6 +522,7 @@ cstring *string_op_1020_c222(u16 param_1, Globals *globals)
     case 0x13:
         break;
     case 0x14:
+        break;
     }
     pcVar1 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
     return pcVar1;
@@ -568,6 +569,7 @@ cstring *string_op_1020_c2f8(Globals *globals, u16 param_1)
     case 0xf:
         break;
     case 0x10:
+        break;
     }
     pcVar1 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
     return pcVar1;
@@ -663,9 +665,9 @@ void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3) {
 //    valist  = (WORD *)(param_1 >> 0x10);
 //    uVar10  = param_1;
     puVar1 = (param_1->field_0x140);
-    bVar11 = *puVar1 < uStack4;
+    bVar11 = (*puVar1 < uStack4);
     if (bVar11 || ((bVar11 || *puVar1 == uStack4 && (*(param_1->field_0x13e) < u_stack6)))) {
-        uVar3 = (param_1->field_0x13c);
+        uVar3 = *(param_1->field_0x13c);
         if ((param_1 + 0x13a) < uVar3) {
             uVar13 = switch_1018_3b9e(param_1, (param_1->field_0x12e), uVar3, uStack4, param_2);
             uVar8 = (uVar13 >> 0x10);
@@ -682,7 +684,7 @@ void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3) {
             }
             uVar4 = *param_1->field_0x138;
             puVar7 = param_1->field_0x136;
-            uVar9 = uVar4 | puVar7;
+            uVar9 = uVar4 | *puVar7;
             if (uVar9 != 0x0) {
                 ppcVar5 = *puVar7;
                 (**ppcVar5)(0x30, puVar7, uVar4, 0x1);
@@ -704,7 +706,7 @@ void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3) {
     }
 }
 
-BOOL16 string_1018_39d8(u16 param_1, u32 param_2, u32 param_3, u32 param_4)
+BOOL16 string_1018_39d8(Globals *globals, u16 param_1, u32 param_2, u32 param_3, u32 param_4)
 
 {
     i16   iVar1;
@@ -713,7 +715,7 @@ BOOL16 string_1018_39d8(u16 param_1, u32 param_2, u32 param_3, u32 param_4)
     u32   uVar4;
 
     uVar4  = param_3;
-    pcVar2 = load_string_1010_847e(u16_LOOP_1050_14cc, SEG_1010);
+    pcVar2 = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
     iVar1  = pass1_1000_3d7a(pcVar2, uVar4);
     if(iVar1 != 0x0)
     {

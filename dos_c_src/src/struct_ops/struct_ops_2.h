@@ -8,7 +8,7 @@
 #include "globals.h"
 #include "op_int.h"
 #include "op_windef.h"
-#include "struct_382.h"
+#include "structs/structs_3xx/struct_382.h"
 #include "structs/structs_1xx/structs_18x.h"
 #include "structs/structs_6xx/structs_61x.h"
 
