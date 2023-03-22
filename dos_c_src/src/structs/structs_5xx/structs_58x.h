@@ -501,6 +501,7 @@ struct Struct582
 };
 struct Struct589
 {
+    u8 field_0x0;
 };
 struct Struct588
 {
