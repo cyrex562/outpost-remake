@@ -990,7 +990,7 @@ struct Struct263
     u32 field_0x126;
     u16 field_0x12e;
     u16 *field_0x138;
-    u32 *field_0x136;
+    struct struct_1018_35b0_1 *field_0x136;
     u16 *field_0x13e;
     i16 *field_0x13a;
     u16 *field_0x140;

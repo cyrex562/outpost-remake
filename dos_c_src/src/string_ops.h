@@ -69,18 +69,19 @@ void sprintf_op_1018_34b6(Globals *globals, struct struct_1018_34b6_1 *param_1, 
 void unk_str_op_1018_35b0(Struct263 *param_1, u16 param_2, u16 param_3);
 
 
-BOOL16 string_1018_39d8(Globals *globals, u16 param_1, u32 param_2, u32 param_3, u32 param_4);
+BOOL16 string_1018_39d8(Globals *globals, u16 param_1, u32 param_2, u32 param_3, char *param_4);
 
 
 u32 pass1_1018_3a7a(u32 param_1, u32 param_2, u16 param_3, u16 param_4);
 
 
-void pass1_1010_dc36(u16  param_1,
-                     u16  param_2,
-                     u16  param_3,
-                     u32  param_4,
-                     u16 *param_5,
-                     u16  param_6);
+void pass1_1010_dc36(Globals *globals,
+                     u16      param_1,
+                     u16      param_2,
+                     u16      param_3,
+                     u32      param_4,
+                     struct_1010_dc36_1 *param_5,
+                     u16      param_6);
 
 
 void load_str_1010_ddf6(Globals *globals, struct_1010_ddf6_1 *param_1, Struct383 *param_2);
@@ -89,10 +90,15 @@ void load_str_1010_ddf6(Globals *globals, struct_1010_ddf6_1 *param_1, Struct383
 void pass1_1010_de78(Globals *globals, struct_1010_ddf6_1 *param_1, u32 param_2);
 
 
-char *load_string_1010_ac92(HINSTANCE16 param_1, u16 param_2, u16 param_3, i16 param_4);
+char *load_string_1010_ac92(Globals    *globals,
+                            HINSTANCE16 param_1,
+                            u16         param_2,
+                            u16         param_3,
+                            i16         param_4);
 
 
-char *string_op_1010_ada6(HINSTANCE16 param_1,
+char *string_op_1010_ada6(Globals    *globals,
+                          HINSTANCE16 param_1,
                           u16         param_2,
                           u16         param_3,
                           u16         param_4,
@@ -113,10 +119,9 @@ void load_string_1010_84ac(u16 param_1, HINSTANCE16 param_3);
 
 
 void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
-                           char *param_2,
-                           u16 in_resc_id_3,
-                           char *in_buffer_4,
-                           short in_buf_len_5);
+                           char       *param_2,
+                           u16         in_resc_id_3,
+                           char       *in_buffer_4);
 
 
 void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3);

@@ -51,7 +51,9 @@ void  cursor_op_1008_2dcc(i16 param_1, u16 param_2, u16 param_3, HINSTANCE16 in_
         (**ppcVar2)(LAST_SEGMENT, uVar1, (uVar1 >> 0x10), cursor_handle, uVar5);
         in_DX = extraout_DX;
     }
-    big_switch_1008_15d4(uVar4, LAST_SEGMENT, unaff_SS, CONCAT22(param_2, param_1), CONCAT22(cursor_handle, param_3));
+    big_switch_1008_15d4(uVar4, LAST_SEGMENT, unaff_SS,
+                         str_var1(param_2, param_1),
+                         str_var1(cursor_handle, param_3));
     *(HCURSOR16 *)(param_1 + 0xe8) = HVar3;
     (param_1 + 0xea)               = in_DX;
     uVar1                          = (param_1 + 0xe8);
@@ -105,34 +107,36 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
     if(UStack266 == 0x0)
     {
         save_file_1008_3178(NULL, param_1, 0x1, param_2);
-        UStack266 = CONCAT22(uVar3, UStack266);
+        UStack266 = str_var1(uVar3, UStack266);
         uVar4     = uVar3 | UStack266;
         if(uVar4 == 0x0)
         {
             PostMessage16(SEG_1010, 0x0, 0x0, 0x111013d);
             return;
         }
-        unk_str_op_1000_3d3e(CONCAT22(param_2, local_102), CONCAT22(uVar3, UStack266));
-        str_1000_4d58(CONCAT22(param_2, local_102), 0x0, 0x0, CONCAT22(param_2, local_224), CONCAT22(param_2, local_22e));
+        unk_str_op_1000_3d3e(str_var1(param_2, local_102), str_var1(uVar3, UStack266));
+        str_1000_4d58(str_var1(param_2, local_102), 0x0, 0x0,
+                      str_var1(param_2, local_224),
+                      str_var1(param_2, local_22e));
         uVar3 = uVar4;
         if(local_22e[0] != '\0')
         {
-            pass1_1000_3cea(CONCAT22(param_2, local_224), CONCAT22(param_2, local_22e));
+            pass1_1000_3cea(str_var1(param_2, local_224), str_var1(param_2, local_22e));
             uVar3 = uVar4;
         }
-        struct_1010_5f1e(uStack262, CONCAT22(param_2, local_224), uVar3);
+        struct_1010_5f1e(uStack262, str_var1(param_2, local_224), uVar3);
     }
     else
     {
         pcStack282 = (iVar2 + 0x1a);
-        unk_str_op_1000_3d3e(CONCAT22(param_2, local_102), pcStack282);
-        uStack284 = str_op_1000_3da4(CONCAT22(param_2, local_102));
+        unk_str_op_1000_3d3e(str_var1(param_2, local_102), pcStack282);
+        uStack284 = str_op_1000_3da4(str_var1(param_2, local_102));
         if(local_102[uStack284 - 0x1] != '\\')
         {
             local_102[uStack284]       = '\\';
             local_102[uStack284 + 0x1] = '\0';
         }
-        pass1_1000_3cea(CONCAT22(param_2, local_102), UStack266);
+        pass1_1000_3cea(str_var1(param_2, local_102), UStack266);
     }
     if(local_102[0] != '\0')
     {
@@ -143,7 +147,7 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, u16 param_2)
         HStack274 = SetCursor16((HCURSOR16)LAST_SEGMENT);
         win_ui_op_1008_1414(NULL,
                             param_1,
-                            CONCAT22(param_2, local_102),
+                            str_var1(param_2, local_102),
                             LAST_SEGMENT,
                             param_2,
                             in_AF,
@@ -176,17 +180,17 @@ void  pass1_1008_3018(u32 param_1, u8 *param_2, i16 param_3, u16 param_4)
     }
     else
     {
-        unk_str_op_1000_3d3e(CONCAT22(param_4, local_102), (iVar3 + 0x1a));
-        uVar4 = str_op_1000_3da4(CONCAT22(param_4, local_102));
+        unk_str_op_1000_3d3e(str_var1(param_4, local_102), (iVar3 + 0x1a));
+        uVar4 = str_op_1000_3da4(str_var1(param_4, local_102));
         if(local_102[uVar4 - 0x1] != '\\')
         {
             local_102[uVar4]       = '\\';
             local_102[uVar4 + 0x1] = '\0';
         }
-        pass1_1000_3cea(CONCAT22(param_4, local_102), UVar1);
+        pass1_1000_3cea(str_var1(param_4, local_102), UVar1);
         if(local_102[0] != '\0')
         {
-            message_box_op_1008_12dc(param_1, CONCAT22(param_4, local_102), SEG_1000, param_4, NULL);
+            message_box_op_1008_12dc(param_1, str_var1(param_4, local_102), SEG_1000, param_4, NULL);
             return;
         }
     }
@@ -351,15 +355,15 @@ void message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 hinst_arg3, 
 
     cursor_handle_1 = LoadCursor16(hinst_arg3, 0x7f02);
     cursor_handle_2 = SetCursor16((HCURSOR16)LAST_SEGMENT);
-    str_1008_6d8a(globals, CONCAT22(param_4, local_c), param_2, in_DX, param_4, in_AF);
-    b_var1 = file_fn_1008_6e02(CONCAT22(param_4, local_c), LAST_SEGMENT, param_4);
+    str_1008_6d8a(globals, str_var1(param_4, local_c), param_2, in_DX, param_4, in_AF);
+    b_var1 = file_fn_1008_6e02(str_var1(param_4, local_c), LAST_SEGMENT, param_4);
     if(b_var1 == false)
     {
         SetCursor16((HCURSOR16)LAST_SEGMENT);
         string_4   = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
 //        uVar3    = (string_4 >> 0x10);
         u_var2    = str_op_1008_60e8(string_4);
-//        uStack16 = CONCAT22(uVar3, u_var2);
+//        uStack16 = str_var1(uVar3, u_var2);
         string_4   = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
         MessageBeep16(SEG_1010);
         MessageBox16((HWND16)LAST_SEGMENT, &globals->PTR_LOOP_1050_0010,
@@ -372,14 +376,14 @@ void message_box_op_1008_12dc(u32 param_1, u32 param_2, HINSTANCE16 hinst_arg3, 
         string_4   = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
         uVar3    = (string_4 >> 0x10);
         u_var2    = str_op_1008_60e8(string_4);
-        uStack36 = CONCAT22(uVar3, u_var2);
+        uStack36 = str_var1(uVar3, u_var2);
         string_4   = load_string_1010_847e(globals->dat_1050_14cc, SEG_1010);
         MessageBeep16(SEG_1010);
         MessageBox16((HWND16)LAST_SEGMENT, 0x40, string_4, (string_4 >> 0x10));
         uStack16 = uStack36;
     }
     fn_ptr_1000_17ce((Struct18 *)(uStack16 & 0xffff | uVar3 << 0x10), SEG_1000);
-    close_file_1008_6dd0(CONCAT22(param_4, local_c), SEG_1000);
+    close_file_1008_6dd0(str_var1(param_4, local_c), SEG_1000);
 }
 
 
@@ -427,7 +431,7 @@ void win_ui_op_1008_1414(Globals   *globals,
     u16        uVar10;
 
     puVar10 = str_1008_6d8a(
-      NULL, CONCAT22(param_4, local_8), param_2, param_6, param_4, param_5);
+      NULL, str_var1(param_4, local_8), param_2, param_6, param_4, param_5);
 //    puVar6  = (puVar10 >> 0x10);
     BVar2   = read_file_1008_6e78((local_8, param_4, param_3, param_4);
     iVar15  = param_1;
@@ -446,7 +450,7 @@ void win_ui_op_1008_1414(Globals   *globals,
         puVar6  = type;
         MessageBeep16(SEG_1010);
         MessageBox16((HWND16)LAST_SEGMENT, &PTR_LOOP_1050_0010, pcVar11, type);
-        fn_ptr_1000_17ce((Struct18 *)CONCAT22(uVar7, uVar3), SEG_1000);
+        fn_ptr_1000_17ce((Struct18 *)str_var1(uVar7, uVar3), SEG_1000);
         param_3 = SEG_1000;
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
@@ -463,7 +467,7 @@ void win_ui_op_1008_1414(Globals   *globals,
     (**ppcVar1)(SEG_1030, (iVar15 + 0xe8), uStack16, (uStack16 >> 0x10), iVar4, 0x2);
     puVar6 = extraout_DX;
     pass1_1030_8344(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
-    uStack28 = CONCAT22(puVar6, iVar4);
+    uStack28 = str_var1(puVar6, iVar4);
     uVar5    = *(iVar4 + 0x10);
     uStack32 = uVar5;
     pass1_1030_8344(globals->_PTR_LOOP_1050_5748, (globals->_PTR_LOOP_1050_5748 >> 0x10), uVar5);
@@ -477,14 +481,14 @@ void win_ui_op_1008_1414(Globals   *globals,
     uVar3     = param_4;
     puVar12   = mixed_1010_20ba(globals->u16_1050_0ed0, puVar5, param_4, puVar6, &iStack36);
     puVar6    = (puVar12 >> 0x10);
-    pass1_1018_179e(puVar12, CONCAT22(uVar3, CONCAT11(uVar14, uVar13)), SEG_1018, param_4);
+    pass1_1018_179e(puVar12, str_var1(uVar3, CONCAT11(uVar14, uVar13)), SEG_1018, param_4);
     uVar13  = 0x0;
     uVar14  = 0x4;
     iVar15  = 0x1b;
     uVar10  = 0x1;
     puVar12 = mixed_1010_20ba(globals->u16_1050_0ed0, 0x2b, param_4, puVar6, &iStack36);
     pass1_1010_043a(puVar12, CONCAT13(uVar14, CONCAT12(uVar13, uVar10)), iVar15, param_4);
-    close_file_1008_6dd0(CONCAT22(param_4, local_8), SEG_1010);
+    close_file_1008_6dd0(str_var1(param_4, local_8), SEG_1010);
     return;
 }
 

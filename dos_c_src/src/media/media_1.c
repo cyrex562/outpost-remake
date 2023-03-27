@@ -63,7 +63,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
     uStack10 = 0x0;
     uStack8  = 0x4000;
     u_stack6  = param_2;
-    DVar1    = mciSendCommand16(param_3, &local_1e, CONCAT22(0x200, param_4), 0x8030003);
+    DVar1    = mciSendCommand16(param_3, &local_1e, str_var1(0x200, param_4), 0x8030003);
     uStack32 = (DVar1 >> 0x10);
     uStack34 = DVar1;
     if(iStack26 != 0x0)
@@ -72,10 +72,10 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
         {
             mciGetErrorString16(0x4001538, local_432, param_4);
         }
-        pass1_1000_4906((struct Struct20 *)CONCAT22(param_4, &local_2e), 0x0, 0xc);
+        pass1_1000_4906((struct Struct20 *)str_var1(param_4, &local_2e), 0x0, 0xc);
         local_2e = param_2;
         uStack44 = 0x0;
-        DVar1    = mciSendCommand16(SEG_1000, &local_2e, CONCAT22(0x2, param_4), 0x8060000);
+        DVar1    = mciSendCommand16(SEG_1000, &local_2e, str_var1(0x2, param_4), 0x8060000);
         uStack32 = (DVar1 >> 0x10);
         uStack34 = DVar1;
         if((uStack32 | uStack34) != 0x0)
@@ -84,7 +84,7 @@ void mci_send_command_1008_53ae(u32 param_1, u16 param_2, u16 param_3, u16 param
         }
         local_32 = param_2;
         uStack48 = 0x0;
-        DVar1    = mciSendCommand16(LAST_SEGMENT, &local_32, CONCAT22(0x1, param_4), 0x8040000);
+        DVar1    = mciSendCommand16(LAST_SEGMENT, &local_32, str_var1(0x1, param_4), 0x8040000);
         uStack32 = (DVar1 >> 0x10);
         uStack34 = DVar1;
         if((uStack32 | uStack34) != 0x0)

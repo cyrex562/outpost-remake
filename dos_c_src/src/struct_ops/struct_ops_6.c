@@ -26,7 +26,7 @@ void struct_op_1040_ca16(Globals  *globals,
 
 {
     u16 u16_var1;
-    struct_1040_b082(globals,param_1, CONCAT22(param_2, 0x1840));
+    struct_1040_b082(globals,param_1, str_var1(param_2, 0x1840));
     param_1->field_0x94 = globals->dat_1050_5f0c;
     param_1->field_0x98 = 0x0;
     param_1->field_9c   = 0x0;

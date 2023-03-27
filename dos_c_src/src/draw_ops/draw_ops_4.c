@@ -328,9 +328,9 @@ void file_and_draw_op_1008_4f20(Globals  *globals,
     (param_1 + 0x2) = SEG_1008;
     paVar5 = unk_io_op_1010_830a(globals->dat_1050_14cc, 0x2, param_5);
     u_var2 = (paVar5 >> 0x10);
-    struct_op_1008_48fe((Struct81 *) CONCAT22(param_5, local_26), 0x1, paVar5, u_var2);
-    read_file_1008_49e8(CONCAT22(param_5, local_26), SEG_1010, u_var2);
-    pass1_1008_5068((Struct76 *) param_1, (Struct83 *) CONCAT22(param_5, local_26));
+    struct_op_1008_48fe((Struct81 *)str_var1(param_5, local_26), 0x1, paVar5, u_var2);
+    read_file_1008_49e8(str_var1(param_5, local_26), SEG_1010, u_var2);
+    pass1_1008_5068((Struct76 *) param_1, (Struct83 *)str_var1(param_5, local_26));
     pass1_1008_47cc((Struct76 *) param_1);
     pass1_1008_4834((Struct76 *) param_1);
     init_data = (DEVMODEA *) 0x0;
@@ -446,7 +446,8 @@ void  stretch_di_bits_1008_465a(Struct76 *param_1, HDC16 param_2)
     bits       = *(PVOID *)(height_dst + 0x4);
     height_src = (height_dst + 0x8);
     uVar1      = (param_1->field_0x14);
-    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, (u16)uVar1, (u16)(uVar1 >> 0x10), height_src, bits, (BITMAPINFO *)0x0, 0x0, CONCAT22(bits, height_src));
+    StretchDIBits16(param_2, 0x20, 0xcc, 0x0, height_dst, x_src, (u16)uVar1, (u16)(uVar1 >> 0x10), height_src, bits, (BITMAPINFO *)0x0, 0x0,
+                    str_var1(bits, height_src));
     return;
 }
 
@@ -472,7 +473,7 @@ u16  palette_op_1008_46e4(u32 param_1, u16 param_2, u16 param_3, HDC16 param_4)
         param_2 = uVar5;
         param_3 = uVar5;
     }
-    uVar6 = CONCAT22(param_3, param_2);
+    uVar6 = str_var1(param_3, param_2);
     if((iVar3 + 0x6) == 0x0)
     {
         bVar1 = false;
@@ -636,7 +637,7 @@ void set_sys_color_1008_357e(Globals  *globals,
     }
     else
     {
-        uVar7 = CONCAT22(param_4, &local_80);
+        uVar7 = str_var1(param_4, &local_80);
     }
     SetSysColors16(count, (u16 *)uVar7, (COLORREF *)(uVar7 >> 0x10));
     return;

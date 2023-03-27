@@ -69,7 +69,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0x1f009b,
                         0x0,
                         0x740075,
-                        CONCAT22((iVar11 + 0x8), 0xf1),
+                        str_var1((iVar11 + 0x8), 0xf1),
                         puVar5,
                         NULL,
                         unaff_SS,
@@ -88,7 +88,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0x31009b,
                         0x0,
                         0x760077,
-                        CONCAT22((iVar11 + 0x8), 0xf2),
+                        str_var1((iVar11 + 0x8), 0xf2),
                         puVar6,
                         NULL,
                         unaff_SS,
@@ -107,7 +107,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
                         0x77009b,
                         0x0,
                         0x780079,
-                        CONCAT22((iVar11 + 0x8), 0xf3),
+                        str_var1((iVar11 + 0x8), 0xf3),
                         puVar5,
                         NULL,
                         unaff_SS,
@@ -138,7 +138,7 @@ void window_op_1020_10a0(Globals *globals, Struct0 *param_1)
     }
     else
     {
-        unk_win_ui_op_1020_1418((Struct40 *)CONCAT22(puVar5, uVar3), param_1, unaff_SS);
+        unk_win_ui_op_1020_1418((Struct40 *)str_var1(puVar5, uVar3), param_1, unaff_SS);
         *(iVar11 + 0xf6) = uVar3;
         (iVar11 + 0xf8)  = puVar6;
     }
@@ -193,8 +193,8 @@ BOOL16 pass1_1008_68c6(u16 param_1,u16 param_2,u16 param_3,i32 param_4)
 {
     BOOL16 BVar1;
 
-    BVar1 = show_win_1008_96ae(CONCAT22(param_3,param_2),param_4);
-    pass1_1008_6a04(param_1,CONCAT22(param_3,param_2));
+    BVar1 = show_win_1008_96ae(str_var1(param_3,param_2),param_4);
+    pass1_1008_6a04(param_1, str_var1(param_3,param_2));
     return BVar1;
 }
 
@@ -296,8 +296,8 @@ void win_ui_op_1008_3c34(Globals *globals, u32 param_1, u8 param_2, HDC16 hdc_pa
         uVar1 = 0x4230 + 0x10;
         HVar3 = palette_op_1008_4e08
           ((HPALETTE16)&hdc_param_3,uVar1,
-           (astruct_13 *)CONCAT22(uVar1,*(undefined2 *)((int)_PTR_LOOP_1050_4230 + 0xe))
-             ,(HDC16 *)CONCAT22(0x1050,&hdc_param_3));
+           (astruct_13 *)str_var1(uVar1,*(undefined2 *)((int)_PTR_LOOP_1050_4230 + 0xe))
+             ,(HDC16 *)str_var1(0x1050,&hdc_param_3));
         ppcVar2 = (code **)((int)*puStack6 + 4);
         (**ppcVar2)();
         HVar3 = SelectPalette16(0,HVar3,hdc_param_3);

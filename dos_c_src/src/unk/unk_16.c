@@ -106,7 +106,7 @@ void pass1_1000_2ba0(u16 param_1, u16 param_2, u16 param_3, u8 param_4)
 
 {
     pass1_1000_3024(param_1, param_2, param_3, param_4);
-    if(globals->PTR_LOOP_1050_5fc9 != '\0')
+    if(globals->data_1050_5fc9 != '\0')
     {
         pass1_1000_3f5c(&stack0xfffe, param_1, param_2, param_3, param_4);
     }

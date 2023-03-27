@@ -28,3 +28,13 @@ typedef struct struct_1010_ddf6_1 {
     char *field_0x13c;
     u16 field_0x0;
 } struct_1010_ddf6_1;
+
+typedef struct struct_1018_35b0_1 {
+    void** field_0x0;
+} struct_1018_35b0_1;
+
+typedef struct struct_1010_dc36_1 {
+    u16 field_0x0;
+    u32 field_0x2;
+    u16 field_0x4;
+} struct_1010_dc36_1;

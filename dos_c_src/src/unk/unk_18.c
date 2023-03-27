@@ -87,7 +87,7 @@ LAB_1010_2126:
       mem_op_1000_179c(0x18a, param_4, 0);
     puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    struct_1018_2b10((Struct55 *)CONCAT22(param_4, struct_var4),param_2,param_3);
+    struct_1018_2b10((Struct55 *)str_var1(param_4, struct_var4),param_2,param_3);
     break;
   case 5:
       mem_op_1000_179c(0x14, param_4, 0);
@@ -100,7 +100,7 @@ LAB_1010_2126:
       mem_op_1000_179c(0x58, param_4, 0);
     puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    pass1_1018_18b8(param_3,(Struct55 *)CONCAT22(param_4, struct_var4),param_2);
+    pass1_1018_18b8(param_3,(Struct55 *)str_var1(param_4, struct_var4),param_2);
     break;
   case 7:
       mem_op_1000_179c(0xe, param_4, 0);
@@ -168,7 +168,7 @@ LAB_1010_2126:
       mem_op_1000_179c(0xaa, param_4, 0);
     puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    struct_1018_0570((Struct55 *)CONCAT22(param_4, struct_var4),param_2,param_3);
+    struct_1018_0570((Struct55 *)str_var1(param_4, struct_var4),param_2,param_3);
     break;
   case 0x25:
       mem_op_1000_179c(0x1c, param_4, 0);
@@ -222,7 +222,7 @@ LAB_1010_2126:
       mem_op_1000_179c(0x80, param_4, 0);
     puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    pass1_1010_3e3c((Struct55 *)CONCAT22(param_4, struct_var4),param_2,param_3);
+    pass1_1010_3e3c((Struct55 *)str_var1(param_4, struct_var4),param_2,param_3);
     break;
   case 0x2e:
       mem_op_1000_179c(0x806, param_4, 0);
@@ -288,8 +288,8 @@ LAB_1010_25b8:
     uVar7 = (u16)(uVar11 >> 0x10);
     u_var2 = (u16)uVar11;
 LAB_1010_25bb:
-    pu_stack6 = (u16 *)CONCAT22(uVar7,u_var2);
-    pass1_1010_1146(CONCAT22(uVar7,u_var2),0,param_5,param_3);
+    pu_stack6 = (u16 *)str_var1(uVar7,u_var2);
+    pass1_1010_1146(str_var1(uVar7,u_var2),0,param_5,param_3);
     goto switchD_1010:2765_caseD_38;
   case 0x35:
       mem_op_1000_179c(0x14a, param_4, 0);
@@ -415,7 +415,7 @@ LAB_1010_2683:
     if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
     unk_draw_op_1008_da12((Struct19 *)struct_var4,(u16)param_4,param_2);
   }
-  pu_stack6 = (u16 *)CONCAT22(puVar3, struct_var4);
+  pu_stack6 = (u16 *)str_var1(puVar3, struct_var4);
 switchD_1010:2765_caseD_38:
   *(u16 **)(param_2 * 4 + iVar5) = pu_stack6;
   return pu_stack6;
@@ -501,7 +501,7 @@ void  win_1008_5c5c(u16 param_1,u16 param_2,u32 param_3,u16 param_4)
 
 {
   pass1_1010_84f8(0x14cc,param_4);
-  win_ui_op_1008_5cfe(NULL, param_3, CONCAT22(param_2, param_1), (WNDCLASS16 *)0x1050);
+  win_ui_op_1008_5cfe(NULL, param_3, str_var1(param_2, param_1), (WNDCLASS16 *)0x1050);
 }
 
 void win_ui_op_1008_5cfe(Globals    *globals,
@@ -636,26 +636,29 @@ void pass1_1038_75ca(int param_1,u32 param_2,u32 param_3)
   if (param_1 != 0) {
     local_10[0] = *(undefined4 *)(iVar3 + 8);
     BVar1 = write_to_file_1008_7e1c
-      ((u8 *)param_3,CONCAT22(0x1050,local_10),(char *)0x4,in_stack_0000ffca);
+      ((u8 *)param_3, str_var1(0x1050,local_10),(char *)0x4,in_stack_0000ffca);
     if (BVar1 != 0) {
       write_to_file_1008_7a22(param_3,*(long *)(iVar3 + 0xe));
       if (BVar1 != 0) {
           local_8._0_2_ = *(undefined2 *)(iVar3 + 0xc);
           BVar1 = write_to_file_1008_7e1c
-            ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffca);
+            ((u8 *)param_3, str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffca);
           if (BVar1 != 0) {
               local_8._0_2_ = *(undefined2 *)(iVar3 + 0x12);
               BVar1 = write_to_file_1008_7e1c
-                ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffca );
+                ((u8 *)param_3,
+                                              str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffca );
               if (BVar1 != 0) {
-                  local_8 = CONCAT22(local_8._2_2_,*(undefined2 *)(iVar3 + 0x14));
+                  local_8 = str_var1(local_8._2_2_,*(undefined2 *)(iVar3 + 0x14));
                   BVar1 = write_to_file_1008_7e1c
-                    ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,in_stack_0000ffc a
+                    ((u8 *)param_3,
+                                                  str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffc a
                     );
                   if (BVar1 != 0) {
                       local_8 = *(undefined4 *)(iVar3 + 0x16);
                       BVar1 = write_to_file_1008_7e1c
-                        ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x4,
+                        ((u8 *)param_3,
+                                                      str_var1(0x1050,&local_8),(char *)0x4,
                          in_stack_0000ffca);
                       if (BVar1 != 0) {
                           iVar2 = write_to_file_1008_7b4c
@@ -664,22 +667,26 @@ void pass1_1038_75ca(int param_1,u32 param_2,u32 param_3)
                           if (iVar2 != 0) {
                               local_8 = *(ulong *)(iVar3 + 0x20);
                               BVar1 = write_to_file_1008_7e1c
-                                ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x4,
+                                ((u8 *)param_3,
+                                                              str_var1(0x1050,&local_8),(char *)0x4,
                                  in_stack_0000ffca);
                               if (BVar1 != 0) {
                                   local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x24);
                                   BVar1 = write_to_file_1008_7e1c
-                                    ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                    ((u8 *)param_3,
+                                                              str_var1(0x1050,&local_8),(char *)0x2,
                                      in_stack_0000ffca);
                                   if (BVar1 != 0) {
                                       local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x26);
                                       BVar1 = write_to_file_1008_7e1c
-                                        ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                        ((u8 *)param_3,
+                                        str_var1(0x1050,&local_8),(char *)0x2,
                                          in_stack_0000ffca);
                                       if (BVar1 != 0) {
                                           local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x28);
                                           BVar1 = write_to_file_1008_7e1c
-                                            ((u8 *)param_3,CONCAT22(0x1050,&local_8),(char *)0x2,
+                                            ((u8 *)param_3,
+                                            str_var1(0x1050,&local_8),(char *)0x2,
                                              in_stack_0000ffca);
                                           if (BVar1 != 0) {
                                               return;

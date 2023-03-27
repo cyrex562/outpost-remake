@@ -37,7 +37,7 @@ void def_win_proc_1008_5632(Globals *globals,
     {
         if(param_4 != 0x1)
         {
-            DefWindowProc16((HWND16)LAST_SEGMENT, param_1, param_2, CONCAT22(param_4, param_3));
+            DefWindowProc16((HWND16)LAST_SEGMENT, param_1, param_2, str_var1(param_4, param_3));
             return;
         }
         pu_stack6 = *param_1;
@@ -77,7 +77,7 @@ void window_op_1008_3bd6(Globals  *globals,
 void  post_msg_1008_3d20(u32 param_1, HWND16 param_2)
 
 {
-    PostMessage16(param_2, 0x0, 0x0, CONCAT22(0x111, (param_1 + 0xcc)));
+    PostMessage16(param_2, 0x0, 0x0, str_var1(0x111, (param_1 + 0xcc)));
 }
 
 
@@ -171,7 +171,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     puVar6 = (param_2 | puVar4);
     if(puVar6 != 0x0)
     {
-        puVar11 = pass1_1008_91ba(CONCAT22(param_2, puVar4), SEG_1000);
+        puVar11 = pass1_1008_91ba(str_var1(param_2, puVar4), SEG_1000);
         puVar6  = (puVar11 >> 0x10);
         puVar4  = puVar11;
     }
@@ -182,7 +182,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     }
     else
     {
-        pass1_1008_392e(CONCAT22(puVar6, puVar4), (iVar8 + 0x8));
+        pass1_1008_392e(str_var1(puVar6, puVar4), (iVar8 + 0x8));
         (iVar8 + 0xe0) = puVar4;
         (iVar8 + 0xe2) = extraout_DX;
     }
@@ -191,7 +191,7 @@ void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3)
     uVar10 = SEG_1000;
     puVar6 = extraout_DX_00;
     mem_op_1000_179c(0xec, extraout_DX_00, 0);
-    paStack6 = (struct Struct20 *) CONCAT22(puVar6, puVar4);
+    paStack6 = (struct Struct20 *)str_var1(puVar6, puVar4);
     uVar7    = puVar6 | puVar4;
     if(uVar7 == 0x0)
     {
@@ -330,12 +330,12 @@ BOOL16 mixed_win_op_1008_0c60(
         goto LAB_1008_0cba;
     case 0x6f:
         u_stack6 = unk_io_op_1010_830aglobals->dat_1050_14cc, 0x1f8, param_5);
-        BVar3   = WinHelp16(SEG_1010, 0x0, 0x0, CONCAT22(u_stack6, 0x3));
+        BVar3   = WinHelp16(SEG_1010, 0x0, 0x0, str_var1(u_stack6, 0x3));
         return BVar3;
     case 0x70:
         iVar11 = 0x1;
     LAB_1008_0cba:
-        uVar5 = pass1_1038_af40(globals->_PTR_LOOP_1050_5b7c, (uVar9 + 0x8), iVar11, param_6, uVar9, SEG_1038, param_5);
+        uVar5 = pass1_1038_af40(globals->ptr_1050_5b7c, (uVar9 + 0x8), iVar11, param_6, uVar9, SEG_1038, param_5);
         return (BOOL16)uVar5;
     case 0x71:
         HVar2 = WinExec16(SEG_1008, 0x3);
@@ -659,13 +659,13 @@ BOOL16 mixed_win_op_1008_0c60(
         uVar13 = 0xf020;
         uVar10 = 0x112;
     LAB_1008_0d18:
-        LVar6 = SendMessage16(SEG_1008, 0x0, 0x0, CONCAT22(uVar10, uVar13));
+        LVar6 = SendMessage16(SEG_1008, 0x0, 0x0, str_var1(uVar10, uVar13));
         return (BOOL16)LVar6;
     case 0x12e:
         uVar13 = 0xf060;
         uVar10 = 0x112;
     LAB_1008_0e3d:
-        BVar3 = PostMessage16(hwnd, 0x0, 0x0, CONCAT22(uVar10, uVar13));
+        BVar3 = PostMessage16(hwnd, 0x0, 0x0, str_var1(uVar10, uVar13));
         return BVar3;
     }
     ui_op_1008_2c4e(uVar9, struct_var15, uVar13, SEG_1008);

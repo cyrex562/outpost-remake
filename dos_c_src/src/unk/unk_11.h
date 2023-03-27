@@ -65,7 +65,7 @@ u16 pass1_1018_45d4(u16 param_1, u16 param_2, i16 param_3);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-long pass1_1018_4608(u16 param_1, u32 param_2, u32 param_3, u32 param_4);
+long pass1_1018_4608(u16 param_1, u32 param_2, u32 param_3, char *param_4);
 
 
 void pass1_1018_2d22(u32 param_1, i16 *param_2, u16 *param_3, i16 param_4);

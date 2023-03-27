@@ -74,7 +74,7 @@ void pass1_1000_5008(u16 param_1, u16 param_2, u16 param_3, i16 param_4);
 
 
 
-i16 pass1_1000_3d7a(u32 param_1, u32 param_2);
+i16 pass1_1000_3d7a(char *param_1, u32 param_2);
 
 
 

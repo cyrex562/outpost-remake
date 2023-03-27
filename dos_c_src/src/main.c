@@ -71,7 +71,7 @@ u16 entry(Globals *globals,
     HINSTANCE16 hinst_var15 = 0;
     void *dos_version_ptr;
 
-    result = CONCAT22(param_7, globals->dat_1050_5f84);
+    result = str_var1(param_7, globals->dat_1050_5f84);
     do {
         dos_version_ptr = NULL;
         InitTask16(in_task_context);
@@ -79,7 +79,7 @@ u16 entry(Globals *globals,
         if ((param_8 != 0)
             && (bVar9 = param_1 < 0xff00,
                 param_1 = param_1 + 0x100,
-                globals->U16_1050_5f7e = param_5,
+                globals->ptr_1050_5f7e = param_5,
                 bVar9)) {
             globals->data_1050_5f48 = param_1;
             globals->data_1050_5f4a = param_3;
@@ -216,14 +216,14 @@ void init_op_1008_54aa(Globals *globals,
     var_11 = mem_op_1000_1902(
             globals, 0x0, 0x32, 0x0, 0x6, SEG_1000, (globals->u32_ptr_1050_5744 >> 0x10));
     segment_var_4 = (var_11 >> 0x10);
-    globals->PTR_LOOP_1050_5768 = var_11;
+    globals->ptr_1050_5768      = var_11;
     globals->hinst_1050_038c = hinst_arg4;
     globals->ptr_1050_038e = param_3;
     globals->ptr_1050_0390 = param_1;
-    globals->PTR_LOOP_1050_576a = segment_var_4;
+    globals->ptr_1050_576a      = segment_var_4;
     char *in_1 = (char *) ptr_from_addr_pair(param_1, param_2);
     offset_var3 = str_op_1008_60e8(in_1);
-    globals->ptr_1050_0392 = CONCAT22(segment_var_4, offset_var3);
+    globals->ptr_1050_0392 = str_var1(segment_var_4, offset_var3);
     mem_op_1000_179c(globals, 0xc, SEG_1000);
     if ((segment_var_4 | offset_var3) == 0x0) {
         offset_var3 = 0x0;
@@ -234,7 +234,7 @@ void init_op_1008_54aa(Globals *globals,
         struct_op_1008_0000(in_struct);
         segment_var5 = segment_var7;
     }
-    var_12 = (struct_1008_0000_1 *) ptr_from_addr_pair(segment_var5, offset_var3);//CONCAT22(segment_var5, offset_var3);
+    var_12 = (struct_1008_0000_1 *) ptr_from_addr_pair(segment_var5, offset_var3);//str_var1(segment_var5, offset_var3);
     if (globals->ptr_1050_0392 != 0x0) {
         func_ptr = var_12->field_0x0[1];//(var_12->field_0x0 + 0x4);
         ((FnPtr5) func_ptr)(SEG_1000,
@@ -274,7 +274,7 @@ void init_op_1008_54aa(Globals *globals,
 
 void init_1000_23be(Globals *globals, u16 param_1, u16 param_2, u16 param_3) {
 
-    // CONCAT22(globals->data_1050_5f50, globals->data_1050_5f4e)
+    // str_var1(globals->data_1050_5f50, globals->data_1050_5f4e)
 
     init_op_1008_54aa(globals,
                       globals->data_1050_5f52,

@@ -67,17 +67,18 @@ void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
                 uVar7          = fn_ptr_op_1000_1708(iVar2 * 0x6, 0x0, 0x1, globals->dat_1050_5f2c, globals->dat_1050_5f2e, SEG_1000);
                 (iVar5 + 0x2c) = uVar7;
                 (iVar5 + 0x2e) = globals->dat_1050_5f2e;
-                pass1_1008_3e38(CONCAT22(param_5, local_20));
+                pass1_1008_3e38(str_var1(param_5, local_20));
                 for(iStack16 = 0x0; pi_var1 = (iVar5 + 0x30), *pi_var1 != iStack16 && iStack16 <= *pi_var1; iStack16 = iStack16 + 0x1)
                 {
-                    BVar6 = read_file_1008_7bc8(param_2, CONCAT22(param_5, local_20), SEG_1008, param_5);
+                    BVar6 = read_file_1008_7bc8(param_2, str_var1(param_5, local_20), SEG_1008, param_5);
                     if(BVar6 == 0x0)
                     {
                         globals->dat_1050_0310 = 0x6d0;
                         return;
                     }
                     uVar3 = *(iVar5 + 0x2c);
-                    pass1_1008_3f62((uVar3 & 0xffff0000 | (uVar3 + iStack16 * 0x6)), CONCAT22(param_5, local_20));
+                    pass1_1008_3f62((uVar3 & 0xffff0000 | (uVar3 + iStack16 * 0x6)),
+                                    str_var1(param_5, local_20));
                 }
             }
             return;
@@ -105,11 +106,12 @@ void pass1_1010_89f0(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HINSTAN
     uVar1 = *(param_1 + 0x67e);
     if((uVar1 | uVar3) != 0x0)
     {
-        pass1_1008_64a2(CONCAT22(uVar1, uVar3));
+        pass1_1008_64a2(str_var1(uVar1, uVar3));
         param_5 = SEG_1000;
-        fn_ptr_1000_17ce((Struct18 *)CONCAT22(uVar1, uVar3), SEG_1000);
+        fn_ptr_1000_17ce((Struct18 *)str_var1(uVar1, uVar3), SEG_1000);
     }
-    uVar7  = set_err_mode_1010_8b14(CONCAT22(param_2, param_1), *((param_1 + 0xe82) * 0x4 + 0x24be), param_6);
+    uVar7  = set_err_mode_1010_8b14(
+      str_var1(param_2, param_1), *((param_1 + 0xe82) * 0x4 + 0x24be), param_6);
     puVar4 = (uVar7 >> 0x10);
     uVar3  = uVar7;
     iVar6  = (param_1 + 0xe82) * 0x4;
@@ -139,8 +141,8 @@ void pass1_1010_89f0(u16 param_1, u16 param_2, u16 param_3, u32 param_4, HINSTAN
             u_var2 = (iVar6 + 0x2558);
             uVar3 = uStack8;
             pass1_1008_64c8((param_1 + 0x67c), CONCAT13((u_var2 >> 0x8), CONCAT12(u_var2, (iVar6 + 0x255a))), (iVar6 + 0x2556), uStack8, puVar5);
-            uStack22 = CONCAT22(puVar5, uVar3);
-            pass1_1010_86de(param_1, param_2, (u8)param_3, CONCAT22(puVar5, uVar3));
+            uStack22 = str_var1(puVar5, uVar3);
+            pass1_1010_86de(param_1, param_2, (u8)param_3, str_var1(puVar5, uVar3));
             (uStack8 * 0x4 + param_4) = uStack22;
         }
     }
@@ -326,7 +328,7 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, u16 param_3, u8 *param_4, 
         uVar4 = 0x102;
         SVar9 = 0x102;
         mem_op_1000_179c(0x102, param_4, 0);
-        paStack10 = (Struct18 *) CONCAT22(param_4, param_3);
+        paStack10 = (Struct18 *)str_var1(param_4, param_3);
         puVar6    = param_4;
         BVar1     = read_file_1008_7dee(uVar8, uVar10, param_3, uVar4, param_4, SVar9, SEG_1008);
         paStack18 = paStack10;
@@ -357,7 +359,7 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, u16 param_3, u8 *param_4, 
         uVar5 = 0x2a;
         SVar9 = 0x2a;
         mem_op_1000_179c(0x2a, param_4, 0);
-        paStack18 = (Struct18 *) CONCAT22(param_4, uVar4);
+        paStack18 = (Struct18 *)str_var1(param_4, uVar4);
         BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, SEG_1008);
         if(BVar1 == 0x0)
         {
@@ -459,19 +461,19 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
     else
     {
         puVar1 = local_402;
-        read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), SEG_1008);
+        read_file_1008_7c6e(uVar6, uVar7, str_var1(param_5, puVar1), SEG_1008);
         if(puVar1 != 0x0)
         {
-            u_var2          = str_op_1008_60e8(CONCAT22(param_5, local_402));
+            u_var2          = str_op_1008_60e8(str_var1(param_5, local_402));
             uVar5          = (param_1 >> 0x10);
             iVar4          = param_1;
             (iVar4 + 0x68) = u_var2;
             (iVar4 + 0x6a) = param_4;
             puVar1         = local_402;
-            read_file_1008_7c6e(uVar6, uVar7, CONCAT22(param_5, puVar1), SEG_1008);
+            read_file_1008_7c6e(uVar6, uVar7, str_var1(param_5, puVar1), SEG_1008);
             if(puVar1 != 0x0)
             {
-                u_var2          = str_op_1008_60e8(CONCAT22(param_5, local_402));
+                u_var2          = str_op_1008_60e8(str_var1(param_5, local_402));
                 (iVar4 + 0x6c) = u_var2;
                 (iVar4 + 0x6e) = param_4;
                 BVar3          = read_file_1008_7dee(uVar6, uVar7, &local_404, 0x0, param_5, 0x2, SEG_1008);
@@ -613,12 +615,12 @@ void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
     BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_3, 0x2, SEG_1008);
     if(BVar2 != 0x0)
     {
-        pass1_1008_5784(CONCAT22(param_3, local_e), *(iVar4 + 0xa));
+        pass1_1008_5784(str_var1(param_3, local_e), *(iVar4 + 0xa));
         do
         {
             puVar3 = local_e;
             pass1_1008_5b12(puVar3, param_3);
-            uStack18 = CONCAT22(extraout_DX, puVar3);
+            uStack18 = str_var1(extraout_DX, puVar3);
             if((extraout_DX | puVar3) == 0x0)
             {
                 local_22[0] = (iVar4 + 0xe);
@@ -740,7 +742,7 @@ void file_1010_0c7c(Globals   *globals,
                     break;
                 uVar4 = local_6;
                 mem_op_1000_179c(0xa, param_4, 0);
-                puStack26 = CONCAT22(param_4, uVar4);
+                puStack26 = str_var1(param_4, uVar4);
                 if((param_4 | uVar4) == 0x0)
                 {
                     puStack22 = 0x0;
@@ -848,12 +850,12 @@ void pass1_1008_e5da(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
         BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1c, param_4, 0x2, param_3);
         if(BVar2 != 0x0)
         {
-            pass1_1008_5784(CONCAT22(param_4, local_c), *(iVar4 + 0xa));
+            pass1_1008_5784(str_var1(param_4, local_c), *(iVar4 + 0xa));
             do
             {
                 puVar3 = local_c;
                 pass1_1008_5b12(puVar3, param_4);
-                uStack16 = CONCAT22(extraout_DX, puVar3);
+                uStack16 = str_var1(extraout_DX, puVar3);
                 if((extraout_DX | puVar3) == 0x0)
                 {
                     return;
@@ -936,9 +938,9 @@ void file_1008_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
                 }
                 else
                 {
-                    struct_1008_dcdc(CONCAT22(param_4, uVar4));
+                    struct_1008_dcdc(str_var1(param_4, uVar4));
                 }
-                puStack14 = CONCAT22(uVar5, uVar4);
+                puStack14 = str_var1(uVar5, uVar4);
                 BVar3     = read_file_1008_7dee(uVar7, uVar8, uVar4 + 0x4, 0x0, uVar5, 0x4, SEG_1000);
                 if((((BVar3 == 0x0) || (BVar3 = read_file_1008_7dee(uVar7, uVar8, puStack14 + 0x8, 0x0, (puStack14 >> 0x10), 0x4, SEG_1000), BVar3 == 0x0))
                     || (BVar3 = read_file_1008_7dee(uVar7, uVar8, local_12, 0x0, param_6, 0x2, SEG_1000), BVar3 == 0x0))
@@ -1054,12 +1056,12 @@ void pass1_1008_ba38(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
             BVar2       = write_to_file_1008_7e1c(uVar6, uVar7, local_1e, param_4, 0x2, param_3);
             if(BVar2 != 0x0)
             {
-                pass1_1008_5784(CONCAT22(param_4, local_14), *(iVar4 + 0xa));
+                pass1_1008_5784(str_var1(param_4, local_14), *(iVar4 + 0xa));
                 do
                 {
                     puVar3 = local_14;
                     pass1_1008_5b12(puVar3, param_4);
-                    uStack10 = CONCAT22(extraout_DX, puVar3);
+                    uStack10 = str_var1(extraout_DX, puVar3);
                     if((extraout_DX | puVar3) == 0x0)
                     {
                         return;
@@ -1153,7 +1155,7 @@ void file_1008_bb5e(Globals   *globals,
             }
             else
             {
-                set_struct_1008_574a(CONCAT22(param_4, uVar5));
+                set_struct_1008_574a(str_var1(param_4, uVar5));
                 puVar8 = extraout_DX;
             }
             *&param_1->field_0xa        = uVar5;
@@ -1175,17 +1177,17 @@ void file_1008_bb5e(Globals   *globals,
                 }
                 else
                 {
-                    set_stuct_1008_b0bc((Struct26 *)CONCAT22(puVar8, uVar4));
+                    set_stuct_1008_b0bc((Struct26 *)str_var1(puVar8, uVar4));
                     uVar9 = extraout_DX_01;
                 }
-                puStack284 = CONCAT22(uVar9, uVar4);
+                puStack284 = str_var1(uVar9, uVar4);
                 puVar6     = local_118;
                 uVar10     = uVar9;
-                read_file_1008_7c6e(uVar11, uVar12, CONCAT22(param_6, puVar6), SEG_1000);
+                read_file_1008_7c6e(uVar11, uVar12, str_var1(param_6, puVar6), SEG_1000);
                 if((((puVar6 == 0x0) || (BVar3 = read_file_1008_7dee(uVar11, uVar12, local_14, 0x0, param_6, 0x2, SEG_1000), BVar3 == 0x0)) || (BVar3 = read_file_1008_7dee(uVar11, uVar12, &local_8, 0x0, param_6, 0x4, SEG_1000), BVar3 == 0x0))
                    || (BVar3 = read_file_1008_7dee(uVar11, uVar12, local_18, 0x0, param_6, 0x2, SEG_1000), BVar3 == 0x0))
                     break;
-                uVar7            = str_op_1008_60e8(CONCAT22(param_6, local_118));
+                uVar7            = str_op_1008_60e8(str_var1(param_6, local_118));
                 uVar4->field_0x4 = uVar7;
                 uVar4->field_0x6 = uVar10;
                 uVar4->field_0x8 = local_14[0];
@@ -1252,7 +1254,7 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
             else
             {
                 param_3 = SEG_1020;
-                struct_1020_c444(CONCAT22(local_6, uVar4), 0x64, uStack10);
+                struct_1020_c444(str_var1(local_6, uVar4), 0x64, uStack10);
                 *param_2         = uVar4;
                 *(param_2 + 0x2) = uVar6;
             }
@@ -1310,7 +1312,7 @@ void file_1008_76e4(u32 param_1, long *param_2, u16 param_3, u16 param_4, u16 pa
             else
             {
                 param_3 = SEG_1030;
-                struct_op_1030_1cd8(CONCAT22(param_5, u_var2), 0x5, local_6);
+                struct_op_1030_1cd8(str_var1(param_5, u_var2), 0x5, local_6);
                 *param_2        = u_var2;
                 (param_2 + 0x2) = extraout_DX;
             }
@@ -1371,7 +1373,7 @@ u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16
             else
             {
                 param_4 = SEG_1020;
-                pass1_1020_ba3e((long *)CONCAT22(param_3, uVar1), 0x5, 0x5, unaff_DI, unaff_SI);
+                pass1_1020_ba3e((long *)str_var1(param_3, uVar1), 0x5, 0x5, unaff_DI, unaff_SI);
                 *param_2         = uVar1;
                 *(param_2 + 0x2) = uVar3;
             }
@@ -1389,7 +1391,8 @@ u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16
                 return 0x0;
             }
             param_4 = SEG_1020;
-            pass1_1020_bb8a((long *)*param_2, local_10[0], CONCAT22(local_14[0], (local_10[0] >> 0x10)), unaff_DI, param_5);
+            pass1_1020_bb8a((long *)*param_2, local_10[0],
+                            str_var1(local_14[0], (local_10[0] >> 0x10)), unaff_DI, param_5);
         }
     }
     return 0x1;
@@ -1423,8 +1426,8 @@ void  pass1_1008_7898(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, HFILE
         (**ppcVar1)();
         uVar3 = extraout_DX;
     }
-    u_stack6  = CONCAT22(uVar3, param_3);
-    local_18 = CONCAT22(uVar3, param_3);
+    u_stack6  = str_var1(uVar3, param_3);
+    local_18 = str_var1(uVar3, param_3);
     uVar4    = param_1;
     uVar5    = (param_1 >> 0x10);
     BVar2    = write_to_file_1008_7e1c(uVar4, uVar5, &local_18, param_6, 0x4, param_5);
@@ -1437,7 +1440,9 @@ void  pass1_1008_7898(u32 param_1, u32 *param_2, u16 param_3, u16 param_4, HFILE
             {
                 return;
             }
-            pass1_1020_c4a8(param_2, CONCAT22(param_6, local_14), CONCAT22(param_6, &local_18), uStack10, param_4, param_6);
+            pass1_1020_c4a8(param_2,
+                            str_var1(param_6, local_14),
+                            str_var1(param_6, &local_18), uStack10, param_4, param_6);
             local_24[0] = local_18;
             BVar2       = write_to_file_1008_7e1c(uVar4, uVar5, local_24, param_6, 0x4, SEG_1020);
             if(BVar2 == 0x0)
@@ -1485,7 +1490,7 @@ u16  write_to_file_1008_7954(u32 param_1, u32 *param_2, u16 param_3, HFILE16 par
         (**ppcVar1)(param_4, param_2);
         uVar4 = extraout_DX;
     }
-    u_stack6  = CONCAT22(uVar4, param_3);
+    u_stack6  = str_var1(uVar4, param_3);
     uVar5    = (param_1 >> 0x10);
     local_18 = param_3;
     uStack22 = uVar4;
@@ -1536,7 +1541,7 @@ void pass1_1008_79f0(u32 param_1, long param_2, HFILE16 param_3, u16 param_4)
         uVar1   = *(param_2 + 0x4);
         uStack4 = (param_2 + 0x6);
     }
-    write_to_file_1008_7954(param_1, CONCAT22(uStack4, uVar1), uVar1, param_3, param_4);
+    write_to_file_1008_7954(param_1, str_var1(uStack4, uVar1), uVar1, param_3, param_4);
     return;
 }
 
@@ -1580,7 +1585,9 @@ void write_to_file_1008_7a22(u32 param_1, long param_2, HFILE16 param_3, u16 par
             {
                 return;
             }
-            pass1_1020_bb16(param_2, CONCAT22(param_4, &local_10), CONCAT22(param_4, &local_12), u_stack6);
+            pass1_1020_bb16(param_2,
+                            str_var1(param_4, &local_10),
+                            str_var1(param_4, &local_12), u_stack6);
             uStack10    = local_12;
             local_1c[0] = local_12;
             BVar1       = write_to_file_1008_7e1c(u_var2, uVar3, local_1c, param_4, 0x2, SEG_1020);
@@ -1626,7 +1633,8 @@ u16 pass1_1008_7ad4(u32 param_1, long *param_2, u16 param_3, HFILE16 param_4, u1
             if((BVar1 == 0x0) || (BVar1 = read_file_1008_7dee(u_var2, uVar3, local_10, 0x0, param_5, 0x4, param_4), BVar1 == 0x0))
                 break;
             param_4 = SEG_1020;
-            pass1_1020_bb8a(param_2, local_10[0], CONCAT22(local_14[0], (local_10[0] >> 0x10)), param_3, param_5);
+            pass1_1020_bb8a(param_2, local_10[0],
+                            str_var1(local_14[0], (local_10[0] >> 0x10)), param_3, param_5);
             u_stack6 = u_stack6 + 0x1;
         }
     }
@@ -1646,7 +1654,10 @@ u16 write_to_file_1008_7b4c(u32 param_1, u16 *param_2, HFILE16 param_3, u16 para
     u16    local_6;
     u16    local_4;
 
-    pass1_1008_3eb4(param_2, CONCAT22(param_4, &local_8), CONCAT22(param_4, &local_6), CONCAT22(param_4, &local_4));
+    pass1_1008_3eb4(param_2,
+                    str_var1(param_4, &local_8),
+                    str_var1(param_4, &local_6),
+                    str_var1(param_4, &local_4));
     local_12[0] = local_4;
     u_var2       = param_1;
     uVar3       = (param_1 >> 0x10);
@@ -1739,7 +1750,7 @@ BOOL16 write_to_file_1008_7cac(u32 param_1, u16 param_2)
                   SEG_1000,
                   param_2,
                   in_AF);
-    uVar1 = str_op_1000_3da4(CONCAT22(param_2, local_c));
+    uVar1 = str_op_1000_3da4(str_var1(param_2, local_c));
     BVar2 = write_to_file_1008_7e1c(param_1, (param_1 >> 0x10), local_c, param_2, uVar1, SEG_1000);
     if(BVar2 == 0x0)
     {
@@ -1780,11 +1791,12 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 if(!bVar1)
                 {
                     bVar1   = true;
-                    u_stack6 = CONCAT22((u_stack6 >> 0x10) + uStack1040 + CARRY2(u_stack6, uStack1040), u_stack6 + uStack1040);
+                    u_stack6 = str_var1((u_stack6 >> 0x10) + uStack1040 + CARRY2(u_stack6, uStack1040), u_stack6 + uStack1040);
                     break;
                 }
                 bVar1 = false;
-                u_var2 = pass1_1008_7e4a((globals->_PTR_s_dcbSC_1050_0336_1050_033c >> 0x10), param_5, in_AF, CONCAT22(param_5, local_406 + uStack1040), in_stack_0000fbd2, in_stack_0000fbd4);
+                u_var2 = pass1_1008_7e4a((globals->_PTR_s_dcbSC_1050_0336_1050_033c >> 0x10), param_5, in_AF,
+                                    str_var1(param_5, local_406 + uStack1040), in_stack_0000fbd2, in_stack_0000fbd4);
                 if(u_var2 != 0x0)
                 {
                     lVar3 = uStack1040 + u_stack6 + 0x7;
@@ -1800,7 +1812,7 @@ void  read_file_1008_7cfe(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u1
                 return;
             }
             u_stack6 = CONCAT11(u_stack6._1_1_ + 0x4, u_stack6);
-            u_stack6       = CONCAT22((u_stack6 >> 0x10) + (0xfb < u_stack6._1_1_), u_stack6);
+            u_stack6       = str_var1((u_stack6 >> 0x10) + (0xfb < u_stack6._1_1_), u_stack6);
         }
     } while(true);
 }
@@ -1811,8 +1823,8 @@ BOOL16  read_file_1008_7dee(u16 param_1, u16 param_2, u16 param_3, u16 param_4, 
 {
     long lVar1;
 
-    lVar1 = WIN16_hread(param_7, param_6, CONCAT22(param_3, param_4));
-    if(lVar1 != CONCAT22(param_4, param_6))
+    lVar1 = WIN16_hread(param_7, param_6, str_var1(param_3, param_4));
+    if(lVar1 != str_var1(param_4, param_6))
     {
         return 0x0;
     }
@@ -1825,7 +1837,7 @@ BOOL16  write_to_file_1008_7e1c(u16 param_1, u16 param_2, u16 param_3, u16 param
 {
     char *pcVar1;
 
-    pcVar1 = _hwrite16(file_handle, buf_to_write, CONCAT22(param_3, (buf_to_write >> 0x10)));
+    pcVar1 = _hwrite16(file_handle, buf_to_write, str_var1(param_3, (buf_to_write >> 0x10)));
     if(pcVar1 != buf_to_write)
     {
         return 0x0;
@@ -1866,7 +1878,7 @@ BOOL16 file_fn_1008_6e02(u32 *param_1, LPCSTR in_string, u16 param_3)
     {
         uVar1 = (param_1 >> 0x10);
         pass1_1008_72a8();
-        var1 = pass1_1008_7006(param_1, uVar1, CONCAT22(param_3, local_4), extraout_DX, unaff_DI, param_3);
+        var1 = pass1_1008_7006(param_1, uVar1, str_var1(param_3, local_4), extraout_DX, unaff_DI, param_3);
         if((var1 != 0x0) && (var1 = file_fn_1008_6eee(param_1, local_4, param_3), var1 != 0x0))
         {
             var2 = file_fn_1008_726c(param_1, uVar1, (HFILE16)in_string);
@@ -1897,11 +1909,11 @@ BOOL16 read_file_1008_6e78(u32 param_1, u16 param_2, char *in_string, u16 param_
     if(b_var1 != 0x0)
     {
         pass1_1008_72a8();
-        i_var2 = pass1_1008_7056(param_1, param_2, CONCAT22(param_4, local_4), extraout_DX, unaff_DI, param_4);
+        i_var2 = pass1_1008_7056(param_1, param_2, str_var1(param_4, local_4), extraout_DX, unaff_DI, param_4);
         if(i_var2 != 0x0)
         {
             var3 = local_4;
-            read_file_1008_6f7a(param_1, param_2, CONCAT22(param_4, var3), param_4);
+            read_file_1008_6f7a(param_1, param_2, str_var1(param_4, var3), param_4);
             if(var3 != 0x0)
             {
                 b_var1 = file_fn_1008_726c(param_1, param_2, (HFILE16)in_string);
@@ -1934,7 +1946,7 @@ void file_fn_1008_6eee(u16 param_1, u16 param_2, u32 param_3)
 
     pu_stack6 = *_PTR_LOOP_1050_5748;
     uStack10 = *pu_stack6;
-    pass1_1020_a43e(unaff_SS, in_DX, CONCAT22(unaff_SS, local_e));
+    pass1_1020_a43e(unaff_SS, in_DX, str_var1(unaff_SS, local_e));
     BVar1 = pass1_1028_d7a0(uStack10, (uStack10 >> 0x10), param_3, unaff_SS);
     if(BVar1 != 0x0)
     {
@@ -1977,7 +1989,7 @@ void read_file_1008_6f7a(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
 
     pu_stack6 = *_PTR_LOOP_1050_5748;
     uStack10 = *pu_stack6;
-    pu_var2   = pass1_1020_a43e(param_4, in_DX, CONCAT22(param_4, local_e));
+    pu_var2   = pass1_1020_a43e(param_4, in_DX, str_var1(param_4, local_e));
     uVar1    = (u16)(pu_var2 >> 0x10);
     var5     = read_file_1028_d7ba(uStack10, (uStack10 >> 0x10), param_3, param_4, (u16)pu_var2);
     if(var5 != 0x0)
@@ -1991,7 +2003,8 @@ void read_file_1008_6f7a(u16 param_1, u16 param_2, u32 param_3, u16 param_4)
                 i_var3 = read_file_1038_7c02(NULL, _PTR_LOOP_1050_5a64, param_3, var5, uVar1);
                 if(i_var3 != 0x0)
                 {
-                    b_var4 = read_file_1020_a65e(CONCAT22(param_4, local_e), param_3, param_4, (u16)local_e);
+                    b_var4 = read_file_1020_a65e(
+                      str_var1(param_4, local_e), param_3, param_4, (u16)local_e);
                     if(b_var4 != 0x0)
                     {
                         return;
@@ -2042,7 +2055,7 @@ u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
                       unaff_SS,
                       in_AF);
         pCVar4 = str_op_1000_3da4(0x105065a0);
-        lVar5  = _hwrite16(SEG_1000, pCVar4, CONCAT22(0x65a0, pCVar4 >> 0xf));
+        lVar5  = _hwrite16(SEG_1000, pCVar4, str_var1(0x65a0, pCVar4 >> 0xf));
         if(lVar5 == pCVar4)
         {
             return 0x1;
@@ -2075,7 +2088,7 @@ BOOL16 read_file_1008_7146(i16 param_1, u16 param_2, LPCSTR param_3, u16 param_4
     }
     else
     {
-        iVar2 = read_file_1008_71a0(CONCAT22(param_2, param_1), param_4);
+        iVar2 = read_file_1008_71a0(str_var1(param_2, param_1), param_4);
         if(iVar2 != 0x0)
         {
             return 0x1;
@@ -2105,7 +2118,7 @@ u16 read_file_1008_71a0(u32 param_1, u16 param_2)
     uStack4  = 0x1;
     buffer   = str_op_1000_3da4(0x105065a0);
     iStack22 = 0x0;
-    lVar2    = WIN16_hread(SEG_1000, buffer, CONCAT22(local_e, buffer >> 0xf));
+    lVar2    = WIN16_hread(SEG_1000, buffer, str_var1(local_e, buffer >> 0xf));
     uVar1    = lVar2;
     if(buffer < lVar2)
     {

@@ -6,7 +6,7 @@
 
 #include "op_int.h"
 
-u32 CONCAT22(u16 a, u16 b)
+u32 str_var1(u16 a, u16 b)
 {
     return a << 16 | b;
 }

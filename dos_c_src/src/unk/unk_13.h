@@ -309,12 +309,10 @@ void pass1_1008_afde(u16 *param_1, u16 param_2);
 
 
 
-u16 *pass1_1008_b05a(u16 *param_1);
+u16 *pass1_1008_b05a(Struct26 *param_1);
 
 
-
-
-void set_stuct_1008_b0bc(Struct26 *param_1);
+Struct26 *set_stuct_1008_b0bc(Struct26 *param_1);
 
 
 

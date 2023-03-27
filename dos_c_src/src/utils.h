@@ -7,7 +7,7 @@
 
 #include "op_int.h"
 
-u32 CONCAT22(u16 a, u16 b);
+u32 str_var1(u16 a, u16 b);
 
 u16 CONCAT11(u8 a, u8 b) ;
 
@@ -17,7 +17,7 @@ u32 CONCAT13(u8 a, u32 b);
 
 u32 SUB42(u32 a, u32 b);
 
-u32 CONCAT22(u16 a, u16 b);
+u32 str_var1(u16 a, u16 b);
 
 u32 SBORROW2(u16 a, u16 b);
 
