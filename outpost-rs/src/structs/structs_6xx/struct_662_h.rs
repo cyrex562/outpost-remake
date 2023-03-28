@@ -8,11 +8,11 @@
 // typedef struct Struct662 Struct662;
 struct Struct662
 {
-    u8          field_0x0;
-    u8          field_0x1;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
     let mut field_0x2: u16;
     let mut field_0x4: u16;
-    u32 *field_0x6;
+    let mut field_0x6: *mut u32;
     let mut field_0xa: u16;
     let mut field_0xc: u16;
     let mut field_0xe: u16;

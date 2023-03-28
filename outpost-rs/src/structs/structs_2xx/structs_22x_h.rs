@@ -153,7 +153,7 @@ struct Struct226
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
     let mut field_0xe: i16;
     let mut field_0x10: i16;
 };
@@ -169,7 +169,7 @@ struct Struct228
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
     u8   field_0xe;
     u8   field_0xf;
     u8   field_0x10;

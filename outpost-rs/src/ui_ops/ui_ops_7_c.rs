@@ -31,8 +31,8 @@ void  cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, HINSTANCE16 
 {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut c_void;
-    HCURSOR16  cursor_handle;
-    HCURSOR16  HVar3;
+    let mut cursor_handle: HCURSOR16;
+    let mut HVar3: HCURSOR16;
     let mut in_DX: u16;
     let mut extraout_DX: u16;
     let mut uVar4: u16;
@@ -54,7 +54,7 @@ void  cursor_op_1008_2dcc(param_1: i16, param_2: u16, param_3: u16, HINSTANCE16 
     big_switch_1008_15d4(uVar4, LAST_SEGMENT, unaff_SS,
                          str_var1(param_2, param_1),
                          str_var1(cursor_handle, param_3));
-    *(HCURSOR16 *)(param_1 + 0xe8) = HVar3;
+    (param_1 + 0xe8) = HVar3;
     (param_1 + 0xea)               = in_DX;
     uVar1                          = (param_1 + 0xe8);
     if((uVar1 + 0xe0) == 0x0)
@@ -90,15 +90,15 @@ void  win_ui_cursor_op_1008_2e9a(Struct72 **param_1, param_2: u16)
     let mut local_224: [u8;108] = [0;108];
     let mut uStack284: u16;
     let mut pcStack282: *mut c_char;
-    HCURSOR16  HStack274;
-    HCURSOR16  HStack272;
+    let mut HStack274: HCURSOR16;
+    let mut HStack272: HCURSOR16;
     let mut uStack270: u32;
     let mut UStack266: u32;
     let mut uStack262: u32;
     char       local_102[0x100];
 
     local_102[0]    = '\0';
-    uStack262       = (Struct73 *)mixed_1010_20ba(globals.u16_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
+    uStack262       = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_2, in_DX, unaff_DI);
     uVar1           = (uStack262 >> 0x10);
     iVar2           = uStack262;
     UStack266       = *(iVar2 + 0x16);
@@ -168,7 +168,7 @@ void  pass1_1008_3018(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16
     char       local_102[0x100];
 
     local_102[0] = '\0';
-    uStack262    = mixed_1010_20ba(globals.u16_1050_0ed0, 0x2, param_4, param_2, param_3);
+    uStack262    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_4, param_2, param_3);
     u_var2        = (uStack262 >> 0x10);
     iVar3        = uStack262;
     UVar1        = *(iVar3 + 0x12);
@@ -198,7 +198,7 @@ void  pass1_1008_3018(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16
 }
 
 
-void  menu_ui_op_1008_09ba(param_1: u32, param_2: HWND16, RECT16 *param_3, HWND16 param_4)
+void  menu_ui_op_1008_09ba(param_1: u32, param_2: HWND16, RECT16 *param_3, param_4: HWND16)
 
 {
     HMENU16 HVar1;
@@ -330,7 +330,7 @@ void  switchD_1008: 1091 ::caseD_b3(void)
 }
 
 
-void  draw_op_1008_1230(HWND16 param_1)
+void  draw_op_1008_1230(param_1: HWND16)
 
 {
     fill_rect_1008_39ac(param_1);
@@ -341,7 +341,7 @@ void  draw_op_1008_1230(HWND16 param_1)
 void message_box_op_1008_12dc(param_1: u32, param_2: u32, HINSTANCE16 hinst_arg3, param_4: u16, Globals *globals)
 
 {
-    BOOL16    b_var1;
+    let mut b_var1: BOOL16;
     let mut u_var2: u16;
     let mut in_DX: u16;
 //    u16       uVar3;
@@ -350,8 +350,8 @@ void message_box_op_1008_12dc(param_1: u32, param_2: u32, HINSTANCE16 hinst_arg3
     let mut uStack36: u32;
 //    u32       uStack16;
     let mut local_c: [u8;6] = [0;6];
-    HCURSOR16 cursor_handle_2;
-    HCURSOR16 cursor_handle_1;
+    let mut cursor_handle_2: HCURSOR16;
+    let mut cursor_handle_1: HCURSOR16;
 
     cursor_handle_1 = LoadCursor16(hinst_arg3, 0x7f02);
     cursor_handle_2 = SetCursor16((HCURSOR16)LAST_SEGMENT);
@@ -382,7 +382,7 @@ void message_box_op_1008_12dc(param_1: u32, param_2: u32, HINSTANCE16 hinst_arg3
         MessageBox16(LAST_SEGMENT, 0x40, string_4, (string_4 >> 0x10));
         uStack16 = uStack36;
     }
-    fn_ptr_1000_17ce((Struct18 *)(uStack16 & 0xffff | uVar3 << 0x10), SEG_1000);
+    fn_ptr_1000_17ce((uStack16 & 0xffff | uVar3 << 0x10), SEG_1000);
     close_file_1008_6dd0(str_var1(param_4, local_c), SEG_1000);
 }
 
@@ -391,18 +391,18 @@ void message_box_op_1008_12dc(param_1: u32, param_2: u32, HINSTANCE16 hinst_arg3
 
 void win_ui_op_1008_1414(Globals   *globals,
                          Struct72 **param_1,
-                         u32        param_2,
+                         param_2: u32,
                          LPCSTR     param_3,
-                         u16        param_4,
+                         param_4: u16,
                          u8         param_5,
-                         u16        param_6)
+                        param_6: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
-    BOOL16     BVar2;
+    let mut BVar2: BOOL16;
     let mut uVar3: u16;
     let mut iVar4: i16;
-    u32       *puVar5;
+    let mut puVar5: *mut u32;
     let mut uVar5: u32;
     let mut puVar6: *mut u8;
     let mut uVar7: u16;
@@ -411,7 +411,7 @@ void win_ui_op_1008_1414(Globals   *globals,
     let mut extraout_DX: u16;
     let mut unaff_DI: i16;
     let mut uVar9: u16;
-    u32       *puVar10;
+    let mut puVar10: *mut u32;
     let mut pcVar11: *mut c_char;
     let mut puVar12: *mut u16;
     let mut uVar13: u8;
@@ -450,12 +450,12 @@ void win_ui_op_1008_1414(Globals   *globals,
         puVar6  = type;
         MessageBeep16(SEG_1010);
         MessageBox16(LAST_SEGMENT, &PTR_LOOP_1050_0010, pcVar11, type);
-        fn_ptr_1000_17ce((Struct18 *)str_var1(uVar7, uVar3), SEG_1000);
+        fn_ptr_1000_17ce(str_var1(uVar7, uVar3), SEG_1000);
         param_3 = SEG_1000;
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
     cursor_op_1008_2dcc(iVar15, uVar9, 0x8, param_3);
-    puStack12 = mixed_1010_20ba(globals.u16_1050_0ed0, 0x2f, param_4, puVar6, unaff_DI);
+    puStack12 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_4, puVar6, unaff_DI);
     uVar8     = (puStack12 >> 0x10);
     uVar5     = *(puStack12 + 0x20);
     uStack16  = uVar5;
@@ -479,14 +479,14 @@ void win_ui_op_1008_1414(Globals   *globals,
     uVar13    = SUB21(&local_2a, 0x0);
     uVar14    = (&local_2a >> 0x8);
     uVar3     = param_4;
-    puVar12   = mixed_1010_20ba(globals.u16_1050_0ed0, puVar5, param_4, puVar6, &iStack36);
+    puVar12   = mixed_1010_20ba(globals._1050_0ed0: u16, puVar5, param_4, puVar6, &iStack36);
     puVar6    = (puVar12 >> 0x10);
     pass1_1018_179e(puVar12, str_var1(uVar3, CONCAT11(uVar14, uVar13)), SEG_1018, param_4);
     uVar13  = 0x0;
     uVar14  = 0x4;
     iVar15  = 0x1b;
     uVar10  = 0x1;
-    puVar12 = mixed_1010_20ba(globals.u16_1050_0ed0, 0x2b, param_4, puVar6, &iStack36);
+    puVar12 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2b, param_4, puVar6, &iStack36);
     pass1_1010_043a(puVar12, CONCAT13(uVar14, CONCAT12(uVar13, uVar10)), iVar15, param_4);
     close_file_1008_6dd0(str_var1(param_4, local_8), SEG_1010);
     return;
@@ -495,9 +495,9 @@ void win_ui_op_1008_1414(Globals   *globals,
 void  cleanup_ui_op_1008_0618(u16 *param_1)
 
 {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut u_var2: u16;
-    Struct18 *paVar3;
+    let mut paVar3: *mut Struct18;
     let mut ppcVar4: *mut *mut c_void;
     let mut iVar5: i16;
     let mut uVar6: u16;
@@ -556,8 +556,8 @@ void win_ui_cursor_op_1008_06c0(globals: &mut Globals, param_1: *mut u32, param_
     let mut puVar5: *mut u16;
     let mut local_5a: [u8;50] = [0;50];
     let mut uStack10: u32;
-    HCURSOR16  HStack6;
-    HCURSOR16  HStack4;
+    let mut HStack6: HCURSOR16;
+    let mut HStack4: HCURSOR16;
 
     if(param_4 == 0x400)
     {
@@ -576,7 +576,7 @@ void win_ui_cursor_op_1008_06c0(globals: &mut Globals, param_1: *mut u32, param_
             pass1_1030_83ba(globals._PTR_LOOP_1050_5748, param_2, unaff_SS, in_AF);
             uVar3                       = (globals._PTR_LOOP_1050_5748 >> 0x10);
             (globals._PTR_LOOP_1050_5748 + 0x8) = 0x1;
-            uStack10                    = mixed_1010_20ba(globals.u16_1050_0ed0, 0x29, unaff_SS, pu_var2, unaff_DI);
+            uStack10                    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x29, unaff_SS, pu_var2, unaff_DI);
             pass1_1018_262e(uStack10);
             pass1_1030_8326();
             pcVar4 = load_string_1010_847e(globals.dat_1050_14cc, SEG_1010);
@@ -591,7 +591,7 @@ void win_ui_cursor_op_1008_06c0(globals: &mut Globals, param_1: *mut u32, param_
                           in_AF);
             ppcVar1 = (*param_1 + 0x14);
             (**ppcVar1)(SEG_1000, param_1, (param_1 >> 0x10), 0x0, local_5a);
-            puVar5 = mixed_1010_20ba(globals.u16_1050_0ed0, 0x37, unaff_SS, extraout_DX, unaff_DI);
+            puVar5 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x37, unaff_SS, extraout_DX, unaff_DI);
             pass1_1008_a9ec(puVar5);
             SetCursor16(SEG_1010);
             PostMessage16(LAST_SEGMENT, 0x0, 0x0, 0x11100fc);
@@ -621,7 +621,7 @@ BOOL16  pass1_1000_1f7e(u16 *param_1, param_2: u16)
 
 {
     char   cVar1;
-    BOOL16 BVar2;
+    let mut BVar2: BOOL16;
     let mut uVar3: u16;
     let mut iVar4: i16;
     let mut pcVar5: *mut c_char;
@@ -659,7 +659,7 @@ BOOL16  msg_box_op_1000_214c(param_1: u16, param_2: i16, param_3: u16, param_4: 
 {
     let mut IVar1: u16;
     let mut iVar2: i16;
-    LPCSTR text;
+    let mut text: *mut c_char;
 
     text = (0x2 - (param_2 == 0x0) | 0x2110);
     MessageBeep16(param_5);
@@ -699,7 +699,7 @@ BOOL16  msg_box_op_1000_214c(param_1: u16, param_2: i16, param_3: u16, param_4: 
 bool  mem_op_1000_21b6(param_1: u16, param_2: u16)
 
 {
-    BOOL16 BVar1;
+    let mut BVar1: BOOL16;
     BVar1 = mem_op_1000_1dfa(0x0, 0x4, param_1, param_2);
     return BVar1 == 0x0;
 }

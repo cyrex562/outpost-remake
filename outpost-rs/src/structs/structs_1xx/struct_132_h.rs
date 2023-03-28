@@ -24,7 +24,7 @@ struct Struct132
     let mut field_0x10: u8;
     let mut field_0x11: u8;
     let mut field_0x12: i16;
-    u32       *field_0x14;
+    let mut field_0x14: *mut u32;
     let mut field_0x18: u32;
     let mut field_0x1c: u16;
     let mut field_0x1e: u16;

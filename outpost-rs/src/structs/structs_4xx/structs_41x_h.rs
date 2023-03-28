@@ -257,7 +257,7 @@ struct Struct411
     u8   field_0x1;
     u8   field_0x2;
     u8   field_0x3;
-    u32 *field_0x4;
+    let mut field_0x4: *mut u32;
 };
 struct Struct419
 {

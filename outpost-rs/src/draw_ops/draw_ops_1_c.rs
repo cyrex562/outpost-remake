@@ -40,7 +40,7 @@ pub fn pass1_1040_d1bc(globals: &mut Globals, param_1: *mut Struct18)
     let mut uVar4: u16;
 
     //uVar4              = (param_1 >> 0x10);
-    //iVar4              = (Struct513 *)param_1;
+    //iVar4              = param_1;
     param_1.field_0x0 = addr_table_1040_d8c4;//0xd8c4;
     param_1.field_0x2 = SEG_1040; // SEG_1040;
     pass1_1038_b6e0(globals.ptr_1050_5b7c,
@@ -87,13 +87,13 @@ pub fn pass1_1040_c94a(globals: &mut Globals,
     if((pstruct_arg1.field_0x48) != 0x0)
     {
         pu16_var5  = mixed_1010_20ba(
-          NULL, globals.u16_1050_0ed0, 0x3, param_6, param_3, param_4);
+          NULL, globals.data_1050_0ed0, 0x3, param_6, param_3, param_4);
         //uVar4   = (puVar5 >> 0x10);
         pv_var_b   = pstruct_arg1.pv_field_42;
         u16_var_a   = (pv_var_b + 0x12);
         param_5 = SEG_1010;
         u16_var_c   = u16_var_a;
-        pass1_1010_a5ca(unsafe { *pu16_var5 }, uVar4, u16_var_a, u16_var_a, uVar4);
+        unsafe {pass1_1010_a5ca(*pu16_var5, uVar4, u16_var_a, u16_var_a, uVar4)};
         if(u16_var_c == 0xffff)
         {
             (pstruct_arg1.field_0x3c) = 0xf9;
@@ -129,7 +129,7 @@ pub fn palette_op_1040_c886(globals: &mut Globals,
 //    i16            i_var_3;
 //    u16            u_var_4;
     let mut u_var_5: u16;
-    u32 *pu_stack_8;
+    let mut pu_stack_8: *mut u32;
     let mut h_stack_4: HPALETTE16;
 
 //    u_var_4 = (param_1 >> 0x10);
@@ -156,7 +156,7 @@ pub fn palette_op_1040_c886(globals: &mut Globals,
             pu_stack_8 = (param_1 + 0x10);
             u_var_5  = (param_1 + 0x12);
         }
-        ppc_var_2 = (*pu_stack_8 + 0x4);
+        unsafe{ppc_var_2 = (*pu_stack_8 + 0x4)};
         (**ppc_var_2)(param_4, pu_stack_8, u_var_5, (param_1 + 0x28), (param_1 + 0x26), &param_3);
         if((param_1 + 0x46) == 0x0)
         {
@@ -497,23 +497,23 @@ pub fn pass1_1040_b74c(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void win_ui_op_1040_b372(globals: &mut Globals,
-                         u32      param_1,
-                         u16      param_2,
-                         u16      param_3,
-                         COLORREF in_colorref_4)
+pub fn win_ui_op_1040_b372(globals: &mut Globals,
+                         param_1: u32,
+                         param_2: u16,
+                         param_3: u16,
+                         in_colorref_4: COLORREF)
 
 {
     let mut uVar1: u16;
     let mut iVar2: i16;
-    HBRUSH16 local_brush_handle;
+    let mut local_brush_handle: HBRUSH16;
     let mut IVar3: u16;
     let mut uVar4: u32;
     let mut extraout_DX: u16;
     let mut uVar5: u16;
-    HWND16   local_win_handle;
+    let mut local_win_handle: HWND16;
     let mut uVar6: u32;
-    COLORREF local_colorref;
+    let mut local_colorref: COLORREF;
 
     uVar5          = (param_1 >> 0x10);
     local_colorref = in_colorref_4;
@@ -521,7 +521,7 @@ void win_ui_op_1040_b372(globals: &mut Globals,
     {
         local_colorref                = LAST_SEGMENT;
         local_brush_handle            = CreateSolidBrush16(in_colorref_4);
-        *(HBRUSH16 *)(param_1 + 0x8e) = local_brush_handle;
+        (param_1 + 0x8e) = local_brush_handle;
     }
     if(globals._PTR_LOOP_1050_5efa == 0x0)
     {
@@ -539,12 +539,12 @@ void win_ui_op_1040_b372(globals: &mut Globals,
         if(IVar3 == 0x14c)
         {
             local_colorref = 0x0;
-            goto LAB_1040_b41a;
+            // goto LAB_1040_b41a;
         }
         if(IVar3 == 0x175)
         {
             local_colorref = 0x0;
-            goto LAB_1040_b41a;
+            // goto LAB_1040_b41a;
         }
     }
     else
@@ -556,7 +556,7 @@ void win_ui_op_1040_b372(globals: &mut Globals,
             {
                 return;
             }
-            goto LAB_1040_b3ea;
+            // goto LAB_1040_b3ea;
         }
     }
     local_colorref = globals._PTR_LOOP_1050_5efa;
@@ -568,7 +568,7 @@ void win_ui_op_1040_b372(globals: &mut Globals,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1040_ace8(globals: &mut Globals, param_1: *mut Struct18)
+pub fn pass1_1040_ace8(globals: &mut Globals, param_1: *mut Struct18)
 
 {
     param_1.field_0x0 = addr_table_1040_afc4;//0xafc4;
@@ -578,7 +578,7 @@ void pass1_1040_ace8(globals: &mut Globals, param_1: *mut Struct18)
 }
 
 
-Struct18 *pass1_1040_abe2(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1040_abe2(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);
@@ -592,21 +592,21 @@ Struct18 *pass1_1040_abe2(param_1: *mut Struct18, param_2: u8)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void draw_op_1040_a67e(globals: &mut Globals,
-                       u32      param_1,
-                       i16      param_2,
-                       u16      param_3,
-                       COLORREF param_4)
+pub fn draw_op_1040_a67e(globals: &mut Globals,
+                       param_1: u32,
+                       param_2: i16,
+                       param_3: u16,
+                       param_4: COLORREF)
 
 {
     let mut pi_var1: *mut i16;
-    bool     bVar2;
+    let mut bVar2: bool;
     let mut uVar3: u16;
     let mut iVar4: i16;
-    HBRUSH16 HVar5;
+    let mut HVar5: HBRUSH16;
     let mut iVar6: i16;
     let mut uVar7: u16;
-    COLORREF hdc;
+    let mut hdc: COLORREF;
     let mut uVar8: u32;
     let mut iStack14: i16;
 
@@ -617,7 +617,7 @@ void draw_op_1040_a67e(globals: &mut Globals,
     {
         hdc                         = LAST_SEGMENT;
         HVar5                       = CreateSolidBrush16(param_4);
-        *(HBRUSH16 *)(iVar6 + 0x8e) = HVar5;
+        (iVar6 + 0x8e) = HVar5;
     }
     if(globals._PTR_LOOP_1050_5ee8 == 0x0)
     {
@@ -627,7 +627,7 @@ void draw_op_1040_a67e(globals: &mut Globals,
         iVar4                        = uVar8;
         globals._PTR_LOOP_1050_5ee8 = CONCAT12(*(iVar4 + 0x94), CONCAT11(*(iVar4 + 0x95), *(iVar4 + 0x96)));
         globals.PTR_LOOP_1050_5eec  = CONCAT11(*(iVar4 + 0x3e5), *(iVar4 + 0x3e6));
-        globals.PTR_LOOP_1050_5eee  = *(u8 *)(iVar4 + 0x3e4);
+        globals.PTR_LOOP_1050_5eee  = (iVar4 + 0x3e4);
     }
     if(0x5 < param_3)
     {
@@ -636,14 +636,19 @@ void draw_op_1040_a67e(globals: &mut Globals,
             return;
         }
         bVar2 = false;
-        for(iStack14 = 0x0; pi_var1 = (iVar6 + 0xea), *pi_var1 != iStack14 && iStack14 <= *pi_var1; iStack14 = iStack14 + 0x1)
+        // for(iStack14 = 0x0; pi_var1 = (iVar6 + 0xea), *pi_var1 != iStack14 && iStack14 <= *pi_var1; iStack14 = iStack14 + 0x1)
+        iStack14 = 0;
+        unsafe {
+            while *pi_var1 != iStack14 && iStack14 <= *pi_var1
         {
             if((iVar6 + 0x9a + iStack14 * 0x2) == param_2)
             {
                 bVar2 = true;
                 break;
             }
+            iStack14 += 1;
         }
+    }
         if(bVar2)
         {
             globals.PTR_LOOP_1050_5ee8 = globals.PTR_LOOP_1050_5eec;
@@ -653,11 +658,10 @@ void draw_op_1040_a67e(globals: &mut Globals,
     SetBkColor16(LAST_SEGMENT, 0x0);
 }
 
-
-u16 *unk_win_ui_op_1040_9854(globals: &mut Globals, u16 *param_1, param_2: u16)
+pub fn unk_win_ui_op_1040_9854(globals: &mut Globals,param_1: *mut u16, param_2: u16) -> *mut u16
 
 {
-    HCURSOR16 cursor_handle_1;
+    let mut cursor_handle_1: HCURSOR16;
     let mut obj_handle_1: HGDIOBJ16;
 //    i16       iVar3;
 //    u16       uVar4;
@@ -671,9 +675,9 @@ u16 *unk_win_ui_op_1040_9854(globals: &mut Globals, u16 *param_1, param_2: u16)
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x4)), globals.s_OPButton_1050_5ece);
     (param_1 + 0x54) = 0x3;
     cursor_handle_1 = LoadCursor16(SEG_1000, 0x7f00);
-    *(HCURSOR16 *) (param_1 + 0x58) = cursor_handle_1;
+     (param_1 + 0x58) = cursor_handle_1;
     obj_handle_1 = GetStockObject16( LAST_SEGMENT);
-    *(HGDIOBJ16 *) (param_1 + 0x56) = obj_handle_1;
+     (param_1 + 0x56) = obj_handle_1;
     reg_class_1040_98c0(param_1 & 0xffff | uVar4 << 0x10, LAST_SEGMENT, param_2);
     return param_1;
 }
@@ -681,7 +685,7 @@ u16 *unk_win_ui_op_1040_9854(globals: &mut Globals, u16 *param_1, param_2: u16)
 
 // WARNING: Could not reconcile some variable overlaps
 
-void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4: *mut RECT16)
+pub fn draw_op_1040_9948(param_1: u16, param_2: *mut Struct71, param_3: HWND16, param_4: *mut RECT16)
 
 {
     let mut iVar1: i16;
@@ -692,9 +696,9 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
     let mut handle_00: HPEN16;
     let mut handle_01: HGDIOBJ16;
     let mut color: *mut u8;
-    COLORREF      color_00;
-    COLORREF      color_01;
-    Struct71   *iVar4;
+    let mut color_00: COLORREF;
+    let mut color_01: COLORREF;
+    let mut iVar4: *mut Struct71;
     let mut y: u16;
     let mut x: *mut c_char;
     let mut cx: u16;
@@ -728,7 +732,7 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
     iStack28 = 0x0;
     HStack30 = 0x0;
     y        = (param_2 >> 0x10);
-    iVar4    = (Struct71 *)param_2;
+    iVar4    = param_2;
     uStack32 = iVar4.field_0x4 & 0x8;
     uStack34 = iVar4.field_0x56 & 0x1;
     BeginPaint16(param_3, &local_42);
@@ -766,7 +770,7 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
     if(uStack34 != 0x0)
     {
         iStack78 = 0x0;
-        do
+        loop
         {
             MoveTo16(LAST_SEGMENT, iStack20, iStack26);
             LineTo16(LAST_SEGMENT, iStack20, iStack22);
@@ -778,7 +782,11 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
             iStack22 = iStack22 + -0x1;
             iStack20 = iStack20 + -0x1;
             iStack78 = iStack78 + 0x1;
-        } while(iStack78 < 0x1);
+            if !(iStack78 < 0x1) {
+                break;
+            }
+        }
+        // while(iStack78 < 0x1);
     }
     if((iVar4.field_0x4 & 0x2) == 0x0)
     {
@@ -787,26 +795,30 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
         iStack78 = 0x0;
         iStack86 = local_12.x;
         iStack80 = uStack14;
-        do
+        loop
         {
             SelectObject16(LAST_SEGMENT, handle);
             MoveTo16(LAST_SEGMENT, iStack80, iStack86);
             LineTo16(LAST_SEGMENT, iStack80, iStack82);
             LineTo16(LAST_SEGMENT, iStack84, iStack82);
             iStack88 = 0x0;
-            do
+            loop
             {
                 SelectObject16(LAST_SEGMENT, handle_00);
                 LineTo16(LAST_SEGMENT, iStack84, iStack86);
                 LineTo16(LAST_SEGMENT, iStack80, iStack86);
                 iStack88 = iStack88 + 0x1;
-            } while(iStack88 < 0x2);
+                if !(iStack88 < 0x2) {break;}
+            }
+            // } while(iStack88 < 0x2);
             iStack84 = iStack84 + 0x1;
             iStack86 = iStack86 + 0x1;
             iStack82 = iStack82 + -0x1;
             iStack80 = iStack80 + -0x1;
             iStack78 = iStack78 + 0x1;
-        } while(iStack78 < 0x2);
+            if !(iStack78 < 0x2) {break;}
+        }
+        // while(iStack78 < 0x2);
     }
     else
     {
@@ -861,16 +873,16 @@ void draw_op_1040_9948(param_1: u16, Struct71 *param_2, param_3: HWND16, param_4
 }
 
 
-void mixed_draw_op_1040_8a06(globals: &mut Globals, param_1: u32, param_2: HWND16, param_3: u16)
+pub fn mixed_draw_op_1040_8a06(globals: &mut Globals, param_1: u32, param_2: HWND16, param_3: u16)
 
 {
-    u8            uVar1;
-    u8            u_var2;
-    Struct13 *paVar3;
+    let mut uVar1: u8;
+    let mut u_var2: u8;
+    let mut paVar3: *mut Struct13;
     let mut uVar4: u16;
     let mut b_force_background: HPALETTE16;
-    COLORREF      color;
-    COLORREF      color_00;
+    let mut color: COLORREF;
+    let mut color_00: COLORREF;
     let mut handle: HANDLE16;
     let mut in_DX: u16;
     let mut rect: *mut RECT16;
@@ -881,7 +893,7 @@ void mixed_draw_op_1040_8a06(globals: &mut Globals, param_1: u32, param_2: HWND1
 
     rect               = (param_1 >> 0x10);
     local_24           = BeginPaint16(param_2, &local_22);
-    paVar3             = *(Struct13 **)(globals._PTR_LOOP_1050_4230 + 0xe);
+    paVar3             = (globals._PTR_LOOP_1050_4230 + 0xe);
     b_force_background = palette_op_1008_4e08(paVar3, &local_24, in_DX, SEG_1008);
     uVar5              = pass1_1008_4d72(paVar3);
     uVar4              = (uVar5 >> 0x10);
@@ -909,7 +921,7 @@ void mixed_draw_op_1040_8a06(globals: &mut Globals, param_1: u32, param_2: HWND1
 }
 
 
-void pass1_1040_8e82(globals: &mut Globals, param_1: *mut Struct18)
+pub fn pass1_1040_8e82(globals: &mut Globals, param_1: *mut Struct18)
 
 {
     param_1.field_0x0 = addr_table_1040_8f3c;//0x8f3c;
@@ -918,12 +930,12 @@ void pass1_1040_8e82(globals: &mut Globals, param_1: *mut Struct18)
 }
 
 
-void pass1_1040_9252(Struct65 *param_1)
+pub fn pass1_1040_9252(param_1: *mut Struct65)
 
 {
     let mut pi_var1: *mut i16;
     let mut iVar2: i16;
-    Struct161 *iVar3;
+    let mut iVar3: *mut Struct161;
 //    u16          uVar3;
 
 //    uVar3 = (param_1 >> 0x10);
@@ -957,13 +969,13 @@ void pass1_1040_9252(Struct65 *param_1)
         iVar3.field_0x24 = iVar2;
     }
     pi_var1  = &iVar3.field_0x22;
-    *pi_var1 = *pi_var1 + iVar3.field_0x36;
+    unsafe{*pi_var1 = *pi_var1 + iVar3.field_0x36};
     pi_var1  = &iVar3.field_0x24;
-    *pi_var1 = *pi_var1 + iVar3.field_0x36;
+    unsafe{*pi_var1 = *pi_var1 + iVar3.field_0x36};
 }
 
 
-void unk_draw_op_1040_9458(Struct17 *param_1, param_2: u8, param_3: u16, param_4: HDC16)
+pub fn unk_draw_op_1040_9458(param_1: *mut Struct17, param_2: u8, param_3: u16, param_4: HDC16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -971,9 +983,8 @@ void unk_draw_op_1040_9458(Struct17 *param_1, param_2: u8, param_3: u16, param_4
     let mut b_force_background: *mut u16;
     let mut uVar3: u16;
     let mut puStack8: *mut u16;
-    u32        *pu_stack6;
+    let mut pu_stack6: *mut u32;
 
- \
     if(param_1.field_0x8 != 0x0)
     {
         pu_stack6 = param_1.field_0x8;
@@ -989,22 +1000,22 @@ void unk_draw_op_1040_9458(Struct17 *param_1, param_2: u8, param_3: u16, param_4
             uVar3    = (&param_1.field_0x10 + 0x2);
         }
         b_force_background = &param_3;
-        u_var2              = *pu_stack6;
+       unsafe{ u_var2              = *pu_stack6};
         ppcVar1            = (u_var2 + 0x8);
-        (**ppcVar1)(param_4, pu_stack6, uVar3, b_force_background);
+        unsafe{(**ppcVar1)(param_4, pu_stack6, uVar3, b_force_background)};
         ppcVar1 = (u_var2 + 0x4);
-        (**ppcVar1)(param_4, pu_stack6, param_1.field_0x28, param_1.field_0x26, &param_3);
+        unsafe{(**ppcVar1)(param_4, pu_stack6, param_1.field_0x28, param_1.field_0x26, &param_3)};
         SelectPalette16(param_4, 0x0, b_force_background);
         DeleteObject16(LAST_SEGMENT);
     }
 }
 
 
-void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, param_2: HDC16)
+pub fn draw_text_1040_94fc(globals: &mut Globals, param_1: *mut Struct37, param_2: HDC16)
 
 {
-    COLORREF    color;
-    COLORREF    color_00;
+    let mut color: COLORREF;
+    let mut color_00: COLORREF;
 //    Struct38 *iVar1;
     let mut rect: *mut RECT16;
 
@@ -1018,7 +1029,7 @@ void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, param_2: HDC1
 }
 
 
-void draw_text_1040_9650(Struct65 *pstruct_arg_1, HWND16 hwnd_arg_2)
+pub fn draw_text_1040_9650(pstruct_arg_1: *mut Struct65, hwnd_arg_2: HWND16)
 
 {
     let mut hdc: HDC16;
@@ -1033,7 +1044,7 @@ void draw_text_1040_9650(Struct65 *pstruct_arg_1, HWND16 hwnd_arg_2)
 }
 
 
-void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2)
+pub fn draw_op_1040_82ee(param_1: *mut Struct15, in_colorref_2: COLORREF)
 
 {
 //    Struct15 *iVar1;
@@ -1050,7 +1061,7 @@ void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2)
     let mut iStack4: i16;
 
 //    uVar1          = (param_1 >> 0x10);
-//    iVar1          = (Struct15 *)param_1;
+//    iVar1          = param_1;
     iStack6        = (param_1.field_0x80 - param_1.field_0x7c) + -0x2;
     iStack8        = (-(param_1.field_0x60 == 0x0) & 0x1e) + 0x25;
     iStack4        = iStack6;
@@ -1059,8 +1070,8 @@ void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2)
     {
         local_1a           = str_var1(param_1.field_0x66 + 0x2, param_1.field_0x64 + 0x2);
         uStack22           = str_var1(iStack4, iStack6);
-        &param_1.field_0x82 = local_1a;
-        &param_1.field_0x86 = uStack22;
+        param_1.field_0x82 = local_1a;
+        param_1.field_0x86 = uStack22;
     }
     local_12 = param_1.field_0x82 + 0x2;
     iStack16 = (param_1.field_0x88 - param_1.field_0x84) / 0x2 + param_1.field_0x84 + -0x2;
@@ -1073,21 +1084,21 @@ void draw_op_1040_82ee(Struct15 *param_1, COLORREF in_colorref_2)
 }
 
 
-u32 set_text_bk_color_1040_7e5e(globals: &mut Globals,
-                                u32     *param_1,
-                                u16      param_2,
-                                u16      param_3,
-                                u16      param_4)
+pub fn set_text_bk_color_1040_7e5e(globals: &mut Globals,
+                               param_1: *mut u32,
+                                param_2: u16,
+                                param_3: u16,
+                               param_4: u16) -> u32
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut iVar2: i16;
     let mut HVar3: HGDIOBJ16;
     let mut IVar4: u16;
-    HWND16    hwnd;
-    HWND16    hdc;
+    let mut hwnd: HWND16;
+    let mut hdc: HWND16;
     let mut uVar5: u32;
-    COLORREF  color;
+    let mut color: COLORREF;
     let mut uVar6: u16;
 
     uVar6 = 0x4;
@@ -1095,8 +1106,8 @@ u32 set_text_bk_color_1040_7e5e(globals: &mut Globals,
     HVar3 = GetStockObject16(param_4);
     if(globals._PTR_LOOP_1050_5df0 == 0x0)
     {
-        ppcVar1 = (*param_1 + 0x68);
-        uVar5   = (**ppcVar1)(LAST_SEGMENT, param_1, (param_1 + 0x6e), uVar6);
+        unsafe{ppcVar1 = (*param_1 + 0x68)};
+        uVar5   = unsafe{(**ppcVar1)(LAST_SEGMENT, param_1, (param_1 + 0x6e), uVar6)};
         if(uVar5 == 0x0)
         {
             return 0x0;
@@ -1119,12 +1130,12 @@ u32 set_text_bk_color_1040_7e5e(globals: &mut Globals,
         if(IVar4 == 0x14c)
         {
             color = 0x0;
-            goto LAB_1040_7f00;
+            // goto LAB_1040_7f00;
         }
         if(IVar4 == 0x175)
         {
             color = 0x0;
-            goto LAB_1040_7f00;
+            // goto LAB_1040_7f00;
         }
     }
     color = globals._PTR_LOOP_1050_5df0;
@@ -1135,25 +1146,25 @@ u32 set_text_bk_color_1040_7e5e(globals: &mut Globals,
 }
 
 
-void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: u16)
+pub fn draw_op_1040_7bb2(in_struct_1: *mut Struct14, in_win_handle_2: HWND16, param_3: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
-    BOOL16      BVar2;
+    let mut BVar2: BOOL16;
     let mut y: i16;
     let mut iVar3: i16;
-    COLORREF    color;
+    let mut color: COLORREF;
     let mut handle: HPEN16;
     let mut handle_00: HGDIOBJ16;
     let mut rect: *mut RECT16;
     let mut handle_01: HANDLE16;
-    LPCSTR      str;
-    Struct14 *iVar4;
+    let mut str: *mut c_char;
+    let mut iVar4: *mut Struct14;
     let mut count: *mut c_char;
     let mut str_00: *mut c_char;
     let mut uVar4: u32;
     let mut DVar5: DWORD;
-    HBRUSH16    hbrush;
+    let mut hbrush: HBRUSH16;
     let mut uVar6: u16;
     let mut uVar7: u16;
     let mut local_obj_handle_42: HGDIOBJ16;
@@ -1165,7 +1176,7 @@ void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: 
     let mut local_hdc_4: HDC16;
 
     str_00 = (in_struct_1 >> 0x10);
-    iVar4  = (Struct14 *)in_struct_1;
+    iVar4  = in_struct_1;
     uVar7  = iVar4.field_0x6;
     BVar2  = IsIconic16(in_win_handle_2);
     if(BVar2 == 0x0)
@@ -1173,7 +1184,7 @@ void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: 
         uVar6       = iVar4.field_0x6;
         local_hdc_4 = GetWindowDC16(LAST_SEGMENT);
         ppcVar1     = (in_struct_1 + 0x68);
-        uStack8     = (**ppcVar1)(LAST_SEGMENT, in_struct_1, iVar4.field_0x6e, uVar6, uVar7);
+        uStack8     = unsafe{(**ppcVar1)(LAST_SEGMENT, in_struct_1, iVar4.field_0x6e, uVar6, uVar7)};
         if(uStack8 != 0x0)
         {
             HStack10 = palette_op_1008_4e08(uStack8, &local_hdc_4, (uStack8 >> 0x10) | uStack8, SEG_1008);
@@ -1203,10 +1214,10 @@ void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: 
                 FillRect16(LAST_SEGMENT, rect, hbrush);
                 if(iVar4.field_0x76 != 0x0)
                 {
-                    draw_op_1040_82ee((Struct15 *)in_struct_1, LAST_SEGMENT);
+                    draw_op_1040_82ee(in_struct_1, LAST_SEGMENT);
                 }
                 count = &iVar4.field_0x10;
-                if(*count != '\0')
+                if(unsafe{*count != '\0'})
                 {
                     local_obj_handle_42 = 0x0;
                     handle_01           = GetProp16(LAST_SEGMENT, 0x5de9);
@@ -1226,7 +1237,7 @@ void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: 
                 }
             }
             ppcVar1 = (in_struct_1 + 0x64);
-            (**ppcVar1)(LAST_SEGMENT, in_struct_1, uStack8, local_hdc_4);
+            unsafe{(**ppcVar1)(LAST_SEGMENT, in_struct_1, uStack8, local_hdc_4)};
             HStack10 = SelectPalette16(LAST_SEGMENT, 0x0, HStack10);
             DeleteObject16(LAST_SEGMENT);
             SelectObject16(LAST_SEGMENT, handle_00);
@@ -1239,7 +1250,7 @@ void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: 
 }
 
 
-Struct18 *pass1_1040_767e(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1040_767e(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);
@@ -1251,7 +1262,7 @@ Struct18 *pass1_1040_767e(param_1: *mut Struct18, param_2: u8)
 }
 
 
-Struct18 *pass1_1040_6360(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1040_6360(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);
@@ -1263,7 +1274,7 @@ Struct18 *pass1_1040_6360(param_1: *mut Struct18, param_2: u8)
 }
 
 
-void pass1_1040_6862(param_1: *mut Struct18)
+pub fn pass1_1040_6862(param_1: *mut Struct18)
 
 {
     param_1.field_0x0 = addr_table_1040_6f32;//0x6f32;
@@ -1273,7 +1284,7 @@ void pass1_1040_6862(param_1: *mut Struct18)
 }
 
 
-Struct18 *pass1_1040_4df2(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1040_4df2(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);
@@ -1285,7 +1296,7 @@ Struct18 *pass1_1040_4df2(param_1: *mut Struct18, param_2: u8)
 }
 
 
-void pass1_1040_4f0a(param_1: *mut Struct18)
+pub fn pass1_1040_4f0a(param_1: *mut Struct18)
 
 {
     param_1.field_0x0 = addr_table_1040_55a2; // 0x55a2;
@@ -1295,7 +1306,7 @@ void pass1_1040_4f0a(param_1: *mut Struct18)
 }
 
 
-void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
+pub fn draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
 
 {
     let mut puVar1: *mut u16;
@@ -1314,10 +1325,10 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
     let mut uVar8: u16;
     let mut IVar9: u16;
     let mut uVar10: u32;
-    Struct43   *paVar11;
-    Struct76   *paVar12;
+    let mut paVar11: *mut Struct43;
+    let mut paVar12: *mut Struct76;
     let mut uVar13: u16;
-    HDC16        *pHVar14;
+    let mut pHVar14: *mut HDC16;
     let mut uVar15: u16;
     let mut HVar16: HDC16;
     let mut HVar17: HDC16;
@@ -1328,10 +1339,10 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
     let mut uStack82: u16;
     let mut iStack72: i16;
     let mut iStack68: i16;
-    Struct76   *paStack54;
+    let mut paStack54: *mut Struct76;
     let mut local_2c: HDC16;
     let mut local_2a: PAINTSTRUCT16;
-    RECT16        local_a[0x2];
+    let mut local_a: [RECT16;0x2] = [0;0x2];
 
     uVar7  = (param_1 >> 0x10);
     iVar6  = param_1;
@@ -1340,40 +1351,40 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
     uVar13             = (iVar6 + 0x6);
     local_2c           = BeginPaint16(LAST_SEGMENT, &local_2a);
     uVar8              = SEG_1008;
-    b_force_background = palette_op_1008_4e08(*(Struct13 **)(globals._PTR_LOOP_1050_4230 + 0xe), &local_2c, in_DX, SEG_1008);
-    paStack54          = (Struct76 *)0x0;
+    b_force_background = palette_op_1008_4e08((globals._PTR_LOOP_1050_4230 + 0xe), &local_2c, in_DX, SEG_1008);
+    paStack54          = 0x0;
     if((iVar6 + 0x98) != 0x0)
     {
-        paStack54 = (Struct76 *)unk_io_op_1010_830aglobals.dat_1050_14cc, (iVar6 + 0x98), param_3);
+        paStack54 = unk_io_op_1010_830a(globals.dat_1050_14cc, (iVar6 + 0x98), param_3);
         IVar9     = SEG_1008;
         uVar10    = pass1_1008_4772(paStack54);
         if(((uVar10 >> 0x10) | uVar10) == 0x0)
         {
-            if(paStack54 != (Struct76 *)0x0)
+            if(paStack54 != 0x0)
             {
-                if(paStack54 != (Struct76 *)0x0)
+                if(paStack54 != 0x0)
                 {
                     ppcVar3 = paStack54;
-                    (**ppcVar3)(SEG_1008, paStack54, (paStack54 >> 0x10), 0x1, uVar13);
+                    unsafe{(**ppcVar3)(SEG_1008, paStack54, (paStack54 >> 0x10), 0x1, uVar13)};
                 }
             }
             IVar9     = SEG_1010;
-            paStack54 = (Struct76 *)unk_io_op_1010_830aglobals.dat_1050_14cc, 0x4d, param_3);
+            paStack54 = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x4d, param_3);
         }
         uVar8 = SUB42(LAST_SEGMENT, 0x0);
         GetSystemMetrics16(IVar9);
         ppcVar3 = (paStack54 + 0x4);
-        (**ppcVar3)();
+        unsafe{(**ppcVar3)()};
     }
-    if(paStack54 != (Struct76 *)0x0)
+    if(paStack54 != 0x0)
     {
-        if(paStack54 != (Struct76 *)0x0)
+        if(paStack54 != 0x0)
         {
             ppcVar3 = paStack54;
-            (**ppcVar3)(uVar8, paStack54, (paStack54 >> 0x10), 0x1, uVar13, u_var21);
+            unsafe{(**ppcVar3)(uVar8, paStack54, (paStack54 >> 0x10), 0x1, uVar13, u_var21)};
         }
     }
-    paVar11 = unk_io_op_1010_830aglobals.dat_1050_14cc, (iVar6 + 0x96), param_3);
+    paVar11 = unk_io_op_1010_830a(globals.dat_1050_14cc, (iVar6 + 0x96), param_3);
     u_var21  = (paVar11 >> 0x10);
     pHVar14 = &local_2c;
     uVar19  = 0x4;
@@ -1385,18 +1396,18 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
     ppcVar3 = uVar4 + 0x2;
     uVar13  = paVar11;
     uVar8   = u_var21;
-    (**ppcVar3)();
-    if(paVar11 != (Struct43 *)0x0)
+    unsafe{(**ppcVar3)()};
+    if(paVar11 != 0x0)
     {
-        if(paVar11 != (Struct43 *)0x0)
+        if(paVar11 != 0x0)
         {
             ppcVar3 = uVar4;
-            (**ppcVar3)(LAST_SEGMENT, paVar11, u_var21, 0x1, uVar13, uVar8, iVar5, uVar19, u_var20, pHVar14, uVar15);
+            unsafe{(**ppcVar3)(LAST_SEGMENT, paVar11, u_var21, 0x1, uVar13, uVar8, iVar5, uVar19, u_var20, pHVar14, uVar15)};
         }
     }
     handle    = CreatePen16(LAST_SEGMENT, 0x25, 0x100);
     handle_00 = SelectObject16(LAST_SEGMENT, handle);
-    paVar12   = (Struct76 *)unk_io_op_1010_830aglobals.dat_1050_14cc, 0x4f, param_3);
+    paVar12   = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x4f, param_3);
     u_var21    = (paVar12 >> 0x10);
     uVar10    = pass1_1008_4772(paVar12);
     uVar13    = (uVar10 >> 0x10);
@@ -1417,7 +1428,10 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
     LineTo16(LAST_SEGMENT, x, 0x82);
     HVar16 = local_2c;
     LineTo16(LAST_SEGMENT, iVar5, 0x82);
-    for(uStack82 = 0x0; puVar1 = (iVar6 + 0x94), uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 = uStack82 + 0x1)
+    // for(uStack82 = 0x0; puVar1 = (iVar6 + 0x94), uStack82 <= *puVar1 && *puVar1 != uStack82; uStack82 = uStack82 + 0x1)
+    uStack82 = 0;
+    puVar1 = (iVar6 + 0x94);
+    while (unsafe{uStack82 <= *puVar1 && *puVar1 != uStack82})
     {
         pHVar14 = &local_2c;
         iVar5   = iStack68 * uStack82 + 0x84;
@@ -1425,14 +1439,15 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
         uVar15  = param_3;
         IVar9   = GetSystemMetrics16(LAST_SEGMENT);
         ppcVar3 = (paVar12 + 0x4);
-        (**ppcVar3)(LAST_SEGMENT, paVar12, u_var21, -(IVar9 + -0xc4), uVar13, iVar5, pHVar14, uVar15, HVar16, HVar17);
+        unsafe{(**ppcVar3)(LAST_SEGMENT, paVar12, u_var21, -(IVar9 + -0xc4), uVar13, iVar5, pHVar14, uVar15, HVar16, HVar17)};
+        uStack82 = uStack82 + 0x1;
     }
-    if(paVar12 != (Struct76 *)0x0)
+    if(paVar12 != 0x0)
     {
-        if(paVar12 != (Struct76 *)0x0)
+        if(paVar12 != 0x0)
         {
             ppcVar3 = paVar12;
-            (**ppcVar3)(LAST_SEGMENT, paVar12, u_var21, 0x1, HVar16, HVar17, HVar18);
+            unsafe{(**ppcVar3)(LAST_SEGMENT, paVar12, u_var21, 0x1, HVar16, HVar17, HVar18)};
         }
     }
     SelectObject16(LAST_SEGMENT, handle_00);
@@ -1444,33 +1459,33 @@ void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16)
 }
 
 
-u16 get_dc_op_1040_3d5e(param_1: u32, param_2: HWND16, param_3: u16)
+pub fn get_dc_op_1040_3d5e(param_1: u32, param_2: HWND16, param_3: u16) -> u16
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut iVar2: i16;
     let mut uVar3: u16;
-    Struct43 *paVar4;
+    let mut paVar4: *mut Struct43;
     let mut uVar5: u16;
     let mut local_4: HDC16;
 
     uVar3   = (param_1 >> 0x10);
     uVar5   = (param_1 + 0x6);
     local_4 = GetDC16(param_2);
-    paVar4  = unk_io_op_1010_830aglobals.dat_1050_14cc, (param_1 + 0xa4), param_3);
+    paVar4  = unk_io_op_1010_830a(globals.dat_1050_14cc, (param_1 + 0xa4), param_3);
     iVar2   = paVar4;
     ppcVar1 = (iVar2 + 0x8);
-    (**ppcVar1)(SEG_1010, paVar4, (paVar4 >> 0x10), &local_4, param_3, uVar5);
+    unsafe{(**ppcVar1)(SEG_1010, paVar4, (paVar4 >> 0x10), &local_4, param_3, uVar5)};
     ppcVar1 = (iVar2 + 0x4);
-    (**ppcVar1)(SEG_1010, paVar4, 0x50078, &local_4, param_3);
+    unsafe{(**ppcVar1)(SEG_1010, paVar4, 0x50078, &local_4, param_3)};
     ppcVar1 = (iVar2 + 0xc);
-    (**ppcVar1)(SEG_1010, paVar4, &local_4, param_3);
+    unsafe{(**ppcVar1)(SEG_1010, paVar4, &local_4, param_3)};
     ReleaseDC16(SEG_1010, local_4);
     return 0x0;
 }
 
 
-void invalidate_rect_1040_3ddc(Struct2 *in_struct_1, HWND16 in_win_handle_2)
+pub fn invalidate_rect_1040_3ddc(in_struct_1: *mut Struct2, in_win_handle_2: HWND16)
 
 {
     let mut local_b_erase: u32;
@@ -1483,7 +1498,7 @@ void invalidate_rect_1040_3ddc(Struct2 *in_struct_1, HWND16 in_win_handle_2)
 }
 
 
-Struct18 *pass1_1040_47fe(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1040_47fe(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);
@@ -1495,18 +1510,18 @@ Struct18 *pass1_1040_47fe(param_1: *mut Struct18, param_2: u8)
 }
 
 
-u32 draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF param_4)
+pub fn draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, param_4: COLORREF) -> u32
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut u_var2: u16;
     let mut iVar3: i16;
-    HBRUSH16 HVar4;
+    let mut HVar4: HBRUSH16;
     let mut IVar5: u16;
     let mut iVar6: i16;
     let mut uVar7: u16;
-    COLORREF CVar8;
-    HWND16   hdc;
+    let mut CVar8: COLORREF;
+    let mut hdc: HWND16;
     let mut uVar9: u32;
 
     uVar7 = (param_1 >> 0x10);
@@ -1516,12 +1531,12 @@ u32 draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF
     {
         CVar8                      = LAST_SEGMENT;
         HVar4                      = CreateSolidBrush16(param_4);
-        *(HBRUSH16 *)(iVar6 + 0x4) = HVar4;
+        (iVar6 + 0x4) = HVar4;
     }
     if(globals._PTR_LOOP_1050_5cf8 == 0x0)
     {
-        ppcVar1                      = (*param_1 + 0x68);
-        uVar9                        = (**ppcVar1)(CVar8, param_1, (iVar6 + 0x6e));
+        ppcVar1                      = unsafe{(*param_1 + 0x68)};
+        uVar9                        = unsafe{(**ppcVar1)(CVar8, param_1, (iVar6 + 0x6e))};
         CVar8                        = SEG_1008;
         uVar9                        = pass1_1008_4d72(uVar9);
         u_var2                        = (uVar9 >> 0x10);
@@ -1540,7 +1555,7 @@ u32 draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF
         if(((iVar6 + 0x94) != 0x0) && (IVar5 == 0xfb2))
         {
             CVar8 = 0x0;
-            goto LAB_1040_286e;
+            // goto LAB_1040_286e;
         }
     }
     CVar8 = _PTR_LOOP_1050_5cf8;
@@ -1551,14 +1566,14 @@ u32 draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF
 }
 
 
-void pass1_1040_2a22(param_1: *mut Struct18)
+pub fn pass1_1040_2a22(param_1: *mut Struct18)
 
 {
 //    Struct625 *iVar1;
 //    u16          uVar1;
 //
 //    uVar1              = (param_1 >> 0x10);
-//    iVar1              = (Struct625 *)param_1;
+//    iVar1              = param_1;
     param_1.field_0x0 = addr_table_1040_2e26; // 0x2e26;
     param_1.field_0x2   = SEG_1040;
     fn_ptr_1000_17ce(param_1.field_0x94, SEG_1000);
@@ -1568,17 +1583,17 @@ void pass1_1040_2a22(param_1: *mut Struct18)
 }
 
 
-void mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16)
+pub fn mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16)
 
 {
-    u8            uVar1;
-    u8            u_var2;
-    Struct13 *paVar3;
+    let mut uVar1: u8;
+    let mut u_var2: u8;
+    let mut paVar3: *mut Struct13;
     let mut ppcVar4: *mut *mut c_void;
     let mut iVar5: i16;
     let mut b_force_background: HPALETTE16;
-    COLORREF      color;
-    COLORREF      color_00;
+    let mut color: COLORREF;
+    let mut color_00: COLORREF;
     let mut handle: HANDLE16;
     let mut in_DX: u16;
     let mut iVar6: i16;
@@ -1593,10 +1608,10 @@ void mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16)
     iVar6              = param_1;
     uVar8              = (iVar6 + 0x6);
     local_24           = BeginPaint16(param_2, &local_22);
-    paVar3             = *(Struct13 **)(globals._PTR_LOOP_1050_4230 + 0xe);
+    paVar3             = (globals._PTR_LOOP_1050_4230 + 0xe);
     b_force_background = palette_op_1008_4e08(paVar3, &local_24, in_DX, SEG_1008);
     ppcVar4            = ((iVar6 + 0x8e) + 0x4);
-    (**ppcVar4)(SEG_1008, (iVar6 + 0x8e), 0xffffffff, &local_24, param_3, uVar8);
+    unsafe{(**ppcVar4)(SEG_1008, (iVar6 + 0x8e), 0xffffffff, &local_24, param_3, uVar8)};
     uVar7    = pass1_1008_4d72(paVar3);
     uVar8    = (uVar7 >> 0x10);
     iVar5    = uVar7;
@@ -1626,11 +1641,11 @@ void mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16)
 }
 
 
-u32 set_text_bk_color_1040_0cc0(globals: &mut Globals,
-                                u32     *param_1,
-                                u16      param_2,
-                                u16      param_3,
-                                u16      param_4)
+pub fn set_text_bk_color_1040_0cc0(globals: &mut Globals,
+                               param_1: *mut u32,
+                                param_2: u16,
+                                param_3: u16,
+                               param_4: u16) -> u32
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1646,8 +1661,8 @@ u32 set_text_bk_color_1040_0cc0(globals: &mut Globals,
     HStack4 = GetStockObject16(param_4);
     if(globals._PTR_LOOP_1050_5cd0 == 0x0)
     {
-        ppcVar1                      = (*param_1 + 0x68);
-        uVar3                        = (**ppcVar1)(LAST_SEGMENT, param_1, (param_1 + 0x6e), uVar4);
+        ppcVar1                      = unsafe{(*param_1 + 0x68)};
+        uVar3                        = unsafe{(**ppcVar1)(LAST_SEGMENT, param_1, (param_1 + 0x6e), uVar4)};
         obj                          = SEG_1008;
         uVar3                        = pass1_1008_4d72(uVar3);
         uVar4                        = (uVar3 >> 0x10);
@@ -1676,29 +1691,29 @@ u32 set_text_bk_color_1040_0cc0(globals: &mut Globals,
 }
 
 
-void draw_op_1038_9dcc(Globals  *globals,
-                       Struct10 *in_struct_1,
-                       i16       param_2,
-                       u16       param_3,
+pub fn draw_op_1038_9dcc(Globals  *globals,
+                       in_struct_1: *mut Struct10,
+                       param_2: i16,
+                       param_3: u16,
                        COLORREF  in_colorref_4,
-                       u16       param_5)
+                      param_5: u16)
 
 {
     let mut puVar1: *mut u16;
-    bool        bVar2;
+    let mut bVar2: bool;
     let mut uVar3: u16;
     let mut iVar4: i16;
-    HBRUSH16    local_brush_handle;
+    let mut local_brush_handle: HBRUSH16;
     let mut uVar5: u32;
     let mut extraout_DX: u16;
 //    Struct10 *local_struct_5;
 //    Struct10 *var5;
-    COLORREF    hdc;
+    let mut hdc: COLORREF;
     let mut uVar6: u32;
     let mut uStack14: u16;
 
-//    var5           = (Struct10 *)(in_struct_1 >> 0x10);
-//    local_struct_5 = (Struct10 *)in_struct_1;
+//    var5           = (in_struct_1 >> 0x10);
+//    local_struct_5 = in_struct_1;
     hdc            = in_colorref_4;
     if(in_struct_1->brush_handle_field_0x8e == 0x0)
     {
@@ -1714,7 +1729,7 @@ void draw_op_1038_9dcc(Globals  *globals,
         iVar4                        = uVar6;
         globals._PTR_LOOP_1050_5b64 = CONCAT12(*(iVar4 + 0x94), CONCAT11(*(iVar4 + 0x95), *(iVar4 + 0x96)));
         globals.PTR_LOOP_1050_5b68  = CONCAT11(*(iVar4 + 0x3e5), *(iVar4 + 0x3e6));
-        globals.PTR_LOOP_1050_5b6a  = *(u8 *)(iVar4 + 0x3e4);
+        globals.PTR_LOOP_1050_5b6a  = (iVar4 + 0x3e4);
     }
     if(0x5 < param_3)
     {
@@ -1741,19 +1756,19 @@ void draw_op_1038_9dcc(Globals  *globals,
 }
 
 
-u16 call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, Struct733 *struct_1, param_4: u16)
+u16 call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, struct_1: *mut Struct733, param_4: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
-    Struct43 *var_2;
-    Struct43 *var_3;
+    let mut var_2: *mut Struct43;
+    let mut var_3: *mut Struct43;
     let mut dev_ctx: HDC16;
     let mut var_5: u16;
 
     var_5   = struct_1.field_0x6;
     dev_ctx = GetDC16(win_handle);
-    var_3   = unk_io_op_1010_830aglobals.dat_1050_14cc, 0x3, param_2);
-    var_2   = (Struct43 *)var_3;
+    var_3   = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x3, param_2);
+    var_2   = var_3;
     ppcVar1 = &var_2->fn_ptr_field_0x8;
     (**ppcVar1)(SEG_1010, var_3, (var_3 >> 0x10), &dev_ctx, param_2, var_5);
     ppcVar1 = &var_2->fn_ptr_field_0x4;
@@ -1773,12 +1788,12 @@ void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
     let mut IVar3: u16;
     let mut uVar3: u32;
     let mut extraout_DX: u16;
-    HWND16      hwnd;
-    HWND16      hdc;
+    let mut hwnd: HWND16;
+    let mut hdc: HWND16;
     let mut uVar5: u32;
-    COLORREF    color;
-    u8          uVar4;
-    Struct46 *iVar1;
+    let mut color: COLORREF;
+    let mut uVar4: u8;
+    let mut iVar1: *mut Struct46;
 
     hwnd = LAST_SEGMENT;
     GetStockObject16(param_1);
@@ -1873,14 +1888,14 @@ void pass1_1038_8cf6(param_1: *mut Struct18)
 }
 
 
-void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: HWND16, param_6: u16)
+pub fn draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: HWND16, param_6: u16)
 
 {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut c_void;
     let mut uVar3: u16;
     let mut iVar4: i16;
-    Struct18 *paVar5;
+    let mut paVar5: *mut Struct18;
     let mut in_DX: *mut u8;
     let mut puVar6: *mut u8;
     let mut puVar7: *mut u8;
@@ -1888,24 +1903,24 @@ void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
     let mut uVar8: u16;
     BOOL16      local_1a[0x2];
     let mut UStack22: u16;
-    Struct18 *paStack20;
-    Struct18 *paStack16;
+    let mut paStack20: *mut Struct18;
+    let mut paStack16: *mut Struct18;
     let mut iStack12: i16;
-    Struct18 *paStack10;
+    let mut paStack10: *mut Struct18;
     let mut paStack6: *mut Struct20;
 
     if(param_4 == 0xeb)
     {
         paStack6 = mixed_1010_20ba(
-          NULL, globals.u16_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
+          NULL, globals._1050_0ed0: u16, 0x3, param_6, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
         paVar5   = (param_1 + 0x90);
-        if(paVar5 != (Struct18 *)0x0)
+        if(paVar5 != 0x0)
         {
             paStack10 = paVar5;
             mem_op_1000_179c(0x18, puVar6, 0);
             uVar3 = paVar5;
-            paStack16 = (Struct18 *)(paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
+            paStack16 = (paVar5 & 0xffff | ZEXT24(puVar6) << 0x10);
             puVar7    = (puVar6 | uVar3);
             if(puVar7 == 0x0)
             {
@@ -1922,7 +1937,7 @@ void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
             iStack12         = (param_1 + 0x90);
             uVar3 = iStack12 * 0xa + 0x2;
             mem_op_1000_179c(uVar3, puVar7, 0);
-            paStack16 = (Struct18 *)str_var1(puVar7, uVar3);
+            paStack16 = str_var1(puVar7, uVar3);
             if((puVar7 | uVar3) == 0x0)
             {
                 uVar1         = (param_1 + 0x90);
@@ -1949,7 +1964,7 @@ void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, p
             pass1_1010_a50c(paStack6, 0x10505b42, *(param_1 + 0x90));
             paStack20 = paStack10;
             paStack16 = paStack10;
-            if(paStack10 != (Struct18 *)0x0)
+            if(paStack10 != 0x0)
             {
                 pass1_1040_a5d0(paStack10);
                 uVar8 = SEG_1000;

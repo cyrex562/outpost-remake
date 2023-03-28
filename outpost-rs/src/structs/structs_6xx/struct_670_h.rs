@@ -8,14 +8,14 @@
 // typedef struct Struct670 Struct670;
 struct Struct670
 {
-    u8         field_0x0;
-    u8         field_0x1;
-    u8         field_0x2;
-    u8         field_0x3;
-    u8         field_0x4;
-    u8         field_0x5;
-    u8         field_0x6;
-    u8         field_0x7;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
+    let mut field_0x2: u8;
+    let mut field_0x3: u8;
+    let mut field_0x4: u8;
+    let mut field_0x5: u8;
+    let mut field_0x6: u8;
+    let mut field_0x7: u8;
     long       field_0x8;
     let mut field_0xc: u32;
     let mut field_0x10: u16;

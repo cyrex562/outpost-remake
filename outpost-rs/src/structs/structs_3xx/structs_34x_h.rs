@@ -1146,7 +1146,7 @@ struct Struct349
     u8   field_0x10a;
     u8   field_0x10b;
     let mut field_0x10c: u32;
-    u32 *field_0x110;
+    let mut field_0x110: *mut u32;
     u8   field_0x114;
     u8   field_0x115;
     u8   field_0x116;
@@ -1156,7 +1156,7 @@ struct Struct349
     let mut field_0x11a: i16;
     u8   field_0x11c;
     u8   field_0x11d;
-    u32 *field_0x11e;
+    let mut field_0x11e: *mut u32;
     let mut field_0x122: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_34X_H_

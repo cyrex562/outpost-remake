@@ -116,8 +116,8 @@ struct Struct386 {
     u8 field_0x37;
     u8 field_0x38;
     u8 field_0x39;
-    u32 *field_0x3a;
-    u32 *field_0x160;
+    let mut field_0x3a: *mut u32;
+    let mut field_0x160: *mut u32;
     long field_0x164;
 };
 struct Struct387 {
@@ -162,7 +162,7 @@ struct Struct387 {
     u8 field_0x28;
     u8 field_0x29;
     long field_0x2a;
-    BOOL16 field_0x2e;
+    let mut field_0x2e: BOOL16;
     let mut field_0x30: *mut u8;
     u8 field_0x32;
     u8 field_0x33;
@@ -172,8 +172,8 @@ struct Struct387 {
     u8 field_0x37;
     u8 field_0x38;
     u8 field_0x39;
-    u32 *field_0x3a;
-    u32 *field_0x3e;
+    let mut field_0x3a: *mut u32;
+    let mut field_0x3e: *mut u32;
 };
 struct Struct388 {
     u8 field_0x0;

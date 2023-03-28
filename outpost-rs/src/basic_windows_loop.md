@@ -1,107 +1,107 @@
 You create a message loop by using the GetMessage and DispatchMessage functions. If your application must obtain character input from the user, include the TranslateMessage function in the loop. TranslateMessage translates virtual-key messages into character messages. The following example shows the message loop in the WinMain function of a simple Windows-based application.
 
 ```c++
-HINSTANCE hinst; 
-HWND hwndMain; 
- 
-int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, 
-    LPSTR lpszCmdLine, int nCmdShow) 
-{ 
+HINSTANCE hinst;
+HWND hwndMain;
+
+int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+    LPSTR lpszCmdLine, int nCmdShow)
+{
     MSG msg;
-    BOOL bRet; 
-    WNDCLASS wc; 
-    UNREFERENCED_PARAMETER(lpszCmdLine); 
- 
-    // Register the window class for the main window. 
- 
-    if (!hPrevInstance) 
-    { 
-        wc.style = 0; 
-        wc.lpfnWndProc = (WNDPROC) WndProc; 
-        wc.cbClsExtra = 0; 
-        wc.cbWndExtra = 0; 
-        wc.hInstance = hInstance; 
-        wc.hIcon = LoadIcon((HINSTANCE) NULL, 
-            IDI_APPLICATION); 
-        wc.hCursor = LoadCursor((HINSTANCE) NULL, 
-            IDC_ARROW); 
-        wc.hbrBackground = GetStockObject(WHITE_BRUSH); 
-        wc.lpszMenuName =  "MainMenu"; 
-        wc.lpszClassName = "MainWndClass"; 
- 
-        if (!RegisterClass(&wc)) 
-            return FALSE; 
-    } 
- 
-    hinst = hInstance;  // save instance handle 
- 
-    // Create the main window. 
- 
-    hwndMain = CreateWindow("MainWndClass", "Sample", 
-        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 
-        CW_USEDEFAULT, CW_USEDEFAULT, (HWND) NULL, 
-        (HMENU) NULL, hinst, (LPVOID) NULL); 
- 
-    // If the main window cannot be created, terminate 
-    // the application. 
- 
-    if (!hwndMain) 
-        return FALSE; 
- 
-    // Show the window and paint its contents. 
- 
-    ShowWindow(hwndMain, nCmdShow); 
-    UpdateWindow(hwndMain); 
- 
-    // Start the message loop. 
- 
+    let mut bRet: BOOL;
+    WNDCLASS wc;
+    UNREFERENCED_PARAMETER(lpszCmdLine);
+
+    // Register the window class for the main window.
+
+    if (!hPrevInstance)
+    {
+        wc.style = 0;
+        wc.lpfnWndProc = (WNDPROC) WndProc;
+        wc.cbClsExtra = 0;
+        wc.cbWndExtra = 0;
+        wc.hInstance = hInstance;
+        wc.hIcon = LoadIcon((HINSTANCE) NULL,
+            IDI_APPLICATION);
+        wc.hCursor = LoadCursor((HINSTANCE) NULL,
+            IDC_ARROW);
+        wc.hbrBackground = GetStockObject(WHITE_BRUSH);
+        wc.lpszMenuName =  "MainMenu";
+        wc.lpszClassName = "MainWndClass";
+
+        if (!RegisterClass(&wc))
+            return FALSE;
+    }
+
+    hinst = hInstance;  // save instance handle
+
+    // Create the main window.
+
+    hwndMain = CreateWindow("MainWndClass", "Sample",
+        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT,
+        CW_USEDEFAULT, CW_USEDEFAULT, (HWND) NULL,
+        (HMENU) NULL, hinst, (LPVOID) NULL);
+
+    // If the main window cannot be created, terminate
+    // the application.
+
+    if (!hwndMain)
+        return FALSE;
+
+    // Show the window and paint its contents.
+
+    ShowWindow(hwndMain, nCmdShow);
+    UpdateWindow(hwndMain);
+
+    // Start the message loop.
+
     while( (bRet = GetMessage( &msg, NULL, 0, 0 )) != 0)
-    { 
+    {
         if (bRet == -1)
         {
             // handle the error and possibly exit
         }
         else
         {
-            TranslateMessage(&msg); 
-            DispatchMessage(&msg); 
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
         }
-    } 
- 
-    // Return the exit code to the system. 
- 
-    return msg.wParam; 
-} 
+    }
+
+    // Return the exit code to the system.
+
+    return msg.wParam;
+}
 ```
 The following example shows a message loop for a thread that uses accelerators and displays a modeless dialog box. When TranslateAccelerator or IsDialogMessage returns TRUE (indicating that the message has been processed), TranslateMessage and DispatchMessage are not called. The reason for this is that TranslateAccelerator and IsDialogMessage perform all necessary translating and dispatching of messages.
 
 ```c
-HWND hwndMain; 
-HWND hwndDlgModeless = NULL; 
+HWND hwndMain;
+HWND hwndDlgModeless = NULL;
 MSG msg;
-BOOL bRet; 
-HACCEL haccel; 
-// 
-// Perform initialization and create a main window. 
-// 
- 
+let mut bRet: BOOL;
+HACCEL haccel;
+//
+// Perform initialization and create a main window.
+//
+
 while( (bRet = GetMessage( &msg, NULL, 0, 0 )) != 0)
-{ 
+{
     if (bRet == -1)
     {
         // handle the error and possibly exit
     }
     else
     {
-        if (hwndDlgModeless == (HWND) NULL || 
-                !IsDialogMessage(hwndDlgModeless, &msg) && 
-                !TranslateAccelerator(hwndMain, haccel, 
-                    &msg)) 
-        { 
-            TranslateMessage(&msg); 
-            DispatchMessage(&msg); 
+        if (hwndDlgModeless == (HWND) NULL ||
+                !IsDialogMessage(hwndDlgModeless, &msg) &&
+                !TranslateAccelerator(hwndMain, haccel,
+                    &msg))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
         }
-    } 
+    }
 }
 ```
 Examining a Message Queue
@@ -113,35 +113,35 @@ You can use the PeekMessage function to examine a message queue during a lengthy
 The following example shows how to use PeekMessage to examine a message queue for mouse clicks and keyboard input during a lengthy operation.
 
 ```c
-HWND hwnd; 
-BOOL fDone; 
-MSG msg; 
- 
-// Begin the operation and continue until it is complete 
-// or until the user clicks the mouse or presses a key. 
- 
-fDone = FALSE; 
-while (!fDone) 
-{ 
-    fDone = DoLengthyOperation(); // application-defined function 
- 
-    // Remove any messages that may be in the queue. If the 
-    // queue contains any mouse or keyboard 
-    // messages, end the operation. 
- 
-    while (PeekMessage(&msg, hwnd,  0, 0, PM_REMOVE)) 
-    { 
-        switch(msg.message) 
-        { 
-            case WM_LBUTTONDOWN: 
-            case WM_RBUTTONDOWN: 
-            case WM_KEYDOWN: 
-                // 
-                // Perform any required cleanup. 
-                // 
-                fDone = TRUE; 
-        } 
-    } 
+HWND hwnd;
+let mut fDone: BOOL;
+MSG msg;
+
+// Begin the operation and continue until it is complete
+// or until the user clicks the mouse or presses a key.
+
+fDone = FALSE;
+while (!fDone)
+{
+    fDone = DoLengthyOperation(); // application-defined function
+
+    // Remove any messages that may be in the queue. If the
+    // queue contains any mouse or keyboard
+    // messages, end the operation.
+
+    while (PeekMessage(&msg, hwnd,  0, 0, PM_REMOVE))
+    {
+        switch(msg.message)
+        {
+            case WM_LBUTTONDOWN:
+            case WM_RBUTTONDOWN:
+            case WM_KEYDOWN:
+                //
+                // Perform any required cleanup.
+                //
+                fDone = TRUE;
+        }
+    }
 }
 ```
 Other functions, including GetQueueStatus and GetInputState, also allow you to examine the contents of a thread's message queue. GetQueueStatus returns an array of flags that indicates the types of messages in the queue; using it is the fastest way to discover whether the queue contains any messages. GetInputState returns TRUE if the queue contains mouse or keyboard messages. Both of these functions can be used to determine whether the queue contains messages that need to be processed.
@@ -155,11 +155,11 @@ You can use the PostThreadMessage function to post a message to a specific threa
 Use the PostQuitMessage function to exit a message loop. PostQuitMessage posts the WM_QUIT message to the currently executing thread. The thread's message loop terminates and returns control to the system when it encounters the WM_QUIT message. An application usually calls PostQuitMessage in response to the WM_DESTROY message, as shown in the following example.
 
 ```c
-case WM_DESTROY: 
- 
-    // Perform cleanup tasks. 
- 
-    PostQuitMessage(0); 
+case WM_DESTROY:
+
+    // Perform cleanup tasks.
+
+    PostQuitMessage(0);
     break;
 ```
 
@@ -170,11 +170,11 @@ A message can be sent to any window in the system; all that is required is a win
 Before processing a message that may have been sent from another thread, a window procedure should first call the InSendMessage function. If this function returns TRUE, the window procedure should call ReplyMessage before any function that causes the thread to yield control, as shown in the following example.
 
 ```c
-case WM_USER + 5: 
-    if (InSendMessage()) 
-        ReplyMessage(TRUE); 
- 
-    DialogBox(hInst, "MyDialogBox", hwndMain, (DLGPROC) MyDlgProc); 
+case WM_USER + 5:
+    if (InSendMessage())
+        ReplyMessage(TRUE);
+
+    DialogBox(hInst, "MyDialogBox", hwndMain, (DLGPROC) MyDlgProc);
     break;
 ```
 
@@ -183,56 +183,56 @@ A number of messages can be sent to controls in a dialog box. These control mess
 Use the SendDlgItemMessage function to send a message to a control, specifying the identifier of the control and the handle of the dialog box window that contains the control. The following example, taken from a dialog box procedure, copies a string from a combo box's edit control into its list box. The example uses SendDlgItemMessage to send a CB_ADDSTRING message to the combo box.
 
 ```c
-HWND hwndCombo; 
-int cTxtLen; 
-PSTR pszMem; 
- 
-switch (uMsg) 
-{ 
-    case WM_COMMAND: 
-        switch (LOWORD(wParam)) 
-        { 
-            case IDD_ADDCBITEM: 
-                // Get the handle of the combo box and the 
-                // length of the string in the edit control 
-                // of the combo box. 
- 
-                hwndCombo = GetDlgItem(hwndDlg, IDD_COMBO); 
-                cTxtLen = GetWindowTextLength(hwndCombo); 
- 
-                // Allocate memory for the string and copy 
-                // the string into the memory. 
- 
-                pszMem = (PSTR) VirtualAlloc((LPVOID) NULL, 
-                    (DWORD) (cTxtLen + 1), MEM_COMMIT, 
-                    PAGE_READWRITE); 
-                GetWindowText(hwndCombo, pszMem, 
-                    cTxtLen + 1); 
- 
-                // Add the string to the list box of the 
-                // combo box and remove the string from the 
-                // edit control of the combo box. 
- 
-                if (pszMem != NULL) 
-                { 
-                    SendDlgItemMessage(hwndDlg, IDD_COMBO, 
-                        CB_ADDSTRING, 0, 
-                        (DWORD) ((LPSTR) pszMem)); 
-                    SetWindowText(hwndCombo, (LPSTR) NULL); 
-                } 
- 
-                // Free the memory and return. 
- 
-                VirtualFree(pszMem, 0, MEM_RELEASE); 
-                return TRUE; 
-            // 
-            // Process other dialog box commands. 
-            // 
- 
-        } 
-    // 
-    // Process other dialog box messages. 
-    // 
- 
+HWND hwndCombo;
+int cTxtLen;
+PSTR pszMem;
+
+switch (uMsg)
+{
+    case WM_COMMAND:
+        switch (LOWORD(wParam))
+        {
+            case IDD_ADDCBITEM:
+                // Get the handle of the combo box and the
+                // length of the string in the edit control
+                // of the combo box.
+
+                hwndCombo = GetDlgItem(hwndDlg, IDD_COMBO);
+                cTxtLen = GetWindowTextLength(hwndCombo);
+
+                // Allocate memory for the string and copy
+                // the string into the memory.
+
+                pszMem = (PSTR) VirtualAlloc((LPVOID) NULL,
+                    (DWORD) (cTxtLen + 1), MEM_COMMIT,
+                    PAGE_READWRITE);
+                GetWindowText(hwndCombo, pszMem,
+                    cTxtLen + 1);
+
+                // Add the string to the list box of the
+                // combo box and remove the string from the
+                // edit control of the combo box.
+
+                if (pszMem != NULL)
+                {
+                    SendDlgItemMessage(hwndDlg, IDD_COMBO,
+                        CB_ADDSTRING, 0,
+                        (DWORD) ((LPSTR) pszMem));
+                    SetWindowText(hwndCombo, (LPSTR) NULL);
+                }
+
+                // Free the memory and return.
+
+                VirtualFree(pszMem, 0, MEM_RELEASE);
+                return TRUE;
+            //
+            // Process other dialog box commands.
+            //
+
+        }
+    //
+    // Process other dialog box messages.
+    //
+
 }
 ```

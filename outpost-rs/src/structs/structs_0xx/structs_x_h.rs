@@ -46,7 +46,7 @@ struct Struct8
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    u32  *field_0xa;
+    let mut field_0xa: *mut u32;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
     let mut field_0x10: u8;
@@ -59,7 +59,7 @@ struct Struct8
     let mut field_0x18: u8;
     let mut field_0x19: u8;
     let mut field_0x1a: i16;
-    Struct8 *field_0x1a_addr_offset;
+    let mut field_0x1a_addr_offset: *mut Struct8;
 };
 struct Struct7
 {
@@ -91,7 +91,7 @@ struct Struct0
     let mut field_0x5: u8;
     let mut field_0x6: u8;
     let mut field_0x7: u8;
-    HWND16      field_0x8;
+    let mut field_0x8: HWND16;
     let mut field_0xa: u8;
     let mut field_0xb: u8;
     let mut field_0xc: u8;
@@ -292,7 +292,7 @@ struct Struct6
     let mut field_0x2: u8;
     let mut field_0x3: u8;
     let mut field_0x4: u16;
-    u32 *field_0x6;
+    let mut field_0x6: *mut u32;
     let mut field_0xa: u8;
     let mut field_0xb: u8;
     let mut field_0xc: u8;
@@ -313,19 +313,19 @@ struct Struct9
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    u32            *field_0xa;
+    let mut field_0xa: *mut u32;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
     let mut field_0x10: u8;
     let mut field_0x11: u8;
-    Struct8 *field_0x12;
+    let mut field_0x12: *mut Struct8;
     let mut field_0x14: u8;
     let mut field_0x15: u8;
     let mut field_0x16: u8;
     let mut field_0x17: u8;
     let mut field_0x18: u8;
     let mut field_0x19: u8;
-    Struct8 *field_0x1a;
+    let mut field_0x1a: *mut Struct8;
 };
 struct Struct10
 {
@@ -471,7 +471,7 @@ struct Struct10
     let mut field_0x8b: u8;
     let mut field_0x8c: u8;
     let mut field_0x8d: u8;
-    HBRUSH16 brush_handle_field_0x8e;
+    let mut brush_handle_field_0x8e: HBRUSH16;
     let mut field_0x90: u8;
     let mut field_0x91: u8;
     let mut field_0x92: u8;

@@ -26,7 +26,7 @@ void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
     let mut extraout_DX: u16;
     let mut iVar4: i16;
     let mut uVar5: u16;
-    Struct76 *paStack42;
+    let mut paStack42: *mut Struct76;
     let mut local_26: [u8;24] = [0;24];
 
     uVar5         = (param_1 >> 0x10);
@@ -34,9 +34,9 @@ void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
     param_1.field_0x0 = 0x0;
     (iVar4 + 0x4) = 0x0;
     pu_var2        = local_26;
-    struct_op_1008_48fe((Struct81 *)str_var1(param_3, pu_var2), 0x1, param_2, param_4);
+    struct_op_1008_48fe(str_var1(param_3, pu_var2), 0x1, param_2, param_4);
     mem_op_1000_179c(0x1e, param_4, 0);
-    paStack42 = (Struct76 *)str_var1(param_4, pu_var2);
+    paStack42 = str_var1(param_4, pu_var2);
     uVar3     = param_4 | pu_var2;
     if(uVar3 == 0x0)
     {
@@ -45,7 +45,7 @@ void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
     else
     {
         pu_var2 = local_26;
-        struct_op_1008_3f92(paStack42, (Struct83 *)str_var1(param_3, pu_var2));
+        struct_op_1008_3f92(paStack42, str_var1(param_3, pu_var2));
         param_1       = pu_var2;
         (iVar4 + 0x2) = uVar3;
     }
@@ -59,7 +59,7 @@ void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
 
 
 void  close_file_1008_496c(param_1: *mut Struct18) {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut u_var2: u16;
     let mut uVar3: u32;
     let mut ppcVar4: *mut *mut c_void;
@@ -175,7 +175,7 @@ u16  read_file_1008_49e8(param_1: u32, param_2: u16, param_3: u16)
                 {
                     uVar4 = *(iVar7 + 0x12);
                     uVar4 = uVar4 & 0xffff0000 | (uVar4 + 0x28);
-                    struct_op_1008_4c98((Struct76 *)(uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), uVar4, 0x100);
+                    struct_op_1008_4c98((uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), uVar4, 0x100);
                     (iVar7 + 0x4) = uVar4;
                     (iVar7 + 0x6) = extraout_DX;
                     puVar6        = extraout_DX;
@@ -214,7 +214,7 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
     let mut iVar3: i16;
     let mut puVar4: *mut u8;
     let mut uVar5: u16;
-    BOOL16      BVar6;
+    let mut BVar6: BOOL16;
     let mut in_DX: *mut u8;
     let mut extraout_DX: u16;
     let mut uVar7: u16;
@@ -225,10 +225,10 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
     let mut uVar10: u16;
     char        local_782[0x104];
     let mut local_67e: [u8;8] = [0;8];
-    Struct18 *paStack1654;
-    LPCSTR      pCStack1650;
+    let mut paStack1654: *mut Struct18;
+    let mut pCStack1650: *mut c_char;
     let mut UStack1648: u16;
-    Struct18 *paStack1646;
+    let mut paStack1646: *mut Struct18;
     let mut local_666: [u8;100] = [0;100];
     let mut pcStack1382: *mut c_char;
     let mut local_562: u32;
@@ -249,7 +249,7 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
     acStack259[1] = 0x0;
     local_302     = 0x0;
     local_202[0]  = 0x0;
-    puStack774    = mixed_1010_20ba(globals.u16_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
+    puStack774    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_3, in_DX, unaff_DI);
     uVar8         = (puStack774 >> 0x10);
     iVar3         = puStack774;
     uStack778     = (iVar3 + 0x1a);
@@ -263,7 +263,7 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
             pass1_1008_5784(str_var1(param_3, local_67e), paStack1646 & 0xffff | uVar10 << 0x10);
             puVar4 = local_67e;
             pass1_1008_5b12(puVar4, param_3);
-            paStack1654 = (Struct18 *)str_var1(extraout_DX, puVar4);
+            paStack1654 = str_var1(extraout_DX, puVar4);
             if((extraout_DX | puVar4) != 0x0)
             {
                 u_var2           = (puVar4 + 0x4);
@@ -363,10 +363,10 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
     {
         if(uStack1326 < 0x0)
         {
-            paStack1654 = (Struct18 *)load_string_1010_847e(globals.dat_1050_14cc, globals.dat_1050_14cc >> 0x10), SEG_1010);
+            paStack1654 = load_string_1010_847e(globals.dat_1050_14cc, globals.dat_1050_14cc >> 0x10), SEG_1010);
             uVar7       = (paStack1654 >> 0x10);
             uVar5       = str_op_1008_60e8(paStack1654, uVar7);
-            paStack1654 = (Struct18 *)str_var1(uVar7, uVar5);
+            paStack1654 = str_var1(uVar7, uVar5);
             pcVar9      = load_string_1010_847e(globals.dat_1050_14cc, globals.dat_1050_14cc >> 0x10), SEG_1010);
             UStack1648  = (pcVar9 >> 0x10);
             pCStack1650 = pcVar9;

@@ -15,14 +15,14 @@ void pass1_1018_0000(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8,
 
 void pass1_1010_89f0(param_1: u16, param_2: u16, param_3: u16, param_4: u32, HINSTANCE16 param_5, param_6: u16);
 
-void write_to_file_1010_6372(Struct729 *param_1, param_2: u32, param_3: u16);
+void write_to_file_1010_6372(param_1: *mut Struct729, param_2: u32, param_3: u16);
 
 void pass1_1010_648a(param_1: u32, param_2: u32, param_3: i16, param_4: u16);
 
 void write_to_file_1010_6846(param_1: u32, param_2: u32, param_3: u16)
 ;
 
-void pass1_1010_68c6(Struct248 *param_1, param_2: u32, param_3: u16, param_4: *mut u8, param_5: u16);
+void pass1_1010_68c6(param_1: *mut Struct248, param_2: u32, param_3: u16, param_4: *mut u8, param_5: u16);
 
 u16 pass1_1010_5dc6(param_1: u32, param_2: u32, param_3: u16);
 
@@ -36,11 +36,11 @@ void pass1_1010_404a(param_1: u32, param_2: u32, param_3: i16, param_4: u16)
 void pass1_1010_0ad2(param_1: u32, param_2: u32, param_3: u16);
 
 void file_1010_0c7c(Globals          *globals,
-                    Struct228 *param_1,
-                    u32               param_2,
-                    i16               param_3,
+                    param_1: *mut Struct228,
+                    param_2: u32,
+                    param_3: i16,
                     u8               *param_4,
-                    u16               param_5);
+                   param_5: u16);
 
 void pass1_1008_e5da(param_1: u32, param_2: u32, HFILE16 param_3, param_4: u16);
 
@@ -53,12 +53,12 @@ void pass1_1008_c9d4(param_1: u32, param_2: u32, param_3: i16, param_4: u16, u64
 void pass1_1008_ba38(param_1: u32, param_2: u32, HFILE16 param_3, param_4: u16);
 
 void file_1008_bb5e(Globals   *globals,
-                    Struct199 *param_1,
-                    u32        param_2,
-                    i16        param_3,
+                    param_1: *mut Struct199,
+                    param_2: u32,
+                    param_3: i16,
                     u8        *param_4,
-                    u16        param_5,
-                    u16        param_6);
+                    param_5: u16,
+                   param_6: u16);
 
 void file_1008_7548(param_1: u32, long *param_2, HFILE16 param_3, param_4: u16);
 
@@ -78,9 +78,9 @@ void write_to_file_1008_7a22(param_1: u32, long param_2, HFILE16 param_3, param_
 u16 pass1_1008_7ad4(param_1: u32, long *param_2, param_3: u16, HFILE16 param_4, param_5: u16)
 ;
 
-u16 write_to_file_1008_7b4c(param_1: u32, u16 *param_2, HFILE16 param_3, param_4: u16);
+u16 write_to_file_1008_7b4c(param_1: u32,param_2: *mut u16, HFILE16 param_3, param_4: u16);
 
-BOOL16 read_file_1008_7bc8(param_1: u32, u16 *param_2, HFILE16 param_3, param_4: u16);
+BOOL16 read_file_1008_7bc8(param_1: u32,param_2: *mut u16, HFILE16 param_3, param_4: u16);
 
 void read_file_1008_7c6e(param_1: u16, param_2: u16, char *param_3, HFILE16 param_4);
 

@@ -356,7 +356,7 @@ struct Struct401
     u8          field_0xc;
     u8          field_0xd;
     let mut field_0xe: u16;
-    u32 *field_0x10;
+    let mut field_0x10: *mut u32;
 };
 struct Struct402
 {

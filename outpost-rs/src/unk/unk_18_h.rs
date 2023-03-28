@@ -13,9 +13,9 @@
 
 
 // u16 *mixed_1010_20ba(globals: &mut Globals,
-//                      u32      param_1,
-//                      u16      param_2,
-//                      u16      param_3,
+//                      param_1: u32,
+//                      param_2: u16,
+//                      param_3: u16,
 //                      u8      *param_4,
 //                      int      param_5);
 
@@ -36,7 +36,7 @@ void win_ui_op_1008_5cfe(Globals    *globals,
                          char       *string_arg_2,
                          WNDCLASS16 *wnd_class_arg3);
 
-//void def_win_proc_1008_5632(LPARAM param_1, WPARAM param_2, param_3: u16, HWND16 param_4);
+//void def_win_proc_1008_5632(LPARAM param_1, WPARAM param_2, param_3: u16, param_4: HWND16);
 
 StructD *pass1_1028_ac7a(StructD *param_1, param_2: u8);
 

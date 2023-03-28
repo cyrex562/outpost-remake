@@ -168,7 +168,7 @@ struct Struct516
     u8                 field_0x8b;
     u8                 field_0x8c;
     u8                 field_0x8d;
-    Struct18 *field_0x8e;
+    let mut field_0x8e: *mut Struct18;
     let mut field_0x92: u32;
 };
 struct Struct512

@@ -21,12 +21,12 @@ void  pass1_1028_ef00(param_1: u16, param_2: *mut u8, param_3: u32, param_4: u16
 
 
 
-u16 * switch_1030_07ac(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16, param_6: u32, param_7: *mut u8, Struct179 *param_8, param_9: u16, param_10: u16, param_11: u16);
+u16 * switch_1030_07ac(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16, param_6: u32, param_7: *mut u8, param_8: *mut Struct179, param_9: u16, param_10: u16, param_11: u16);
 
 
 
 
-void  pass1_1028_e628(Struct349 *param_1, param_2: u16, param_3: u16, param_4: i16, param_5: i16, param_6: u16, param_7: u16, param_8: u16, param_9: u16, param_10: u8);
+void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param_4: i16, param_5: i16, param_6: u16, param_7: u16, param_8: u16, param_9: u16, param_10: u8);
 
 
 
@@ -56,7 +56,7 @@ void  pass1_1028_ed2c(param_1: u32, param_2: u16, param_3: i16, param_4: u16, pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_edc4(param_1: u32, param_2: u16, u16 *param_3, long param_4, param_5: *mut u8, param_6: u16);
+void  pass1_1028_edc4(param_1: u32, param_2: u16,param_3: *mut u16, long param_4, param_5: *mut u8, param_6: u16);
 
 
 
@@ -91,7 +91,7 @@ void  pass1_1028_e28a(param_1: *mut u8, param_2: i16, param_3: u16);
 
 
 
-void  pass1_1028_c3aa(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, param_5: u32, param_6: u16);
+void  pass1_1028_c3aa(param_1: u16, param_2: u16,param_3: *mut u16, param_4: u32, param_5: u32, param_6: u16);
 
 
 
@@ -106,7 +106,7 @@ void  pass1_1028_d078(param_1: u16, param_2: u32, param_3: u32);
 
 
 
-Struct100 * struct_op_1028_d1dc(param_1: u16, param_2: u8, Struct100 *param_3, param_4: u16);
+Struct100 * struct_op_1028_d1dc(param_1: u16, param_2: u8, param_3: *mut Struct100, param_4: u16);
 
 
 

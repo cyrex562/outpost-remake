@@ -57,7 +57,7 @@ struct Struct25
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    Struct26 *field_0xa;
+    let mut field_0xa: *mut Struct26;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
     let mut field_0x10: u8;
@@ -79,7 +79,7 @@ struct Struct25
     let mut field_0x20: u8;
     let mut field_0x21: u8;
     let mut field_0x22: u16;
-    Struct26 *field_0xc;
+    let mut field_0xc: *mut Struct26;
 };
 struct Struct29
 {
@@ -378,10 +378,10 @@ struct Struct24
     let mut field_0x11: u8;
     let mut field_0x12: u8;
     let mut field_0x13: u8;
-    u32      *field_0x14;
+    let mut field_0x14: *mut u32;
     let mut field_0x18: HGDIOBJ16;
     let mut field_0x1a: HGDIOBJ16;
-    HDC16    *field_0x1c;
+    let mut field_0x1c: *mut HDC16;
     let mut field_0x1e: i16;
 };
 struct Struct23
@@ -467,7 +467,7 @@ struct Struct23
     let mut field_0x53: u8;
     let mut field_0x54: u16;
     let mut hobject_field_0x56: HGDIOBJ16;
-    HCURSOR16 hcursor_field_0x58;
+    let mut hcursor_field_0x58: HCURSOR16;
 };
 struct Struct22
 {
@@ -658,7 +658,7 @@ struct Struct22
     let mut field_0xc1: u8;
     let mut field_0xc2: u8;
     let mut field_0xc3: u8;
-    HCURSOR16 field_0xc4;
+    let mut field_0xc4: HCURSOR16;
     let mut field_0xc6: HGDIOBJ16;
     let mut field_0xc8: u16;
     let mut field_0xca: u16;

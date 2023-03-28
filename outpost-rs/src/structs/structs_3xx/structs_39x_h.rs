@@ -384,7 +384,7 @@ struct Struct393
     u8          field_0x6d;
     u8          field_0x6e;
     u8          field_0x6f;
-    Struct90 *field_0x70;
+    let mut field_0x70: *mut Struct90;
 };
 struct Struct394
 {
@@ -514,7 +514,7 @@ struct Struct395
     u8          field_0x6d;
     u8          field_0x6e;
     u8          field_0x6f;
-    Struct90 *field_0x70;
+    let mut field_0x70: *mut Struct90;
 };
 struct Struct396
 {

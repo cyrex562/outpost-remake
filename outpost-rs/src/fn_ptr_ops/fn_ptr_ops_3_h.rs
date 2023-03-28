@@ -16,7 +16,7 @@
 // #include "structs/structs_6xx/struct_613.h"
 // #include "structs/structs_6xx/structs_60x.h"
 
-void pass1_1030_8a2c(Struct613 *param_1);
+void pass1_1030_8a2c(param_1: *mut Struct613);
 
 void pass1_1030_8210(globals: &mut Globals, u16 *param_1);
 
@@ -32,21 +32,21 @@ void fn_ptr_1030_84d0(param_1: u32);
 
 void pass1_1030_8604(Struct18 **param_1);
 
-void pass1_1030_878c(globals: &mut Globals, Struct350 *param_1, param_2: i16, param_3: u16);
+void pass1_1030_878c(globals: &mut Globals, param_1: *mut Struct350, param_2: i16, param_3: u16);
 
-void fn_ptr_1030_7296(Struct292 *param_1);
+void fn_ptr_1030_7296(param_1: *mut Struct292);
 
-void pass1_1030_72d0(Struct605 *param_1);
+void pass1_1030_72d0(param_1: *mut Struct605);
 
-void pass1_1030_730a(Struct290 *param_1, param_2: u16, param_3: u16, param_4: u16);
+void pass1_1030_730a(param_1: *mut Struct290, param_2: u16, param_3: u16, param_4: u16);
 
-void pass1_1030_5b6c(Struct610 *param_1, char *param_2, param_3: u16);
+void pass1_1030_5b6c(param_1: *mut Struct610, char *param_2, param_3: u16);
 
 Struct18 *pass1_1030_5baa(param_1: *mut Struct18, param_2: u8);
 
 Struct18 *pass1_1030_6118(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1030_68dc(Struct611 *param_1, param_2: u16);
+void pass1_1030_68dc(param_1: *mut Struct611, param_2: u16);
 
 void pass1_1030_4f5a(param_1: u16, param_2: u16, param_3: u32);
 
@@ -70,15 +70,15 @@ Struct18 *pass1_1030_201e(param_1: *mut Struct18, param_2: u8);
 
 Struct18 *pass1_1030_2916(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1030_29e6(Struct607 *param_1);
+void pass1_1030_29e6(param_1: *mut Struct607);
 
 Struct18 *pass1_1030_117a(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1030_1244(Struct606 *param_1);
+void pass1_1030_1244(param_1: *mut Struct606);
 
-void pass1_1030_145a(Struct346 *param_1, long param_2);
+void pass1_1030_145a(param_1: *mut Struct346, long param_2);
 
-void struct_1030_1550(Struct157 *param_1, param_2: u16);
+void struct_1030_1550(param_1: *mut Struct157, param_2: u16);
 
 Struct18 *pass1_1030_15fe(param_1: *mut Struct18, param_2: u8);
 
@@ -98,28 +98,28 @@ void pass1_1028_d6b2(param_1: u32);
 
 Struct18 *pass1_1028_d7de(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1028_daba(Struct447 *param_1, param_2: u16);
+void pass1_1028_daba(param_1: *mut Struct447, param_2: u16);
 
 void pass1_1028_d01a(u32 *param_1);
 
 void pass1_1028_b418(u16 *param_1);
 
-void pass1_1028_b46e(Struct315 *param_1, param_2: u32, param_3: u16);
+void pass1_1028_b46e(param_1: *mut Struct315, param_2: u32, param_3: u16);
 
-void pass1_1028_b514(Struct604 *param_1);
+void pass1_1028_b514(param_1: *mut Struct604);
 
 void pass1_1028_bc02(u32 *param_1);
 
 u16 pass1_1028_bc4a(param_1: u32, param_2: *mut u32, param_3: *mut u8, param_4: u16);
 
-void pass1_1028_bdac(Struct599 *param_1, param_2: i16, param_3: u16);
+void pass1_1028_bdac(param_1: *mut Struct599, param_2: i16, param_3: u16);
 
-void pass1_1028_a3ae(u16  param_1,
-                     u16  param_2,
-                     u32  param_3,
+void pass1_1028_a3ae(param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
                      long param_4,
-                     i16  param_5,
-                     u16  param_6,
+                     param_5: i16,
+                     param_6: u16,
                      u8   param_7,
                      i16  param_8);
 

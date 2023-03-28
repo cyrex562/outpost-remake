@@ -234,8 +234,8 @@ struct Struct40
     let mut field_0x14: i16;
     let mut field_0x16: u8;
     let mut field_0x17: u8;
-    u32 *field_0x18;
-    HDC16      *field_0x1c;
+    let mut field_0x18: *mut u32;
+    let mut field_0x1c: *mut HDC16;
     let mut field_0x1e: u8;
 };
 struct Struct41
@@ -259,8 +259,8 @@ struct Struct41
     let mut field_0x13: u8;
     let mut field_0x14: u32;
     let mut field_0x18: u32;
-    u32 *field_0x1c;
-    HDC16      *field_0x20;
+    let mut field_0x1c: *mut u32;
+    let mut field_0x20: *mut HDC16;
 };
 struct Struct49
 {
@@ -1597,6 +1597,6 @@ struct Struct47
     let mut field_0x8b: u8;
     let mut field_0x8c: u8;
     let mut field_0x8d: u8;
-    u32 *field_0x8e;
+    let mut field_0x8e: *mut u32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_13_H_STRUCTS_4X_H_

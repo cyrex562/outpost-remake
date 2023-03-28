@@ -26,7 +26,7 @@ typedef struct Struct354
     u8          field_0xf;
     u8          field_0x10;
     u8          field_0x11;
-    Struct76 *field_0x12;
+    let mut field_0x12: *mut Struct76;
     u8          field_0x16;
     u8          field_0x17;
     u8          field_0x18;

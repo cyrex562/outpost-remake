@@ -50,7 +50,7 @@ struct Struct501
     u8          field_0x1f;
     let mut field_0x20: u16;
     let mut field_0x22: u16;
-    u32 *field_0x24;
+    let mut field_0x24: *mut u32;
     let mut field_0x26: u16;
     u8          field_0x28;
     u8          field_0x29;
@@ -251,7 +251,7 @@ struct Struct503
     u8          field_0x1f;
     let mut field_0x20: u16;
     let mut field_0x22: u16;
-    u32 *field_0x24;
+    let mut field_0x24: *mut u32;
     let mut field_0x26: u16;
     u8          field_0x28;
     u8          field_0x29;
@@ -939,7 +939,7 @@ struct Struct505
     u8          field_0x133;
     u8          field_0x134;
     u8          field_0x135;
-    u32 *field_0x136;
+    let mut field_0x136: *mut u32;
     let mut field_0x138: u16;
 };
 struct Struct504

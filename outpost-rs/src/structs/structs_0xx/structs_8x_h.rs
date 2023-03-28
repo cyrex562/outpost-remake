@@ -32,7 +32,7 @@ struct Struct86
 {
     let mut field_0x0: u16;
     let mut field_0x2: u16;
-    Struct76 *field_0x4;
+    let mut field_0x4: *mut Struct76;
     let mut field_0x8: u16;
     let mut field_0xa: u16;
     let mut field_0xc: i16;
@@ -1765,7 +1765,7 @@ struct Struct83
     let mut field_0x1: u8;
     let mut field_0x2: u8;
     let mut field_0x3: u8;
-    u32       *field_0x4;
+    let mut field_0x4: *mut u32;
     let mut field_0x6: u16;
     let mut field_0x8: u32;
     let mut field_0xc: u8;
@@ -1804,7 +1804,7 @@ struct Struct85
     let mut field_0xd: u8;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
-    u32 *field_0x10;
+    let mut field_0x10: *mut u32;
     let mut field_0x14: u16;
     let mut field_0x16: u16;
     long        field_0x18;
@@ -1820,7 +1820,7 @@ struct Struct89
     let mut field_0x8: i16;
     let mut field_0xa: u32;
     let mut field_0xe: u16;
-    u32 *field_0x10;
+    let mut field_0x10: *mut u32;
     let mut field_0x14: u32;
     long        field_0x18;
     let mut field_0x1c: u16;

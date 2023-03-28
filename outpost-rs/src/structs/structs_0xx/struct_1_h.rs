@@ -146,12 +146,12 @@ struct Struct1
     let mut field_0x8b: u8;
     let mut field_0x8c: u8;
     let mut field_0x8d: u8;
-    Struct76        *field_0x8e;
+    let mut field_0x8e: *mut Struct76;
     let mut field_0x90: u8;
     let mut field_0x91: u8;
-    u32 *field_0x92;
-    Struct65  *field_0x98;
+    let mut field_0x92: *mut u32;
+    let mut field_0x98: *mut Struct65;
     let mut field_0x9a: *mut u8;
-    Struct65  *field_0x94;
+    let mut field_0x94: *mut Struct65;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_1_H_

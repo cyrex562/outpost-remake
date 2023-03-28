@@ -16,7 +16,7 @@
 void fn_ptr_1000_17ce(param_1: *mut Struct18, param_2: u16)
 
 {
-    if(param_1 != (Struct18 *)0x0)
+    if(param_1 != 0x0)
     {
         call_fn_ptr_1000_0dc6(param_1, param_1, param_2);
     }

@@ -33,7 +33,7 @@ void pass1_1018_c402(struct param_1: &mut Struct20, param_2: u16, param_3: u16, 
 
 
 
-Struct57 *pass1_1018_5e26(Struct57 *param_1, param_2: u16);
+Struct57 *pass1_1018_5e26(param_1: *mut Struct57, param_2: u16);
 
 
 
@@ -41,11 +41,11 @@ void pass1_1018_6198(u16 *param_1, param_2: u32, param_3: u16, param_4: *mut u8,
 
 
 
-u32 pass1_1018_659a(param_1: u16, param_2: u16, u16 *param_3, param_4: *mut u8, param_5: u16);
+u32 pass1_1018_659a(param_1: u16, param_2: u16,param_3: *mut u16, param_4: *mut u8, param_5: u16);
 
 
 
-u16 *get_sys_metrics_1018_4b1e(Struct55 *param_1, param_2: u16, param_3: u16);
+u16 *get_sys_metrics_1018_4b1e(param_1: *mut Struct55, param_2: u16, param_3: u16);
 
 
 
@@ -83,15 +83,15 @@ void pass1_1018_3710(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16
 
 
 
-void get_sys_metrics_1018_1ea0(Struct55 *param_1, param_2: u16);
+void get_sys_metrics_1018_1ea0(param_1: *mut Struct55, param_2: u16);
 
 
 
-u32 pass1_1018_1ff4(Struct634 *param_1, param_2: u16, param_3: u16);
+u32 pass1_1018_1ff4(param_1: *mut Struct634, param_2: u16, param_3: u16);
 
 
 
-void pass1_1018_270e(Struct655 *param_1, param_2: i16, param_3: u16, param_4: *mut u8, param_5: i16, param_6: u16);
+void pass1_1018_270e(param_1: *mut Struct655, param_2: i16, param_3: u16, param_4: *mut u8, param_5: i16, param_6: u16);
 
 
 
@@ -103,7 +103,7 @@ void pass1_1018_10c4(param_1: u16, param_2: u16, param_3: u32);
 
 
 
-void pass1_1018_1320(param_1: u32, u16 *param_2, u32 *param_3);
+void pass1_1018_1320(param_1: u32,param_2: *mut u16, u32 *param_3);
 
 
 
@@ -111,15 +111,15 @@ void pass1_1018_1320(param_1: u32, u16 *param_2, u32 *param_3);
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1018_1346(param_1: u16, param_2: u16, Struct93 *param_3);
+void pass1_1018_1346(param_1: u16, param_2: u16, param_3: *mut Struct93);
 
 
 
-void pass1_1018_18b8(param_1: u16, Struct55 *param_2, param_3: u16);
+void pass1_1018_18b8(param_1: u16, param_2: *mut Struct55, param_3: u16);
 
 
 
-void pass1_1018_1a8e(Struct653 *param_1, param_2: *mut u8, param_3: i16, param_4: u16);
+void pass1_1018_1a8e(param_1: *mut Struct653, param_2: *mut u8, param_3: i16, param_4: u16);
 
 
 
@@ -127,7 +127,7 @@ void pass1_1010_e964(param_1: *mut u8, param_2: u16, i16 param_3);
 
 
 
-void struct_1010_e9e4(Struct261 *param_1, param_2: u16, param_3: u16);
+void struct_1010_e9e4(param_1: *mut Struct261, param_2: u16, param_3: u16);
 
 
 
@@ -162,7 +162,7 @@ void pass1_1018_04de(param_1: u32, param_2: u32);
 
 
 
-void struct_1018_0570(Struct55 *param_1, param_2: u16, param_3: u16);
+void struct_1018_0570(param_1: *mut Struct55, param_2: u16, param_3: u16);
 
 
 
@@ -170,7 +170,7 @@ void get_sys_metrics_1018_09a8(param_1: u32, param_2: u16);
 
 
 
-void pass1_1010_d448(param_1: *mut u8, param_2: u32, u16 *param_3, param_4: *mut u8, param_5: u8, i16 param_6);
+void pass1_1010_d448(param_1: *mut u8, param_2: u32,param_3: *mut u16, param_4: *mut u8, param_5: u8, i16 param_6);
 
 
 

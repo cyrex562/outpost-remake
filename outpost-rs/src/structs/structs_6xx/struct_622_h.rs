@@ -8,8 +8,8 @@
 // typedef struct Struct622 Struct622;
 struct Struct622
 {
-    u8  field_0x0;
-    u8  field_0x1;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
     let mut field_0x2: u16;
     let mut field_0x4: u16;
     let mut field_0x6: u16;

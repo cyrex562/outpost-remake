@@ -70,7 +70,7 @@ struct Struct284
     u8                 field_0x35;
     u8                 field_0x36;
     u8                 field_0x37;
-    Struct76 *field_0x38;
+    let mut field_0x38: *mut Struct76;
 };
 struct Struct285
 {
@@ -85,7 +85,7 @@ struct Struct285
     u8  field_0x9;
     u8  field_0xa;
     u8  field_0xb;
-    u32       *field_0xc;
+    let mut field_0xc: *mut u32;
     u8  field_0x10;
     u8  field_0x11;
     u8  field_0x12;
@@ -461,7 +461,7 @@ struct Struct282
     u8   field_0x10b;
     u8   field_0x10c;
     u8   field_0x10d;
-    u32 *field_0x10e;
+    let mut field_0x10e: *mut u32;
 };
 struct Struct281
 {
@@ -526,7 +526,7 @@ struct Struct288
     u8   field_0x4;
     u8   field_0x5;
     long        field_0x6;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
     let mut field_0xc: u16;
 };
 struct Struct289

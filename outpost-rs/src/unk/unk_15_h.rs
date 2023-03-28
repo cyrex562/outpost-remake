@@ -128,15 +128,15 @@ u16 pass1_1000_455a(param_1: u32, param_2: u16);
 
 
 i16 pass1_1000_462e(globals: &mut Globals,
-                    u16      param_1,
-                    i16      param_2,
-                    u16      param_3,
-                    u16      param_4,
-                    u16      param_5,
-                    i16      param_6,
-                    i16      param_7,
-                    u16      param_8,
-                    u16      param_9);
+                    param_1: u16,
+                    param_2: i16,
+                    param_3: u16,
+                    param_4: u16,
+                    param_5: u16,
+                    param_6: i16,
+                    param_7: i16,
+                    param_8: u16,
+                   param_9: u16);
 
 
 
@@ -237,7 +237,7 @@ u16 pass1_1000_31c5(param_1: i16, param_2: u16);
 
 
 
-u16 pass1_1000_31f7(param_1: u16, param_2: i16, u16 *param_3, param_4: i16, param_5: u16);
+u16 pass1_1000_31f7(param_1: u16, param_2: i16,param_3: *mut u16, param_4: i16, param_5: u16);
 
 
 

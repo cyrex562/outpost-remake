@@ -15,7 +15,7 @@ struct Struct76
     let mut field_0x6: i16;
     let mut field_0x8: u32;
     let mut field_0xc: u16;
-    u32 *field_0xe;
+    let mut field_0xe: *mut u32;
     let mut field_0x12: u16;
     let mut field_0x14: u32;
     let mut field_0x18: u8;

@@ -77,7 +77,7 @@ void pass1_1030_5c8a(param_1: u32,param_2: u32)
 }
 
 
-void pass1_1028_858c(Struct318 *param_1,param_2: *mut u8, Struct319 *param_3)
+void pass1_1028_858c(param_1: *mut Struct318,param_2: *mut u8, param_3: *mut Struct319)
 
 {
     undefined4 *puVar1;

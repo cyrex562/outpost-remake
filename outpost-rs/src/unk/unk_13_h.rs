@@ -26,7 +26,7 @@ void pass1_1008_e852(param_1: u16, param_2: u16, param_3: u32, param_4: u16, par
 
 
 
-long pass1_1008_e8cc(param_1: u16, Struct102 *param_2, param_3: u32, param_4: u32);
+long pass1_1008_e8cc(param_1: u16, param_2: *mut Struct102, param_3: u32, param_4: u32);
 
 
 
@@ -75,7 +75,7 @@ u16 pass1_1008_ef38(param_1: u32);
 u16 pass1_1008_ef4a(void);
 
 
-Struct645 *pass1_1010_0000(Struct645 *param_1, param_2: u16, param_3: u16, param_4: u16);
+Struct645 *pass1_1010_0000(param_1: *mut Struct645, param_2: u16, param_3: u16, param_4: u16);
 
 
 
@@ -97,7 +97,7 @@ void pass1_1008_d7da(u16 *param_1, param_2: u16);
 
 
 
-void  pass1_1008_dc80(param_1: u16, u16 *param_2, param_3: u32, param_4: u32, param_5: u16, param_6: u8, param_7: i16, param_8: i16, param_9: u8, param_10: u16);
+void  pass1_1008_dc80(param_1: u16,param_2: *mut u16, param_3: u32, param_4: u32, param_5: u16, param_6: u8, param_7: i16, param_8: i16, param_9: u8, param_10: u16);
 
 
 
@@ -162,7 +162,7 @@ void pass1_1008_caa0(u16 *param_1, param_2: u16);
 
 
 
-void pass1_1008_cac6(Struct470 *param_1);
+void pass1_1008_cac6(param_1: *mut Struct470);
 
 
 
@@ -241,7 +241,7 @@ void pass1_1008_b9ce(param_1: u32, param_2: u32, param_3: u16);
 
 
 
-u32  pass1_1008_a8f4(param_1: u32, u16 *param_2, u16 *param_3, u16 *param_4, param_5: u16, param_6: u16, param_7: u16, param_8: u8);
+u32  pass1_1008_a8f4(param_1: u32,param_2: *mut u16,param_3: *mut u16,param_4: *mut u16, param_5: u16, param_6: u16, param_7: u16, param_8: u8);
 
 
 
@@ -309,10 +309,10 @@ void pass1_1008_afde(u16 *param_1, param_2: u16);
 
 
 
-u16 *pass1_1008_b05a(Struct26 *param_1);
+u16 *pass1_1008_b05a(param_1: *mut Struct26);
 
 
-Struct26 *set_stuct_1008_b0bc(Struct26 *param_1);
+Struct26 *set_stuct_1008_b0bc(param_1: *mut Struct26);
 
 
 
@@ -336,12 +336,12 @@ void pass1_1008_9628(param_1: u32, param_2: u16);
 
 
 
-LRESULT pass1_1008_9c16(param_1: u16, param_2: u32, param_3: u32, HWND16 param_4);
+LRESULT pass1_1008_9c16(param_1: u16, param_2: u32, param_3: u32, param_4: HWND16);
 
 
 
 
-LRESULT pass1_1008_9c30(param_1: u16, param_2: u32, param_3: u32, HWND16 param_4);
+LRESULT pass1_1008_9c30(param_1: u16, param_2: u32, param_3: u32, param_4: HWND16);
 
 
 
@@ -381,7 +381,7 @@ void pass1_1008_9f18(param_1: i16, param_2: u16, param_3: i16, param_4: u16);
 
 
 
-u32 pass1_1008_9f48(Struct134 *param_1);
+u32 pass1_1008_9f48(param_1: *mut Struct134);
 
 
 
@@ -394,7 +394,7 @@ void pass1_1008_a086(u16 *param_1, param_2: u16);
 
 
 
-void  pass1_1008_87cc(Struct86 *param_1, param_2: i16, param_3: i16, param_4: u16, param_5: u32, param_6: u32, param_7: u16);
+void  pass1_1008_87cc(param_1: *mut Struct86, param_2: i16, param_3: i16, param_4: u16, param_5: u32, param_6: u32, param_7: u16);
 
 
 void pass1_1008_8b20(param_1: u32, param_2: u16);
@@ -411,7 +411,7 @@ void pass1_1008_8c4e(param_1: u32, param_2: u32, param_3: u16);
 
 
 
-void pass1_1008_8ce4(param_1: u32, u16 *param_2, param_3: u32, param_4: u16);
+void pass1_1008_8ce4(param_1: u32,param_2: *mut u16, param_3: u32, param_4: u16);
 
 
 
@@ -426,7 +426,7 @@ void empty_1008_8fc4(void);
 
 
 
-void pass1_1008_9004(Struct107 *param_1, param_2: u16, param_3: u16, param_4: u32);
+void pass1_1008_9004(param_1: *mut Struct107, param_2: u16, param_3: u16, param_4: u32);
 
 
 

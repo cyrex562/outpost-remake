@@ -928,7 +928,7 @@ struct Struct274
     u8   field_0xb;
     u8   field_0xc;
     u8   field_0xd;
-    u32 *field_0xe;
+    let mut field_0xe: *mut u32;
     let mut field_0x10: u16;
     u8   field_0x12;
     u8   field_0x13;
@@ -1402,7 +1402,7 @@ struct Struct277
     let mut field_0xea: i16;
     u8   field_0xec;
     u8   field_0xed;
-    u32 *field_0xee;
+    let mut field_0xee: *mut u32;
 };
 struct Struct276
 {

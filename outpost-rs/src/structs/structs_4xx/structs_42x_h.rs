@@ -47,7 +47,7 @@ struct Struct427
     u8          field_0x9;
     u8          field_0xa;
     u8          field_0xb;
-    u32 *field_0xc;
+    let mut field_0xc: *mut u32;
 };
 struct Struct428
 {

@@ -8,15 +8,15 @@
 // typedef struct Struct628 Struct628;
 struct Struct628
 {
-    u8  field_0x0;
-    u8  field_0x1;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
     let mut field_0x2: u16;
-    u8  field_0x4;
-    u8  field_0x5;
-    u8  field_0x6;
-    u8  field_0x7;
-    u8  field_0x8;
-    u8  field_0x9;
+    let mut field_0x4: u8;
+    let mut field_0x5: u8;
+    let mut field_0x6: u8;
+    let mut field_0x7: u8;
+    let mut field_0x8: u8;
+    let mut field_0x9: u8;
     let mut field_0xa: i16;
     let mut field_0xc: i16;
 };

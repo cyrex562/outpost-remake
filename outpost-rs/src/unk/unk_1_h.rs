@@ -23,16 +23,16 @@ typedef struct struct_1040_d76e_1 {
 void  pass1_1040_d76e(struct_1040_d76e_1 *param_1);
 
 
-void pass1_1040_d0f8(globals: &mut Globals, Struct57 *param_1, param_2: u16);
+void pass1_1040_d0f8(globals: &mut Globals, param_1: *mut Struct57, param_2: u16);
 
 
 u16 * pass1_1040_c9cc(u16 *param_1, param_2: u8);
 
 
-void pass1_1040_c71e(Struct65 *param_1);
+void pass1_1040_c71e(param_1: *mut Struct65);
 
 
-void pass1_1040_c630(globals: &mut Globals, Struct165 *param_1, param_2: u16, param_3: u16);
+void pass1_1040_c630(globals: &mut Globals, param_1: *mut Struct165, param_2: u16, param_3: u16);
 
 
 
@@ -52,7 +52,7 @@ void  pass1_1040_bf92(u16 *param_1, param_2: u16);
 
 
 
-void  pass1_1040_bfde(Struct160 *param_1, Struct160 *param_2, param_3: u16);
+void  pass1_1040_bfde(param_1: *mut Struct160, param_2: *mut Struct160, param_3: u16);
 
 
 
@@ -81,7 +81,7 @@ void  pass1_1040_b17c(param_1: u32, param_2: u32, param_3: *mut u8, param_4: i16
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1040_ac84(Struct57 *param_1, param_2: u16, param_3: *mut u8, param_4: i16, param_5: u16);
+void  pass1_1040_ac84(param_1: *mut Struct57, param_2: u16, param_3: *mut u8, param_4: i16, param_5: u16);
 
 
 
@@ -111,7 +111,7 @@ void  pass1_1040_9422(u32 *param_1);
 
 
 
-void  pass1_1040_9618(Struct65 *param_1);
+void  pass1_1040_9618(param_1: *mut Struct65);
 
 
 
@@ -121,7 +121,7 @@ u16  pass1_1040_824a(param_1: u32, i16 param_2);
 
 
 
-void  pass1_1040_807e(Struct395 *param_1, param_2: u16, param_3: u16);
+void  pass1_1040_807e(param_1: *mut Struct395, param_2: u16, param_3: u16);
 
 
 
@@ -151,7 +151,7 @@ i16  pass1_1040_5eaa(param_1: u32);
 
 
 
-void  pass1_1040_6402(Struct57 *param_1, param_2: u16, param_3: *mut u8, param_4: i16, param_5: u16);
+void  pass1_1040_6402(param_1: *mut Struct57, param_2: u16, param_3: *mut u8, param_4: i16, param_5: u16);
 
 
 
@@ -166,7 +166,7 @@ Struct18 * pass1_1040_6794(param_1: *mut Struct18, param_2: u8, param_3: u16);
 
 
 
-void  pass1_1040_6826(Struct57 *param_1, param_2: u16);
+void  pass1_1040_6826(param_1: *mut Struct57, param_2: u16);
 
 
 
@@ -181,7 +181,7 @@ void  pass1_1040_6cac(param_1: u32, param_2: u16);
 
 
 
-void  pass1_1040_6fb6(Struct57 *param_1, param_2: u16);
+void  pass1_1040_6fb6(param_1: *mut Struct57, param_2: u16);
 
 
 

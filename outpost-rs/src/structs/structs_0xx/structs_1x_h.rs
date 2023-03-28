@@ -48,9 +48,9 @@ struct Struct16
     let mut field_0x14: u32;
     let mut field_0x18: HGDIOBJ16;
     let mut field_0x1a: HGDIOBJ16;
-    BOOL16     field_0x1c;
+    let mut field_0x1c: BOOL16;
     let mut field_0x1e: i16;
-    BOOL16     field_0x1c_addr_base;
+    let mut field_0x1c_addr_base: BOOL16;
     let mut field_0x1a_addr_offset: HGDIOBJ16;
 };
 struct Struct13
@@ -78,9 +78,9 @@ struct Struct11
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
     let mut field_0xc: u16;
-    u32 *field_0xe;
+    let mut field_0xe: *mut u32;
     let mut field_0x10: u16;
     let mut field_0x12: i16;
     let mut field_0x14: u8;
@@ -89,7 +89,7 @@ struct Struct11
     let mut field_0x17: u8;
     let mut field_0x18: u8;
     let mut field_0x19: u8;
-    BOOL16      field_0x1a;
+    let mut field_0x1a: BOOL16;
 };
 struct Struct19
 {
@@ -245,9 +245,9 @@ struct Struct17
     let mut field_0x5: u8;
     let mut field_0x6: u8;
     let mut field_0x7: u8;
-    u32 *field_0x8;
-    u32 *field_0xc;
-    u32 *field_0x10;
+    let mut field_0x8: *mut u32;
+    let mut field_0xc: *mut u32;
+    let mut field_0x10: *mut u32;
     let mut field_0x14: u8;
     let mut field_0x15: u8;
     let mut field_0x16: u8;

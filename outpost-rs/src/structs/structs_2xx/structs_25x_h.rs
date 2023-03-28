@@ -38,7 +38,7 @@ struct Struct252
     u8          field_0xf;
     u8          field_0x10;
     u8          field_0x11;
-    u32 *field_0x12;
+    let mut field_0x12: *mut u32;
 };
 struct Struct253
 {
@@ -118,8 +118,8 @@ struct Struct250
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u32 *field_0xa;
-    u32 *field_0xe;
+    let mut field_0xa: *mut u32;
+    let mut field_0xe: *mut u32;
     u8   field_0x12;
     u8   field_0x13;
     u8   field_0x14;

@@ -764,7 +764,7 @@ struct Struct127
     let mut field_0xee: u32;
     let mut field_0xf2: i16;
     let mut field_0xf4: *mut u8;
-    u32       *field_0xf6;
+    let mut field_0xf6: *mut u32;
 };
 struct Struct124
 {

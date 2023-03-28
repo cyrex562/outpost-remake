@@ -154,7 +154,7 @@ struct Struct18
     let mut field_0x92: u16;
     let mut field_9c: *mut c_void; // u16
     let mut field_9e: u16;
-    Struct18 *field_0x94;
+    let mut field_0x94: *mut Struct18;
     Struct18* field_0x98;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_18_H_

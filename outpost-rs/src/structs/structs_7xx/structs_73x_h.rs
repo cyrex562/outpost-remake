@@ -61,7 +61,7 @@ struct Struct731
     let mut field_0x1b: u8;
     let mut field_0x1c: u8;
     let mut field_0x1d: u8;
-    u32 *field_0x1e;
+    let mut field_0x1e: *mut u32;
     long        field_0x22;
     long        field_0x26;
     let mut field_0x2a: u32;

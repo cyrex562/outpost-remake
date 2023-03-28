@@ -287,7 +287,7 @@ struct Struct30
     let mut field_0xf3: u8;
     let mut field_0xf4: u8;
     let mut field_0xf5: u8;
-    u32 *field_0xf6;
+    let mut field_0xf6: *mut u32;
     let mut field_0xf8: u16;
     long        field_0xfa;
     let mut field_0xfe: u8;
@@ -319,7 +319,7 @@ struct Struct39
     let mut field_0x9: u8;
     let mut field_0xa: i16;
     let mut field_0xc: u16;
-    u32 *field_0xe;
+    let mut field_0xe: *mut u32;
     let mut field_0x10: u16;
 };
 struct Struct34
@@ -472,7 +472,7 @@ struct Struct34
     let mut field_0x91: u8;
     let mut field_0x92: u8;
     let mut field_0x93: u8;
-    u32       *field_0x94;
+    let mut field_0x94: *mut u32;
     let mut field_0x96: u16;
     let mut field_0x98: u32;
     let mut field_0x9c: u8;
@@ -563,8 +563,8 @@ struct Struct38
     let mut field_0x37: u8;
     let mut field_0x38: u8;
     let mut field_0x39: u8;
-    COLORREF  field_0x3a;
-    COLORREF  field_0x3c;
+    let mut field_0x3a: COLORREF;
+    let mut field_0x3c: COLORREF;
 };
 struct Struct35
 {
@@ -716,7 +716,7 @@ struct Struct35
     let mut field_0x91: u8;
     let mut field_0x92: u8;
     let mut field_0x93: u8;
-    u32 *field_0x94;
+    let mut field_0x94: *mut u32;
     let mut field_0x96: u16;
     let mut field_0x98: u32;
     let mut field_0x9c: u8;

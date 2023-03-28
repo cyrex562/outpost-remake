@@ -928,11 +928,11 @@ typedef struct Globals {
     let mut _PTR_LOOP_1050_5bc8: i32
     let mut PTR_LOOP_1050_0398: i32
     let mut s_Outpost_1050_00d7: *mut c_char;
-    LPCSTR s_SITEICON_1050_428d;
-    LPCSTR s_TILEICON_1050_440c;
+    let mut s_SITEICON_1050_428d: *mut c_char;
+    let mut s_TILEICON_1050_440c: *mut c_char;
     let mut s_OPButton_1050_5ece: *mut c_char;
     let mut s_VrMode_1050_4422: *mut c_char;
-    LPCSTR s_OpAccel_1050_43e8;
+    let mut s_OpAccel_1050_43e8: *mut c_char;
     let mut s_MicroSpinControl_1050_0370: *mut c_char;
     let mut s_DanBrotherton_1050_0302: *mut c_char;
     i32 _PTR_LOOP_1050_02a0;

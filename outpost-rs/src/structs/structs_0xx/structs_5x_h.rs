@@ -1046,7 +1046,7 @@ struct Struct54
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    LPCSTR      field_0xa;
+    let mut field_0xa: *mut c_char;
     let mut field_0xc: *mut u8;
     let mut field_0xe: *mut c_char;
     let mut field_0x12: u32;
@@ -1120,7 +1120,7 @@ struct Struct54
     let mut field_0x60: u8;
     let mut field_0x61: u8;
     let mut field_0x62: u16;
-    u32 *field_0x64;
+    let mut field_0x64: *mut u32;
     let mut field_0x68: u16;
     let mut field_0x6a: *mut u8;
     let mut field_0x6c: *mut u8;

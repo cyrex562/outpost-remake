@@ -11,10 +11,10 @@
 // typedef struct Struct413 Struct413;
 struct Struct413
 {
-    u8  field_0x0;
-    u8  field_0x1;
-    u8  field_0x2;
-    u8  field_0x3;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
+    let mut field_0x2: u8;
+    let mut field_0x3: u8;
     let mut field_0x4: i16;
     let mut field_0x6: u16;
     let mut field_0x8: i16;

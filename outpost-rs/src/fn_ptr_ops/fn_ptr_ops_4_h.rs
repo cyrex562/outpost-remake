@@ -65,9 +65,9 @@ u32 pass1_1028_5e4e(param_1: i16, param_2: u16);
 
 Struct18 *pass1_1028_602e(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1028_6186(Struct603 *param_1);
+void pass1_1028_6186(param_1: *mut Struct603);
 
-void pass1_1028_61c4(Struct315 *param_1, param_2: u32, param_3: u16);
+void pass1_1028_61c4(param_1: *mut Struct315, param_2: u32, param_3: u16);
 
 void pass1_1028_6228(param_1: u32, param_2: u16, param_3: i16, param_4: i16, param_5: u16);
 
@@ -146,10 +146,10 @@ Struct18 *pass1_1020_ef94(param_1: *mut Struct18, param_2: u8);
 
 void pass1_1028_0582(param_1: *mut u32,
                      param_2: *mut u32,
-                     u16  param_3,
-                     u16  param_4,
+                     param_3: u16,
+                     param_4: u16,
                      u8   param_5,
-                     u16  param_6);
+                    param_6: u16);
 
 Struct18 *pass1_1020_cd58(param_1: *mut Struct18, param_2: u8);
 
@@ -189,7 +189,7 @@ Struct18 *pass1_1020_843c(param_1: *mut Struct18, param_2: u8);
 
 void pass1_1020_8556(u16 *param_1);
 
-void pass1_1020_85f6(Struct590 *param_1);
+void pass1_1020_85f6(param_1: *mut Struct590);
 
 void pass1_1020_865a(param_1: u32);
 
@@ -197,7 +197,7 @@ Struct18 *pass1_1020_6208(param_1: *mut Struct18, param_2: u8, param_3: u16);
 
 Struct18 *pass1_1020_679c(param_1: *mut Struct18, param_2: u8, param_3: u16, param_4: u16);
 
-Struct3 *pass1_1020_2e24(Struct3 *param_1, param_2: u8);
+Struct3 *pass1_1020_2e24(param_1: *mut Struct3, param_2: u8);
 
 Struct18 *pass1_1020_24f2(param_1: *mut Struct18, param_2: u8, param_3: u16);
 

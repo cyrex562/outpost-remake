@@ -55,7 +55,7 @@ struct Struct205
     u8          field_0x17;
     u8          field_0x18;
     u8          field_0x19;
-    u32 *field_0x1a;
+    let mut field_0x1a: *mut u32;
 };
 struct Struct206
 {
@@ -97,7 +97,7 @@ struct Struct208
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
 };
 struct Struct203
 {
@@ -159,7 +159,7 @@ struct Struct202
     u8   field_0x1b;
     u8   field_0x1c;
     u8   field_0x1d;
-    u32 *field_0x1e;
+    let mut field_0x1e: *mut u32;
 };
 struct Struct201
 {
@@ -173,7 +173,7 @@ struct Struct201
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u32 *field_0xa;
+    let mut field_0xa: *mut u32;
 };
 struct Struct209
 {

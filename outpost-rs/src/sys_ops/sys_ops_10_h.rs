@@ -12,10 +12,10 @@
 // #include "structs/structs_0xx/struct_76.h"
 // #include "structs/structs_2xx/structs_20x.h"
 
-void  pass1_1008_cbc4(Struct202 *param_1, param_2: u32, param_3: u16);
+void  pass1_1008_cbc4(param_1: *mut Struct202, param_2: u32, param_3: u16);
 
 
-void  pass1_1008_cda2(Struct205 *param_1, param_2: u32, param_3: u16);
+void  pass1_1008_cda2(param_1: *mut Struct205, param_2: u32, param_3: u16);
 
 
 
@@ -29,22 +29,22 @@ void  unk_str_op_1008_d1c6(param_1: u32, param_2: u32);
 
 
 
-void  pass1_1008_d3ae(Struct208 *param_1);
+void  pass1_1008_d3ae(param_1: *mut Struct208);
 
 
 
-void  pass1_1008_b200(Struct194 *param_1, param_2: u16);
-
-
-
-
-u32  pass1_1008_b38c(Struct196 *param_1, param_2: u16, u8 *param_3);
+void  pass1_1008_b200(param_1: *mut Struct194, param_2: u16);
 
 
 
 
-void pass1_1008_a1f0(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u8, param_4: u32, u16 *param_5, u16 *param_6,
-                     u16 *param_7, u16 *param_8);
+u32  pass1_1008_b38c(param_1: *mut Struct196, param_2: u16, u8 *param_3);
+
+
+
+
+void pass1_1008_a1f0(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u8, param_4: u32,param_5: *mut u16,param_6: *mut u16,
+                    param_7: *mut u16, u16 *param_8);
 
 
 
@@ -62,15 +62,15 @@ void pass1_1008_9fb2(param_1: u16, param_2: i16, param_3: u16, param_4: u16, par
 
 
 
-void  struct_1008_9fd2(Struct79 *param_1, Struct79 *param_2, param_3: u16);
+void  struct_1008_9fd2(param_1: *mut Struct79, param_2: *mut Struct79, param_3: u16);
 
 
 
-void  pass1_1008_8d8a(Struct112 *param_1, Struct76 *param_2, param_3: u32);
+void  pass1_1008_8d8a(param_1: *mut Struct112, param_2: *mut Struct76, param_3: u32);
 
 
 
-void  pass1_1008_909c(Struct106 *param_1, param_2: u16);
+void  pass1_1008_909c(param_1: *mut Struct106, param_2: u16);
 
 
 void pass1_1008_9262(param_1: i16, param_3: u32, param_4: u32, param_5: u16, u8 *param_6);
@@ -113,7 +113,7 @@ i16  pass1_1008_7056(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u8,
 
 
 
-void  pass1_1008_5bdc(Struct79 *param_1, param_2: i16, param_3: u16);
+void  pass1_1008_5bdc(param_1: *mut Struct79, param_2: i16, param_3: u16);
 
 
 
@@ -141,7 +141,7 @@ void  pass1_1008_6562(param_1: *mut u32, param_2: u32, param_3: i16, param_4: u1
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  struct_op_1008_6604(Struct85 *param_1, param_2: i16, i16 param_3);
+void  struct_op_1008_6604(param_1: *mut Struct85, param_2: i16, i16 param_3);
 
 
 
@@ -151,12 +151,12 @@ void  pass1_1008_4b8e(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16
 
 
 
-void  pass1_1008_4d84(Struct90 *param_1, param_2: u32, u8 *param_3);
+void  pass1_1008_4d84(param_1: *mut Struct90, param_2: u32, u8 *param_3);
 
 
 
 
-void  pass1_1008_405c(Struct76 *param_1, param_2: u32, param_3: i16, i16 param_4);
+void  pass1_1008_405c(param_1: *mut Struct76, param_2: u32, param_3: i16, i16 param_4);
 
 
 
@@ -166,7 +166,7 @@ void  memcpy_op_1008_4274(param_1: u32, param_2: u16);
 
 
 
-void  pass1_1008_4834(Struct76 *param_1);
+void  pass1_1008_4834(param_1: *mut Struct76);
 
 
 

@@ -62,7 +62,7 @@ u16 pass1_1010_96c2(param_1: u32);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-i16 pass1_1010_96d0(Struct690 *param_1);
+i16 pass1_1010_96d0(param_1: *mut Struct690);
 
 
 void pass1_1010_9766(param_1: u32, param_2: u16, param_3: u16, param_4: u16);
@@ -92,7 +92,7 @@ void pass1_1010_8170(Struct87 **param_1, param_2: i16, param_3: *mut u8, param_4
 
 
 void pass1_1010_81f6(HINSTANCE16 param_1,
-                     u16         param_2,
+                     param_2: u16,
                      Struct87  **param_3,
                      long        param_4,
                      i16         param_5);
@@ -105,10 +105,10 @@ void pass1_1010_86de(param_1: u16, param_2: u16, param_3: u8, param_4: u32);
 
 
 void pass1_1010_887a(Struct87 **param_1,
-                     u32        param_2,
-                     i16        param_3,
-                     u16        param_4,
-                     u16        param_5);
+                     param_2: u32,
+                     param_3: i16,
+                     param_4: u16,
+                    param_5: u16);
 
 
 void pass1_1010_6566(param_1: u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16);
@@ -123,7 +123,7 @@ u16 pass1_1010_65d0(param_1: u16, param_2: u32, param_3: u16);
 void pass1_1010_6604(param_1: u32, param_2: u16, param_3: u16);
 
 
-void switch_1010_6646(param_1: u16, param_2: u16, u16 *param_3, param_4: u16);
+void switch_1010_6646(param_1: u16, param_2: u16,param_3: *mut u16, param_4: u16);
 
 
 void pass1_1010_6814(param_1: u32, param_2: u16, i16 param_3);
@@ -245,7 +245,7 @@ void pass1_1010_4e8c(param_1: u32, param_2: u16);
 u16 pass1_1010_4f20(param_1: u16, param_2: u16, i16 param_3);
 
 
-void pass1_1010_4f30(param_1: u16, param_2: u16, u16 *param_3, u16 *param_4);
+void pass1_1010_4f30(param_1: u16, param_2: u16,param_3: *mut u16, u16 *param_4);
 
 
 void pass1_1010_5120(param_1: u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16);
@@ -255,11 +255,11 @@ u32 pass1_1010_375e(param_1: u32);
 
 
 void pass1_1010_398e(globals: &mut Globals,
-                     u32     *param_1,
-                     u16      param_2,
-                     u16      param_3,
-                     u32      param_4,
-                     u16      param_5);
+                    param_1: *mut u32,
+                     param_2: u16,
+                     param_3: u16,
+                     param_4: u32,
+                    param_5: u16);
 
 
 u16 pass1_1010_3a86(param_1: u32);
@@ -282,7 +282,7 @@ void pass1_1010_3bde(u16 *param_1, param_2: u16);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void struct_1010_3c52(Struct274 *param_1, param_2: u16, param_3: u16);
+void struct_1010_3c52(param_1: *mut Struct274, param_2: u16, param_3: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -325,7 +325,7 @@ u32 pass1_1010_2b98(param_1: u32, i16 param_2);
 void pass1_1010_2bb9(void);
 
 
-void struct_1010_2cd2(Struct79 *param_1, Struct79 *param_2, param_3: u16, param_4: u16);
+void struct_1010_2cd2(param_1: *mut Struct79, param_2: *mut Struct79, param_3: u16, param_4: u16);
 
 
 u32 pass1_1010_2e02(param_1: u32, i16 param_2);
@@ -374,7 +374,7 @@ void pass1_1010_1c16(param_1: u32, param_2: u32, i16 param_3);
 u8 pass1_1010_1c40(param_1: u32, param_2: u32);
 
 
-void pass1_1010_1d80(Struct455 *param_1, param_2: u16);
+void pass1_1010_1d80(param_1: *mut Struct455, param_2: u16);
 
 
 u16 pass1_1010_1dce(void);
@@ -388,7 +388,7 @@ u16 pass1_1010_1dd4(void);
 void pass1_1010_1dda(param_1: u32);
 
 
-void pass1_1010_1ea6(Struct498 *param_1, Struct16 *param_2, param_3: u16);
+void pass1_1010_1ea6(param_1: *mut Struct498, param_2: *mut Struct16, param_3: u16);
 
 
 void pass1_1010_1f62(param_1: u16, param_2: u32, i16 param_3);
@@ -405,7 +405,7 @@ void pass1_1010_2050(param_1: u32);
 void pass1_1010_209e(param_1: u32, param_2: u16);
 
 
-void pass1_1010_038e(Struct707 *param_1, param_2: i16, param_3: u16);
+void pass1_1010_038e(param_1: *mut Struct707, param_2: i16, param_3: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address

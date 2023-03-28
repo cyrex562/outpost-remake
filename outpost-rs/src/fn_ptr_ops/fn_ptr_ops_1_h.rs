@@ -12,7 +12,7 @@
 // #include "structs/structs_0xx/struct_31.h"
 // #include "structs/structs_2xx/structs_25x.h"
 
-void pass1_1040_a5d0(globals: &mut Globals, Struct258 *param_1);
+void pass1_1040_a5d0(globals: &mut Globals, param_1: *mut Struct258);
 
 Struct18 *pass1_1040_d89e(globals: &mut Globals,param_1: *mut Struct18, param_2: u8);
 
@@ -22,7 +22,7 @@ Struct18 *pass1_1040_d056(globals: &mut Globals,param_1: *mut Struct18, param_2:
 Struct18 * pass1_1040_af9e(param_1: *mut Struct18, param_2: u8)
 ;
 
-void pass1_1040_a5d0(globals: &mut Globals, Struct258 *param_1);
+void pass1_1040_a5d0(globals: &mut Globals, param_1: *mut Struct258);
 
 void  pass1_1040_a582(param_1: *mut Struct18)
 ;
@@ -75,7 +75,7 @@ Struct18 * pass1_1040_1ec8(param_1: *mut Struct18, param_2: u8);
 
 Struct18 * pass1_1038_ee48(param_1: *mut Struct18, param_2: u8);
 
-Struct31 *pass1_1040_0656(globals: &mut Globals, Struct31 *param_1, param_2: u8);
+Struct31 *pass1_1040_0656(globals: &mut Globals, param_1: *mut Struct31, param_2: u8);
 
 Struct18 * pass1_1040_0b6a(param_1: *mut Struct18, param_2: u8);
 
@@ -146,15 +146,15 @@ void pass1_1038_6912(globals: &mut Globals, u16 *param_1);
 void pass1_1038_5a16(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u32, param_4: u32);
 
 void pass1_1038_5a96(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
                      u32      param_4);
 
 void pass1_1038_5b3c(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
                      u32      param_4);
 
 void  pass1_1038_582c(param_1: u32, param_2: u32);
@@ -162,28 +162,28 @@ void  pass1_1038_582c(param_1: u32, param_2: u32);
 void  pass1_1038_5860(param_1: u32, param_2: u16, param_3: u32, i16 param_4);
 
 void pass1_1038_4918(globals: &mut Globals,
-                     u32      param_1,
-                     i16      param_2,
-                     u16      param_3,
-                     u16      param_4,
+                     param_1: u32,
+                     param_2: i16,
+                     param_3: u16,
+                     param_4: u16,
                      u8       param_5);
 
 void  pass1_1038_3608(param_1: u32);
 
 void pass1_1038_3efc(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
-                     u32      param_4,
-                     i16      param_5,
-                     u16      param_6);
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
+                     param_4: u32,
+                     param_5: i16,
+                    param_6: u16);
 
 void pass1_1038_3f38(globals: &mut Globals,
-                     u32     *param_1,
-                     u32     *param_2,
-                     u32      param_3,
-                     i16      param_4,
-                     u16      param_5);
+                    param_1: *mut u32,
+                    param_2: *mut u32,
+                     param_3: u32,
+                     param_4: i16,
+                    param_5: u16);
 
 void pass1_1038_3fca(globals: &mut Globals, param_1: u32, param_2: u16, param_3: u16);
 
@@ -192,35 +192,35 @@ void pass1_1038_42cc(globals: &mut Globals, param_1: u32, param_2: u16);
 void pass1_1038_2306(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u32);
 
 void pass1_1038_24e8(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
-                     u16      param_4,
-                     u16      param_5,
-                     u16      param_6);
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
+                     param_4: u16,
+                     param_5: u16,
+                    param_6: u16);
 
 void pass1_1038_26ee(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
-                     u16      param_4,
-                     u16      param_5,
-                     u16      param_6);
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
+                     param_4: u16,
+                     param_5: u16,
+                    param_6: u16);
 
 Struct18 * pass1_1038_29d2(param_1: *mut Struct18, param_2: u8);
 
 void pass1_1038_2a5c(globals: &mut Globals, u16 *param_1);
 
 void pass1_1038_2c82(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u32      param_3,
-                     u32      param_4,
-                     u32      param_5,
-                     u16      param_6,
-                     u16      param_7,
-                     u16      param_8,
-                     u16      param_9,
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u32,
+                     param_4: u32,
+                     param_5: u32,
+                     param_6: u16,
+                     param_7: u16,
+                     param_8: u16,
+                     param_9: u16,
                      u8       param_10);
 
 

@@ -36,6 +36,6 @@ struct Struct12
     let mut field_0x1b: u8;
     let mut field_0x1c: HGDIOBJ16;
     let mut field_0x1e: HGDIOBJ16;
-    BOOL16    field_0x20;
+    let mut field_0x20: BOOL16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_12_H_

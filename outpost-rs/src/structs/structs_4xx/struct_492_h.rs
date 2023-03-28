@@ -9,8 +9,8 @@
 // typedef struct Struct492 Struct492;
 struct Struct492
 {
-    u8  field_0x0;
-    u8  field_0x1;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
     let mut field_0x2: i16;
     let mut field_0x4: u16;
 };

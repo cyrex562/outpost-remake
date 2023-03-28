@@ -531,7 +531,7 @@ struct Struct156
     let mut field_0x1: u8;
     let mut field_0x2: u16;
     let mut field_0x4: u16;
-    u32 *field_0x6;
+    let mut field_0x6: *mut u32;
     let mut field_0xa: u32;
     long field_0xe;
     let mut field_0x12: u32;

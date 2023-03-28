@@ -39,7 +39,7 @@ void mem_1000_2ce8(i16 *param_1, param_2: u16, param_3: u16);
 
 
 
-u16 *pass1_1000_2d34(param_1: u16, param_2: u16, param_3: *mut u8, param_4: u8, u16 *param_5, i16 param_6);
+u16 *pass1_1000_2d34(param_1: u16, param_2: u16, param_3: *mut u8, param_4: u8,param_5: *mut u16, i16 param_6);
 
 
 u32 mem_op_1000_1b68(param_1: u16, param_2: u16, u32_ptr: u32);
@@ -106,7 +106,7 @@ long  pass1_1000_0ed4(param_1: u16, param_2: u16, param_3: u16, param_4: u16, pa
 
 
 
-u16 pass1_1000_0fb8(param_1: u16, param_2: u16, param_3: i16, param_4: u16, param_5: u16, u16 *param_6, param_7: u16);
+u16 pass1_1000_0fb8(param_1: u16, param_2: u16, param_3: i16, param_4: u16, param_5: u16,param_6: *mut u16, param_7: u16);
 
 
 
@@ -158,12 +158,12 @@ u16 mem_1000_167a(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u1
 
 
 u16 pass1_1000_16aa(globals: &mut Globals,
-                    u16      param_1,
-                    u16      param_2,
-                    u16      param_3,
-                    u16      param_4,
-                    u16      param_5,
-                    u16      param_6);
+                    param_1: u16,
+                    param_2: u16,
+                    param_3: u16,
+                    param_4: u16,
+                    param_5: u16,
+                   param_6: u16);
 
 
 u16 pass1_1000_180c(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16);

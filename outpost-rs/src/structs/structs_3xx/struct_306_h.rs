@@ -43,7 +43,7 @@ struct Struct306
     u8          field_0x1f;
     u8          field_0x20;
     u8          field_0x21;
-    u32 *field_0x22;
+    let mut field_0x22: *mut u32;
     let mut field_0x24: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_306_H_

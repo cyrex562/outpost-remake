@@ -42,7 +42,7 @@ void pass1_1028_bb56(param_1: u32, param_2: u32);
 u32 pass1_1028_bb6a(param_1: u32);
 
 
-void pass1_1028_bb96(Struct296 *param_1, param_2: *mut u32, param_3: u16);
+void pass1_1028_bb96(param_1: *mut Struct296, param_2: *mut u32, param_3: u16);
 
 
 void pass1_1028_bbf0(param_1: u16, param_2: u16, u32 *param_3);
@@ -55,12 +55,12 @@ void pass1_1028_bc7e(param_1: *mut u32, param_2: u16);
 
 
 u16 pass1_1028_bc90(param_1: *mut u32,
-                    u16 *param_2,
-                    u32  param_3,
-                    u32  param_4,
-                    i16  param_5,
-                    u16  param_6,
-                    u16  param_7);
+                   param_2: *mut u16,
+                    param_3: u32,
+                    param_4: u32,
+                    param_5: i16,
+                    param_6: u16,
+                   param_7: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -81,14 +81,14 @@ void pass1_1028_bf22(param_1: u32, param_2: *mut u8, param_3: u16);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1028_bf76(Struct174 *param_1, param_2: u16);
+void pass1_1028_bf76(param_1: *mut Struct174, param_2: u16);
 
 
-void pass1_1028_c1f8(u16  param_1,
-                     i16  param_2,
-                     u16  param_3,
-                     u32  param_4,
-                     u16 *param_5,
+void pass1_1028_c1f8(param_1: u16,
+                     param_2: i16,
+                     param_3: u16,
+                     param_4: u32,
+                    param_5: *mut u16,
                      u16 *param_6);
 
 
@@ -127,7 +127,7 @@ void pass1_1028_aec0(param_1: u32, param_2: i16, param_3: u16, param_4: u16);
 
 
 Struct100 *
-pass1_1028_b0de(Struct100 *param_1, param_2: u32, param_3: u32, param_4: u16, param_5: u8);
+pass1_1028_b0de(param_1: *mut Struct100, param_2: u32, param_3: u32, param_4: u16, param_5: u8);
 
 
 u16 *pass1_1028_b22c(u16 *param_1, param_2: u16, param_3: u32, param_4: u16);
@@ -142,11 +142,11 @@ BOOL16 write_to_file_1028_b286(param_1: i16, param_2: u16);
 void pass1_1028_9600(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16, param_5: u8);
 
 
-void pass1_1028_9624(Struct688 *param_1,
-                     u16        param_2,
+void pass1_1028_9624(param_1: *mut Struct688,
+                     param_2: u16,
                      u8        *param_3,
-                     u16        param_4,
-                     i16        param_5,
+                     param_4: u16,
+                     param_5: i16,
                      u8         param_6);
 
 
@@ -166,7 +166,7 @@ u16 pass1_1028_853e(param_1: u32, param_2: u16, param_3: u16);
 
 
 Struct100 *
-pass1_1028_8698(Struct100 *param_1, param_2: u32, param_3: u32, param_4: u8, param_5: u16);
+pass1_1028_8698(param_1: *mut Struct100, param_2: u32, param_3: u32, param_4: u8, param_5: u16);
 
 
 void pass1_1028_8e1e(param_1: u32, param_2: i16, param_3: u16);
@@ -178,7 +178,7 @@ void pass1_1028_8e5c(param_1: u32, param_2: i16, param_3: *mut u8, param_4: u16)
 
 
 Struct100 *
-pass1_1028_8fc0(Struct100 *param_1, param_2: u32, param_3: u32, param_4: u16, param_5: u8);
+pass1_1028_8fc0(param_1: *mut Struct100, param_2: u32, param_3: u32, param_4: u16, param_5: u8);
 
 
 u16 pass1_1028_74e4(param_1: u32, long param_2, param_3: i16, param_4: u16, param_5: u8);
@@ -210,7 +210,7 @@ u16 pass1_1028_678c(param_1: u32, param_2: i16, param_3: u16);
 u32 pass1_1028_67d4(param_1: u32, param_2: u16);
 
 
-u16 pass1_1028_6822(param_1: u32, u16 *param_2, param_3: u16);
+u16 pass1_1028_6822(param_1: u32,param_2: *mut u16, param_3: u16);
 
 
 void pass1_1028_6926(param_1: u32, param_2: u16, param_3: u16, param_4: u16);

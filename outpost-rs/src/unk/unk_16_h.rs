@@ -119,7 +119,7 @@ u16  pass1_1000_1ab0(param_1: u16);
 BOOL16  pass1_1000_1afe(param_1: u16, param_2: u32, param_3: u16);
 
 
-void  pass1_1000_0000(u16 *param_1, u16 *param_2, param_3: u16);
+void  pass1_1000_0000(u16 *param_1,param_2: *mut u16, param_3: u16);
 
 
 

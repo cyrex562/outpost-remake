@@ -120,12 +120,12 @@ void  pass1_1000_2cb0(u16 *param_1, param_2: u16)
     let mut puVar1: *mut u16;
     let mut bVar2: u8;
 
-    bVar2 = *(u8 *)(param_1 + 0x5);
+    bVar2 = (param_1 + 0x5);
     if(((bVar2 & 0x83) != 0x0) && ((bVar2 & 0x8) != 0x0))
     {
         pass1_1000_16ee(param_1[0x3], param_1[0x4], param_2);
         puVar1        = param_1 + 0x5;
-        *(u8 *)puVar1 = *(u8 *)puVar1 & 0xf7;
+        puVar1 = puVar1 & 0xf7;
         param_1[0x3]  = 0x0;
         param_1[0x4] = 0x0;
         param_1.field_0x0 = 0x0;
@@ -162,7 +162,7 @@ BOOL16 pass1_1000_1fea(Globals *globals)
 
 {
     let mut puVar1: *mut u8;
-    bool bVar2;
+    let mut bVar2: bool;
 
     puVar1                      = globals.PTR_LOOP_1050_5f22 + 0x1;
     bVar2                       = globals.PTR_LOOP_1050_5f22 == 0x0;
@@ -254,7 +254,7 @@ u32 pass1_1000_2242(param_1: u16, param_2: u16, param_3: u16, param_4: i16, para
 {
     let mut uVar1: u16;
     let mut u_var2: u16;
-    bool bVar3;
+    let mut bVar3: bool;
 
     uVar1 = param_2 | param_1;
     while(true)
@@ -325,7 +325,7 @@ BOOL16  pass1_1000_115c(param_1: i16, u16 *param_2)
     if(uVar3 < uVar4)
     {
         puVar5 = (uVar3 + param_2);
-        if(((*(u8 *)puVar5 & 0x1) != 0x0) || ((*puVar5 & 0xfffc) + uVar3 < uVar4))
+        if(((puVar5 & 0x1) != 0x0) || ((*puVar5 & 0xfffc) + uVar3 < uVar4))
         {
             return 0x0;
         }
@@ -353,7 +353,7 @@ BOOL16  pass1_1000_115c(param_1: i16, u16 *param_2)
             return 0x1;
         }
         puVar5 = (uVar3 + param_2);
-        if((*(u8 *)puVar5 & 0x1) == 0x0)
+        if((puVar5 & 0x1) == 0x0)
         {
             uStack4 = uStack4 + (*puVar5 & 0xfffc);
             if(puVar5 == PTR_LOOP_1050_000e)
@@ -512,7 +512,7 @@ BOOL16  pass1_1000_1afe(param_1: u16, param_2: u32, param_3: u16)
     pass1_1000_1e61(unaff_CS, 0xa, 0x0, 0x0);
     return 0x0;
 }
-void  pass1_1000_0000(u16 *param_1, u16 *param_2, param_3: u16)
+void  pass1_1000_0000(u16 *param_1,param_2: *mut u16, param_3: u16)
 
 {
     let mut puVar1: *mut u16;
@@ -570,7 +570,7 @@ void  pass1_1000_05b4(param_1: u8, i16 param_2)
 {
     (param_2 + 0xa)         = 0x1;
     (param_2 + 0x8)         = 0x668;
-    *(u8 *)(param_2 + 0x13) = -((param_1 & 0x2) != 0x0) & 0x2;
+    (param_2 + 0x13) = -((param_1 & 0x2) != 0x0) & 0x2;
     (param_2 + 0x10)        = 0x0;
     (param_2 + 0xe)         = 0x0;
 }
@@ -625,7 +625,7 @@ u16  pass1_1000_09ca(param_1: i16, u32 *param_2)
     puVar4[0x2]  = puVar4;
     puVar4[0x1]  = puVar4;
     param_2[0x8] = (u32)puVar4;
-    if((*(u8 *)(param_2 + 0x6) & 0x7) == 0x2)
+    if(((param_2 + 0x6) & 0x7) == 0x2)
     {
         param_2[0x9] = 0x8;
     }
@@ -690,7 +690,7 @@ u32  pass1_1000_0c32(param_1: u16, param_2: u16, param_3: u16)
                     }
                     else
                     {
-                        *puVar6                        = param_1 & 0xff00 | *(u8 *)puVar6 & 0x2 | param_1 & 0xff | 0x1;
+                        *puVar6                        = param_1 & 0xff00 | puVar6 & 0x2 | param_1 & 0xff | 0x1;
                         (puVar6[0x2] + 0x2)            = puVar6[0x1];
                         (puVar6[0x1] + 0x4)            = puVar6[0x2];
                         puVar8                         = (puVar6 + param_1);
@@ -709,7 +709,7 @@ u32  pass1_1000_0c32(param_1: u16, param_2: u16, param_3: u16)
                     *(u16 **)(puVar6[0x2] + 0x2) = puVar8;
                     (puVar6[0x1] + 0x4)          = puVar6[0x2];
                     puVar1                       = puVar6;
-                    *(u8 *)puVar1                = *(u8 *)puVar1 | 0x1;
+                    puVar1                = puVar1 | 0x1;
                     uStack14                     = *puVar6 & 0xfffc;
                     (puVar6 + uStack14)          = (puVar6 + uStack14) | 0x2;
                 }

@@ -162,7 +162,7 @@ struct Struct725
     let mut field_0x8c: u8;
     let mut field_0x8d: u8;
     let mut field_0x8e: u32;
-    u32 *field_0x92;
+    let mut field_0x92: *mut u32;
 };
 struct Struct726
 {

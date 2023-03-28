@@ -186,8 +186,8 @@ struct WNDCLASS16
     let mut cb_wnd_extra: i16;
     let mut h_instance: HANDLE16;
     HICON16   h_icon;
-    HCURSOR16 h_cursor;
-    HBRUSH16  hbr_background;
+    let mut h_cursor: HCURSOR16;
+    let mut hbr_background: HBRUSH16;
     SEGPTR    lpsz_menu_name;
     SEGPTR    lpsz_class_name;
 };
@@ -266,10 +266,10 @@ typedef struct PAINTSTRUCT16 PAINTSTRUCT16, *PPAINTSTRUCT16;
 struct PAINTSTRUCT16
 {
     let mut hdc: HDC16;
-    BOOL16        f_erase;
+    let mut f_erase: BOOL16;
     let mut rc_paint: RECT16;
-    BOOL16        f_restore;
-    BOOL16        f_inc_update;
+    let mut f_restore: BOOL16;
+    let mut f_inc_update: BOOL16;
     BYTE          rgb_reserved[16];
 };
 
@@ -457,7 +457,7 @@ struct _CONTEXT
 
 typedef struct
 {
-    HWND16    hwnd;
+    let mut hwnd: HWND16;
     let mut message: u16;
     WPARAM16  wParam;
     LPARAM    lParam;

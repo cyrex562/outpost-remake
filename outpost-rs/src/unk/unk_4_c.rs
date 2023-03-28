@@ -129,12 +129,12 @@ void  pass1_1030_d994(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u1
 void  pass1_1030_da22(param_1: u32, param_2: u16)
 
 {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut c_void;
     let mut uVar3: u16;
-    BOOL16      BVar4;
+    let mut BVar4: BOOL16;
     let mut uVar5: u16;
-    u32 *puVar6;
+    let mut puVar6: *mut u32;
     let mut extraout_DX: u16;
     let mut uVar7: u16;
     let mut uVar8: u16;
@@ -169,12 +169,12 @@ void  pass1_1030_da22(param_1: u32, param_2: u16)
 void  pass1_1030_dace(param_1: u32, param_2: u16)
 
 {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut c_void;
     let mut uVar3: u16;
-    BOOL16      BVar4;
+    let mut BVar4: BOOL16;
     let mut uVar5: u16;
-    u32 *puVar6;
+    let mut puVar6: *mut u32;
     let mut extraout_DX: u16;
     let mut uVar7: u16;
     let mut uVar8: u16;
@@ -233,7 +233,7 @@ void  pass1_1030_db78(param_1: u32)
 }
 
 
-void  pass1_1030_db92(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, long param_5, param_6: u16)
+void  pass1_1030_db92(param_1: u16, param_2: u16,param_3: *mut u16, param_4: u32, long param_5, param_6: u16)
 
 {
     let mut iVar1: i16;
@@ -290,7 +290,7 @@ void  pass1_1030_dcf4(u16 *param_1, param_2: u16)
     let mut puVar7: *mut u8;
     let mut extraout_DX_00: u16;
     let mut uVar8: u16;
-    Struct596 *iVar9;
+    let mut iVar9: *mut Struct596;
     let mut uVar9: u16;
     u32 * puVar10;
     let mut uVar11: u32;
@@ -300,7 +300,7 @@ void  pass1_1030_dcf4(u16 *param_1, param_2: u16)
     let mut iStack12: i16;
 
     uVar9 = (param_1 >> 0x10);
-    iVar9 = (Struct596 *) param_1;
+    iVar9 =  param_1;
     param_1.field_0x0 = addr_table_1030_e036;//0xe036;
     iVar9.field_0x2 = SEG_1030;
     if (globals._PTR_LOOP_1050_65e2 != 0x0) {
@@ -416,7 +416,7 @@ void  pass1_1030_bcbc(param_1: u16, param_2: u16, param_3: u32, param_4: u32, pa
 }
 
 
-void  pass1_1030_bcde(param_1: u16, param_2: u16, param_3: u16, param_4: u32, u16 *param_5, long param_6)
+void  pass1_1030_bcde(param_1: u16, param_2: u16, param_3: u16, param_4: u32,param_5: *mut u16, long param_6)
 
 {
     let mut iVar1: i16;
@@ -451,7 +451,7 @@ void  pass1_1030_bcde(param_1: u16, param_2: u16, param_3: u16, param_4: u32, u1
 void  pass1_1030_bd74(param_1: u16, param_2: u16, param_3: u32, param_4: u32, param_5: u16)
 
 {
-    Struct670 *iVar1;
+    let mut iVar1: *mut Struct670;
     let mut iVar2: i16;
     let mut uVar3: u16;
     let mut uVar4: u16;
@@ -467,7 +467,7 @@ void  pass1_1030_bd74(param_1: u16, param_2: u16, param_3: u32, param_4: u32, pa
     long         lStack6;
 
     uVar3    = (param_4 >> 0x10);
-    iVar1    = (Struct670 *)param_4;
+    iVar1    = param_4;
     lStack6  = iVar1.field_0x8;
     uVar4    = (param_3 >> 0x10);
     iVar2    = param_3;
@@ -508,7 +508,7 @@ void  pass1_1030_be80(param_1: u32, param_2: *mut u8, param_3: u16)
     let mut pi_var1: *mut i16;
     let mut u_var2: u32;
     let mut iVar3: i16;
-    BOOL16     BVar4;
+    let mut BVar4: BOOL16;
     let mut uVar5: u32;
     let mut extraout_DX: u16;
     let mut uVar6: u16;
@@ -722,13 +722,13 @@ void  pass1_1030_c12e(param_1: u32, param_2: i16, param_3: i16, param_4: u16, pa
 }
 
 
-void  pass1_1030_c52e(param_1: u32, u16 *param_2, param_3: u32, param_4: u32, param_5: i16, param_6: u16, param_7: u16)
+void  pass1_1030_c52e(param_1: u32,param_2: *mut u16, param_3: u32, param_4: u32, param_5: i16, param_6: u16, param_7: u16)
 
 {
-    BOOL16      BVar1;
-    u32        *pu_var2;
+    let mut BVar1: BOOL16;
+    let mut pu_var2: *mut u32;
     let mut puVar3: *mut u8;
-    u32 *puVar4;
+    let mut puVar4: *mut u32;
     let mut uVar5: u16;
     let mut uVar6: u16;
     let mut uVar7: u32;
@@ -738,7 +738,7 @@ void  pass1_1030_c52e(param_1: u32, u16 *param_2, param_3: u32, param_4: u32, pa
     let mut local_32: [u8;12] = [0;12];
     let mut local_20: u32;
     let mut uStack28: u32;
-    u32 *puStack24;
+    let mut puStack24: *mut u32;
     let mut uStack22: u32;
     let mut uStack18: u16;
     let mut uStack16: u16;
@@ -765,7 +765,7 @@ void  pass1_1030_c52e(param_1: u32, u16 *param_2, param_3: u32, param_4: u32, pa
             {
                 uVar7 = pass1_1030_bcae(&local_20, param_7);
                 uVar5 = (uVar7 >> 0x10);
-                pass1_1028_dc52((Struct92 *)str_var1(param_7, local_32), 0x1, 0x0, 0x400);
+                pass1_1028_dc52(str_var1(param_7, local_32), 0x1, 0x0, 0x400);
                 while(true)
                 {
                     puVar3 = local_32;
@@ -918,12 +918,12 @@ void  pass1_1030_cac2(param_1: *mut u32, param_2: i16, param_3: u16, param_4: u1
 
 {
     let mut uVar1: u32;
-    u32 *pu_var2;
+    let mut pu_var2: *mut u32;
     let mut ppcVar3: *mut *mut c_void;
     let mut uVar4: u32;
     let mut uVar5: u16;
     let mut uVar6: u32;
-    u32 *puVar7;
+    let mut puVar7: *mut u32;
     let mut uVar8: u32;
     let mut extraout_DX: u16;
     let mut extraout_DX_00: u16;
@@ -992,7 +992,7 @@ void  pass1_1030_cac2(param_1: *mut u32, param_2: i16, param_3: u16, param_4: u1
 u16  pass1_1030_cbf0(param_1: i16, param_2: u16, i16 param_3)
 
 {
-    Struct595 *iVar1;
+    let mut iVar1: *mut Struct595;
     let mut iStack4: i16;
 
     iStack4 = 0x0;
@@ -1002,7 +1002,7 @@ u16  pass1_1030_cbf0(param_1: i16, param_2: u16, i16 param_3)
         {
             return 0x0;
         }
-        iVar1 = (Struct595 *)(iStack4 * 0xc + param_1);
+        iVar1 = (iStack4 * 0xc + param_1);
         if((iVar1.field_0x24 == param_3) && (iVar1.field_0x26 == 0x3))
             break;
         iStack4 = iStack4 + 0x1;
@@ -1026,23 +1026,23 @@ void  pass1_1030_cc44(param_1: i16, param_2: u16, param_3: i16, param_4: u32, i1
     let mut extraout_DX_00: u16;
     let mut puVar7: *mut u8;
     let mut extraout_DX_01: u16;
-    Struct304 *iVar7;
-    Struct303 *iVar8;
+    let mut iVar7: *mut Struct304;
+    let mut iVar8: *mut Struct303;
     let mut uVar8: u8;
     let mut unaff_SS: u16;
-    u32  *puVar9;
-    u32         *puVar10;
+    let mut puVar9: *mut u32;
+    let mut puVar10: *mut u32;
     let mut puVar11: *mut u8;
     let mut local_32: [u8;8] = [0;8];
-    u32  *puStack42;
+    let mut puStack42: *mut u32;
     let mut uStack38: u32;
     let mut uStack34: u32;
-    u32  *puStack30;
+    let mut puStack30: *mut u32;
     let mut uStack26: u16;
     let mut puStack24: *mut u8;
     let mut uStack22: u16;
     let mut puStack20: *mut u8;
-    u32         *puStack18;
+    let mut puStack18: *mut u32;
     let mut iStack14: i16;
     let mut uStack12: u16;
     let mut iStack10: i16;
@@ -1058,7 +1058,7 @@ void  pass1_1030_cc44(param_1: i16, param_2: u16, param_3: i16, param_4: u32, i1
         {
             return;
         }
-        iVar8 = (Struct303 *)(iStack10 * 0xc + param_1);
+        iVar8 = (iStack10 * 0xc + param_1);
         if(((iVar8.field_0x28 == uStack8) && (iVar8.field_0x2a == uStack8)) && (iVar8.field_0x24 == param_5))
         {
             if(iVar8.field_0x26 == 0x4)
@@ -1123,7 +1123,7 @@ void  pass1_1030_cc44(param_1: i16, param_2: u16, param_3: i16, param_4: u32, i1
             }
             else
             {
-                iVar7             = (Struct304 *)(iStack10 * 0xc + param_1);
+                iVar7             = (iStack10 * 0xc + param_1);
                 iVar7.field_0x26 = 0x0;
                 iVar7.field_0x28 = 0x0;
             }
@@ -1139,10 +1139,10 @@ void  pass1_1030_cc44(param_1: i16, param_2: u16, param_3: i16, param_4: u32, i1
 }
 
 
-BOOL16  pass1_1030_ad22(param_1: u16, param_2: u16, u16 *param_3, long param_4, param_5: u16, param_6: u16, param_7: u16)
+BOOL16  pass1_1030_ad22(param_1: u16, param_2: u16,param_3: *mut u16, long param_4, param_5: u16, param_6: u16, param_7: u16)
 
 {
-    BOOL16 BVar1;
+    let mut BVar1: BOOL16;
     let mut u_var2: u16;
     let mut uVar3: u32;
 
@@ -1165,11 +1165,11 @@ BOOL16  pass1_1030_ad22(param_1: u16, param_2: u16, u16 *param_3, long param_4, 
 }
 
 
-void  pass1_1030_ad86(param_1: u16, param_2: u16, u16 *param_3, long param_4, param_5: u16, param_6: u16)
+void  pass1_1030_ad86(param_1: u16, param_2: u16,param_3: *mut u16, long param_4, param_5: u16, param_6: u16)
 
 {
     let mut uVar1: u32;
-    u32 *pu_var2;
+    let mut pu_var2: *mut u32;
     char        cStack17;
     let mut local_a: u32;
     let mut iStack6: i16;
@@ -1191,10 +1191,10 @@ void  pass1_1030_ad86(param_1: u16, param_2: u16, u16 *param_3, long param_4, pa
 }
 
 
-u16  pass1_1030_addc(param_1: u16, param_2: u16, u16 *param_3, param_4: u16, param_5: u16, param_6: u32, param_7: i16, param_8: u16, param_9: u16)
+u16  pass1_1030_addc(param_1: u16, param_2: u16,param_3: *mut u16, param_4: u16, param_5: u16, param_6: u32, param_7: i16, param_8: u16, param_9: u16)
 
 {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut local_14: i16;
     let mut local_12: i16;
     let mut local_10: i16;
@@ -1235,7 +1235,7 @@ void  pass1_1030_b142(param_1: u32, param_2: u32)
     let mut iVar1: i16;
     let mut iVar2: i16;
     let mut uVar3: u16;
-    bool       bVar4;
+    let mut bVar4: bool;
     let mut uVar5: u32;
     let mut uStack12: u32;
 
@@ -1364,16 +1364,16 @@ void  pass1_1030_b9b2(param_1: u32)
 }
 
 
-void  pass1_1030_b9da(Struct402 *param_1, param_2: u32, param_3: u32, param_4: u32, param_5: u16, param_6: u16, param_7: u16)
+void  pass1_1030_b9da(param_1: *mut Struct402, param_2: u32, param_3: u32, param_4: u32, param_5: u16, param_6: u16, param_7: u16)
 
 {
-    u32         *puVar1;
+    let mut puVar1: *mut u32;
     let mut u_var2: u32;
     let mut puVar3: *mut u8;
     let mut uVar4: u16;
     let mut uVar5: u16;
     let mut uVar6: u32;
-    Struct402 *iVar7;
+    let mut iVar7: *mut Struct402;
     let mut iVar8: i16;
     let mut uVar9: u16;
     let mut uVar10: u32;
@@ -1382,7 +1382,7 @@ void  pass1_1030_b9da(Struct402 *param_1, param_2: u32, param_3: u32, param_4: u
 
     puVar3 = param_3;
     uVar9  = (param_1 >> 0x10);
-    iVar7  = (Struct402 *)param_1;
+    iVar7  = param_1;
     if(iVar7.field_0xe == (long *)0x0)
     {
         mem_op_1000_179c(0xa, puVar3, 0);
@@ -1488,7 +1488,7 @@ void  pass1_1030_9f64(u32 *param_1)
 }
 
 
-void  pass1_1030_a39a(param_1: u32, u16 *param_2, param_3: u16)
+void  pass1_1030_a39a(param_1: u32,param_2: *mut u16, param_3: u16)
 
 {
     pass1_1030_aa18(param_1, param_2, param_3);
@@ -1496,14 +1496,14 @@ void  pass1_1030_a39a(param_1: u32, u16 *param_2, param_3: u16)
 }
 
 
-void  pass1_1030_a3ae(param_1: u32, u16 *param_2, param_3: u16)
+void  pass1_1030_a3ae(param_1: u32,param_2: *mut u16, param_3: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut u_var2: u32;
     let mut uVar3: u16;
     let mut uVar4: u16;
-    BOOL16      BVar5;
+    let mut BVar5: BOOL16;
     let mut uVar6: u32;
     let mut puVar7: *mut u8;
     let mut extraout_DX: u16;
@@ -1513,7 +1513,7 @@ void  pass1_1030_a3ae(param_1: u32, u16 *param_2, param_3: u16)
     let mut iVar11: i16;
     let mut uVar12: u16;
     let mut uVar13: u16;
-    u32        *puVar14;
+    let mut puVar14: *mut u32;
     let mut puVar15: *mut u16;
     let mut uVar16: u16;
     let mut uStack44: u32;
@@ -1525,7 +1525,7 @@ void  pass1_1030_a3ae(param_1: u32, u16 *param_2, param_3: u16)
     let mut iStack26: i16;
     long        lStack22;
     let mut uStack18: u32;
-    u32 *puStack14;
+    let mut puStack14: *mut u32;
     let mut uStack10: u16;
     let mut puStack8: *mut u8;
     let mut iStack6: i16;
@@ -1624,7 +1624,7 @@ void  pass1_1030_a3ae(param_1: u32, u16 *param_2, param_3: u16)
 }
 
 
-void  pass1_1030_a57e(param_1: u32, u16 *param_2, param_3: i16, param_4: i16, param_5: u16)
+void  pass1_1030_a57e(param_1: u32,param_2: *mut u16, param_3: i16, param_4: i16, param_5: u16)
 
 {
     let mut uVar1: u32;
@@ -1640,12 +1640,12 @@ void  pass1_1030_a57e(param_1: u32, u16 *param_2, param_3: i16, param_4: i16, pa
     let mut uVar10: u16;
     let mut uVar11: u16;
     let mut iVar12: i16;
-    u32 *puVar13;
+    let mut puVar13: *mut u32;
     let mut uVar14: u16;
     let mut uVar15: u16;
     let mut uVar16: u16;
     let mut uVar17: u16;
-    u32        *puVar18;
+    let mut puVar18: *mut u32;
     let mut uVar19: u32;
     let mut u_var20: u8;
     let mut uStack40: u32;
@@ -1802,7 +1802,7 @@ void  pass1_1030_a57e(param_1: u32, u16 *param_2, param_3: i16, param_4: i16, pa
 }
 
 
-void  pass1_1030_8aa0(param_1: u32, param_2: u32, u16 *param_3, param_4: u16, param_5: u16)
+void  pass1_1030_8aa0(param_1: u32, param_2: u32,param_3: *mut u16, param_4: u16, param_5: u16)
 
 {
     let mut uVar1: u16;
@@ -1832,17 +1832,17 @@ void  pass1_1030_8aa0(param_1: u32, param_2: u32, u16 *param_3, param_4: u16, pa
 }
 
 
-void  pass1_1030_8b00(param_1: u32, u16 *param_2, u16 *param_3, param_4: u16)
+void  pass1_1030_8b00(param_1: u32,param_2: *mut u16,param_3: *mut u16, param_4: u16)
 
 {
-    u32 *puVar1;
+    let mut puVar1: *mut u32;
     let mut piVar2: *mut i16;
     let mut uVar3: u16;
     let mut local_2a: u32;
     let mut uStack38: u32;
     let mut uStack28: u32;
-    u32 *puStack18;
-    u32 *puStack16;
+    let mut puStack18: *mut u32;
+    let mut puStack16: *mut u32;
     let mut piStack14: *mut i16;
     let mut local_c: i16;
     let mut local_a: [u8;4] = [0;4];
@@ -1894,7 +1894,7 @@ void  pass1_1030_8bac(param_1: u32, param_2: u16)
 }
 
 
-void  pass1_1030_8bdc(param_1: u32, param_2: u32, u16 *param_3, param_4: i16, param_5: u16)
+void  pass1_1030_8bdc(param_1: u32, param_2: u32,param_3: *mut u16, param_4: i16, param_5: u16)
 
 {
     let mut puVar1: *mut u8;

@@ -226,7 +226,7 @@ struct Struct298
     u8   field_0x1f;
     u8   field_0x20;
     u8   field_0x21;
-    u32 *field_0x22;
+    let mut field_0x22: *mut u32;
     let mut field_0x24: u16;
 };
 struct Struct290
@@ -261,7 +261,7 @@ struct Struct290
     u8   field_0x1b;
     u8   field_0x1c;
     u8   field_0x1d;
-    u32 *field_0x1e;
+    let mut field_0x1e: *mut u32;
 };
 struct Struct299
 {

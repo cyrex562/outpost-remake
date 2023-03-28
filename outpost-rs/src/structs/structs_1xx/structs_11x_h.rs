@@ -230,7 +230,7 @@ struct Struct111
     let mut field_0x6: u16;
     let mut field_0x8: u16;
     let mut field_0xa: u16;
-    Struct76 *field_0xc;
+    let mut field_0xc: *mut Struct76;
 };
 struct Struct112
 {

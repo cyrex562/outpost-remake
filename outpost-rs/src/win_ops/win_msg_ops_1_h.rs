@@ -14,6 +14,6 @@
 // #include "structs/structs_0xx/structs_5x.h"
 // #include "structs/structs_0xx/structs_6x.h"
 
-void send_msg_1040_c85a(globals: &mut Globals, param_1: u32, HWND16 hwnd_arg2);
+void send_msg_1040_c85a(globals: &mut Globals, param_1: u32, hwnd_arg2: HWND16);
 
 #endif // OUTPOST_1_SRC_WIN_OPS_WIN_MSG_OPS_1_H_

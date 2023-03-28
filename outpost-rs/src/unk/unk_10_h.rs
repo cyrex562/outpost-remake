@@ -15,12 +15,12 @@ u16 *pass1_1020_d3a4(u16 *param_1, param_2: u16, param_3: i16, param_4: u32, par
 
 
 u16 pass1_1020_d460(param_1: *mut u32,
-                    u16 *param_2,
-                    u32  param_3,
-                    u32  param_4,
-                    i16  param_5,
-                    u16  param_6,
-                    i16  param_7,
+                   param_2: *mut u16,
+                    param_3: u32,
+                    param_4: u32,
+                    param_5: i16,
+                    param_6: u16,
+                    param_7: i16,
                     u64  param_8);
 
 
@@ -62,27 +62,27 @@ void pass1_1020_ba94(long *param_1);
 u32 pass1_1020_bae6(param_1: u16, param_2: u32, param_3: u16, param_4: u16, param_5: u16);
 
 
-void pass1_1020_bb16(param_1: *mut u32, param_2: *mut u32, u16 *param_3, param_4: u16);
+void pass1_1020_bb16(param_1: *mut u32, param_2: *mut u32,param_3: *mut u16, param_4: u16);
 
 
 void pass1_1020_bb70(long *param_1,
-                     u16   param_2,
-                     u32   param_3,
-                     u16   param_4,
-                     u16   param_5,
-                     u16   param_6);
+                     param_2: u16,
+                     param_3: u32,
+                     param_4: u16,
+                     param_5: u16,
+                    param_6: u16);
 
 
 void pass1_1020_bb8a(long *param_1, param_2: u16, param_3: u32, param_4: u16, param_5: u16);
 
 
 BOOL16 pass1_1020_bba4(long *param_1,
-                       i16   param_2,
-                       u16   param_3,
-                       i16   param_4,
-                       u16   param_5,
-                       u16   param_6,
-                       u16   param_7);
+                       param_2: i16,
+                       param_3: u16,
+                       param_4: i16,
+                       param_5: u16,
+                       param_6: u16,
+                      param_7: u16);
 
 
 void pass1_1020_bc72(u16 *param_1, param_2: u16, param_3: u16);
@@ -124,22 +124,22 @@ u16 switch_1020_c3b4(param_1: u16);
 u16 pass1_1020_c42e(i16 param_1);
 
 
-void pass1_1020_c4a8(u32  param_1,
-                     u16 *param_2,
+void pass1_1020_c4a8(param_1: u32,
+                    param_2: *mut u16,
                      param_3: *mut u32,
-                     i16  param_4,
-                     u16  param_5,
-                     u16  param_6);
+                     param_4: i16,
+                     param_5: u16,
+                    param_6: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1020_c4f4(u32        param_1,
-                     u16        param_2,
-                     u16        param_3,
-                     u32        param_4,
-                     Struct361 *param_5,
-                     u16        param_6);
+void pass1_1020_c4f4(param_1: u32,
+                     param_2: u16,
+                     param_3: u16,
+                     param_4: u32,
+                     param_5: *mut Struct361,
+                    param_6: u16);
 
 
 u32 pass1_1020_c538(param_1: u32);
@@ -159,10 +159,10 @@ void pass1_1020_c644(param_1: *mut u32, param_2: u16, param_3: u32);
 void pass1_1020_c694(param_1: u32, param_2: i16, param_3: u16);
 
 
-void pass1_1020_c6a4(Struct359 *param_1, param_2: i16, param_3: u16);
+void pass1_1020_c6a4(param_1: *mut Struct359, param_2: i16, param_3: u16);
 
 
-void pass1_1020_c6de(Struct360 *param_1, long param_2);
+void pass1_1020_c6de(param_1: *mut Struct360, long param_2);
 
 
 u16 pass1_1020_a426(void);
@@ -171,12 +171,12 @@ u16 pass1_1020_a426(void);
 void pass1_1020_b0aa(param_1: u16, param_2: u16, param_3: i16, param_4: u16);
 
 
-u16 pass1_1020_b1ae(i16  param_1,
-                    u16  param_2,
-                    u16  param_3,
-                    u16  param_4,
-                    u16  param_5,
-                    u16 *param_6,
+u16 pass1_1020_b1ae(param_1: i16,
+                    param_2: u16,
+                    param_3: u16,
+                    param_4: u16,
+                    param_5: u16,
+                   param_6: *mut u16,
                     u32  param_7);
 
 
@@ -187,11 +187,11 @@ void pass1_1020_b240(param_1: u16, param_2: u16, param_3: u32, param_4: u32, par
 
 // WARNING: Could not reconcile some variable overlaps
 
-void pass1_1020_b2da(u16  param_1,
-                     u16  param_2,
-                     u16  param_3,
-                     i16  param_4,
-                     u16 *param_5,
+void pass1_1020_b2da(param_1: u16,
+                     param_2: u16,
+                     param_3: u16,
+                     param_4: i16,
+                    param_5: *mut u16,
                      u32  param_6);
 
 
@@ -204,7 +204,7 @@ void pass1_1020_b482(param_1: u16, param_2: u32, param_3: *mut u32, param_4: u32
 void pass1_1020_86d8(param_1: u32);
 
 
-void pass1_1020_8712(param_1: u32, i16 *param_2, Struct76 *param_3, u16 *param_4);
+void pass1_1020_8712(param_1: u32, i16 *param_2, param_3: *mut Struct76, u16 *param_4);
 
 
 void pass1_1020_8bae(u16 *param_1);
@@ -303,12 +303,12 @@ void pass1_1020_05d6(u16 *param_1, param_2: u16);
 
 
 void struct_1020_0762(param_1: &mut Struct20,
-                      u32       param_2,
-                      u32      *param_3,
-                      u16       param_4,
-                      u32       param_5,
-                      u32       param_6,
-                      u16       param_7);
+                      param_2: u32,
+                     param_3: *mut u32,
+                      param_4: u16,
+                      param_5: u32,
+                      param_6: u32,
+                     param_7: u16);
 
 
 u16 *pass1_1018_dcf6(u16 *param_1);

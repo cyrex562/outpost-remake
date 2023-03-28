@@ -18,7 +18,7 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-void  begin_end_paint_1008_97c8(HWND16 param_1)
+void  begin_end_paint_1008_97c8(param_1: HWND16)
 
 {
     let mut local_22: PAINTSTRUCT16;
@@ -36,10 +36,10 @@ void  get_stock_obj_1008_9c56(param_1: u16)
 }
 
 
-Struct23 *unk_draw_op_1008_80ee(globals: &mut Globals, Struct23 *param_1, param_2: u16)
+Struct23 *unk_draw_op_1008_80ee(globals: &mut Globals, param_1: *mut Struct23, param_2: u16)
 
 {
-    HCURSOR16 cursor;
+    let mut cursor: HCURSOR16;
     let mut stock_obj: HGDIOBJ16;
 
     param_1.field_0x0          = addr_table_1008_380a[36]; // 0x389a;
@@ -62,7 +62,7 @@ Struct23 *unk_draw_op_1008_80ee(globals: &mut Globals, Struct23 *param_1, param_
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void draw_op_1008_8288(param_1: u16, param_2: u32, HWND16 param_3)
+pub fn draw_op_1008_8288(param_1: u16, param_2: u32, param_3: HWND16)
 
 {
     let mut HVar1: HGDIOBJ16;
@@ -72,7 +72,7 @@ void draw_op_1008_8288(param_1: u16, param_2: u32, HWND16 param_3)
     let mut local_58: RECT16;
     let mut uStack84: u16;
     let mut uStack82: u16;
-    HBRUSH16      HStack80;
+    let mut HStack80: HBRUSH16;
     let mut HStack78: HPEN16;
     let mut HStack76: HPEN16;
     let mut HStack74: HDC16;
@@ -117,7 +117,7 @@ void draw_op_1008_8288(param_1: u16, param_2: u32, HWND16 param_3)
     MoveTo16(LAST_SEGMENT, u_stack68, 0x0);
     LineTo16(LAST_SEGMENT, u_stack68, u_stack62);
     uVar3 = (param_2 >> 0x10);
-    if((*(u8 *)(param_2 + 0x4) & 0x4) != 0x0)
+    if(((param_2 + 0x4) & 0x4) != 0x0)
     {
         uStack4 = 0x1;
     }
@@ -134,7 +134,7 @@ void draw_op_1008_8288(param_1: u16, param_2: u32, HWND16 param_3)
         LineTo16(LAST_SEGMENT, 0x1, 0x1);
         LineTo16(LAST_SEGMENT, 0x1, u_stack62 - 0x1);
     }
-    uStack4  = ((*(u8 *)(param_2 + 0x4) & 0x8) != 0x0);
+    uStack4  = (((param_2 + 0x4) & 0x8) != 0x0);
     local_1c = u_stack66 + uStack4;
     iStack22 = (u_stack64 - uStack72) + uStack4;
     iStack26 = iStack22 + 0x1;
@@ -166,7 +166,7 @@ Struct20 *unk_draw_op_1008_61b2(globals: &mut Globals, param_1: &mut Struct20, p
 
 {
     let mut l_hgdiobj_1: HGDIOBJ16;
-    HCURSOR16   l_hcursor_1;
+    let mut l_hcursor_1: HCURSOR16;
     let mut extraout_DX: *mut u8;
     let mut puVar1: *mut u8;
     let mut unaff_DI: i16;
@@ -193,7 +193,7 @@ Struct20 *unk_draw_op_1008_61b2(globals: &mut Globals, param_1: &mut Struct20, p
     iVar1.field_0xac         = 0x45000000;
     iVar1.field_0xbc         = (param_4 + 0x8);
     l_struct_2                = mixed_1010_20ba(
-      NULL, globals.u16_1050_0ed0, 0x48, param_5, puVar1, unaff_DI);
+      NULL, globals._1050_0ed0: u16, 0x48, param_5, puVar1, unaff_DI);
     uVar1                     = (l_struct_2 >> 0x10);
     iVar1.field_0xb4         = 0x0;
     iVar1.field_0xb6         = 0x0;
@@ -205,10 +205,10 @@ Struct20 *unk_draw_op_1008_61b2(globals: &mut Globals, param_1: &mut Struct20, p
 }
 
 
-void  fill_rect_1008_62c0(HWND16 param_1)
+void  fill_rect_1008_62c0(param_1: HWND16)
 
 {
-    RECT16        local_2e[0x2];
+    let mut local_2e: [RECT16;0x2] = [0;0x2]
     let mut pRStack38: *mut RECT16;
     let mut HStack36: HDC16;
     let mut local_22: PAINTSTRUCT16;
@@ -223,7 +223,7 @@ void  fill_rect_1008_62c0(HWND16 param_1)
 }
 
 
-HPALETTE16  palette_op_1008_4e08(Struct13 *param_1, BOOL16 param_2, param_3: u16, param_4: HDC16)
+HPALETTE16  palette_op_1008_4e08(param_1: *mut Struct13, BOOL16 param_2, param_3: u16, param_4: HDC16)
 
 {
     let mut HVar1: HPALETTE16;
@@ -236,7 +236,7 @@ HPALETTE16  palette_op_1008_4e08(Struct13 *param_1, BOOL16 param_2, param_3: u16
 
 // WARNING: Unable to use type for symbol uVar3
 
-void  create_palette_1008_4e38(Struct13 *in_struct_1, LOGPALETTE *in_log_palette_2, u8 *param_3)
+void  create_palette_1008_4e38(in_struct_1: *mut Struct13, LOGPALETTE *in_log_palette_2, u8 *param_3)
 
 {
     let mut pi_var1: *mut i16;
@@ -294,31 +294,31 @@ void  create_palette_1008_4e38(Struct13 *in_struct_1, LOGPALETTE *in_log_palette
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void file_and_draw_op_1008_4f20(Globals  *globals,
-                                Struct76 *param_1,
-                                u32       param_2,
-                                u16       param_3,
-                                u32       param_4,
-                                u16       param_5)
+                                param_1: *mut Struct76,
+                                param_2: u32,
+                                param_3: u16,
+                                param_4: u32,
+                               param_5: u16)
 
 {
     let mut uVar1: u32;
     let mut b_force_background: u16;
-    COLORREF    color;
-    COLORREF    color_00;
+    let mut color: COLORREF;
+    let mut color_00: COLORREF;
     let mut x: u16;
     let mut u_var2: u16;
-    LPCSTR      output;
+    let mut output: *mut c_char;
 //    i16         iVar3;
 //    u16         uVar4;
-    Struct43 *paVar5;
+    let mut paVar5: *mut Struct43;
     let mut uVar6: u32;
     DEVMODEA   *init_data;
     let mut local_2c: HDC16;
-    LPCSTR pCStack42;
-    LPCSTR pCStack40;
+    let mut pCStack42: *mut c_char;
+    let mut pCStack40: *mut c_char;
     let mut local_26: [u8;24] = [0;24];
 
-    pass1_1008_4016((Struct76 *) param_1);
+    pass1_1008_4016( param_1);
 //    uVar4 = (param_1 >> 0x10);
 //    iVar3 = param_1;
     *(param_1.field_0x1e) = param_4;
@@ -328,13 +328,13 @@ void file_and_draw_op_1008_4f20(Globals  *globals,
     (param_1 + 0x2) = SEG_1008;
     paVar5 = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x2, param_5);
     u_var2 = (paVar5 >> 0x10);
-    struct_op_1008_48fe((Struct81 *)str_var1(param_5, local_26), 0x1, paVar5, u_var2);
+    struct_op_1008_48fe(str_var1(param_5, local_26), 0x1, paVar5, u_var2);
     read_file_1008_49e8(str_var1(param_5, local_26), SEG_1010, u_var2);
-    pass1_1008_5068((Struct76 *) param_1, (Struct83 *)str_var1(param_5, local_26));
-    pass1_1008_47cc((Struct76 *) param_1);
-    pass1_1008_4834((Struct76 *) param_1);
+    pass1_1008_5068( param_1, str_var1(param_5, local_26));
+    pass1_1008_47cc( param_1);
+    pass1_1008_4834( param_1);
     init_data = (DEVMODEA *) 0x0;
-    uVar6 = pass1_1008_4772((Struct76 *) param_1);
+    uVar6 = pass1_1008_4772( param_1);
     output             = (uVar6 >> 0x10);
     pCStack42          = uVar6;
     pCStack40          = output;
@@ -368,12 +368,12 @@ BOOL16  cleanup_palette_1008_56e2(param_1: u32, param_2: HDC16)
 }
 
 
-void  set_di_bits_to_device_1008_45d6(Struct76 *param_1, param_2: HDC16)
+void  set_di_bits_to_device_1008_45d6(param_1: *mut Struct76, param_2: HDC16)
 
 {
     let mut info: u16;
     let mut uVar1: u32;
-    bool       bVar2;
+    let mut bVar2: bool;
     let mut y_dest: i16;
     let mut cx: u16;
 
@@ -407,13 +407,13 @@ void  set_di_bits_to_device_1008_45d6(Struct76 *param_1, param_2: HDC16)
 }
 
 
-void  stretch_di_bits_1008_465a(Struct76 *param_1, param_2: HDC16)
+void  stretch_di_bits_1008_465a(param_1: *mut Struct76, param_2: HDC16)
 
 {
     PVOID      bits;
     let mut height_src: u16;
     let mut uVar1: u32;
-    bool       bVar2;
+    let mut bVar2: bool;
 
     let mut height_dst: i16;
 
@@ -455,7 +455,7 @@ void  stretch_di_bits_1008_465a(Struct76 *param_1, param_2: HDC16)
 u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC16)
 
 {
-    bool       bVar1;
+    let mut bVar1: bool;
     let mut u_var2: u16;
     let mut HVar2: HPALETTE16;
     let mut iVar3: i16;
@@ -469,7 +469,7 @@ u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC
     {
         uVar5 = param_2;
         uVar5 = param_3;
-        pass1_1008_47cc((Struct76 *)(param_1 & 0xffff | uVar4 << 0x10));
+        pass1_1008_47cc((param_1 & 0xffff | uVar4 << 0x10));
         param_2 = uVar5;
         param_3 = uVar5;
     }
@@ -482,7 +482,7 @@ u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC
     {
         if((iVar3 + 0xa) == 0x0)
         {
-            uVar6 = pass1_1008_4834((Struct76 *)(param_1 & 0xffff | uVar4 << 0x10));
+            uVar6 = pass1_1008_4834((param_1 & 0xffff | uVar4 << 0x10));
         }
         bVar1 = true;
     }
@@ -491,7 +491,7 @@ u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC
     {
         return 0x0;
     }
-    create_palette_1008_4e38(*(Struct13 **)(iVar3 + 0xa), param_4, (uVar6 >> 0x10));
+    create_palette_1008_4e38((iVar3 + 0xa), param_4, (uVar6 >> 0x10));
     (iVar3 + 0xe)                = u_var2;
     HVar2                        = SelectPalette16(param_4, 0x0, *(BOOL16 *)(iVar3 + 0xe));
     *(HPALETTE16 *)(iVar3 + 0x4) = HVar2;
@@ -502,13 +502,13 @@ u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC
 
 void set_sys_color_1008_357e(Globals  *globals,
                              param_1: &mut Struct20,
-                             i16       param_2,
-                             u16       in_index_3,
-                             u16       param_4)
+                             param_2: i16,
+                             in_index_3: u16,
+                            param_4: u16)
 
 {
     let mut uVar1: u16;
-    COLORREF    colorref_var2;
+    let mut colorref_var2: COLORREF;
     let mut iVar2: i16;
 //    Struct53 *iVar3;
     let mut iVar4: i16;
@@ -643,10 +643,10 @@ void set_sys_color_1008_357e(Globals  *globals,
     return;
 }
 
-void  fill_rect_1008_39ac(HWND16 in_win_handle_1)
+void  fill_rect_1008_39ac(in_win_handle_1: HWND16)
 
 {
-    RECT16        local_brush_handle[0x2];
+    let mut local_brush_handle: [RECT16;0x2] = [0;0x2]
     let mut local_brush_handle_2: *mut RECT16;
     let mut HStack36: HDC16;
     let mut local_paint_struct: PAINTSTRUCT16;
@@ -682,7 +682,7 @@ void set_struct_op_1008_0536(globals: &mut Globals, param_1: &mut Struct20, HINS
 
 {
     HICON16     icon_handle_1;
-    HCURSOR16   cursor_handle_1;
+    let mut cursor_handle_1: HCURSOR16;
     let mut obj_handle_1: HGDIOBJ16;
     let mut puVar4: *mut u8;
     let mut iVar5: i16;
@@ -718,11 +718,11 @@ void set_struct_op_1008_0536(globals: &mut Globals, param_1: &mut Struct20, HINS
     obj_handle_1                   = GetStockObject16(LAST_SEGMENT);
     (param_1.hobj_field_0xc6) = obj_handle_1;
     puVar8                       = mixed_1010_20ba(
-      NULL, globals.u16_1050_0ed0, 0x48, param_3, puVar4, unaff_DI);
+      NULL, globals._1050_0ed0: u16, 0x48, param_3, puVar4, unaff_DI);
 //    puVar4                       = (puVar8 >> 0x10);
     unk_str_op_1000_3d3e(param_1.field_0xa, globals.s_Outpost_1050_00d7);
     puVar8         = mixed_1010_20ba(
-      NULL, globals.u16_1050_0ed0, 0x32, param_3, puVar4, unaff_DI);
+      NULL, globals._1050_0ed0: u16, 0x32, param_3, puVar4, unaff_DI);
     (param_1.field_0xf4) = puVar8;
 //    (param_1.field_0xf6) = (puVar8 >> 0x10);
     set_sys_color_1008_357e(NULL, param_1, 0x1, SEG_1010, param_3);

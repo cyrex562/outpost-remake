@@ -27,12 +27,12 @@ void  pass1_1040_39e2(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_3ae8(Struct1 *param_1, param_2: u16);
+void  show_win_1040_3ae8(param_1: *mut Struct1, param_2: u16);
 
 
 
 
-void  win_ui_op_1040_3b1e(Struct2 *param_1, WORD *param_2);
+void  win_ui_op_1040_3b1e(param_1: *mut Struct2, WORD *param_2);
 
 
 
@@ -42,7 +42,7 @@ void  unk_win_ui_op_1040_3c64(param_1: i16, param_2: u16, param_3: u16, param_4:
 
 
 
-void  dialog_item_ui_op_1040_3e08(Struct2 *in_struct_1, param_2: u16);
+void  dialog_item_ui_op_1040_3e08(in_struct_1: *mut Struct2, param_2: u16);
 
 
 
@@ -52,7 +52,7 @@ void  pass1_1040_40e2(param_1: *mut Struct18);
 
 
 
-void  win_ui_op_1040_410e(Struct1 *param_1, param_2: u16, u8 *param_3);
+void  win_ui_op_1040_410e(param_1: *mut Struct1, param_2: u16, u8 *param_3);
 
 
 
@@ -62,7 +62,7 @@ void  win_ui_op_1040_42b2(param_1: u32, param_2: i16, param_3: HWND16, WORD *par
 
 
 
-void  pass1_1040_477e(Struct1 *param_1, param_2: *mut u8, param_3: u16, param_4: u16);
+void  pass1_1040_477e(param_1: *mut Struct1, param_2: *mut u8, param_3: u16, param_4: u16);
 
 
 
@@ -77,7 +77,7 @@ void  pass1_1040_2464(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_2490(Struct1 *param_1, HWND16 param_2);
+void  show_win_1040_2490(param_1: *mut Struct1, param_2: HWND16);
 
 
 
@@ -87,12 +87,12 @@ u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4:
 
 
 
-void  dlg_ui_op_1040_2a64(Struct1 *param_1, param_2: u16, param_3: u16);
+void  dlg_ui_op_1040_2a64(param_1: *mut Struct1, param_2: u16, param_3: u16);
 
 
 
 
-void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32, HWND16 param_5);
+void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: HWND16);
 
 
 
@@ -107,7 +107,7 @@ void  pass1_1040_2f06(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_2f5a(Struct1 *param_1, HWND16 param_2);
+void  show_win_1040_2f5a(param_1: *mut Struct1, param_2: HWND16);
 
 
 
@@ -127,7 +127,7 @@ void  enable_win_1040_32a8(param_1: u32);
 
 
 
-BOOL16  set_win_pos_1040_331a(param_1: u32, param_2: u16, param_3: i16, HWND16 param_4);
+BOOL16  set_win_pos_1040_331a(param_1: u32, param_2: u16, param_3: i16, param_4: HWND16);
 
 
 
@@ -137,7 +137,7 @@ void  pass1_1040_3506(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_355a(Struct1 *param_1, HWND16 param_2);
+void  show_win_1040_355a(param_1: *mut Struct1, param_2: HWND16);
 
 
 
@@ -162,7 +162,7 @@ void  pass1_1040_1290(param_1: *mut Struct18);
 
 
 
-void  win_ui_op_1040_12bc(Struct1 *param_1, param_2: u16, u8 *param_3);
+void  win_ui_op_1040_12bc(param_1: *mut Struct1, param_2: u16, u8 *param_3);
 
 
 
@@ -172,7 +172,7 @@ void  win_msg_op_1040_13b2(param_1: u32, param_2: i16, param_3: HWND16, param_4:
 
 
 
-u32  set_win_pos_1040_162a(param_1: u16, param_2: u32, param_3: u32, param_4: u16, HWND16 param_5);
+u32  set_win_pos_1040_162a(param_1: u16, param_2: u32, param_3: u32, param_4: u16, param_5: HWND16);
 
 
 
@@ -182,12 +182,12 @@ void  pass1_1040_1876(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_18a2(Struct1 *param_1, param_2: HWND16, WORD *param_3);
+void  show_win_1040_18a2(param_1: *mut Struct1, param_2: HWND16, WORD *param_3);
 
 
 
 
-void  unk_win_ui_op_1040_19ea(Struct32 *param_1, param_2: i16, HWND16 param_3);
+void  unk_win_ui_op_1040_19ea(param_1: *mut Struct32, param_2: i16, param_3: HWND16);
 
 
 
@@ -212,12 +212,12 @@ void  pass1_1040_1d24(param_1: *mut Struct18);
 
 
 
-void  show_win_1040_1d50(Struct1 *param_1, HWND16 param_2);
+void  show_win_1040_1d50(param_1: *mut Struct1, param_2: HWND16);
 
 
 
 
-void  unk_win_ui_op_1040_1d7a(Struct33 *param_1, param_2: i16, HWND16 param_3);
+void  unk_win_ui_op_1040_1d7a(param_1: *mut Struct33, param_2: i16, param_3: HWND16);
 
 
 
@@ -226,9 +226,9 @@ void  pass1_1040_205e(param_1: *mut Struct18);
 
 
 void create_win_1040_20d4(globals: &mut Globals,
-                          u16             param_1,
-                          u16             param_2,
-                          u16             param_3,
+                          param_1: u16,
+                          param_2: u16,
+                          param_3: u16,
                           Struct1        *param_4);
 
 

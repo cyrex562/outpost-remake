@@ -26,7 +26,7 @@ void  pass1_1008_3018(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16
 
 
 
-void  menu_ui_op_1008_09ba(param_1: u32, param_2: HWND16, RECT16 *param_3, HWND16 param_4);
+void  menu_ui_op_1008_09ba(param_1: u32, param_2: HWND16, RECT16 *param_3, param_4: HWND16);
 
 
 
@@ -66,11 +66,11 @@ void  switchD_1008_1091_caseD_b3(void);
 
 
 
-void  draw_op_1008_1230(HWND16 param_1);
+void  draw_op_1008_1230(param_1: HWND16);
 
 
 void message_box_op_1008_12dc(
-  param_1: u32, param_2: u32, u16             hinst_arg3, param_4: u16, Globals *globals);
+  param_1: u32, param_2: u32, hinst_arg3: u16, param_4: u16, Globals *globals);
 
 
 
@@ -79,11 +79,11 @@ void message_box_op_1008_12dc(
 
 void win_ui_op_1008_1414(Globals   *globals,
                          Struct72 **param_1,
-                         u32        param_2,
+                         param_2: u32,
                          LPCSTR     param_3,
-                         u16        param_4,
+                         param_4: u16,
                          u8         param_5,
-                         u16        param_6);
+                        param_6: u16);
 
 
 

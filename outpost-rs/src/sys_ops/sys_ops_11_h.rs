@@ -105,10 +105,10 @@ i16 *mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4: u
 
 
 
-void dos3_call_set_struct_1000_42de(u16 *param_1, u16 *param_2, u16 *param_3);
+void dos3_call_set_struct_1000_42de(u16 *param_1,param_2: *mut u16, u16 *param_3);
 
 
-void get_date_time_op_1000_435c(globals: &mut Globals, u16 *param_1, param_2: u16, param_3: u16, param_4: i16, param_5: u16);
+void get_date_time_op_1000_435c(globals: &mut Globals,param_1: *mut u16, param_2: u16, param_3: u16, param_4: i16, param_5: u16);
 
 
 
@@ -163,7 +163,7 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
 
 
 
-void pass1_1000_3bc0(param_1: i16, param_2: i16, u16 *param_3, param_4: u16, param_5: u16, param_6: u16);
+void pass1_1000_3bc0(param_1: i16, param_2: i16,param_3: *mut u16, param_4: u16, param_5: u16, param_6: u16);
 
 
 
@@ -201,6 +201,6 @@ i16 *exit_1000_25f2(param_1: u16, param_2: u16, param_3: i16, param_4: i16, para
 
 
 void pass1_1000_262c(globals: &mut Globals,
-                     u16      param_1,
-                     u16      param_2,
-                     u16      param_3, param_4: u16);
+                     param_1: u16,
+                     param_2: u16,
+                     param_3: u16, param_4: u16);

@@ -243,6 +243,6 @@ struct Struct283
     u8          field_0xe9;
     let mut field_0xea: i16;
     let mut field_0xec: i16;
-    u32 *field_0xee;
+    let mut field_0xee: *mut u32;
 };
 #endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_283_H_

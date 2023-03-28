@@ -62,7 +62,7 @@ u16 entry(globals: &mut Globals,
     u16 u16_var7 = 0;
     cstring pcVar8;
     u16 u16_var15 = 0;
-    bool bVar9;
+    let mut bVar9: bool;
     let mut get_vers_result: u32;
     let mut result: u32;
     let mut u32_var12: u32;
@@ -119,13 +119,13 @@ u16 entry(globals: &mut Globals,
     // app init at this point?
     interrupt_vector_op_1000_23ea(globals, param_2, param_5, 0, u16_var15);
     globals.dat_1050_5f84 = result;
-    pass1_1000_262c(globals, 0x238d, LAST_SEGMENT, u16_var15, LAST_SEGMENT);
+    pass1_1000_262c(globals, 0x238d, LAST_SEGMENT, _var15: u16, LAST_SEGMENT);
     globals.dat_1050_5f84 = result;
     pass1_1000_27d6(globals, result);
     result = ret_op_1000_55ac(u16_var5);
     u16_var5 = result;
     init_1000_23be(globals, param_1, (result >> 0x10), u16_var15);
-    fn_ptr_op_1000_24cd(globals, u16_var5, 0);
+    fn_ptr_op_1000_24cd(globals, _var5: u16, 0);
     iVar14 = 0x15;
     iVar13 = 0x15;
     pass1_1000_25a8(NULL, param_5, LAST_SEGMENT);
@@ -200,7 +200,7 @@ void init_op_1008_54aa(globals: &mut Globals,
     if (param_3 != 0x0) {
         return;
     }
-    get_date_time_op_1000_435c(globals, 0x0, in_cx_reg, in_dx_reg, u16_var14, param_8);
+    get_date_time_op_1000_435c(globals, 0x0, in_cx_reg, in_dx_reg, _var14: u16, param_8);
     set_globals_1000_4d0c(globals, param_5);
     pass1_1000_1fea(globals);
     globals.u32_ptr_1050_03a0

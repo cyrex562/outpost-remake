@@ -30,7 +30,7 @@
 // typedef struct Struct382 Struct382;
 struct Struct382
 {
-    Struct440 *field_0x90;
+    let mut field_0x90: *mut Struct440;
     let mut field_0x96: i32
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_3XX_STRUCTS_38X_H_STRUCT_382_H_

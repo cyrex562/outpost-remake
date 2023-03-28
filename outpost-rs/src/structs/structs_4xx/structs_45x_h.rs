@@ -51,7 +51,7 @@ struct Struct458
     u8   field_0x0;
     u8   field_0x1;
     let mut field_0x2: u16;
-    u32 *field_0x4;
+    let mut field_0x4: *mut u32;
     let mut field_0x6: u16;
 };
 struct Struct459
@@ -522,7 +522,7 @@ struct Struct455
     let mut field_0x0: *mut c_void;
     u8   field_0x1;
     let mut field_0x2: u16;
-    u32 *field_0x4;
+    let mut field_0x4: *mut u32;
     let mut field_0x6: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_16_H_STRUCTS_45X_H_

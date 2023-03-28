@@ -244,7 +244,7 @@ u16 GetPrivateProfileString16(LPCSTR section,
                               LPCSTR entry,
                               LPCSTR def_val,
                               LPSTR  buffer,
-                              u16    len,
+                              len: u16,
                               LPCSTR filename)
 {
     // TODO: implement
@@ -329,8 +329,8 @@ long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count)
     return 0;
 }
 
-// COLORREF                    SetBkColor16(HDC16 hdc, COLORREF color);
-COLORREF SetBkColor16(HDC16 hdc, COLORREF color)
+// COLORREF                    SetBkColor16(HDC16 hdc, color: COLORREF);
+COLORREF SetBkColor16(HDC16 hdc, color: COLORREF)
 {
     // TODO: implement
     return 0;
@@ -343,8 +343,8 @@ i16 SetMapMode16(HDC16 hdc, i16 mode)
     return 0;
 }
 
-// COLORREF                    SetTextColor16(HDC16 hdc, COLORREF color);
-COLORREF SetTextColor16(HDC16 hdc, COLORREF color)
+// COLORREF                    SetTextColor16(HDC16 hdc, color: COLORREF);
+COLORREF SetTextColor16(HDC16 hdc, color: COLORREF)
 {
     // TODO: implement
     return 0;
@@ -411,15 +411,15 @@ HDC16 CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output, DEVMODEA *init_dat
 }
 
 
-// HPEN16                      CreatePen16(style: u16, width: u16, COLORREF color);
-HPEN16 CreatePen16(style: u16, width: u16, COLORREF color)
+// HPEN16                      CreatePen16(style: u16, width: u16, color: COLORREF);
+HPEN16 CreatePen16(style: u16, width: u16, color: COLORREF)
 {
     // TODO: implement
     return 0;
 }
 
-// HBRUSH16                    CreateSolidBrush16(COLORREF color);
-HBRUSH16 CreateSolidBrush16(COLORREF color)
+// HBRUSH16                    CreateSolidBrush16(color: COLORREF);
+HBRUSH16 CreateSolidBrush16(color: COLORREF)
 {
     // TODO: implement
     return 0;
@@ -491,17 +491,17 @@ u16 GetSystemPaletteEntries(HDC16 hdc, start: u16, count: u16, PALETTEENTRY *ent
 // width_dst, height_dst: u16, x_src: u16, y_src: u16, width_src: u16, height_src: u16, PVOID
 // bits, BITMAPINFO *info, w_usage: u16, DWORD dw_rop);
 u16 StretchDIBits16(HDC16       hdc,
-                    u16         x_dst,
-                    u16         y_dst,
-                    u16         width_dst,
-                    u16         height_dst,
-                    u16         x_src,
-                    u16         y_src,
-                    u16         width_src,
-                    u16         height_src,
+                    x_dst: u16,
+                    y_dst: u16,
+                    width_dst: u16,
+                    height_dst: u16,
+                    x_src: u16,
+                    y_src: u16,
+                    width_src: u16,
+                    height_src: u16,
                     PVOID       bits,
                     BITMAPINFO *info,
-                    u16         w_usage,
+                    w_usage: u16,
                     DWORD       dw_rop)
 {
     // TODO: implement
@@ -513,17 +513,17 @@ u16 StretchDIBits16(HDC16       hdc,
 // cy: u16, x_src: u16, y_src: u16, startscan: u16, lines: u16, LPCVOID bits, BITMAPINFO *info,
 // coloruse: u16);
 u16 SetDIBitsToDevice(HDC16       hdc,
-                      u16         x_dest,
-                      u16         y_dest,
-                      u16         cx,
-                      u16         cy,
-                      u16         x_src,
-                      u16         y_src,
-                      u16         startscan,
-                      u16         lines,
+                      x_dest: u16,
+                      y_dest: u16,
+                      cx: u16,
+                      cy: u16,
+                      x_src: u16,
+                      y_src: u16,
+                      startscan: u16,
+                      lines: u16,
                       LPCVOID     bits,
                       BITMAPINFO *info,
-                      u16         coloruse)
+                     coloruse: u16)
 {
     // TODO: implement
     return 0;
@@ -574,8 +574,8 @@ BOOL16 GetCursorPos16(POINT16 *pt)
 }
 
 
-// HWND16                      SetCapture16(HWND16 hwnd);
-HWND16 SetCapture16(HWND16 hwnd)
+// HWND16                      SetCapture16(hwnd: HWND16);
+HWND16 SetCapture16(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
@@ -588,8 +588,8 @@ BOOL16 ReleaseCapture16()
     return false;
 }
 
-// HWND16                      SetFocus16(HWND16 hwnd);
-HWND16 SetFocus16(HWND16 hwnd)
+// HWND16                      SetFocus16(hwnd: HWND16);
+HWND16 SetFocus16(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
@@ -630,8 +630,8 @@ void ScreenToClient16(hwnd: HWND16, POINT16 *lppnt)
     // TODO: implement
 }
 
-// BOOL16                      IsIconic16(HWND16 hwnd);
-BOOL16 IsIconic16(HWND16 hwnd)
+// BOOL16                      IsIconic16(hwnd: HWND16);
+BOOL16 IsIconic16(hwnd: HWND16)
 {
     // TODO: implement
     return false;
@@ -657,8 +657,8 @@ BOOL16 EnableWindow16(hwnd: HWND16, BOOL16 enable)
     return false;
 }
 
-// BOOL16                      IsWindowEnabled16(HWND16 hwnd);
-BOOL16 IsWindowEnabled16(HWND16 hwnd)
+// BOOL16                      IsWindowEnabled16(hwnd: HWND16);
+BOOL16 IsWindowEnabled16(hwnd: HWND16)
 {
     // TODO: implement
     return false;
@@ -703,10 +703,10 @@ BOOL16 EndPaint16(hwnd: HWND16, PAINTSTRUCT16 *lps)
 HWND16 CreateWindow16(LPCSTR class_name,
                       LPCSTR window_name,
                       DWORD  style,
-                      u16    x,
-                      u16    y,
-                      u16    width,
-                      u16    height,
+                      x: u16,
+                      y: u16,
+                      width: u16,
+                      height: u16,
                       parent: HWND16,
                       HMENmenu: u16,
                       HINSTANCE16 instance,
@@ -724,22 +724,22 @@ BOOL16 ShowWindow16(hwnd: HWND16, cmd: u16)
     return false;
 }
 
-// BOOL16                      BringWindowToTop16(HWND16 hwnd);
-BOOL16 BringWindowToTop16(HWND16 hwnd)
+// BOOL16                      BringWindowToTop16(hwnd: HWND16);
+BOOL16 BringWindowToTop16(hwnd: HWND16)
 {
     // TODO: implement
     return false;
 }
 
-// BOOL16                      IsWindow16(HWND16 hwnd);
-BOOL16 IsWindow16(HWND16 hwnd)
+// BOOL16                      IsWindow16(hwnd: HWND16);
+BOOL16 IsWindow16(hwnd: HWND16)
 {
     // TODO: implement
     return false;
 }
 
-// BOOL16                      DestroyWindow16(HWND16 hwnd);
-BOOL16 DestroyWindow16(HWND16 hwnd)
+// BOOL16                      DestroyWindow16(hwnd: HWND16);
+BOOL16 DestroyWindow16(hwnd: HWND16)
 {
     // TODO: implement
     return false;
@@ -772,16 +772,16 @@ ATOM RegisterClass16(WNDCLASS16 *wc)
 }
 
 
-// HDC16                       GetDC16(HWND16 hwnd);
-HDC16 GetDC16(HWND16 hwnd)
+// HDC16                       GetDC16(hwnd: HWND16);
+HDC16 GetDC16(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
 }
 
 
-// HDC16                       GetWindowDC16(HWND16 hwnd);
-HDC16 GetWindow16(HWND16 hwnd)
+// HDC16                       GetWindowDC16(hwnd: HWND16);
+HDC16 GetWindow16(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
@@ -1001,8 +1001,8 @@ LRESULT CallWindowProc16(LPVOID fun, hwnd: HWND16, msg: u16, WPARAM16 wparam, LP
 }
 
 
-// void                        UpdateWindow16(HWND16 hwnd);
-void UpdateWindow16(HWND16 hwnd)
+// void                        UpdateWindow16(hwnd: HWND16);
+void UpdateWindow16(hwnd: HWND16)
 {
     // TODO: implement
 }
@@ -1147,8 +1147,8 @@ COLORREF GetSysColor16(index: u16)
 }
 
 
-// void                        SetSysColors16(count: u16, u16 *list, COLORREF *values);
-void SetSysColors16(count: u16, u16 *list, COLORREF *values)
+// void                        SetSysColors16(count: u16,list: *mut u16, COLORREF *values);
+void SetSysColors16(count: u16,list: *mut u16, COLORREF *values)
 {
     // TODO: implement
 }
@@ -1160,19 +1160,19 @@ BOOL16 GrayString16(HDC16    hdc,
                     HBRUSH16 hbrush,
                     LPVOID   gsprc,
                     LPARAM   lparam,
-                    u16      cch,
-                    u16      x,
-                    u16      y,
-                    u16      cs,
-                    u16      cy)
+                    cch: u16,
+                    x: u16,
+                    y: u16,
+                    cs: u16,
+                   cy: u16)
 {
     // TODO: implement
     return false;
 }
 
 
-// HWND16                      SetSysModalWindow(HWND16 hwnd);
-HWND16 SetSysModalWindow(HWND16 hwnd)
+// HWND16                      SetSysModalWindow(hwnd: HWND16);
+HWND16 SetSysModalWindow(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
@@ -1192,10 +1192,10 @@ HWND16 GetNextDlgTabItem16(hwnd_dlg: HWND16, hwnd_ctrl: HWND16, BOOL16 f_previou
 // x, y: u16, cx: u16, cy: u16, WORD flags);
 BOOL16 SetWindowPos16(hwnd: HWND16,
                       hwnd_insert_after: HWND16,
-                      u16    x,
-                      u16    y,
-                      u16    cx,
-                      u16    cy,
+                      x: u16,
+                      y: u16,
+                      cx: u16,
+                      cy: u16,
                       WORD   flags)
 {
     // TODO: implement
@@ -1211,8 +1211,8 @@ u16 GetMenuState16(HMENhmenu: u16, w_item_id: u16, w_flags: u16)
 }
 
 
-// u16                       GetDlgCtrlID16(HWND16 hwnd);
-u16 GetDlgCtrlID16(HWND16 hwnd)
+// u16                       GetDlgCtrlID16(hwnd: HWND16);
+u16 GetDlgCtrlID16(hwnd: HWND16)
 {
     // TODO: implement
     return 0;
@@ -1285,10 +1285,10 @@ BOOL16 ModifyMenu16(HMENhmenu: u16, pos: u16, flags: u16, id: u16, SEGPTR data)
 // BOOL16                      TrackPopupMenu16(HMENhmenu: u16, wflags: u16, x: u16, y: u16,
 // n_reserved: u16, hwnd: HWND16, lp_rect: *mut RECT16);
 BOOL16 TrackPopupMenu16(HMENhmenu: u16,
-                        u16     wflags,
-                        u16     x,
-                        u16     y,
-                        u16     n_reserved,
+                        wflags: u16,
+                        x: u16,
+                        y: u16,
+                        n_reserved: u16,
                         HWND16  hwnd,
                         lp_rect: *mut RECT16)
 {
@@ -1318,12 +1318,12 @@ HWND16 CreateWindowEx16(DWORD       ex_style,
                         LPCSTR      class_name,
                         LPCSTR      window_name,
                         DWORD       style,
-                        u16         x,
-                        u16         y,
-                        u16         width,
-                        u16         height,
+                        x: u16,
+                        y: u16,
+                        width: u16,
+                        height: u16,
                         HWND16      parent,
-                        HMENU16     hmenu,
+                        HMENhmenu: u16,
                         HINSTANCE16 instance,
                         LPVOID      data)
 {
@@ -1381,7 +1381,7 @@ SEGPTR SegmentLimit(SEGPTR in_val)
     return 0;
 }
 
-HDC16 GetWindowDC16(HWND16 hwnd)
+HDC16 GetWindowDC16(hwnd: HWND16)
 {
     return 0;
 }

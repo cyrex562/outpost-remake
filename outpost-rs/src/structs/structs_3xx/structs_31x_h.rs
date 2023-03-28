@@ -234,7 +234,7 @@ struct Struct312
     u8   field_0x1d;
     u8   field_0x1e;
     u8   field_0x1f;
-    u32 *field_0x20;
+    let mut field_0x20: *mut u32;
 };
 struct Struct313
 {
@@ -295,7 +295,7 @@ struct Struct315
     u8   field_0x1d;
     u8   field_0x1e;
     u8   field_0x1f;
-    u32 *field_0x20;
+    let mut field_0x20: *mut u32;
     let mut field_0x22: u16;
 };
 struct Struct316

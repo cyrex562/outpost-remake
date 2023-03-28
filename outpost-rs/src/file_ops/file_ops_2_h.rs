@@ -14,31 +14,31 @@ void  pass1_1030_227a(param_1: u32, param_2: u32, param_3: u16, param_4: u16);
 
 void  pass1_1030_232e(param_1: u32, param_2: u32, param_3: i16, param_4: u16, param_5: u16);
 
-void  pass1_1030_2aca(Struct730 *param_1, param_2: u32, param_3: u16, param_4: u16);
+void  pass1_1030_2aca(param_1: *mut Struct730, param_2: u32, param_3: u16, param_4: u16);
 
 void pass1_1030_2c8a(Globals   *globals,
-                     Struct373 *param_1,
-                     u32        param_2,
-                     i16        param_3,
+                     param_1: *mut Struct373,
+                     param_2: u32,
+                     param_3: i16,
                      u8        *param_4,
-                     u16        param_5);
+                    param_5: u16);
 
 void  pass1_1030_16d6(param_1: u32, param_2: u32, param_3: u16);
 
 void  file_1030_1730(param_1: u32, param_2: u32);
 
-u16  pass1_1030_1978(Struct730 *param_1, param_2: u32, param_3: u16, param_4: u16);
+u16  pass1_1030_1978(param_1: *mut Struct730, param_2: u32, param_3: u16, param_4: u16);
 
-void  file_1030_19b4(Struct370 *param_1, param_2: u32, param_3: i16, param_4: u16, param_5: u16);
+void  file_1030_19b4(param_1: *mut Struct370, param_2: u32, param_3: i16, param_4: u16, param_5: u16);
 
 u16  pass1_1030_1a9c(param_1: u32, param_2: u32, param_3: u16);
 
 u16 file_1030_1b18(Globals   *globals,
-                   Struct370 *param_1,
-                   u32        param_2,
-                   i16        param_3,
+                   param_1: *mut Struct370,
+                   param_2: u32,
+                   param_3: i16,
                    u8        *param_4,
-                   u16        param_5);
+                  param_5: u16);
 
 u16  write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: u16);
 

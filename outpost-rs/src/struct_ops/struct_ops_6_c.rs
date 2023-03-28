@@ -12,17 +12,17 @@
 // #include "ui_ops/ui_ops_6.h"
 
 void struct_op_1040_ca16(Globals  *globals,
-                     Struct57 *param_1,
-                     u16       param_2,
-                     u16       param_3,
-                     i16       param_4,
-                     u16       param_5);
+                     param_1: *mut Struct57,
+                     param_2: u16,
+                     param_3: u16,
+                     param_4: i16,
+                    param_5: u16);
 void struct_op_1040_ca16(Globals  *globals,
-                     Struct57 *param_1,
-                     u16       param_2,
-                     u16       param_3,
-                     i16       param_4,
-                     u16       param_5)
+                     param_1: *mut Struct57,
+                     param_2: u16,
+                     param_3: u16,
+                     param_4: i16,
+                    param_5: u16)
 
 {
     let mut u16_var1: u16;
@@ -33,7 +33,7 @@ void struct_op_1040_ca16(Globals  *globals,
     param_1.field_9e   = 0x0;
     param_1.field_0x0  = addr_table_1040_d07c; // 0xd07c;
     param_1.field_0x2  = SEG_1040;
-    u16_var1 = mixed_1010_20ba(globals.u16_1050_0ed0,
+    u16_var1 = mixed_1010_20ba(globals._1050_0ed0: u16,
                                0x3e,
                                param_5,
                                param_3,
