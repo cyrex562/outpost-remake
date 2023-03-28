@@ -35,7 +35,7 @@ void window_op_1008_3bd6(Globals  *globals,
 
 
 
-void  post_msg_1008_3d20(u32 param_1, HWND16 param_2);
+void  post_msg_1008_3d20(param_1: u32, HWND16 param_2);
 
 
 
@@ -45,19 +45,19 @@ void  post_quit_msg_1008_3af4(i16 exit_code);
 
 
 
-u16  unk_win_msg_op_1008_0a3c(u32 param_1, param_2: u16, HWND16 param_3);
+u16  unk_win_msg_op_1008_0a3c(param_1: u32, param_2: u16, HWND16 param_3);
 
 
-void pass1_1008_0a92(globals: &mut Globals, u32 param_1, short param_2);
+void pass1_1008_0a92(globals: &mut Globals, param_1: u32, short param_2);
 
 
 
 
-void  window_op_1008_0af8(Struct0 *param_1, u8 *param_2, u16 param_3);
+void  window_op_1008_0af8(Struct0 *param_1, param_2: *mut u8, param_3: u16);
 
 
 BOOL16 mixed_win_op_1008_0c60(
-  Struct72 **param_1, param_2: u16, BOOL16 param_3, HWND16 param_4, u16 param_5, u16 param_6, Globals *globals);
+  Struct72 **param_1, param_2: u16, BOOL16 param_3, param_4: HWND16, param_5: u16, param_6: u16, Globals *globals);
 
 
 void  pass1_1008_818c(Struct23 *param_1, HINSTANCE16 param_2, WNDCLASS16 *param_3);

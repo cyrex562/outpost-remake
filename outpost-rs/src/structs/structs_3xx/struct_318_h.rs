@@ -11,9 +11,9 @@ typedef struct Struct318
 {
     u8  field_0x0;
     u8  field_0x1;
-    i16        field_0x2;
-    u32 field_0x4;
-    u32 field_0x8;
+    let mut field_0x2: i16;
+    let mut field_0x4: u32;
+    let mut field_0x8: u32;
     u8  field_0xc;
     u8  field_0xd;
     u8  field_0xe;
@@ -266,10 +266,10 @@ typedef struct Struct318
     u8  field_0x105;
     u8  field_0x106;
     u8  field_0x107;
-    u16        field_0x108;
-    u16        field_0x10a;
-    u16        field_0x10c;
-    u32 field_0x10e;
+    let mut field_0x108: u16;
+    let mut field_0x10a: u16;
+    let mut field_0x10c: u16;
+    let mut field_0x10e: u32;
 } Struct318;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_1_H_STRUCT318_H_

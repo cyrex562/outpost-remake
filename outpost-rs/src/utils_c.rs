@@ -6,22 +6,22 @@
 
 // #include "op_int.h"
 
-u32 str_var1(u16 a, u16 b)
+u32 str_var1(a: u16, b: u16)
 {
     return a << 16 | b;
 }
 
-u16 CONCAT11(u8 a, u8 b)
+u16 CONCAT11(a: u8, b: u8)
 {
     return a << 8 | b;
 }
 
-u32 CONCAT13(u8 a, u32 b)
+u32 CONCAT13(a: u8, b: u32)
 {
     return a << 24 | b;
 }
 
-u32 CONCAT12(u8 a, u16 b)
+u32 CONCAT12(a: u8, b: u16)
 {
     u32 c = 0;
     c |= b;
@@ -29,54 +29,54 @@ u32 CONCAT12(u8 a, u16 b)
     return c;
 }
 
-u32 SUB42(u32 a, u32 b)
+u32 SUB42(a: u32, b: u32)
 {
     return a - b;
 }
 
-u32 SBORROW2(u16 a, u16 b)
+u32 SBORROW2(a: u16, b: u16)
 {
     return 0;
 }
 
-u32 CARRY2(u16 a, u16 b)
+u32 CARRY2(a: u16, b: u16)
 {
     return 0;
 }
 
-u32 ZEXT24(u16 a)
+u32 ZEXT24(a: u16)
 {
     return 0;
 }
 
-u16 SUB21(u16 a)
+u16 SUB21(a: u16)
 {
     return 0;
 }
 
-u16 CARRY1(u16 a, u16 b)
+u16 CARRY1(a: u16, b: u16)
 {
     return 0;
 }
 
-u16 CONCAT21(u16 a, u16 b)
+u16 CONCAT21(a: u16, b: u16)
 {
     return 0;
 }
 
-u16 POPCOUNT(u16 a)
+u16 POPCOUNT(a: u16)
 {
     return 0;
 }
 
-i16 SCARRY1(i16 a, i16 b) {
+i16 SCARRY1(a: i16, i16 b) {
     return 0;
 }
 
-u32 SUB41(u32 a, u8 b) {
+u32 SUB41(a: u32, b: u8) {
     return 0;
 }
 
-void *ptr_from_addr_pair(u16 segment, u16 offset) {
+void *ptr_from_addr_pair(segment: u16, offset: u16) {
 
 }

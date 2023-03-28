@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_9_H_STRUCT_677_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_9_H_STRUCT_677_H_
 
-typedef struct Struct677 Struct677;
+// typedef struct Struct677 Struct677;
 struct Struct677
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;

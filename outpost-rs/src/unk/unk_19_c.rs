@@ -11,16 +11,16 @@
 void pass1_1008_af38(StructD *param_1)
 
 {
-    param_1->address_offset_field_0x0 = addr_table_1008_af7c;//0xaf7c;
-    param_1->field_0x2 = SEG_1008;
+    param_1.address_offset_field_0x0 = addr_table_1008_af7c;//0xaf7c;
+    param_1.field_0x2 = SEG_1008;
     clenaup_win_ui_1018_4d22(param_1);
     return;
 }
 
-void pass1_1038_6984(u32 param_1)
+void pass1_1038_6984(param_1: u32)
 
 {
-    int iVar1;
+    let mut iVar1: i32
     undefined2 uVar2;
 
     uVar2 = (undefined2)(param_1 >> 0x10);
@@ -45,7 +45,7 @@ void pass1_1038_6984(u32 param_1)
     return;
 }
 
-void pass1_1030_5c8a(u32 param_1,u32 param_2)
+void pass1_1030_5c8a(param_1: u32,param_2: u32)
 
 {
     long *plVar1;
@@ -77,12 +77,12 @@ void pass1_1030_5c8a(u32 param_1,u32 param_2)
 }
 
 
-void pass1_1028_858c(Struct318 *param_1,u8 *param_2, Struct319 *param_3)
+void pass1_1028_858c(Struct318 *param_1,param_2: *mut u8, Struct319 *param_3)
 
 {
     undefined4 *puVar1;
     undefined4 *puVar2;
-    int iVar3;
+    let mut iVar3: i32
     uint uVar4;
     undefined2 in_register_0000000a;
     astruct_57 *paVar5;
@@ -98,12 +98,12 @@ void pass1_1028_858c(Struct318 *param_1,u8 *param_2, Struct319 *param_3)
     puStack_a = (undefined2 *)str_var1(uVar4,param_1);
     if ((uVar4 | (uint)param_1) != 0) {
         *puStack_a = 0x389a;
-        param_1->field2_0x2 = 0x1008;
+        param_1.field2_0x2 = 0x1008;
         uVar8 = (undefined2)((ulong)param_3 >> 0x10);
         iVar5 = (astruct_319 *)param_3;
-        param_1->field3_0x4 = iVar5->field4_0x4;
-        puVar6 = &iVar5->field5_0x8;
-        puVar7 = &param_1->field4_0x8;
+        param_1.field3_0x4 = iVar5.field4_0x4;
+        puVar6 = &iVar5.field5_0x8;
+        puVar7 = &param_1.field4_0x8;
         for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {
             puVar2 = puVar7;
             puVar7 = puVar7 + 1;
@@ -112,18 +112,18 @@ void pass1_1028_858c(Struct318 *param_1,u8 *param_2, Struct319 *param_3)
             *puVar2 = *puVar1;
         }
         *puStack_a = 0x6ad2;
-        param_1->field2_0x2 = 0x1028;
-        param_1->field257_0x108 = iVar5->field258_0x108;
-        param_1->field258_0x10a = iVar5->field259_0x10a;
-        param_1->field259_0x10c = iVar5->field260_0x10c;
-        param_1->field260_0x10e = iVar5->field261_0x10e;
+        param_1.field2_0x2 = 0x1028;
+        param_1.field257_0x108 = iVar5.field258_0x108;
+        param_1.field258_0x10a = iVar5.field259_0x10a;
+        param_1.field259_0x10c = iVar5.field260_0x10c;
+        param_1.field260_0x10e = iVar5.field261_0x10e;
         *puStack_a = 0x8688;
-        param_1->field2_0x2 = 0x1028;
+        param_1.field2_0x2 = 0x1028;
     }
     return;
 }
 
-StructD * pass1_1038_a2aa(StructD *param_1,u8 param_2)
+StructD * pass1_1038_a2aa(StructD *param_1,param_2: u8)
 
 {
     pass1_1038_a156(param_1);

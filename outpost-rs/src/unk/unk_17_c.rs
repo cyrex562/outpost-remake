@@ -11,13 +11,13 @@
 
 // #include <stdbool.h>
 
-void  pass1_1038_b6e0(u32 param_1, i16 param_2)
+void  pass1_1038_b6e0(param_1: u32, i16 param_2)
 
 {
-    u32 uVar1;
-    i16        iVar2;
-    u16        uVar3;
-    u16        uStack4;
+    let mut uVar1: u32;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
+    let mut uStack4: u16;
 
     uStack4 = 0x1;
     while(true)

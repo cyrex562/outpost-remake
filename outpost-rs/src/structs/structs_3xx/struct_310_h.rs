@@ -9,7 +9,7 @@
 
 typedef struct Struct310
 {
-    u32       field_0x0;
+    let mut field_0x0: u32;
     u8 field_0x4;
     u8 field_0x5;
     u8 field_0x6;
@@ -18,14 +18,14 @@ typedef struct Struct310
     u8 field_0x9;
     u8 field_0xa;
     u8 field_0xb;
-    i16       field_0xc;
-    i16       field_0xe;
-    i16       field_0x10;
-    i16       field_0x12;
+    let mut field_0xc: i16;
+    let mut field_0xe: i16;
+    let mut field_0x10: i16;
+    let mut field_0x12: i16;
     u8 field_0x14;
     u8 field_0x15;
-    u16       field_0x16;
-    i16       field_0x18;
+    let mut field_0x16: u16;
+    let mut field_0x18: i16;
     u8 field_0x1a;
 } Struct310;
 

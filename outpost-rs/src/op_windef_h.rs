@@ -4,7 +4,7 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-#pragma once
+// #pragma once
 
 // #include "op_int.h"
 
@@ -71,59 +71,59 @@ typedef struct _POINTL
 typedef struct Struct657
 {
     _POINTL dmPosition;
-    u32  dmDisplayOrientation;
-    u32  dmDisplayFixedOutput;
+    let mut dmDisplayOrientation: u32;
+    let mut dmDisplayFixedOutput: u32;
 } Struct657;
 
 typedef struct Struct656
 {
-    u8         field_0x0;
-    u8         field_0x1;
-    u8         field_0x2;
-    u8         field_0x3;
-    u8         field_0x4;
-    u8         field_0x5;
-    u8         field_0x6;
-    u8         field_0x7;
-    u8         field_0x8;
-    u8         field_0x9;
-    u8         field_0xa;
-    u8         field_0xb;
-    u8         field_0xc;
-    u8         field_0xd;
-    u8         field_0xe;
-    u8         field_0xf;
-    u8         field_0x10;
-    u8         field_0x11;
-    u8         field_0x12;
-    u8         field_0x13;
-    u8         field_0x14;
-    u8         field_0x15;
-    u8         field_0x16;
-    u8         field_0x17;
-    u8         field_0x18;
-    u8         field_0x19;
-    u8         field_0x1a;
-    u8         field_0x1b;
-    u8         field_0x1c;
-    u8         field_0x1d;
-    u8         field_0x1e;
-    u8         field_0x1f;
-    u8         field_0x20;
-    u8         field_0x21;
-    u32 field_0x22;
-    u32 field_0x26;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
+    let mut field_0x2: u8;
+    let mut field_0x3: u8;
+    let mut field_0x4: u8;
+    let mut field_0x5: u8;
+    let mut field_0x6: u8;
+    let mut field_0x7: u8;
+    let mut field_0x8: u8;
+    let mut field_0x9: u8;
+    let mut field_0xa: u8;
+    let mut field_0xb: u8;
+    let mut field_0xc: u8;
+    let mut field_0xd: u8;
+    let mut field_0xe: u8;
+    let mut field_0xf: u8;
+    let mut field_0x10: u8;
+    let mut field_0x11: u8;
+    let mut field_0x12: u8;
+    let mut field_0x13: u8;
+    let mut field_0x14: u8;
+    let mut field_0x15: u8;
+    let mut field_0x16: u8;
+    let mut field_0x17: u8;
+    let mut field_0x18: u8;
+    let mut field_0x19: u8;
+    let mut field_0x1a: u8;
+    let mut field_0x1b: u8;
+    let mut field_0x1c: u8;
+    let mut field_0x1d: u8;
+    let mut field_0x1e: u8;
+    let mut field_0x1f: u8;
+    let mut field_0x20: u8;
+    let mut field_0x21: u8;
+    let mut field_0x22: u32;
+    let mut field_0x26: u32;
 } Struct656;
 typedef struct Struct6561
 {
-    i16 dmOrientation;
-    i16 dmPaperSize;
-    i16 dmPaperLength;
-    i16 dmPaperWidth;
-    i16 dmScale;
-    i16 dmCopies;
-    i16 dmDefaultSource;
-    i16 dmPri16Quality;
+    let mut dmOrientation: i16;
+    let mut dmPaperSize: i16;
+    let mut dmPaperLength: i16;
+    let mut dmPaperWidth: i16;
+    let mut dmScale: i16;
+    let mut dmCopies: i16;
+    let mut dmDefaultSource: i16;
+    let mut dmPri16Quality: i16;
 } Struct6561;
 
 struct PALETTEENTRY
@@ -136,32 +136,32 @@ struct PALETTEENTRY
 
 struct RECT16
 {
-    i16 x;
-    i16 y;
+    let mut x: i16;
+    let mut y: i16;
 };
 
 struct POINT
 {
-    i16 x;
-    i16 y;
+    let mut x: i16;
+    let mut y: i16;
 };
 
 struct WINDOWPLACEMENT16
 {
-    u16           length;
-    u16           flags;
-    u16           show_cmd;
+    let mut length: u16;
+    let mut flags: u16;
+    let mut show_cmd: u16;
     POINT  pt_min_position;
     POINT  pt_max_position;
-    RECT16 rc_normal_position;
+    let mut rc_normal_position: RECT16;
 };
 
 
 
 union Union658
 {
-    DWORD dmDisplayFlags;
-    DWORD dmNup;
+    let mut dmDisplayFlags: DWORD;
+    let mut dmNup: DWORD;
 };
 
 typedef struct WNDCLASS16 WNDCLASS16, *PWNDCLASS16;
@@ -180,11 +180,11 @@ typedef u32 SEGPTR;
 
 struct WNDCLASS16
 {
-    u16       style;
+    let mut style: u16;
     LPVOID    lpfn_wnd_proc;
-    i16       cb_cls_extra;
-    i16       cb_wnd_extra;
-    HANDLE16  h_instance;
+    let mut cb_cls_extra: i16;
+    let mut cb_wnd_extra: i16;
+    let mut h_instance: HANDLE16;
     HICON16   h_icon;
     HCURSOR16 h_cursor;
     HBRUSH16  hbr_background;
@@ -196,8 +196,8 @@ struct WNDCLASS16
 
 struct TwoWords
 {
-    u16 a_0x0;
-    u16 b_0x2;
+    let mut a_0x0: u16;
+    let mut b_0x2: u16;
 };
 
 typedef u32 COLORREF;
@@ -246,17 +246,17 @@ typedef long LONG;
 
 struct BITMAPINFOHEADER
 {
-    DWORD bi_size;
+    let mut bi_size: DWORD;
     LONG  bi_width;
     LONG  bi_height;
     WORD  bi_planes;
     WORD  bi_bit_count;
-    DWORD bi_compression;
-    DWORD bi_size_image;
+    let mut bi_compression: DWORD;
+    let mut bi_size_image: DWORD;
     LONG  bi_x_pels_per_meter;
     LONG  bi_y_pels_per_meter;
-    DWORD bi_clr_used;
-    DWORD bi_clr_important;
+    let mut bi_clr_used: DWORD;
+    let mut bi_clr_important: DWORD;
 };
 
 typedef HANDLE16 HINSTANCE16;
@@ -265,9 +265,9 @@ typedef struct PAINTSTRUCT16 PAINTSTRUCT16, *PPAINTSTRUCT16;
 
 struct PAINTSTRUCT16
 {
-    HDC16         hdc;
+    let mut hdc: HDC16;
     BOOL16        f_erase;
-    RECT16 rc_paint;
+    let mut rc_paint: RECT16;
     BOOL16        f_restore;
     BOOL16        f_inc_update;
     BYTE          rgb_reserved[16];
@@ -335,16 +335,16 @@ union Union655
 struct tagMSG
 {
     HWND   hwnd;
-    u16    message;
+    let mut message: u16;
     WPARAM wParam;
     LPARAM lParam;
-    DWORD  time;
+    let mut time: DWORD;
     POINT  pt;
 };
 
 struct HWND__
 {
-    i16 unused;
+    let mut unused: i16;
 };
 
 
@@ -355,24 +355,24 @@ typedef struct POINT16 POINT16;
 
 struct POINT16
 {
-    i16 x;
-    i16 y;
+    let mut x: i16;
+    let mut y: i16;
 };
 
 
 typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;
 struct tagBITMAPINFOHEADER{
-        u32      biSize;
+        let mut biSize: u32;
         long       biWidth;
         long       biHeight;
-        u16       biPlanes;
-        u16       biBitCount;
-        u32      biCompression;
-        u32      biSizeImage;
+        let mut biPlanes: u16;
+        let mut biBitCount: u16;
+        let mut biCompression: u32;
+        let mut biSizeImage: u32;
         long       biXPelsPerMeter;
         long       biYPelsPerMeter;
-        u32      biClrUsed;
-        u32      biClrImportant;
+        let mut biClrUsed: u32;
+        let mut biClrImportant: u32;
 };
 
 
@@ -385,11 +385,11 @@ struct tagBITMAPINFOHEADER{
   struct  _devicemodeA
 {
     u8             dmDeviceName[32];
-    u16             dmSpecVersion;
-    u16             dmDriverVersion;
-    u16             dmSize;
-    u16             dmDriverExtra;
-    u32            dmFields;
+    let mut dmSpecVersion: u16;
+    let mut dmDriverVersion: u16;
+    let mut dmSize: u16;
+    let mut dmDriverExtra: u16;
+    let mut dmFields: u32;
     Union655 field_0x2c;
     short            dmColor;
     short            dmDuplex;
@@ -397,71 +397,71 @@ struct tagBITMAPINFOHEADER{
     short            dmTTOption;
     short            dmCollate;
     u8             dmFormName[32];
-    u16             dmLogPixels;
-    u32            dmBitsPerPel;
-    u32            dmPelsWidth;
-    u32            dmPelsHeight;
+    let mut dmLogPixels: u16;
+    let mut dmBitsPerPel: u32;
+    let mut dmPelsWidth: u32;
+    let mut dmPelsHeight: u32;
     Union658 field_0x74;
-    u32            dmDisplayFrequency;
-    u32            dmICMMethod;
-    u32            dmICMi16ent;
-    u32            dmMediaType;
-    u32            dmDitherType;
-    u32            dmReserved1;
-    u32            dmReserved2;
-    u32            dmPanningWidth;
-    u32            dmPanningHeight;
+    let mut dmDisplayFrequency: u32;
+    let mut dmICMMethod: u32;
+    let mut dmICMi16ent: u32;
+    let mut dmMediaType: u32;
+    let mut dmDitherType: u32;
+    let mut dmReserved1: u32;
+    let mut dmReserved2: u32;
+    let mut dmPanningWidth: u32;
+    let mut dmPanningHeight: u32;
 };
 
 struct _FLOATING_SAVE_AREA
 {
-    u32 ControlWord;
-    u32 StatusWord;
-    u32 TagWord;
-    u32 ErrorOffset;
-    u32 ErrorSelector;
-    u32 DataOffset;
-    u32 DataSelector;
+    let mut ControlWord: u32;
+    let mut StatusWord: u32;
+    let mut TagWord: u32;
+    let mut ErrorOffset: u32;
+    let mut ErrorSelector: u32;
+    let mut DataOffset: u32;
+    let mut DataSelector: u32;
     u8  RegisterArea[80];
-    u32 Cr0NpxState;
+    let mut Cr0NpxState: u32;
 };
 
 struct _CONTEXT
 {
-    u32              ContextFlags;
-    u32              Dr0;
-    u32              Dr1;
-    u32              Dr2;
-    u32              Dr3;
-    u32              Dr6;
-    u32              Dr7;
+    let mut ContextFlags: u32;
+    let mut Dr0: u32;
+    let mut Dr1: u32;
+    let mut Dr2: u32;
+    let mut Dr3: u32;
+    let mut Dr6: u32;
+    let mut Dr7: u32;
     FLOATING_SAVE_AREA FloatSave;
-    u32              SegGs;
-    u32              SegFs;
-    u32              SegEs;
-    u32              SegDs;
-    u32              Edi;
-    u32              Esi;
-    u32              Ebx;
-    u32              Edx;
-    u32              Ecx;
-    u32              Eax;
-    u32              Ebp;
-    u32              Eip;
-    u32              SegCs;
-    u32              EFlags;
-    u32              Esp;
-    u32              SegSs;
+    let mut SegGs: u32;
+    let mut SegFs: u32;
+    let mut SegEs: u32;
+    let mut SegDs: u32;
+    let mut Edi: u32;
+    let mut Esi: u32;
+    let mut Ebx: u32;
+    let mut Edx: u32;
+    let mut Ecx: u32;
+    let mut Eax: u32;
+    let mut Ebp: u32;
+    let mut Eip: u32;
+    let mut SegCs: u32;
+    let mut EFlags: u32;
+    let mut Esp: u32;
+    let mut SegSs: u32;
     u8               ExtendedRegisters[512];
 };
 
 typedef struct
 {
     HWND16    hwnd;
-    u16    message;
+    let mut message: u16;
     WPARAM16  wParam;
     LPARAM    lParam;
-    DWORD     time;
+    let mut time: DWORD;
     POINT16   pt;
 } MSG16, *LPMSG16;
 
@@ -545,7 +545,7 @@ typedef struct
 //     return SVar1;
 // }
 
-// BOOL VirtualFree(LPVOID lpAddress, SIZE_T dwSize, u32 dwFreeType)
+// BOOL VirtualFree(LPVOID lpAddress, SIZE_T dwSize, dwFreeType: u32)
 //
 //{
 //     BOOL BVar1;
@@ -556,7 +556,7 @@ typedef struct
 //     return BVar1;
 // }
 
-// u32 SetFilePoi16er(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, u32 dwMoveMethod)
+// u32 SetFilePoi16er(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, dwMoveMethod: u32)
 //
 //{
 //     u32 DVar1;
@@ -611,7 +611,7 @@ typedef struct
 //     return pCVar1;
 // }
 
-// u32 GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, u32 nSize)
+// u32 GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, nSize: u32)
 //
 //{
 //     u32 DVar1;
@@ -655,8 +655,8 @@ typedef struct
 //     return BVar1;
 // }
 //
-// HANDLE CreateFileA(LPCSTR lpFileName, u32 dwDesiredAccess, u32 dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
-//                    u32 dwCreationDisposition, u32 dwFlagsAndAttributes, HANDLE hTemplateFile)
+// HANDLE CreateFileA(LPCSTR lpFileName, dwDesiredAccess: u32, dwShareMode: u32, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+//                    dwCreationDisposition: u32, dwFlagsAndAttributes: u32, HANDLE hTemplateFile)
 //
 //{
 //     HANDLE pvVar1;
@@ -679,7 +679,7 @@ typedef struct
 //     return DVar1;
 // }
 //
-// BOOL ReadFile(HANDLE hFile, LPVOID lpBuffer, u32 nNumberOfBytesToRead, Lu32* lpNumberOfBytesRead,
+// BOOL ReadFile(HANDLE hFile, LPVOID lpBuffer, nNumberOfBytesToRead: u32, Lu32* lpNumberOfBytesRead,
 //               LPOVERLAPPED lpOverlapped)
 //
 //{
@@ -702,7 +702,7 @@ typedef struct
 //     return BVar1;
 // }
 //
-// u32 GetWindowsDirectoryA(LPSTR lpBuffer, u32 uSize)
+// u32 GetWindowsDirectoryA(LPSTR lpBuffer, uSize: u32)
 //
 //{
 //     u32 UVar1;
@@ -713,7 +713,7 @@ typedef struct
 //     return UVar1;
 // }
 //
-// MCIERROR mciSendCommandA(MCIDEVICEID mciId, u32 uMsg, u32_PTR dwParam1, u32_PTR dwParam2)
+// MCIERROR mciSendCommandA(MCIDEVICEID mciId, uMsg: u32, u32_PTR dwParam1, u32_PTR dwParam2)
 //
 //{
 //     MCIERROR MVar1;
@@ -724,7 +724,7 @@ typedef struct
 //     return MVar1;
 // }
 //
-// BOOL mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, u32 cchText)
+// BOOL mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, cchText: u32)
 //
 //{
 //     BOOL BVar1;
@@ -747,7 +747,7 @@ typedef struct
 // }
 //
 // BOOL CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes,
-//                     LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, u32 dwCreationFlags,
+//                     LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, dwCreationFlags: u32,
 //                     LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo,
 //                     LPPROCESS_INFORMATION lpProcessInformation)
 //
@@ -838,7 +838,7 @@ typedef struct
 //     return pHVar1;
 // }
 //
-// BOOL PeekMessageA(LPMSG lpMsg, HWND hWnd, u32 wMsgFilterMin, u32 wMsgFilterMax, u32 wRemoveMsg)
+// BOOL PeekMessageA(LPMSG lpMsg, HWND hWnd, wMsgFilterMin: u32, wMsgFilterMax: u32, wRemoveMsg: u32)
 //
 //{
 //     BOOL BVar1;
@@ -849,7 +849,7 @@ typedef struct
 //     return BVar1;
 // }
 //
-// MMRESULT timeEndPeriod(u32 uPeriod)
+// MMRESULT timeEndPeriod(uPeriod: u32)
 //
 //{
 //     MMRESULT MVar1;
@@ -860,7 +860,7 @@ typedef struct
 //     return MVar1;
 // }
 //
-// MMRESULT timeBeginPeriod(u32 uPeriod)
+// MMRESULT timeBeginPeriod(uPeriod: u32)
 //
 //{
 //     MMRESULT MVar1;
@@ -906,7 +906,7 @@ typedef struct
 //
 //// WARNING: Exceeded maximum restarts with more pending
 //
-// void ExitProcess(u32 uExitCode)
+// void ExitProcess(uExitCode: u32)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb31a. Too many branches
@@ -915,7 +915,7 @@ typedef struct
 //    return;
 //}
 //
-// LRESULT DefWindowProcA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
+// LRESULT DefWindowProcA(HWND hWnd, Msg: u32, WPARAM wParam, LPARAM lParam)
 //
 //{
 //    LRESULT LVar1;
@@ -935,8 +935,8 @@ typedef struct
 //    return;
 //}
 //
-// HWND CreateWindowExA(u32 dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, u32 dwStyle, i16 X, i16 Y, i16 nWidth,
-//                     i16 nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
+// HWND CreateWindowExA(dwExStyle: u32, LPCSTR lpClassName, LPCSTR lpWindowName, dwStyle: u32, X: i16, Y: i16, nWidth: i16,
+//                     nHeight: i16, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
 //
 //{
 //    HWND pHVar1;
@@ -1025,7 +1025,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// u32 GetSystemPaletteEntries(HDC hdc, u32 iStart, u32 cEntries, LPPALETTEENTRY pPalEntries)
+// u32 GetSystemPaletteEntries(HDC hdc, iStart: u32, cEntries: u32, LPPALETTEENTRY pPalEntries)
 //
 //{
 //    u32 UVar1;
@@ -1113,7 +1113,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// u32 GetPrivateProfilei16A(LPCSTR lpAppName, LPCSTR lpKeyName, i16 nDefault, LPCSTR lpFileName)
+// u32 GetPrivateProfilei16A(LPCSTR lpAppName, LPCSTR lpKeyName, nDefault: i16, LPCSTR lpFileName)
 //
 //{
 //    u32 UVar1;
@@ -1124,7 +1124,7 @@ typedef struct
 //    return UVar1;
 //}
 //
-// i16 MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, u32 uType)
+// i16 MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, uType: u32)
 //
 //{
 //    i16 iVar1;
@@ -1146,7 +1146,7 @@ typedef struct
 //    return LVar1;
 //}
 //
-// LSTATUS RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, u32 ulOptions, REGSAM samDesired, PHKEY phkResult)
+// LSTATUS RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, ulOptions: u32, REGSAM samDesired, PHKEY phkResult)
 //
 //{
 //    LSTATUS LVar1;
@@ -1157,7 +1157,7 @@ typedef struct
 //    return LVar1;
 //}
 //
-// void Sleep(u32 dwMilliseconds)
+// void Sleep(dwMilliseconds: u32)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb3a4. Too many branches
@@ -1166,7 +1166,7 @@ typedef struct
 //    return;
 //}
 //
-// LRESULT SendMessageA(HWND hWnd, u32 Msg, WPARAM wParam, LPARAM lParam)
+// LRESULT SendMessageA(HWND hWnd, Msg: u32, WPARAM wParam, LPARAM lParam)
 //
 //{
 //    LRESULT LVar1;
@@ -1188,7 +1188,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// u32 CharUpperBuffA(LPSTR lpsz, u32 cchLength)
+// u32 CharUpperBuffA(LPSTR lpsz, cchLength: u32)
 //
 //{
 //    u32 DVar1;
@@ -1212,7 +1212,7 @@ typedef struct
 //
 //// WARNING: Exceeded maximum restarts with more pending
 //
-// void ExitThread(u32 dwExitCode)
+// void ExitThread(dwExitCode: u32)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb3c2. Too many branches
@@ -1221,7 +1221,7 @@ typedef struct
 //    return;
 //}
 //
-// u32 WaitForSingleObject(HANDLE hHandle, u32 dwMilliseconds)
+// u32 WaitForSingleObject(HANDLE hHandle, dwMilliseconds: u32)
 //
 //{
 //    u32 DVar1;
@@ -1233,7 +1233,7 @@ typedef struct
 //}
 //
 // HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress,
-//                    LPVOID lpParameter, u32 dwCreationFlags, Lu32* lpThreadId)
+//                    LPVOID lpParameter, dwCreationFlags: u32, Lu32* lpThreadId)
 //
 //{
 //    HANDLE pvVar1;
@@ -1266,7 +1266,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// BOOL GetCPInfo(u32 CodePage, LPCPINFO lpCPInfo)
+// BOOL GetCPInfo(CodePage: u32, LPCPINFO lpCPInfo)
 //
 //{
 //    BOOL BVar1;
@@ -1321,8 +1321,8 @@ typedef struct
 //    return BVar1;
 //}
 //
-// i16 WideCharToMultiByte(u32 CodePage, u32 dwFlags, LPCWSTR lpWideCharStr, i16 cchWideChar, LPSTR lpMultiByteStr,
-//                        i16 cbMultiByte, LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
+// i16 WideCharToMultiByte(CodePage: u32, dwFlags: u32, LPCWSTR lpWideCharStr, cchWideChar: i16, LPSTR lpMultiByteStr,
+//                        cbMultiByte: i16, LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
 //
 //{
 //    i16 iVar1;
@@ -1334,7 +1334,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// BOOL WriteConsoleA(HANDLE hConsoleOutput, void *lpBuffer, u32 nNumberOfCharsToWrite, Lu32* lpNumberOfCharsWritten,
+// BOOL WriteConsoleA(HANDLE hConsoleOutput, void *lpBuffer, nNumberOfCharsToWrite: u32, Lu32* lpNumberOfCharsWritten,
 //                   LPVOID lpReserved)
 //
 //{
@@ -1346,7 +1346,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// BOOL SetConsoleMode(HANDLE hConsoleHandle, u32 dwMode)
+// BOOL SetConsoleMode(HANDLE hConsoleHandle, dwMode: u32)
 //
 //{
 //    BOOL BVar1;
@@ -1368,7 +1368,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// BOOL ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, u32 nLength, Lu32* lpNumberOfEventsRead)
+// BOOL ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, nLength: u32, Lu32* lpNumberOfEventsRead)
 //
 //{
 //    BOOL BVar1;
@@ -1401,7 +1401,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// u32 GetCurrentDirectoryA(u32 nBufferLength, LPSTR lpBuffer)
+// u32 GetCurrentDirectoryA(nBufferLength: u32, LPSTR lpBuffer)
 //
 //{
 //    u32 DVar1;
@@ -1412,7 +1412,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// u32 GetFullPathNameA(LPCSTR lpFileName, u32 nBufferLength, LPSTR lpBuffer, LPSTR *lpFilePart)
+// u32 GetFullPathNameA(LPCSTR lpFileName, nBufferLength: u32, LPSTR lpBuffer, LPSTR *lpFilePart)
 //
 //{
 //    u32 DVar1;
@@ -1489,7 +1489,7 @@ typedef struct
 //    return SVar1;
 //}
 //
-// i16 MultiByteToWideChar(u32 CodePage, u32 dwFlags, LPCSTR lpMultiByteStr, i16 cbMultiByte, LPWSTR lpWideCharStr,
+// i16 MultiByteToWideChar(CodePage: u32, dwFlags: u32, LPCSTR lpMultiByteStr, cbMultiByte: i16, LPWSTR lpWideCharStr,
 //                        i16 cchWideChar)
 //
 //{
@@ -1501,7 +1501,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// u32 GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, u32 nSize)
+// u32 GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, nSize: u32)
 //
 //{
 //    u32 DVar1;
@@ -1512,7 +1512,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// BOOL TlsFree(u32 dwTlsIndex)
+// BOOL TlsFree(dwTlsIndex: u32)
 //
 //{
 //    BOOL BVar1;
@@ -1523,7 +1523,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// BOOL TlsSetValue(u32 dwTlsIndex, LPVOID lpTlsValue)
+// BOOL TlsSetValue(dwTlsIndex: u32, LPVOID lpTlsValue)
 //
 //{
 //    BOOL BVar1;
@@ -1545,7 +1545,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// void SetLastError(u32 dwErrCode)
+// void SetLastError(dwErrCode: u32)
 //
 //{
 //    // WARNING: Could not recover jumptable at 0x004bb476. Too many branches
@@ -1554,7 +1554,7 @@ typedef struct
 //    return;
 //}
 //
-// LPVOID TlsGetValue(u32 dwTlsIndex)
+// LPVOID TlsGetValue(dwTlsIndex: u32)
 //
 //{
 //    LPVOID pvVar1;
@@ -1634,7 +1634,7 @@ typedef struct
 //    return pvVar1;
 //}
 //
-// HANDLE GetStdHandle(u32 nStdHandle)
+// HANDLE GetStdHandle(nStdHandle: u32)
 //
 //{
 //    HANDLE pvVar1;
@@ -1645,7 +1645,7 @@ typedef struct
 //    return pvVar1;
 //}
 //
-// BOOL SetStdHandle(u32 nStdHandle, HANDLE hHandle)
+// BOOL SetStdHandle(nStdHandle: u32, HANDLE hHandle)
 //
 //{
 //    BOOL BVar1;
@@ -1656,7 +1656,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// LPVOID VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, u32 flAllocationType, u32 flProtect)
+// LPVOID VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, flAllocationType: u32, flProtect: u32)
 //
 //{
 //    LPVOID pvVar1;
@@ -1667,7 +1667,7 @@ typedef struct
 //    return pvVar1;
 //}
 //
-// BOOL WriteFile(HANDLE hFile, LPCVOID lpBuffer, u32 nNumberOfBytesToWrite, Lu32* lpNumberOfBytesWritten,
+// BOOL WriteFile(HANDLE hFile, LPCVOID lpBuffer, nNumberOfBytesToWrite: u32, Lu32* lpNumberOfBytesWritten,
 //               LPOVERLAPPED lpOverlapped)
 //
 //{

@@ -6,15 +6,15 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_624_H_
 
 // #include "structs/structs_0xx/struct_18.h"
-typedef struct Struct624 Struct624;
+// typedef struct Struct624 Struct624;
 struct Struct624
 {
     u8                 field_0x0;
     u8                 field_0x1;
-    i16                field_0x2;
+    let mut field_0x2: i16;
     u8                 field_0x4;
     u8                 field_0x5;
-    i16                field_0x6;
+    let mut field_0x6: i16;
     u8                 field_0x8;
     u8                 field_0x9;
     u8                 field_0xa;
@@ -150,7 +150,7 @@ struct Struct624
     u8                 field_0x8c;
     u8                 field_0x8d;
     u32        *field_0x8e;
-    u16                field_0x90;
+    let mut field_0x90: u16;
     u8                 field_0x92;
     u8                 field_0x93;
     u8                 field_0x94;

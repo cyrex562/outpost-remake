@@ -7,7 +7,7 @@
 
 // #include "op_int.h"
 
-typedef struct Struct690 Struct690;
+// typedef struct Struct690 Struct690;
 struct Struct690
 {
     u8  field_0x0;
@@ -36,8 +36,8 @@ struct Struct690
     u8  field_0x17;
     u8  field_0x18;
     u8  field_0x19;
-    i16 field_0x1a;
-    i16 field_0x1c;
-    i16 field_0x1e;
+    let mut field_0x1a: i16;
+    let mut field_0x1c: i16;
+    let mut field_0x1e: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_690_H_

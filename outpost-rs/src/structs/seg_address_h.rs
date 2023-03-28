@@ -8,8 +8,8 @@
 // #include "op_int.h"
 
 typedef struct SegmentAddress {
-    u16 segment;
-    u16 offset;
+    let mut segment: u16;
+    let mut offset: u16;
 } SegmentAddress;
 
 #endif // OUTPOST_1_SRC_STRUCTS_SEG_ADDRESS_H_

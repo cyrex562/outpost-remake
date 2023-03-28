@@ -32,7 +32,7 @@ u16 * struct_1030_c9a8(u16 *param_1);
 
 
 
-BOOL16  pass1_1030_acbe(param_1: u16, param_2: u16, u16 *param_3, long param_4, u16 param_5, u16 param_6, u16 param_7);
+BOOL16  pass1_1030_acbe(param_1: u16, param_2: u16, u16 *param_3, long param_4, param_5: u16, param_6: u16, param_7: u16);
 
 
 
@@ -42,37 +42,37 @@ void  pass1_1030_afa6(Struct614 *param_1);
 
 
 
-void  pass1_1030_affc(u32 param_1, i16 param_2, u16 param_3);
+void  pass1_1030_affc(param_1: u32, param_2: i16, param_3: u16);
 
 
 
 
-void  pass1_1030_b2aa(u32 param_1, u16 *param_2, u8 *param_3, i16 param_4, u16 param_5);
+void  pass1_1030_b2aa(param_1: u32, u16 *param_2, param_3: *mut u8, param_4: i16, param_5: u16);
 
 
 
 
-u32  pass1_1030_b344(u32 param_1, u16 param_2);
+u32  pass1_1030_b344(param_1: u32, param_2: u16);
 
 
 
 
-void  pass1_1030_b454(u32 param_1, u32 param_2, u16 param_3);
+void  pass1_1030_b454(param_1: u32, param_2: u32, param_3: u16);
 
 
 
 
-void  pass1_1030_b578(u32 param_1, i16 param_2, u16 param_3);
+void  pass1_1030_b578(param_1: u32, param_2: i16, param_3: u16);
 
 
 
 
-void  pass1_1030_b936(Struct365 *param_1, param_2: u16, param_3: u16, param_4: u32, u16 param_5);
+void  pass1_1030_b936(Struct365 *param_1, param_2: u16, param_3: u16, param_4: u32, param_5: u16);
 
 
 
 
-void  pass1_1030_9adc(param_1: u16, param_2: u16, u32 *param_3, param_4: u32, u16 param_5, u16 param_6);
+void  pass1_1030_9adc(param_1: u16, param_2: u16, param_3: *mut u32, param_4: u32, param_5: u16, param_6: u16);
 
 
 
@@ -82,67 +82,67 @@ u16  pass1_1030_9ef2(u32 *param_1);
 
 
 
-BOOL16  pass1_1030_8fe4(param_1: u16, param_2: u16, param_3: u16, u16 param_4, u16 param_5, u16 *param_6, long param_7);
+BOOL16  pass1_1030_8fe4(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16, u16 *param_6, long param_7);
 
 
 
 
-void  pass1_1030_9048(param_1: u16, u32 param_2, i16 param_3, u32 param_4);
+void  pass1_1030_9048(param_1: u16, param_2: u32, param_3: i16, param_4: u32);
 
 
 
 
-void  pass1_1030_9296(u32 param_1, u32 *param_2, u32 param_3, u16 param_4, u16 param_5, u16 param_6);
+void  pass1_1030_9296(param_1: u32, param_2: *mut u32, param_3: u32, param_4: u16, param_5: u16, param_6: u16);
 
 
 
 
-void  pass1_1030_951a(param_1: u16, param_2: u16, u32 param_3, u32 *param_4, u32 param_5);
+void  pass1_1030_951a(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u32, param_5: u32);
 
 
 
 
-u16  pass1_1030_7bee(u32 param_1);
+u16  pass1_1030_7bee(param_1: u32);
 
 
 
 
-void  pass1_1030_7e5a(Struct358 *param_1, u32 param_2, u16 param_3);
+void  pass1_1030_7e5a(Struct358 *param_1, param_2: u32, param_3: u16);
 
 
 
 
-void  pass1_1030_7eda(u32 param_1, param_2: u16, u16 param_3);
+void  pass1_1030_7eda(param_1: u32, param_2: u16, param_3: u16);
 
 
 
 
-void  pass1_1030_7f1a(u32 param_1, param_2: u16, u16 param_3);
+void  pass1_1030_7f1a(param_1: u32, param_2: u16, param_3: u16);
 
 
 
 
-u16  pass1_1030_7f5a(u32 param_1);
+u16  pass1_1030_7f5a(param_1: u32);
 
 
 
 
-u16  pass1_1030_7f98(u32 param_1);
+u16  pass1_1030_7f98(param_1: u32);
 
 
 
 
-void  pass1_1030_7fd6(u32 param_1, param_2: u16, u16 param_3);
+void  pass1_1030_7fd6(param_1: u32, param_2: u16, param_3: u16);
 
 
 
 
-void  pass1_1030_8030(u32 param_1, param_2: u16, u16 param_3);
+void  pass1_1030_8030(param_1: u32, param_2: u16, param_3: u16);
 
 
 
 
-void  pass1_1030_809c(u32 param_1);
+void  pass1_1030_809c(param_1: u32);
 
 
 
@@ -152,17 +152,17 @@ void  struct_1030_8544(Struct355 *param_1, u16 *param_2);
 
 
 
-void  pass1_1030_85be(long *param_1, param_2: u16, i16 param_3, i16 param_4, u16 param_5);
+void  pass1_1030_85be(long *param_1, param_2: u16, param_3: i16, param_4: i16, param_5: u16);
 
 
 
 
-void  pass1_1030_86ec(Struct18 **param_1, u16 param_2);
+void  pass1_1030_86ec(Struct18 **param_1, param_2: u16);
 
 
 
 
-void  pass1_1030_6a2c(struct Struct382 *param_1, long param_2, param_3: u16, u8 *param_4, u16 param_5);
+void  pass1_1030_6a2c(struct Struct382 *param_1, long param_2, param_3: u16, param_4: *mut u8, param_5: u16);
 
 
 
@@ -172,51 +172,51 @@ u32  pass1_1030_6b16(Struct412 *param_1);
 
 
 
-void  pass1_1030_6c66(Struct386 *param_1, i16 param_2, u32 param_3, u16 param_4, u8 *param_5, u16 param_6);
+void  pass1_1030_6c66(Struct386 *param_1, param_2: i16, param_3: u32, param_4: u16, param_5: *mut u8, param_6: u16);
 
 
 
 
-void  pass1_1030_6e4c(u32 param_1);
+void  pass1_1030_6e4c(param_1: u32);
 
 
 
 
-u16  pass1_1030_6fa0(u32 param_1);
+u16  pass1_1030_6fa0(param_1: u32);
 
 
 
 
-void  pass1_1030_6fd4(u32 param_1);
+void  pass1_1030_6fd4(param_1: u32);
 
 
 
 
-void  pass1_1030_701c(u32 param_1);
+void  pass1_1030_701c(param_1: u32);
 
 
 
 
-void  pass1_1030_7064(u32 param_1);
+void  pass1_1030_7064(param_1: u32);
 
 
 
 
-void  pass1_1030_70ac(u32 param_1);
-
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void  pass1_1030_70f4(u32 param_1);
+void  pass1_1030_70ac(param_1: u32);
 
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1030_7176(u32 param_1, u16 param_2);
+void  pass1_1030_70f4(param_1: u32);
+
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void  pass1_1030_7176(param_1: u32, param_2: u16);
 
 
 

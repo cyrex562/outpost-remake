@@ -7,12 +7,12 @@
 
 // #include "op_int.h"
 
-typedef struct Struct699 Struct699;
+// typedef struct Struct699 Struct699;
 struct Struct699
 {
     u8         field_0x0;
     u8         field_0x1;
-    i16        field_0x2;
+    let mut field_0x2: i16;
     u8         field_0x4;
     u8         field_0x5;
     u8         field_0x6;
@@ -273,9 +273,9 @@ struct Struct699
     u8         field_0x105;
     u8         field_0x106;
     u8         field_0x107;
-    u32 field_0x108;
-    u32 field_0x10c;
-    u32 field_0x110;
-    u32 field_0x114;
+    let mut field_0x108: u32;
+    let mut field_0x10c: u32;
+    let mut field_0x110: u32;
+    let mut field_0x114: u32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_3_H_STRUCTS_699_H_

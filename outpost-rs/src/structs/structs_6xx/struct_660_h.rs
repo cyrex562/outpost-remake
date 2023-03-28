@@ -6,16 +6,16 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_660_H_
 
 // #include "structs/structs_5xx/struct_546.h"
-typedef struct Struct660 Struct660;
+// typedef struct Struct660 Struct660;
 struct Struct660
 {
-    void **field_0x0;
+    let mut field_0x0: *mut *mut c_void;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
-    u16 field_0x6;
-    u16 field_0x8;
+    let mut field_0x6: u16;
+    let mut field_0x8: u16;
     u8  field_0xa;
     u8  field_0xb;
     u8  field_0xc;
@@ -24,8 +24,8 @@ struct Struct660
     u8  field_0xf;
     u8  field_0x10;
     u8  field_0x11;
-    i16 field_0x12;
-    i16 field_0x14;
-    u16 field_0x16;
+    let mut field_0x12: i16;
+    let mut field_0x14: i16;
+    let mut field_0x16: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_660_H_

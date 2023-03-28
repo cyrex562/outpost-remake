@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_682_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_682_H_
 
-typedef struct Struct682 Struct682;
+// typedef struct Struct682 Struct682;
 struct Struct682
 {
     u8  field_0x0;
@@ -382,17 +382,17 @@ struct Struct682
     u8  field_0x173;
     u8  field_0x174;
     u8  field_0x175;
-    u16 field_0x176;
-    u16 field_0x178;
-    u16 field_0x17a;
-    u16 field_0x17c;
-    u16 field_0x17e;
+    let mut field_0x176: u16;
+    let mut field_0x178: u16;
+    let mut field_0x17a: u16;
+    let mut field_0x17c: u16;
+    let mut field_0x17e: u16;
     u8  field_0x180;
     u8  field_0x181;
-    u16 field_0x182;
-    u16 field_0x184;
-    u16 field_0x186;
-    u16 field_0x188;
-    u16 field_0x18a;
+    let mut field_0x182: u16;
+    let mut field_0x184: u16;
+    let mut field_0x186: u16;
+    let mut field_0x188: u16;
+    let mut field_0x18a: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_7_H_STRUCT_682_H_

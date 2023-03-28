@@ -13,8 +13,8 @@ typedef struct Struct323
     u8  field_0x1;
     u8  field_0x2;
     u8  field_0x3;
-    u32 field_0x4;
-    u32 field_0x8;
+    let mut field_0x4: u32;
+    let mut field_0x8: u32;
     u8  field_0xc;
     u8  field_0xd;
     u8  field_0xe;
@@ -267,15 +267,15 @@ typedef struct Struct323
     u8  field_0x105;
     u8  field_0x106;
     u8  field_0x107;
-    u32 field_0x108;
-    u32 field_0x10c;
-    u32 field_0x110;
-    u32 field_0x114;
-    u16        field_0x118;
-    u16        field_0x11a;
-    u16        field_0x11c;
-    u16        field_0x11e;
-    u32 field_0x120;
+    let mut field_0x108: u32;
+    let mut field_0x10c: u32;
+    let mut field_0x110: u32;
+    let mut field_0x114: u32;
+    let mut field_0x118: u16;
+    let mut field_0x11a: u16;
+    let mut field_0x11c: u16;
+    let mut field_0x11e: u16;
+    let mut field_0x120: u32;
 } Struct323;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCT_323_H_

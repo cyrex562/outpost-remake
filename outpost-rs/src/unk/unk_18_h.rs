@@ -19,17 +19,17 @@
 //                      u8      *param_4,
 //                      int      param_5);
 
-StructD *FUN_1008_9f8c(StructD *param_1, u8 param_2);
+StructD *FUN_1008_9f8c(StructD *param_1, param_2: u8);
 
-StructD *FUN_1018_2ab4(StructD *param_1, u8 param_2);
+StructD *FUN_1018_2ab4(StructD *param_1, param_2: u8);
 
-StructD *FUN_1018_e428(StructD *param_1, u8 param_2);
+StructD *FUN_1018_e428(StructD *param_1, param_2: u8);
 
-StructD *FUN_1020_775a(StructD *param_1, u8 param_2);
+StructD *FUN_1020_775a(StructD *param_1, param_2: u8);
 
-void pass1_1030_c7b0(u32 param_1);
+void pass1_1030_c7b0(param_1: u32);
 
-void win_1008_5c5c(param_1: u16, param_2: u16, u32 param_3, u16 param_4);
+void win_1008_5c5c(param_1: u16, param_2: u16, param_3: u32, param_4: u16);
 
 void win_ui_op_1008_5cfe(Globals    *globals,
                          Struct27   *struct_arg_1,
@@ -38,8 +38,8 @@ void win_ui_op_1008_5cfe(Globals    *globals,
 
 //void def_win_proc_1008_5632(LPARAM param_1, WPARAM param_2, param_3: u16, HWND16 param_4);
 
-StructD *pass1_1028_ac7a(StructD *param_1, u8 param_2);
+StructD *pass1_1028_ac7a(StructD *param_1, param_2: u8);
 
-void pass1_1038_75ca(int param_1, u32 param_2, param_3: u32);
+void pass1_1038_75ca(int param_1, param_2: u32, param_3: u32);
 
 #endif // OUTPOST_1_SRC_UNK_UNK_18_H_

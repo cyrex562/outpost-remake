@@ -6,7 +6,7 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_665_H_
 
 // #include "structs/structs_5xx/struct_546.h"
-typedef struct Struct665 Struct665;
+// typedef struct Struct665 Struct665;
 struct Struct665
 {
     u8  field_0x0;
@@ -233,8 +233,8 @@ struct Struct665
     u8  field_0xdd;
     u8  field_0xde;
     u8  field_0xdf;
-    u16 field_0xe0;
-    u16 field_0xe2;
+    let mut field_0xe0: u16;
+    let mut field_0xe2: u16;
     u8  field_0xe4;
     u8  field_0xe5;
     u8  field_0xe6;
@@ -249,14 +249,14 @@ struct Struct665
     u8  field_0xef;
     u8  field_0xf0;
     u8  field_0xf1;
-    i16 field_0xf2;
-    u16 field_0xf4;
+    let mut field_0xf2: i16;
+    let mut field_0xf4: u16;
     u8  field_0xf6;
     u8  field_0xf7;
     u8  field_0xf8;
     u8  field_0xf9;
     u8  field_0xfa;
     u8  field_0xfb;
-    u16 field_0xfc;
+    let mut field_0xfc: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_665_H_

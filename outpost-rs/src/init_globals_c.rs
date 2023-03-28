@@ -10,8 +10,8 @@ void init_globals_1020_96d4(Globals *globals)
 
 {
     unsigned short pu_var_1;
-    i16  i_var_2;
-    u16 pu_var_3;
+    let mut i_var_2: i16;
+    let mut pu_var_3: u16;
 
     globals.dat_1050_4514       = 0x0;
     globals.dat_1050_451a       = 0x0;
@@ -295,7 +295,7 @@ void init_globals_1020_96d4(Globals *globals)
     globals.PTR_LOOP_1050_47b2  = 0x0;
     globals.PTR_LOOP_1050_47b8  = 0x0;
 //    pu_var_3                     = 0x47ba;
-//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
+//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2- 1)
 //    {
 //        pu_var_1  = pu_var_3;
 //        pu_var_3  = pu_var_3 + 0x1;
@@ -584,7 +584,7 @@ void init_globals_1020_96d4(Globals *globals)
     globals.PTR_LOOP_1050_4aee  = 0x0;
     globals.PTR_LOOP_1050_4af4  = 0x0;
 //    pu_var_3                     = 0x4af6;
-//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
+//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2- 1)
 //    {
 //        pu_var_1  = pu_var_3;
 //        pu_var_3  = pu_var_3 + 0x1;
@@ -856,7 +856,7 @@ void init_globals_1020_96d4(Globals *globals)
     globals.PTR_LOOP_1050_4e2a  = 0x0;
     globals.PTR_LOOP_1050_4e30  = 0x0;
 //    pu_var_3                     = 0x4e32;
-//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2 + -0x1)
+//    for(i_var_2 = 0x1b; i_var_2 != 0x0; i_var_2 = i_var_2- 1)
 //    {
 //        pu_var_1  = pu_var_3;
 //        pu_var_3  = pu_var_3 + 0x1;

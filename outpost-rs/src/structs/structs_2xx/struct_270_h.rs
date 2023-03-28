@@ -5,11 +5,11 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_270_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_270_H_
 
-typedef struct Struct270 Struct270;
+// typedef struct Struct270 Struct270;
 struct Struct270
 {
-    u16        field_0x0;
-    u16        field_0x2;
+    let mut field_0x0: u16;
+    let mut field_0x2: u16;
     u8         field_0x4;
     u8         field_0x5;
     u8         field_0x6;
@@ -178,7 +178,7 @@ struct Struct270
     u8         field_0xa9;
     u8         field_0xaa;
     u8         field_0xab;
-    u32 field_0xac;
+    let mut field_0xac: u32;
     u8         field_0xb0;
     u8         field_0xb1;
     u8         field_0xb2;
@@ -245,8 +245,8 @@ struct Struct270
     u8         field_0xef;
     u8         field_0xf0;
     u8         field_0xf1;
-    u16        field_0xf2;
-    u16        field_0xf4;
+    let mut field_0xf2: u16;
+    let mut field_0xf4: u16;
     u8         field_0xf6;
     u8         field_0xf7;
     u8         field_0xf8;
@@ -257,7 +257,7 @@ struct Struct270
     u8         field_0xfd;
     u8         field_0xfe;
     u8         field_0xff;
-    u16        field_0x100;
+    let mut field_0x100: u16;
     u8         field_0x102;
     u8         field_0x103;
     u8         field_0x104;
@@ -266,7 +266,7 @@ struct Struct270
     u8         field_0x107;
     u8         field_0x108;
     u8         field_0x109;
-    u32 field_0x10a;
-    u32 field_0x10e;
+    let mut field_0x10a: u32;
+    let mut field_0x10e: u32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_270_H_

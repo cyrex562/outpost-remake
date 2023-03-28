@@ -9,12 +9,12 @@
 // #include "unk/unk_15.h"
 // #include "utils.h"
 
-void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
+void  mci_send_command_1008_5cb6(param_1: u32, param_2: i16, param_3: u16)
 
 {
-    i16 iVar1;
-    u16 u_var2;
-    u16 unaff_SS;
+    let mut iVar1: i16;
+    let mut u_var2: u16;
+    let mut unaff_SS: u16;
 
     mciSendCommand16(param_3, 0x0, 0x0, 0x8040000);
     u_var2 = (param_1 >> 0x10);
@@ -34,26 +34,26 @@ void  mci_send_command_1008_5cb6(u32 param_1, i16 param_2, u16 param_3)
 }
 
 
-void mci_send_command_1008_53ae(u32 param_1, param_2: u16, param_3: u16, u16 param_4)
+void mci_send_command_1008_53ae(param_1: u32, param_2: u16, param_3: u16, param_4: u16)
 
 {
-    DWORD      DVar1;
+    let mut DVar1: DWORD;
     char       local_432[0x400];
-    u16        local_32;
-    u16        uStack48;
-    u16        local_2e;
-    u16        uStack44;
-    u16        uStack34;
-    u16        uStack32;
-    u32 local_1e;
-    i16        iStack26;
-    u16        uStack22;
-    u16        uStack20;
-    u32        uStack18;
-    u32 uStack14;
-    u16        uStack10;
-    u16        uStack8;
-    u16        u_stack6;
+    let mut local_32: u16;
+    let mut uStack48: u16;
+    let mut local_2e: u16;
+    let mut uStack44: u16;
+    let mut uStack34: u16;
+    let mut uStack32: u16;
+    let mut local_1e: u32;
+    let mut iStack26: i16;
+    let mut uStack22: u16;
+    let mut uStack20: u16;
+    let mut uStack18: u32;
+    let mut uStack14: u32;
+    let mut uStack10: u16;
+    let mut uStack8: u16;
+    let mut u_stack6: u16;
 
     local_1e = 0x0;
     uStack22 = 0x28c;

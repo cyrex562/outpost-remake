@@ -9,9 +9,9 @@
 // #include "structs/structs_0xx/struct_18.h"
 
 
-void fn_ptr_1000_17ce(Struct18 *param_1, u16 param_2);
+void fn_ptr_1000_17ce(param_1: *mut Struct18, param_2: u16);
 
-//void fn_ptr_1000_17ce(Struct18 *param_1,u16 param_2);
+//void fn_ptr_1000_17ce(param_1: *mut Struct18,param_2: u16);
 
 
 

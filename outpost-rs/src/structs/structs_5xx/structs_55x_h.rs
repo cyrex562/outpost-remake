@@ -7,20 +7,20 @@
 
 // #include "op_int.h"
 // #include "structs/structs_0xx/structs_4x.h"
-typedef struct Struct551 Struct551;
-typedef struct Struct550 Struct550;
-typedef struct Struct556 Struct556;
-typedef struct Struct555 Struct555;
-typedef struct Struct558 Struct558;
-typedef struct Struct557 Struct557;
-typedef struct Struct552 Struct552;
-typedef struct Struct554 Struct554;
-typedef struct Struct553 Struct553;
+// typedef struct Struct551 Struct551;
+// typedef struct Struct550 Struct550;
+// typedef struct Struct556 Struct556;
+// typedef struct Struct555 Struct555;
+// typedef struct Struct558 Struct558;
+// typedef struct Struct557 Struct557;
+// typedef struct Struct552 Struct552;
+// typedef struct Struct554 Struct554;
+// typedef struct Struct553 Struct553;
 struct Struct551
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -232,7 +232,7 @@ struct Struct550
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -444,7 +444,7 @@ struct Struct556
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -656,7 +656,7 @@ struct Struct555
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -868,7 +868,7 @@ struct Struct558
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -1080,7 +1080,7 @@ struct Struct557
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -1292,7 +1292,7 @@ struct Struct552
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -1504,7 +1504,7 @@ struct Struct554
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -1716,7 +1716,7 @@ struct Struct553
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;

@@ -12,33 +12,33 @@
 // #include "structs/structs_0xx/structs_7x.h"
 // #include "structs/structs_3xx/struct_380.h"
 
-void pass1_1040_d1bc(globals: &mut Globals, Struct18 *param_1);
+void pass1_1040_d1bc(globals: &mut Globals, param_1: *mut Struct18);
 
-void pass1_1040_ca74(globals: &mut Globals, Struct18 *param_1);
+void pass1_1040_ca74(globals: &mut Globals, param_1: *mut Struct18);
 
-void pass1_1040_c94a(globals: &mut Globals, Struct380 *pstruct_arg1,
-                     u8 *param_3,
-                     i16 param_4,
-                     u16 param_5,
-                     u16 param_6);
+void pass1_1040_c94a(globals: &mut Globals, pstruct_arg1: *mut Struct380,
+                     param_3: *mut u8,
+                     param_4: i16,
+                     param_5: u16,
+                     param_6: u16);
 
-void palette_op_1040_c886(globals: &mut Globals, u32 param_1, u8 param_2, param_3: u16, HDC16 param_4);
+void palette_op_1040_c886(globals: &mut Globals, param_1: u32, param_2: u8, param_3: u16, param_4: HDC16);
 
-void draw_op_1040_c74c(globals: &mut Globals, u32 *param_1, u32 param_2, u16 param_3);
+void draw_op_1040_c74c(globals: &mut Globals, param_1: *mut u32, param_2: u32, param_3: u16);
 
-void unk_draw_op_1040_c226(u32 param_1, HWND16 param_2, u16 param_3);
+void unk_draw_op_1040_c226(param_1: u32, param_2: HWND16, param_3: u16);
 
-void draw_line_1040_c302(u32 param_1, HDC16 param_2);
+void draw_line_1040_c302(param_1: u32, param_2: HDC16);
 
-void draw_op_1040_c38e(u32 param_1);
+void draw_op_1040_c38e(param_1: u32);
 
-void invalidate_rect_1040_c028(u32 param_1, i16 param_2, HWND16 param_3, RECT16 *param_4);
+void invalidate_rect_1040_c028(param_1: u32, param_2: i16, param_3: HWND16, param_4: *mut RECT16);
 
-Struct18 *pass1_1040_be94(globals: &mut Globals, Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_be94(globals: &mut Globals,param_1: *mut Struct18, param_2: u8);
 
-Struct18 *pass1_1040_b74c(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_b74c(param_1: *mut Struct18, param_2: u8);
 
-void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, HDC16 param_2);
+void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, param_2: HDC16);
 
 void win_ui_op_1040_b372(globals: &mut Globals,
                          u32      param_1,
@@ -46,9 +46,9 @@ void win_ui_op_1040_b372(globals: &mut Globals,
                          u16      param_3,
                          COLORREF in_colorref_4);
 
-void pass1_1040_ace8(globals: &mut Globals, Struct18 *param_1);
+void pass1_1040_ace8(globals: &mut Globals, param_1: *mut Struct18);
 
-Struct18 *pass1_1040_abe2(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_abe2(param_1: *mut Struct18, param_2: u8);
 
 void draw_op_1040_a67e(globals: &mut Globals,
                        u32      param_1,
@@ -56,20 +56,20 @@ void draw_op_1040_a67e(globals: &mut Globals,
                        u16      param_3,
                        COLORREF param_4);
 
-u16 *unk_win_ui_op_1040_9854(globals: &mut Globals, u16 *param_1, u16 param_2);
+u16 *unk_win_ui_op_1040_9854(globals: &mut Globals, u16 *param_1, param_2: u16);
 
 void draw_op_1040_9948(param_1: u16,
-                       Struct71 *param_2, HWND16 param_3, RECT16 *param_4);
+                       Struct71 *param_2, param_3: HWND16, param_4: *mut RECT16);
 
-void mixed_draw_op_1040_8a06(globals: &mut Globals, u32 param_1, HWND16 param_2, u16 param_3);
+void mixed_draw_op_1040_8a06(globals: &mut Globals, param_1: u32, param_2: HWND16, param_3: u16);
 
-void pass1_1040_8e82(globals: &mut Globals, Struct18 *param_1);
+void pass1_1040_8e82(globals: &mut Globals, param_1: *mut Struct18);
 
 void pass1_1040_9252(Struct65 *param_1);
 
-void unk_draw_op_1040_9458(Struct17 *param_1, u8 param_2, param_3: u16, HDC16 param_4);
+void unk_draw_op_1040_9458(Struct17 *param_1, param_2: u8, param_3: u16, param_4: HDC16);
 
-void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, HDC16 param_2);
+void draw_text_1040_94fc(globals: &mut Globals, Struct37 *param_1, param_2: HDC16);
 
 void draw_text_1040_9650(Struct65 *pstruct_arg_1, HWND16 hwnd_arg_2);
 
@@ -81,31 +81,31 @@ u32 set_text_bk_color_1040_7e5e(globals: &mut Globals,
                                 u16      param_3,
                                 u16      param_4);
 
-void draw_op_1040_7bb2(Struct14 *in_struct_1, HWND16 in_win_handle_2, u16 param_3);
+void draw_op_1040_7bb2(Struct14 *in_struct_1, in_win_handle_2: HWND16, param_3: u16);
 
-Struct18 *pass1_1040_767e(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_767e(param_1: *mut Struct18, param_2: u8);
 
-Struct18 *pass1_1040_6360(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_6360(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1040_6862(Struct18 *param_1);
+void pass1_1040_6862(param_1: *mut Struct18);
 
-Struct18 *pass1_1040_4df2(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_4df2(param_1: *mut Struct18, param_2: u8);
 
-void pass1_1040_4f0a(Struct18 *param_1);
+void pass1_1040_4f0a(param_1: *mut Struct18);
 
-void draw_op_1040_5a06(u32 param_1, HWND16 param_2, u16 param_3);
+void draw_op_1040_5a06(param_1: u32, param_2: HWND16, param_3: u16);
 
-u16 get_dc_op_1040_3d5e(u32 param_1, HWND16 param_2, u16 param_3);
+u16 get_dc_op_1040_3d5e(param_1: u32, param_2: HWND16, param_3: u16);
 
 void invalidate_rect_1040_3ddc(Struct2 *in_struct_1, HWND16 in_win_handle_2);
 
-Struct18 *pass1_1040_47fe(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1040_47fe(param_1: *mut Struct18, param_2: u8);
 
-u32 draw_ui_op_1040_27cc(u32 *param_1, param_2: u16, param_3: u16, COLORREF param_4);
+u32 draw_ui_op_1040_27cc(param_1: *mut u32, param_2: u16, param_3: u16, COLORREF param_4);
 
-void pass1_1040_2a22(Struct18 *param_1);
+void pass1_1040_2a22(param_1: *mut Struct18);
 
-void mix_draw_op_1040_21d6(u32 param_1, HWND16 param_2, u16 param_3);
+void mix_draw_op_1040_21d6(param_1: u32, param_2: HWND16, param_3: u16);
 
 u32 set_text_bk_color_1040_0cc0(globals: &mut Globals,
                                 u32     *param_1,
@@ -120,18 +120,18 @@ void draw_op_1038_9dcc(Globals  *globals,
                        COLORREF  in_colorref_4,
                        u16       param_5);
 
-u16 call_fn_ptr_1038_9ffa(HWND16 win_handle, param_2: u16, Struct733 *struct_1, u16 param_4);
+u16 call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, Struct733 *struct_1, param_4: u16);
 
-void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, u16 param_2);
+void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16);
 
-void pass1_1038_ae08(globals: &mut Globals, Struct18 *param_1);
+void pass1_1038_ae08(globals: &mut Globals, param_1: *mut Struct18);
 
-void pass1_1038_893a(globals: &mut Globals, Struct18 *param_1);
+void pass1_1038_893a(globals: &mut Globals, param_1: *mut Struct18);
 
-void pass1_1038_8cf6(Struct18 *param_1);
+void pass1_1038_8cf6(param_1: *mut Struct18);
 
-void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, HWND16 param_5, u16 param_6);
+void draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: HWND16, param_6: u16);
 
-Struct18 *pass1_1038_997c(Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1038_997c(param_1: *mut Struct18, param_2: u8);
 
 #endif // OUTPOST_1_SRC_DRAW_OPS_DRAW_OPS_1_H_

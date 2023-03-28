@@ -13,19 +13,19 @@
 
 // #include <stdbool.h>
 
-void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5)
+void pass1_1018_0000(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16)
 
 {
-    i16   *pi_var1;
-    i16    iVar2;
-    u32    uVar3;
-    u16    uVar4;
-    i16    iVar5;
+    let mut pi_var1: *mut i16;
+    let mut iVar2: i16;
+    let mut uVar3: u32;
+    let mut uVar4: u16;
+    let mut iVar5: i16;
     BOOL16 BVar6;
-    u16    uVar7;
-    u16    uVar8;
-    u8     local_20[0x10];
-    i16    iStack16;
+    let mut uVar7: u16;
+    let mut uVar8: u16;
+    let mut local_20: [u8;10] = [0;10];
+    let mut iStack16: i16;
 
     // Segment:    4
     // Offset:     00024460
@@ -89,18 +89,18 @@ void pass1_1018_0000(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 par
 }
 
 
-void pass1_1010_89f0(param_1: u16, param_2: u16, param_3: u16, param_4: u32, HINSTANCE16 param_5, u16 param_6)
+void pass1_1010_89f0(param_1: u16, param_2: u16, param_3: u16, param_4: u32, HINSTANCE16 param_5, param_6: u16)
 
 {
-    u16        uVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u8        *puVar4;
-    u8        *puVar5;
-    i16        iVar6;
-    u32        uVar7;
-    u32 uStack22;
-    u16        uStack8;
+    let mut uVar1: u16;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
+    let mut puVar4: *mut u8;
+    let mut puVar5: *mut u8;
+    let mut iVar6: i16;
+    let mut uVar7: u32;
+    let mut uStack22: u32;
+    let mut uStack8: u16;
 
     uVar3 = *(param_1 + 0x67c);
     uVar1 = *(param_1 + 0x67e);
@@ -149,49 +149,49 @@ void pass1_1010_89f0(param_1: u16, param_2: u16, param_3: u16, param_4: u32, HIN
     return;
 }
 
-void write_to_file_1010_6372(Struct729 *param_1, u32 param_2, u16 param_3)
+void write_to_file_1010_6372(Struct729 *param_1, param_2: u32, param_3: u16)
 
 {
     BOOL16       BVar1;
 //    Struct729 *iVar2;
 //    u16          u_var2;
-    u16          uVar3;
-    u16          uVar4;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
     u32   local_10[0x2];
-    u32   local_8;
+    let mut local_8: u32;
 
     BVar1 = write_to_file_1008_7cac(param_2, param_3);
     if(BVar1 != 0x0)
     {
 //        u_var2       = (param_1 >> 0x10);
 //        iVar2       = (Struct729 *)param_1;
-        local_10[0] = param_1->field_0xa;
+        local_10[0] = param_1.field_0xa;
         uVar3       = param_2;
         uVar4       = (param_2 >> 0x10);
         BVar1       = write_to_file_1008_7e1c(uVar3, uVar4, local_10, param_3, 0x4, SEG_1008);
         if(BVar1 != 0x0)
         {
-            local_8 = param_1->field_0xe;
+            local_8 = param_1.field_0xe;
             BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
             if(BVar1 != 0x0)
             {
-                local_8 = param_1->field_0x12;
+                local_8 = param_1.field_0x12;
                 BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                 if(BVar1 != 0x0)
                 {
-                    local_8 = param_1->field_0x16;
+                    local_8 = param_1.field_0x16;
                     BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                     if(BVar1 != 0x0)
                     {
-                        local_8 = param_1->field_0x1a_addr_offset;
+                        local_8 = param_1.field_0x1a_addr_offset;
                         BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                         if(BVar1 != 0x0)
                         {
-                            local_8 = param_1->field_0x1e;
+                            local_8 = param_1.field_0x1e;
                             BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                             if(BVar1 != 0x0)
                             {
-                                local_8 = param_1->field_0x22;
+                                local_8 = param_1.field_0x22;
                                 BVar1   = write_to_file_1008_7e1c(uVar3, uVar4, &local_8, param_3, 0x4, SEG_1008);
                                 if(BVar1 != 0x0)
                                 {
@@ -208,14 +208,14 @@ void write_to_file_1010_6372(Struct729 *param_1, u32 param_2, u16 param_3)
 }
 
 
-void pass1_1010_648a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
+void pass1_1010_648a(param_1: u32, param_2: u32, param_3: i16, param_4: u16)
 
 {
-    u16    uVar1;
-    i16    iVar2;
+    let mut uVar1: u16;
+    let mut iVar2: i16;
     BOOL16 BVar3;
-    u16    uVar4;
-    u16    uVar5;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
 
     uVar4 = param_2;
     uVar5 = (param_2 >> 0x10);
@@ -258,14 +258,14 @@ void pass1_1010_648a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     return;
 }
 
-void write_to_file_1010_6846(u32 param_1, u32 param_2, u16 param_3)
+void write_to_file_1010_6846(param_1: u32, param_2: u32, param_3: u16)
 
 {
-    u16    uVar1;
+    let mut uVar1: u16;
     BOOL16 BVar2;
-    i16    iVar3;
-    u16    uVar4;
-    u16    uVar5;
+    let mut iVar3: i16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
     u16    local_c[0x5];
 
     BVar2 = write_to_file_1008_7cac(param_2, param_3);
@@ -295,23 +295,23 @@ void write_to_file_1010_6846(u32 param_1, u32 param_2, u16 param_3)
 }
 
 
-void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4, u16 param_5)
+void pass1_1010_68c6(Struct248 *param_1, param_2: u32, param_3: u16, param_4: *mut u8, param_5: u16)
 
 {
 //    Struct248 *iVar2;
     BOOL16       BVar1;
-    i16          iVar3;
-    u16          uVar4;
-    u16          uVar5;
-    u8          *puVar6;
+    let mut iVar3: i16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
+    let mut puVar6: *mut u8;
 //    u16          uVar7;
-    u16          uVar8;
+    let mut uVar8: u16;
     SEGPTR       SVar9;
-    u16          uVar10;
+    let mut uVar10: u16;
     Struct18  *paStack18;
     Struct18  *paStack10;
-    i16          local_6;
-    u16          uStack4;
+    let mut local_6: i16;
+    let mut uStack4: u16;
 
     uVar8  = param_2;
     uVar10 = (param_2 >> 0x10);
@@ -338,7 +338,7 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4,
         do
         {
             iVar3                             = switch_1008_73ea(uVar8, uVar10, uStack4);
-            (&param_1->field_0xa + iVar3 * 0x2) = (uStack4 * 0x2 + param_3);
+            (&param_1.field_0xa + iVar3 * 0x2) = (uStack4 * 0x2 + param_3);
             uStack4                           = uStack4 + 0x1;
         } while(uStack4 < 0x81);
         fn_ptr_1000_17ce(paStack10, SEG_1000);
@@ -347,7 +347,7 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4,
     }
     else
     {
-        uVar4 = read_file_1008_7dee(uVar8, uVar10, &param_1->field_0xa, 0x0, uVar7, 0x114, SEG_1008);
+        uVar4 = read_file_1008_7dee(uVar8, uVar10, &param_1.field_0xa, 0x0, uVar7, 0x114, SEG_1008);
         if(uVar4 == 0x0)
         {
             globals.dat_1050_0310 = 0x6d2;
@@ -363,7 +363,7 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4,
         BVar1     = read_file_1008_7dee(uVar8, uVar10, uVar4, uVar5, param_4, SVar9, SEG_1008);
         if(BVar1 == 0x0)
         {
-        LAB_1010_692c:
+        // LAB_1010_692c:
             globals.dat_1050_0310 = 0x6d2;
             fn_ptr_1000_17ce((Struct18 *)(paStack18 & 0xffff | ZEXT24(param_4) << 0x10), SEG_1000);
             return;
@@ -372,14 +372,14 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4,
         do
         {
             uVar5                               = switch_1008_72bc(uVar8, uVar10, uStack4);
-            (&param_1->field_0x11e + uVar5 * 0x2) = (uStack4 * 0x2 + uVar4);
+            (&param_1.field_0x11e + uVar5 * 0x2) = (uStack4 * 0x2 + uVar4);
             uStack4                             = uStack4 + 0x1;
         } while(uStack4 < 0x15);
         fn_ptr_1000_17ce(paStack18, SEG_1000);
     }
     else
     {
-        BVar1 = read_file_1008_7dee(uVar8, uVar10, &param_1->field_0x11e, 0x0, uVar7, 0x2a, SEG_1008);
+        BVar1 = read_file_1008_7dee(uVar8, uVar10, &param_1.field_0x11e, 0x0, uVar7, 0x2a, SEG_1008);
         if(BVar1 == 0x0)
         {
             globals.dat_1050_0310 = 0x6d2;
@@ -393,17 +393,17 @@ void pass1_1010_68c6(Struct248 *param_1, u32 param_2, param_3: u16, u8 *param_4,
         return;
     }
     BVar1              = switch_1008_73ea(uVar8, uVar10, local_6);
-    param_1->field_0x148 = BVar1;
+    param_1.field_0x148 = BVar1;
     return;
 }
 
-u16 pass1_1010_5dc6(u32 param_1, u32 param_2, u16 param_3)
+u16 pass1_1010_5dc6(param_1: u32, param_2: u32, param_3: u16)
 
 {
     BOOL16 BVar1;
-    i16    iVar2;
-    u16    uVar3;
-    u16    uVar4;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
     u8    *local_c[0x3];
     u16    local_6[0x2];
 
@@ -438,18 +438,18 @@ u16 pass1_1010_5dc6(u32 param_1, u32 param_2, u16 param_3)
 }
 
 
-void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 param_5)
+void pass1_1010_5e56(param_1: u32, param_2: u32, param_3: i16, param_4: u16, param_5: u16)
 
 {
-    u8    *puVar1;
-    u16    u_var2;
+    let mut puVar1: *mut u8;
+    let mut u_var2: u16;
     BOOL16 BVar3;
-    i16    iVar4;
-    u16    uVar5;
-    u16    uVar6;
-    u16    uVar7;
-    u8    *local_404;
-    u8     local_402[0x400];
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut local_404: *mut u8;
+    let mut local_402: [u8;400] = [0;400];
 
     uVar6 = param_2;
     uVar7 = (param_2 >> 0x10);
@@ -497,13 +497,13 @@ void pass1_1010_5e56(u32 param_1, u32 param_2, i16 param_3, u16 param_4, u16 par
     return;
 }
 
-void find_n_load_rsrc_1010_4e9e(u32 param_1, HGLOBAL16 param_2)
+void find_n_load_rsrc_1010_4e9e(param_1: u32, HGLOBAL16 param_2)
 
 {
     BOOL16    BVar1;
     HRSRC16   h_rsrc;
-    i16       iVar2;
-    u16       uVar3;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
     HGLOBAL16 HVar3;
 
     uVar3 = (param_1 >> 0x10);
@@ -533,15 +533,15 @@ void find_n_load_rsrc_1010_4e9e(u32 param_1, HGLOBAL16 param_2)
     return;
 }
 
-void pass1_1010_404a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
+void pass1_1010_404a(param_1: u32, param_2: u32, param_3: i16, param_4: u16)
 
 {
-    u16    uVar1;
-    i16    iVar2;
+    let mut uVar1: u16;
+    let mut iVar2: i16;
     BOOL16 BVar3;
-    u16    uVar4;
-    u16    uVar5;
-    u16    local_4;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
+    let mut local_4: u16;
 
     uVar4 = param_2;
     uVar5 = (param_2 >> 0x10);
@@ -573,25 +573,25 @@ void pass1_1010_404a(u32 param_1, u32 param_2, i16 param_3, u16 param_4)
     return;
 }
 
-void pass1_1010_0ad2(u32 param_1, u32 param_2, u16 param_3)
+void pass1_1010_0ad2(param_1: u32, param_2: u32, param_3: u16)
 
 {
-    u32 uVar1;
+    let mut uVar1: u32;
     BOOL16     BVar2;
-    u8        *puVar3;
-    u16        extraout_DX;
-    i16        iVar4;
-    u16        uVar5;
-    u16        uVar6;
-    u16        uVar7;
+    let mut puVar3: *mut u8;
+    let mut extraout_DX: u16;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
     u32 local_2a[0x2];
     u16        local_22[0x2];
     u16        local_1e[0x3];
     u16        local_18[0x3];
-    u32 uStack18;
-    u8         local_e[0x8];
-    u16        u_stack6;
-    i16        iStack4;
+    let mut uStack18: u32;
+    let mut local_e: [u8;8] = [0;8];
+    let mut u_stack6: u16;
+    let mut iStack4: i16;
 
     BVar2 = write_to_file_1008_7cac(param_2, param_3);
     if(BVar2 == 0x0)
@@ -703,23 +703,23 @@ void file_1010_0c7c(Globals   *globals,
 
 {
     u32  *puVar1;
-    void **ppcVar2;
+    let mut ppcVar2: *mut *mut c_void;
     BOOL16       BVar3;
     Struct229 *uVar4;
 //    u16          uVar5;
-    u8          *extraout_DX;
+    let mut extraout_DX: *mut u8;
 //    Struct228 *iVar6;
-    u16          uVar6;
-    u16          uVar7;
-    u16          uVar8;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut uVar8: u16;
     u16          local_2a[0x2];
-    u16          uStack38;
+    let mut uStack38: u16;
     u32  *puStack26;
     u32  *puStack22;
     u16          local_12[0x5];
     Struct229 *paStack8;
     Struct229 *local_6;
-    u16          uStack4;
+    let mut uStack4: u16;
 
     uVar7 = param_2;
     uVar8 = (param_2 >> 0x10);
@@ -750,9 +750,9 @@ void file_1010_0c7c(Globals   *globals,
                 else
                 {
                     puStack26        = addr_table_1008_380a[36];//0x389a;
-                    uVar4->field_0x2 = SEG_1008;
+                    uVar4.field_0x2 = SEG_1008;
                     puStack26        = addr_table_1010_0e98[4]; //0x0ea8;
-                    uVar4->field_0x2 = SEG_1010;
+                    uVar4.field_0x2 = SEG_1010;
                     puStack22        = puStack26;
                 }
                 BVar3 = read_file_1008_7dee(uVar7, uVar8, local_12, 0x0, param_5, 0x2, SEG_1008);
@@ -768,14 +768,14 @@ void file_1010_0c7c(Globals   *globals,
                 }
                 uVar6             = (puStack22 >> 0x10);
                 (puStack22 + 0x4) = local_12[0];
-                puVar1            = param_1->field_0xa;
-                ppcVar2           = (*param_1->field_0xa + 0x8);
+                puVar1            = param_1.field_0xa;
+                ppcVar2           = (*param_1.field_0xa + 0x8);
                 (**ppcVar2)(0x8, puVar1, (puVar1 >> 0x10), puStack22, uVar6);
-                paStack8 = (Struct229 *)&paStack8->field_0x1;
+                paStack8 = (Struct229 *)&paStack8.field_0x1;
                 param_4  = extraout_DX;
             }
-            BVar3 = read_file_1008_7dee(uVar7, uVar8, &param_1->field_0xe, 0x0, uVar5, 0x2, SEG_1008);
-            if((BVar3 != 0x0) && (BVar3 = read_file_1008_7dee(uVar7, uVar8, &param_1->field_0x10, 0x0, uVar5, 0x2, SEG_1008), BVar3 != 0x0))
+            BVar3 = read_file_1008_7dee(uVar7, uVar8, &param_1.field_0xe, 0x0, uVar5, 0x2, SEG_1008);
+            if((BVar3 != 0x0) && (BVar3 = read_file_1008_7dee(uVar7, uVar8, &param_1.field_0x10, 0x0, uVar5, 0x2, SEG_1008), BVar3 != 0x0))
             {
                 for(uStack4 = 0x0; uStack4 < 0xa; uStack4 = uStack4 + 0x1)
                 {
@@ -805,30 +805,30 @@ void file_1010_0c7c(Globals   *globals,
                 return;
             }
         }
-    LAB_1010_0cb1:
+    // LAB_1010_0cb1:
         globals.dat_1050_0310 = 0x6d2;
     }
 }
 
-void pass1_1008_e5da(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
+void pass1_1008_e5da(param_1: u32, param_2: u32, HFILE16 param_3, param_4: u16)
 
 {
-    u32 uVar1;
+    let mut uVar1: u32;
     BOOL16     BVar2;
-    u8        *puVar3;
-    u16        extraout_DX;
-    i16        iVar4;
-    u16        uVar5;
-    u16        uVar6;
-    u16        uVar7;
+    let mut puVar3: *mut u8;
+    let mut extraout_DX: u16;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
     u32 local_30[0x2];
-    u32 local_28;
+    let mut local_28: u32;
     u32 local_24[0x2];
     u16        local_1c[0x3];
     u16        local_16[0x3];
-    u32 uStack16;
-    u8         local_c[0x8];
-    u16        uStack4;
+    let mut uStack16: u32;
+    let mut local_c: [u8;8] = [0;8];
+    let mut uStack4: u16;
 
     BVar2 = write_to_file_1008_7cac(param_2, param_4);
     if(BVar2 != 0x0)
@@ -886,23 +886,23 @@ void pass1_1008_e5da(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
 }
 
 
-void file_1008_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 param_5, u16 param_6)
+void file_1008_e70e(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8, param_5: u16, param_6: u16)
 
 {
-    u32  uVar1;
-    void **ppcVar2;
+    let mut uVar1: u32;
+    let mut ppcVar2: *mut *mut c_void;
     BOOL16      BVar3;
-    u16         uVar4;
-    u8         *extraout_DX;
-    u16         uVar5;
-    u16         uVar6;
-    u16         uVar7;
-    u16         uVar8;
-    u16         uVar9;
+    let mut uVar4: u16;
+    let mut extraout_DX: *mut u8;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut uVar8: u16;
+    let mut uVar9: u16;
     u16         local_12[0x2];
     u32 *puStack14;
-    u16         uStack10;
-    u16         local_4;
+    let mut uStack10: u16;
+    let mut local_4: u16;
 
     if(globals.dat_1050_0312 < 0x2)
     {
@@ -967,7 +967,7 @@ void file_1008_e70e(u32 param_1, u32 param_2, i16 param_3, u8 *param_4, u16 para
     return;
 }
 
-void pass1_1008_c98e(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
+void pass1_1008_c98e(param_1: u32, param_2: u32, HFILE16 param_3, param_4: u16)
 
 {
     BOOL16     BVar1;
@@ -988,12 +988,12 @@ void pass1_1008_c98e(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
 }
 
 
-void pass1_1008_c9d4(u32 param_1, u32 param_2, i16 param_3, u16 param_4, longlong param_5)
+void pass1_1008_c9d4(param_1: u32, param_2: u32, param_3: i16, param_4: u16, longlong param_5)
 
 {
     BOOL16  BVar1;
-    u16 unaff_SS;
-    u16     u_var2;
+    let mut unaff_SS: u16;
+    let mut u_var2: u16;
 
     if(0x1 < globals.PTR_LOOP_1050_0312)
     {
@@ -1014,22 +1014,22 @@ void pass1_1008_c9d4(u32 param_1, u32 param_2, i16 param_3, u16 param_4, longlon
     return;
 }
 
-void pass1_1008_ba38(u32 param_1, u32 param_2, HFILE16 param_3, u16 param_4)
+void pass1_1008_ba38(param_1: u32, param_2: u32, HFILE16 param_3, param_4: u16)
 
 {
-    u32 uVar1;
+    let mut uVar1: u32;
     BOOL16     BVar2;
-    u8        *puVar3;
-    u16        extraout_DX;
-    i16        iVar4;
-    u16        uVar5;
-    u16        uVar6;
-    u16        uVar7;
+    let mut puVar3: *mut u8;
+    let mut extraout_DX: u16;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
     u32 local_2a[0x3];
     u16        local_1e[0x5];
-    u8         local_14[0x8];
-    u16        local_c;
-    u32 uStack10;
+    let mut local_14: [u8;8] = [0;8];
+    let mut local_c: u16;
+    let mut uStack10: u32;
     u16        local_6[0x2];
 
     BVar2 = write_to_file_1008_7cac(param_2, param_4);
@@ -1097,31 +1097,31 @@ void file_1008_bb5e(Globals   *globals,
                     u16        param_6)
 
 {
-    void **ppcVar1;
+    let mut ppcVar1: *mut *mut c_void;
 //    u16          u_var2;
 //    Struct199 *iVar3;
     BOOL16       BVar3;
-    u16          uVar5;
+    let mut uVar5: u16;
     Struct200 *uVar4;
-    u8          *puVar6;
-    u16          uVar7;
-    u8          *extraout_DX;
-    u8          *puVar8;
-    u16          uVar9;
-    u16          uVar10;
-    u8          *extraout_DX_00;
-    u16          extraout_DX_01;
-    u16          uVar11;
-    u16          uVar12;
-    u16          uVar13;
-    u16          uVar14;
+    let mut puVar6: *mut u8;
+    let mut uVar7: u16;
+    let mut extraout_DX: *mut u8;
+    let mut puVar8: *mut u8;
+    let mut uVar9: u16;
+    let mut uVar10: u16;
+    let mut extraout_DX_00: *mut u8;
+    let mut extraout_DX_01: u16;
+    let mut uVar11: u16;
+    let mut uVar12: u16;
+    let mut uVar13: u16;
+    let mut uVar14: u16;
     Struct200 *paStack286;
     u32  *puStack284;
-    u8           local_118[0x100];
+    let mut local_118: [u8;100] = [0;100];
     u16          local_18[0x2];
     u16          local_14[0x2];
     Struct200 *local_10[0x4];
-    u32   local_8;
+    let mut local_8: u32;
 
     if(globals.dat_1050_0312 < 0x2)
     {
@@ -1137,7 +1137,7 @@ void file_1008_bb5e(Globals   *globals,
     else
     {
 //        iVar3 = (Struct199 *)param_1;
-        param_1 = (Struct199 *)&param_1->field_0x22;
+        param_1 = (Struct199 *)&param_1.field_0x22;
 //        u_var2 = (param_1 >> 0x10);
         BVar3 = read_file_1008_7dee(uVar11, uVar12, param_1, 0x0, u_var2, 0x2, param_5);
         if((BVar3 != 0x0) && (uVar5 = read_file_1008_7dee(uVar11, uVar12, local_10, 0x0, param_6, 0x2, param_5), uVar5 != 0x0))
@@ -1158,8 +1158,8 @@ void file_1008_bb5e(Globals   *globals,
                 set_struct_1008_574a(str_var1(param_4, uVar5));
                 puVar8 = extraout_DX;
             }
-            *&param_1->field_0xa        = uVar5;
-            (&param_1->field_0xa + 0x2) = puVar8;
+            *&param_1.field_0xa        = uVar5;
+            (&param_1.field_0xa + 0x2) = puVar8;
             paStack286                = (Struct200 *)0x0;
             while(true)
             {
@@ -1188,14 +1188,14 @@ void file_1008_bb5e(Globals   *globals,
                    || (BVar3 = read_file_1008_7dee(uVar11, uVar12, local_18, 0x0, param_6, 0x2, SEG_1000), BVar3 == 0x0))
                     break;
                 uVar7            = str_op_1008_60e8(str_var1(param_6, local_118));
-                uVar4->field_0x4 = uVar7;
-                uVar4->field_0x6 = uVar10;
-                uVar4->field_0x8 = local_14[0];
-                uVar4->field_0xa = local_8;
-                uVar4->field_0xe = local_18[0];
-                ppcVar1          = (*param_1->field_0xa + 0x8);
+                uVar4.field_0x4 = uVar7;
+                uVar4.field_0x6 = uVar10;
+                uVar4.field_0x8 = local_14[0];
+                uVar4.field_0xa = local_8;
+                uVar4.field_0xe = local_18[0];
+                ppcVar1          = (*param_1.field_0xa + 0x8);
                 (**ppcVar1)();
-                paStack286 = (Struct200 *)&paStack286->field_0x1;
+                paStack286 = (Struct200 *)&paStack286.field_0x1;
                 puVar8     = extraout_DX_00;
             }
             if(puStack284 != 0x0)
@@ -1208,21 +1208,21 @@ void file_1008_bb5e(Globals   *globals,
     }
 }
 
-void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
+void file_1008_7548(param_1: u32, long *param_2, HFILE16 param_3, param_4: u16)
 
 {
-    void **ppcVar1;
-    u16        u_var2;
+    let mut ppcVar1: *mut *mut c_void;
+    let mut u_var2: u16;
     BOOL16     BVar3;
-    u16        uVar4;
-    u32        uVar5;
-    u16        uVar6;
-    u16        uVar7;
-    u32 local_1c;
+    let mut uVar4: u16;
+    let mut uVar5: u32;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut local_1c: u32;
     u16        local_18[0x5];
-    u32        uStack14;
-    u32        uStack10;
-    u32 local_6;
+    let mut uStack14: u32;
+    let mut uStack10: u32;
+    let mut local_6: u32;
 
     local_6 = 0x0;
     uVar7   = param_1;
@@ -1280,17 +1280,17 @@ void file_1008_7548(u32 param_1, long *param_2, HFILE16 param_3, u16 param_4)
 }
 
 
-void file_1008_76e4(u32 param_1, long *param_2, param_3: u16, u16 param_4, u16 param_5)
+void file_1008_76e4(param_1: u32, long *param_2, param_3: u16, param_4: u16, param_5: u16)
 
 {
-    void **ppcVar1;
-    u16    u_var2;
+    let mut ppcVar1: *mut *mut c_void;
+    let mut u_var2: u16;
     BOOL16 BVar3;
-    u16    extraout_DX;
-    u16    uVar4;
-    u8     local_18[0xe];
-    u32    uStack10;
-    u32    local_6;
+    let mut extraout_DX: u16;
+    let mut uVar4: u16;
+    let mut local_18: [u8;e] = [0;e];
+    let mut uStack10: u32;
+    let mut local_6: u32;
 
     local_6 = 0x0;
     uVar4   = (param_1 >> 0x10);
@@ -1336,20 +1336,20 @@ void file_1008_76e4(u32 param_1, long *param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16 param_5)
+u16 file_1008_77cc(param_1: u32, long *param_2, param_3: *mut u8, HFILE16 param_4, param_5: u16)
 
 {
-    u16        uVar1;
+    let mut uVar1: u16;
     BOOL16     BVar2;
-    u16        uVar3;
-    u16        unaff_SI;
-    u16        unaff_DI;
-    u16        uVar4;
-    u16        uVar5;
+    let mut uVar3: u16;
+    let mut unaff_SI: u16;
+    let mut unaff_DI: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
     u16        local_14[0x2];
     u32 local_10[0x2];
-    u16        u_stack6;
-    u16        local_4;
+    let mut u_stack6: u16;
+    let mut local_4: u16;
 
     local_4 = 0x0;
     uVar4   = param_1;
@@ -1399,21 +1399,21 @@ u16 file_1008_77cc(u32 param_1, long *param_2, u8 *param_3, HFILE16 param_4, u16
 }
 
 
-void  pass1_1008_7898(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, HFILE16 param_5, u16 param_6)
+void  pass1_1008_7898(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, HFILE16 param_5, param_6: u16)
 
 {
-    void **ppcVar1;
+    let mut ppcVar1: *mut *mut c_void;
     BOOL16     BVar2;
-    u16        extraout_DX;
-    u16        uVar3;
-    u16        uVar4;
-    u16        uVar5;
-    u16        local_26;
+    let mut extraout_DX: u16;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
+    let mut local_26: u16;
     u32 local_24[0x3];
-    u32 local_18;
+    let mut local_18: u32;
     u16        local_14[0x5];
-    u32        uStack10;
-    u32        u_stack6;
+    let mut uStack10: u32;
+    let mut u_stack6: u32;
 
     if(param_2 == 0x0)
     {
@@ -1462,22 +1462,22 @@ void  pass1_1008_7898(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, HFIL
 }
 
 
-u16  write_to_file_1008_7954(u32 param_1, u32 *param_2, param_3: u16, HFILE16 param_4, u16 param_5)
+u16  write_to_file_1008_7954(param_1: u32, param_2: *mut u32, param_3: u16, HFILE16 param_4, param_5: u16)
 
 {
-    void **ppcVar1;
+    let mut ppcVar1: *mut *mut c_void;
     BOOL16  BVar2;
-    u32     uVar3;
-    u16 extraout_DX;
-    u16 uVar4;
-    u16 extraout_DX_00;
-    u16     uVar5;
-    u16 local_20;
-    u16 uStack30;
-    u16 local_18;
-    u16 uStack22;
-    u32     uStack10;
-    u32     u_stack6;
+    let mut uVar3: u32;
+    let mut extraout_DX: u16;
+    let mut uVar4: u16;
+    let mut extraout_DX_00: u16;
+    let mut uVar5: u16;
+    let mut local_20: u16;
+    let mut uStack30: u16;
+    let mut local_18: u16;
+    let mut uStack22: u16;
+    let mut uStack10: u32;
+    let mut u_stack6: u32;
 
     if(param_2 == 0x0)
     {
@@ -1507,7 +1507,7 @@ u16  write_to_file_1008_7954(u32 param_1, u32 *param_2, param_3: u16, HFILE16 pa
             ppcVar1 = (*param_2 + 0x4);
             uVar3   = u_stack6;
             (**ppcVar1)();
-            local_20 = (u16)uVar3;
+            local_20 = uVar3;
             uVar4    = extraout_DX_00;
             uStack30 = extraout_DX_00;
             local_18 = local_20;
@@ -1523,12 +1523,12 @@ u16  write_to_file_1008_7954(u32 param_1, u32 *param_2, param_3: u16, HFILE16 pa
 }
 
 
-void pass1_1008_79f0(u32 param_1, long param_2, HFILE16 param_3, u16 param_4)
+void pass1_1008_79f0(param_1: u32, long param_2, HFILE16 param_3, param_4: u16)
 
 {
-    u16 uVar1;
-    u16     u_var2;
-    u16     uStack4;
+    let mut uVar1: u16;
+    let mut u_var2: u16;
+    let mut uStack4: u16;
 
     if(param_2 == 0x0)
     {
@@ -1546,19 +1546,19 @@ void pass1_1008_79f0(u32 param_1, long param_2, HFILE16 param_3, u16 param_4)
 }
 
 
-void write_to_file_1008_7a22(u32 param_1, long param_2, HFILE16 param_3, u16 param_4)
+void write_to_file_1008_7a22(param_1: u32, long param_2, HFILE16 param_3, param_4: u16)
 
 {
     BOOL16     BVar1;
-    u16        u_var2;
-    u16        uVar3;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
     u32 local_24[0x2];
     u16        local_1c[0x5];
-    u16        local_12;
-    u32 local_10;
-    u16        uStack10;
-    u16        u_stack6;
-    u16        uStack4;
+    let mut local_12: u16;
+    let mut local_10: u32;
+    let mut uStack10: u16;
+    let mut u_stack6: u16;
+    let mut uStack4: u16;
 
     if(param_2 == 0x0)
     {
@@ -1606,16 +1606,16 @@ void write_to_file_1008_7a22(u32 param_1, long param_2, HFILE16 param_3, u16 par
 }
 
 
-u16 pass1_1008_7ad4(u32 param_1, long *param_2, param_3: u16, HFILE16 param_4, u16 param_5)
+u16 pass1_1008_7ad4(param_1: u32, long *param_2, param_3: u16, HFILE16 param_4, param_5: u16)
 
 {
     BOOL16     BVar1;
-    u16        u_var2;
-    u16        uVar3;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
     u16        local_14[0x2];
     u32 local_10[0x2];
-    u16        u_stack6;
-    u16        local_4;
+    let mut u_stack6: u16;
+    let mut local_4: u16;
 
     u_var2 = param_1;
     uVar3 = (param_1 >> 0x10);
@@ -1642,17 +1642,17 @@ u16 pass1_1008_7ad4(u32 param_1, long *param_2, param_3: u16, HFILE16 param_4, u
 }
 
 
-u16 write_to_file_1008_7b4c(u32 param_1, u16 *param_2, HFILE16 param_3, u16 param_4)
+u16 write_to_file_1008_7b4c(param_1: u32, u16 *param_2, HFILE16 param_3, param_4: u16)
 
 {
     BOOL16 BVar1;
-    u16    u_var2;
-    u16    uVar3;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
     u16    local_12[0x3];
     u16    local_c[0x2];
-    u16    local_8;
-    u16    local_6;
-    u16    local_4;
+    let mut local_8: u16;
+    let mut local_6: u16;
+    let mut local_4: u16;
 
     pass1_1008_3eb4(param_2,
                     str_var1(param_4, &local_8),
@@ -1680,14 +1680,14 @@ u16 write_to_file_1008_7b4c(u32 param_1, u16 *param_2, HFILE16 param_3, u16 para
 }
 
 
-BOOL16 read_file_1008_7bc8(u32 param_1, u16 *param_2, HFILE16 param_3, u16 param_4)
+BOOL16 read_file_1008_7bc8(param_1: u32, u16 *param_2, HFILE16 param_3, param_4: u16)
 
 {
     BOOL16     BVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u16        local_8;
-    u32 local_6;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
+    let mut local_8: u16;
+    let mut local_6: u32;
 
     u_var2 = param_1;
     uVar3 = (param_1 >> 0x10);
@@ -1712,7 +1712,7 @@ BOOL16 read_file_1008_7bc8(u32 param_1, u16 *param_2, HFILE16 param_3, u16 param
 void read_file_1008_7c6e(param_1: u16, param_2: u16, char *param_3, HFILE16 param_4)
 
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
     char  local_c[0xa];
 
     while(true)
@@ -1732,14 +1732,14 @@ void read_file_1008_7c6e(param_1: u16, param_2: u16, char *param_3, HFILE16 para
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-BOOL16 write_to_file_1008_7cac(u32 param_1, u16 param_2)
+BOOL16 write_to_file_1008_7cac(param_1: u32, param_2: u16)
 
 {
-    u16        uVar1;
+    let mut uVar1: u16;
     BOOL16     BVar2;
-    u16        unaff_ES;
+    let mut unaff_ES: u16;
     undefined1 in_AF;
-    u8         local_c[0xa];
+    let mut local_c: [u8;a] = [0;a];
 
     sys_1000_3f9c(local_c,
                   param_2,
@@ -1764,25 +1764,25 @@ BOOL16 write_to_file_1008_7cac(u32 param_1, u16 param_2)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16, u16 param_4, u16 param_5)
+void  read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16)
 
 {
     bool       bVar1;
-    u16        u_var2;
+    let mut u_var2: u16;
     u8         in_AF;
     long       lVar3;
-    u16        in_stack_0000fbd2;
-    u16    in_stack_0000fbd4;
-    u32 uStack1040;
+    let mut in_stack_0000fbd2: u16;
+    let mut in_stack_0000fbd4: u16;
+    let mut uStack1040: u32;
     char       local_406[0x400];
-    u32 u_stack6;
+    let mut u_stack6: u32;
 
     u_stack6 = 0x0;
     bVar1   = false;
     do
     {
-        _llseek16(param_4, u_stack6 << 0x10, (u16)(u_stack6 >> 0x10));
-        param_4 = (u16)LAST_SEGMENT;
+        _llseek16(param_4, u_stack6 << 0x10, (u_stack6 >> 0x10));
+        param_4 = LAST_SEGMENT;
         lVar3   = WIN16_hread((HFILE16)LAST_SEGMENT, 0x400, ZEXT24(local_406) << 0x10);
         for(uStack1040 = 0x0; uStack1040 < lVar3; uStack1040 = uStack1040 + 0x1)
         {
@@ -1800,7 +1800,7 @@ void  read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16, u16 param_4,
                 if(u_var2 != 0x0)
                 {
                     lVar3 = uStack1040 + u_stack6 + 0x7;
-                    _llseek16((HFILE16)LAST_SEGMENT, lVar3 * 0x10000, (u16)(lVar3 >> 0x10));
+                    _llseek16((HFILE16)LAST_SEGMENT, lVar3 * 0x10000, (lVar3 >> 0x10));
                     return;
                 }
             }
@@ -1818,7 +1818,7 @@ void  read_file_1008_7cfe(param_1: u16, param_2: u16, param_3: u16, u16 param_4,
 }
 
 
-BOOL16  read_file_1008_7dee(param_1: u16, param_2: u16, param_3: u16, u16 param_4, u16 param_5, SEGPTR param_6, HFILE16 param_7)
+BOOL16  read_file_1008_7dee(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16, SEGPTR param_6, HFILE16 param_7)
 
 {
     long lVar1;
@@ -1832,10 +1832,10 @@ BOOL16  read_file_1008_7dee(param_1: u16, param_2: u16, param_3: u16, u16 param_
 }
 
 
-BOOL16  write_to_file_1008_7e1c(param_1: u16, param_2: u16, param_3: u16, u16 param_4, char *buf_to_write, HFILE16 file_handle)
+BOOL16  write_to_file_1008_7e1c(param_1: u16, param_2: u16, param_3: u16, param_4: u16, char *buf_to_write, HFILE16 file_handle)
 
 {
-    char *pcVar1;
+    let mut pcVar1: *mut c_char;
 
     pcVar1 = _hwrite16(file_handle, buf_to_write, str_var1(param_3, (buf_to_write >> 0x10)));
     if(pcVar1 != buf_to_write)
@@ -1846,10 +1846,10 @@ BOOL16  write_to_file_1008_7e1c(param_1: u16, param_2: u16, param_3: u16, u16 pa
 }
 
 
-void close_file_1008_6dd0(u32 *param_1, HFILE16 param_2)
+void close_file_1008_6dd0(param_1: *mut u32, HFILE16 param_2)
 
 {
-    u16 uVar1;
+    let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
     if((param_1 + 0x4) != -0x1)
@@ -1862,15 +1862,15 @@ void close_file_1008_6dd0(u32 *param_1, HFILE16 param_2)
 }
 
 
-BOOL16 file_fn_1008_6e02(u32 *param_1, LPCSTR in_string, u16 param_3)
+BOOL16 file_fn_1008_6e02(param_1: *mut u32, LPCSTR in_string, param_3: u16)
 
 {
-    i16    var1;
+    let mut var1: i16;
     BOOL16 var2;
-    u8    *extraout_DX;
-    i16    unaff_DI;
-    u16    uVar1;
-    u8     local_4[0x2];
+    let mut extraout_DX: *mut u8;
+    let mut unaff_DI: i16;
+    let mut uVar1: u16;
+    let mut local_4: [u8;2] = [0;2];
 
     globals.dat_1050_0310 = 0x0;
     var1               = write_to_file_1008_70a6(param_1, in_string);
@@ -1894,15 +1894,15 @@ BOOL16 file_fn_1008_6e02(u32 *param_1, LPCSTR in_string, u16 param_3)
 }
 
 
-BOOL16 read_file_1008_6e78(u32 param_1, param_2: u16, char *in_string, u16 param_4)
+BOOL16 read_file_1008_6e78(param_1: u32, param_2: u16, char *in_string, param_4: u16)
 
 {
     BOOL16 b_var1;
-    i16    i_var2;
-    u8    *var3;
-    u8    *extraout_DX;
-    i16    unaff_DI;
-    u8     local_4[0x2];
+    let mut i_var2: i16;
+    let mut var3: *mut u8;
+    let mut extraout_DX: *mut u8;
+    let mut unaff_DI: i16;
+    let mut local_4: [u8;2] = [0;2];
 
     globals.dat_1050_0310 = 0x0;
     b_var1             = read_file_1008_7146(param_1, param_2, in_string, param_4);
@@ -1936,12 +1936,12 @@ void file_fn_1008_6eee(param_1: u16, param_2: u16, param_3: u32)
 
 {
     BOOL16      BVar1;
-    u16         u_var2;
-    u8         *in_DX;
-    u16         unaff_SS;
-    u32  uVar3;
-    u8          local_e[0x4];
-    u32  uStack10;
+    let mut u_var2: u16;
+    let mut in_DX: *mut u8;
+    let mut unaff_SS: u16;
+    let mut uVar3: u32;
+    let mut local_e: [u8;4] = [0;4];
+    let mut uStack10: u32;
     u32 *pu_stack6;
 
     pu_stack6 = *_PTR_LOOP_1050_5748;
@@ -1974,24 +1974,24 @@ void file_fn_1008_6eee(param_1: u16, param_2: u16, param_3: u32)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void read_file_1008_6f7a(param_1: u16, param_2: u16, u32 param_3, u16 param_4)
+void read_file_1008_6f7a(param_1: u16, param_2: u16, param_3: u32, param_4: u16)
 
 {
-    u16     var5;
-    i16         i_var3;
+    let mut var5: u16;
+    let mut i_var3: i16;
     BOOL16      b_var4;
-    u8         *in_DX;
-    u16     uVar1;
-    u16        *pu_var2;
-    u8          local_e[0x4];
-    u32  uStack10;
+    let mut in_DX: *mut u8;
+    let mut uVar1: u16;
+    let mut pu_var2: *mut u16;
+    let mut local_e: [u8;4] = [0;4];
+    let mut uStack10: u32;
     u32 *pu_stack6;
 
     pu_stack6 = *_PTR_LOOP_1050_5748;
     uStack10 = *pu_stack6;
     pu_var2   = pass1_1020_a43e(param_4, in_DX, str_var1(param_4, local_e));
-    uVar1    = (u16)(pu_var2 >> 0x10);
-    var5     = read_file_1028_d7ba(uStack10, (uStack10 >> 0x10), param_3, param_4, (u16)pu_var2);
+    uVar1    = (pu_var2 >> 0x10);
+    var5     = read_file_1028_d7ba(uStack10, (uStack10 >> 0x10), param_3, param_4, pu_var2);
     if(var5 != 0x0)
     {
         var5 = read_file_1030_5c52(globals._PTR_LOOP_1050_5736, param_3, var5, param_4);
@@ -2004,7 +2004,7 @@ void read_file_1008_6f7a(param_1: u16, param_2: u16, u32 param_3, u16 param_4)
                 if(i_var3 != 0x0)
                 {
                     b_var4 = read_file_1020_a65e(
-                      str_var1(param_4, local_e), param_3, param_4, (u16)local_e);
+                      str_var1(param_4, local_e), param_3, param_4, local_e);
                     if(b_var4 != 0x0)
                     {
                         return;
@@ -2016,14 +2016,14 @@ void read_file_1008_6f7a(param_1: u16, param_2: u16, u32 param_3, u16 param_4)
     return;
 }
 
-u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
+u16 write_to_file_1008_70a6(param_1: *mut u32, LPCSTR param_2)
 
 {
     HFILE16 HVar1;
-    i16     iVar2;
-    u16     uVar3;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
     LPCSTR  pCVar4;
-    u16     unaff_SS;
+    let mut unaff_SS: u16;
     u8      in_AF;
     long    lVar5;
 
@@ -2066,11 +2066,11 @@ u16 write_to_file_1008_70a6(u32 *param_1, LPCSTR param_2)
 }
 
 
-BOOL16 read_file_1008_7146(i16 param_1, param_2: u16, LPCSTR param_3, u16 param_4)
+BOOL16 read_file_1008_7146(param_1: i16, param_2: u16, LPCSTR param_3, param_4: u16)
 
 {
     HFILE16 HVar1;
-    i16     iVar2;
+    let mut iVar2: i16;
     LPCSTR  path;
 
     path = param_3;
@@ -2101,19 +2101,19 @@ BOOL16 read_file_1008_7146(i16 param_1, param_2: u16, LPCSTR param_3, u16 param_
 // WARNING: Removing unreachable block (ram,SEG_100871e6)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 read_file_1008_71a0(u32 param_1, u16 param_2)
+u16 read_file_1008_71a0(param_1: u32, param_2: u16)
 
 {
-    u16  buffer;
-    u16  uVar1;
+    let mut buffer: u16;
+    let mut uVar1: u16;
     u8   in_AF;
     long lVar2;
-    i16  iStack26;
-    i16  iStack24;
-    i16  iStack22;
+    let mut iStack26: i16;
+    let mut iStack24: i16;
+    let mut iStack22: i16;
     char local_e[0x9];
     u8   uStack5;
-    u16  uStack4;
+    let mut uStack4: u16;
 
     uStack4  = 0x1;
     buffer   = str_op_1000_3da4(0x105065a0);
@@ -2166,7 +2166,7 @@ u16 read_file_1008_71a0(u32 param_1, u16 param_2)
 }
 
 
-BOOL16 file_fn_1008_726c(u32 param_1, param_2: u16, HFILE16 file_handle)
+BOOL16 file_fn_1008_726c(param_1: u32, param_2: u16, HFILE16 file_handle)
 
 {
     HFILE16 HVar1;

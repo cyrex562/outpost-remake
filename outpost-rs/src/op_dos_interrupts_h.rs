@@ -53,7 +53,7 @@ typedef void(*DosInt21SetDiskTransferAddress(void* disk_transfer_address));
 //    - retrieves system date based on the DOS maintained clock
 //    - updates BIOS Data Area current date and date rollover flag
 //        at location 40:70
-typedef void (*DosInt21GetDate)(u16);
+typedef void (*DosInt21GetDate);
 
 // Get Time
 //
@@ -171,7 +171,7 @@ static int DOS_INT_21_45H = 0x45;
 //
 //
 //	- see also  INT 27   INT 21,31
-typedef void (*DosInt21TerminateProcWithRetCode)(u16);
+typedef void (*DosInt21TerminateProcWithRetCode);
 
 
 typedef void (*DosInt21DuplicateFileHandle)();
@@ -224,7 +224,7 @@ typedef void (*DosInt21GetInterruptVector)(void*);
 //	  match the requested attributes.
 //	- bit 8 of CX (file attributes) indicates Novell Netware shareable
 //	- see	INT 21,1A
-typedef u16(*DosInt21FindFirstMatchingFile)(u16 file_attributes, char* filespec, void** disk_transfer_address);
+typedef u16(*DosInt21FindFirstMatchingFile)(file_attributes: u16, char* filespec, void** disk_transfer_address);
 
 // AH = 39h
 //	DS:DX = pointer to ASCIIZ path name
@@ -284,7 +284,7 @@ typedef u16(*DosInt21DeleteFile)(char* filename);
 // on return
 // AX = error code if CF set  (see DOS ERROR CODES)
 // - flushes DOS buffers to disk, does not update directory entry
-typedef u16(*DosInt21FlushBufferUsingHandle)(u16 file_handle);
+typedef u16(*DosInt21FlushBufferUsingHandle)(file_handle: u16);
 
 // Close File Using Handle
 // AH = 3E
@@ -298,7 +298,7 @@ typedef u16(*DosInt21FlushBufferUsingHandle)(u16 file_handle);
 //	- if file is opened for update, file time and date stamp
 //	  as well as file size are updated in the directory
 //	- handle is freed
-typedef u16(*DosInt21ClosFileUsingHandle)(u16 file_handle);
+typedef u16(*DosInt21ClosFileUsingHandle)(file_handle: u16);
 
 // AH = 16h
 //	DS:DX = pointer to an unopened FCB
@@ -359,7 +359,7 @@ typedef void(*DosInt21PrintString)(char* StringPointer);
 
 // - will open normal, hidden and system files
 // - file pointer is placed at beginning of file
-typedef u16(*DosInt21OpenFileUsingHandle2)(u8 mode, char* filename);
+typedef u16(*DosInt21OpenFileUsingHandle2)(mode: u8, char* filename);
 
 // int21,3c - create file using handle
 // AH = 3C
@@ -375,7 +375,7 @@ typedef u16(*DosInt21OpenFileUsingHandle2)(u8 mode, char* filename);
 //
 //
 //	- if file already exists, it is truncated to zero bytes on opening
-typedef u16(*DosInt21CreateFileWithHandle)(u16 file_attrib, char* path_name);
+typedef u16(*DosInt21CreateFileWithHandle)(file_attrib: u16, char* path_name);
 
 
 

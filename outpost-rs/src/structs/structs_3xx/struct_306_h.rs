@@ -6,7 +6,7 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_306_H_
 
 // #include "structs/structs_5xx/struct_546.h"
-typedef struct Struct306 Struct306;
+// typedef struct Struct306 Struct306;
 struct Struct306
 {
     u8          field_0x0;
@@ -44,6 +44,6 @@ struct Struct306
     u8          field_0x20;
     u8          field_0x21;
     u32 *field_0x22;
-    u16         field_0x24;
+    let mut field_0x24: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_306_H_

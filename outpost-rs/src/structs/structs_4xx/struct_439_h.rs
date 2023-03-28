@@ -5,19 +5,19 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_439_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_439_H_
 
-typedef struct Struct439 Struct439;
+// typedef struct Struct439 Struct439;
 struct Struct439
 {
     u8   field_0x0;
     u8   field_0x1;
-    i16  field_0x2;
+    let mut field_0x2: i16;
     u8   field_0x4;
     u8   field_0x5;
     u8   field_0x6;
     u8   field_0x7;
     u8   field_0x8;
     u8   field_0x9;
-    u16  field_0xa;
+    let mut field_0xa: u16;
     u8   field_0xc;
     u8   field_0xd;
     u8   field_0xe;
@@ -150,11 +150,11 @@ struct Struct439
     u8   field_0x8d;
     u8   field_0x8e;
     u8   field_0x8f;
-    i16 *field_0x90;
-    u16  field_0x94;
-    u16  field_0x96;
-    u16  field_0x98;
-    u16  field_0x9a;
-    u16  field_0x9c;
+    let mut field_0x90: *mut i16;
+    let mut field_0x94: u16;
+    let mut field_0x96: u16;
+    let mut field_0x98: u16;
+    let mut field_0x9a: u16;
+    let mut field_0x9c: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_439_H_

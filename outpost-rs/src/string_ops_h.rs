@@ -15,30 +15,30 @@
 // #include "structs/structs_2xx/structs_26x.h"
 
 
-void string_1040_a626(Struct381 *param_1, char *param_2, u16 param_3);
+void string_1040_a626(Struct381 *param_1, char *param_2, param_3: u16);
 
 
-char *pass1_1040_4dcc(u32 param_1, i16 param_2, u16 param_3);
+char *pass1_1040_4dcc(param_1: u32, param_2: i16, param_3: u16);
 
 
 void pass1_1040_5d42(globals: &mut Globals, struct Struct382 *param_1);
 
 
-void pass1_1038_4d3c(Struct385 *param_1, char *param_2, u16 param_3);
+void pass1_1038_4d3c(Struct385 *param_1, char *param_2, param_3: u16);
 
 
-void pass1_1030_4dbc(Struct386 *param_1, u32 param_2, long param_3);
+void pass1_1030_4dbc(Struct386 *param_1, param_2: u32, long param_3);
 
 
-const char *pass1_1020_bd80(globals: &mut Globals, u16 param_1);
+const char *pass1_1020_bd80(globals: &mut Globals, param_1: u16);
 
 
-void string_1020_c0ca(globals: &mut Globals, u16 param_1);
+void string_1020_c0ca(globals: &mut Globals, param_1: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-cstring string_1020_c0d8(globals: &mut Globals, u16 param_1);
+cstring string_1020_c0d8(globals: &mut Globals, param_1: u16);
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
@@ -48,31 +48,31 @@ cstring *string_op_1020_c222(param_1: u16, Globals *globals);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-cstring *string_op_1020_c2f8(globals: &mut Globals, u16 param_1);
+cstring *string_op_1020_c2f8(globals: &mut Globals, param_1: u16);
 
 
 void pass1_1020_6e52(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                      param_3: u16,
-                     u16 offset_param_4,
-                     u16 segment_param_5,
+                     offset_param_4: u16,
+                     segment_param_5: u16,
                      i16 param_6);
 
 
-void sprintf_op_1018_34b6(globals: &mut Globals, struct struct_1018_34b6_1 *param_1, u8 param_2);
+void sprintf_op_1018_34b6(globals: &mut Globals, struct struct_1018_34b6_1 *param_1, param_2: u8);
 
 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_str_op_1018_35b0(Struct263 *param_1, param_2: u16, u16 param_3);
+void unk_str_op_1018_35b0(Struct263 *param_1, param_2: u16, param_3: u16);
 
 
-BOOL16 string_1018_39d8(globals: &mut Globals, param_1: u16, u32 param_2, u32 param_3, char *param_4);
+BOOL16 string_1018_39d8(globals: &mut Globals, param_1: u16, param_2: u32, param_3: u32, char *param_4);
 
 
-u32 pass1_1018_3a7a(u32 param_1, u32 param_2, param_3: u16, u16 param_4);
+u32 pass1_1018_3a7a(param_1: u32, param_2: u32, param_3: u16, param_4: u16);
 
 
 void pass1_1010_dc36(globals: &mut Globals,
@@ -87,7 +87,7 @@ void pass1_1010_dc36(globals: &mut Globals,
 void load_str_1010_ddf6(globals: &mut Globals, struct_1010_ddf6_1 *param_1, Struct383 *param_2);
 
 
-void pass1_1010_de78(globals: &mut Globals, struct_1010_ddf6_1 *param_1, u32 param_2);
+void pass1_1010_de78(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param_2: u32);
 
 
 char *load_string_1010_ac92(Globals    *globals,
@@ -106,7 +106,7 @@ char *string_op_1010_ada6(Globals    *globals,
                           i16         param_6);
 
 
-u16 pass1_1010_ae12(param_1: u16, param_2: u16, u32 param_3, i16 param_4, u16 param_5);
+u16 pass1_1010_ae12(param_1: u16, param_2: u16, param_3: u32, param_4: i16, param_5: u16);
 
 
 char *load_string_1010_9432(globals: &mut Globals, HINSTANCE16 param_1);
@@ -124,19 +124,19 @@ void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
                            char       *in_buffer_4);
 
 
-void pass1_1010_84f8(u32 param_1, i16 param_2, u16 param_3);
+void pass1_1010_84f8(param_1: u32, param_2: i16, param_3: u16);
 
 
-void pass1_1010_85be(u32 param_1, i16 param_2, u16 param_4);
+void pass1_1010_85be(param_1: u32, param_2: i16, param_4: u16);
 
 
-void pass1_1010_6034(u32 param_1, u16 param_2);
+void pass1_1010_6034(param_1: u32, param_2: u16);
 
 
 char *load_string_1008_ee56(void);
 
 
-u16 pass1_1008_e2a4(u32 param_1, u32 param_2, param_3: u32);
+u16 pass1_1008_e2a4(param_1: u32, param_2: u32, param_3: u32);
 
 
 void pass1_1008_e320(Globals   *globals,
@@ -164,7 +164,7 @@ void load_str_and_spri16f_1008_b78a(globals: &mut Globals,
 char *load_string_1008_b1f0(Globals *globals);
 
 
-void pass1_1008_9c86(u32 param_1, char *param_2, i16 param_3);
+void pass1_1008_9c86(param_1: u32, char *param_2, i16 param_3);
 
 
 u32 *str_1008_6d8a(globals: &mut Globals,
@@ -175,7 +175,7 @@ u32 *str_1008_6d8a(globals: &mut Globals,
                    u8       param_5);
 
 
-void struct_op_1008_48fe(Struct81 *param_1, param_2: u16, char *param_3, u16 param_4);
+void struct_op_1008_48fe(Struct81 *param_1, param_2: u16, char *param_3, param_4: u16);
 
 
 void pass1_1008_48de(u16  param_1,
@@ -206,18 +206,18 @@ void str_1000_4d58(char       *in_string_1,
 u16 str_op_1000_3da4(char *param_1);
 
 
-u8 str_op_1000_3dbe(char *param_1, char *param_2, u16 param_3);
+u8 str_op_1000_3dbe(char *param_1, char *param_2, param_3: u16);
 
 
-i16 pass1_1000_3ec0(globals: &mut Globals, param_1: u16, u16 param_2);
+i16 pass1_1000_3ec0(globals: &mut Globals, param_1: u16, param_2: u16);
 
 
 char *poss_str_op_1000_28dc(globals: &mut Globals, i16 param_1);
 
 
-void pass1_1000_2913(globals: &mut Globals, i16 param_1, param_2: u16, u16 param_3);
+void pass1_1000_2913(globals: &mut Globals, param_1: i16, param_2: u16, param_3: u16);
 
-const char *get_rsrc_string(u32 arg_1);
+const char *get_rsrc_string(arg_1: u32);
 
 
 #endif // OUTPOST_1_SRC_STRING_OPS_H_

@@ -45,9 +45,9 @@ typedef struct Struct371
     u8 field_0x1f;
     u8 field_0x20;
     u8 field_0x21;
-    i16       field_0x22;
-    u16       field_0x24;
-    u8       *field_0x26;
+    let mut field_0x22: i16;
+    let mut field_0x24: u16;
+    let mut field_0x26: *mut u8;
 }Struct371;
 
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_1_H_STRUCT371_H_

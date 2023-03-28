@@ -10,6 +10,6 @@
 // #include "globals.h"
 
 
-void  pass1_1038_b6e0(u32 param_1, i16 param_2);
+void  pass1_1038_b6e0(param_1: u32, i16 param_2);
 
 #endif // OUTPOST_1_SRC_UNK_UNK_17_H_

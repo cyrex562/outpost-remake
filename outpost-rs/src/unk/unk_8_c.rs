@@ -6,11 +6,11 @@
 // #include "op_windef.h"
 // #include "struct_20.h"
 
-void pass1_1028_5b42(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    void **ppcVar1;
-    u16 u_var2;
-    u32 uVar3;
-    i16 iVar4;
+void pass1_1028_5b42(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut ppcVar1: *mut *mut c_void;
+    let mut u_var2: u16;
+    let mut uVar3: u32;
+    let mut iVar4: i16;
 
     u_var2 = (param_1 >> 0x10);
     if((param_1 + 0x12) != 0x6) {
@@ -42,32 +42,32 @@ code_r0x10285bbe:
 }
 
 
-u16 * pass1_1028_5e18(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_5e18(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_thisHi_1050_5e6f + 0x1;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16 * pass1_1028_5f00(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_5f00(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x6054;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     return param_1;
 }
 
 
-void  pass1_1028_5f34(param_1: u16, i16 param_2, param_3: u16, u16 param_4, u16 param_5, u16 param_6) {
-    i16       *pi_var1;
-    u32 u_var2;
+void  pass1_1028_5f34(param_1: u16, param_2: i16, param_3: u16, param_4: u16, param_5: u16, param_6: u16) {
+    let mut pi_var1: *mut i16;
+    let mut u_var2: u32;
     BOOL16     BVar3;
-    u32        uVar4;
-    u16        extraout_DX;
-    u16        uVar5;
-    u16        uVar6;
-    i16        iVar7;
+    let mut uVar4: u32;
+    let mut extraout_DX: u16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut iVar7: i16;
 
     pass1_1028_be9e((param_2 + 0x6), param_3, param_4, param_5, param_6);
     uVar4 = *(param_2 + 0x6);
@@ -93,10 +93,10 @@ void  pass1_1028_5f34(param_1: u16, i16 param_2, param_3: u16, u16 param_4, u16 
 }
 
 
-void  pass1_1028_6008(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    i16 *pi_var1;
-    i16  iVar2;
-    u16  uVar3;
+void  pass1_1028_6008(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut pi_var1: *mut i16;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
 
     pass1_1028_be2a(param_1, param_2, param_3, param_4, param_5);
     uVar3 = (param_1 >> 0x10);
@@ -109,9 +109,9 @@ void  pass1_1028_6008(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
 }
 
 
-u32  pass1_1028_62c8(u32 param_1, u16 param_2) {
-    u16 uVar1;
-    u32 u_var2;
+u32  pass1_1028_62c8(param_1: u32, param_2: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
 
     uVar1 = (param_1 >> 0x10);
     if((param_1 + 0x12) == 0x5) {
@@ -127,12 +127,12 @@ u32  pass1_1028_62c8(u32 param_1, u16 param_2) {
 
 // WARNING: Could not reconcile some variable overlaps
 
-u32  pass1_1028_6302(u32 param_1, u16 param_2) {
-    u16  uVar1;
-    u16  u_var2;
+u32  pass1_1028_6302(param_1: u32, param_2: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u16;
     long lVar3;
-    u32  uStack18;
-    u8   local_a[0x8];
+    let mut uStack18: u32;
+    let mut local_a: [u8;8] = [0;8];
 
     pass1_1008_5784(str_var1(param_2, local_a), *(param_1 + 0x20));
     uStack18 = 0x0;
@@ -150,36 +150,36 @@ u32  pass1_1028_6302(u32 param_1, u16 param_2) {
 }
 
 
-u16 * pass1_1028_408e(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_408e(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x42ec;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-void  pass1_1028_40b8(u32 param_1, param_2: u16, u16 param_3) {
-    void **ppcVar1;
+void  pass1_1028_40b8(param_1: u32, param_2: u16, param_3: u16) {
+    let mut ppcVar1: *mut *mut c_void;
     u32 *pu_var2;
-    u16         uVar3;
-    u16         uVar4;
-    u16         extraout_DX;
-    u16         uVar5;
-    u32         uVar6;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut extraout_DX: u16;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
     u32        *puVar7;
-    u32  uStack54;
-    u8          local_2c[0x6];
+    let mut uStack54: u32;
+    let mut local_2c: [u8;6] = [0;6];
     u32 *puStack38;
-    u32  uStack34;
+    let mut uStack34: u32;
     u32 *puStack26;
-    u32  uStack24;
-    u32  local_14;
-    i16         iStack16;
-    i16         iStack14;
-    u32  local_c;
-    i16         iStack8;
-    u16         u_stack6;
-    u16         uStack4;
+    let mut uStack24: u32;
+    let mut local_14: u32;
+    let mut iStack16: i16;
+    let mut iStack14: i16;
+    let mut local_c: u32;
+    let mut iStack8: i16;
+    let mut u_stack6: u16;
+    let mut uStack4: u16;
 
     pass1_1028_b58e(param_1);
     local_14  = (param_2 + 0xc);
@@ -217,28 +217,28 @@ void  pass1_1028_40b8(u32 param_1, param_2: u16, u16 param_3) {
 }
 
 
-void  pass1_1028_41ea(u32 param_1, i16 param_2, u16 param_3) {
-    void **ppcVar1;
+void  pass1_1028_41ea(param_1: u32, param_2: i16, param_3: u16) {
+    let mut ppcVar1: *mut *mut c_void;
     u32 *pu_var2;
-    u16         uVar3;
-    u16         uVar4;
-    u16         extraout_DX;
-    u16         uVar5;
-    u32         uVar6;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut extraout_DX: u16;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
     u32        *puVar7;
-    u32  uStack54;
-    u8          local_2c[0x6];
+    let mut uStack54: u32;
+    let mut local_2c: [u8;6] = [0;6];
     u32 *puStack38;
-    u32  uStack34;
+    let mut uStack34: u32;
     u32 *puStack26;
-    u32  uStack24;
-    u32  local_14;
-    i16         iStack16;
-    i16         iStack14;
-    u32  local_c;
-    i16         iStack8;
-    i16         iStack6;
-    u16         uStack4;
+    let mut uStack24: u32;
+    let mut local_14: u32;
+    let mut iStack16: i16;
+    let mut iStack14: i16;
+    let mut local_c: u32;
+    let mut iStack8: i16;
+    let mut iStack6: i16;
+    let mut uStack4: u16;
 
     pass1_1028_b514(param_1);
     pass1_1028_b58e(param_1);
@@ -276,16 +276,16 @@ void  pass1_1028_41ea(u32 param_1, i16 param_2, u16 param_3) {
 }
 
 
-u16 * pass1_1028_4376(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_4376(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x446a;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16  pass1_1028_43a0(u32 param_1) {
-    u16 uVar1;
+u16  pass1_1028_43a0(param_1: u32) {
+    let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
     if(((param_1 + 0x12) != 0x6) && ((param_1 + 0x12) != 0x5)) {
@@ -295,25 +295,25 @@ u16  pass1_1028_43a0(u32 param_1) {
 }
 
 
-u16 * pass1_1028_44fe(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_44fe(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x4836;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     return param_1;
 }
 
 
 void  pass1_1028_4530(u16 *param_1) {
     u32 *puVar1;
-    u16 u_var2;
-    void **ppcVar3;
-    i16 iVar4;
-    u16 uVar5;
+    let mut u_var2: u16;
+    let mut ppcVar3: *mut *mut c_void;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
 
     uVar5 = (param_1 >> 0x10);
     iVar4 = param_1;
-    param_1->fld0_addr_table = addr_table_1028_4836;//0x4836;
+    param_1.fld0_addr_table = addr_table_1028_4836;//0x4836;
     (iVar4 + 0x2) = SEG_1028;
     puVar1 = (iVar4 + 0x20);
     u_var2 = (iVar4 + 0x22);
@@ -326,12 +326,12 @@ void  pass1_1028_4530(u16 *param_1) {
 }
 
 
-void  pass1_1028_456e(u32 param_1, u32 param_2, u16 param_3) {
+void  pass1_1028_456e(param_1: u32, param_2: u32, param_3: u16) {
     u32 *puVar1;
-    u16         u_var2;
-    void **ppcVar3;
-    i16         iVar4;
-    u16         uVar5;
+    let mut u_var2: u16;
+    let mut ppcVar3: *mut *mut c_void;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
 
     pass1_1028_b46e(param_1, param_2, param_3);
     uVar5  = (param_1 >> 0x10);
@@ -347,12 +347,12 @@ void  pass1_1028_456e(u32 param_1, u32 param_2, u16 param_3) {
 }
 
 
-void  pass1_1028_45b0(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    u16 uVar1;
-    u32 u_var2;
-    u16 uVar3;
-    u16 uVar4;
-    i16 iVar5;
+void  pass1_1028_45b0(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut iVar5: i16;
 
     pass1_1028_be9e(param_1, param_2, param_3, param_4, param_5);
     uVar1 = (param_1 >> 0x10);
@@ -367,13 +367,13 @@ void  pass1_1028_45b0(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
 }
 
 
-u32  pass1_1028_45e2(u32 param_1, param_2: u16, i16 param_3, u16 param_4) {
+u32  pass1_1028_45e2(param_1: u32, param_2: u16, param_3: i16, param_4: u16) {
     pass1_1028_478a(param_1, param_2, param_4);
     return str_var1(-(0x3e8 < param_2) - param_3, 0x3e8 - param_2);
 }
 
 
-u16  pass1_1028_4768(u32 param_1, param_2: u16, i16 param_3, u16 param_4) {
+u16  pass1_1028_4768(param_1: u32, param_2: u16, param_3: i16, param_4: u16) {
     pass1_1028_478a(param_1, param_2, param_4);
     if((param_3 == 0x0) && (param_2 < 0x3e8)) {
         return 0x0;
@@ -384,15 +384,15 @@ u16  pass1_1028_4768(u32 param_1, param_2: u16, i16 param_3, u16 param_4) {
 
 // WARNING: Could not reconcile some variable overlaps
 
-void  pass1_1028_478a(u32 param_1, i16 param_2, u16 param_3) {
-    u16        extraout_DX;
+void  pass1_1028_478a(param_1: u32, param_2: i16, param_3: u16) {
+    let mut extraout_DX: u16;
     long       local_1e;
     i16        local_1a[0x4];
-    u16        uStack18;
-    u16        uStack16;
+    let mut uStack18: u16;
+    let mut uStack16: u16;
     long       lStack14;
     u32       *puStack10;
-    u32 u_stack6;
+    let mut u_stack6: u32;
 
     pass1_1028_b58e(param_1);
     u_stack6   = str_var1(extraout_DX, param_2);
@@ -412,52 +412,52 @@ void  pass1_1028_478a(u32 param_1, i16 param_2, u16 param_3) {
 }
 
 
-u16 * pass1_1028_48c0(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_48c0(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  &PTR_LOOP_1050_4942;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     (param_1 + 0xe)            = (param_1 + 0xc);
     (param_1 + 0x10)           = (param_1 + 0xc);
     return param_1;
 }
 
 
-void  pass1_1028_48fa(u32 *param_1, u16 param_2) {
+void  pass1_1028_48fa(param_1: *mut u32, param_2: u16) {
     pass1_1028_bdac(param_1, 0x0, param_2);
     return;
 }
 
 
-u32  pass1_1028_49de(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u32  pass1_1028_49de(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x4b1c;
-    param_1->fld2_segment = SEG_1028;
-    pass1_1000_4906((Struct20 *)str_var1(param_2, param_1 + 0x20), 0x0, 0xa);
+    param_1.fld2_segment = SEG_1028;
+    pass1_1000_4906(str_var1(param_2, param_1 + 0x20), 0x0, 0xa);
     return param_1;
 }
 
 
-u16  pass1_1028_4a9a(u32 param_1, i16 param_2) {
+u16  pass1_1028_4a9a(param_1: u32, i16 param_2) {
     return (param_1 + 0x20 + param_2 * 0x2);
 }
 
 
-void  pass1_1028_4ab2(u32 param_1, param_2: u16, i16 param_3) {
+void  pass1_1028_4ab2(param_1: u32, param_2: u16, i16 param_3) {
     (param_1 + param_3 * 0x2 + 0x20) = param_2;
     return;
 }
 
 
-u16 * pass1_1028_4ba6(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_4ba6(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_SCi16ernalPutBldg2_site_0x_08lx__1050_506f + 0x1;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16  pass1_1028_4bd0(u32 param_1) {
-    u16 uVar1;
+u16  pass1_1028_4bd0(param_1: u32) {
+    let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
     if(((param_1 + 0x12) != 0x6) && ((param_1 + 0x12) != 0x5)) {
@@ -470,27 +470,27 @@ u16  pass1_1028_4bd0(u32 param_1) {
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_4bf2(u32 param_1, u32 param_2, i16 param_3, u16 param_4) {
-    void **ppcVar1;
+void  pass1_1028_4bf2(param_1: u32, param_2: u32, param_3: i16, param_4: u16) {
+    let mut ppcVar1: *mut *mut c_void;
     u32 *pu_var2;
-    u16         uVar3;
-    u16         extraout_DX;
-    u16         uVar4;
-    u32         uVar5;
+    let mut uVar3: u16;
+    let mut extraout_DX: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u32;
     u32        *puVar6;
-    u32  uStack54;
-    u8          local_2c[0x6];
+    let mut uStack54: u32;
+    let mut local_2c: [u8;6] = [0;6];
     u32 *puStack38;
-    u32  uStack34;
+    let mut uStack34: u32;
     u32 *puStack26;
-    u32  uStack24;
-    u32  local_14;
-    i16         iStack16;
-    i16         iStack14;
-    u32  local_c;
-    i16         iStack8;
-    i16         iStack6;
-    u16         uStack4;
+    let mut uStack24: u32;
+    let mut local_14: u32;
+    let mut iStack16: i16;
+    let mut iStack14: i16;
+    let mut local_c: u32;
+    let mut iStack8: i16;
+    let mut iStack6: i16;
+    let mut uStack4: u16;
 
     pass1_1028_b58e(param_1);
     local_14  = (param_3 + 0xc);
@@ -532,28 +532,28 @@ void  pass1_1028_4bf2(u32 param_1, u32 param_2, i16 param_3, u16 param_4) {
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_4cd6(u32 param_1, i16 param_2, u16 param_3) {
-    void **ppcVar1;
+void  pass1_1028_4cd6(param_1: u32, param_2: i16, param_3: u16) {
+    let mut ppcVar1: *mut *mut c_void;
     u32 *pu_var2;
-    u16         uVar3;
-    u16         uVar4;
-    u16         extraout_DX;
-    u16         uVar5;
-    u32         uVar6;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut extraout_DX: u16;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
     u32        *puVar7;
-    u32  uStack54;
-    u8          local_2c[0x6];
+    let mut uStack54: u32;
+    let mut local_2c: [u8;6] = [0;6];
     u32 *puStack38;
-    u32  uStack34;
+    let mut uStack34: u32;
     u32 *puStack26;
-    u32  uStack24;
-    u32  local_14;
-    i16         iStack16;
-    i16         iStack14;
-    u32  local_c;
-    i16         iStack8;
-    i16         iStack6;
-    u16         uStack4;
+    let mut uStack24: u32;
+    let mut local_14: u32;
+    let mut iStack16: i16;
+    let mut iStack14: i16;
+    let mut local_c: u32;
+    let mut iStack8: i16;
+    let mut iStack6: i16;
+    let mut uStack4: u16;
 
     pass1_1028_b514(param_1);
     pass1_1028_b58e(param_1);
@@ -591,9 +591,9 @@ void  pass1_1028_4cd6(u32 param_1, i16 param_2, u16 param_3) {
 }
 
 
-void  pass1_1028_4f30(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 param_5) {
-    u32 uVar1;
-    u16 u_var2;
+void  pass1_1028_4f30(param_1: u32, param_2: i16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u32;
+    let mut u_var2: u16;
 
     uVar1 = pass1_1028_b58e(param_1);
     if(param_2 == 0x0) {
@@ -606,8 +606,8 @@ void  pass1_1028_4f30(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16  pass1_1028_4f62(u32 param_1) {
-    u32 uVar1;
+u16  pass1_1028_4f62(param_1: u32) {
+    let mut uVar1: u32;
 
     uVar1 = pass1_1028_b58e(param_1);
     if((uVar1 + 0x10) == 0x0) {
@@ -617,24 +617,24 @@ u16  pass1_1028_4f62(u32 param_1) {
 }
 
 
-u16 * pass1_1028_2bfe(Struct179 *param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_2bfe(Struct179 *param_1, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_0982(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x341c;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16  pass1_1028_2c28(param_1: u16, param_2: u16, param_3: u16, param_4: u32, u32 *param_5, u32 param_6, u32 param_7) {
+u16  pass1_1028_2c28(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: *mut u32, param_6: u32, param_7: u32) {
     u32 *puVar1;
-    u16 *pu_var2;
-    u16  uVar3;
-    u16  uVar4;
-    u16  local_e;
-    u16  local_c;
-    u16  local_a;
-    u32  local_8;
-    u16  uStack4;
+    let mut pu_var2: *mut u16;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut local_e: u16;
+    let mut local_c: u16;
+    let mut local_a: u16;
+    let mut local_8: u32;
+    let mut uStack4: u16;
 
     pass1_1028_09d4(param_1, param_2, param_3, param_4, param_5, param_6, param_7);
     if(param_2 != 0x0) {
@@ -710,10 +710,10 @@ u16  pass1_1028_2c28(param_1: u16, param_2: u16, param_3: u16, param_4: u32, u32
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_2e40(u32 *param_1, i16 param_2, u8 *param_3, u16 param_4, u16 param_5, u16 param_6, u16 param_7, u8 param_8) {
-    u16        uVar1;
-    u16       *pu_var2;
-    u32 uVar3;
+void  pass1_1028_2e40(param_1: *mut u32, param_2: i16, param_3: *mut u8, param_4: u16, param_5: u16, param_6: u16, param_7: u16, param_8: u8) {
+    let mut uVar1: u16;
+    let mut pu_var2: *mut u16;
+    let mut uVar3: u32;
 
     pass1_1028_be9e(param_1, param_4, param_5, param_6, param_7);
     uVar1 = (param_1 >> 0x10);
@@ -728,21 +728,21 @@ void  pass1_1028_2e40(u32 *param_1, i16 param_2, u8 *param_3, u16 param_4, u16 p
 }
 
 
-void  pass1_1028_3246(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 param_5, u16 param_6) {
-    u16        uVar1;
-    u32        u_var2;
-    u8        *extraout_DX;
-    u8        *puVar3;
-    u16        uVar4;
-    u16        uVar5;
-    i16        iVar6;
-    u8         local_20[0x6];
-    u16       *puStack26;
-    u16        uStack18;
-    u8        *puStack16;
-    u32        uStack14;
-    u32 uStack10;
-    u32 u_stack6;
+void  pass1_1028_3246(param_1: u32, param_2: i16, param_3: u16, param_4: u16, param_5: u16, param_6: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
+    let mut extraout_DX: *mut u8;
+    let mut puVar3: *mut u8;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
+    let mut iVar6: i16;
+    let mut local_20: [u8;6] = [0;6];
+    let mut puStack26: *mut u16;
+    let mut uStack18: u16;
+    let mut puStack16: *mut u8;
+    let mut uStack14: u32;
+    let mut uStack10: u32;
+    let mut u_stack6: u32;
 
     pass1_1028_b58e(param_1);
     u_stack6  = str_var1(extraout_DX, param_2);
@@ -788,18 +788,18 @@ void  pass1_1028_3246(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16 * pass1_1028_34a6(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u8 *param_5) {
+u16 * pass1_1028_34a6(param_1: i16, param_2: u16, param_3: i16, param_4: u32, u8 *param_5) {
     pass1_1028_00cc(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x34f6;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16 * pass1_1028_3580(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_3580(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x3608;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
@@ -809,9 +809,9 @@ u16  pass1_1028_35aa(void) {
 }
 
 
-void  pass1_1028_35b0(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 param_5) {
-    u32 uVar1;
-    u16 u_var2;
+void  pass1_1028_35b0(param_1: u32, param_2: i16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u32;
+    let mut u_var2: u16;
 
     uVar1 = pass1_1028_b58e(param_1);
     if(param_2 == 0x0) {
@@ -824,21 +824,21 @@ void  pass1_1028_35b0(u32 param_1, i16 param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16 * pass1_1028_3692(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u8 *param_5, u16 param_6, u16 param_7) {
+u16 * pass1_1028_3692(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: *mut u8, param_6: u16, param_7: u16) {
     pass1_1028_3816(param_1, param_2, param_3, param_4, param_5, param_6, param_7);
     param_1 =  0x373e;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16  pass1_1028_36bc(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 param_5) {
-    i16       *pi_var1;
-    u16        u_var2;
-    u32 uVar3;
-    u16        uVar4;
-    u32 uVar5;
-    i16        iStack4;
+u16  pass1_1028_36bc(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16) {
+    let mut pi_var1: *mut i16;
+    let mut u_var2: u16;
+    let mut uVar3: u32;
+    let mut uVar4: u16;
+    let mut uVar5: u32;
+    let mut iStack4: i16;
 
     uVar5    = str_var1(param_4, param_3);
     *param_2 = 0x0;
@@ -864,12 +864,12 @@ u16  pass1_1028_36bc(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16  pass1_1028_38d4(u32 *param_1, u16 *param_2, u32 param_3, param_4: u32, i16 param_5, u16 param_6, u16 param_7) {
-    void **ppcVar1;
+u16  pass1_1028_38d4(param_1: *mut u32, u16 *param_2, param_3: u32, param_4: u32, param_5: i16, param_6: u16, param_7: u16) {
+    let mut ppcVar1: *mut *mut c_void;
     BOOL16     BVar2;
-    u32 uVar3;
-    u16        uVar4;
-    u16        uVar5;
+    let mut uVar3: u32;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
 
     uVar4 = param_1;
     uVar5 = (param_1 >> 0x10);
@@ -896,29 +896,29 @@ u16  pass1_1028_38d4(u32 *param_1, u16 *param_2, u32 param_3, param_4: u32, i16 
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_3958(u32 param_1, i16 param_2, param_3: u16, i16 param_4, u16 param_5, u16 param_6) {
+void  pass1_1028_3958(param_1: u32, param_2: i16, param_3: u16, param_4: i16, param_5: u16, param_6: u16) {
     long      *plVar1;
     qword      qVar2;
-    u16        uVar3;
-    u16        uVar4;
-    u16        uVar5;
-    u32        uVar6;
-    i16        iVar7;
-    u16        uVar8;
-    u16        uVar9;
-    u32 uStack52;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
+    let mut iVar7: i16;
+    let mut uVar8: u16;
+    let mut uVar9: u16;
+    let mut uStack52: u32;
     u16        local_2c[0x2];
-    u32 local_28;
-    i16        iStack36;
-    u32        uStack34;
-    u32 uStack30;
-    u16        uStack22;
-    u16        uStack20;
-    u32 uStack18;
-    u32        uStack14;
+    let mut local_28: u32;
+    let mut iStack36: i16;
+    let mut uStack34: u32;
+    let mut uStack30: u32;
+    let mut uStack22: u16;
+    let mut uStack20: u16;
+    let mut uStack18: u32;
+    let mut uStack14: u32;
     u32       *puStack10;
-    i16        iStack6;
-    u16        uStack4;
+    let mut iStack6: i16;
+    let mut uStack4: u16;
 
     pass1_1028_b58e(param_1);
     puStack10 = (param_2 + 0x22);
@@ -955,51 +955,51 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, param_3: u16, i16 param_4, u16 p
                 iVar7    = param_1;
                 uVar8    = (param_1 >> 0x10);
                 switch(uStack22) {
-                    case 0x4:
+                    0x4 =>
                         uStack30 = local_28 >> 0x1;
                         if((uStack30 == 0x0) && (uStack20 != 0x0)) {
                             uStack30 = 0x1;
                         }
                         iStack36 = 0x11;
                         break;
-                    case 0x5:
+                    0x5 =>
                         uStack30 = local_28 >> 0x1;
                         if((uStack30 == 0x0) && (uStack20 != 0x0)) {
                             uStack30 = 0x1;
                         }
                         iStack36 = 0x12;
                         break;
-                    case 0x6:
+                    0x6 =>
                         uStack30 = local_28 >> 0x1;
                         if((uStack30 == 0x0) && (uStack20 != 0x0)) {
                             uStack30 = 0x1;
                         }
                         iStack36 = 0x13;
                         break;
-                    case 0x7:
+                    0x7 =>
                         uStack30 = local_28 >> 0x1;
                         if((uStack30 == 0x0) && (uStack20 != 0x0)) {
                             uStack30 = 0x1;
                         }
                         iStack36 = 0x14;
                         break;
-                    case 0x8:
+                    0x8 =>
                         uStack30 = local_28;
                         iStack36 = 0x1a;
                         break;
-                    case 0x9:
+                    0x9 =>
                         uStack30 = local_28;
                         iStack36 = 0x1b;
                         break;
-                    case 0xa:
+                    0xa =>
                         uStack30 = local_28;
                         iStack36 = 0x1c;
                         break;
-                    case 0xb:
+                    0xb =>
                         uStack30 = local_28;
                         iStack36 = 0x17;
                         break;
-                    case 0xc:
+                    0xc =>
                         iStack36       = 0x18;
                         uStack30       = local_28;
                         plVar1         = (long *)(iVar7 + 0x20);
@@ -1015,13 +1015,13 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, param_3: u16, i16 param_4, u16 p
                         (iVar7 + 0x22) = param_4;
                         if(uStack52 != 0x0) {
                             uVar9 = 0x15;
-                            LAB_1028_3b14:
+                            // LAB_1028_3b14:
                             uStack30 = local_28;
                             pass1_1020_bb8a(*(long **)(iVar7 + 0x28), uStack52,
                                             str_var1(uVar9, (uStack52 >> 0x10)), param_5, param_6);
                         }
                         break;
-                    case 0xd:
+                    0xd =>
                         iStack36       = 0x19;
                         uStack30       = local_28;
                         plVar1         = (long *)(iVar7 + 0x24);
@@ -1055,9 +1055,9 @@ void  pass1_1028_3958(u32 param_1, i16 param_2, param_3: u16, i16 param_4, u16 p
 
 u32  pass1_1028_3c32(u32 *param_1) {
     fn_ptr_1 *ppcVar1;
-    i16       iVar2;
-    u16       local_6;
-    i16       iStack4;
+    let mut iVar2: i16;
+    let mut local_6: u16;
+    let mut iStack4: i16;
 
     ppcVar1 = (*param_1 + 0x40);
     iVar2   = (**ppcVar1)();
@@ -1068,18 +1068,18 @@ u32  pass1_1028_3c32(u32 *param_1) {
 }
 
 
-void  pass1_1028_3c60(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 param_5) {
-    i16       *pi_var1;
-    u16        u_var2;
-    u32 uVar3;
-    i16        iVar4;
-    u16        uVar5;
-    u32 uVar6;
+void  pass1_1028_3c60(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16) {
+    let mut pi_var1: *mut i16;
+    let mut u_var2: u16;
+    let mut uVar3: u32;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
     long       local_10;
-    u8         local_c[0x4];
-    i16        iStack8;
-    u16        u_stack6;
-    u16        uStack4;
+    let mut local_c: [u8;4] = [0;4];
+    let mut iStack8: i16;
+    let mut u_stack6: u16;
+    let mut uStack4: u16;
 
     uVar6    = str_var1(param_4, param_3);
     *param_2 = 0x0;
@@ -1121,26 +1121,26 @@ void  pass1_1028_3c60(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 
 }
 
 
-u32  pass1_1028_3ec8(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u32  pass1_1028_3ec8(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     param_1 =  0x4004;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     pass1_1028_3fa2(str_var1(param_2, param_1));
     return param_1;
 }
 
 
-void  pass1_1028_3f04(u32 param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5, u16 param_6) {
-    u16 uVar1;
-    u32 u_var2;
-    u8 *puVar3;
-    i16 iVar4;
-    u16 uVar5;
-    u16 uVar6;
-    u32 uStack14;
-    u32 uStack10;
-    u32 u_stack6;
+void  pass1_1028_3f04(param_1: u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16, param_6: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
+    let mut puVar3: *mut u8;
+    let mut iVar4: i16;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uStack14: u32;
+    let mut uStack10: u32;
+    let mut u_stack6: u32;
 
     uVar6 = 0x1f;
     pass1_1028_b58e(param_1);
@@ -1169,10 +1169,10 @@ void  pass1_1028_3f04(u32 param_1, param_2: u16, param_3: u16, u16 param_4, u16 
 }
 
 
-void  pass1_1028_3fa2(u32 param_1) {
-    u16 uVar1;
-    i16 iVar2;
-    u16 uVar3;
+void  pass1_1028_3fa2(param_1: u32) {
+    let mut uVar1: u16;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
 
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
@@ -1191,18 +1191,18 @@ void  pass1_1028_3fa2(u32 param_1) {
 }
 
 
-void  pass1_1028_1b1e(u32 param_1) {
+void  pass1_1028_1b1e(param_1: u32) {
     (param_1 + 0x14) = 0x7;
     return;
 }
 
 
-u16 * pass1_1028_1be8(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_1be8(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     (param_1 + 0x20)           = 0x0;
     (param_1 + 0x22)           = 0x0;
     param_1 =  0x1eee;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     return param_1;
 }
 
@@ -1212,10 +1212,10 @@ u16  pass1_1028_1c1c(void) {
 }
 
 
-u16  pass1_1028_1c22(u32 param_1) {
-    u16 uVar1;
-    i16 iVar2;
-    u16 uVar3;
+u16  pass1_1028_1c22(param_1: u32) {
+    let mut uVar1: u16;
+    let mut iVar2: i16;
+    let mut uVar3: u16;
 
     uVar3 = (param_1 >> 0x10);
     iVar2 = param_1;
@@ -1232,10 +1232,10 @@ u16  pass1_1028_1c22(u32 param_1) {
 }
 
 
-void  pass1_1028_1c66(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
+void  pass1_1028_1c66(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
     fn_ptr_1 *ppcVar1;
-    i16       iVar2;
-    u32       uVar3;
+    let mut iVar2: i16;
+    let mut uVar3: u32;
 
     if((param_1 + 0x12) != 0x6) {
         return;
@@ -1255,7 +1255,7 @@ void  pass1_1028_1c66(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
         pass1_1028_c952(param_1, param_2, param_3, param_5);
     }
     iVar2 = 0x5;
-LAB_1028_1cbd:
+// LAB_1028_1cbd:
     pass1_1028_bdac(param_1, iVar2, param_4);
     return;
 }
@@ -1263,15 +1263,15 @@ LAB_1028_1cbd:
 
 // WARNING: Could not reconcile some variable overlaps
 
-u16  pass1_1028_1cca(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 param_5, long param_6, u16 param_7) {
-    u16        uVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u8         local_e[0x2];
-    i16        local_c;
-    i16        local_a;
-    u32 local_8;
-    u16        uStack4;
+u16  pass1_1028_1cca(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16, long param_6, param_7: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
+    let mut local_e: [u8;2] = [0;2];
+    let mut local_c: i16;
+    let mut local_a: i16;
+    let mut local_8: u32;
+    let mut uStack4: u16;
 
     local_8 = *param_2;
     uStack4 = (param_2 + 0x1);
@@ -1309,12 +1309,12 @@ u16  pass1_1028_1cca(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 p
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_1da4(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, long param_5, u16 param_6) {
-    i16 iVar1;
-    u8 *pu_var2;
-    u16 uVar3;
-    u32 uVar4;
-    u8  local_4[0x2];
+void  pass1_1028_1da4(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, long param_5, param_6: u16) {
+    let mut iVar1: i16;
+    let mut pu_var2: *mut u8;
+    let mut uVar3: u16;
+    let mut uVar4: u32;
+    let mut local_4: [u8;2] = [0;2];
 
     uVar4 = pass1_1030_bcae(local_4, param_6);
     uVar3 = (uVar4 >> 0x10);
@@ -1332,12 +1332,12 @@ void  pass1_1028_1da4(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, lo
 }
 
 
-u16  pass1_1028_1e8a(u32 *param_1, param_2: u16, param_3: u16, u16 param_4) {
-    u16 uVar1;
-    u32 u_var2;
-    u16 uVar3;
-    u16 uVar4;
-    u16 uVar5;
+u16  pass1_1028_1e8a(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
 
     uVar1 = (param_1 >> 0x10);
     if((*(u8 *)(param_1 + 0x1a) & 0x2) == 0x0) {
@@ -1354,23 +1354,23 @@ u16  pass1_1028_1e8a(u32 *param_1, param_2: u16, param_3: u16, u16 param_4) {
 }
 
 
-void  pass1_1028_2042(u16 *param_1, u16 param_2) {
+void  pass1_1028_2042(u16 *param_1, param_2: u16) {
     u32 * puVar1;
-    u16 u_var2;
-    void **ppcVar3;
-    u32 uVar4;
+    let mut u_var2: u16;
+    let mut ppcVar3: *mut *mut c_void;
+    let mut uVar4: u32;
     Struct602 *iVar5;
-    u16 uVar5;
-    u32 uVar6;
+    let mut uVar5: u16;
+    let mut uVar6: u32;
 
     uVar5 = (param_1 >> 0x10);
     iVar5 = (Struct602 *) param_1;
-    param_1->fld0_addr_table = addr_table_1028_2572;//0x2572;
+    param_1.fld0_addr_table = addr_table_1028_2572;//0x2572;
     iVar5->fld2_segment = SEG_1028;
-    uVar4 = &iVar5->field_0x20;
+    uVar4 = &iVar5.field_0x20;
     (uVar4 + 0xa) = 0x1;
-    puVar1 = iVar5->field_0x20;
-    u_var2 = iVar5->field_0x22;
+    puVar1 = iVar5.field_0x20;
+    u_var2 = iVar5.field_0x22;
     if ((u_var2 | puVar1) != 0x0) {
         ppcVar3 = *puVar1;
         (**ppcVar3)();
@@ -1391,18 +1391,18 @@ u16  pass1_1028_20b0(void) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_20b6(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    u16 uVar1;
-    u8 *pu_var2;
-    u16 uVar3;
-    u16 uVar4;
-    u8  auStack22[0x2];
-    i16 iStack20;
-    i16 iStack18;
-    u32 uStack16;
-    u16 uStack12;
-    u32 uStack10;
-    u32 u_stack6;
+void  pass1_1028_20b6(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u16;
+    let mut pu_var2: *mut u8;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut auStack22: [u8;2] = [0;2];
+    let mut iStack20: i16;
+    let mut iStack18: i16;
+    let mut uStack16: u32;
+    let mut uStack12: u16;
+    let mut uStack10: u32;
+    let mut u_stack6: u32;
 
     pass1_1028_be9e(param_1, param_2, param_3, param_4, param_5);
     uVar4 = (param_1 >> 0x10);
@@ -1425,7 +1425,7 @@ void  pass1_1028_20b6(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
             uVar1    = pass1_1028_21ba(uVar3, uVar4,
                                     str_var1(param_5, &uStack16), u_stack6, &uStack16, pu_var2, param_5);
             if(uVar1 == 0x0) {
-                uStack16 = str_var1(iStack20, iStack18 + -0x1);
+                uStack16 = str_var1(iStack20, iStack18- 1);
                 uVar1    = pass1_1028_21ba(uVar3, uVar4,
                                         str_var1(param_5, &uStack16), u_stack6, &uStack16, pu_var2, param_5);
                 if(uVar1 == 0x0) {
@@ -1444,15 +1444,15 @@ void  pass1_1028_20b6(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
 }
 
 
-i16  pass1_1028_2290(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 param_5, long param_6, u16 param_7) {
-    i16        iVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u8         local_e[0x2];
-    i16        local_c;
-    i16        local_a;
-    u32 local_8;
-    u16        uStack4;
+i16  pass1_1028_2290(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16, long param_6, param_7: u16) {
+    let mut iVar1: i16;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
+    let mut local_e: [u8;2] = [0;2];
+    let mut local_c: i16;
+    let mut local_a: i16;
+    let mut local_8: u32;
+    let mut uStack4: u16;
 
     local_8 = *param_2;
     uStack4 = (param_2 + 0x1);
@@ -1488,12 +1488,12 @@ i16  pass1_1028_2290(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16  pass1_1028_236a(u32 *param_1, param_2: u16, param_3: u16, u16 param_4) {
-    u16 uVar1;
-    u32 u_var2;
-    u16 uVar3;
-    u16 uVar4;
-    u16 uVar5;
+u16  pass1_1028_236a(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut uVar5: u16;
 
     uVar1 = (param_1 >> 0x10);
     if((*(u8 *)(param_1 + 0x1a) & 0x2) == 0x0) {
@@ -1512,12 +1512,12 @@ u16  pass1_1028_236a(u32 *param_1, param_2: u16, param_3: u16, u16 param_4) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_23a8(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, long param_5, u16 param_6) {
-    i16 iVar1;
-    u8 *pu_var2;
-    u16 uVar3;
-    u32 uVar4;
-    u8  local_4[0x2];
+void  pass1_1028_23a8(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, long param_5, param_6: u16) {
+    let mut iVar1: i16;
+    let mut pu_var2: *mut u8;
+    let mut uVar3: u16;
+    let mut uVar4: u32;
+    let mut local_4: [u8;2] = [0;2];
 
     uVar4 = pass1_1030_bcae(local_4, param_6);
     uVar3 = (uVar4 >> 0x10);
@@ -1535,25 +1535,25 @@ void  pass1_1028_23a8(param_1: u16, param_2: u16, u16 *param_3, param_4: u32, lo
 }
 
 
-u16 * pass1_1028_25fc(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_25fc(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  s_fem16_wav_1050_2644 + 0x8;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16 * pass1_1028_26d6(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_26d6(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x2788;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-void  pass1_1028_2700(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    u16 uVar1;
-    u32 u_var2;
+void  pass1_1028_2700(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u16;
+    let mut u_var2: u32;
 
     pass1_1028_be2a(param_1, param_2, param_3, param_4, param_5);
     uVar1 = (param_1 >> 0x10);
@@ -1565,8 +1565,8 @@ void  pass1_1028_2700(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
 }
 
 
-void  pass1_1028_272e(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16 param_5) {
-    u32 uVar1;
+void  pass1_1028_272e(param_1: *mut u32, param_2: u16, param_3: u16, param_4: u16, param_5: u16) {
+    let mut uVar1: u32;
 
     pass1_1028_be9e(param_1, param_2, param_3, param_4, param_5);
     uVar1 = pass1_1028_b4f2(param_1);
@@ -1577,10 +1577,10 @@ void  pass1_1028_272e(u32 *param_1, param_2: u16, param_3: u16, u16 param_4, u16
 }
 
 
-u16 * pass1_1028_2812(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_2812(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
     param_1 =  0x2a92;
-    param_1->fld2_segment      = SEG_1028;
+    param_1.fld2_segment      = SEG_1028;
     (param_1 + 0xe)            = (param_1 + 0xc);
     return param_1;
 }
@@ -1588,16 +1588,16 @@ u16 * pass1_1028_2812(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 
 
 // WARNING: Could not reconcile some variable overlaps
 
-u16  pass1_1028_2844(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 param_5, long param_6, u16 param_7) {
+u16  pass1_1028_2844(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16, long param_6, param_7: u16) {
     BOOL16     BVar1;
-    u16        u_var2;
-    u16        uVar3;
-    u16        uVar4;
-    u8         local_e[0x2];
-    i16        local_c;
-    i16        local_a;
-    u32 local_8;
-    u16        uStack4;
+    let mut u_var2: u16;
+    let mut uVar3: u16;
+    let mut uVar4: u16;
+    let mut local_e: [u8;2] = [0;2];
+    let mut local_c: i16;
+    let mut local_a: i16;
+    let mut local_8: u32;
+    let mut uStack4: u16;
 
     local_8 = *param_2;
     uStack4 = (param_2 + 0x1);
@@ -1648,10 +1648,10 @@ u16  pass1_1028_2844(u32 param_1, u32 *param_2, param_3: u16, u16 param_4, u16 p
 }
 
 
-u16  pass1_1028_297c(u32 param_1, u16 *param_2, long param_3, u16 param_4, u16 param_5, u16 param_6) {
+u16  pass1_1028_297c(param_1: u32, u16 *param_2, long param_3, param_4: u16, param_5: u16, param_6: u16) {
     char cVar1;
-    u16  u_var2;
-    u32  uVar3;
+    let mut u_var2: u16;
+    let mut uVar3: u32;
 
     pass1_1028_c7b6(param_6, param_5, param_1, (param_1 >> 0x10), param_2, param_3);
     if(param_4 == 0x0) {
@@ -1663,23 +1663,23 @@ u16  pass1_1028_297c(u32 param_1, u16 *param_2, long param_3, u16 param_4, u16 p
             u_var2 = (uVar3 + 0xc);
             if(0x4a < u_var2) {
                 switch(u_var2) {
-                    case 0x4c:
-                    case 0x4d:
-                    case 0x4e:
-                    case 0x60:
-                    case 0x61:
-                    case 0x62:
-                    case 0x63:
-                    case 0x6e:
-                    case 0x73:
-                    case 0x74:
-                    case 0x75:
-                    case 0x76:
-                    case 0x77:
-                    case 0x78:
-                    case 0x79:
+                    0x4c =>
+                    0x4d =>
+                    0x4e =>
+                    0x60 =>
+                    0x61 =>
+                    0x62 =>
+                    0x63 =>
+                    0x6e =>
+                    0x73 =>
+                    0x74 =>
+                    0x75 =>
+                    0x76 =>
+                    0x77 =>
+                    0x78 =>
+                    0x79 =>
                         goto switchD_1028_2a0b_caseD_4c;
-                    default:
+                    _ =>
                         goto switchD_1028_2a0b_caseD_4f;
                 }
             }
@@ -1708,26 +1708,26 @@ switchD_1028_2a0b_caseD_4c:
 }
 
 
-u16 * pass1_1028_2b1c(i16 param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_2b1c(param_1: i16, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1030_dcc2(param_1, param_2, param_3, param_4, param_5);
     param_1 =  0x2b74;
-    param_1->fld2_segment = SEG_1028;
+    param_1.fld2_segment = SEG_1028;
     return param_1;
 }
 
 
-u16 * pass1_1028_0982(Struct179 *param_1, param_2: u16, i16 param_3, param_4: u32, u16 param_5) {
+u16 * pass1_1028_0982(Struct179 *param_1, param_2: u16, param_3: i16, param_4: u32, param_5: u16) {
     pass1_1028_b39e(str_var1(param_2, param_1), param_3, param_4, param_5);
-    param_1->field_0x20        = 0x0;
+    param_1.field_0x20        = 0x0;
     param_1 =  0xada;
-    param_1->fld2_segment      = SEG_1028;
-    param_1->field_0xe         = 0x4b;
+    param_1.fld2_segment      = SEG_1028;
+    param_1.field_0xe         = 0x4b;
     return param_1;
 }
 
 
-void  pass1_1028_09b8(u32 param_1) {
-    u32 uVar1;
+void  pass1_1028_09b8(param_1: u32) {
+    let mut uVar1: u32;
 
     uVar1          = pass1_1028_b58e(param_1);
     (uVar1 + 0x14) = 0x1;
@@ -1737,15 +1737,15 @@ void  pass1_1028_09b8(u32 param_1) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1028_09d4(param_1: u16, i16 param_2, param_3: u16, param_4: u32, u16 *param_5, u32 param_6, long param_7) {
-    i16    iVar1;
-    u8    *pu_var2;
-    u16    uVar3;
-    u32    uVar4;
-    u16    uVar5;
-    u16    uVar6;
-    u16    uVar7;
-    u8     local_6[0x2];
+void  pass1_1028_09d4(param_1: u16, param_2: i16, param_3: u16, param_4: u32, u16 *param_5, param_6: u32, long param_7) {
+    let mut iVar1: i16;
+    let mut pu_var2: *mut u8;
+    let mut uVar3: u16;
+    let mut uVar4: u32;
+    let mut uVar5: u16;
+    let mut uVar6: u16;
+    let mut uVar7: u16;
+    let mut local_6: [u8;2] = [0;2];
     BOOL16 BStack4;
 
     uVar5   = param_4;

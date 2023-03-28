@@ -13,7 +13,7 @@
 // #include "utils.h"
 
 // #include <op_winapi.h>
-void fn_ptr_1000_17ce(Struct18 *param_1, u16 param_2)
+void fn_ptr_1000_17ce(param_1: *mut Struct18, param_2: u16)
 
 {
     if(param_1 != (Struct18 *)0x0)
@@ -22,7 +22,7 @@ void fn_ptr_1000_17ce(Struct18 *param_1, u16 param_2)
     }
     return;
 }
-//void fn_ptr_1000_17ce(Struct18 *param_1,u16 param_2)
+//void fn_ptr_1000_17ce(param_1: *mut Struct18,param_2: u16)
 //
 //{
 //  if (param_1 != 0x0) {

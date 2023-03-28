@@ -10,7 +10,7 @@
 
 typedef void (*FnPtr1)();
 
-typedef u32 (*FnPtr2)(u16);
+typedef u32 (*FnPtr2);
 
 typedef void(*FnPtr3)(u16, u16, u16, u16, u16);
 

@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_217_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_217_H_
 
-typedef struct Struct217 Struct217;
+// typedef struct Struct217 Struct217;
 struct Struct217
 {
     u8         field_0x0;
     u8         field_0x1;
-    u16        field_0x2;
+    let mut field_0x2: u16;
     u8         field_0x4;
     u8         field_0x5;
     u8         field_0x6;
@@ -271,8 +271,8 @@ struct Struct217
     u8         field_0x105;
     u8         field_0x106;
     u8         field_0x107;
-    u32 field_0x108;
-    u32 field_0x10c;
-    u16        field_0x110;
+    let mut field_0x108: u32;
+    let mut field_0x10c: u32;
+    let mut field_0x110: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_217_H_

@@ -7,12 +7,12 @@
 
 // #include "structs/structs_0xx/struct_76.h"
 // #include "structs_11.h"
-typedef struct Struct626 Struct626;
+// typedef struct Struct626 Struct626;
 struct Struct626
 {
     u8                 field_0x0;
     u8                 field_0x1;
-    u16                field_0x2;
+    let mut field_0x2: u16;
     u8                 field_0x4;
     u8                 field_0x5;
     u8                 field_0x6;
@@ -41,10 +41,10 @@ struct Struct626
     u8                 field_0x1d;
     u8                 field_0x1e;
     u8                 field_0x1f;
-    u16                field_0x20;
-    u16                field_0x22;
+    let mut field_0x20: u16;
+    let mut field_0x22: u16;
     Struct76 *field_0x24;
-    u32         field_0x28;
+    let mut field_0x28: u32;
     u8                 field_0x2c;
     u8                 field_0x2d;
     u8                 field_0x2e;
@@ -365,16 +365,16 @@ struct Struct626
     u8                 field_0x169;
     u8                 field_0x16a;
     u8                 field_0x16b;
-    i16                field_0x16c;
-    u16                field_0x16e;
-    i16                field_0x170;
-    i16                field_0x172;
-    u16                field_0x174;
-    u16                field_0x176;
-    u16                field_0x178;
-    u32         field_0x17a;
-    u32         field_0x17e;
+    let mut field_0x16c: i16;
+    let mut field_0x16e: u16;
+    let mut field_0x170: i16;
+    let mut field_0x172: i16;
+    let mut field_0x174: u16;
+    let mut field_0x176: u16;
+    let mut field_0x178: u16;
+    let mut field_0x17a: u32;
+    let mut field_0x17e: u32;
     u32        *field_0x182;
-    u32         field_0x186;
+    let mut field_0x186: u32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_626_H_

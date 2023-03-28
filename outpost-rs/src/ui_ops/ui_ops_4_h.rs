@@ -24,27 +24,27 @@ void show_win_1038_c044(globals: &mut Globals, Struct1 *param_1);
 
 
 
-void  msg_box_op_1038_c07a(i16 param_1, param_2: u16, param_3: u16, param_4: u32, u16 param_5);
+void  msg_box_op_1038_c07a(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: u16);
 
 
 
 
-void  enable_win_1038_c294(u32 param_1);
+void  enable_win_1038_c294(param_1: u32);
 
 
 
 
-BOOL16  set_win_pos_1038_c31a(u32 param_1, param_2: u16, i16 param_3, HWND16 param_4);
+BOOL16  set_win_pos_1038_c31a(param_1: u32, param_2: u16, param_3: i16, HWND16 param_4);
 
 
 
 
-void  pass1_1038_c4fe(Struct18 *param_1);
+void  pass1_1038_c4fe(param_1: *mut Struct18);
 
 
 
 
-void  pass1_1038_c52a(param_1: u16, u32 param_2, u8 *param_3, i16 param_4, u16 param_5);
+void  pass1_1038_c52a(param_1: u16, param_2: u32, param_3: *mut u8, param_4: i16, param_5: u16);
 
 
 
@@ -54,22 +54,22 @@ void  show_win_1038_c558(Struct1 *param_1);
 
 
 
-void  win_dlg_op_1038_c58e(u32 param_1, WORD *param_2);
+void  win_dlg_op_1038_c58e(param_1: u32, WORD *param_2);
 
 
 
 
-void  message_box_op_1038_c672(i16 param_1, param_2: u16, param_3: u16, param_4: u32, short param_5);
+void  message_box_op_1038_c672(param_1: i16, param_2: u16, param_3: u16, param_4: u32, short param_5);
 
 
 
 
-void  pass1_1038_c80a(Struct18 *param_1);
+void  pass1_1038_c80a(param_1: *mut Struct18);
 
 
 
 
-void  destroy_window_1038_c836(i16 param_1, u32 param_2, u32 param_3, u16 param_4);
+void  destroy_window_1038_c836(param_1: i16, param_2: u32, param_3: u32, param_4: u16);
 
 
 
@@ -79,12 +79,12 @@ void  win_ui_op_1038_c89c(Struct1 *param_1);
 
 
 
-void  enable_window_1038_9cec(i16 param_1, param_2: u16, param_3: u16, u16 param_4, i16 param_5, HWND16 param_6);
+void  enable_window_1038_9cec(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16, HWND16 param_6);
 
 
 
 
-void  pass1_1038_9fa4(Struct18 *param_1);
+void  pass1_1038_9fa4(param_1: *mut Struct18);
 
 
 
@@ -94,32 +94,32 @@ void  show_win_1038_9fd0(Struct1 *param_1);
 
 
 
-void  destroy_window_1038_a072(param_1: u16, param_2: u16, i16 param_3, HWND16 param_4);
+void  destroy_window_1038_a072(param_1: u16, param_2: u16, param_3: i16, HWND16 param_4);
 
 
 
 
-void  pass1_1038_a156(Struct18 *param_1);
+void  pass1_1038_a156(param_1: *mut Struct18);
 
 
 
 
-void  unk_win_ui_op_1038_a18c(Struct1 *param_1, u16 param_2);
+void  unk_win_ui_op_1038_a18c(Struct1 *param_1, param_2: u16);
 
 
 
 
-void  show_win_1038_a396(Struct1 *param_1, param_2: u16, u16 param_3);
+void  show_win_1038_a396(Struct1 *param_1, param_2: u16, param_3: u16);
 
 
 
 
-void  win_ui_op_1038_a4ee(Struct1 *param_1, u16 param_2);
+void  win_ui_op_1038_a4ee(Struct1 *param_1, param_2: u16);
 
 
 
 
-void  win_ui_op_1038_a584(param_1: u16, i16 param_2, HWND16 param_3, u16 param_4);
+void  win_ui_op_1038_a584(param_1: u16, param_2: i16, param_3: HWND16, param_4: u16);
 
 
 
@@ -129,7 +129,7 @@ void  win_ui_op_1038_a6f4(Struct1 *param_1);
 
 
 
-void  win_ui_op_1038_a788(u32 param_1, i16 param_2, HWND16 param_3, u16 param_4);
+void  win_ui_op_1038_a788(param_1: u32, param_2: i16, param_3: HWND16, param_4: u16);
 
 
 
@@ -142,12 +142,12 @@ void  win_ui_op_1038_a972(Struct1 *param_1);
 
 
 
-void  win_sys_op_1038_a9fa(u32 param_1, i16 param_2);
+void  win_sys_op_1038_a9fa(param_1: u32, i16 param_2);
 
 
 
 
-void  pass1_1038_abb0(Struct18 *param_1);
+void  pass1_1038_abb0(param_1: *mut Struct18);
 
 
 
@@ -155,67 +155,67 @@ void  pass1_1038_abb0(Struct18 *param_1);
 void  set_win_pos_1038_abdc(HWND16 param_1);
 
 
-struct Struct20 * pass1_1038_aeca(param_1: &mut Struct20, u16 param_2);
+struct Struct20 * pass1_1038_aeca(param_1: &mut Struct20, param_2: u16);
 
 
 
 
-u16  pass1_1038_8966(u32 param_1, param_2: u16, param_3: u16, i16 param_4, HWND16 param_5);
+u16  pass1_1038_8966(param_1: u32, param_2: u16, param_3: u16, param_4: i16, HWND16 param_5);
 
 
 
 
-void  pass1_1038_89e8(u32 param_1, u16 param_2);
+void  pass1_1038_89e8(param_1: u32, param_2: u16);
 
 
 
 
-void  pass1_1038_89f8(i16 param_1, param_2: u16, param_3: u16, param_4: u32, u8 *param_5, u16 param_6);
+void  pass1_1038_89f8(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: *mut u8, param_6: u16);
 
 
 
 
-void  msg_box_ui_op_1038_8a3a(u32 param_1, char *param_2, u8 *param_3, u16 param_4);
+void  msg_box_ui_op_1038_8a3a(param_1: u32, char *param_2, param_3: *mut u8, param_4: u16);
 
 
 
 
-void  unk_win_ui_op_1038_8afe(Struct50 *param_1, HWND16 param_2, BOOL16 param_3);
+void  unk_win_ui_op_1038_8afe(Struct50 *param_1, param_2: HWND16, BOOL16 param_3);
 
 
 
 
-void  send_dlg_item_msg_1038_8b58(u32 param_1, u16 param_2);
+void  send_dlg_item_msg_1038_8b58(param_1: u32, param_2: u16);
 
 
 
 
-void  pass1_1038_8d98(i16 param_1, param_2: u16, param_3: u16, param_4: u32, u8 *param_5, u16 param_6, u16 param_7);
+void  pass1_1038_8d98(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: *mut u8, param_6: u16, param_7: u16);
 
 
 
 
-void  msg_box_op_1038_8dda(u32 param_1, char *param_2, u8 *param_3, u16 param_4);
+void  msg_box_op_1038_8dda(param_1: u32, char *param_2, param_3: *mut u8, param_4: u16);
 
 
 
 
-LRESULT  send_dlg_item_msg_1038_8f74(u32 param_1, HWND16 param_2, WORD *param_3);
+LRESULT  send_dlg_item_msg_1038_8f74(param_1: u32, param_2: HWND16, WORD *param_3);
 
 
 
 
-void  win_dlg_op_1038_9294(Struct1 *param_1, u16 param_2);
+void  win_dlg_op_1038_9294(Struct1 *param_1, param_2: u16);
 
 
 
 
-BOOL16  send_dlg_item_int_1038_94da(i16 param_1, param_2: u16, param_3: u16, u16 param_4, i16 param_5, HWND16 param_6, BOOL16 param_7);
+BOOL16  send_dlg_item_int_1038_94da(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16, param_6: HWND16, BOOL16 param_7);
 
 
 
 
-void  enable_win_1038_9a66(param_1: u16, param_2: u16, u16 in_b_enable_3, param_4: u32, HWND16 in_hwnd_5);
+void  enable_win_1038_9a66(param_1: u16, param_2: u16, in_b_enable_3: u16, param_4: u32, HWND16 in_hwnd_5);
 
 
 
@@ -225,192 +225,192 @@ void  unk_win_ui_op_1038_9bc8(Struct1 *param_1);
 
 
 
-void  destroy_window_1038_7d88(u32 param_1, u16 param_2);
+void  destroy_window_1038_7d88(param_1: u32, param_2: u16);
 
 
 
 
-LRESULT  pass1_1038_7dac(u32 param_1, u16 param_2);
+LRESULT  pass1_1038_7dac(param_1: u32, param_2: u16);
 
 
 
 
-void  pass1_1038_7dc6(i16 param_1, param_2: u16, param_3: u16, param_4: u32, u8 *param_5, u16 param_6, u16 param_7, u16 param_8);
+void  pass1_1038_7dc6(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: *mut u8, param_6: u16, param_7: u16, param_8: u16);
 
 
 
 
-LRESULT  send_dlg_item_msg_1038_7eac(u32 param_1);
+LRESULT  send_dlg_item_msg_1038_7eac(param_1: u32);
 
 
 
 
-void  send_dlg_item_msg_1038_7fae(u32 param_1);
+void  send_dlg_item_msg_1038_7fae(param_1: u32);
 
 
 
 
-void  enable_win_1038_806a(u32 param_1, HWND16 param_2);
+void  enable_win_1038_806a(param_1: u32, HWND16 param_2);
 
 
 
 
-u16  send_dlg_item_msg_1038_8164(param_1: u16, param_2: u16, u8 *param_3, u16 param_4, HWND16 param_5);
+u16  send_dlg_item_msg_1038_8164(param_1: u16, param_2: u16, param_3: *mut u8, param_4: u16, HWND16 param_5);
 
 
 
 
-void  msg_box_op_1038_81be(u32 param_1, char *param_2, u8 *param_3, u16 param_4);
+void  msg_box_op_1038_81be(param_1: u32, char *param_2, param_3: *mut u8, param_4: u16);
 
 
 
 
-void  set_win_text_1038_8358(u32 param_1, HWND16 param_2, u16 param_3);
+void  set_win_text_1038_8358(param_1: u32, param_2: HWND16, param_3: u16);
 
 
 
 
-void  send_dlg_item_msg_1038_8400(param_1: u16, param_2: u16, u32 param_3, u16 param_4, u16 param_5);
+void  send_dlg_item_msg_1038_8400(param_1: u16, param_2: u16, param_3: u32, param_4: u16, param_5: u16);
 
 
 
 
-LRESULT  send_dlg_item_msg_1038_844a(u32 param_1, HWND16 param_2, u16 param_3);
+LRESULT  send_dlg_item_msg_1038_844a(param_1: u32, param_2: HWND16, param_3: u16);
 
 
 
 
-u16  send_dlg_item_msg_1038_8618(u32 param_1, u16 param_2);
+u16  send_dlg_item_msg_1038_8618(param_1: u32, param_2: u16);
 
 
 
 
-u16  send_dlg_item_msg_1038_87b2(u32 param_1, param_2: u16, u16 param_3);
+u16  send_dlg_item_msg_1038_87b2(param_1: u32, param_2: u16, param_3: u16);
 
 
 
 
-void  pass1_1038_8810(u32 param_1, param_2: u16, u16 param_3);
+void  pass1_1038_8810(param_1: u32, param_2: u16, param_3: u16);
 
 
 
-void  pass1_1020_de32(u32 param_1, param_2: u16, u8 *param_3, i16 param_4, u16 param_5);
+void  pass1_1020_de32(param_1: u32, param_2: u16, param_3: *mut u8, param_4: i16, param_5: u16);
 
 
 
-Struct29 * pass1_1018_d198(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d198(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d1be(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d1be(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d1e4(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d1e4(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d20a(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d20a(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d230(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d230(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d256(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d256(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d27c(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d27c(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d2a2(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d2a2(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d2c8(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d2c8(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d2ee(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d2ee(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d314(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d314(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d33a(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d33a(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d360(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d360(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d386(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d386(Struct29 *param_1, param_2: u8);
 
 
 
 
-Struct29 * pass1_1018_d3ac(Struct29 *param_1, u8 param_2);
+Struct29 * pass1_1018_d3ac(Struct29 *param_1, param_2: u8);
 
 
 
-void  pass1_1020_8bcc(Struct285 *param_1, u16 param_2);
+void  pass1_1020_8bcc(Struct285 *param_1, param_2: u16);
 
 
 
-void  invalidate_rect_1020_8d90(u32 param_1, param_2: u16, u32 param_3, u16 param_4, u16 param_5, u16 param_6);
+void  invalidate_rect_1020_8d90(param_1: u32, param_2: u16, param_3: u32, param_4: u16, param_5: u16, param_6: u16);
 
 
 
-void  invalidate_rect_1020_8fb4(u32 param_1, u16 param_2);
+void  invalidate_rect_1020_8fb4(param_1: u32, param_2: u16);
 
 
 
-void  set_struct_op_1020_921c(Struct7 *param_1, u16 param_2);
+void  set_struct_op_1020_921c(Struct7 *param_1, param_2: u16);
 
 
 
-void  pass1_1020_770e(u32 param_1);
+void  pass1_1020_770e(param_1: u32);
 
 
 
-void  cleanup_menu_ui_op_1020_795c(Struct3 *in_struct_1, HMENU16 in_menu_handle_2);
+void  cleanup_menu_ui_op_1020_795c(Struct3 *in_struct_1, HMENin_menu_handle_2: u16);
 
 
 
-void  get_win_ui_info_op_1020_7a50(u32 param_1, HWND16 param_2);
+void  get_win_ui_info_op_1020_7a50(param_1: u32, HWND16 param_2);
 
 
 
 
-void  win_ui_menu_op_1020_7ad2(u32 param_1, HWND16 param_2, RECT16 *param_3, HWND16 param_4);
+void  win_ui_menu_op_1020_7ad2(param_1: u32, param_2: HWND16, RECT16 *param_3, HWND16 param_4);
 
 
 
 
-Struct3 * pass1_1020_7b60(Struct3 *param_1, u8 param_2, u16 param_3);
+Struct3 * pass1_1020_7b60(Struct3 *param_1, param_2: u8, param_3: u16);
 
 
 
-void  destroy_window_1020_8250(u32 param_1, HWND16 param_2);
+void  destroy_window_1020_8250(param_1: u32, HWND16 param_2);
 
 
 

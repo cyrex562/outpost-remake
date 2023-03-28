@@ -7,7 +7,7 @@
 
 // #include "struct_656.h"
 // #include "struct_657.h"
-typedef struct Struct691 Struct691;
+// typedef struct Struct691 Struct691;
 struct Struct691
 {
     u8  field_0x0;
@@ -512,7 +512,7 @@ struct Struct691
     u8  field_0x1f3;
     u8  field_0x1f4;
     u8  field_0x1f5;
-    u32 field_0x1f6;
+    let mut field_0x1f6: u32;
     u8  field_0x1fa;
     u8  field_0x1fb;
     u8  field_0x1fc;
@@ -529,7 +529,7 @@ struct Struct691
     u8  field_0x207;
     u8  field_0x208;
     u8  field_0x209;
-    u16 field_0x20a;
-    u16 field_0x20c;
+    let mut field_0x20a: u16;
+    let mut field_0x20c: u16;
 };
 #endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_2_H_STRUCT_691_H_

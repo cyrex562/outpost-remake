@@ -21,7 +21,7 @@ void window_op_1020_2642(globals: &mut Globals, Struct0 *param_1);
 
 BOOL16 pass1_1008_68c6(param_1: u16, param_2: u16, param_3: u16, i32 param_4);
 
-BOOL16 show_win_1008_96ae(u32 param_1, i16 param_2);
+BOOL16 show_win_1008_96ae(param_1: u32, i16 param_2);
 
 void pass1_1008_3bd6(u32       param_1,
                      Struct57 *param_2,
@@ -38,12 +38,12 @@ void pass1_1008_3bd6(u32       param_1,
                      u16       param_13,
                      u16       param_14);
 
-void set_win_text_1008_9664(u32 param_1,param_2: u16,char *param_3);
+void set_win_text_1008_9664(param_1: u32,param_2: u16,char *param_3);
 
-void destroy_win_1008_9698(Struct871 *param_1,u16 param_2);
+void destroy_win_1008_9698(Struct871 *param_1,param_2: u16);
 
-StructD *  pass1_1008_3cd6(StructD *param_1,u8 param_2);
+StructD *  pass1_1008_3cd6(StructD *param_1,param_2: u8);
 
-void win_ui_op_1008_3c34(globals: &mut Globals, u32 param_1, u8 param_2, HDC16 hdc_param_3);
+void win_ui_op_1008_3c34(globals: &mut Globals, param_1: u32, param_2: u8, hdc_param_3: HDC16);
 
 #endif // OUTPOST_1_SRC_WIN_OPS_WIN_OPS_5_H_

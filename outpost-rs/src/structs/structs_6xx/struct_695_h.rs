@@ -7,7 +7,7 @@
 
 // #include "op_int.h"
 
-typedef struct Struct695 Struct695;
+// typedef struct Struct695 Struct695;
 struct Struct695
 {
     u8  field_0x0;
@@ -22,12 +22,12 @@ struct Struct695
     u8  field_0x9;
     u8  field_0xa;
     u8  field_0xb;
-    i16 field_0xc;
+    let mut field_0xc: i16;
     u8  field_0xe;
     u8  field_0xf;
     u8  field_0x10;
     u8  field_0x11;
-    i16 field_0x12;
+    let mut field_0x12: i16;
     u8  field_0x14;
     u8  field_0x15;
     u8  field_0x16;
@@ -44,6 +44,6 @@ struct Struct695
     u8  field_0x21;
     u8  field_0x22;
     u8  field_0x23;
-    i16 field_0x24;
+    let mut field_0x24: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_3_H_STRUCT_695_H_

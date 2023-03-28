@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_653_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_653_H_
 
-typedef struct Struct653 Struct653;
+// typedef struct Struct653 Struct653;
 struct Struct653
 {
     u8         field_0x0;
@@ -72,9 +72,9 @@ struct Struct653
     u8         field_0x3d;
     u8         field_0x3e;
     u8         field_0x3f;
-    u32 field_0x40;
-    i16        field_0x44;
+    let mut field_0x40: u32;
+    let mut field_0x44: i16;
     long       field_0x46;
-    i16        field_0x4a;
+    let mut field_0x4a: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_653_H_

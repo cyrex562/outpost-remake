@@ -7,7 +7,7 @@
 
 // #include "op_int.h"
 
-typedef struct Struct692 Struct692;
+// typedef struct Struct692 Struct692;
 struct Struct692
 {
     u8  field_0x0;
@@ -436,6 +436,6 @@ struct Struct692
     u8  field_0x1a7;
     u8  field_0x1a8;
     u8  field_0x1a9;
-    u32 field_0x1aa;
+    let mut field_0x1aa: u32;
 };
 #endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_3_H_STRUCTS_692_H_

@@ -28,34 +28,34 @@
 // #include "structs_36x.h"
 // #include "structs_37x.h"
 
-typedef struct Struct386 Struct386;
-typedef struct Struct387 Struct387;
-typedef struct Struct388 Struct388;
-typedef struct Struct380 Struct380;
+// typedef struct Struct386 Struct386;
+// typedef struct Struct387 Struct387;
+// typedef struct Struct388 Struct388;
+// typedef struct Struct380 Struct380;
 struct Struct380 {
-    void *pv_field_42;
-    u32 field_0x48;
-    u16 field_0x12;
+    let mut pv_field_42: *mut c_void;
+    let mut field_0x48: u32;
+    let mut field_0x12: u16;
     u8 field_0x3c;
 };
-typedef struct Struct389 Struct389;
-typedef struct Struct381 Struct381;
+// typedef struct Struct389 Struct389;
+// typedef struct Struct381 Struct381;
 struct Struct381 {
-    u16 field_0x1;
-    u16 fielx_0x2;
+    let mut field_0x1: u16;
+    let mut fielx_0x2: u16;
 };
-typedef struct Struct383 Struct383;
+// typedef struct Struct383 Struct383;
 
 typedef struct Struct384 {
     u8 field_0x0;
     u8 field_0x1;
     u8 field_0x2;
     u8 field_0x3;
-    i16 field_0x4;
-    i16 field_0x6;
-    i16 field_0x8;
-    i16 field_0xa;
-    i16 field_0xc;
+    let mut field_0x4: i16;
+    let mut field_0x6: i16;
+    let mut field_0x8: i16;
+    let mut field_0xa: i16;
+    let mut field_0xc: i16;
 } Struct384;
 // struct Struct384 {
 //     char* field_0xc;
@@ -87,7 +87,7 @@ struct Struct386 {
     u8 field_0x17;
     u8 field_0x18;
     u8 field_0x19;
-    u32 field_0x1a;
+    let mut field_0x1a: u32;
     u8 field_0x1e;
     u8 field_0x1f;
     u8 field_0x20;
@@ -139,8 +139,8 @@ struct Struct387 {
     u8 field_0xf;
     u8 field_0x10;
     u8 field_0x11;
-    u16 field_0x12;
-    u16 field_0x14;
+    let mut field_0x12: u16;
+    let mut field_0x14: u16;
     u8 field_0x16;
     u8 field_0x17;
     u8 field_0x18;
@@ -163,7 +163,7 @@ struct Struct387 {
     u8 field_0x29;
     long field_0x2a;
     BOOL16 field_0x2e;
-    u8 *field_0x30;
+    let mut field_0x30: *mut u8;
     u8 field_0x32;
     u8 field_0x33;
     u8 field_0x34;
@@ -178,12 +178,12 @@ struct Struct387 {
 struct Struct388 {
     u8 field_0x0;
     u8 field_0x1;
-    u16 field_0x2;
-    u16 field_0x4;
-    u16 field_0x6;
-    u16 field_0x8;
-    u16 field_0xa;
-    u16 field_0xc;
+    let mut field_0x2: u16;
+    let mut field_0x4: u16;
+    let mut field_0x6: u16;
+    let mut field_0x8: u16;
+    let mut field_0xa: u16;
+    let mut field_0xc: u16;
 };
 // struct Struct380
 //{
@@ -199,9 +199,9 @@ struct Struct389 {
     u8 field_0x1;
     u8 field_0x2;
     u8 field_0x3;
-    u16 field_0x4;
-    u16 field_0x6;
-    u16 field_0x8;
+    let mut field_0x4: u16;
+    let mut field_0x6: u16;
+    let mut field_0x8: u16;
 };
 // struct Struct381
 //{
@@ -304,10 +304,10 @@ struct Struct383 {
     u8 field_0x1;
     u8 field_0x2;
     u8 field_0x3;
-    i16 field_0x4;
-    i16 field_0x6;
-    i16 field_0x8;
-    i16 field_0xa;
-    i16 field_0xc;
+    let mut field_0x4: i16;
+    let mut field_0x6: i16;
+    let mut field_0x8: i16;
+    let mut field_0xa: i16;
+    let mut field_0xc: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_22_H_STRUCTS_38X_H_

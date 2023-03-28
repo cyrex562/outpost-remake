@@ -21,7 +21,7 @@
 
 // #include <minwindef.h>
 
-void send_msg_1040_c85a(globals: &mut Globals, u32 param_1, HWND16 hwnd_arg2)
+void send_msg_1040_c85a(globals: &mut Globals, param_1: u32, HWND16 hwnd_arg2)
 
 {
     globals.dat_1050_5efe = param_1;

@@ -6,20 +6,20 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_21_H_STRUCTS_50X_H_
 
 // #include "op_int.h"
-typedef struct Struct501 Struct501;
-typedef struct Struct500 Struct500;
-typedef struct Struct503 Struct503;
-typedef struct Struct509 Struct509;
-typedef struct Struct508 Struct508;
-typedef struct Struct505 Struct505;
-typedef struct Struct504 Struct504;
-typedef struct Struct507 Struct507;
-typedef struct Struct506 Struct506;
+// typedef struct Struct501 Struct501;
+// typedef struct Struct500 Struct500;
+// typedef struct Struct503 Struct503;
+// typedef struct Struct509 Struct509;
+// typedef struct Struct508 Struct508;
+// typedef struct Struct505 Struct505;
+// typedef struct Struct504 Struct504;
+// typedef struct Struct507 Struct507;
+// typedef struct Struct506 Struct506;
 struct Struct501
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -48,10 +48,10 @@ struct Struct501
     u8          field_0x1d;
     u8          field_0x1e;
     u8          field_0x1f;
-    u16         field_0x20;
-    u16         field_0x22;
+    let mut field_0x20: u16;
+    let mut field_0x22: u16;
     u32 *field_0x24;
-    u16         field_0x26;
+    let mut field_0x26: u16;
     u8          field_0x28;
     u8          field_0x29;
     u8          field_0x2a;
@@ -76,13 +76,13 @@ struct Struct501
     u8          field_0x3d;
     u8          field_0x3e;
     u8          field_0x3f;
-    u32  field_0x40;
+    let mut field_0x40: u32;
 };
 struct Struct500
 {
     u8         field_0x0;
     u8         field_0x1;
-    u16        field_0x2;
+    let mut field_0x2: u16;
     u8         field_0x4;
     u8         field_0x5;
     u8         field_0x6;
@@ -97,7 +97,7 @@ struct Struct500
     u8         field_0xf;
     u8         field_0x10;
     u8         field_0x11;
-    i16        field_0x12;
+    let mut field_0x12: i16;
     u8         field_0x14;
     u8         field_0x15;
     u8         field_0x16;
@@ -110,8 +110,8 @@ struct Struct500
     u8         field_0x1d;
     u8         field_0x1e;
     u8         field_0x1f;
-    u16        field_0x20;
-    u16        field_0x22;
+    let mut field_0x20: u16;
+    let mut field_0x22: u16;
     u8         field_0x24;
     u8         field_0x25;
     u8         field_0x26;
@@ -120,7 +120,7 @@ struct Struct500
     u8         field_0x29;
     u8         field_0x2a;
     u8         field_0x2b;
-    u32        field_0x2c;
+    let mut field_0x2c: u32;
     u8         field_0x30;
     u8         field_0x31;
     u8         field_0x32;
@@ -149,7 +149,7 @@ struct Struct500
     u8         field_0x49;
     u8         field_0x4a;
     u8         field_0x4b;
-    u32 field_0x4c;
+    let mut field_0x4c: u32;
     u8         field_0x50;
     u8         field_0x51;
     u8         field_0x52;
@@ -166,8 +166,8 @@ struct Struct500
     u8         field_0x5d;
     u8         field_0x5e;
     u8         field_0x5f;
-    u16        field_0x60;
-    u16        field_0x62;
+    let mut field_0x60: u16;
+    let mut field_0x62: u16;
     u8         field_0x64;
     u8         field_0x65;
     u8         field_0x66;
@@ -204,23 +204,23 @@ struct Struct500
     u8         field_0x85;
     u8         field_0x86;
     u8         field_0x87;
-    u32 field_0x88;
+    let mut field_0x88: u32;
     u8         field_0x8c;
     u8         field_0x8d;
-    u32 field_0x8e;
+    let mut field_0x8e: u32;
     u8         field_0x92;
     u8         field_0x93;
-    u32 field_0x94;
+    let mut field_0x94: u32;
     u8         field_0x98;
     u8         field_0x99;
-    u32 field_0x9a;
-    u32        field_0x9e;
+    let mut field_0x9a: u32;
+    let mut field_0x9e: u32;
 };
 struct Struct503
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -249,10 +249,10 @@ struct Struct503
     u8          field_0x1d;
     u8          field_0x1e;
     u8          field_0x1f;
-    u16         field_0x20;
-    u16         field_0x22;
+    let mut field_0x20: u16;
+    let mut field_0x22: u16;
     u32 *field_0x24;
-    u16         field_0x26;
+    let mut field_0x26: u16;
     u8          field_0x28;
     u8          field_0x29;
     u8          field_0x2a;
@@ -599,20 +599,20 @@ struct Struct503
     u8          field_0x17f;
     u8          field_0x180;
     u8          field_0x181;
-    u32         field_0x182;
-    u32  field_0x186;
+    let mut field_0x182: u32;
+    let mut field_0x186: u32;
 };
 struct Struct509
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
 };
 struct Struct508
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
@@ -629,16 +629,16 @@ struct Struct508
     u8  field_0x11;
     u8  field_0x12;
     u8  field_0x13;
-    u32 field_0x14;
+    let mut field_0x14: u32;
     u8  field_0x18;
     u8  field_0x19;
-    u16 field_0x1a;
+    let mut field_0x1a: u16;
 };
 struct Struct505
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -929,8 +929,8 @@ struct Struct505
     u8          field_0x123;
     u8          field_0x124;
     u8          field_0x125;
-    u32  field_0x126;
-    u32  field_0x12a;
+    let mut field_0x126: u32;
+    let mut field_0x12a: u32;
     u8          field_0x12e;
     u8          field_0x12f;
     u8          field_0x130;
@@ -940,7 +940,7 @@ struct Struct505
     u8          field_0x134;
     u8          field_0x135;
     u32 *field_0x136;
-    u16         field_0x138;
+    let mut field_0x138: u16;
 };
 struct Struct504
 {
@@ -1334,15 +1334,15 @@ struct Struct504
     u8  field_0x183;
     u8  field_0x184;
     u8  field_0x185;
-    u16 field_0x186;
-    u16 field_0x188;
+    let mut field_0x186: u16;
+    let mut field_0x188: u16;
 };
 struct Struct507
 {
     u8         field_0x0;
     u8         field_0x1;
-    u16        field_0x2;
-    u32 field_0x4;
+    let mut field_0x2: u16;
+    let mut field_0x4: u32;
 };
 struct Struct506
 {
@@ -1640,9 +1640,9 @@ struct Struct506
     u8  field_0x123;
     u8  field_0x124;
     u8  field_0x125;
-    u16 field_0x126;
-    u16 field_0x128;
-    u16 field_0x12a;
-    u16 field_0x12c;
+    let mut field_0x126: u16;
+    let mut field_0x128: u16;
+    let mut field_0x12a: u16;
+    let mut field_0x12c: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_21_H_STRUCTS_50X_H_

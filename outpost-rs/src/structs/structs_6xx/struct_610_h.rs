@@ -5,7 +5,7 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_610_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_610_H_
 
-typedef struct Struct610 Struct610;
+// typedef struct Struct610 Struct610;
 struct Struct610
 {
     u8   field_0x0;

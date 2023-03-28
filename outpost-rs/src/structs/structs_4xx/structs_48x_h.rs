@@ -31,28 +31,28 @@
 // #include "structs_46x.h"
 // #include "structs_47x.h"
 // #include "structs_49x.h"
-typedef struct Struct488 Struct488;
-typedef struct Struct480 Struct480;
-typedef struct Struct489 Struct489;
-typedef struct Struct481 Struct481;
-typedef struct Struct482 Struct482;
-typedef struct Struct483 Struct483;
-typedef struct Struct484 Struct484;
-typedef struct Struct485 Struct485;
-typedef struct Struct486 Struct486;
-typedef struct Struct487 Struct487;
+// typedef struct Struct488 Struct488;
+// typedef struct Struct480 Struct480;
+// typedef struct Struct489 Struct489;
+// typedef struct Struct481 Struct481;
+// typedef struct Struct482 Struct482;
+// typedef struct Struct483 Struct483;
+// typedef struct Struct484 Struct484;
+// typedef struct Struct485 Struct485;
+// typedef struct Struct486 Struct486;
+// typedef struct Struct487 Struct487;
 struct Struct488
 {
     void**         field_0x0;
     u8         field_0x1;
-    u16        field_0x2;
+    let mut field_0x2: u16;
     Struct18* field_0x4;
 };
 struct Struct480
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -60,7 +60,7 @@ struct Struct480
     u8          field_0x8;
     u8          field_0x9;
     u32 *field_0xa;
-    u16         field_0xc;
+    let mut field_0xc: u16;
 };
 struct Struct489
 {
@@ -1724,15 +1724,15 @@ struct Struct489
     u8 field_0x679;
     u8 field_0x67a;
     u8 field_0x67b;
-    u16       field_0x67c;
-    u16       field_0x67e;
-    u16       field_0x680;
+    let mut field_0x67c: u16;
+    let mut field_0x67e: u16;
+    let mut field_0x680: u16;
 };
 struct Struct481
 {
     u8   field_0x0;
     u8   field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8   field_0x4;
     u8   field_0x5;
     u8   field_0x6;
@@ -1761,8 +1761,8 @@ struct Struct481
     u8   field_0x1d;
     u8   field_0x1e;
     u8   field_0x1f;
-    i16         field_0x20;
-    u16         field_0x22;
+    let mut field_0x20: i16;
+    let mut field_0x22: u16;
     u8   field_0x24;
     u8   field_0x25;
     u8   field_0x26;
@@ -1830,14 +1830,14 @@ struct Struct481
     u8   field_0x64;
     u8   field_0x65;
     u32 *field_0x66;
-    u16         field_0x68;
+    let mut field_0x68: u16;
     u8   field_0x6a;
     u8   field_0x6b;
     u8   field_0x6c;
     u8   field_0x6d;
     u8   field_0x6e;
     u8   field_0x6f;
-    u32  field_0x70;
+    let mut field_0x70: u32;
 };
 struct Struct482
 {
@@ -1861,8 +1861,8 @@ struct Struct482
     u8   field_0x11;
     u32 *field_0x12;
     u32 *field_0x16;
-    u16         field_0x18;
-    u32  field_0x1a;
+    let mut field_0x18: u16;
+    let mut field_0x1a: u32;
     u8   field_0x1e;
     u8   field_0x1f;
     u8   field_0x20;
@@ -1879,8 +1879,8 @@ struct Struct482
     u8   field_0x2b;
     u8   field_0x2c;
     u8   field_0x2d;
-    u16         field_0x2e;
-    u16         field_0x30;
+    let mut field_0x2e: u16;
+    let mut field_0x30: u16;
     long        field_0x32;
 };
 struct Struct483
@@ -1911,8 +1911,8 @@ struct Struct484
     u8 field_0xf;
     u8 field_0x10;
     u8 field_0x11;
-    u16       field_0x12;
-    u16       field_0x14;
+    let mut field_0x12: u16;
+    let mut field_0x14: u16;
 };
 struct Struct485
 {
@@ -2020,8 +2020,8 @@ struct Struct485
     u8 field_0x65;
     u8 field_0x66;
     u8 field_0x67;
-    u16       field_0x68;
-    u16       field_0x6a;
+    let mut field_0x68: u16;
+    let mut field_0x6a: u16;
 };
 struct Struct486
 {
@@ -2133,8 +2133,8 @@ struct Struct486
     u8 field_0x69;
     u8 field_0x6a;
     u8 field_0x6b;
-    u16       field_0x6c;
-    u16       field_0x6e;
+    let mut field_0x6c: u16;
+    let mut field_0x6e: u16;
 };
 struct Struct487
 {
@@ -2164,7 +2164,7 @@ struct Struct487
     u8 field_0x17;
     u8 field_0x18;
     u8 field_0x19;
-    u16       field_0x1a;
-    u16       field_0x1c;
+    let mut field_0x1a: u16;
+    let mut field_0x1c: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_15_H_STRUCTS_48X_H_

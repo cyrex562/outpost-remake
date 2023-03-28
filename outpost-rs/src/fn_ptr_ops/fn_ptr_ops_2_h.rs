@@ -11,7 +11,7 @@
 // #include "structs/structs_0xx/struct_18.h"
 // #include "structs/structs_4xx/struct_426.h"
 
-Struct18 *pass1_1038_3074(globals: &mut Globals, Struct18 *param_1, u8 param_2);
+Struct18 *pass1_1038_3074(globals: &mut Globals,param_1: *mut Struct18, param_2: u8);
 
 void pass1_1038_33f8(globals: &mut Globals, u16 *param_1);
 
@@ -76,9 +76,9 @@ void pass1_1038_1940(globals: &mut Globals,
                      u16      param_5,
                      u16      param_6);
 
-void  pass1_1038_1b3a(param_1: u16, param_2: u16, u32 param_3, u32 *param_4, u16 param_5, u16 param_6, u16 param_7, u16 param_8);
+void  pass1_1038_1b3a(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u32, param_5: u16, param_6: u16, param_7: u16, param_8: u16);
 
-Struct18 * pass1_1038_1c02(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1038_1c02(param_1: *mut Struct18, param_2: u8);
 
 void pass1_1038_0340(globals: &mut Globals,
                      u16      param_1,
@@ -98,19 +98,19 @@ void pass1_1038_05d8(globals: &mut Globals,
                      u16      param_6,
                      u8       param_7);
 
-Struct18 * pass1_1038_0b6a(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1038_0b6a(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e010(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e010(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e282(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e282(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e4be(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e4be(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e602(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e602(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e75e(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e75e(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_e864(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_e864(param_1: *mut Struct18, param_2: u8);
 
 u16 pass1_1030_e8f8(globals: &mut Globals,
                                u32    param_1,
@@ -120,25 +120,25 @@ u16 pass1_1030_e8f8(globals: &mut Globals,
                                u16  param_5,
                                u16  param_6);
 
-Struct18 * pass1_1030_eb14(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_eb14(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_ec86(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_ec86(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_d868(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_d868(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_dc08(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_dc08(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_bbe6(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_bbe6(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_bc70(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_bc70(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_bfe0(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_bfe0(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_c668(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_c668(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_c91a(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_c91a(param_1: *mut Struct18, param_2: u8);
 
-Struct18 * pass1_1030_b90c(Struct18 *param_1, u8 param_2);
+Struct18 * pass1_1030_b90c(param_1: *mut Struct18, param_2: u8);
 
 void  pass1_1030_b96c(u16 *param_1);
 
@@ -179,7 +179,7 @@ void pass1_1030_a844(Struct426 *param_1,
                      u16  param_5,
                       Globals *globals);
 
-void  pass1_1030_aa18(u32 param_1, u16 *param_2, u16 param_3);
+void  pass1_1030_aa18(param_1: u32, u16 *param_2, param_3: u16);
 
 
 

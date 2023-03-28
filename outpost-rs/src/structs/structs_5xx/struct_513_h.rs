@@ -7,15 +7,15 @@
 
 // #include "op_int.h"
 
-typedef struct Struct513 Struct513;
+// typedef struct Struct513 Struct513;
 struct Struct513
 {
     u8 field_0x0;
     u8 field_0x1;
-    i16 field_0x2;
+    let mut field_0x2: i16;
     u8 field_0x4;
     u8 field_0x5;
-    i16 field_0x6;
+    let mut field_0x6: i16;
     u8 field_0x8;
     u8 field_0x9;
     u8 field_0xa;
@@ -165,6 +165,6 @@ struct Struct513
     u8 field_0x9a;
     u8 field_0x9b;
     u32 *field_0x9c;
-    u16 field_0x9e;
+    let mut field_0x9e: u16;
 };
 #endif //OUTPOST_1_SRC_STRUCTS_STRUCTS_23_H_STRUCT_513_H_

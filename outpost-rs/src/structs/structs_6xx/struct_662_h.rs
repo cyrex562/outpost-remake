@@ -5,17 +5,17 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_662_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_662_H_
 
-typedef struct Struct662 Struct662;
+// typedef struct Struct662 Struct662;
 struct Struct662
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
-    u16         field_0x4;
+    let mut field_0x2: u16;
+    let mut field_0x4: u16;
     u32 *field_0x6;
-    u16         field_0xa;
-    u16         field_0xc;
-    u16         field_0xe;
-    u16         field_0x10;
+    let mut field_0xa: u16;
+    let mut field_0xc: u16;
+    let mut field_0xe: u16;
+    let mut field_0x10: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_5_H_STRUCT_662_H_

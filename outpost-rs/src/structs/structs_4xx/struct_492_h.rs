@@ -6,12 +6,12 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_492_H_
 
 // #include "structs/structs_5xx/struct_546.h"
-typedef struct Struct492 Struct492;
+// typedef struct Struct492 Struct492;
 struct Struct492
 {
     u8  field_0x0;
     u8  field_0x1;
-    i16 field_0x2;
-    u16 field_0x4;
+    let mut field_0x2: i16;
+    let mut field_0x4: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_4_H_STRUCT_492_H_

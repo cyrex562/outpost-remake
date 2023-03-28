@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_611_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_611_H_
 
-typedef struct Struct611 Struct611;
+// typedef struct Struct611 Struct611;
 struct Struct611
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -38,12 +38,12 @@ struct Struct611
     u8          field_0x1c;
     u8          field_0x1d;
     u32 *field_0x1e;
-    u16         field_0x20;
+    let mut field_0x20: u16;
     u8          field_0x22;
     u8          field_0x23;
-    u16         field_0x24;
-    u16         field_0x26;
-    u16         field_0x28;
+    let mut field_0x24: u16;
+    let mut field_0x26: u16;
+    let mut field_0x28: u16;
     u8          field_0x2a;
     u8          field_0x2b;
     u8          field_0x2c;
@@ -57,10 +57,10 @@ struct Struct611
     u8          field_0x34;
     u8          field_0x35;
     u32 *field_0x36;
-    u16         field_0x38;
+    let mut field_0x38: u16;
     u32 *field_0x3a;
-    u16         field_0x3c;
+    let mut field_0x3c: u16;
     u32 *field_0x3e;
-    u16         field_0x40;
+    let mut field_0x40: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_611_H_

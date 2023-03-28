@@ -27,14 +27,14 @@
 u16 entry(globals: &mut Globals,
           param_1: u16,
           param_2: u16,
-          u8 *param_3,
-          u16 param_4,
-          u16 param_5,
+          param_3: *mut u8,
+          param_4: u16,
+          param_5: u16,
           CONTEXT *in_task_context,
-          u16 param_7,
+          param_7: u16,
           i32 param_8);
 
-void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, u16 param_3);
+void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16);
 
 int main(int argc, char **argv) {
     Globals globals = {};
@@ -46,30 +46,30 @@ int main(int argc, char **argv) {
 u16 entry(globals: &mut Globals,
           param_1: u16,
           param_2: u16,
-          u8 *param_3,
-          u16 param_4,
-          u16 param_5,
+          param_3: *mut u8,
+          param_4: u16,
+          param_5: u16,
           CONTEXT *in_task_context,
-          u16 param_7,
+          param_7: u16,
           i32 param_8) {
     u8 u8_var1;
-    u16 u16_var2;
+    let mut u16_var2: u16;
     cstring pcVar3;
-    void *fn_ptr_1;
+    let mut fn_ptr_1: *mut c_void;
     u16 u16_var5 = 0;
     cstring string_1;
-    u16 u16_var6;
+    let mut u16_var6: u16;
     u16 u16_var7 = 0;
     cstring pcVar8;
     u16 u16_var15 = 0;
     bool bVar9;
-    u32 get_vers_result;
-    u32 result;
-    u32 u32_var12;
-    i16 iVar13;
-    u16 iVar14;
+    let mut get_vers_result: u32;
+    let mut result: u32;
+    let mut u32_var12: u32;
+    let mut iVar13: i16;
+    let mut iVar14: u16;
     HINSTANCE16 hinst_var15 = 0;
-    void *dos_version_ptr;
+    let mut dos_version_ptr: *mut c_void;
 
     result = str_var1(param_7, globals.dat_1050_5f84);
     do {
@@ -176,26 +176,26 @@ u16 entry(globals: &mut Globals,
 void init_op_1008_54aa(globals: &mut Globals,
                        param_1: u16,
                        param_2: u16,
-                       u8 *param_3,
+                       param_3: *mut u8,
                        HINSTANCE16 hinst_arg4,
-                       u16 param_5,
-                       u16 param_6,
-                       u16 param_7,
-                       u16 param_8) {
-    void *func_ptr;
+                       param_5: u16,
+                       param_6: u16,
+                       param_7: u16,
+                       param_8: u16) {
+    let mut func_ptr: *mut c_void;
     u16 offset_var3 = 0;
-    u16 in_cx_reg;
-    u16 in_dx_reg;
-    u16 segment_var_4;
+    let mut in_cx_reg: u16;
+    let mut in_dx_reg: u16;
+    let mut segment_var_4: u16;
     u16 segment_var7 = 0;
-    u16 segment_var5;
+    let mut segment_var5: u16;
     u16 var_8 = 0;
-    u16 var_9;
+    let mut var_9: u16;
     u16 var_10 = 0;
-    u32 var_11;
+    let mut var_11: u32;
     struct_1008_0000_1 *var_12 = NULL;
-    void **fn_tbl_1;
-    u16 u16_var14;
+    let mut fn_tbl_1: *mut *mut c_void;
+    let mut u16_var14: u16;
 
     if (param_3 != 0x0) {
         return;
@@ -236,14 +236,14 @@ void init_op_1008_54aa(globals: &mut Globals,
     }
     var_12 = (struct_1008_0000_1 *) ptr_from_addr_pair(segment_var5, offset_var3);//str_var1(segment_var5, offset_var3);
     if (globals.ptr_1050_0392 != 0x0) {
-        func_ptr = var_12->field_0x0[1];//(var_12->field_0x0 + 0x4);
+        func_ptr = var_12.field_0x0[1];//(var_12.field_0x0 + 0x4);
         ((FnPtr5) func_ptr)(SEG_1000,
                             offset_var3,
                             segment_var5,
                             globals.ptr_1050_0392,
                             (globals.ptr_1050_0392 >> 0x10)); // maybe pass1_1008_049c
     }
-    fn_tbl_1 = var_12->field_0x0;
+    fn_tbl_1 = var_12.field_0x0;
     func_ptr = fn_tbl_1[1];//fn_tbl_1 + 0x4;
     ((FnPtr5) func_ptr)(SEG_1000, offset_var3, segment_var5, 0, 0);
     var_9 = var_8;
@@ -272,7 +272,7 @@ void init_op_1008_54aa(globals: &mut Globals,
 }
 
 
-void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, u16 param_3) {
+void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16) {
 
     // str_var1(globals.data_1050_5f50, globals.data_1050_5f4e)
 

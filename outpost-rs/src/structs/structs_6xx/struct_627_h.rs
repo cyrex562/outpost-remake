@@ -5,20 +5,20 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_627_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_627_H_
 
-typedef struct Struct627 Struct627;
+// typedef struct Struct627 Struct627;
 struct Struct627
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
     u8          field_0x7;
     u8          field_0x8;
     u8          field_0x9;
-    u16         field_0xa;
-    u16         field_0xc;
+    let mut field_0xa: u16;
+    let mut field_0xc: u16;
     u8          field_0xe;
     u8          field_0xf;
     u8          field_0x10;
@@ -49,8 +49,8 @@ struct Struct627
     u8          field_0x29;
     u8          field_0x2a;
     u8          field_0x2b;
-    u8         *field_0x2c;
-    u16         field_0x30;
+    let mut field_0x2c: *mut u8;
+    let mut field_0x30: u16;
     u8          field_0x32;
     u8          field_0x33;
     u8          field_0x34;
@@ -75,12 +75,12 @@ struct Struct627
     u8          field_0x47;
     u8          field_0x48;
     u8          field_0x49;
-    u8         *field_0x4a;
-    u16         field_0x4e;
-    u8         *field_0x50;
-    u16         field_0x54;
-    u8         *field_0x56;
-    u16         field_0x5a;
+    let mut field_0x4a: *mut u8;
+    let mut field_0x4e: u16;
+    let mut field_0x50: *mut u8;
+    let mut field_0x54: u16;
+    let mut field_0x56: *mut u8;
+    let mut field_0x5a: u16;
     u8          field_0x5c;
     u8          field_0x5d;
     u8          field_0x5e;
@@ -99,10 +99,10 @@ struct Struct627
     u8          field_0x6b;
     u8          field_0x6c;
     u8          field_0x6d;
-    u8         *field_0x6e;
-    u16         field_0x72;
-    u8         *field_0x74;
-    u16         field_0x78;
+    let mut field_0x6e: *mut u8;
+    let mut field_0x72: u16;
+    let mut field_0x74: *mut u8;
+    let mut field_0x78: u16;
     u8          field_0x7a;
     u8          field_0x7b;
     u8          field_0x7c;
@@ -133,8 +133,8 @@ struct Struct627
     u8          field_0x95;
     u8          field_0x96;
     u8          field_0x97;
-    u8         *field_0x98;
-    u16         field_0x9c;
+    let mut field_0x98: *mut u8;
+    let mut field_0x9c: u16;
     u8          field_0x9e;
     u8          field_0x9f;
     u8          field_0xa0;

@@ -6,12 +6,12 @@
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_10_H_STRUCT_673_H_
 
 // #include "op_int.h"
-typedef struct Struct673 Struct673;
+// typedef struct Struct673 Struct673;
 struct Struct673
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;

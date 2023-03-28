@@ -9,16 +9,16 @@
 // #include "structs/structs_0xx/structs_6x.h"
 
 // #include "structs_22x.h"
-typedef struct Struct248 Struct248;
-typedef struct Struct240 Struct240;
-typedef struct Struct249 Struct249;
-typedef struct Struct241 Struct241;
-typedef struct Struct242 Struct242;
-typedef struct Struct243 Struct243;
-typedef struct Struct247 Struct247;
-typedef struct Struct244 Struct244;
-typedef struct Struct246 Struct246;
-typedef struct Struct245 Struct245;
+// typedef struct Struct248 Struct248;
+// typedef struct Struct240 Struct240;
+// typedef struct Struct249 Struct249;
+// typedef struct Struct241 Struct241;
+// typedef struct Struct242 Struct242;
+// typedef struct Struct243 Struct243;
+// typedef struct Struct247 Struct247;
+// typedef struct Struct244 Struct244;
+// typedef struct Struct246 Struct246;
+// typedef struct Struct245 Struct245;
 struct Struct248
 {
     u8     field_0x0;
@@ -349,7 +349,7 @@ struct Struct248
     u8     field_0x145;
     u8     field_0x146;
     u8     field_0x147;
-    u16               field_0x148;
+    let mut field_0x148: u16;
 };
 struct Struct240
 {
@@ -361,8 +361,8 @@ struct Struct240
     u8 field_0x5;
     u8 field_0x6;
     u8 field_0x7;
-    u16       field_0x8;
-    u8       *field_0xa;
+    let mut field_0x8: u16;
+    let mut field_0xa: *mut u8;
 };
 struct Struct249
 {
@@ -371,15 +371,15 @@ struct Struct249
     u8   field_0x2;
     u8   field_0x3;
     u32 *field_0x4;
-    u16         field_0x6;
+    let mut field_0x6: u16;
 };
 struct Struct241
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16        field_0x2;
-    u32 field_0x4;
-    u16        field_0x8;
+    let mut field_0x2: u16;
+    let mut field_0x4: u32;
+    let mut field_0x8: u16;
 };
 struct Struct242
 {
@@ -499,11 +499,11 @@ struct Struct243
     u8 field_0x69;
     u8 field_0x6a;
     u8 field_0x6b;
-    u32       field_0x6c;
+    let mut field_0x6c: u32;
     u8 field_0x70;
     u8 field_0x71;
-    u8       *field_0x72;
-    i16       field_0x74;
+    let mut field_0x72: *mut u8;
+    let mut field_0x74: i16;
 };
 struct Struct247
 {
@@ -527,9 +527,9 @@ struct Struct246
     u8 field_0x9;
     u8 field_0xa;
     u8 field_0xb;
-    u16       field_0xc;
-    u8       *field_0xe;
-    i16       field_0x10;
+    let mut field_0xc: u16;
+    let mut field_0xe: *mut u8;
+    let mut field_0x10: i16;
 };
 struct Struct245
 {
@@ -561,7 +561,7 @@ struct Struct245
     u8 field_0x19;
     u8 field_0x1a;
     u8 field_0x1b;
-    u8       *field_0x1c;
+    let mut field_0x1c: *mut u8;
     u8 field_0x1e;
     u8 field_0x1f;
     u8 field_0x20;
@@ -580,6 +580,6 @@ struct Struct245
     u8 field_0x2d;
     u8 field_0x2e;
     u8 field_0x2f;
-    i16       field_0x30;
+    let mut field_0x30: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_16_H_STRUCTS_24X_H_

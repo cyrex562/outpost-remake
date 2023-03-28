@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_502_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_502_H_
 
-typedef struct Struct502 Struct502;
+// typedef struct Struct502 Struct502;
 struct Struct502
 {
     u8          field_0x0;
     u8          field_0x1;
-    u16         field_0x2;
+    let mut field_0x2: u16;
     u8          field_0x4;
     u8          field_0x5;
     u8          field_0x6;
@@ -35,8 +35,8 @@ struct Struct502
     u8          field_0x19;
     u8          field_0x1a;
     u8          field_0x1b;
-    i16         field_0x1c;
-    u16         field_0x1e;
+    let mut field_0x1c: i16;
+    let mut field_0x1e: u16;
     u8          field_0x20;
     u8          field_0x21;
     u8          field_0x22;
@@ -48,7 +48,7 @@ struct Struct502
     u8          field_0x28;
     u8          field_0x29;
     u32 *field_0x2a;
-    u16         field_0x2c;
+    let mut field_0x2c: u16;
     u8          field_0x2e;
     u8          field_0x2f;
     u8          field_0x30;
@@ -114,6 +114,6 @@ struct Struct502
     u8          field_0x6c;
     u8          field_0x6d;
     u32 *field_0x6e;
-    u16         field_0x70;
+    let mut field_0x70: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_502_H_

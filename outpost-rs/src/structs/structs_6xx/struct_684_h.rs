@@ -5,15 +5,15 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_8_H_STRUCT_684_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_8_H_STRUCT_684_H_
 
-typedef struct Struct684 Struct684;
+// typedef struct Struct684 Struct684;
 struct Struct684
 {
     u8  field_0x0;
     u8  field_0x1;
     u8  field_0x2;
     u8  field_0x3;
-    u8 *field_0x4;
-    u8 *field_0x6;
+    let mut field_0x4: *mut u8;
+    let mut field_0x6: *mut u8;
     u8  field_0x8;
     u8  field_0x9;
     u8  field_0xa;
@@ -30,13 +30,13 @@ struct Struct684
     u8  field_0x15;
     u8  field_0x16;
     u8  field_0x17;
-    u8 *field_0x18;
-    u8 *field_0x1a;
+    let mut field_0x18: *mut u8;
+    let mut field_0x1a: *mut u8;
     u8  field_0x1c;
     u8  field_0x1d;
     u8  field_0x1e;
     u8  field_0x1f;
-    u8 *field_0x20;
-    u8 *field_0x22;
+    let mut field_0x20: *mut u8;
+    let mut field_0x22: *mut u8;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_8_H_STRUCT_684_H_

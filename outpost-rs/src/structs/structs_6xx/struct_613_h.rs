@@ -5,12 +5,12 @@
 #ifndef OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_613_H_
 #define OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_613_H_
 
-typedef struct Struct613 Struct613;
+// typedef struct Struct613 Struct613;
 struct Struct613
 {
     u8  field_0x0;
     u8  field_0x1;
-    u16 field_0x2;
+    let mut field_0x2: u16;
     u8  field_0x4;
     u8  field_0x5;
     u8  field_0x6;
