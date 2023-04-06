@@ -13,7 +13,7 @@
 // #include "unk/unk_15.h"
 // #include "unk/unk_6.h"
 
-void pass1_1030_1be2(param_1: u32, param_2: u16, u8 *param_3) {
+pub fn pass1_1030_1be2(param_1: u32, param_2: u16, u8 *param_3) {
     let mut ppcVar1: *mut *mut c_void;
     let mut pu_var2: *mut u16;
     let mut puVar3: *mut u8;
@@ -544,7 +544,7 @@ u16 * switch_1030_07ac(param_1: u16, param_2: u16, param_3: u16, param_4: u16, p
 void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param_4: i16, param_5: i16, param_6: u16, param_7: u16, param_8: u16, param_9: u16, param_10: u8) {
     let mut pcVar1: *mut c_char;
     let mut piVar2: *mut i16;
-    char         cVar3;
+    let mut cVar3: char;
     let mut uVar4: u32;
     let mut uVar5: u32;
     long         lVar6;
@@ -952,17 +952,17 @@ void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param
                 uVar31    = 0x4;
                 iVar14    = 0x1d;
                 uStackY78 = 0x7b0a;
-                pu_var25   = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2b, param_9, puVar17, param_7);
+                pu_var25   = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, param_9, puVar17, param_7);
                 puVar17   = (pu_var25 >> 0x10);
                 param_4   = pu_var25;
                 pass1_1010_043a(pu_var25, CONCAT13(uVar31, CONCAT12(u_var29, puVar17)), iVar14, param_9);
             code_r0x10287b17:
                 pass1_1028_e1ec(globals._PTR_LOOP_1050_65e2, 0x2, 0x400);
                 pass1_1028_780c(u_var20, uVar37, str_var1(puVar17, param_4));
-                puStack10 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_9, puVar17, param_7);
+                puStack10 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, param_9, puVar17, param_7);
                 pcStack12 = (fn_ptr_1)PTR_LOOP_1050_13ae;
                 if(0x2 < globals.PTR_LOOP_1050_13ae) {
-                    pu_var25 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_9, (puStack10 >> 0x10), param_7);
+                    pu_var25 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_9, (puStack10 >> 0x10), param_7);
                     uVar32  = (pu_var25 >> 0x10);
                     uVar33  = (pu_var25 >> 0x18);
                     uVar35  = 0x1;
@@ -1210,7 +1210,7 @@ void  pass1_1028_ec36(param_1: u32, param_2: u16, param_3: i16, param_4: u16, pa
 }
 
 
-void  pass1_1028_ecac(param_1: u32, param_2: u16, i16 *param_3, param_4: u16, param_5: u32, param_6: u16, param_7: *mut u8, param_8: u16) {
+void  pass1_1028_ecac(param_1: u32, param_2: u16, param_3: *mut i16, param_4: u16, param_5: u32, param_6: u16, param_7: *mut u8, param_8: u16) {
     let mut uVar1: u32;
     i16      **ppiVar2;
     let mut puVar3: *mut u8;
@@ -1592,7 +1592,7 @@ void  pass1_1028_e28a(param_1: *mut u8, param_2: i16, param_3: u16) {
     let mut uVar3: u16;
     let mut puVar4: *mut u16;
 
-    puVar4  = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_3, param_1, param_2);
+    puVar4  = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_3, param_1, param_2);
     uVar3   = (puVar4 >> 0x10);
     pu_var2  = (puVar4 + 0xa);
     ppcVar1 = (*pu_var2 + 0x4);
@@ -1650,7 +1650,7 @@ void  pass1_1028_c3aa(param_1: u16, param_2: u16,param_3: *mut u16, param_4: u32
     }
     if(0x1e < puStack24) {
         uVar3   = 0x87;
-        puVar13 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x9, param_6, puVar8, unaff_DI);
+        puVar13 = mixed_1010_20ba(globals.data_1050_0ed0, 0x9, param_6, puVar8, unaff_DI);
         uVar3   = pass1_1010_65d0(param_6, puVar13, uVar3);
         if(uVar3 == 0x0) {
             puVar14 = pass1_1008_c6fa(globals.dat_1050_06e0, 0x15);
@@ -1781,7 +1781,7 @@ void  pass1_1028_ccd0(param_1: u8, param_2: u16, param_3: u32, u16 *param_4) {
     pass1_1008_6cec(str_var1(param_2, local_2c), local_8,
                     str_var1(iStack14, iStack16), local_8,
                     str_var1(uStack10, uStack12));
-    puStack48 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_2, puVar5, unaff_DI);
+    puStack48 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_2, puVar5, unaff_DI);
     uVar6     = (puStack48 >> 0x10);
     uStack52  = *(puStack48 + 0x20);
     puVar3    = local_2c;

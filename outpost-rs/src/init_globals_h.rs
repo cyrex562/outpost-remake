@@ -6,6 +6,6 @@
 #define OUTPOST_1_SRC_INIT_GLOBALS_H_
 
 // #include "globals.h"
-void init_globals_1020_96d4(Globals* globals);
+pub fn init_globals_1020_96d4(Globals* globals);
 
 #endif // OUTPOST_1_SRC_INIT_GLOBALS_H_

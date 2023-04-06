@@ -61,7 +61,7 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
   switch(param_2) {
   case 1:
       mem_op_1000_179c(globals, 0x18, SEG_1000);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
     if (puVar3 == NULL) {
 // LAB_1010_2126:
     struct_var4 = NULL;
@@ -73,71 +73,71 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
     break;
   case 2:
       mem_op_1000_179c(0x84, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     win_sys_op_1010_5404(struct_var4,param_4,param_2,param_3);
     break;
   case 3:
       mem_op_1000_179c(0x53c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_a1d8(struct_var4,param_4,param_2,param_3);
     break;
   case 4:
       mem_op_1000_179c(0x18a, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1018_2b10(str_var1(param_4, struct_var4),param_2,param_3);
     break;
   case 5:
       mem_op_1000_179c(0x14, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar9 = pass1_1008_eabc((int)struct_var4,param_4,param_2);
-    puVar3 = (u8 *)((u32)puVar9 >> 0x10);
+    puVar3 = ((u32)puVar9 >> 0x10);
     struct_var4 = puVar9;
     break;
   case 6:
       mem_op_1000_179c(0x58, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1018_18b8(param_3,str_var1(param_4, struct_var4),param_2);
     break;
   case 7:
       mem_op_1000_179c(0xe, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     uVar11 = pass1_1010_3d82(struct_var4,param_4,param_2,param_3);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   case 8:
       mem_op_1000_179c(0x20, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_95aa(struct_var4,param_4,param_2);
     break;
   case 9:
       mem_op_1000_179c(0x26, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_6326(struct_var4,param_4,param_2);
     break;
   case 10:
       mem_op_1000_179c(0x1c, param_4, 0);
-    if ((u8 *)((uint)param_4 | (uint)struct_var4) == (u8 *)0x0) goto LAB_1010_2126;
+    if (((uint)param_4 | (uint)struct_var4) == 0x0) goto LAB_1010_2126;
     uVar11 = pass1_1010_0eac(NULL,
-                             (u8 *)struct_var4,
+                             struct_var4,
                              param_4,
                              param_2,
-                             (u8 *)((uint)param_4 | (uint)paVar4),
+                             ((uint)param_4 | (uint)paVar4),
                              param_3);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0xb =>
       mem_op_1000_179c(0x1c, param_4, 0);
-    if ((u8 *)((uint)param_4 | (uint)struct_var4) == (u8 *)0x0) goto LAB_1010_2126;
-    uVar11 = pass1_1008_aefe((u8 *)struct_var4,param_4,param_2,(u8 *)((uint)param_4 | (uint)paVar4),param_3);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    if (((uint)param_4 | (uint)struct_var4) == 0x0) goto LAB_1010_2126;
+    uVar11 = pass1_1008_aefe(struct_var4,param_4,param_2,((uint)param_4 | (uint)paVar4),param_3);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0xc =>
@@ -166,105 +166,105 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
   0x23 =>
   0x24 =>
       mem_op_1000_179c(0xaa, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1018_0570(str_var1(param_4, struct_var4),param_2,param_3);
     break;
   0x25 =>
       mem_op_1000_179c(0x1c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1018_4aaa((int)struct_var4,param_4,param_2,puVar3,param_3);
     break;
   0x26 =>
       mem_op_1000_179c(0x1c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1008_d99e((int)struct_var4,param_4,param_2,puVar3,param_3);
     break;
   0x27 =>
       mem_op_1000_179c(0x58, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
-    pass1_1008_9d36((u8 *)struct_var4,param_4,param_2,param_3);
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
+    pass1_1008_9d36(struct_var4,param_4,param_2,param_3);
     break;
   0x28 =>
       mem_op_1000_179c(0x2c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1010_28e6(struct_var4,param_4,param_2,puVar3,param_3);
     break;
   0x29 =>
       mem_op_1000_179c(0x72, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1018_229c(NULL, struct_var4, param_4, param_2, puVar3, param_3);
     break;
   0x2a =>
       mem_op_1000_179c(0x1c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1010_503e((int)struct_var4,param_4,param_2,puVar3,param_3);
     break;
   0x2b =>
       mem_op_1000_179c(0x1a, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_02e0(struct_var4,param_4,param_2);
     break;
   0x2c =>
       mem_op_1000_179c(0x10, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1008_eb2a((int)struct_var4,param_4,param_2);
     break;
   0x2d =>
       mem_op_1000_179c(0x80, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1010_3e3c(str_var1(param_4, struct_var4),param_2,param_3);
     break;
   0x2e =>
       mem_op_1000_179c(0x806, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     uVar11 = pass1_1018_1ff4(struct_var4,param_4,param_2);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0x2f =>
       mem_op_1000_179c(0x58, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_e9e4(struct_var4,param_4,param_2);
     break;
   0x30 =>
       mem_op_1000_179c(0xe, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar8 = pass1_1010_3702((int)struct_var4, param_2);
-    puVar3 = (u8 *)((u32)puVar8 >> 0x10);
+    puVar3 = ((u32)puVar8 >> 0x10);
     struct_var4 = puVar8;
     break;
   0x31 =>
     u_var2 = 0x60;
           uVar7 = SEG_1000;
           mem_op_1000_179c(0x60, param_4, 0);
-    if ((u8 *)((uint)param_4 | (uint)struct_var4) == (u8 *)0x0) {
+    if (((uint)param_4 | (uint)struct_var4) == 0x0) {
 // LAB_1010_2680:
       uVar7 = SEG_1000;
       struct_var4 = 0x0;
-      puVar3 = (u8 *)0x0;
+      puVar3 = 0x0;
     }
     else {
       uVar11 = pass1_1010_9298(struct_var4,param_4,param_2,struct_var4,
-                               (u8 *)((uint)param_4 | (uint)struct_var4),param_3);
-      puVar3 = (u8 *)(uVar11 >> 0x10);
+                               ((uint)param_4 | (uint)struct_var4),param_3);
+      puVar3 = (uVar11 >> 0x10);
       struct_var4 = uVar11;
     }
     goto LAB_1010_2683;
   0x32 =>
       mem_op_1000_179c(0x26, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1010_6abc(struct_var4,param_4,param_2);
     break;
   0x33 =>
@@ -282,9 +282,9 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
     goto LAB_1010_25bb;
   0x34 =>
       mem_op_1000_179c(0x72, param_4, 0);
-    if ((u8 *)((uint)param_4 | (uint)struct_var4) == (u8 *)0x0) goto LAB_1010_25b8;
+    if (((uint)param_4 | (uint)struct_var4) == 0x0) goto LAB_1010_25b8;
     uVar11 = pass1_1010_1b6e(struct_var4,param_4,param_2,param_3,
-                             (u8 *)((uint)param_4 | (uint)struct_var4));
+                             ((uint)param_4 | (uint)struct_var4));
     uVar7 = (uVar11 >> 0x10);
     u_var2 = uVar11;
 // LAB_1010_25bb:
@@ -295,71 +295,71 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
       mem_op_1000_179c(0x14a, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     uVar11 = pass1_1010_6700(struct_var4,param_4,param_2);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0x36 =>
       mem_op_1000_179c(0x10, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1008_d790(struct_var4,param_4,param_2,param_3);
     break;
   0x37 =>
       mem_op_1000_179c(0x420, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1008_9fd2(struct_var4,param_4,param_2);
     break;
   _ =>
     goto switchD_1010:2765_caseD_38;
   0x39 =>
       mem_op_1000_179c(0x36, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1010_4a8a(struct_var4,param_4,param_2,param_3);
     break;
   0x3a =>
       mem_op_1000_179c(0xc, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar8 = pass1_1008_d72e((int)struct_var4,param_4,param_2);
-    puVar3 = (u8 *)((u32)puVar8 >> 0x10);
+    puVar3 = ((u32)puVar8 >> 0x10);
     struct_var4 = puVar8;
     break;
   0x3b =>
       mem_op_1000_179c(0x22, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1008_dd4e(struct_var4,param_4,param_2);
     break;
   0x3c =>
       mem_op_1000_179c(0x146, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1018_331c(struct_var4,param_4,param_2,param_3,puVar3);
     break;
   0x3d =>
       mem_op_1000_179c(0xe, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     uVar11 = pass1_1010_8c32(struct_var4,param_4,param_2,param_3);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0x3e =>
       mem_op_1000_179c(0x18, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1018_5070(struct_var4,param_4,param_2);
     break;
   0x3f =>
       mem_op_1000_179c(0x12, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1008_c72a(struct_var4,param_4,param_2);
     break;
   0x40 =>
       mem_op_1000_179c(0x24, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     pass1_1008_af94(struct_var4,param_4,param_2);
     break;
   0x41 =>
@@ -379,40 +379,40 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
       mem_op_1000_179c(0xc, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar8 = pass1_1008_ec10((int)struct_var4,param_4,param_2);
-    puVar3 = (u8 *)((u32)puVar8 >> 0x10);
+    puVar3 = ((u32)puVar8 >> 0x10);
     struct_var4 = puVar8;
     break;
   0x43 =>
       mem_op_1000_179c(0x12, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar8 = pass1_1010_2bfc(struct_var4,param_4,param_2);
-    puVar3 = (u8 *)((u32)puVar8 >> 0x10);
+    puVar3 = ((u32)puVar8 >> 0x10);
     struct_var4 = puVar8;
     break;
   0x45 =>
       mem_op_1000_179c(0xe, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     uVar11 = pass1_1010_0000(struct_var4,param_4,param_2,param_3);
-    puVar3 = (u8 *)(uVar11 >> 0x10);
+    puVar3 = (uVar11 >> 0x10);
     struct_var4 = uVar11;
     break;
   0x46 =>
       mem_op_1000_179c(0x1a, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     struct_1010_50b2(struct_var4,param_4,param_2);
     break;
   0x47 =>
       mem_op_1000_179c(0xe, param_4, 0);
     if (((uint)param_4 | (uint)struct_var4) == 0) goto LAB_1010_2126;
     puVar8 = pass1_1018_56e6((int)struct_var4,param_4,param_2);
-    puVar3 = (u8 *)((u32)puVar8 >> 0x10);
+    puVar3 = ((u32)puVar8 >> 0x10);
     struct_var4 = puVar8;
     break;
   0x48 =>
       mem_op_1000_179c(0x1c, param_4, 0);
-    puVar3 = (u8 *)((uint)param_4 | (uint)struct_var4);
-    if (puVar3 == (u8 *)0x0) goto LAB_1010_2126;
+    puVar3 = ((uint)param_4 | (uint)struct_var4);
+    if (puVar3 == 0x0) goto LAB_1010_2126;
     unk_draw_op_1008_da12(struct_var4,param_4,param_2);
   }
   pu_stack6 = str_var1(puVar3, struct_var4);
@@ -504,7 +504,7 @@ void  win_1008_5c5c(param_1: u16,param_2: u16,param_3: u32,param_4: u16)
   win_ui_op_1008_5cfe(NULL, param_3, str_var1(param_2, param_1), (WNDCLASS16 *)0x1050);
 }
 
-void win_ui_op_1008_5cfe(Globals    *globals,
+pub fn win_ui_op_1008_5cfe(globals: &mut Globals,
                          Struct27   *struct_arg_1,
                          char       *string_arg_2,
                          WNDCLASS16 *wnd_class_arg3)
@@ -584,7 +584,7 @@ string_var14 = string_arg_2;
   pass1_1010_1f62(struct_arg_1, i16_var5);
 }
 
-void def_win_proc_1008_5632(LPARAM param_1,WPARAM param_2,param_3: u16,param_4: HWND16)
+pub fn def_win_proc_1008_5632(LPARAM param_1,WPARAM param_2,param_3: u16,param_4: HWND16)
 
 {
   code **ppcVar1;
@@ -619,7 +619,7 @@ StructD * pass1_1028_ac7a(StructD *param_1,param_2: u8)
   return param_1;
 }
 
-void pass1_1038_75ca(int param_1,param_2: u32,param_3: u32)
+pub fn pass1_1038_75ca(int param_1,param_2: u32,param_3: u32)
 
 {
   let mut BVar1: BOOL16;
@@ -636,28 +636,28 @@ void pass1_1038_75ca(int param_1,param_2: u32,param_3: u32)
   if (param_1 != 0) {
     local_10[0] = *(undefined4 *)(iVar3 + 8);
     BVar1 = write_to_file_1008_7e1c
-      ((u8 *)param_3, str_var1(0x1050,local_10),(char *)0x4,in_stack_0000ffca);
+      (param_3, str_var1(0x1050,local_10),(char *)0x4,in_stack_0000ffca);
     if (BVar1 != 0) {
       write_to_file_1008_7a22(param_3,*(long *)(iVar3 + 0xe));
       if (BVar1 != 0) {
           local_8._0_2_ = *(undefined2 *)(iVar3 + 0xc);
           BVar1 = write_to_file_1008_7e1c
-            ((u8 *)param_3, str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffca);
+            (param_3, str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffca);
           if (BVar1 != 0) {
               local_8._0_2_ = *(undefined2 *)(iVar3 + 0x12);
               BVar1 = write_to_file_1008_7e1c
-                ((u8 *)param_3,
+                (param_3,
                                               str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffca );
               if (BVar1 != 0) {
                   local_8 = str_var1(local_8._2_2_,*(undefined2 *)(iVar3 + 0x14));
                   BVar1 = write_to_file_1008_7e1c
-                    ((u8 *)param_3,
+                    (param_3,
                                                   str_var1(0x1050,&local_8),(char *)0x2,in_stack_0000ffc a
                     );
                   if (BVar1 != 0) {
                       local_8 = *(undefined4 *)(iVar3 + 0x16);
                       BVar1 = write_to_file_1008_7e1c
-                        ((u8 *)param_3,
+                        (param_3,
                                                       str_var1(0x1050,&local_8),(char *)0x4,
                          in_stack_0000ffca);
                       if (BVar1 != 0) {
@@ -667,25 +667,25 @@ void pass1_1038_75ca(int param_1,param_2: u32,param_3: u32)
                           if (iVar2 != 0) {
                               local_8 = *(ulong *)(iVar3 + 0x20);
                               BVar1 = write_to_file_1008_7e1c
-                                ((u8 *)param_3,
+                                (param_3,
                                                               str_var1(0x1050,&local_8),(char *)0x4,
                                  in_stack_0000ffca);
                               if (BVar1 != 0) {
                                   local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x24);
                                   BVar1 = write_to_file_1008_7e1c
-                                    ((u8 *)param_3,
+                                    (param_3,
                                                               str_var1(0x1050,&local_8),(char *)0x2,
                                      in_stack_0000ffca);
                                   if (BVar1 != 0) {
                                       local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x26);
                                       BVar1 = write_to_file_1008_7e1c
-                                        ((u8 *)param_3,
+                                        (param_3,
                                         str_var1(0x1050,&local_8),(char *)0x2,
                                          in_stack_0000ffca);
                                       if (BVar1 != 0) {
                                           local_8 = local_8 & 0xffff0000 | (ulong)*(uint *)(iVar3 + 0x28);
                                           BVar1 = write_to_file_1008_7e1c
-                                            ((u8 *)param_3,
+                                            (param_3,
                                             str_var1(0x1050,&local_8),(char *)0x2,
                                              in_stack_0000ffca);
                                           if (BVar1 != 0) {

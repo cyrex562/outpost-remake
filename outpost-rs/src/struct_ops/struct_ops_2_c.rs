@@ -15,7 +15,7 @@
 // #include "unk/unk_15.h"
 // #include "unk/unk_19.h"
 
-u16 * struct_1030_be34(u16 *param_1)
+u16 * struct_1030_be34(param_1: *mut u16)
 
 {
     struct_1028_b354(param_1);
@@ -42,7 +42,7 @@ void  struct_1030_c06e(param_1: *mut Struct188)
 }
 
 
-u16 * struct_1030_c6f6(u16 *param_1)
+u16 * struct_1030_c6f6(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -56,7 +56,7 @@ u16 * struct_1030_c6f6(u16 *param_1)
 }
 
 
-u16 * struct_1030_c9a8(u16 *param_1)
+u16 * struct_1030_c9a8(param_1: *mut u16)
 
 {
     let mut iVar1: i16;
@@ -225,7 +225,7 @@ void  pass1_1030_b2aa(param_1: u32,param_2: *mut u16, param_3: *mut u8, param_4:
 
     pass1_1030_b718(param_1, (param_1 >> 0x10), param_2,
                     str_var1(param_5, &local_6), param_3, param_4, param_5);
-    bStack23 = (u8)(local_6 >> 0x18);
+    bStack23 = (local_6 >> 0x18);
     uVar1    = bStack23;
     if(bStack23 != 0x0)
     {
@@ -410,7 +410,7 @@ void  pass1_1030_b578(param_1: u32, param_2: i16, param_3: u16)
 
     pass1_1030_b718(param_1, param_1, (param_1 & 0xffff0000 | (param_1 + 0x8)),
                     str_var1(param_3, &local_6), param_1, param_2, param_3);
-    uStack48._3_1_ = (u8)(local_6 >> 0x18);
+    uStack48._3_1_ = (local_6 >> 0x18);
     uStack10       = uStack48._3_1_;
     if(uStack48._3_1_ == 0x0)
     {
@@ -952,7 +952,7 @@ void  pass1_1030_9296(param_1: u32, param_2: *mut u32, param_3: u32, param_4: u1
         (**ppcVar1)(SEG_1000, uVar11, uVar10, paStack6, (paStack6 >> 0x10));
         puVar8 = extraout_DX_02;
     }
-    puStack10 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x8, param_4, puVar8, unaff_DI);
+    puStack10 = mixed_1010_20ba(globals.data_1050_0ed0, 0x8, param_4, puVar8, unaff_DI);
     u_var2     = (puStack10 >> 0x10);
     uStack14  = *(puStack10 + 0xe);
     uVar7     = (puStack10 + 0x10);
@@ -1041,7 +1041,7 @@ void  pass1_1030_951a(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u3
     let mut uVar4: *mut Struct124;
     let mut uVar5: *mut Struct125;
 
-    puStack10 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x35, param_1, param_2, unaff_DI);
+    puStack10 = mixed_1010_20ba(globals.data_1050_0ed0, 0x35, param_1, param_2, unaff_DI);
     puVar9    = (puStack10 >> 0x10);
     uVar6     = puStack10 + 0xa;
     uStack14  = puStack10 & 0xffff0000 | uVar6;
@@ -1051,7 +1051,7 @@ void  pass1_1030_951a(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u3
     if(uVar6 != 0x0)
     {
         iStack28  = 0x0;
-        puStack32 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x8, param_1, puVar9, unaff_DI);
+        puStack32 = mixed_1010_20ba(globals.data_1050_0ed0, 0x8, param_1, puVar9, unaff_DI);
         uVar14    = (puStack32 >> 0x10);
         puStack36 = *(u16 **)(puStack32 + 0xe);
         uVar6     = (puStack32 + 0x10);

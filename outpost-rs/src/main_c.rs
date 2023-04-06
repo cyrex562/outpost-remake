@@ -34,7 +34,7 @@ u16 entry(globals: &mut Globals,
           param_7: u16,
           i32 param_8);
 
-void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16);
+pub fn init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16);
 
 int main(int argc, char **argv) {
     Globals globals = {};
@@ -106,7 +106,7 @@ u16 entry(globals: &mut Globals,
             globals.dat_1050_5f84 = result;
             hinst_var15 = globals.hinst_1050_5f4c;
             // initialize the app
-            param_8 = InitApp16((HINSTANCE16) LAST_SEGMENT);
+            param_8 = InitApp16( LAST_SEGMENT);
             globals.dat_1050_5f84 = result;
             if (param_8 != 0)
                 break;
@@ -173,7 +173,7 @@ u16 entry(globals: &mut Globals,
 }
 
 
-void init_op_1008_54aa(globals: &mut Globals,
+pub fn init_op_1008_54aa(globals: &mut Globals,
                        param_1: u16,
                        param_2: u16,
                        param_3: *mut u8,
@@ -272,7 +272,7 @@ void init_op_1008_54aa(globals: &mut Globals,
 }
 
 
-void init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16) {
+pub fn init_1000_23be(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16) {
 
     // str_var1(globals.data_1050_5f50, globals.data_1050_5f4e)
 

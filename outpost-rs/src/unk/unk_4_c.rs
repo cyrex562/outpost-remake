@@ -277,7 +277,7 @@ u16 * pass1_1030_dcc2(param_1: i16, param_2: u16, param_3: i16, param_4: u32, pa
 }
 
 
-void  pass1_1030_dcf4(u16 *param_1, param_2: u16)
+void  pass1_1030_dcf4(param_1: *mut u16, param_2: u16)
 
 {
     long         lVar1;
@@ -392,7 +392,7 @@ u16 * pass1_1030_bc24(param_1: u16, param_2: i16, param_3: u16, param_4: u16, pa
 }
 
 
-void  pass1_1030_bc4e(u16 *param_1) {
+void  pass1_1030_bc4e(param_1: *mut u16) {
     param_1.field_0x0 = addr_table_1030_bc96;//0xbc96;
     param_1.field_0x2 = SEG_1030;
     pass1_1028_b260(param_1);
@@ -754,7 +754,7 @@ void  pass1_1030_c52e(param_1: u32,param_2: *mut u16, param_3: u32, param_4: u32
         pass1_1030_64ce(param_7, pu_var2, param_6, globals._PTR_LOOP_1050_5740, param_2, param_4,
                         str_var1(param_7, pu_var2));
         local_20       = *pu_var2;
-        local_20._3_1_ = (u8)(local_20 >> 0x18);
+        local_20._3_1_ = (local_20 >> 0x18);
         uStack8        = local_20._3_1_;
         if(local_20._3_1_ == 0x0)
         {
@@ -1170,7 +1170,7 @@ void  pass1_1030_ad86(param_1: u16, param_2: u16,param_3: *mut u16, long param_4
 {
     let mut uVar1: u32;
     let mut pu_var2: *mut u32;
-    char        cStack17;
+    let mut cStack17: char;
     let mut local_a: u32;
     let mut iStack6: i16;
 
@@ -1297,7 +1297,7 @@ void  pass1_1030_b142(param_1: u32, param_2: u32)
                 goto LAB_1030_b263;
             if(bVar4)
                 break;
-            uStack12._1_3_ = (u163)(uStack12 >> 0x8) & 0xffff00;
+            uStack12._1_3_ = (uStack12 >> 0x8) & 0xffff00;
             iVar1          = (iVar2 + 0xe);
             if(iVar1 == 0x1)
             {
@@ -1440,7 +1440,7 @@ void  pass1_1030_b9da(param_1: *mut Struct402, param_2: u32, param_3: u32, param
 }
 
 
-u16 * pass1_1030_9e9c(u16 *param_1, param_2: u8) {
+u16 * pass1_1030_9e9c(param_1: *mut u16, param_2: u8) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -1868,7 +1868,7 @@ void  pass1_1030_8b00(param_1: u32,param_2: *mut u16,param_3: *mut u16, param_4:
     {
         puVar1   = &local_2a;
         uStack28 = uStack38;
-        pass1_1030_8c66(param_1, local_c, (u8 *)local_a, (local_a >> 0x10),
+        pass1_1030_8c66(param_1, local_c, local_a, (local_a >> 0x10),
                         str_var1(param_4, puVar1), uVar3);
         u_stack6 = *puVar1;
         uVar3   = (puVar1 + 0x2);

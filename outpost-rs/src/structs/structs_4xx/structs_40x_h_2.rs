@@ -8,16 +8,16 @@
 // typedef struct Struct400 Struct400;
 struct Struct400
 {
-    u8         field_0x0;
-    u8         field_0x1;
+    let mut field_0x0: u8;
+    let mut field_0x1: u8;
     let mut field_0x2: u16;
     let mut field_0x4: u32;
-    u8         field_0x8;
-    u8         field_0x9;
-    u8         field_0xa;
-    u8         field_0xb;
-    u8         field_0xc;
-    u8         field_0xd;
+    let mut field_0x8: u8;
+    let mut field_0x9: u8;
+    let mut field_0xa: u8;
+    let mut field_0xb: u8;
+    let mut field_0xc: u8;
+    let mut field_0xd: u8;
     let mut field_0xe: u16;
     let mut field_0x10: u16;
     let mut field_0x12: u16;

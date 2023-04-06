@@ -192,7 +192,7 @@ void  pass1_1030_2aca(param_1: *mut Struct730, param_2: u32, param_3: u16, param
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void pass1_1030_2c8a(Globals   *globals,
+pub fn pass1_1030_2c8a(globals: &mut Globals,
                      param_1: *mut Struct373,
                      param_2: u32,
                      param_3: i16,
@@ -299,7 +299,7 @@ void pass1_1030_2c8a(Globals   *globals,
                 {
                     param_1.field_0x16 = local_404;
                     param_1.field_0x1a_addr_offset = local_406;
-                    puVar8             = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_5, puVar6, unaff_DI);
+                    puVar8             = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_5, puVar6, unaff_DI);
                     pass1_1018_04a4(puVar8, param_1.field_0x4);
                     pass1_1010_82f8(globals.dat_1050_14cc, *param_1.field_0x10);
                     return;
@@ -441,7 +441,7 @@ u16  pass1_1030_1a9c(param_1: u32, param_2: u32, param_3: u16)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-u16 file_1030_1b18(Globals   *globals,
+u16 file_1030_1b18(globals: &mut Globals,
                    param_1: *mut Struct370,
                    param_2: u32,
                    param_3: i16,

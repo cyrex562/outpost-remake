@@ -130,7 +130,7 @@ struct Struct14
     let mut field_0xd: u8;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
-    char      field_0x10;
+    let mut field_0x10: char;
     let mut field_0x11: u8;
     let mut field_0x12: u8;
     let mut field_0x13: u8;

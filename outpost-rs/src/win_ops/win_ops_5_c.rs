@@ -34,7 +34,7 @@
 // #include <stddef.h>
 
 
-void window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
+pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
 
 {
     let mut uVar1: u32;
@@ -117,7 +117,7 @@ void window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
                         0,
                         0);
     }
-    puVar7                      = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2d, unaff_SS, puVar5, unaff_DI);
+    puVar7                      = mixed_1010_20ba(globals.data_1050_0ed0, 0x2d, unaff_SS, puVar5, unaff_DI);
     uVar9                       = (puVar7 >> 0x10);
     (iVar11 + 0xf2)             = puVar7;
     (iVar11 + 0xf4)             = uVar9;
@@ -143,7 +143,7 @@ void window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
         (iVar11 + 0xf8)  = puVar6;
     }
     (iVar11 + 0xe8) = (iVar11 + 0xf6);
-    puVar7          = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, unaff_SS, puVar6, unaff_DI);
+    puVar7          = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, unaff_SS, puVar6, unaff_DI);
     uVar8           = pass1_1018_04b8(puVar7);
     puVar5          = (uVar8 >> 0x10);
     pass1_1010_41d6(*(iVar11 + 0xf2), uVar8, puVar5, unaff_SS, in_AF);
@@ -161,7 +161,7 @@ void window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
     MoveWindow16(SEG_1010, 0x1, pBVar4[0x3], pBVar4[0x2], pBVar4[0x1], *pBVar4);
     UpdateWindow16((HANDLE16)LAST_SEGMENT);
 }
-void window_op_1020_2642(globals: &mut Globals, param_1: *mut Struct0)
+pub fn window_op_1020_2642(globals: &mut Globals, param_1: *mut Struct0)
 
 {
     let mut in_AX: *mut Struct664;
@@ -198,7 +198,7 @@ BOOL16 pass1_1008_68c6(param_1: u16,param_2: u16,param_3: u16,i32 param_4)
     return BVar1;
 }
 
-BOOL16 show_win_1008_96ae(param_1: u32,i16 param_2)
+BOOL16 show_win_1008_96ae(param_1: u32,param_2: i16)
 
 {
     let mut BVar1: BOOL16;
@@ -212,14 +212,14 @@ BOOL16 show_win_1008_96ae(param_1: u32,i16 param_2)
     return 0;
 }
 
-void pass1_1008_3bd6(param_1: u32,
+pub fn pass1_1008_3bd6(param_1: u32,
                      param_2: *mut Struct57,
                      param_4: u16,
                      param_5: u32,
                      param_6: u16,
                      param_7: u32,
                      param_8: u32,
-                     Globals  *globals,
+                     globals: &mut Globals,
                      param_9: u16,
                      param_10: u16,
                      param_11: u16,
@@ -247,7 +247,7 @@ void pass1_1008_3bd6(param_1: u32,
     mov_update_win_1040_93aa(param_2,param_5);
 }
 
-void set_win_text_1008_9664(param_1: u32,param_2: u16,char *param_3)
+pub fn set_win_text_1008_9664(param_1: u32,param_2: u16,param_3: *mut c_char)
 
 {
     unk_str_op_1000_3d3e((char *)(param_1 & 0xffff0000 | (ulong)((int)param_1 + 10U)),param_3);
@@ -255,7 +255,7 @@ void set_win_text_1008_9664(param_1: u32,param_2: u16,char *param_3)
 
 }
 
-void destroy_win_1008_9698(param_1: *mut Struct871,param_2: u16)
+pub fn destroy_win_1008_9698(param_1: *mut Struct871,param_2: u16)
 
 {
     DestroyWindow16(param_1.hwnd_0x8);
@@ -271,7 +271,7 @@ StructD *  pass1_1008_3cd6(StructD *param_1,byte param_2)
     return param_1;
 }
 
-void win_ui_op_1008_3c34(globals: &mut Globals, param_1: u32, param_2: u8, hdc_param_3: HDC16)
+pub fn win_ui_op_1008_3c34(globals: &mut Globals, param_1: u32, param_2: u8, hdc_param_3: HDC16)
 
 {
     let mut uVar1: u16;

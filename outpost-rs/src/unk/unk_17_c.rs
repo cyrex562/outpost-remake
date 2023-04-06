@@ -11,7 +11,7 @@
 
 // #include <stdbool.h>
 
-void  pass1_1038_b6e0(param_1: u32, i16 param_2)
+void  pass1_1038_b6e0(param_1: u32, param_2: i16)
 
 {
     let mut uVar1: u32;

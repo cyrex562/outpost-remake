@@ -32,7 +32,7 @@ Struct79 *pass1_1010_3702(param_1: *mut Struct79, param_3: u16) {
     return param_1;
 }
 
-u16 *pass1_1010_37d4(u16 *param_1)
+u16 *pass1_1010_37d4(param_1: *mut u16)
 
 {
     struct_1010_383a(param_1);
@@ -42,7 +42,7 @@ u16 *pass1_1010_37d4(u16 *param_1)
     return param_1;
 }
 
-void struct_1010_383a(param_1: *mut Struct223)
+pub fn struct_1010_383a(param_1: *mut Struct223)
 
 {
 //    Struct223 *iVar1;
@@ -62,7 +62,7 @@ void struct_1010_383a(param_1: *mut Struct223)
     param_1.field_0x2  = SEG_1010;
 }
 
-void struct_1010_3b7a(param_1: *mut Struct79, param_3: u16)
+pub fn struct_1010_3b7a(param_1: *mut Struct79, param_3: u16)
 
 {
     struct_op_1010_1d48(param_1, param_3);
@@ -126,7 +126,7 @@ u32 pass1_1010_0eac(globals: &mut Globals,
     return param_1;
 }
 
-void pass1_1010_0f24(Globals  *globals,
+pub fn pass1_1010_0f24(globals: &mut Globals,
                      param_1: *mut Struct79,
                      param_2: *mut Struct79,
                      param_3: u16,
@@ -145,13 +145,13 @@ void pass1_1010_0f24(Globals  *globals,
 //    param_1 =  s_648_bmp_1050_1919 + 0x1;
     param_1.field_0x0 = addr_table_1010_191a;//0x191a;
     param_1.field_0x2              = SEG_1010;
-    puVar1                          = mixed_1010_20ba(globals._1050_0ed0: u16, 0x3, param_5, param_4, unaff_DI);
+    puVar1                          = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, param_5, param_4, unaff_DI);
     (&param_1[0xa].field_0x4 + 0x2) = puVar1;
     param_1[0xa].field_0x8          = (puVar1 >> 0x10);
 }
 
 
-void struct_1010_0f9c(param_1: *mut Struct232, param_2: u16, param_3: u16)
+pub fn struct_1010_0f9c(param_1: *mut Struct232, param_2: u16, param_3: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -284,7 +284,7 @@ u16 *pass1_1008_eabc(param_1: i16, param_2: u16, param_3: u16)
 }
 
 
-void pass1_1008_eb2a(param_1: i16, param_2: u16, param_3: u16)
+pub fn pass1_1008_eb2a(param_1: i16, param_2: u16, param_3: u16)
 
 {
     struct_op_1010_1d48(str_var1(param_2, param_1), param_3);
@@ -305,14 +305,14 @@ u16 *pass1_1008_ec10(param_1: i16, param_2: u16, param_3: u16)
     return param_1;
 }
 
-u16 *struct_1008_ec72(u16 *param_1) {
+u16 *struct_1008_ec72(param_1: *mut u16) {
     struct_1010_383a(param_1);
     param_1.field_0x0 = addr_table_1008_ef9c[10];//0xefc4;
     param_1.field_0x2 = SEG_1008;
     return param_1;
 }
 
-void pass1_1008_ee14(param_1: u32, param_2: u16)
+pub fn pass1_1008_ee14(param_1: u32, param_2: u16)
 
 {
     let mut puVar1: *mut u8;
@@ -349,7 +349,7 @@ u16 *pass1_1008_d72e(param_1: i16, param_2: u16, param_3: u16)
 }
 
 
-void pass1_1008_d818(param_1: *mut Struct732, i16 param_2)
+pub fn pass1_1008_d818(param_1: *mut Struct732, param_2: i16)
 
 {
     let mut iVar1: *mut Struct732;
@@ -430,7 +430,7 @@ void pass1_1008_d818(param_1: *mut Struct732, i16 param_2)
 }
 
 
-void pass1_1008_d99e(param_1: i16, param_2: u16, param_3: u16, param_4: *mut u8, param_5: u16)
+pub fn pass1_1008_d99e(param_1: i16, param_2: u16, param_3: u16, param_4: *mut u8, param_5: u16)
 
 {
     struct_op_1018_4cda(param_1, param_2, param_3);
@@ -441,7 +441,7 @@ void pass1_1008_d99e(param_1: i16, param_2: u16, param_3: u16, param_4: *mut u8,
     return;
 }
 
-void struct_1008_dc90(u16 *param_1, param_2: u32, param_3: u32) {
+pub fn struct_1008_dc90(param_1: *mut u16, param_2: u32, param_3: u32) {
     let mut iVar1: *mut Struct212;
     let mut uVar1: u16;
 
@@ -460,7 +460,7 @@ void struct_1008_dc90(u16 *param_1, param_2: u32, param_3: u32) {
 }
 
 
-void struct_1008_dcdc(u16 *param_1) {
+pub fn struct_1008_dcdc(param_1: *mut u16) {
     let mut iVar1: *mut Struct220;
     let mut uVar1: u16;
 
@@ -517,7 +517,7 @@ void  pass1_1008_e05e(param_1: u32, param_2: u16, param_3: u32, param_4: u32, pa
     return;
 }
 
-void pass1_1008_e164(param_1: *mut Struct214, param_2: u16, param_3: u8)
+pub fn pass1_1008_e164(param_1: *mut Struct214, param_2: u16, param_3: u8)
 
 {
     let mut puVar1: *mut u32;
@@ -597,7 +597,7 @@ void pass1_1008_e164(param_1: *mut Struct214, param_2: u16, param_3: u8)
 }
 
 
-void pass1_1008_c72a(param_1: *mut Struct642, param_2: u16, param_3: u16)
+pub fn pass1_1008_c72a(param_1: *mut Struct642, param_2: u16, param_3: u16)
 
 {
     struct_op_1010_1d48(str_var1(param_2, param_1), param_3);
@@ -608,7 +608,7 @@ void pass1_1008_c72a(param_1: *mut Struct642, param_2: u16, param_3: u16)
 }
 
 
-void pass1_1008_ca5a(param_1: *mut Struct639, param_2: u16, param_3: u16)
+pub fn pass1_1008_ca5a(param_1: *mut Struct639, param_2: u16, param_3: u16)
 
 {
     struct_op_1010_1d48(str_var1(param_2, param_1), param_3);
@@ -623,7 +623,7 @@ void pass1_1008_ca5a(param_1: *mut Struct639, param_2: u16, param_3: u16)
 }
 
 
-void struct_1008_bde0(param_1: *mut u32, u8 *param_2)
+pub fn struct_1008_bde0(param_1: *mut u32, u8 *param_2)
 
 {
     let mut uVar1: u16;
@@ -1016,7 +1016,7 @@ u32 pass1_1008_aefe(param_1: *mut u8, param_2: *mut u8, param_3: u16, param_4: *
 }
 
 
-void pass1_1008_af94(param_1: *mut Struct643, param_2: u16, param_3: u16)
+pub fn pass1_1008_af94(param_1: *mut Struct643, param_2: u16, param_3: u16)
 
 {
     struct_op_1010_1d48(str_var1(param_2, param_1), param_3);
@@ -1033,7 +1033,7 @@ void pass1_1008_af94(param_1: *mut Struct643, param_2: u16, param_3: u16)
 }
 
 
-void set_struct_op_1008_9584(struct param_1: &mut Struct20, param_2: u32)
+pub fn set_struct_op_1008_9584(struct param_1: &mut Struct20, param_2: u32)
 
 {
     struct Struct20 *iVar1;
@@ -1068,7 +1068,7 @@ void set_struct_op_1008_9584(struct param_1: &mut Struct20, param_2: u32)
 }
 
 
-void struct_op_1008_8e9e(param_1: *mut Struct78, param_2: u32, param_3: u32)
+pub fn struct_op_1008_8e9e(param_1: *mut Struct78, param_2: u32, param_3: u32)
 
 {
     let mut iVar1: *mut Struct78;
@@ -1098,7 +1098,7 @@ void struct_op_1008_8e9e(param_1: *mut Struct78, param_2: u32, param_3: u32)
 }
 
 
-void struct_op_1008_9174(param_1: *mut Struct88, param_2: u32, param_3: u32)
+pub fn struct_op_1008_9174(param_1: *mut Struct88, param_2: u32, param_3: u32)
 
 {
     let mut iVar1: *mut Struct88;
@@ -1117,7 +1117,7 @@ void struct_op_1008_9174(param_1: *mut Struct88, param_2: u32, param_3: u32)
     return;
 }
 
-void set_struct_1008_687a(struct param_1: &mut Struct20, param_2: u32)
+pub fn set_struct_1008_687a(struct param_1: &mut Struct20, param_2: u32)
 
 {
     struct Struct20 *iVar1;
@@ -1135,7 +1135,7 @@ void set_struct_1008_687a(struct param_1: &mut Struct20, param_2: u32)
     return;
 }
 
-u16 str_op_1008_60e8(char *param_1)
+u16 str_op_1008_60e8(param_1: *mut c_char)
 
 {
     let mut uVar1: u16;
@@ -1155,7 +1155,7 @@ u16 str_op_1008_60e8(char *param_1)
 }
 
 
-void struct_1008_4c58(u16 *param_1) {
+pub fn struct_1008_4c58(param_1: *mut u16) {
     let mut iVar1: *mut Struct394;
     let mut uVar1: u16;
 
@@ -1173,7 +1173,7 @@ void struct_1008_4c58(u16 *param_1) {
 }
 
 
-void struct_op_1008_4c98(param_1: *mut Struct76, param_2: u32, param_3: u16)
+pub fn struct_op_1008_4c98(param_1: *mut Struct76, param_2: u32, param_3: u16)
 
 {
     let mut iVar1: *mut Struct76;
@@ -1193,7 +1193,7 @@ void struct_op_1008_4c98(param_1: *mut Struct76, param_2: u32, param_3: u16)
 }
 
 
-void pass1_1008_5068(param_1: *mut Struct76, param_2: *mut Struct83)
+pub fn pass1_1008_5068(param_1: *mut Struct76, param_2: *mut Struct83)
 
 {
     struct_op_1008_4214(param_1, param_2);
@@ -1218,7 +1218,7 @@ u16 *struct_op_1008_56b4(param_1: *mut Struct76)
 }
 
 
-void set_struct_1008_574a(param_1: *mut Struct21)
+pub fn set_struct_1008_574a(param_1: *mut Struct21)
 
 {
     let mut iVar1: *mut Struct21;
@@ -1235,7 +1235,7 @@ void set_struct_1008_574a(param_1: *mut Struct21)
     iVar1.field_0x2   = SEG_1008;
 }
 
-void struct_op_1008_3f92(param_1: *mut Struct76, param_2: *mut Struct83)
+pub fn struct_op_1008_3f92(param_1: *mut Struct76, param_2: *mut Struct83)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1267,7 +1267,7 @@ void struct_op_1008_3f92(param_1: *mut Struct76, param_2: *mut Struct83)
 }
 
 
-void pass1_1008_4016(param_1: *mut Struct76)
+pub fn pass1_1008_4016(param_1: *mut Struct76)
 
 {
     let mut iVar1: i16;
@@ -1289,7 +1289,7 @@ void pass1_1008_4016(param_1: *mut Struct76)
 }
 
 
-void struct_op_1008_4214(param_1: *mut Struct76, param_2: *mut Struct83)
+pub fn struct_op_1008_4214(param_1: *mut Struct76, param_2: *mut Struct83)
 
 {
     let mut puVar1: *mut u32;
@@ -1335,7 +1335,7 @@ struct Struct20 *pass1_1008_3ab8(struct param_1: *mut Struct20)
 }
 
 
-void struct_op_1008_0000(struct_1008_0000_1 *param_1) {
+pub fn struct_op_1008_0000(struct_1008_0000_1 *param_1) {
 //    i16 iVar1;
 //    u16 u_var2;
 //

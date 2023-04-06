@@ -34,7 +34,7 @@ const char* get_rsrc_string(arg_1: u32)
 }
 
 
-void string_1040_a626(param_1: *mut Struct381, char *param_2, param_3: u16)
+pub fn string_1040_a626(param_1: *mut Struct381, char *param_2, param_3: u16)
 
 {
     let mut uVar1: u16;
@@ -62,9 +62,9 @@ char *pass1_1040_4dcc(param_1: u32, param_2: i16, param_3: u16)
 }
 
 
-void pass1_1040_5d42(globals: &mut Globals, struct param_1: *mut Struct382) {
-    char char_var_1;
-    char char_var_2;
+pub fn pass1_1040_5d42(globals: &mut Globals, struct param_1: *mut Struct382) {
+    let mut char_var_1: char;
+    let mut char_var_2: char;
 //    i16  iVar3;
 //    u16  uVar4;
     SegmentAddress addr_var5;
@@ -108,7 +108,7 @@ void pass1_1040_5d42(globals: &mut Globals, struct param_1: *mut Struct382) {
 }
 
 
-void pass1_1038_4d3c(param_1: *mut Struct385, char *param_2, param_3: u16) {
+pub fn pass1_1038_4d3c(param_1: *mut Struct385, char *param_2, param_3: u16) {
     let mut u_var_1: u16;
 
     Struct18 *in_struct =  ptr_from_addr_pair(param_1.segment_field_0x1fc, param_1.offset_field_0x1fa);
@@ -119,7 +119,7 @@ void pass1_1038_4d3c(param_1: *mut Struct385, char *param_2, param_3: u16) {
 }
 
 
-void pass1_1030_4dbc(param_1: *mut Struct386, param_2: u32, long param_3)
+pub fn pass1_1030_4dbc(param_1: *mut Struct386, param_2: u32, long param_3)
 
 {
     long *plong_var_1;
@@ -384,7 +384,7 @@ const char *pass1_1020_bd80(globals: &mut Globals, param_1: u16) {
     return pcVar1;
 }
 
-void string_1020_c0ca(globals: &mut Globals, param_1: u16)
+pub fn string_1020_c0ca(globals: &mut Globals, param_1: u16)
 
 {
     string_1020_c0d8(globals, param_1);
@@ -576,7 +576,7 @@ cstring *string_op_1020_c2f8(globals: &mut Globals, param_1: u16)
     return pcVar1;
 }
 
-void pass1_1020_6e52(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16, offset_param_4: u16, segment_param_5: u16,
+pub fn pass1_1020_6e52(globals: &mut Globals, param_1: u16, param_2: u16, param_3: u16, offset_param_4: u16, segment_param_5: u16,
                      i16 param_6) {
     let mut seg_var1: u16;
     let mut pcVar2: *mut c_char;
@@ -594,7 +594,7 @@ void pass1_1020_6e52(globals: &mut Globals, param_1: u16, param_2: u16, param_3:
     string_1020_79b4(globals, param_1, x, param_6, pcVar2);
 }
 
-void sprintf_op_1018_34b6(globals: &mut Globals, struct_1018_34b6_1 *param_1, param_2: u8) {
+pub fn sprintf_op_1018_34b6(globals: &mut Globals, struct_1018_34b6_1 *param_1, param_2: u8) {
     let mut iVar1: i16;
     let mut in_register_00000001: u16;
     let mut in_DX: u16;
@@ -635,7 +635,7 @@ void sprintf_op_1018_34b6(globals: &mut Globals, struct_1018_34b6_1 *param_1, pa
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_str_op_1018_35b0(param_1: *mut Struct263, param_2: u16, param_3: u16) {
+pub fn unk_str_op_1018_35b0(param_1: *mut Struct263, param_2: u16, param_3: u16) {
     let mut puVar1: *mut u16;
     let mut piVar2: *mut i16;
     let mut uVar3: u16;
@@ -708,7 +708,7 @@ void unk_str_op_1018_35b0(param_1: *mut Struct263, param_2: u16, param_3: u16) {
     }
 }
 
-BOOL16 string_1018_39d8(globals: &mut Globals, param_1: u16, param_2: u32, param_3: u32, char *param_4)
+BOOL16 string_1018_39d8(globals: &mut Globals, param_1: u16, param_2: u32, param_3: u32, param_4: *mut c_char)
 
 {
     let mut iVar1: i16;
@@ -745,7 +745,7 @@ u32 pass1_1018_3a7a(param_1: u32, param_2: u32, param_3: u16, param_4: u16)
     return u_var2;
 }
 
-void pass1_1010_dc36(globals: &mut Globals,
+pub fn pass1_1010_dc36(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                      param_3: u16,
@@ -795,7 +795,7 @@ void pass1_1010_dc36(globals: &mut Globals,
     return;
 }
 
-void load_str_1010_ddf6(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param_2: *mut Struct383)
+pub fn load_str_1010_ddf6(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param_2: *mut Struct383)
 {
     //    short in_buf_len_5;
     let mut pv_var1: *mut c_void;
@@ -827,14 +827,14 @@ switchD_1010_de53_caseD_9:
     return;
 }
 
-void pass1_1010_de78(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param_2: u32) {
+pub fn pass1_1010_de78(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param_2: u32) {
     *(param_1.field_0x13c) = 0x0;
     pass1_1030_809c(param_2);
     load_string_1010_84e0(
       SEG_1030, globals.dat_1050_14cc, 0x3ff, (param_1.field_0x13c));
 }
 
-char *load_string_1010_ac92(Globals    *globals,
+char *load_string_1010_ac92(globals: &mut Globals,
                             HINSTANCE16 param_1,
                             param_2: u16,
                             param_3: u16,
@@ -851,7 +851,7 @@ char *load_string_1010_ac92(Globals    *globals,
     return 0x0;
 }
 
-char *string_op_1010_ada6(Globals    *globals,
+char *string_op_1010_ada6(globals: &mut Globals,
                           HINSTANCE16 param_1,
                           param_2: u16,
                           param_3: u16,
@@ -947,7 +947,7 @@ char *load_string_1010_847e(cstring param_1_str_buf, HINSTANCE16 param_3_hinstan
 }
 
 
-void load_string_1010_84ac(param_1: u16, HINSTANCE16 param_3)
+pub fn load_string_1010_84ac(param_1: u16, HINSTANCE16 param_3)
 
 {
     let mut uVar1: u16;
@@ -959,7 +959,7 @@ void load_string_1010_84ac(param_1: u16, HINSTANCE16 param_3)
 }
 
 
-void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
+pub fn load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
                            char       *param_2,
                            in_resc_id_3: u16,
                            char       *in_buffer_4)
@@ -969,7 +969,7 @@ void load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
 }
 
 
-void pass1_1010_84f8(param_1: u32, param_2: i16, param_3: u16)
+pub fn pass1_1010_84f8(param_1: u32, param_2: i16, param_3: u16)
 
 {
     let mut uVar1: u32;
@@ -1009,7 +1009,7 @@ void pass1_1010_84f8(param_1: u32, param_2: i16, param_3: u16)
     set_err_mode_1010_8b14(param_1, str_var1(param_3, local_108), param_3);
 }
 
-void pass1_1010_85be(param_1: u32, param_2: i16, param_4: u16)
+pub fn pass1_1010_85be(param_1: u32, param_2: i16, param_4: u16)
 
 {
     let mut uVar1: u32;
@@ -1032,7 +1032,7 @@ void pass1_1010_85be(param_1: u32, param_2: i16, param_4: u16)
     set_err_mode_1010_8b14(param_1, *(param_3 * 0x4 + 0x2e34), param_4);
 }
 
-void pass1_1010_6034(param_1: u32, param_2: u16)
+pub fn pass1_1010_6034(param_1: u32, param_2: u16)
 
 {
     let mut puVar1: *mut u16;
@@ -1108,7 +1108,7 @@ u16 pass1_1008_e2a4(param_1: u32, param_2: u32, param_3: u32)
 }
 
 
-void pass1_1008_e320(Globals   *globals,
+pub fn pass1_1008_e320(globals: &mut Globals,
                      param_1: *mut Struct102,
                      param_2: u32,
                      param_3: u32,
@@ -1151,7 +1151,7 @@ void pass1_1008_e320(Globals   *globals,
     param_1.field_0x20 = uVar4;
 }
 
-void load_str_and_spri16f_1008_b69c(Globals  *globals,
+pub fn load_str_and_spri16f_1008_b69c(globals: &mut Globals,
                                     param_1: *mut Struct25,
                                     WORD     *param_2,
                                     u8       *param_3)
@@ -1216,7 +1216,7 @@ void load_str_and_spri16f_1008_b69c(Globals  *globals,
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void load_str_and_spri16f_1008_b78a(globals: &mut Globals,
+pub fn load_str_and_spri16f_1008_b78a(globals: &mut Globals,
                                     param_1: u32,
                                     WORD    *param_2,
                                     u8      *param_3,
@@ -1272,7 +1272,7 @@ char *load_string_1008_b1f0(Globals *globals)
 }
 
 
-void pass1_1008_9c86(param_1: u32, char *param_2, i16 param_3)
+pub fn pass1_1008_9c86(param_1: u32, char *param_2, i16 param_3)
 
 {
     let mut uVar1: u16;
@@ -1316,7 +1316,7 @@ u32 *str_1008_6d8a(globals: &mut Globals,
 }
 
 
-void struct_op_1008_48fe(param_1: *mut Struct81, param_2: u16, char *param_3, param_4: u16)
+pub fn struct_op_1008_48fe(param_1: *mut Struct81, param_2: u16, char *param_3, param_4: u16)
 
 {
     let mut uVar1: u16;
@@ -1357,31 +1357,31 @@ void  pass1_1008_48de(param_1: u16, param_2: u32, param_3: i16, param_4: u16,par
     let mut iVar8: i16;
     let mut uVar9: u16;
 
-    uVar6   = param_4 & 0xff | (u8)((param_4 >> 0x8) + param_4 + param_11) << 0x8;
+    uVar6   = param_4 & 0xff | ((param_4 >> 0x8) + param_4 + param_11) << 0x8;
     puVar7  = (param_6 + 0x1);
-    pbVar1  = (u8 *)(param_5 + param_7);
-    bVar5   = (u8)(param_4 & 0xff);
+    pbVar1  = (param_5 + param_7);
+    bVar5   = (param_4 & 0xff);
     *pbVar1 = *pbVar1 | bVar5;
     bVar3   = in(0x46);
-    pbVar1  = (u8 *)(param_5 + param_7);
+    pbVar1  = (param_5 + param_7);
     *pbVar1 = *pbVar1 | bVar5;
     if(param_3 == 0x1)
     {
-        pbVar1   = (u8 *)(param_5 + param_7);
+        pbVar1   = (param_5 + param_7);
         *pbVar1  = *pbVar1 | bVar5;
         iVar8    = param_7 + 0x1;
-        pbVar1   = (u8 *)(param_5 + iVar8);
-        bVar5    = (u8)param_12;
+        pbVar1   = (param_5 + iVar8);
+        bVar5    = param_12;
         *pbVar1  = *pbVar1 | bVar5;
-        pbVar1   = (u8 *)(param_5 + iVar8);
+        pbVar1   = (param_5 + iVar8);
         *pbVar1  = *pbVar1 | bVar5;
         *param_8 = bVar3;
-        pbVar1   = (u8 *)(param_5 + iVar8);
+        pbVar1   = (param_5 + iVar8);
         *pbVar1  = *pbVar1 | bVar5;
         uVar6    = param_12;
         if(*pbVar1 != 0x0)
         {
-            pbVar1                            = (u8 *)(param_5 + iVar8);
+            pbVar1                            = (param_5 + iVar8);
             *pbVar1                           = *pbVar1 | bVar5;
             puVar7                            = (&param_12 + 0x1);
             param_5                           = (param_2 >> 0x8);
@@ -1412,7 +1412,7 @@ void  pass1_1008_48de(param_1: u16, param_2: u32, param_3: i16, param_4: u16,par
     (iVar8 + 0x8) = uVar4;
     (iVar8 + 0xa) = uVar6;
 }
-void pass1_1008_049c(param_1: u16, param_2: u16, char *param_3) {
+pub fn pass1_1008_049c(param_1: u16, param_2: u16, param_3: *mut c_char) {
     let mut uVar1: u16;
     let mut pu_var2: *mut u8;
 
@@ -1432,7 +1432,7 @@ void pass1_1008_049c(param_1: u16, param_2: u16, char *param_3) {
 }
 
 
-void str_1000_4d58(char *in_string_1, char *in_string_2, param_3: u32, param_4: u32, WNDCLASS16 *param_5)
+pub fn str_1000_4d58(char *in_string_1, char *in_string_2, param_3: u32, param_4: u32, WNDCLASS16 *param_5)
 
 {
     let mut uVar1: u16;
@@ -1554,7 +1554,7 @@ void str_1000_4d58(char *in_string_1, char *in_string_2, param_3: u32, param_4: 
     return;
 }
 
-u16 str_op_1000_3da4(char *param_1)
+u16 str_op_1000_3da4(param_1: *mut c_char)
 
 {
     let mut pcVar1: *mut c_char;
@@ -1587,7 +1587,7 @@ u8 str_op_1000_3dbe(char *param_1, char *param_2, param_3: u16)
 
 {
     let mut pcVar1: *mut c_char;
-    char  cVar2;
+    let mut cVar2: char;
     let mut pcVar3: *mut c_char;
     let mut pcVar4: *mut c_char;
     let mut uVar5: u16;
@@ -1685,7 +1685,7 @@ char* poss_str_op_1000_28dc(globals: &mut Globals, i16 param_1)
 }
 
 
-void pass1_1000_2913(globals: &mut Globals, param_1: i16, param_2: u16, param_3: u16)
+pub fn pass1_1000_2913(globals: &mut Globals, param_1: i16, param_2: u16, param_3: u16)
 
 {
     let mut string1: *mut c_char;

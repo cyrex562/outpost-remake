@@ -13,7 +13,7 @@
 // #include "utils.h"
 
 // #include <op_winapi.h>
-void fn_ptr_1000_17ce(param_1: *mut Struct18, param_2: u16)
+pub fn fn_ptr_1000_17ce(param_1: *mut Struct18, param_2: u16)
 
 {
     if(param_1 != 0x0)

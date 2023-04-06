@@ -26,7 +26,7 @@
 // #include <lmcons.h>
 // #include <stdbool.h>
 
-void file_1038_774e(globals: &mut Globals,
+pub fn file_1038_774e(globals: &mut Globals,
                     param_1: *mut Struct307, param_2: u32, param_3: *mut u8, param_4: u16)
 
 {
@@ -285,7 +285,7 @@ u16 read_file_1038_7c02(globals: &mut Globals,
 }
 
 
-void pass1_1038_5e16(globals: &mut Globals,
+pub fn pass1_1038_5e16(globals: &mut Globals,
                      param_1: u32,
                      param_2: u32,
                      param_3: i16,
@@ -425,7 +425,7 @@ void pass1_1038_5e16(globals: &mut Globals,
 }
 
 
-void file_1038_6118(globals: &mut Globals,
+pub fn file_1038_6118(globals: &mut Globals,
                     param_1: u32,
                     param_2: u32,
                     param_3: i16,
@@ -573,7 +573,7 @@ void file_1038_6118(globals: &mut Globals,
 }
 
 
-void pass1_1030_de7c(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u16)
+pub fn pass1_1030_de7c(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u16)
 
 {
     let mut BVar1: BOOL16;
@@ -594,7 +594,7 @@ void pass1_1030_de7c(globals: &mut Globals, param_1: u32, param_2: u32, param_3:
 }
 
 
-void pass1_1030_dec4(param_1: u32,
+pub fn pass1_1030_dec4(param_1: u32,
                      param_2: u32,
                      param_3: i16,
                      u8      *param_4,
@@ -613,7 +613,7 @@ void pass1_1030_dec4(param_1: u32,
 }
 
 
-void pass1_1030_d61c(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u16)
+pub fn pass1_1030_d61c(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u16)
 
 {
     let mut BVar1: BOOL16;
@@ -1590,7 +1590,7 @@ void  file_1030_5e70(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8,
                     if((iVar9 + 0xa) == 0x0)
                     {
                     // LAB_1030_5fb7:
-                        puVar11 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_5, puVar8, unaff_DI);
+                        puVar11 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_5, puVar8, unaff_DI);
                         pass1_1018_04ca(puVar11, *(iVar12 + 0x4));
                         return;
                     }
@@ -1629,7 +1629,7 @@ u16  read_file_1030_4e70(param_1: u32, param_2: *mut u32, u8 **param_3, long par
     long       lStack56;
     let mut uStack20: u32;
 
-    *param_3 = (u8 *)0x0;
+    *param_3 = 0x0;
     *param_2 = 0x0;
     if(param_4 != 0x0)
     {
@@ -1658,7 +1658,7 @@ u16  read_file_1030_4e70(param_1: u32, param_2: *mut u32, u8 **param_3, long par
                         {
                             *pbStack60 = *pbStack60 + 0x80;
                         }
-                        pbStack60 = (u8 *)(pbStack60 & 0xffff0000 | (pbStack60 + 0x1));
+                        pbStack60 = (pbStack60 & 0xffff0000 | (pbStack60 + 0x1));
                         lStack56  = lStack56 + -0x1;
                     }
                     return uVar3;
@@ -1991,7 +1991,7 @@ void  write_to_file_1030_32e4(param_1: u32, param_2: u32, param_3: u16)
 }
 
 
-void read_file_1030_33f0(globals: &mut Globals, param_1: *mut Struct430, param_2: u32)
+pub fn read_file_1030_33f0(globals: &mut Globals, param_1: *mut Struct430, param_2: u32)
 
 {
     let mut uVar1: u16;

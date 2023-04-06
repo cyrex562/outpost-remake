@@ -45,7 +45,7 @@ Struct18 *pass1_1038_3074(globals: &mut Globals,param_1: *mut Struct18, param_2:
 }
 
 
-void pass1_1038_33f8(globals: &mut Globals, u16 *param_1)
+pub fn pass1_1038_33f8(globals: &mut Globals, u16 *param_1)
 
 {
     let mut puVar1: *mut u32;
@@ -85,7 +85,7 @@ void pass1_1038_33f8(globals: &mut Globals, u16 *param_1)
 }
 
 
-void pass1_1038_11b0(globals: &mut Globals,
+pub fn pass1_1038_11b0(globals: &mut Globals,
                      param_1: u32,
                     param_2: *mut u32,
                     param_3: *mut u32,
@@ -126,7 +126,7 @@ void pass1_1038_11b0(globals: &mut Globals,
 }
 
 
-void pass1_1038_1220(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u32, param_4: u16)
+pub fn pass1_1038_1220(globals: &mut Globals, param_1: u32, param_2: u32, param_3: u32, param_4: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -223,7 +223,7 @@ void pass1_1038_1220(globals: &mut Globals, param_1: u32, param_2: u32, param_3:
 }
 
 
-void pass1_1038_134a(globals: &mut Globals,
+pub fn pass1_1038_134a(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                     param_3: *mut u32,
@@ -272,7 +272,7 @@ void pass1_1038_134a(globals: &mut Globals,
 }
 
 
-void pass1_1038_13da(globals: &mut Globals,
+pub fn pass1_1038_13da(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                     param_3: *mut u32,
@@ -328,7 +328,7 @@ void pass1_1038_13da(globals: &mut Globals,
 }
 
 
-void pass1_1038_1482(globals: &mut Globals,
+pub fn pass1_1038_1482(globals: &mut Globals,
                      param_1: u32,
                     param_2: *mut u32,
                     param_3: *mut u32,
@@ -521,7 +521,7 @@ void pass1_1038_1482(globals: &mut Globals,
 }
 
 
-void pass1_1038_16f2(globals: &mut Globals,
+pub fn pass1_1038_16f2(globals: &mut Globals,
                      param_1: u32,
                     param_2: *mut u32,
                     param_3: *mut u32,
@@ -695,7 +695,7 @@ void pass1_1038_16f2(globals: &mut Globals,
 }
 
 
-void pass1_1038_1940(globals: &mut Globals,
+pub fn pass1_1038_1940(globals: &mut Globals,
                      param_1: u32,
                     param_2: *mut u32,
                      param_3: u32,
@@ -794,7 +794,7 @@ Struct18 * pass1_1038_1c02(param_1: *mut Struct18, param_2: u8)
 }
 
 
-void pass1_1038_0340(globals: &mut Globals,
+pub fn pass1_1038_0340(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                      param_3: i16,
@@ -962,7 +962,7 @@ void pass1_1038_0340(globals: &mut Globals,
 }
 
 
-void pass1_1038_05d8(globals: &mut Globals,
+pub fn pass1_1038_05d8(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                      param_3: i16,
@@ -1417,7 +1417,7 @@ Struct18 * pass1_1030_b90c(param_1: *mut Struct18, param_2: u8)
 }
 
 
-void  pass1_1030_b96c(u16 *param_1)
+void  pass1_1030_b96c(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -1440,7 +1440,7 @@ void  pass1_1030_b96c(u16 *param_1)
 }
 
 
-void pass1_1030_bb0e(globals: &mut Globals,
+pub fn pass1_1030_bb0e(globals: &mut Globals,
                      param_1: u32,
                      param_2: u32,
                      param_3: u16,
@@ -1498,7 +1498,7 @@ void pass1_1030_bb0e(globals: &mut Globals,
 }
 
 
-void pass1_1030_9f7a(globals: &mut Globals,param_1: *mut u16, param_2: u16, param_3: u16, param_4: u8)
+pub fn pass1_1030_9f7a(globals: &mut Globals,param_1: *mut u16, param_2: u16, param_3: u16, param_4: u8)
 
 {
     let mut uVar1: u32;
@@ -1548,10 +1548,10 @@ void pass1_1030_9f7a(globals: &mut Globals,param_1: *mut u16, param_2: u16, para
 }
 
 
-void pass1_1030_a044(globals: &mut Globals,
+pub fn pass1_1030_a044(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
-                     u8       param_3,
+                     param_3: u8,
                      param_4: u16,
                      param_5: u16,
                     param_6: *mut u16,
@@ -1705,7 +1705,7 @@ void pass1_1030_a044(globals: &mut Globals,
 }
 
 
-void pass1_1030_a278(globals: &mut Globals,
+pub fn pass1_1030_a278(globals: &mut Globals,
                     param_1: *mut u16,
                     param_2: *mut u16,
                      param_3: u16,
@@ -1804,7 +1804,7 @@ void pass1_1030_a278(globals: &mut Globals,
 }
 
 
-void pass1_1030_a844(param_1: *mut Struct426,
+pub fn pass1_1030_a844(param_1: *mut Struct426,
                     param_2: *mut u16,
                      param_3: i16,
                      param_4: i16,

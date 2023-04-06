@@ -10,7 +10,7 @@
 // #include "structs/structs_0xx/structs_2x.h"
 // #include "structs/structs_2xx/structs_26x.h"
 
-void window_op_1018_e6c6(param_1: *mut Struct0)
+pub fn window_op_1018_e6c6(param_1: *mut Struct0)
 
 {
     let mut in_AX: *mut Struct660;
@@ -38,7 +38,7 @@ void window_op_1018_e6c6(param_1: *mut Struct0)
     return;
 }
 
-void pass1_1018_e72a(param_1: u32)
+pub fn pass1_1018_e72a(param_1: u32)
 
 {
     let mut puVar1: *mut u32;
@@ -58,7 +58,7 @@ void pass1_1018_e72a(param_1: u32)
     return;
 }
 
-void post_win_msg_1018_ea0a(param_1: u16, param_2: u16, param_3: i16, param_4: HWND16)
+pub fn post_win_msg_1018_ea0a(param_1: u16, param_2: u16, param_3: i16, param_4: HWND16)
 
 {
     if(param_3 == 0xed)
@@ -68,7 +68,7 @@ void post_win_msg_1018_ea0a(param_1: u16, param_2: u16, param_3: i16, param_4: H
     return;
 }
 
-void pass1_1018_ea66(param_1: u32, param_2: u16)
+pub fn pass1_1018_ea66(param_1: u32, param_2: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -98,7 +98,7 @@ void pass1_1018_ea66(param_1: u32, param_2: u16)
     return;
 }
 
-void window_op_1018_eada(param_1: *mut Struct0)
+pub fn window_op_1018_eada(param_1: *mut Struct0)
 
 {
     let mut in_AX: *mut Struct661;
@@ -125,7 +125,7 @@ void window_op_1018_eada(param_1: *mut Struct0)
     return;
 }
 
-void pass1_1018_eb3e(param_1: u32, param_2: u16)
+pub fn pass1_1018_eb3e(param_1: u32, param_2: u16)
 
 {
     let mut puVar1: *mut u32;
@@ -163,7 +163,7 @@ void pass1_1018_eb3e(param_1: u32, param_2: u16)
     return;
 }
 
-void pass1_1020_02ae(param_1: u32)
+pub fn pass1_1020_02ae(param_1: u32)
 
 {
     let mut puVar1: *mut u32;
@@ -189,7 +189,7 @@ void pass1_1020_02ae(param_1: u32)
     return;
 }
 
-void win_1020_0316(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
+pub fn win_1020_0316(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
 
 {
     let mut uVar1: u32;
@@ -202,7 +202,7 @@ void win_1020_0316(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
     let mut puVar6: *mut u16;
 
     create_window_ex_1008_9760(param_1, SEG_1008);
-    puVar6            = mixed_1010_20ba(globals._1050_0ed0: u16, 0x1, param_3, param_2, unaff_DI);
+    puVar6            = mixed_1010_20ba(globals.data_1050_0ed0, 0x1, param_3, param_2, unaff_DI);
     puVar3            = (puVar6 >> 0x10);
     uVar5             = (param_1 >> 0x10);
     iVar1             = param_1;
@@ -228,7 +228,7 @@ void win_1020_0316(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
     return;
 }
 
-void post_msg_1020_03b2(param_1: u32, param_2: HWND16)
+pub fn post_msg_1020_03b2(param_1: u32, param_2: HWND16)
 
 {
     let mut uVar1: u32;
@@ -239,7 +239,7 @@ void post_msg_1020_03b2(param_1: u32, param_2: HWND16)
 }
 
 
-void post_msg_1020_03d6(param_1: u32, param_2: HWND16)
+pub fn post_msg_1020_03d6(param_1: u32, param_2: HWND16)
 
 {
     let mut uVar1: u32;
@@ -250,7 +250,7 @@ void post_msg_1020_03d6(param_1: u32, param_2: HWND16)
 }
 
 
-void post_msg_1020_03fa(param_1: u32, param_2: HWND16)
+pub fn post_msg_1020_03fa(param_1: u32, param_2: HWND16)
 
 {
     let mut uVar1: u32;
@@ -261,7 +261,7 @@ void post_msg_1020_03fa(param_1: u32, param_2: HWND16)
 }
 
 
-void post_win_msg_1020_061c(param_1: u32, param_2: i16, param_3: HWND16)
+pub fn post_win_msg_1020_061c(param_1: u32, param_2: i16, param_3: HWND16)
 
 {
     let mut uVar1: u32;
@@ -282,7 +282,7 @@ void post_win_msg_1020_061c(param_1: u32, param_2: i16, param_3: HWND16)
     return;
 }
 
-void pass1_1020_08b6(WNDCLASS16 *param_1, param_2: *mut Struct20, param_3: u16, param_4: u32)
+pub fn pass1_1020_08b6(WNDCLASS16 *param_1, param_2: *mut Struct20, param_3: u16, param_4: u32)
 
 {
     let mut iVar1: *mut Struct20;
@@ -301,7 +301,7 @@ void pass1_1020_08b6(WNDCLASS16 *param_1, param_2: *mut Struct20, param_3: u16, 
 }
 
 
-void win_1018_df40(param_1: *mut Struct0, param_2: u16, param_3: *mut u8, param_4: u16)
+pub fn win_1018_df40(param_1: *mut Struct0, param_2: u16, param_3: *mut u8, param_4: u16)
 
 {
     let mut iVar1: *mut Struct267;
@@ -324,7 +324,7 @@ void win_1018_df40(param_1: *mut Struct0, param_2: u16, param_3: *mut u8, param_
 }
 
 
-void pass1_1018_df92(param_1: u32)
+pub fn pass1_1018_df92(param_1: u32)
 
 {
     let mut puVar1: *mut u32;
@@ -346,7 +346,7 @@ void pass1_1018_df92(param_1: u32)
     (iVar4 + 0xe2) = 0x0;
 }
 
-void pass1_1018_e2cc(param_1: *mut Struct269, param_2: u16)
+pub fn pass1_1018_e2cc(param_1: *mut Struct269, param_2: u16)
 
 {
     let mut pi_var1: *mut i16;
@@ -399,7 +399,7 @@ void pass1_1018_e2cc(param_1: *mut Struct269, param_2: u16)
     return;
 }
 
-void window_op_1018_e384(param_1: *mut Struct0)
+pub fn window_op_1018_e384(param_1: *mut Struct0)
 
 {
     let mut in_AX: *mut Struct659;
@@ -428,7 +428,7 @@ void window_op_1018_e384(param_1: *mut Struct0)
 }
 
 
-void pass1_1018_e3e8(param_1: u32)
+pub fn pass1_1018_e3e8(param_1: u32)
 
 {
     let mut puVar1: *mut u32;
@@ -448,7 +448,7 @@ void pass1_1018_e3e8(param_1: u32)
     return;
 }
 
-void destroy_window_1018_c518(param_1: *mut Struct29)
+pub fn destroy_window_1018_c518(param_1: *mut Struct29)
 
 {
     let mut BVar1: BOOL16;
@@ -482,7 +482,7 @@ Struct29 *pass1_1018_c896(param_1: *mut Struct29, param_2: u8)
     }
     return param_1;
 }
-void unk_destroy_window_op_1018_6bb6(param_1: *mut Struct28, param_2: HWND16)
+pub fn unk_destroy_window_op_1018_6bb6(param_1: *mut Struct28, param_2: HWND16)
 
 {
     let mut BVar1: BOOL16;
@@ -511,7 +511,7 @@ void unk_destroy_window_op_1018_6bb6(param_1: *mut Struct28, param_2: HWND16)
     return;
 }
 
-void win_1018_598c(param_1: *mut Struct0, param_2: u16, param_3: u16)
+pub fn win_1018_598c(param_1: *mut Struct0, param_2: u16, param_3: u16)
 
 {
     let mut uVar1: u16;
@@ -537,7 +537,7 @@ void win_1018_598c(param_1: *mut Struct0, param_2: u16, param_3: u16)
 }
 
 
-void window_op_1018_67b6(param_1: *mut Struct0)
+pub fn window_op_1018_67b6(param_1: *mut Struct0)
 
 {
     let mut in_AX: *mut Struct658;
@@ -566,7 +566,7 @@ void window_op_1018_67b6(param_1: *mut Struct0)
 }
 
 
-void pass1_1018_681a(param_1: u32)
+pub fn pass1_1018_681a(param_1: u32)
 
 {
     let mut puVar1: *mut u32;
@@ -586,7 +586,7 @@ void pass1_1018_681a(param_1: u32)
     return;
 }
 
-void win_op_1018_294a(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: u16, LPCSTR in_string_6)
+pub fn win_op_1018_294a(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: u16, LPCSTR in_string_6)
 
 {
     if(((param_1 + 0x18) != 0x0) && (param_4 == 0x280))
@@ -624,7 +624,7 @@ u32 set_err_mode_1010_8b14(param_1: u32, param_2: u32, param_3: u16)
     return param_1 & 0xffff0000 | uVar1;
 }
 
-void send_msg_1010_7c42(param_1: u32, param_2: u16)
+pub fn send_msg_1010_7c42(param_1: u32, param_2: u16)
 
 {
     let mut iVar1: i16;
@@ -648,7 +648,7 @@ void send_msg_1010_7c42(param_1: u32, param_2: u16)
     return;
 }
 
-void send_msg_1010_7c9e(param_1: u32, param_2: i16, param_3: u16)
+pub fn send_msg_1010_7c9e(param_1: u32, param_2: i16, param_3: u16)
 
 {
     let mut BVar1: BOOL16;
@@ -683,7 +683,7 @@ void send_msg_1010_7c9e(param_1: u32, param_2: i16, param_3: u16)
     return;
 }
 
-void pass1_1010_71b0(param_1: i16, param_2: u16)
+pub fn pass1_1010_71b0(param_1: i16, param_2: u16)
 
 {
     let mut uVar1: u32;
@@ -694,7 +694,7 @@ void pass1_1010_71b0(param_1: i16, param_2: u16)
 }
 
 
-void pass1_1010_71c2(param_1: u16, param_2: u16, param_3: i16, param_4: u16)
+pub fn pass1_1010_71c2(param_1: u16, param_2: u16, param_3: i16, param_4: u16)
 
 {
     let mut uVar1: u32;
@@ -731,12 +731,12 @@ void pass1_1010_71c2(param_1: u16, param_2: u16, param_3: i16, param_4: u16)
     return;
 }
 
-void unk_win_op_1010_7300(param_1: u32, param_2: u32, param_3: u16, param_4: u32)
+pub fn unk_win_op_1010_7300(param_1: u32, param_2: u32, param_3: u16, param_4: u32)
 
 {
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut c_void;
-    char        cVar3;
+    let mut cVar3: char;
     let mut uVar4: u16;
     let mut in_DX: *mut u8;
     let mut puVar5: *mut u8;
@@ -1031,7 +1031,7 @@ void unk_win_op_1010_7300(param_1: u32, param_2: u32, param_3: u16, param_4: u32
     return;
 }
 
-void free_rsrc_1010_4b3e(u16 *param_1, HGLOBAL16 param_2)
+pub fn free_rsrc_1010_4b3e(param_1: *mut u16, HGLOBAL16 param_2)
 
 {
     let mut pi_var1: *mut i16;
@@ -1099,7 +1099,7 @@ void free_rsrc_1010_4b3e(u16 *param_1, HGLOBAL16 param_2)
     return;
 }
 
-void unk_destroy_win_op_1010_2fa0(param_1: u32, param_2: HWND16)
+pub fn unk_destroy_win_op_1010_2fa0(param_1: u32, param_2: HWND16)
 
 {
     let mut pi_var1: *mut i16;
@@ -1146,7 +1146,7 @@ void unk_destroy_win_op_1010_2fa0(param_1: u32, param_2: HWND16)
     return;
 }
 
-void unk_destroy_win_op_1010_305a(param_1: *mut Struct27, param_2: i16, param_3: *mut Struct65, param_4: u16)
+pub fn unk_destroy_win_op_1010_305a(param_1: *mut Struct27, param_2: i16, param_3: *mut Struct65, param_4: u16)
 
 {
     let mut pi_var1: *mut i16;
@@ -1254,7 +1254,7 @@ void unk_destroy_win_op_1010_305a(param_1: *mut Struct27, param_2: i16, param_3:
     } while(true);
 }
 
-void pass1_1010_1656(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: u16, param_6: *mut u8, param_7: i16, param_8: u16)
+pub fn pass1_1010_1656(param_1: i16, param_2: u16, param_3: u16, param_4: u32, param_5: u16, param_6: *mut u8, param_7: i16, param_8: u16)
 
 {
     let mut uVar1: u32;
@@ -1268,7 +1268,7 @@ void pass1_1010_1656(param_1: i16, param_2: u16, param_3: u16, param_4: u32, par
     unk_destroy_win_op_1010_305a(str_var1(param_2, param_1), param_3, param_4, param_5);
     if((param_1 + 0x16) == 0x3)
     {
-        puVar6 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x32, param_8, param_6, param_7);
+        puVar6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x32, param_8, param_6, param_7);
         uVar1  = (param_1 + 0x32);
         uVar1  = (uVar1 + 0x42);
         uVar5  = (uVar1 >> 0x10);
@@ -1288,7 +1288,7 @@ void pass1_1010_1656(param_1: i16, param_2: u16, param_3: u16, param_4: u32, par
     return;
 }
 
-void set_window_placement_1010_0070(param_1: u32, param_2: i16, param_3: u16, param_4: HWND16, param_5: u16)
+pub fn set_window_placement_1010_0070(param_1: u32, param_2: i16, param_3: u16, param_4: HWND16, param_5: u16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1331,7 +1331,7 @@ void set_window_placement_1010_0070(param_1: u32, param_2: i16, param_3: u16, pa
 }
 
 
-void set_win_placement_1010_010e(param_1: u16, param_2: u16, param_3: u16, param_4: HWND16)
+pub fn set_win_placement_1010_010e(param_1: u16, param_2: u16, param_3: u16, param_4: HWND16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1377,7 +1377,7 @@ void set_win_placement_1010_010e(param_1: u16, param_2: u16, param_3: u16, param
 }
 
 
-void enum_child_windows_1010_01be(LPVOID param_1)
+pub fn enum_child_windows_1010_01be(LPVOID param_1)
 
 {
     LPVOID pvVar1;
@@ -1391,7 +1391,7 @@ void enum_child_windows_1010_01be(LPVOID param_1)
     return;
 }
 
-void pass1_1008_aa28(param_1: u32, param_2: u16, WNDCLASS16 *param_3)
+pub fn pass1_1008_aa28(param_1: u32, param_2: u16, WNDCLASS16 *param_3)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1491,7 +1491,7 @@ WPARAM16 main_win_msg_loop_1008_9498(globals: &mut Globals, u16_arg1: u16, u16_a
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void unk_win_msg_op_1008_9510(i16 *param_1, MSG16 *param_2, MSG16 *param_3)
+pub fn unk_win_msg_op_1008_9510(param_1: *mut i16, MSG16 *param_2, MSG16 *param_3)
 
 {
     let mut has_message: BOOL16;
@@ -1530,7 +1530,7 @@ code_rSEG_10089538:
     goto LAB_1008_9578;
 }
 
-void send_msg_1008_9640(param_1: u32, param_2: u16, param_3: HWND16)
+pub fn send_msg_1008_9640(param_1: u32, param_2: u16, param_3: HWND16)
 
 {
     if((param_1 + 0x8) != 0x0)
@@ -1541,7 +1541,7 @@ void send_msg_1008_9640(param_1: u32, param_2: u16, param_3: HWND16)
 }
 
 
-ATOM win_ui_reg_class_1008_96d2(Globals    *globals,
+ATOM win_ui_reg_class_1008_96d2(globals: &mut Globals,
                                 Struct20   *param_1,
                                 HINSTANCE16 in_h_inst_2,
                                 WNDCLASS16 *in_wnd_class_3)
@@ -1589,7 +1589,7 @@ ATOM win_ui_reg_class_1008_96d2(Globals    *globals,
 }
 
 
-void create_window_ex_1008_9760(in_struct_1: *mut Struct0, param_2: u16)
+pub fn create_window_ex_1008_9760(in_struct_1: *mut Struct0, param_2: u16)
 
 {
     let mut uVar1: u32;
@@ -1611,7 +1611,7 @@ void create_window_ex_1008_9760(in_struct_1: *mut Struct0, param_2: u16)
                                                struct_1.field_0xb6,
                                                struct_1.field_0xb4,
                                                uVar1,
-                                               (HMENU16)(uVar1 >> 0x10),
+                                               (uVar1 >> 0x10),
                                                0x39e,
                                                SEG_1050);
         struct_1.field_0x8 = window_handle;
@@ -1624,7 +1624,7 @@ void create_window_ex_1008_9760(in_struct_1: *mut Struct0, param_2: u16)
 }
 
 
-u32  unk_win_op_1008_97f2(param_1: *mut u32, i16 *param_2, WPARAM16 param_3, param_4: *mut u8, param_5: u16, param_6: HWND16)
+u32  unk_win_op_1008_97f2(param_1: *mut u32, param_2: *mut i16, WPARAM16 param_3, param_4: *mut u8, param_5: u16, param_6: HWND16)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1638,7 +1638,7 @@ u32  unk_win_op_1008_97f2(param_1: *mut u32, i16 *param_2, WPARAM16 param_3, par
     let mut uVar6: u32;
     let mut uVar7: u8;
     let mut uVar8: u8;
-    char   cVar9;
+    let mut cVar9: char;
 
     msg    = param_1;
     wparam = (param_1 >> 0x10);
@@ -1908,7 +1908,7 @@ LRESULT  make_def_wnd_proc_1008_9ce6(param_1: u16, param_2: u16, in_msg_3: u16, 
 }
 
 
-void pass1_1008_9e5a(param_1: *mut Struct11)
+pub fn pass1_1008_9e5a(param_1: *mut Struct11)
 
 {
     let mut puVar1: *mut u32;
@@ -2034,7 +2034,7 @@ void  post_win_msg_1008_a0e4(param_1: *mut Struct67, long param_2, param_3: i16,
     return;
 }
 
-u16 *pass1_1008_91ba(u16 *param_1, param_2: HWND16) {
+u16 *pass1_1008_91ba(param_1: *mut u16, param_2: HWND16) {
     let mut UVar1: u16;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -2057,7 +2057,7 @@ u16 *pass1_1008_91ba(u16 *param_1, param_2: HWND16) {
 }
 
 
-void kill_timer_1008_921c(u16 *param_1, param_2: HWND16) {
+pub fn kill_timer_1008_921c(param_1: *mut u16, param_2: HWND16) {
     let mut iVar1: i16;
     let mut u_var2: u16;
 
@@ -2074,7 +2074,7 @@ void kill_timer_1008_921c(u16 *param_1, param_2: HWND16) {
 }
 
 
-void send_msg_1008_84ba(param_1: u16, param_2: u32, param_3: HWND16)
+pub fn send_msg_1008_84ba(param_1: u16, param_2: u32, param_3: HWND16)
 
 {
     let mut iVar1: i16;
@@ -2100,7 +2100,7 @@ void send_msg_1008_84ba(param_1: u16, param_2: u32, param_3: HWND16)
 }
 
 
-void win_1008_5c9e(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, WNDCLASS16 *param_5)
+pub fn win_1008_5c9e(param_1: u32, param_2: *mut u32, param_3: u16, param_4: u16, WNDCLASS16 *param_5)
 
 {
     win_1008_5c7c(NULL, param_1, *param_2, param_5, param_3);
@@ -2156,7 +2156,7 @@ create_window_1008_5e7e(globals: &mut Globals, in_stock_obj_id: u16, WNDCLASS16 
     HStack28       = GetStockObject16(in_stock_obj_id);
     uStack26       = 0x0;
     puStack22      = local_12;
-    BVar3          = GetClassInfo16((HINSTANCE16)LAST_SEGMENT, (SEGPTR)&name, in_wnd_class);
+    BVar3          = GetClassInfo16(LAST_SEGMENT, (SEGPTR)&name, in_wnd_class);
     if(BVar3 == 0x0)
     {
         AVar4 = RegisterClass16(LAST_SEGMENT);
@@ -2187,7 +2187,7 @@ LRESULT make_def_win_proc_1008_5f44(param_1: u16, WPARAM16 in_wparam_2, LPARAM p
     {
         WVar1 = GetWindowWord16(in_hwnd_4, 0x0);
         mci_send_command_1008_5cb6(globals._PTR_LOOP_1050_02a0, WVar1, LAST_SEGMENT);
-        puVar3 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x37, unaff_SS, in_DX, unaff_DI);
+        puVar3 = mixed_1010_20ba(globals.data_1050_0ed0, 0x37, unaff_SS, in_DX, unaff_DI);
         pass1_1008_aa28(puVar3, puVar3, unaff_SS);
     }
     else
@@ -2203,7 +2203,7 @@ LRESULT make_def_win_proc_1008_5f44(param_1: u16, WPARAM16 in_wparam_2, LPARAM p
 }
 
 
-void destroy_win_1008_628e(param_1: u32, param_2: HWND16)
+pub fn destroy_win_1008_628e(param_1: u32, param_2: HWND16)
 
 {
     fn_ptr_1 *ppcVar1;

@@ -8,7 +8,7 @@
 // #include "draw_ops/draw_ops_3.h"
 // #include "structs/structs_3xx/struct_318.h"
 
-void pass1_1008_af38(StructD *param_1)
+pub fn pass1_1008_af38(StructD *param_1)
 
 {
     param_1.address_offset_field_0x0 = addr_table_1008_af7c;//0xaf7c;
@@ -17,7 +17,7 @@ void pass1_1008_af38(StructD *param_1)
     return;
 }
 
-void pass1_1038_6984(param_1: u32)
+pub fn pass1_1038_6984(param_1: u32)
 
 {
     let mut iVar1: i32
@@ -45,7 +45,7 @@ void pass1_1038_6984(param_1: u32)
     return;
 }
 
-void pass1_1030_5c8a(param_1: u32,param_2: u32)
+pub fn pass1_1030_5c8a(param_1: u32,param_2: u32)
 
 {
     long *plVar1;
@@ -77,7 +77,7 @@ void pass1_1030_5c8a(param_1: u32,param_2: u32)
 }
 
 
-void pass1_1028_858c(param_1: *mut Struct318,param_2: *mut u8, param_3: *mut Struct319)
+pub fn pass1_1028_858c(param_1: *mut Struct318,param_2: *mut u8, param_3: *mut Struct319)
 
 {
     undefined4 *puVar1;

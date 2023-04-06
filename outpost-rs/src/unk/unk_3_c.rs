@@ -5,7 +5,7 @@
 // #include "globals.h"
 
 
-void pass1_1038_3698(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
+pub fn pass1_1038_3698(param_1: u32, param_2: u16, param_3: u16, param_4: u16) {
     let mut pi_var1: *mut i16;
     let mut pu_var2: *mut u16;
     let mut uVar3: u32;
@@ -282,7 +282,7 @@ void  pass1_1038_3aa6(param_1: u32, param_2: u16, param_3: u16) {
 void  pass1_1038_3ba0(param_1: u32) {
     let mut puVar1: *mut u32;
     let mut ppcVar2: *mut *mut c_void;
-    char         cVar3;
+    let mut cVar3: char;
     let mut puVar4: *mut u32;
     let mut uVar5: u32;
     let mut uVar6: u16;
@@ -935,7 +935,7 @@ void  pass1_1030_e0d4(param_1: *mut u8, param_2: u16, i16 param_3) {
     let mut iStack6: i16;
     let mut uStack4: u16;
 
-    puVar11  = mixed_1010_20ba(globals._1050_0ed0: u16, 0x40, param_2, param_1, param_3);
+    puVar11  = mixed_1010_20ba(globals.data_1050_0ed0, 0x40, param_2, param_1, param_3);
     uStack4  = (puVar11 >> 0x10);
     iStack6  = puVar11;
     uStack10 = pass1_1008_b820(puVar11, iStack6, uStack4);
@@ -1128,7 +1128,7 @@ void  pass1_1030_ecf8(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
     let mut uStack4: u16;
 
     uStack12 = 0x0;
-    puVar16  = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_4, param_2, param_3);
+    puVar16  = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_4, param_2, param_3);
     uVar13   = param_2 & 0xffff0000 | puVar16 >> 0x10;
     uStack10 = puVar16;
     uStack4  = (puVar16 >> 0x10);
@@ -1142,7 +1142,7 @@ void  pass1_1030_ecf8(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
     if(uStack12 < 0x2) {
         uStack12 = 0x0;
     }
-    puVar16  = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_4, uVar13, param_3);
+    puVar16  = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, param_4, uVar13, param_3);
     uVar13   = uVar13 & 0xffff0000 | puVar16 >> 0x10;
     uStack16 = SUB42(puVar16, 0x0);
     uStack14 = (puVar16 >> 0x10);
@@ -1346,7 +1346,7 @@ void  pass1_1030_cef8(param_1: u32, param_2: u32, param_3: u16, i16 param_4) {
 }
 
 
-u16  pass1_1030_cf3a(param_1: u32, i16 param_2) {
+u16  pass1_1030_cf3a(param_1: u32, param_2: i16) {
     let mut iStack4: i16;
 
     iStack4 = 0x0;
@@ -1579,7 +1579,7 @@ void  pass1_1030_d340(param_1: u16, param_2: u16, param_3: u32) {
 }
 
 
-u16  pass1_1030_d36e(param_1: u32, i16 param_2) {
+u16  pass1_1030_d36e(param_1: u32, param_2: i16) {
     let mut iStack4: i16;
 
     iStack4 = 0x0;

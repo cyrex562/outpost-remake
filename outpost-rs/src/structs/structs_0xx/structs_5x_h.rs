@@ -779,7 +779,7 @@ struct Struct52
     let mut field_0x103: u8;
     let mut field_0x104: u8;
     let mut field_0x105: u8;
-    HMENU16    field_0x106;
+    let mut field_0x106: HMENU16;
     let mut field_0x108: u16;
     let mut field_0x10a: u16;
 };

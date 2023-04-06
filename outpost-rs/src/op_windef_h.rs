@@ -185,7 +185,7 @@ struct WNDCLASS16
     let mut cb_cls_extra: i16;
     let mut cb_wnd_extra: i16;
     let mut h_instance: HANDLE16;
-    HICON16   h_icon;
+    let mut h_icon: HICON16;
     let mut h_cursor: HCURSOR16;
     let mut hbr_background: HBRUSH16;
     SEGPTR    lpsz_menu_name;
@@ -462,7 +462,7 @@ typedef struct
     WPARAM16  wParam;
     LPARAM    lParam;
     let mut time: DWORD;
-    POINT16   pt;
+    let mut pt: POINT16;
 } MSG16, *LPMSG16;
 
 

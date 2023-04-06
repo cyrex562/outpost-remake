@@ -16,7 +16,7 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
-u16 * pass1_1008_941a(u16 *param_1, param_2: u16, param_3: u16)
+u16 * pass1_1008_941a(param_1: *mut u16, param_2: u16, param_3: u16)
 
 {
     param_1.field_0x0 = param_2;
@@ -25,7 +25,7 @@ u16 * pass1_1008_941a(u16 *param_1, param_2: u16, param_3: u16)
 }
 
 
-u16 * pass1_1008_9436(u16 *param_1)
+u16 * pass1_1008_9436(param_1: *mut u16)
 
 {
     param_1.field_0x0 = 0x0;
@@ -34,7 +34,7 @@ u16 * pass1_1008_9436(u16 *param_1)
 }
 
 
-void  pass1_1008_944e(u16 *param_1, param_2: u16, param_3: u16)
+void  pass1_1008_944e(param_1: *mut u16, param_2: u16, param_3: u16)
 
 {
     param_1.field_0x2 = param_3;
@@ -71,7 +71,7 @@ u32 * pass1_1008_80d2(u32 *param_1)
 }
 
 
-void  pass1_1008_8168(u16 *param_1) {
+void  pass1_1008_8168(param_1: *mut u16) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -219,7 +219,7 @@ void  pass1_1008_6b2e(param_1: u32)
 }
 
 
-void  pass1_1008_6c90(u16 *param_1)
+void  pass1_1008_6c90(param_1: *mut u16)
 
 {
     pass1_1008_3e38(param_1);
@@ -244,7 +244,7 @@ u32 * pass1_1008_6cb4(param_1: *mut u32, param_2: *mut u32, param_3: u16, param_
 }
 
 
-void  pass1_1008_6cec(u16 *param_1, param_2: u16, param_3: u32, param_4: u16, param_5: u32)
+void  pass1_1008_6cec(param_1: *mut u16, param_2: u16, param_3: u32, param_4: u16, param_5: u32)
 
 {
     pass1_1008_3e76(param_1, param_4, param_5, (param_5 >> 0x10));
@@ -253,7 +253,7 @@ void  pass1_1008_6cec(u16 *param_1, param_2: u16, param_3: u32, param_4: u16, pa
 }
 
 
-void  pass1_1008_6d18(u16 *param_1,param_2: *mut u16, u16 *param_3)
+void  pass1_1008_6d18(param_1: *mut u16,param_2: *mut u16, u16 *param_3)
 
 {
     pass1_1008_3f62(param_1, param_3);
@@ -262,7 +262,7 @@ void  pass1_1008_6d18(u16 *param_1,param_2: *mut u16, u16 *param_3)
 }
 
 
-void  pass1_1008_6d3e(u16 *param_1,param_2: *mut u16, u16 *param_3)
+void  pass1_1008_6d3e(param_1: *mut u16,param_2: *mut u16, u16 *param_3)
 
 {
     pass1_1008_3f62(param_3, param_1);
@@ -271,7 +271,7 @@ void  pass1_1008_6d3e(u16 *param_1,param_2: *mut u16, u16 *param_3)
 }
 
 
-void  pass1_1008_6d64(u16 *param_1, u16 *param_2)
+void  pass1_1008_6d64(param_1: *mut u16, u16 *param_2)
 
 {
     pass1_1008_3f62(param_2, param_1);
@@ -280,7 +280,7 @@ void  pass1_1008_6d64(u16 *param_1, u16 *param_2)
 }
 
 
-u16 * pass1_1008_72a8(u16 *param_1, param_2: u16)
+u16 * pass1_1008_72a8(param_1: *mut u16, param_2: u16)
 
 {
     param_1.field_0x0 = param_2;
@@ -818,7 +818,7 @@ void  pass1_1008_5b12(long *param_1)
 }
 
 
-u16 * pass1_1008_5b6e(u16 *param_1, param_2: u8) {
+u16 * pass1_1008_5b6e(param_1: *mut u16, param_2: u8) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -830,7 +830,7 @@ u16 * pass1_1008_5b6e(u16 *param_1, param_2: u8) {
     return param_1;
 }
 
-void  pass1_1008_5c34(u16 *param_1) {
+void  pass1_1008_5c34(param_1: *mut u16) {
     let mut unaff_SS: u16;
 
     param_1.field_0x0 = addr_table_1008_5fc8;//0x5fc8;
@@ -841,7 +841,7 @@ void  pass1_1008_5c34(u16 *param_1) {
 }
 
 
-void pass1_1008_612e(param_1: i16, param_2: i16, param_3: u16)
+pub fn pass1_1008_612e(param_1: i16, param_2: i16, param_3: u16)
 
 {
     let mut uVar1: u16;
@@ -884,7 +884,7 @@ void pass1_1008_612e(param_1: i16, param_2: i16, param_3: u16)
 }
 
 
-void  pass1_1008_64a2(u16 *param_1)
+void  pass1_1008_64a2(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -1152,7 +1152,7 @@ void  pass1_1008_57a4(param_1: *mut u32, param_2: u32)
 }
 
 
-void  pass1_1008_57c4(u16 *param_1) {
+void  pass1_1008_57c4(param_1: *mut u16) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -1181,7 +1181,7 @@ void  pass1_1008_3e0e(param_1: u32)
 }
 
 
-u16 * pass1_1008_3e38(u16 *param_1)
+u16 * pass1_1008_3e38(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -1194,7 +1194,7 @@ u16 * pass1_1008_3e38(u16 *param_1)
 }
 
 
-u16 * pass1_1008_3e54(u16 *param_1, param_2: u16, param_3: u16, param_4: u16)
+u16 * pass1_1008_3e54(param_1: *mut u16, param_2: u16, param_3: u16, param_4: u16)
 
 {
     let mut uVar1: u16;
@@ -1207,7 +1207,7 @@ u16 * pass1_1008_3e54(u16 *param_1, param_2: u16, param_3: u16, param_4: u16)
 }
 
 
-void  pass1_1008_3e76(u16 *param_1, param_2: u16, param_3: u16, param_4: u16)
+void  pass1_1008_3e76(param_1: *mut u16, param_2: u16, param_3: u16, param_4: u16)
 
 {
     let mut uVar1: u16;
@@ -1220,7 +1220,7 @@ void  pass1_1008_3e76(u16 *param_1, param_2: u16, param_3: u16, param_4: u16)
 }
 
 
-void  pass1_1008_3e94(u16 *param_1,param_2: *mut u16, u16 *param_3)
+void  pass1_1008_3e94(param_1: *mut u16,param_2: *mut u16, u16 *param_3)
 
 {
     *param_3 = *param_1;
@@ -1229,7 +1229,7 @@ void  pass1_1008_3e94(u16 *param_1,param_2: *mut u16, u16 *param_3)
 }
 
 
-void  pass1_1008_3eb4(u16 *param_1,param_2: *mut u16,param_3: *mut u16, u16 *param_4)
+void  pass1_1008_3eb4(param_1: *mut u16,param_2: *mut u16,param_3: *mut u16, u16 *param_4)
 
 {
     let mut uVar1: u16;
@@ -1242,7 +1242,7 @@ void  pass1_1008_3eb4(u16 *param_1,param_2: *mut u16,param_3: *mut u16, u16 *par
 }
 
 
-void  pass1_1008_3ee2(i16 *param_1, i16 *param_2)
+void  pass1_1008_3ee2(param_1: *mut i16, i16 *param_2)
 
 {
     let mut iVar1: i16;
@@ -1275,7 +1275,7 @@ void  pass1_1008_3ee2(i16 *param_1, i16 *param_2)
 }
 
 
-void  pass1_1008_3f32(i16 *param_1, i16 *param_2)
+void  pass1_1008_3f32(param_1: *mut i16, i16 *param_2)
 
 {
     let mut pi_var1: *mut i16;
@@ -1293,7 +1293,7 @@ void  pass1_1008_3f32(i16 *param_1, i16 *param_2)
 }
 
 
-void  pass1_1008_3f62(u16 *param_1, u16 *param_2)
+void  pass1_1008_3f62(param_1: *mut u16, u16 *param_2)
 
 {
     let mut uVar1: u16;
@@ -1682,7 +1682,7 @@ void  pass1_1008_377a(void)
 }
 
 
-u16 * pass1_1008_392e(u16 *param_1, param_2: u16) {
+u16 * pass1_1008_392e(param_1: *mut u16, param_2: u16) {
     let mut iVar1: i16;
     let mut u_var2: u16;
 
@@ -1701,7 +1701,7 @@ u16 * pass1_1008_392e(u16 *param_1, param_2: u16) {
 }
 
 
-void  pass1_1008_397a(u16 *param_1) {
+void  pass1_1008_397a(param_1: *mut u16) {
     let mut iVar1: *mut Struct452;
     let mut uVar1: u16;
 
@@ -1738,7 +1738,7 @@ void  pass1_1008_1246(param_1: u32)
 }
 
 
-void  pass1_1008_1272(param_1: u32, i16 param_2)
+void  pass1_1008_1272(param_1: u32, param_2: i16)
 
 {
     fn_ptr_1 *ppcVar1;
@@ -1785,7 +1785,7 @@ u32  pass1_1000_5224(param_1: u16, param_2: u16, param_3: u16, param_4: u16)
     let mut uVar7: u16;
     let mut uVar8: u16;
     let mut bVar10: bool;
-    char cVar11;
+    let mut cVar11: char;
     let mut uVar9: u16;
 
     cVar11 = param_2 < 0x0;
@@ -2044,8 +2044,8 @@ i16 pass1_1000_545a(param_1: u32, param_2: u32)
     let mut pbVar5: *mut u8;
     let mut pbVar6: *mut u8;
 
-    pbVar6 = (u8 *)param_2;
-    pbVar5 = (u8 *)param_1;
+    pbVar6 = param_2;
+    pbVar5 = param_1;
     bVar4  = 0xff;
     do
     {
@@ -2059,7 +2059,7 @@ i16 pass1_1000_545a(param_1: u32, param_2: u32)
             bVar3  = *pbVar5;
             pbVar5 = pbVar5 + 0x1;
         } while(bVar3 == bVar4);
-        bVar2 = bVar4 + 0xbf + (-((u8)(bVar4 + 0xbf) < 0x1a) & 0x20U) + 0x41;
+        bVar2 = bVar4 + 0xbf + (-((bVar4 + 0xbf) < 0x1a) & 0x20U) + 0x41;
         bVar3 = bVar3 + 0xbf;
         bVar4 = bVar3 + (-(bVar3 < 0x1a) & 0x20U) + 0x41;
     } while(bVar4 == bVar2);

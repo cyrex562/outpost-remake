@@ -95,7 +95,7 @@ void  pass1_1030_67cc(param_1: *mut Struct687)
 }
 
 
-void  pass1_1030_684c(u16 *param_1, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16, param_6: u32, param_7: u16)
+void  pass1_1030_684c(param_1: *mut u16, param_2: *mut u32, param_3: u16, param_4: u16, param_5: u16, param_6: u32, param_7: u16)
 
 {
     let mut iVar1: i16;
@@ -126,7 +126,7 @@ void  pass1_1030_684c(u16 *param_1, param_2: *mut u32, param_3: u16, param_4: u1
 }
 
 
-u16 * pass1_1030_560e(u16 *param_1)
+u16 * pass1_1030_560e(param_1: *mut u16)
 
 {
     let mut iVar1: i16;
@@ -145,7 +145,7 @@ u16 * pass1_1030_560e(u16 *param_1)
 }
 
 
-u16 * struct_1030_565a(u16 *param_1, param_2: u32, param_3: u16, u8 *param_4)
+u16 * struct_1030_565a(param_1: *mut u16, param_2: u32, param_3: u16, u8 *param_4)
 
 {
     let mut iVar1: *mut Struct353;
@@ -210,7 +210,7 @@ void  struct_1030_44be(param_1: *mut u32, param_2: u16)
     iVar1.field_0x160 = 0x0;
     iVar1.field_0x164 = 0x0;
     iVar1.field_0x568 = 0x0;
-    pu_var2             = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, unaff_SS, param_2, unaff_DI);
+    pu_var2             = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, unaff_SS, param_2, unaff_DI);
     iVar1.field_0x568 = (pu_var2 + 0x64);
     return;
 }
@@ -231,7 +231,7 @@ u32  struct_1030_4574(param_1: *mut Struct159)
 }
 
 
-void  pass1_1030_2068(u16 *param_1) {
+void  pass1_1030_2068(param_1: *mut u16) {
     let mut iVar1: i16;
     let mut iVar2: i16;
     let mut uVar3: u16;
@@ -257,7 +257,7 @@ void  pass1_1030_2068(u16 *param_1) {
 }
 
 
-void  struct_1030_2112(u16 *param_1, param_2: u32, param_3: u16, u8 *param_4) {
+void  struct_1030_2112(param_1: *mut u16, param_2: u32, param_3: u16, u8 *param_4) {
     let mut iVar1: *mut Struct366;
     let mut iVar2: *mut Struct367;
     let mut uVar1: u16;
@@ -312,7 +312,7 @@ void  struct_1030_2112(u16 *param_1, param_2: u32, param_3: u16, u8 *param_4) {
 }
 
 
-void  pass1_1030_2958(u16 *param_1)
+void  pass1_1030_2958(param_1: *mut u16)
 
 {
     let mut iVar1: *mut Struct347;
@@ -332,7 +332,7 @@ void  pass1_1030_2958(u16 *param_1)
 }
 
 
-void  struct_1030_299a(u16 *param_1, param_2: u32, param_3: u16, u8 *param_4)
+void  struct_1030_299a(param_1: *mut u16, param_2: u32, param_3: u16, u8 *param_4)
 
 {
     let mut iVar1: *mut Struct352;
@@ -373,7 +373,7 @@ void  pass1_1030_1120(param_1: u32, param_2: u16, param_3: *mut u8, param_4: u16
 }
 
 
-void  struct_1030_11aa(u16 *param_1, long param_2, long param_3, param_4: u16) {
+void  struct_1030_11aa(param_1: *mut u16, long param_2, long param_3, param_4: u16) {
     let mut iVar1: *mut Struct156;
     let mut uVar1: u16;
 
@@ -500,7 +500,7 @@ void  pass1_1030_14b4(param_1: *mut Struct345, param_2: u16, param_3: u16, param
 }
 
 
-void  struct_1030_1628(u16 *param_1) {
+void  struct_1030_1628(param_1: *mut u16) {
     let mut iVar1: *mut Struct181;
     let mut uVar1: u16;
 
@@ -517,7 +517,7 @@ void  struct_1030_1628(u16 *param_1) {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  pass1_1030_165e(u16 *param_1, param_2: u32, param_3: u32, param_4: u16) {
+void  pass1_1030_165e(param_1: *mut u16, param_2: u32, param_3: u32, param_4: u16) {
     let mut iVar1: *mut Struct175;
     let mut uVar1: u16;
 
@@ -535,7 +535,7 @@ void  pass1_1030_165e(u16 *param_1, param_2: u32, param_3: u32, param_4: u16) {
 }
 
 
-void  pass1_1030_16b2(u16 *param_1) {
+void  pass1_1030_16b2(param_1: *mut u16) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -566,7 +566,7 @@ void  struct_op_1030_1cd8(param_1: *mut Struct75, param_2: u32, param_3: u32)
 }
 
 
-void  pass1_1030_1d28(u16 *param_1) {
+void  pass1_1030_1d28(param_1: *mut u16) {
     let mut iVar1: *mut Struct594;
     let mut uVar1: u16;
 
@@ -1405,7 +1405,7 @@ void  pass1_1028_ae66(param_1: *mut Struct100, param_2: u32, param_3: u32, param
 }
 
 
-u16 * pass1_1028_b204(u16 *param_1)
+u16 * pass1_1028_b204(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -1753,7 +1753,7 @@ Struct100 * pass1_1028_6fc0(param_1: *mut Struct100, param_2: u16, param_3: u8)
 }
 
 
-u16 * struct_1028_50d8(u16 *param_1)
+u16 * struct_1028_50d8(param_1: *mut u16)
 
 {
     struct_1028_b354(param_1);
@@ -1763,7 +1763,7 @@ u16 * struct_1028_50d8(u16 *param_1)
 }
 
 
-u16 * struct_1028_52e8(u16 *param_1) {
+u16 * struct_1028_52e8(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.addr_table = addr_table_1028_535e; //0x535e;
     param_1.field_0x2 = SEG_1028;
@@ -1771,7 +1771,7 @@ u16 * struct_1028_52e8(u16 *param_1) {
 }
 
 
-u16 * struct_1028_53c6(u16 *param_1) {
+u16 * struct_1028_53c6(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.addr_table = addr_table_1028_54bc;//0x54bc;
     param_1.field_0x2 = SEG_1028;
@@ -1779,7 +1779,7 @@ u16 * struct_1028_53c6(u16 *param_1) {
 }
 
 
-u16 * pass1_1028_5524(u16 *param_1, u8 *param_2) {
+u16 * pass1_1028_5524(param_1: *mut u16, u8 *param_2) {
     struct_1028_0068(param_1, param_2);
     param_1.addr_table = addr_table_1028_55c8;//0x55c8;
     param_1.field_0x2 = SEG_1028;
@@ -1787,7 +1787,7 @@ u16 * pass1_1028_5524(u16 *param_1, u8 *param_2) {
 }
 
 
-u16 * struct_1028_5630(u16 *param_1) {
+u16 * struct_1028_5630(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.addr_table = addr_table_1028_56ac;//0x56ac;
     param_1.field_0x2 = SEG_1028;
@@ -1795,7 +1795,7 @@ u16 * struct_1028_5630(u16 *param_1) {
 }
 
 
-u16 * struct_1028_57a6(u16 *param_1) {
+u16 * struct_1028_57a6(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.addr_table = addr_table_1028_581c;//0x581c;
     param_1.field_0x2 = SEG_1028;
@@ -1803,7 +1803,7 @@ u16 * struct_1028_57a6(u16 *param_1) {
 }
 
 
-u16 * pass1_1028_5884(u16 *param_1) {
+u16 * pass1_1028_5884(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.addr_table = addr_table_1028_58fe;//0x58fe;
     param_1.field_0x2 = SEG_1028;
@@ -1811,7 +1811,7 @@ u16 * pass1_1028_5884(u16 *param_1) {
 }
 
 
-u16 * struct_1028_5966(u16 *param_1) {
+u16 * struct_1028_5966(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.field_0x0 = addr_table_1028_59e0;//s_mineToSmelter__no_mines_1050_59df + 0x1;
     param_1.field_0x2 = SEG_1028;
@@ -1819,7 +1819,7 @@ u16 * struct_1028_5966(u16 *param_1) {
 }
 
 
-u16 * struct_1028_5a48(u16 *param_1) {
+u16 * struct_1028_5a48(param_1: *mut u16) {
     struct_1028_b354(param_1);
     param_1.field_0x0 = addr_table_1028_5bec;//s_thisLo_1050_5bec;
     param_1.field_0x2 = SEG_1028;
@@ -1894,7 +1894,7 @@ void  pass1_1028_5a98(param_1: u16, param_2: i16, param_3: u16)
 }
 
 
-u16 * struct_1028_5c54(u16 *param_1)
+u16 * struct_1028_5c54(param_1: *mut u16)
 
 {
     struct_1028_b354(param_1);
@@ -1928,7 +1928,7 @@ void  pass1_1028_5ca4(param_1: u16, param_2: i16, param_3: u16, param_4: u8)
 }
 
 
-u16 * pass1_1028_5df6(u16 *param_1)
+u16 * pass1_1028_5df6(param_1: *mut u16)
 
 {
     struct_1028_b354(param_1);
@@ -1938,7 +1938,7 @@ u16 * pass1_1028_5df6(u16 *param_1)
 }
 
 
-u16 * struct_1028_5ed8(u16 *param_1) {
+u16 * struct_1028_5ed8(param_1: *mut u16) {
     let mut uVar1: u16;
 
     struct_1028_b354(param_1);
@@ -1950,7 +1950,7 @@ u16 * struct_1028_5ed8(u16 *param_1) {
 }
 
 
-u16 * struct_1028_60bc(u16 *param_1, param_2: u16, u8 *param_3) {
+u16 * struct_1028_60bc(param_1: *mut u16, param_2: u16, u8 *param_3) {
     let mut uVar1: u32;
     let mut u_var2: u16;
     let mut iVar2: *mut Struct187;

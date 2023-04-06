@@ -303,7 +303,7 @@ struct Struct71
     let mut field_0x3: u8;
     let mut field_0x4: u8;
     let mut field_0x5: u8;
-    char      field_0x6;
+    let mut field_0x6: char;
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;

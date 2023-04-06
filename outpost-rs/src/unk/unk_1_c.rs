@@ -12,7 +12,7 @@
 // #include "unk_17.h"
 
 
-void pass1_1040_d76e(struct_1040_d76e_1 *param_1) {
+pub fn pass1_1040_d76e(struct_1040_d76e_1 *param_1) {
     let mut u32_var1: u32;
 //    u8*        param_1_lo;
 //    u8*        param_1_hi;
@@ -26,7 +26,7 @@ void pass1_1040_d76e(struct_1040_d76e_1 *param_1) {
 }
 
 
-void pass1_1040_d0f8(globals: &mut Globals, param_1: *mut Struct57, param_2: u16)
+pub fn pass1_1040_d0f8(globals: &mut Globals, param_1: *mut Struct57, param_2: u16)
 
 {
     let mut u16_var1: u16;
@@ -52,7 +52,7 @@ void pass1_1040_d0f8(globals: &mut Globals, param_1: *mut Struct57, param_2: u16
     param_1 = addr_table_1040_d8c4;//0xd8c4;
     param_1.field_0x2 = SEG_1040;
     u16_var6
-      = mixed_1010_20ba(globals._1050_0ed0: u16, 0x47, _var7: u16, in_DX, unaff_DI);
+      = mixed_1010_20ba(globals.data_1050_0ed0, 0x47, _var7: u16, in_DX, unaff_DI);
     u16_var2            = (u16_var6 >> 0x10);
     param_1.field_0x94 = u16_var6;
     param_1.field_0x96 = u16_var2;
@@ -79,7 +79,7 @@ void pass1_1040_d0f8(globals: &mut Globals, param_1: *mut Struct57, param_2: u16
 }
 
 
-u16 * pass1_1040_c9cc(u16 *param_1, param_2: u8)
+u16 * pass1_1040_c9cc(param_1: *mut u16, param_2: u8)
 
 {
     pass1_1040_c5ac(param_1);
@@ -91,7 +91,7 @@ u16 * pass1_1040_c9cc(u16 *param_1, param_2: u8)
 }
 
 
-void pass1_1040_c71e(param_1: *mut Struct65)
+pub fn pass1_1040_c71e(param_1: *mut Struct65)
 
 {
     pass1_1040_9252(param_1);
@@ -99,7 +99,7 @@ void pass1_1040_c71e(param_1: *mut Struct65)
 }
 
 
-void pass1_1040_c630(globals: &mut Globals, param_1: *mut Struct165, param_2: u16, param_3: u16)
+pub fn pass1_1040_c630(globals: &mut Globals, param_1: *mut Struct165, param_2: u16, param_3: u16)
 
 {
     let mut iVar1: i16;
@@ -179,7 +179,7 @@ u32  pass1_1040_c518(param_1: u32, param_2: u8, param_3: u16)
 }
 
 
-void  pass1_1040_bf92(u16 *param_1, param_2: u16) {
+void  pass1_1040_bf92(param_1: *mut u16, param_2: u16) {
     let mut iVar1: *mut Struct514;
     let mut uVar1: u16;
 
@@ -298,7 +298,7 @@ void  pass1_1040_b17c(param_1: u32, param_2: u32, param_3: *mut u8, param_4: i16
         iStack4                       = iStack4 + 0x1;
         param_3                       = puVar7;
     }
-    puVar8    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x3, param_6, param_3, param_5);
+    puVar8    = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, param_6, param_3, param_5);
     uVar4     = (puVar8 >> 0x10);
     u_var2     = (iVar5 + 0x90);
     puStack12 = *(u16 **)(u_var2 + 0x2);
@@ -330,14 +330,14 @@ void  pass1_1040_ac84(param_1: *mut Struct57, param_2: u16, param_3: *mut u8, pa
     iVar1->fld2_segment = SEG_1040;
     iVar1.field_0x94 = globals._PTR_LOOP_1050_5ef0;
     globals._PTR_LOOP_1050_5ef0 = 0x0;
-    pu_var2 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x3d, param_5, param_3, param_4);
+    pu_var2 = mixed_1010_20ba(globals.data_1050_0ed0, 0x3d, param_5, param_3, param_4);
     iVar1.field_0x98 = pu_var2;
     iVar1.field_0x9a = (pu_var2 >> 0x10);
     return;
 }
 
 
-u16 * pass1_1040_a204(u16 *param_1, param_2: u8) {
+u16 * pass1_1040_a204(param_1: *mut u16, param_2: u8) {
     param_1.field_0x0 = addr_table_1008_380a[36]; // 0x389a
     param_1.field_0x2 = SEG_1008;
     if ((param_2 & 0x1) != 0x0) {
@@ -434,7 +434,7 @@ void  pass1_1040_9618(param_1: *mut Struct65)
 }
 
 
-u16  pass1_1040_824a(param_1: u32, i16 param_2)
+u16  pass1_1040_824a(param_1: u32, param_2: i16)
 
 {
     if((param_1 + 0x6) != param_2)
@@ -527,7 +527,7 @@ u32  pass1_1040_805a(u8 *param_1)
 
     if(globals._PTR_LOOP_1050_4230 == 0x0)
     {
-        mixed_1010_20ba(globals._1050_0ed0: u16, 0x28, unaff_SS, param_1, unaff_DI);
+        mixed_1010_20ba(globals.data_1050_0ed0, 0x28, unaff_SS, param_1, unaff_DI);
     }
     uVar1 = (globals._PTR_LOOP_1050_4230 >> 0x10);
     return str_var1((globals._PTR_LOOP_1050_4230 + 0x10), (globals._PTR_LOOP_1050_4230 + 0xe));
@@ -859,7 +859,7 @@ void  pass1_1040_6402(param_1: *mut Struct57, param_2: u16, param_3: *mut u8, pa
     iVar2.field_0x92 = 0x0;
     param_1 = addr_table_1040_67ba;//0x67ba;
     iVar2->fld2_segment = SEG_1040;
-    puVar3 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2b, param_5, param_3, param_4);
+    puVar3 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, param_5, param_3, param_4);
     &iVar2.field_0x92 = puVar3;
     (&iVar2.field_0x92 + 0x2) = (puVar3 >> 0x10);
     ppcVar1 = (*iVar2.field_0x92 + 0x4);
@@ -913,7 +913,7 @@ void  pass1_1040_6826(param_1: *mut Struct57, param_2: u16) {
 }
 
 
-u16  pass1_1040_68d2(param_1: *mut u32, i16 *param_2, param_3: u16, param_4: u16, param_5: i16, param_6: u16)
+u16  pass1_1040_68d2(param_1: *mut u32, param_2: *mut i16, param_3: u16, param_4: u16, param_5: i16, param_6: u16)
 
 {
     fn_ptr_1 *ppcVar1;

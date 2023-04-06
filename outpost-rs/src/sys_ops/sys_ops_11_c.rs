@@ -34,7 +34,7 @@ void  mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16)
     let mut uVar8: u16;
     let mut unaff_DI: i16;
     let mut uVar9: u16;
-    HINSTANCE16 instance;
+    let mut instance: HINSTANCE16;
     let mut uVar10: u16;
     let mut DVar11: DWORD;
     let mut puVar12: *mut u32;
@@ -51,12 +51,12 @@ void  mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16)
     let mut u_stack6: u16;
     let mut puStack4: *mut u8;
 
-    instance = (HINSTANCE16)LAST_SEGMENT;
+    instance = LAST_SEGMENT;
     DVar11   = GetVersion16();
     puVar7   = (DVar11 >> 0x10);
     u_stack6  = (DVar11 & 0xffff);
     uVar4    = DVar11 & 0xff;
-    uStack10 = (u8)((DVar11 & 0xffff) >> 0x8);
+    uStack10 = ((DVar11 & 0xffff) >> 0x8);
     uStack8  = uVar4;
     puStack4 = puVar7;
     if((uVar4 < 0x3) || ((uVar4 == 0x3 && (uStack10 < 0xa))))
@@ -94,7 +94,7 @@ void  mixed_win_sys_op_1008_016e(param_1: u32, param_2: u16)
     if(uVar4 != 0x0)
     {
         LoadString16(SEG_1000, 0x80, local_13e, param_2);
-        LoadString16((HINSTANCE16)LAST_SEGMENT, 0x80, local_1be, param_2);
+        LoadString16(LAST_SEGMENT, 0x80, local_1be, param_2);
         uVar4 = MessageBox16(LAST_SEGMENT, &PTR_LOOP_1050_0010, local_13e, param_2);
         fn_ptr_op_1000_24cd(0x1, &stack0xfffe);
     }
@@ -267,7 +267,7 @@ BOOL16  pass1_1008_07d8(param_1: u16, BOOL16 param_2, param_3: *mut u8, param_4:
 }
 
 
-void pass1_1000_4aea(param_1: u16, param_2: u16, param_3: i16, param_4: u16, param_5: *mut u8, param_6: i16, param_7: i16, param_8: u16, param_9: u16, param_10: u16)
+pub fn pass1_1000_4aea(param_1: u16, param_2: u16, param_3: i16, param_4: u16, param_5: *mut u8, param_6: i16, param_7: i16, param_8: u16, param_9: u16, param_10: u16)
 
 {
     let mut puVar1: *mut u16;
@@ -493,10 +493,10 @@ u16 create_subdirectory_1000_4f20(param_1: u16)
     return 0x0;
 }
 
-u16 dos3call_1000_4f54(param_1: u32, i16 param_2)
+u16 dos3call_1000_4f54(param_1: u32, param_2: i16)
 
 {
-    char       cVar1;
+    let mut cVar1: char;
     let mut fn_ptr_1: *mut c_void;
     let mut uVar3: u16;
     let mut pcVar4: *mut c_char;
@@ -548,11 +548,11 @@ i16 dos3_call_1000_4f94(param_1: u16)
 // WARNING: Removing unreachable block (ram,0x10004fd7)
 // WARNING: Removing unreachable block (ram,0x10004feb)
 
-u16 dos3_call_1000_4fbe(char param_1, i16 param_2)
+u16 dos3_call_1000_4fbe(char param_1, param_2: i16)
 
 {
     let mut fn_ptr_1: *mut c_void;
-    char  cVar2;
+    let mut cVar2: char;
     let mut uVar3: u16;
 
     // AH = 0xe
@@ -571,7 +571,7 @@ u16 dos3_call_1000_4fbe(char param_1, i16 param_2)
     return uVar3;
 }
 
-void pass1_1000_5026(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16, param_6: u16, param_7: u16)
+pub fn pass1_1000_5026(param_1: i16, param_2: u16, param_3: u16, param_4: u16, param_5: i16, param_6: u16, param_7: u16)
 
 {
     let mut uVar1: u16;
@@ -583,7 +583,7 @@ void pass1_1000_5026(param_1: i16, param_2: u16, param_3: u16, param_4: u16, par
     let mut iStack280: i16;
     let mut local_116: u8;
     let mut uStack277: u8;
-    char cStack272;
+    let mut cStack272: char;
     let mut puStack270: *mut u8;
     let mut local_108: u8;
     let mut uStack263: u8;
@@ -733,7 +733,7 @@ u16 dos3_calls_1000_5198(i16 param_1)
 }
 
 
-void fatal_app_exit_1000_3e9e(globals: &mut Globals, app_exit_action: u16)
+pub fn fatal_app_exit_1000_3e9e(globals: &mut Globals, app_exit_action: u16)
 
 {
     FatalAppExit16(app_exit_action, globals.s_ABNORMAL_PROGRAM_TERMINATION_1050_6544);
@@ -761,7 +761,7 @@ u16 sys_1000_3f9c(param_1: *mut u8,
     globals.PTR_LOOP_1050_68b0       = param_2;
     _USHORT_1050_68a8                 = str_var1(param_2, param_1);
     globals.PTR_LOOP_1050_68ac       = 0x7fff;
-    u_var2                             = sys_1000_30b4(&USHORT_1050_68a8, SEG_1050, (u8 *)str_var1(param_4, param_3), &iStack2, &USHORT_1050_68a8, param_7, param_8, param_9);
+    u_var2                             = sys_1000_30b4(&USHORT_1050_68a8, SEG_1050, str_var1(param_4, param_3), &iStack2, &USHORT_1050_68a8, param_7, param_8, param_9);
     puVar1                            = _USHORT_1050_68a8;
     globals.PTR_LOOP_1050_68ac       = globals.PTR_LOOP_1050_68ac + -0x1;
     if(globals.PTR_LOOP_1050_68ac < 0x0)
@@ -809,7 +809,7 @@ u8 *pass1_1000_400a(param_1: i16, param_2: u16)
     return puVar1;
 }
 
-void free_mem_1000_407a(param_1: u16, param_2: u16, param_3: u16)
+pub fn free_mem_1000_407a(param_1: u16, param_2: u16, param_3: u16)
 
 {
     GlobalFree16(SEG_1000);
@@ -982,7 +982,7 @@ i16 *mixed_sys_op_1000_40af(param_1: u16, param_2: i16, param_3: u16, param_4: u
     } while(true);
 }
 
-void dos3_call_set_struct_1000_42de(u16 *param_1,param_2: *mut u16, u16 *param_3)
+pub fn dos3_call_set_struct_1000_42de(param_1: *mut u16,param_2: *mut u16, u16 *param_3)
 
 {
     let mut uVar1: u16;
@@ -1027,7 +1027,7 @@ void dos3_call_set_struct_1000_42de(u16 *param_1,param_2: *mut u16, u16 *param_3
 }
 
 
-void get_date_time_op_1000_435c(globals: &mut Globals,param_1: *mut u16, param_2: u16, param_3: u16, param_4: i16, param_5: u16)
+pub fn get_date_time_op_1000_435c(globals: &mut Globals,param_1: *mut u16, param_2: u16, param_3: u16, param_4: i16, param_5: u16)
 
 {
     let mut fn_ptr_1: *mut c_void;
@@ -1076,7 +1076,7 @@ void get_date_time_op_1000_435c(globals: &mut Globals,param_1: *mut u16, param_2
     }
 }
 
-u16 dos3_call_op_1000_35fe(param_1: u16, i16 param_2)
+u16 dos3_call_op_1000_35fe(param_1: u16, param_2: i16)
 
 {
     let mut fn_ptr_1: *mut c_void;
@@ -1114,7 +1114,7 @@ u16 dos3_call_op_1000_35fe(param_1: u16, i16 param_2)
 // WARNING: Removing unreachable block (ram,0x100036f7)
 // WARNING: Removing unreachable block (ram,0x100036d8)
 
-void mixed_dos3_call_1000_3636(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16)
+pub fn mixed_dos3_call_1000_3636(param_1: u16, param_2: u16, param_3: u16, param_4: u16, param_5: u16)
 
 {
     let mut pbVar1: *mut u8;
@@ -1152,7 +1152,7 @@ void mixed_dos3_call_1000_3636(param_1: u16, param_2: u16, param_3: u16, param_4
                 uVar3  = (*fn_ptr_1)();
                 if(!bVar5)
                 {
-                    pbVar1  = (u8 *)(param_1 + 0x5f90);
+                    pbVar1  = (param_1 + 0x5f90);
                     bVar5   = false;
                     *pbVar1 = *pbVar1 & 0xfd;
                 }
@@ -1220,7 +1220,7 @@ u16 mixed_dos3_call_1000_370a(param_1: u16, param_2: u16, param_3: u16, param_4:
     let mut bVar8: bool;
     let mut uVar9: u16;
     let mut bVar10: u8;
-    char  local_5;
+    let mut local_5: char;
 
     _param_4 = param_5;
     bVar10   = 0x0;
@@ -1269,7 +1269,7 @@ u16 mixed_dos3_call_1000_370a(param_1: u16, param_2: u16, param_3: u16, param_4:
                 uVar6 = u_var2;
                 if((!bVar7) && ((_param_4 & 0x1) != 0x0))
                 {
-                    uVar5  = (u8)((u8)uVar5 | 0x1);
+                    uVar5  = (uVar5 | 0x1);
                     bVar8  = false;
                     // 43
                     fn_ptr_1 = swi(0x21);
@@ -1411,10 +1411,10 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
     let mut uVar18: u16;
     let mut uVar19: u8;
     let mut bVar20: u8;
-    char       cVar21;
+    let mut cVar21: char;
     let mut bVar22: bool;
-    char       cVar23;
-    char       cVar24;
+    let mut cVar23: char;
+    let mut cVar24: char;
     let mut u_var25: u32;
     let mut pcVar26: *mut c_char;
     let mut piStack8: *mut i16;
@@ -1445,7 +1445,7 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
         if((bool)uVar19)
             goto LAB_1000_299d;
     }
-    pbVar14 = (u8 *)param_2;
+    pbVar14 = param_2;
     if((puVar7[0x5f90] & 0x80) == 0x0)
     {
     // LAB_1000_3acf:
@@ -1554,7 +1554,7 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
                         return piVar6;
                     }
                 }
-                uVar8  = (u8)(cVar24 << 0x7 | cVar23 << 0x6 | param_7 << 0x4 | cVar21 << 0x2 | 0x2U | bVar20) << 0x8;
+                uVar8  = (cVar24 << 0x7 | cVar23 << 0x6 | param_7 << 0x4 | cVar21 << 0x2 | 0x2U | bVar20) << 0x8;
                 piVar6 = (piVar9 & 0xff | uVar8);
                 if(piStack6 == 0x0)
                 {
@@ -1655,9 +1655,9 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
     let mut uVar8: u16;
     let mut bVar9: u8;
     let mut bVar10: bool;
-    char cVar11;
-    char cVar12;
-    char cVar13;
+    let mut cVar11: char;
+    let mut cVar12: char;
+    let mut cVar13: char;
 
     piVar7 = (param_4 - param_2);
     if(piVar7 == 0x0)
@@ -1699,7 +1699,7 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
             return param_1;
         }
     }
-    uVar4 = (u8)(cVar13 << 0x7 | cVar12 << 0x6 | param_8 << 0x4 | cVar11 << 0x2 | 0x2U | bVar9) << 0x8;
+    uVar4 = (cVar13 << 0x7 | cVar12 << 0x6 | param_8 << 0x4 | cVar11 << 0x2 | 0x2U | bVar9) << 0x8;
     uVar5 = piVar6 & 0xff | uVar4;
     if((param_3 + -0x4) == 0x0)
     {
@@ -1738,7 +1738,7 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
 }
 
 
-void pass1_1000_3bc0(param_1: i16, param_2: i16,param_3: *mut u16, param_4: u16, param_5: u16, param_6: u16)
+pub fn pass1_1000_3bc0(param_1: i16, param_2: i16,param_3: *mut u16, param_4: u16, param_5: u16, param_6: u16)
 
 {
     let mut pi_var1: *mut i16;
@@ -1913,14 +1913,14 @@ u32 mixed_mem_op_1000_3c51(HGLOBAL16 param_1, HGLOBAL16 param_2, param_3: i16, p
     } while(true);
 }
 
-void pass1_1000_3cd8(param_1: u16, param_2: u16)
+pub fn pass1_1000_3cd8(param_1: u16, param_2: u16)
 
 {
     free_mem_1000_407a(param_1, param_2, &stack0xfffe);
     return;
 }
 
-u16 pass1_1000_2e74(u16 *param_1, param_2: u16)
+u16 pass1_1000_2e74(param_1: *mut u16, param_2: u16)
 
 {
     let mut puVar1: *mut u16;
@@ -1963,7 +1963,7 @@ u16 pass1_1000_2e74(u16 *param_1, param_2: u16)
         }
         else
         {
-            if((u8)DAT_1050_5f8a <= (param_1 + 0xb))
+            if(DAT_1050_5f8a <= (param_1 + 0xb))
             {
                 puVar1        = puVar5;
                 puVar1 = puVar1 | 0x10;
@@ -1977,7 +1977,7 @@ u16 pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4: u16, para
 
 {
     let mut puVar1: *mut u16;
-    char  cVar2;
+    let mut cVar2: char;
     let mut pcVar3: *mut c_char;
     let mut bVar4: u8;
     let mut uVar5: u16;
@@ -2007,15 +2007,15 @@ u16 pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4: u16, para
     *(param_1 + -0x6)         = cVar2;
     if((cVar2 != '\0') && (-0x1 < (param_1 + -0xc)))
     {
-        if((u8)(cVar2 - 0x20U) < 0x59)
+        if((cVar2 - 0x20U) < 0x59)
         {
-            bVar4 = ((u8)(cVar2 - 0x20U) + 0x5ffe) & 0xf;
+            bVar4 = ((cVar2 - 0x20U) + 0x5ffe) & 0xf;
         }
         else
         {
             bVar4 = 0x0;
         }
-        bVar4                   = ((u8)(bVar4 * '\b' + *(param_1 + -0x9)) + 0x5ffe) >> 0x4;
+        bVar4                   = ((bVar4 * '\b' + *(param_1 + -0x9)) + 0x5ffe) >> 0x4;
         (param_1 + -0x9) = bVar4;
         // WARNING: Could not recover jumptable at 0x1000310e. Too many branches
         // WARNING: Treating indirect jump as call
@@ -2043,9 +2043,9 @@ u16 sys_1000_30b4(param_1: u16, param_2: u16, param_3: *mut u8, param_4: i16, pa
     {
         return 0x0;
     }
-    if((u8)(bVar1 - 0x20) < 0x59)
+    if((bVar1 - 0x20) < 0x59)
     {
-        bVar2 = ((u8)(bVar1 - 0x20) + 0x5ffe) & 0xf;
+        bVar2 = ((bVar1 - 0x20) + 0x5ffe) & 0xf;
     }
     else
     {
@@ -2053,7 +2053,7 @@ u16 sys_1000_30b4(param_1: u16, param_2: u16, param_3: *mut u8, param_4: i16, pa
     }
     // WARNING: Could not emulate address calculation at 0x10003101
     // WARNING: Treating indirect jump as call
-    uVar3 = (**((((u8)(bVar2 * '\b') + 0x5ffe) >> 0x4) * 0x2 + 0x30a4))(param_5 & 0xff00 | bVar1, uVar4, iVar3);
+    uVar3 = (**((((bVar2 * '\b') + 0x5ffe) >> 0x4) * 0x2 + 0x30a4))(param_5 & 0xff00 | bVar1, uVar4, iVar3);
     return uVar3;
 }
 
@@ -2247,7 +2247,7 @@ i16 *exit_1000_25f2(param_1: u16, param_2: u16, param_3: i16, param_4: i16, para
     } while(true);
 }
 
-void pass1_1000_262c(globals: &mut Globals,
+pub fn pass1_1000_262c(globals: &mut Globals,
                      param_1: u16,
                      param_2: u16,
                      param_3: u16,
@@ -2255,7 +2255,7 @@ void pass1_1000_262c(globals: &mut Globals,
 
 {
     let mut pcVar1: *mut c_char;
-    char   cVar2;
+    let mut cVar2: char;
     let mut uVar3: u16;
     let mut puVar4: *mut u8;
     let mut IVar5: u16;

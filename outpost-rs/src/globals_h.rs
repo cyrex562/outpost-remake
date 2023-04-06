@@ -991,7 +991,7 @@ typedef struct Globals {
     let mut s_sequencer_1050_02b3: *mut c_char;
     let mut dat_1050_4230: u16;
     let mut dat_1050_4232: u16;
-    HINSTANCE16 hinst_1050_5f4c;
+    let mut hinst_1050_5f4c: HINSTANCE16;
     let mut dat_1050_5f84: u32;
     let mut dat_1050_000c: u16;
     let mut dat_1050_0006: u16;

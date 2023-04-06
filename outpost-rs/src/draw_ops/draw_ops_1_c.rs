@@ -1691,11 +1691,11 @@ pub fn set_text_bk_color_1040_0cc0(globals: &mut Globals,
 }
 
 
-pub fn draw_op_1038_9dcc(Globals  *globals,
+pub fn draw_op_1038_9dcc(globals: &mut Globals,
                        in_struct_1: *mut Struct10,
                        param_2: i16,
                        param_3: u16,
-                       COLORREF  in_colorref_4,
+                       in_colorref_4: COLORREF,
                       param_5: u16)
 
 {
@@ -1715,11 +1715,11 @@ pub fn draw_op_1038_9dcc(Globals  *globals,
 //    var5           = (in_struct_1 >> 0x10);
 //    local_struct_5 = in_struct_1;
     hdc            = in_colorref_4;
-    if(in_struct_1->brush_handle_field_0x8e == 0x0)
+    if(in_struct_1.brush_handle_field_0x8e == 0x0)
     {
         hdc                                     = LAST_SEGMENT;
         local_brush_handle                      = CreateSolidBrush16(in_colorref_4);
-        in_struct_1->brush_handle_field_0x8e = local_brush_handle;
+        in_struct_1.brush_handle_field_0x8e = local_brush_handle;
     }
     if(globals._PTR_LOOP_1050_5b64 == 0x0)
     {
@@ -1738,14 +1738,20 @@ pub fn draw_op_1038_9dcc(Globals  *globals,
             return;
         }
         bVar2 = false;
-        for(uStack14 = 0x0; puVar1 = &in_struct_1.field_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 = uStack14 + 0x1)
+        uStack14 = 0x0;
+        puVar1 = &in_struct_1.field_0x128;
+        // for(uStack14 = 0x0; puVar1 = &in_struct_1.field_0x128, uStack14 <= *puVar1 && *puVar1 != uStack14; uStack14 = uStack14 + 0x1)
+        unsafe {
+        while uStack14 <= *puVar1 && *puVar1 != uStack14
         {
             if((&in_struct_1.field_0x94 + uStack14 * 0x2) == param_2)
             {
                 bVar2 = true;
                 break;
             }
+            ustack14 = uStack14 + 0x1;
         }
+         }
         if(bVar2)
         {
             globals.PTR_LOOP_1050_5b64 = globals.PTR_LOOP_1050_5b68;
@@ -1756,7 +1762,7 @@ pub fn draw_op_1038_9dcc(Globals  *globals,
 }
 
 
-u16 call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, struct_1: *mut Struct733, param_4: u16)
+pub fn call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, struct_1: *mut Struct733, param_4: u16) -> u16
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -1769,18 +1775,18 @@ u16 call_fn_ptr_1038_9ffa(win_handle: HWND16, param_2: u16, struct_1: *mut Struc
     dev_ctx = GetDC16(win_handle);
     var_3   = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x3, param_2);
     var_2   = var_3;
-    ppcVar1 = &var_2->fn_ptr_field_0x8;
-    (**ppcVar1)(SEG_1010, var_3, (var_3 >> 0x10), &dev_ctx, param_2, var_5);
-    ppcVar1 = &var_2->fn_ptr_field_0x4;
-    (**ppcVar1)(SEG_1010, var_3, 0x50005, &dev_ctx, param_2);
-    ppcVar1 = &var_2->fn_ptr_field_0xc;
-    (**ppcVar1)(SEG_1010, var_3, &dev_ctx, param_2);
+    ppcVar1 = &var_2.fn_ptr_field_0x8;
+    unsafe{(**ppcVar1)(SEG_1010, var_3, (var_3 >> 0x10), &dev_ctx, param_2, var_5)};
+    ppcVar1 = &var_2.fn_ptr_field_0x4;
+    unsafe{(**ppcVar1)(SEG_1010, var_3, 0x50005, &dev_ctx, param_2)};
+    ppcVar1 = &var_2.fn_ptr_field_0xc;
+    unsafe{(**ppcVar1)(SEG_1010, var_3, &dev_ctx, param_2)};
     ReleaseDC16(SEG_1010, dev_ctx);
     return 0x0;
 }
 
 
-void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
+pub fn unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
 
 {
     let mut uVar1: u16;
@@ -1816,19 +1822,19 @@ void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
         if(IVar3 == 0xfd4)
         {
             color = globals._PTR_LOOP_1050_5b70;
-            goto LAB_1038_ad0e;
+            // goto LAB_1038_ad0e;
         }
         if(IVar3 != 0xfd5)
         {
             if(IVar3 == 0xfd6)
             {
                 color = globals._PTR_LOOP_1050_5b6c;
-                goto LAB_1038_ad0e;
+                // goto LAB_1038_ad0e;
             }
             if(IVar3 == 0xfd7)
             {
                 color = globals._PTR_LOOP_1050_5b74;
-                goto LAB_1038_ad0e;
+                // goto LAB_1038_ad0e;
             }
         }
     }
@@ -1841,7 +1847,7 @@ void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
             {
                 return;
             }
-            goto LAB_1038_acf0;
+            // goto LAB_1038_acf0;
         }
     }
     color = globals._PTR_LOOP_1050_5b78;
@@ -1851,7 +1857,7 @@ void unk_win_ui_op_1038_ac38(globals: &mut Globals, param_1: u16, param_2: u16)
 }
 
 
-void pass1_1038_ae08(globals: &mut Globals, param_1: *mut Struct18)
+pub fn  pass1_1038_ae08(globals: &mut Globals, param_1: *mut Struct18)
 
 {
     param_1.field_0x0 = addr_table_1038_ae4e; //0xae4e;
@@ -1860,7 +1866,7 @@ void pass1_1038_ae08(globals: &mut Globals, param_1: *mut Struct18)
 }
 
 
-void pass1_1038_893a(globals: &mut Globals, param_1: *mut Struct18)
+pub fn pass1_1038_893a(globals: &mut Globals, param_1: *mut Struct18)
 
 {
     let mut uVar1: u16;
@@ -1874,7 +1880,7 @@ void pass1_1038_893a(globals: &mut Globals, param_1: *mut Struct18)
 }
 
 
-void pass1_1038_8cf6(param_1: *mut Struct18)
+pub fn pass1_1038_8cf6(param_1: *mut Struct18)
 
 {
     let mut uVar1: u16;
@@ -1901,7 +1907,7 @@ pub fn draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32,
     let mut puVar7: *mut u8;
     let mut unaff_DI: i16;
     let mut uVar8: u16;
-    BOOL16      local_1a[0x2];
+    let mut local_1a: [BOOL16;0x2];
     let mut UStack22: u16;
     let mut paStack20: *mut Struct18;
     let mut paStack16: *mut Struct18;
@@ -1912,7 +1918,7 @@ pub fn draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32,
     if(param_4 == 0xeb)
     {
         paStack6 = mixed_1010_20ba(
-          NULL, globals._1050_0ed0: u16, 0x3, param_6, in_DX, unaff_DI);
+          NULL, globals.data_1050_0ed0, 0x3, param_6, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
         paVar5   = (param_1 + 0x90);
         if(paVar5 != 0x0)
@@ -1971,7 +1977,7 @@ pub fn draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32,
                 fn_ptr_1000_17ce(paStack10, SEG_1000);
             }
             ppcVar2 = (str_var1(param_2, param_1) + 0x70);
-            (**ppcVar2)(uVar8, param_1, param_2);
+            unsafe{(**ppcVar2)(uVar8, param_1, param_2)};
         }
     }
     else
@@ -2005,7 +2011,7 @@ pub fn draw_op_1038_92f6(param_1: u16, param_2: u16, param_3: u16, param_4: u32,
 }
 
 
-Struct18 *pass1_1038_997c(param_1: *mut Struct18, param_2: u8)
+pub fn pass1_1038_997c(param_1: *mut Struct18, param_2: u8) -> *mut Struct18
 
 {
     unk_draw_op_1040_b0f8(param_1);

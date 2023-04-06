@@ -13,7 +13,7 @@
 // #include "unk_5.h"
 // #include "unk_6.h"
 
-void pass1_1028_b58e(param_1: u32) {
+pub fn pass1_1028_b58e(param_1: u32) {
     let mut uVar1: u32;
 
     uVar1 = (param_1 + 0x8);
@@ -582,7 +582,7 @@ void  pass1_1028_a61e(param_1: u16, param_2: u16, param_3: u32, param_4: u32, pa
         puVar4         = (uStack14 | u_var2);
         if((puVar4 != 0x0) && (uVar5 = (param_4 >> 0x10), (param_4 + 0x200) != 0x8000002))
         {
-            puVar6 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2b, param_8, puVar4, param_7);
+            puVar6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, param_8, puVar4, param_7);
             pass1_1010_043a(puVar6, (param_4 + 0x4), 0xc, param_8);
             pass1_1030_3534(param_3, u_var2);
         }
@@ -784,7 +784,7 @@ Struct100 * pass1_1028_b0de(param_1: *mut Struct100, param_2: u32, param_3: u32,
 }
 
 
-u16 * pass1_1028_b22c(u16 *param_1, param_2: u16, param_3: u32, param_4: u16) {
+u16 * pass1_1028_b22c(param_1: *mut u16, param_2: u16, param_3: u32, param_4: u16) {
     let mut uVar1: u16;
 
     pass1_1030_165e(param_1, 0x6000000, param_3, param_4);
@@ -796,7 +796,7 @@ u16 * pass1_1028_b22c(u16 *param_1, param_2: u16, param_3: u32, param_4: u16) {
 }
 
 
-void  pass1_1028_b260(u16 *param_1) {
+void  pass1_1028_b260(param_1: *mut u16) {
     param_1.field_0x0 = addr_table_1028_b33c;//0xb33c;
     param_1.field_0x2 = SEG_1028;
     pass1_1030_16b2(param_1);
@@ -884,7 +884,7 @@ void  pass1_1028_9624(param_1: *mut Struct688, param_2: u16, param_3: *mut u8, p
     pass1_1028_e1ec(globals._PTR_LOOP_1050_65e2, uVar7, (uVar7 >> 0x10));
     &iVar9.field_0x110         = param_2;
     (&iVar9.field_0x110 + 0x2) = param_3;
-    pu_stack6                    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_4, param_3, param_5);
+    pu_stack6                    = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_4, param_3, param_5);
     uStack10              = (pu_stack6 >> 0x10);
     pu_var2                      = &iVar9.field_0x114;
     pass1_1030_64ce(param_4, pu_var2, uStack10, globals._PTR_LOOP_1050_5740, (param_1 & 0xffff0000 | ZEXT24(pu_var2)), iVar9.field_0x108,

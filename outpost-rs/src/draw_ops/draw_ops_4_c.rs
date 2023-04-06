@@ -151,8 +151,8 @@ pub fn draw_op_1008_8288(param_1: u16, param_2: u32, param_3: HWND16)
     }
     SelectObject16(LAST_SEGMENT, HStack78);
     SelectObject16(LAST_SEGMENT, HStack80);
-    Polygon16(LAST_SEGMENT, (POINT16 *)(&PTR_LOOP_1050_0002 + 0x1), &local_10);
-    Polygon16(LAST_SEGMENT, (POINT16 *)(&PTR_LOOP_1050_0002 + 0x1), &local_1c);
+    Polygon16(LAST_SEGMENT, (&PTR_LOOP_1050_0002 + 0x1), &local_10);
+    Polygon16(LAST_SEGMENT, (&PTR_LOOP_1050_0002 + 0x1), &local_1c);
     SelectObject16(LAST_SEGMENT, HVar2);
     SelectObject16(LAST_SEGMENT, HVar1);
     DeleteObject16(LAST_SEGMENT);
@@ -193,7 +193,7 @@ Struct20 *unk_draw_op_1008_61b2(globals: &mut Globals, param_1: &mut Struct20, p
     iVar1.field_0xac         = 0x45000000;
     iVar1.field_0xbc         = (param_4 + 0x8);
     l_struct_2                = mixed_1010_20ba(
-      NULL, globals._1050_0ed0: u16, 0x48, param_5, puVar1, unaff_DI);
+      NULL, globals.data_1050_0ed0, 0x48, param_5, puVar1, unaff_DI);
     uVar1                     = (l_struct_2 >> 0x10);
     iVar1.field_0xb4         = 0x0;
     iVar1.field_0xb6         = 0x0;
@@ -293,7 +293,7 @@ void  create_palette_1008_4e38(in_struct_1: *mut Struct13, LOGPALETTE *in_log_pa
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void file_and_draw_op_1008_4f20(Globals  *globals,
+pub fn file_and_draw_op_1008_4f20(globals: &mut Globals,
                                 param_1: *mut Struct76,
                                 param_2: u32,
                                 param_3: u16,
@@ -333,7 +333,7 @@ void file_and_draw_op_1008_4f20(Globals  *globals,
     pass1_1008_5068( param_1, str_var1(param_5, local_26));
     pass1_1008_47cc( param_1);
     pass1_1008_4834( param_1);
-    init_data = (DEVMODEA *) 0x0;
+    init_data =  0x0;
     uVar6 = pass1_1008_4772( param_1);
     output             = (uVar6 >> 0x10);
     pCStack42          = uVar6;
@@ -361,8 +361,8 @@ BOOL16  cleanup_palette_1008_56e2(param_1: u32, param_2: HDC16)
     let mut u_var2: u16;
 
     u_var2                          = (param_1 >> 0x10);
-    HVar1                          = SelectPalette16(param_2, 0x0, *(BOOL16 *)(param_1 + 0x4));
-    *(HPALETTE16 *)(param_1 + 0x4) = HVar1;
+    HVar1                          = SelectPalette16(param_2, 0x0, (param_1 + 0x4));
+    (param_1 + 0x4) = HVar1;
     DeleteObject16(LAST_SEGMENT);
     return 0x1;
 }
@@ -493,14 +493,14 @@ u16  palette_op_1008_46e4(param_1: u32, param_2: u16, param_3: u16, param_4: HDC
     }
     create_palette_1008_4e38((iVar3 + 0xa), param_4, (uVar6 >> 0x10));
     (iVar3 + 0xe)                = u_var2;
-    HVar2                        = SelectPalette16(param_4, 0x0, *(BOOL16 *)(iVar3 + 0xe));
-    *(HPALETTE16 *)(iVar3 + 0x4) = HVar2;
+    HVar2                        = SelectPalette16(param_4, 0x0, (iVar3 + 0xe));
+    (iVar3 + 0x4) = HVar2;
     RealizePalette16(LAST_SEGMENT);
     return (iVar3 + 0x4);
 }
 
 
-void set_sys_color_1008_357e(Globals  *globals,
+pub fn set_sys_color_1008_357e(globals: &mut Globals,
                              param_1: &mut Struct20,
                              param_2: i16,
                              in_index_3: u16,
@@ -661,7 +661,7 @@ void  fill_rect_1008_39ac(in_win_handle_1: HWND16)
 }
 
 
-void pass1_1008_0984(param_1: &mut Struct20, param_3: i16, param_4: u16, param_5: u16)
+pub fn pass1_1008_0984(param_1: &mut Struct20, param_3: i16, param_4: u16, param_5: u16)
 
 {
     let mut uVar1: u32;
@@ -678,10 +678,10 @@ void pass1_1008_0984(param_1: &mut Struct20, param_3: i16, param_4: u16, param_5
 }
 
 
-void set_struct_op_1008_0536(globals: &mut Globals, param_1: &mut Struct20, HINSTANCE16 hinst_arg2, param_3: u16)
+pub fn set_struct_op_1008_0536(globals: &mut Globals, param_1: &mut Struct20, HINSTANCE16 hinst_arg2, param_3: u16)
 
 {
-    HICON16     icon_handle_1;
+    let mut icon_handle_1: HICON16;
     let mut cursor_handle_1: HCURSOR16;
     let mut obj_handle_1: HGDIOBJ16;
     let mut puVar4: *mut u8;
@@ -712,17 +712,17 @@ void set_struct_op_1008_0536(globals: &mut Globals, param_1: &mut Struct20, HINS
     icon_handle_1                  = LoadIcon16(hinst_arg2, 0xd4);
     (param_1.field_0xc2)   = icon_handle_1;
     // TODO figure out proper HINSTANCE ID
-    cursor_handle_1                = LoadCursor16((HINSTANCE16)LAST_SEGMENT, get_rsrc_string(0x7f00));
+    cursor_handle_1                = LoadCursor16(LAST_SEGMENT, get_rsrc_string(0x7f00));
     (param_1.hcursor_field_0xc4) = cursor_handle_1;
     // TODO: set proper stock object ID
     obj_handle_1                   = GetStockObject16(LAST_SEGMENT);
     (param_1.hobj_field_0xc6) = obj_handle_1;
     puVar8                       = mixed_1010_20ba(
-      NULL, globals._1050_0ed0: u16, 0x48, param_3, puVar4, unaff_DI);
+      NULL, globals.data_1050_0ed0, 0x48, param_3, puVar4, unaff_DI);
 //    puVar4                       = (puVar8 >> 0x10);
     unk_str_op_1000_3d3e(param_1.field_0xa, globals.s_Outpost_1050_00d7);
     puVar8         = mixed_1010_20ba(
-      NULL, globals._1050_0ed0: u16, 0x32, param_3, puVar4, unaff_DI);
+      NULL, globals.data_1050_0ed0, 0x32, param_3, puVar4, unaff_DI);
     (param_1.field_0xf4) = puVar8;
 //    (param_1.field_0xf6) = (puVar8 >> 0x10);
     set_sys_color_1008_357e(NULL, param_1, 0x1, SEG_1010, param_3);

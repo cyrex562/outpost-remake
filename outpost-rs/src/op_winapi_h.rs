@@ -8,7 +8,7 @@
 // #include "op_int.h"
 // #include "op_windef.h"
 
-void InitTask16(CONTEXT *context);
+pub fn InitTask16(CONTEXT *context);
 
 
 HGLOBAL16 LockSegment16(HGLOBAL16 handle);
@@ -29,13 +29,13 @@ BOOL16 WaitEvent16(HTASK16 h_task);
 i16 InitApp16(HINSTANCE16 h_instance);
 
 
-void FatalAppExit16(action: u16, cstring str);
+pub fn FatalAppExit16(action: u16, cstring str);
 
 
-void FatalExit(void);
+pub fn FatalExit(void);
 
 
-BOOL16 DeleteObject16(HGDIOBJ16 obj);
+BOOL16 DeleteObject16(obj: HGDIOBJ16);
 
 
 u16 LoadString16(HINSTANCE16 instance, resource_id: u16, cstring buffer, buf_len: u16);
@@ -69,12 +69,12 @@ DWORD GlobalHandle16(WORD sel);
 u16 GetModuleFileName16(HINSTANCE16 h_module, LPSTR lp_file_name, n_size: u16);
 
 
-// LPVOID                      MakeProcInstance16(LPVOID func, HANDLE16 h_instance);
-LPVOID MakeProcInstance16(LPVOID func, HANDLE16 h_instance);
+// LPVOID                      MakeProcInstance16(LPVOID func, h_instance: HANDLE16);
+LPVOID MakeProcInstance16(LPVOID func, h_instance: HANDLE16);
 
 
 // void                        FreeProcInstance16(LPVOID func);
-void FreeProcInstance16(LPVOID func);
+pub fn FreeProcInstance16(LPVOID func);
 
 
 // HRSRC16                     FindResource16(HMODULE16 h_module, LPCSTR name, LPCSTR
@@ -115,7 +115,7 @@ u16 lstrlen16(LPCSTR str);
 
 
 // void                        DOS3Call(CONTEXT *context);
-void DOS3Call(CONTEXT *context);
+pub fn DOS3Call(CONTEXT *context);
 
 
 // u16                         SetErrorMode16(mode: u16);
@@ -123,15 +123,15 @@ u16 SetErrorMode16(mode: u16);
 
 
 // void                        __AHSHIFT(void);
-void __AHSHIFT(void);
+pub fn __AHSHIFT(void);
 
 
 // void                        __AHINCR(void);
-void __AHINCR(void);
+pub fn __AHINCR(void);
 
 
 // void                        OutputDebugString16(LPCSTR str);
-void OutputDebugString16(LPCSTR str);
+pub fn OutputDebugString16(LPCSTR str);
 
 
 // u16                       GetPrivateProfileString16(LPCSTR section, LPCSTR entry,
@@ -159,7 +159,7 @@ HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, n_cmd_show: u16);
 
 
 // void                        __WINFLAGS(void);
-void __WINFLAGS();
+pub fn __WINFLAGS();
 
 // DWORD                       GlobalDOSAlloc16(DWORD size);
 DWORD GlobalDOSAlloc16(DWORD size);
@@ -178,7 +178,7 @@ WORD GlobalPageUnlock16(HGLOBAL16 handle);
 
 
 // void                        hmemcpy16(LPVOID dst, LPCVOID src, long count);
-void hmemcpy16(LPVOID dsg, LPCVOID src, long count);
+pub fn hmemcpy16(LPVOID dsg, LPCVOID src, long count);
 
 
 // long                        WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count);
@@ -189,46 +189,46 @@ long WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count);
 long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count);
 
 
-// COLORREF                    SetBkColor16(HDC16 hdc, color: COLORREF);
-COLORREF SetBkColor16(HDC16 hdc, color: COLORREF);
+// COLORREF                    SetBkColor16(hdc: HDC16, color: COLORREF);
+COLORREF SetBkColor16(hdc: HDC16, color: COLORREF);
 
 
-// i16                     SetMapMode16(HDC16 hdc, i16 mode);
-i16 SetMapMode16(HDC16 hdc, i16 mode);
+// i16                     SetMapMode16(hdc: HDC16, i16 mode);
+i16 SetMapMode16(hdc: HDC16, i16 mode);
 
 
-// COLORREF                    SetTextColor16(HDC16 hdc, color: COLORREF);
-COLORREF SetTextColor16(HDC16 hdc, color: COLORREF);
+// COLORREF                    SetTextColor16(hdc: HDC16, color: COLORREF);
+COLORREF SetTextColor16(hdc: HDC16, color: COLORREF);
 
 
-// BOOL16                      LineTo16(HDC16 hdc, x: u16, y: u16);
-BOOL16 LineTo16(HDC16 hdc, x: u16, y: u16);
+// BOOL16                      LineTo16(hdc: HDC16, x: u16, y: u16);
+BOOL16 LineTo16(hdc: HDC16, x: u16, y: u16);
 
 
-// DWORD                       MoveTo16(HDC16 hdc, x: u16, y: u16);
-DWORD MoveTo16(HDC16 hdc, x: u16, y: u16);
+// DWORD                       MoveTo16(hdc: HDC16, x: u16, y: u16);
+DWORD MoveTo16(hdc: HDC16, x: u16, y: u16);
 
 
-// BOOL16                      Ellipse16(HDC16 hdc, left: u16, top: u16, right: u16, u16
+// BOOL16                      Ellipse16(hdc: HDC16, left: u16, top: u16, right: u16, u16
 // bottom);
-BOOL16 Ellipse16(HDC16 hdc, left: u16, top: u16, right: u16, bottom: u16);
+BOOL16 Ellipse16(hdc: HDC16, left: u16, top: u16, right: u16, bottom: u16);
 
 
-// BOOL16                      Rectangle16(HDC16 hdc, left: u16, top: u16, right: u16, u16
+// BOOL16                      Rectangle16(hdc: HDC16, left: u16, top: u16, right: u16, u16
 // bottom);
-BOOL16 Rectangle16(HDC16 hdc, left: u16, top: u16, right: u16, bottom: u16);
+BOOL16 Rectangle16(hdc: HDC16, left: u16, top: u16, right: u16, bottom: u16);
 
 
-// BOOL16                      TextOut16(HDC16 hdc, x: u16, y: u16, char *str, count: u16);
-BOOL16 TextOut16(HDC16 hdc, x: u16, y: u16, char *str, count: u16);
+// BOOL16                      TextOut16(hdc: HDC16, x: u16, y: u16, char *str, count: u16);
+BOOL16 TextOut16(hdc: HDC16, x: u16, y: u16, char *str, count: u16);
 
 
-// BOOL16                      Polygon16(HDC16 hdc, POINT16 *pt, count: u16);
-BOOL16 Polygon16(HDC16 hdc, POINT16 *pt, count: u16);
+// BOOL16                      Polygon16(hdc: HDC16, POINT16 *pt, count: u16);
+BOOL16 Polygon16(hdc: HDC16, POINT16 *pt, count: u16);
 
 
-// HGDIOBJ16                   SelectObject16(HDC16 hdc, HGDIOBJ16 handle);
-HGDIOBJ16 SelectObject16(HDC16 hdc, HGDIOBJ16 handle);
+// HGDIOBJ16                   SelectObject16(hdc: HDC16, handle: HGDIOBJ16);
+HGDIOBJ16 SelectObject16(hdc: HDC16, handle: HGDIOBJ16);
 
 
 // HDC16                       CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output,
@@ -252,27 +252,27 @@ BOOL16 DeleteDC16(hdc: HDC16);
 DWORD GetCurrentPosition16(hdc: HDC16);
 
 
-// u16                       GetDeviceCaps16(HDC16 hdc, cap: u16);
-u16 GetDeviceCaps16(HDC16 hdc, cap: u16);
+// u16                       GetDeviceCaps16(hdc: HDC16, cap: u16);
+u16 GetDeviceCaps16(hdc: HDC16, cap: u16);
 
 
 // HGDIOBJ16                   GetStockObject16(obj: u16);
 HGDIOBJ16 GetStockObject16(obj: u16);
 
 
-// DWORD                       GetTextExtent16(HDC16 hdc, LPCSTR str, count: u16);
-DWORD GetTextExtent16(HDC16 hdc, LPCSTR str, count: u16);
+// DWORD                       GetTextExtent16(hdc: HDC16, LPCSTR str, count: u16);
+DWORD GetTextExtent16(hdc: HDC16, LPCSTR str, count: u16);
 
 
-// BOOL16                      UnrealizeObject16(HGDIOBJ16 obj);
-BOOL16 UnrealizeObject16(HGDIOBJ16 obj);
+// BOOL16                      UnrealizeObject16(obj: HGDIOBJ16);
+BOOL16 UnrealizeObject16(obj: HGDIOBJ16);
 
 
 // HPALETTE16                  CreatePalette16(LOGPALETTE *palette);
 HPALETTE16 CreatePalette16(LOGPALETTE *palette);
 
 
-// u16                         GetSystemPaletteEntries(HDC16 hdc, start: u16, count: u16,
+// u16                         GetSystemPaletteEntries(hdc: HDC16, start: u16, count: u16,
 // PALETTEENTRY *entries);
 u16 GetSystemPaletteEntries(HDC16                hdc,
                             start: u16,
@@ -280,7 +280,7 @@ u16 GetSystemPaletteEntries(HDC16                hdc,
                             PALETTEENTRY *entries);
 
 
-// u16                       StretchDIBits16(HDC16 hdc, x_dst: u16, y_dst: u16, u16
+// u16                       StretchDIBits16(hdc: HDC16, x_dst: u16, y_dst: u16, u16
 // width_dst, height_dst: u16, x_src: u16, y_src: u16, width_src: u16, height_src: u16, PVOID
 // bits, BITMAPINFO *info, w_usage: u16, DWORD dw_rop);
 u16 StretchDIBits16(HDC16       hdc,
@@ -298,7 +298,7 @@ u16 StretchDIBits16(HDC16       hdc,
                     DWORD       dw_rop);
 
 
-// u16                       SetDIBitsToDevice(HDC16 hdc, x_dest: u16, y_dest: u16, cx: u16,
+// u16                       SetDIBitsToDevice(hdc: HDC16, x_dest: u16, y_dest: u16, cx: u16,
 // cy: u16, x_src: u16, y_src: u16, startscan: u16, lines: u16, LPCVOID bits, BITMAPINFO *info,
 // coloruse: u16);
 u16 SetDIBitsToDevice(HDC16       hdc,
@@ -315,8 +315,8 @@ u16 SetDIBitsToDevice(HDC16       hdc,
                      coloruse: u16);
 
 
-// BOOL16                      MoveToEx16(HDC16 hdc, x: u16, y: u16, POINT16 *pt);
-BOOL16 MoveToEx16(HDC16 hdc, x: u16, y: u16, POINT16 *pt);
+// BOOL16                      MoveToEx16(hdc: HDC16, x: u16, y: u16, POINT16 *pt);
+BOOL16 MoveToEx16(hdc: HDC16, x: u16, y: u16, POINT16 *pt);
 
 
 // u16                       MessageBox16(hwnd: HWND16, LPCSTR text, LPCSTR title, u16
@@ -325,7 +325,7 @@ u16 MessageBox16(hwnd: HWND16, LPCSTR text, LPCSTR title, type: u16);
 
 
 // void                        PostQuitMessage16(exit_code: u16);
-void PostQuitMessage16(exit_code: u16);
+pub fn PostQuitMessage16(exit_code: u16);
 
 
 // u16                         SetTimer16(hwnd: HWND16, id: u16, timeout: u16, LPVOID proc);
@@ -360,16 +360,16 @@ HANDLE16 RemoveProp16(hwnd: HWND16, LPCSTR str);
 HANDLE16 GetProp16(hwnd: HWND16, LPCSTR str);
 
 
-// BOOL16                      SetProp16(hwnd: HWND16, LPCSTR str, HANDLE16 handle);
-BOOL16 SetProp16(hwnd: HWND16, LPCSTR str, HANDLE16 handle);
+// BOOL16                      SetProp16(hwnd: HWND16, LPCSTR str, handle: HANDLE16);
+BOOL16 SetProp16(hwnd: HWND16, LPCSTR str, handle: HANDLE16);
 
 
 // void                        ClientToScreen16(hwnd: HWND16, POINT16 *lppnt);
-void ClientToScreen16(hwnd: HWND16, POINT16 *lppnt);
+pub fn ClientToScreen16(hwnd: HWND16, POINT16 *lppnt);
 
 
 // void                        ScreenToClient16(hwnd: HWND16, POINT16 *lppnt);
-void ScreenToClient16(hwnd: HWND16, POINT16 *lppnt);
+pub fn ScreenToClient16(hwnd: HWND16, POINT16 *lppnt);
 
 
 // BOOL16                      IsIconic16(hwnd: HWND16);
@@ -377,11 +377,11 @@ BOOL16 IsIconic16(hwnd: HWND16);
 
 
 // void                        GetWindowRect16(hwnd: HWND16, rect: *mut RECT16);
-void GetWindowRect16(hwnd: HWND16, rect: *mut RECT16);
+pub fn GetWindowRect16(hwnd: HWND16, rect: *mut RECT16);
 
 
 // void                        GetClientRect16(hwnd: HWND16, rect: *mut RECT16);
-void GetClientRect16(hwnd: HWND16, rect: *mut RECT16);
+pub fn GetClientRect16(hwnd: HWND16, rect: *mut RECT16);
 
 
 // BOOL16                      EnableWindow16(hwnd: HWND16, BOOL16 enable);
@@ -479,21 +479,21 @@ u16 ShowCursor16(BOOL16 b_show);
 BOOL16 PtInRect16(RECT16 *rect, POINT16 pt);
 
 
-// u16                       FillRect16(HDC16 hdc, RECT16 *rect, HBRUSH16 hbrush);
-u16 FillRect16(HDC16 hdc, RECT16 *rect, HBRUSH16 hbrush);
+// u16                       FillRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
+u16 FillRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
 
 
-// u16                       FrameRect16(HDC16 hdc, RECT16 *rect, HBRUSH16 hbrush);
-u16 FrameRect16(HDC16 hdc, RECT16 *rect, HBRUSH16 hbrush);
+// u16                       FrameRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
+u16 FrameRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
 
 
-// BOOL16                      DrawIcon16(HDC16 hdc, x: u16, y: u16, HICON16 h_icon);
-BOOL16 DrawIcon16(HDC16 hdc, x: u16, y: u16, HICON16 h_icon);
+// BOOL16                      DrawIcon16(hdc: HDC16, x: u16, y: u16, h_icon: HICON16);
+BOOL16 DrawIcon16(hdc: HDC16, x: u16, y: u16, h_icon: HICON16);
 
 
-// u16                       DrawText16(HDC16 hdc, LPCSTR str, count: u16, RECT16 *rect,
+// u16                       DrawText16(hdc: HDC16, LPCSTR str, count: u16, RECT16 *rect,
 // flags: u16);
-u16 DrawText16(HDC16 hdc, LPCSTR str, count: u16, RECT16 *rect, flags: u16);
+u16 DrawText16(hdc: HDC16, LPCSTR str, count: u16, RECT16 *rect, flags: u16);
 
 
 // HWND16                      CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template,
@@ -511,12 +511,12 @@ HWND16 GetDlgItem16(hwnd_dlg: HWND16, id: u16);
 
 
 // void                        SetDlgItemText16(hwnd: HWND16, id: u16, SEGPTR lp_string);
-void SetDlgItemText16(hwnd: HWND16, id: u16, SEGPTR lp_string);
+pub fn SetDlgItemText16(hwnd: HWND16, id: u16, SEGPTR lp_string);
 
 
 // void                        SetDlgItemInt16(hwnd: HWND16, id: u16, value: u16, BOOL16
 // f_signed);
-void SetDlgItemInt16(hwnd: HWND16, id: u16, value: u16, BOOL16 f_signed);
+pub fn SetDlgItemInt16(hwnd: HWND16, id: u16, value: u16, BOOL16 f_signed);
 
 
 // u16                         GetDlgItemInt16(hwnd: HWND16, id: u16, BOOL16 *translated,
@@ -544,11 +544,11 @@ SendDlgItemMessage16(hwnd: HWND16, id: u16, msg: u16, WPARAM16 w_param, LPARAM l
 
 
 // void                        MapDialogRect16(hwnd: HWND16, rect: *mut RECT16);
-void MapDialogRect16(hwnd: HWND16, rect: *mut RECT16);
+pub fn MapDialogRect16(hwnd: HWND16, rect: *mut RECT16);
 
 
 // void                        MessageBeep16(i: u16);
-void MessageBeep16(i: u16);
+pub fn MessageBeep16(i: u16);
 
 
 // LRESULT                     DefWindowProc16(hwnd: HWND16, msg: u16, WPARAM16 wparam,
@@ -585,15 +585,15 @@ CallWindowProc16(LPVOID fun, hwnd: HWND16, msg: u16, WPARAM16 wparam, LPARAM lpa
 
 
 // void                        UpdateWindow16(hwnd: HWND16);
-void UpdateWindow16(hwnd: HWND16);
+pub fn UpdateWindow16(hwnd: HWND16);
 
 
 // void                        InvalidateRect16(hwnd: HWND16, RECT16 *rect, BOOL16 erase);
-void InvalidateRect16(hwnd: HWND16, RECT16 *rect, BOOL16 erase);
+pub fn InvalidateRect16(hwnd: HWND16, RECT16 *rect, BOOL16 erase);
 
 
 // void                        ValidateRect16(hwnd: HWND16, rect: *mut RECT16);
-void ValidateRect16(hwnd: HWND16, rect: *mut RECT16);
+pub fn ValidateRect16(hwnd: HWND16, rect: *mut RECT16);
 
 
 // WORD                        GetWindowWord16(hwnd: HWND16, offset: u16);
@@ -665,10 +665,10 @@ COLORREF GetSysColor16(index: u16);
 
 
 // void                        SetSysColors16(count: u16,list: *mut u16, COLORREF *values);
-void SetSysColors16(count: u16,list: *mut u16, COLORREF *values);
+pub fn SetSysColors16(count: u16,list: *mut u16, COLORREF *values);
 
 
-// BOOL16                      GrayString16(HDC16 hdc, HBRUSH16 param_2, LPVOID gsprc,
+// BOOL16                      GrayString16(hdc: HDC16, HBRUSH16 param_2, LPVOID gsprc,
 // LPARAM lparam, cch: u16, x: u16, y: u16, cx: u16, cy: u16);
 BOOL16 GrayString16(HDC16    hdc,
                     HBRUSH16 hbrush,
@@ -709,9 +709,9 @@ u16 GetMenuState16(HMENhmenu: u16, w_item_id: u16, w_flags: u16);
 u16 GetDlgCtrlID16(hwnd: HWND16);
 
 
-// HPALETTE16                  SelectPalette16(HDC16 hdc, HPALETTE16 hpal, BOOL16
+// HPALETTE16                  SelectPalette16(hdc: HDC16, HPALETTE16 hpal, BOOL16
 // b_force_background);
-HPALETTE16 SelectPalette16(HDC16 hdc, HPALETTE16 hpal, BOOL16 b_force_background);
+HPALETTE16 SelectPalette16(hdc: HDC16, HPALETTE16 hpal, BOOL16 b_force_background);
 
 
 // u16                         RealizePalette16(hdc: HDC16);
@@ -752,7 +752,7 @@ BOOL16 TrackPopupMenu16(HMENhmenu: u16,
                         x: u16,
                         y: u16,
                         n_reserved: u16,
-                        HWND16  hwnd,
+                        hwnd: HWND16,
                         lp_rect: *mut RECT16);
 
 
@@ -775,14 +775,14 @@ HWND16 CreateWindowEx16(DWORD       ex_style,
                         y: u16,
                         width: u16,
                         height: u16,
-                        HWND16      parent,
+                        parent: HWND16,
                         HMENhmenu: u16,
                         HINSTANCE16 instance,
                         LPVOID      data);
 
 
-// BOOL16                      DestroyIcon16(HICON16 h_icon);
-BOOL16 DestroyIcon16(HICON16 h_icon);
+// BOOL16                      DestroyIcon16(h_icon: HICON16);
+BOOL16 DestroyIcon16(h_icon: HICON16);
 
 
 // BOOL16                      DestroyCursor16(HCURSOR16 h_cursor);

@@ -6,7 +6,7 @@
 // #include "op_int.h"
 
 
-void init_globals_1020_96d4(Globals *globals)
+pub fn init_globals_1020_96d4(Globals *globals)
 
 {
     unsigned short pu_var_1;

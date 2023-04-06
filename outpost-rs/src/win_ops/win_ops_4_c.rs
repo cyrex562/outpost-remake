@@ -17,7 +17,7 @@
 
 // #include <minwindef.h>
 
-void def_win_proc_1008_5632(globals: &mut Globals,
+pub fn def_win_proc_1008_5632(globals: &mut Globals,
                            param_1: *mut u32,
                             WPARAM16 param_2,
                             param_3: u16,
@@ -49,7 +49,7 @@ void def_win_proc_1008_5632(globals: &mut Globals,
 }
 
 
-void window_op_1008_3bd6(Globals  *globals,
+pub fn window_op_1008_3bd6(globals: &mut Globals,
                      param_1: *mut Struct65,
                      param_2: u16,
                      param_3: u16,
@@ -110,7 +110,7 @@ u16  unk_win_msg_op_1008_0a3c(param_1: u32, param_2: u16, param_3: HWND16)
 }
 
 
-void pass1_1008_0a92(globals: &mut Globals, param_1: u32, short param_2)
+pub fn pass1_1008_0a92(globals: &mut Globals, param_1: u32, short param_2)
 
 {
     let mut ppcVar1: *mut *mut c_void;
@@ -235,7 +235,7 @@ BOOL16 mixed_win_op_1008_0c60(
 
 {
     let mut ppcVar1: *mut *mut c_void;
-    HINSTANCE16 HVar2;
+    let mut HVar2: HINSTANCE16;
     let mut BVar3: BOOL16;
     let mut puVar4: *mut u8;
     let mut extraout_DX: *mut u8;
@@ -298,8 +298,8 @@ BOOL16 mixed_win_op_1008_0c60(
             return BVar3;
         }
         HStack14 = LoadCursor16(SEG_1030, 0x7f02);
-        HStack16 = SetCursor16((HCURSOR16)LAST_SEGMENT);
-        uStack20 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x29, param_5, puVar4, unaff_DI);
+        HStack16 = SetCursor16(LAST_SEGMENT);
+        uStack20 = mixed_1010_20ba(globals.data_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
         pass1_1018_262e(uStack20);
         pass1_1030_838e(globals._PTR_LOOP_1050_5748, param_5, in_AF);
         uVar13                      = (globals._PTR_LOOP_1050_5748 >> 0x10);
@@ -309,7 +309,7 @@ BOOL16 mixed_win_op_1008_0c60(
         sys_1000_3f9c(local_64, param_5, 0x19c, SEG_1050, pcVar7, &stack0xfffe, uVar13, SEG_1000, param_5, in_AF);
         ppcVar1 = (*param_1 + 0x14);
         (**ppcVar1)(SEG_1000, param_1, 0x0, 0x9c, param_5);
-        puVar8 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x37, param_5, extraout_DX, unaff_DI);
+        puVar8 = mixed_1010_20ba(globals.data_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);
         pass1_1008_a9ec(puVar8);
         hwnd = LAST_SEGMENT;
         SetCursor16(SEG_1010);

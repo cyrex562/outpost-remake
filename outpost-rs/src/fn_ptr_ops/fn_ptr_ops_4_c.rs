@@ -152,7 +152,7 @@ void  pass1_1028_5128(param_1: u16, param_2: u16, param_3: *mut u8, param_4: i16
     let mut pu_stack6: *mut u16;
 
     pass1_1028_bd38(str_var1(param_2, param_1), param_3, param_5);
-    pu_stack6 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_5, param_3, param_4);
+    pu_stack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_5, param_3, param_4);
     uStack16 = (pu_stack6 >> 0x10);
     uStack10 = *(pu_stack6 + 0x20);
     puVar4   = &local_c;
@@ -678,7 +678,7 @@ Struct18 * pass1_1028_3718(param_1: *mut Struct18, param_2: u8)
 }
 
 
-void  pass1_1028_388e(u16 *param_1)
+void  pass1_1028_388e(param_1: *mut u16)
 
 {
     let mut uVar1: u16;
@@ -760,7 +760,7 @@ void  pass1_1028_199a(param_1: u16, param_2: i16, param_3: u8, param_4: u32)
                         str_var1(param_1, &local_16),
                         str_var1(param_1, &local_14),
                         str_var1(param_1, &local_14 + 0x2));
-        puStack26 = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2f, param_1, puVar3, &uStack10);
+        puStack26 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, param_1, puVar3, &uStack10);
         u_var2     = *(puStack26 + 0x20);
         puVar7    = &local_20;
         piStack36 = &local_22;
@@ -1174,7 +1174,7 @@ void  pass1_1020_e294(param_1: u32, param_2: u16, param_3: u8)
     let mut uVar4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
-    char       cStack347;
+    let mut cStack347: char;
     let mut local_150: [u8;c] = [0;c];
     let mut puStack324: *mut u32;
     let mut local_140: [u8;124] = [0;124];
@@ -1446,7 +1446,7 @@ void  pass1_1020_bcc4(long *param_1, param_2: u16, param_3: u16)
     return;
 }
 
-void  pass1_1020_c47a(u16 *param_1) {
+void  pass1_1020_c47a(param_1: *mut u16) {
     let mut uVar1: u16;
 
     uVar1 = (param_1 >> 0x10);
@@ -1622,7 +1622,7 @@ Struct18 * pass1_1020_843c(param_1: *mut Struct18, param_2: u8)
     return param_1;
 }
 
-void  pass1_1020_8556(u16 *param_1)
+void  pass1_1020_8556(param_1: *mut u16)
 
 {
     let mut pi_var1: *mut i16;

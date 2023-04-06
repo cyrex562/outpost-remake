@@ -206,10 +206,10 @@ Struct18 *file_1008_4c26(param_1: *mut Struct18, param_2: u8)
     return param_1;
 }
 
-void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, param_3: u16)
+pub fn save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, param_3: u16)
 
 {
-    char        cVar1;
+    let mut cVar1: char;
     let mut u_var2: u32;
     let mut iVar3: i16;
     let mut puVar4: *mut u8;
@@ -249,7 +249,7 @@ void save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, para
     acStack259[1] = 0x0;
     local_302     = 0x0;
     local_202[0]  = 0x0;
-    puStack774    = mixed_1010_20ba(globals._1050_0ed0: u16, 0x2, param_3, in_DX, unaff_DI);
+    puStack774    = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, param_3, in_DX, unaff_DI);
     uVar8         = (puStack774 >> 0x10);
     iVar3         = puStack774;
     uStack778     = (iVar3 + 0x1a);
