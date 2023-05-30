@@ -40,7 +40,7 @@ struct Struct654
     let mut field_0x1d: u8;
     let mut field_0x1e: u8;
     let mut field_0x1f: u8;
-    long       field_0x20;
+    let mut field_0x20 = 0i32;
     let mut field_0x24: u8;
     let mut field_0x25: u8;
     let mut field_0x26: u32;

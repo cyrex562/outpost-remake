@@ -1807,7 +1807,7 @@ struct Struct85
     let mut field_0x10: *mut u32;
     let mut field_0x14: u16;
     let mut field_0x16: u16;
-    long        field_0x18;
+    let mut field_0x18 = 0i32;
 };
 struct Struct89
 {
@@ -1822,7 +1822,7 @@ struct Struct89
     let mut field_0xe: u16;
     let mut field_0x10: *mut u32;
     let mut field_0x14: u32;
-    long        field_0x18;
+    let mut field_0x18 = 0i32;
     let mut field_0x1c: u16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCTS_8X_H_

@@ -41,7 +41,7 @@ struct Struct618
     let mut field_0xe: *mut u32;
     let mut field_0x12: u16;
     let mut field_0x14: i16;
-    long field_0x16;
+    let mut field_0x16 = 0i32;
 };
 struct Struct615
 {

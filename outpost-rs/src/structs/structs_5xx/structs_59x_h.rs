@@ -329,7 +329,7 @@ struct Struct596
     let mut field_0x1d: u8;
     let mut field_0x1e: u8;
     let mut field_0x1f: u8;
-    long field_0x20;
+    let mut field_0x20 = 0i32;
 };
 struct Struct598
 {
@@ -349,7 +349,7 @@ struct Struct598
     let mut field_0xd: u8;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
-    long field_0x10;
+    let mut field_0x10 = 0i32;
 };
 struct Struct597
 {

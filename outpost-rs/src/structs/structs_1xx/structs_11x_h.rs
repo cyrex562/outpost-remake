@@ -56,7 +56,7 @@ struct Struct117
     let mut field_0xf: u8;
     let mut field_0x10: u8;
     let mut field_0x11: u8;
-    long       field_0x12;
+    let mut field_0x12 = 0i32;
     let mut field_0x16: u32;
 };
 struct Struct110

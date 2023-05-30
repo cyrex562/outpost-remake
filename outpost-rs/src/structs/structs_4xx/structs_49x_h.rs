@@ -421,7 +421,7 @@ struct Struct497
     let mut field_0x135: u8;
     let mut field_0x136: u8;
     let mut field_0x137: u8;
-    long      field_0x138;
+    let mut field_0x138 = 0i32;
 };
 struct Struct498
 {

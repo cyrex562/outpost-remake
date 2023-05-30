@@ -44,7 +44,7 @@ struct Struct457
     let mut field_0xd: u8;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
-    long field_0x10;
+    let mut field_0x10 = 0i32;
 };
 struct Struct458
 {

@@ -16,7 +16,7 @@ struct Struct670
     let mut field_0x5: u8;
     let mut field_0x6: u8;
     let mut field_0x7: u8;
-    long       field_0x8;
+    let mut field_0x8 = 0i32;
     let mut field_0xc: u32;
     let mut field_0x10: u16;
 };

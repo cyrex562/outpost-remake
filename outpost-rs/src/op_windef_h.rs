@@ -51,7 +51,7 @@ typedef struct WINDOWPLACEMENT16 WINDOWPLACEMENT16, *PWINDOWPLACEMENT16;
 
 typedef struct POINT POINT, *PPOINT;
 
-typedef struct RECT16 RECT16, *PRECT16;
+typedef struct RECT16: *mut RECT16 *PRECT16;
 
 typedef union Union658 Union658;
 
@@ -188,8 +188,8 @@ struct WNDCLASS16
     let mut h_icon: HICON16;
     let mut h_cursor: HCURSOR16;
     let mut hbr_background: HBRUSH16;
-    SEGPTR    lpsz_menu_name;
-    SEGPTR    lpsz_class_name;
+    let mut lpsz_menu_name: SEGPTR;
+    let mut lpsz_class_name: SEGPTR;
 };
 
 
@@ -363,14 +363,14 @@ struct POINT16
 typedef struct tagBITMAPINFOHEADER tagBITMAPINFOHEADER ;
 struct tagBITMAPINFOHEADER{
         let mut biSize: u32;
-        long       biWidth;
-        long       biHeight;
+        let mut biWidth = 0i32;
+        let mut biHeight = 0i32;
         let mut biPlanes: u16;
         let mut biBitCount: u16;
         let mut biCompression: u32;
         let mut biSizeImage: u32;
-        long       biXPelsPerMeter;
-        long       biYPelsPerMeter;
+        let mut biXPelsPerMeter = 0i32;
+        let mut biYPelsPerMeter = 0i32;
         let mut biClrUsed: u32;
         let mut biClrImportant: u32;
 };
@@ -611,7 +611,7 @@ typedef struct
 //     return pCVar1;
 // }
 
-// u32 GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, nSize: u32)
+// u32 GetModuleFileNameA(HMODULE hModule, lpFilename: *mut c_char, nSize: u32)
 //
 //{
 //     u32 DVar1;
@@ -655,7 +655,7 @@ typedef struct
 //     return BVar1;
 // }
 //
-// HANDLE CreateFileA(LPCSTR lpFileName, dwDesiredAccess: u32, dwShareMode: u32, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+// HANDLE CreateFileA(lpFileName: *mut c_char, dwDesiredAccess: u32, dwShareMode: u32, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
 //                    dwCreationDisposition: u32, dwFlagsAndAttributes: u32, HANDLE hTemplateFile)
 //
 //{
@@ -691,7 +691,7 @@ typedef struct
 //     return BVar1;
 // }
 //
-// BOOL MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName)
+// BOOL MoveFileA(lpExistingFileName: *mut c_char, LPCSTR lpNewFileName)
 //
 //{
 //     BOOL BVar1;
@@ -702,7 +702,7 @@ typedef struct
 //     return BVar1;
 // }
 //
-// u32 GetWindowsDirectoryA(LPSTR lpBuffer, uSize: u32)
+// u32 GetWindowsDirectoryA(lpBuffer: *mut c_char, uSize: u32)
 //
 //{
 //     u32 UVar1;
@@ -724,7 +724,7 @@ typedef struct
 //     return MVar1;
 // }
 //
-// BOOL mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, cchText: u32)
+// BOOL mciGetErrorStringA(MCIERROR mcierr, pszText: *mut c_char, cchText: u32)
 //
 //{
 //     BOOL BVar1;
@@ -746,9 +746,9 @@ typedef struct
 //     return BVar1;
 // }
 //
-// BOOL CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes,
+// BOOL CreateProcessA(lpApplicationName: *mut c_char, lpCommandLine: *mut c_char, LPSECURITY_ATTRIBUTES lpProcessAttributes,
 //                     LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, dwCreationFlags: u32,
-//                     LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo,
+//                     LPVOID lpEnvironment, lpCurrentDirectory: *mut c_char, LPSTARTUPINFOA lpStartupInfo,
 //                     LPPROCESS_INFORMATION lpProcessInformation)
 //
 //{
@@ -935,7 +935,7 @@ typedef struct
 //    return;
 //}
 //
-// HWND CreateWindowExA(dwExStyle: u32, LPCSTR lpClassName, LPCSTR lpWindowName, dwStyle: u32, X: i16, Y: i16, nWidth: i16,
+// HWND CreateWindowExA(dwExStyle: u32, lpClassName: *mut c_char, lpWindowName: *mut c_char, dwStyle: u32, X: i16, Y: i16, nWidth: i16,
 //                     nHeight: i16, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
 //
 //{
@@ -992,7 +992,7 @@ typedef struct
 //    return pHVar1;
 //}
 //
-// HWND FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
+// HWND FindWindowA(lpClassName: *mut c_char, LPCSTR lpWindowName)
 //
 //{
 //    HWND pHVar1;
@@ -1069,7 +1069,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// HANDLE FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)
+// HANDLE FindFirstFileA(lpFileName: *mut c_char, LPWIN32_FIND_DATAA lpFindFileData)
 //
 //{
 //    HANDLE pvVar1;
@@ -1091,7 +1091,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// BOOL WritePrivateProfileStringA(LPCSTR lpAppName, LPCSTR lpKeyName, LPCSTR lpString, LPCSTR lpFileName)
+// BOOL WritePrivateProfileStringA(lpAppName: *mut c_char, lpKeyName: *mut c_char, lpString: *mut c_char, LPCSTR lpFileName)
 //
 //{
 //    BOOL BVar1;
@@ -1113,7 +1113,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// u32 GetPrivateProfilei16A(LPCSTR lpAppName, LPCSTR lpKeyName, nDefault: i16, LPCSTR lpFileName)
+// u32 GetPrivateProfilei16A(lpAppName: *mut c_char, lpKeyName: *mut c_char, nDefault: i16, LPCSTR lpFileName)
 //
 //{
 //    u32 UVar1;
@@ -1124,7 +1124,7 @@ typedef struct
 //    return UVar1;
 //}
 //
-// i16 MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, uType: u32)
+// i16 MessageBoxA(HWND hWnd, lpText: *mut c_char, lpCaption: *mut c_char, uType: u32)
 //
 //{
 //    i16 iVar1;
@@ -1135,7 +1135,7 @@ typedef struct
 //    return iVar1;
 //}
 //
-// LSTATUS RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, Lu32* lpReserved, Lu32* lpType, LPBYTE lpData, Lu32* lpcbData)
+// LSTATUS RegQueryValueExA(HKEY hKey, lpValueName: *mut c_char, Lu32* lpReserved, Lu32* lpType, LPBYTE lpData, Lu32* lpcbData)
 //
 //{
 //    LSTATUS LVar1;
@@ -1146,7 +1146,7 @@ typedef struct
 //    return LVar1;
 //}
 //
-// LSTATUS RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, ulOptions: u32, REGSAM samDesired, PHKEY phkResult)
+// LSTATUS RegOpenKeyExA(HKEY hKey, lpSubKey: *mut c_char, ulOptions: u32, REGSAM samDesired, PHKEY phkResult)
 //
 //{
 //    LSTATUS LVar1;
@@ -1188,7 +1188,7 @@ typedef struct
 //    return BVar1;
 //}
 //
-// u32 CharUpperBuffA(LPSTR lpsz, cchLength: u32)
+// u32 CharUpperBuffA(lpsz: *mut c_char, cchLength: u32)
 //
 //{
 //    u32 DVar1;
@@ -1199,7 +1199,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// BOOL SetEnvironmentVariableA(LPCSTR lpName, LPCSTR lpValue)
+// BOOL SetEnvironmentVariableA(lpName: *mut c_char, LPCSTR lpValue)
 //
 //{
 //    BOOL BVar1;
@@ -1321,8 +1321,8 @@ typedef struct
 //    return BVar1;
 //}
 //
-// i16 WideCharToMultiByte(CodePage: u32, dwFlags: u32, LPCWSTR lpWideCharStr, cchWideChar: i16, LPSTR lpMultiByteStr,
-//                        cbMultiByte: i16, LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
+// i16 WideCharToMultiByte(CodePage: u32, dwFlags: u32, LPCWSTR lpWideCharStr, cchWideChar: i16, lpMultiByteStr: *mut c_char,
+//                        cbMultiByte: i16, lpDefaultChar: *mut c_char, LPBOOL lpUsedDefaultChar)
 //
 //{
 //    i16 iVar1;
@@ -1412,7 +1412,7 @@ typedef struct
 //    return DVar1;
 //}
 //
-// u32 GetFullPathNameA(LPCSTR lpFileName, nBufferLength: u32, LPSTR lpBuffer, LPSTR *lpFilePart)
+// u32 GetFullPathNameA(lpFileName: *mut c_char, nBufferLength: u32, lpBuffer: *mut c_char, LPSTR *lpFilePart)
 //
 //{
 //    u32 DVar1;
@@ -1489,7 +1489,7 @@ typedef struct
 //    return SVar1;
 //}
 //
-// i16 MultiByteToWideChar(CodePage: u32, dwFlags: u32, LPCSTR lpMultiByteStr, cbMultiByte: i16, LPWSTR lpWideCharStr,
+// i16 MultiByteToWideChar(CodePage: u32, dwFlags: u32, lpMultiByteStr: *mut c_char, cbMultiByte: i16, LPWSTR lpWideCharStr,
 //                        i16 cchWideChar)
 //
 //{

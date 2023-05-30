@@ -8,10 +8,10 @@
 // typedef struct Struct385 Struct385;
 
 struct Struct385 {
-    u8 field_0x0;
-    u8 field_0x1;
-    u8 field_0x2;
-    u8 field_0x3;
+    let mut field_0x0 = 0u8;
+    let mut field_0x1 = 0u8;
+    let mut field_0x2 = 0u8;
+    let mut field_0x3 = 0u8;
     let mut field_0x4: i16;
     let mut field_0x6: i16;
     let mut field_0x8: i16;

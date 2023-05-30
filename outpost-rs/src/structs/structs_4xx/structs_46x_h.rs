@@ -1436,7 +1436,7 @@ struct Struct467
     let mut field_0x13: u8;
     let mut field_0x14: u8;
     let mut field_0x15: u8;
-    long      field_0x16;
+    let mut field_0x16 = 0i32;
 };
 struct Struct460
 {

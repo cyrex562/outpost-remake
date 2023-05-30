@@ -52,7 +52,7 @@ u16 entry(globals: &mut Globals,
           CONTEXT *in_task_context,
           param_7: u16,
           i32 param_8) {
-    u8 u8_var1;
+    let mut u8_var1 = 0u8;
     let mut u16_var2: u16;
     cstring pcVar3;
     let mut fn_ptr_1: *mut c_void;
@@ -177,7 +177,7 @@ pub fn init_op_1008_54aa(globals: &mut Globals,
                        param_1: u16,
                        param_2: u16,
                        param_3: *mut u8,
-                       HINSTANCE16 hinst_arg4,
+                       hinst_arg4: HINSTANCE16,
                        param_5: u16,
                        param_6: u16,
                        param_7: u16,

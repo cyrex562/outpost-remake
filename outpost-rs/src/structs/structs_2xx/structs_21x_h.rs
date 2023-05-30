@@ -38,9 +38,9 @@ struct Struct218
 };
 struct Struct210
 {
-    long       field_0x0;
-    long       field_0x4;
-    long       field_0x8;
+    let mut field_0x0 = 0i32;
+    let mut field_0x4 = 0i32;
+    let mut field_0x8 = 0i32;
     let mut field_0xc: u16;
     let mut field_0xe: *mut u8;
     let mut field_0x10: *mut u8;

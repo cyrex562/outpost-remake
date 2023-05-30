@@ -754,7 +754,7 @@ struct Struct27
     let mut field_0x4f: u8;
     let mut field_0x50: u8;
     let mut field_0x51: u8;
-    long field_0x52;
+    let mut field_0x52 = 0i32;
     let mut field18_0x12: i32
 };
 struct Struct28

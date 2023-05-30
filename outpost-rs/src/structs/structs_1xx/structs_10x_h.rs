@@ -378,7 +378,7 @@ struct Struct106
     let mut field_0x3: u8;
     let mut field_0x4: u8;
     let mut field_0x5: u8;
-    long       field_0x6;
+    let mut field_0x6 = 0i32;
     let mut field_0xa: u8;
     let mut field_0xb: u8;
     let mut field_0xc: u8;
@@ -399,7 +399,7 @@ struct Struct107
     let mut field_0x3: u8;
     let mut field_0x4: u8;
     let mut field_0x5: u8;
-    long      field_0x6;
+    let mut field_0x6 = 0i32;
     let mut field_0xa: u16;
     let mut field_0xc: u16;
     let mut field_0xe: u8;

@@ -1448,7 +1448,7 @@ struct Struct702
     let mut field_0x8: u16;
     let mut field_0xa: i16;
     let mut field_0xc: i16;
-    long       field_0xe;
+    let mut field_0xe = 0i32;
     let mut field_0x12: *mut u8;
 };
 struct Struct705

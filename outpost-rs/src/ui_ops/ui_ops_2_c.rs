@@ -24,17 +24,17 @@ void  win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u32
     let mut ppcVar1: *mut *mut c_void;
     let mut u_var2: u32;
     let mut uVar3: u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut paVar5: *mut Struct18;
     let mut in_DX: *mut u8;
     let mut puVar6: *mut u8;
     let mut puVar7: *mut u8;
-    let mut extraout_DX: *mut u8;
+    let mut dx_var1: *mut u8;
     let mut iVar8: i16;
     let mut unaff_DI: *mut u8;
     let mut uVar9: u16;
     let mut hwnd: HWND16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut piStack24: *mut i16;
     let mut local_14: [RECT16;0x2] = [0;0x2]
     let mut iStack12: i16;
@@ -43,7 +43,7 @@ void  win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u32
 
     if(param_4 == 0xeb)
     {
-        paStack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
+        paStack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, ss_var1, in_DX, unaff_DI);
         puVar6   = (paStack6 >> 0x10);
         paVar5   = (param_1 + 0x90);
         if(paVar5 != 0x0)
@@ -100,14 +100,14 @@ void  win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u32
             }
             ppcVar1 = (str_var1(param_2, param_1) + 0x70);
             (**ppcVar1)();
-            puVar6 = extraout_DX;
-            uVar4  = pass1_1040_5cd6(str_var1(param_2, param_1));
-            if(uVar4 != 0x0)
+            puVar6 = dx_var1;
+            u_var4  = pass1_1040_5cd6(str_var1(param_2, param_1));
+            if(u_var4 != 0x0)
             {
                 pass1_1040_5eaa(str_var1(param_2, param_1));
                 (param_1 + 0x94) = 0x0;
             }
-            pass1_1040_5dc4(str_var1(param_2, param_1), puVar6, unaff_DI, unaff_SS);
+            pass1_1040_5dc4(str_var1(param_2, param_1), puVar6, unaff_DI, ss_var1);
             GetWindowRect16(hwnd, local_14);
             InvalidateRect16(LAST_SEGMENT, *(RECT16 **)(param_1 + 0x9c), 0x0);
             if((param_1 + 0x9c) != 0x0)
@@ -120,7 +120,7 @@ void  win_ui_op_1040_5800(param_1: i16, param_2: u16, param_3: u16, param_4: u32
     {
         if(param_4 != 0x13b)
         {
-            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, unaff_SS);
+            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, ss_var1);
             return;
         }
         GetDlgItem16(param_5, 0x1790);
@@ -196,14 +196,14 @@ void  show_win_1040_3ae8(param_1: *mut Struct1, param_2: u16)
 }
 
 
-void  win_ui_op_1040_3b1e(param_1: *mut Struct2, WORD *param_2)
+void  win_ui_op_1040_3b1e(param_1: *mut Struct2, param_2: *mut u16)
 
 {
     let mut BVar1: BOOL16;
     let mut HVar2: HWND16;
     let mut in_DX: *mut u8;
     let mut uVar3: u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut unaff_DI: i16;
     let mut uVar5: u16;
     let mut uVar6: u32;
@@ -215,22 +215,22 @@ void  win_ui_op_1040_3b1e(param_1: *mut Struct2, WORD *param_2)
     pu_stack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     uStack10 = (pu_stack6 + 0x68);
     uVar5    = (param_1 >> 0x10);
-    uVar4    = param_1;
+    u_var4    = param_1;
     GetWindowText16(SEG_1010, 0x80, local_8c);
     wsprintf16(LAST_SEGMENT, local_10e, param_2);
     SetWindowText16(LAST_SEGMENT, (SEGPTR)local_10e);
     uVar3 = uVar5;
-    pass1_1018_3d44(*(uVar4 + 0x8e), (param_1 & 0xffff0000 | (uVar4 + 0x92)), (param_1 & 0xffff0000 | (uVar4 + 0x96)));
+    pass1_1018_3d44(*(u_var4 + 0x8e), (param_1 & 0xffff0000 | (u_var4 + 0x92)), (param_1 & 0xffff0000 | (u_var4 + 0x96)));
     load_string_1010_84e0(SEG_1010, globals.dat_1050_14cc, globals.dat_1050_14cc >> 0x10,NULL), 0x80, local_10e, (short)param_2);
     wsprintf16(SEG_1010, local_8c, param_2);
     SetDlgItemText16(LAST_SEGMENT, local_8c, (SEGPTR)param_2);
     BVar1          = CheckRadioButton16(LAST_SEGMENT, 0x188, 0x18d, 0x188);
-    (uVar4 + 0xa0) = 0x188;
-    uVar6          = switch_1018_3b9e(*(uVar4 + 0x8e), (uVar4 + 0xa0), BVar1, uVar3, param_2);
-    send_dlg_item_msg_1040_3f12(uVar4, uVar5, uVar6, SEG_1018, param_2);
+    (u_var4 + 0xa0) = 0x188;
+    uVar6          = switch_1018_3b9e(*(u_var4 + 0x8e), (u_var4 + 0xa0), BVar1, uVar3, param_2);
+    send_dlg_item_msg_1040_3f12(u_var4, uVar5, uVar6, SEG_1018, param_2);
     dialog_item_ui_op_1040_3e08(param_1, SEG_1018);
     HVar2                     = GetDlgItem16(SEG_1018, 0x186);
-    *(HWND16 *)(uVar4 + 0x9a) = HVar2;
+    *(HWND16 *)(u_var4 + 0x9a) = HVar2;
     return;
 }
 
@@ -242,7 +242,7 @@ void  unk_win_ui_op_1040_3c64(param_1: i16, param_2: u16, param_3: u16, param_4:
     let mut in_DX: u16;
     let mut u_var2: u16;
     let mut unaff_DI: i16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut uVar3: u32;
     LRESULT LVar4;
     let mut puVar5: *mut u16;
@@ -254,11 +254,11 @@ void  unk_win_ui_op_1040_3c64(param_1: i16, param_2: u16, param_3: u16, param_4:
         u_var2 = (LVar4 >> 0x10);
         UVar1 = GetDlgItemInt16(LAST_SEGMENT, 0x0, (BOOL16 *)0x0, 0x0);
         pass1_1018_36e6(*(param_1 + 0x8e), UVar1, LVar4, (param_1 + 0xa0));
-        pass1_1038_af40(globals.ptr_1050_5b7c, (param_1 + 0x8), 0x22, u_var2, param_1, SEG_1038, unaff_SS);
+        pass1_1038_af40(globals.ptr_1050_5b7c, (param_1 + 0x8), 0x22, u_var2, param_1, SEG_1038, ss_var1);
         LVar4  = SendMessage16(SEG_1038, 0x0, 0x0, 0x1110002);
         iVar6  = 0x1;
-        puVar5 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, unaff_SS, (LVar4 >> 0x10), unaff_DI);
-        pass1_1010_038e(puVar5, iVar6, unaff_SS);
+        puVar5 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, ss_var1, (LVar4 >> 0x10), unaff_DI);
+        pass1_1010_038e(puVar5, iVar6, ss_var1);
     }
     else
     {
@@ -273,13 +273,13 @@ void  unk_win_ui_op_1040_3c64(param_1: i16, param_2: u16, param_3: u16, param_4:
         {
             (param_1 + 0xa0) = param_4;
             param_5          = SEG_1018;
-            uVar3            = switch_1018_3b9e(*(param_1 + 0x8e), param_4, param_4, in_DX, unaff_SS);
-            send_dlg_item_msg_1040_3f12(param_1, param_2, uVar3, SEG_1018, unaff_SS);
+            uVar3            = switch_1018_3b9e(*(param_1 + 0x8e), param_4, param_4, in_DX, ss_var1);
+            send_dlg_item_msg_1040_3f12(param_1, param_2, uVar3, SEG_1018, ss_var1);
         }
         else
         {
             if(param_4 - 0x188 != 0x8)
-                goto LAB_1040_3c7f;
+                //goto LAB_1040_3c7f;
             if(param_4 != 0x1)
             {
                 return;
@@ -299,7 +299,7 @@ void  dialog_item_ui_op_1040_3e08(in_struct_1: *mut Struct2, param_2: u16)
     let mut local_struct_1: *mut Struct2;
 let mut var3: u16 = 0;
     let mut HVar3: HWND16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     LRESULT    LVar4;
 
     var3           = (in_struct_1 >> 0x10);
@@ -312,7 +312,7 @@ let mut var3: u16 = 0;
     if(LVar4 != -0x1)
     {
         HVar3                      = SEG_1018;
-        u_var2                      = pass1_1018_3ab2(local_struct_1.field_0x8e, LVar4, local_struct_1.field_0xa0, unaff_SS);
+        u_var2                      = pass1_1018_3ab2(local_struct_1.field_0x8e, LVar4, local_struct_1.field_0xa0, ss_var1);
         local_struct_1.field_9e = u_var2;
     }
     SetDlgItemInt16(HVar3, 0x0, local_struct_1.field_9c, 0x18e);
@@ -362,14 +362,14 @@ void  pass1_1040_40e2(param_1: *mut Struct18)
 }
 
 
-void  win_ui_op_1040_410e(param_1: *mut Struct1, param_2: u16, u8 *param_3)
+void  win_ui_op_1040_410e(param_1: *mut Struct1, param_2: u16, param_3: u8)
 
 {
     let mut uVar1: u32;
     let mut pu_var2: *mut u8;
     let mut iVar3: i16;
     let mut unaff_DI: *mut RECT16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut hwnd: HWND16;
     let mut in_AF: u8;
@@ -393,7 +393,7 @@ void  win_ui_op_1040_410e(param_1: *mut Struct1, param_2: u16, u8 *param_3)
 
     dialog_ui_fn_1040_78e2(param_1, param_2);
     pass1_1000_4906(str_var1(param_3, local_c), 0x0, 0xa);
-    uVar4 = (param_1 >> 0x10);
+    u_var4 = (param_1 >> 0x10);
     iVar3 = param_1;
     uVar1 = (iVar3 + 0x8e);
     uVar5 = (uVar1 >> 0x10);
@@ -447,7 +447,7 @@ void  win_ui_op_1040_410e(param_1: *mut Struct1, param_2: u16, u8 *param_3)
 }
 
 
-void  win_ui_op_1040_42b2(param_1: u32, param_2: i16, param_3: HWND16, WORD *param_4)
+void  win_ui_op_1040_42b2(param_1: u32, param_2: i16, param_3: HWND16, param_4: *mut u16)
 
 {
     let mut uVar1: u32;
@@ -502,7 +502,7 @@ void  pass1_1040_477e(param_1: *mut Struct1, param_2: *mut u8, param_3: u16, par
     let mut puVar1: *mut u8;
     let mut pu_var2: *mut u16;
     let mut puVar3: *mut u8;
-    let mut puVar4: *mut u8;
+    let mut pu_var4: *mut u8;
     let mut unaff_DI: i16;
     let mut puVar5: *mut u16;
     let mut uVar6: u16;
@@ -514,10 +514,10 @@ void  pass1_1040_477e(param_1: *mut Struct1, param_2: *mut u8, param_3: u16, par
     uVar7  = SEG_1050;
     uVar6  = u16_data_1050_5d68;//0x5d68;
     puVar1 = pass1_1008_5fd8(param_4, puVar3);
-    puVar4 = puVar3;
+    pu_var4 = puVar3;
     pu_var2 = pass1_1000_3cea(str_var1(puVar3, puVar1), str_var1(uVar7, uVar6));
-    pass1_1010_e964(puVar4, param_4, unaff_DI);
-    pass1_1000_3cea(str_var1(puVar3, puVar1), str_var1(puVar4, pu_var2));
+    pass1_1010_e964(pu_var4, param_4, unaff_DI);
+    pass1_1000_3cea(str_var1(puVar3, puVar1), str_var1(pu_var4, pu_var2));
     unk_str_op_1000_3d3e((param_1 & 0xffff0000 | (param_1 + 0x10)),
                          str_var1(puVar3, puVar1));
     fn_ptr_1000_17ce(str_var1(puVar3, puVar1), SEG_1000);
@@ -538,7 +538,7 @@ void  set_win_pos_1040_4ae4(param_1: i16, param_2: u16, param_3: u16, param_4: u
     let mut iVar7: i16;
     let mut unaff_DI: i16;
     let mut uVar8: u16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut local_24: RECT16;
     let mut iStack32: i16;
     let mut paStack20: *mut Struct18;
@@ -549,7 +549,7 @@ void  set_win_pos_1040_4ae4(param_1: i16, param_2: u16, param_3: u16, param_4: u
 
     if(param_4 == 0xeb)
     {
-        paStack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, unaff_SS, in_DX, unaff_DI);
+        paStack6 = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, ss_var1, in_DX, unaff_DI);
         puVar5   = (paStack6 >> 0x10);
         paVar4   = (param_1 + 0x90);
         if(paVar4 != 0x0)
@@ -614,7 +614,7 @@ void  set_win_pos_1040_4ae4(param_1: i16, param_2: u16, param_3: u16, param_4: u
     {
         if(param_4 != 0x1770)
         {
-            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, unaff_SS);
+            pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, ss_var1);
             return;
         }
         if(param_4 == 0x7)
@@ -667,7 +667,7 @@ void  show_win_1040_2490(param_1: *mut Struct1, param_2: HWND16)
 }
 
 
-u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4: HWND16, WNDCLASS16 *param_5, u8 *param_6)
+u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4: HWND16, WNDCLASS16 *param_5, param_6: u8)
 
 {
     let mut pi_var1: *mut i16;
@@ -770,7 +770,7 @@ u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4:
                                   in_AF);
                     SetDlgItemText16(SEG_1000, local_16, (SEGPTR)param_5);
                 }
-                goto LAB_1040_266d;
+                //goto LAB_1040_266d;
             }
             uVar3 = param_3 - 0xfb1;
             if(uVar3 == 0x0)
@@ -793,7 +793,7 @@ u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4:
                     puStack10 = str_var1(puVar8, iVar5);
                     ppcVar2   = (*puStack10 + 0x74);
                     (**ppcVar2)(SEG_1000, iVar5, puVar8);
-                    goto LAB_1040_27c0;
+                    //goto LAB_1040_27c0;
                 }
                 if(0x0 < (iVar5 + 0x92))
                 {
@@ -816,7 +816,7 @@ u32  win_ui_op_1040_2512(param_1: *mut u32, param_2: u32, param_3: u16, param_4:
                     uVar11  = (**ppcVar2)(SEG_1008, puStack10, (puStack10 >> 0x10), local_1e, param_5);
                     param_6 = (uVar11 >> 0x10);
                     if(uVar11 == 0x2)
-                        goto LAB_1040_27c0;
+                        //goto LAB_1040_27c0;
                 }
                 local_16[0] = mixed_1010_20ba(globals.data_1050_0ed0, 0x6, param_5, param_6, unaff_DI);
                 param_6     = (local_16[0] >> 0x10);
@@ -859,7 +859,7 @@ void  dlg_ui_op_1040_2a64(param_1: *mut Struct1, param_2: u16, param_3: u16)
     let mut uVar1: u32;
     let mut p_var2: *mut Struct160;
     let mut uVar3: u16;
-    let mut puVar4: *mut u8;
+    let mut pu_var4: *mut u8;
     let mut puVar5: *mut u8;
     let mut iVar6: i16;
     let mut uVar7: u16;
@@ -881,7 +881,7 @@ void  dlg_ui_op_1040_2a64(param_1: *mut Struct1, param_2: u16, param_3: u16)
     iVar6              = param_1;
     uVar1              = (iVar6 + 0x90);
     uStack12           = struct_op_1030_73a8(*(uVar1 + 0x6));
-    puVar4             = (uStack12 >> 0x10);
+    pu_var4             = (uStack12 >> 0x10);
     hwnd               = SEG_1028;
     globals.PTR_LOOP_1050_5d04 = pass1_1028_4a9a(uStack12, iVar8);
     for(iStack14 = 0x0; iStack14 < iStack4; iStack14 = iStack14 + 0x1)
@@ -898,26 +898,26 @@ void  dlg_ui_op_1040_2a64(param_1: *mut Struct1, param_2: u16, param_3: u16)
         uStack16   = 0x1;
         MapDialogRect16(hwnd, &local_16);
         hwnd_00 = SEG_1000;
-        mem_op_1000_179c(0x42, puVar4, 0);
-        puVar5 = (puVar4 | p_var2);
+        mem_op_1000_179c(0x42, pu_var4, 0);
+        puVar5 = (pu_var4 | p_var2);
         if(puVar5 == 0x0)
         {
             p_var2 = 0x0;
-            puVar4 = 0x0;
+            pu_var4 = 0x0;
         }
         else
         {
             hwnd_00 = SEG_1008;
-            pass1_1008_3bd6(p_var2, puVar4, 0x1,
+            pass1_1008_3bd6(p_var2, pu_var4, 0x1,
                             str_var1(local_16.x, local_16.y), 0x101, 0xff0100,
                             str_var1((iVar6 + 0x6), (iVar8 + 0x5d00)), puVar5, param_3);
-            puVar4 = puVar5;
+            pu_var4 = puVar5;
         }
-        uStack8 = str_var1(puVar4, p_var2);
+        uStack8 = str_var1(pu_var4, p_var2);
         if(globals.PTR_LOOP_1050_5d04 == 0x0)
         {
             hwnd = hwnd_00;
-            if((iStack14 != 0x0) && ((puVar4 | p_var2) != 0x0))
+            if((iStack14 != 0x0) && ((pu_var4 | p_var2) != 0x0))
             {
                 hwnd = LAST_SEGMENT;
                 EnableWindow16(hwnd_00, 0x0);
@@ -946,7 +946,7 @@ void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32
 {
     let mut uVar1: u16;
     let mut in_DX: *mut u8;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut u_var2: u32;
     let mut iStack8: i16;
     let mut iStack4: i16;
@@ -966,7 +966,7 @@ void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32
                 SetDlgItemText16(LAST_SEGMENT, u_var2, (SEGPTR)(u_var2 >> 0x10));
             }
             u_var2 = (param_1 + 0x94);
-            goto LAB_1040_2ccc;
+            //goto LAB_1040_2ccc;
         }
         for(iStack8 = 0x1; iStack8 < 0x5; iStack8 = iStack8 + 0x1)
         {
@@ -1000,7 +1000,7 @@ void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32
                 {
                     if(param_4 != 0x15c)
                     {
-                        pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, unaff_SS);
+                        pass1_1040_b54a(param_1, param_2, param_3, param_4, in_DX, param_5, ss_var1);
                         return;
                     }
                     iStack4 = 0x4;
@@ -1016,7 +1016,7 @@ void  win_ui_op_1040_2bb2(param_1: i16, param_2: u16, param_3: u16, param_4: u32
         if(uVar1 == 0x0)
         {
             u_var2 = (param_1 + 0x94);
-            goto LAB_1040_2ccc;
+            //goto LAB_1040_2ccc;
         }
     }
     u_var2 = (param_1 + 0x98);
@@ -1070,7 +1070,7 @@ void  show_win_1040_2f5a(param_1: *mut Struct1, param_2: HWND16)
 }
 
 
-void  win_dlg_op_1040_2f90(param_1: u32, WORD *param_2)
+void  win_dlg_op_1040_2f90(param_1: u32, param_2: *mut u16)
 
 {
     let mut HVar1: HWND16;
@@ -1132,7 +1132,7 @@ void  win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32
     let mut u_var2: u32;
     let mut puVar3: *mut u8;
     let mut unaff_CS: u16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     LRESULT LVar4;
     let mut puVar5: *mut u16;
     let mut iVar6: i16;
@@ -1145,14 +1145,14 @@ void  win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32
         puVar3 = param_2;
         iVar6  = iVar1;
         pass1_1018_3cda((param_1 + 0x96), str_var1(param_2, param_1 + 0x19a), str_var1(param_2, iVar1));
-        pass1_1018_3424(*(param_1 + 0x96), iVar6, puVar3, unaff_SS);
+        pass1_1018_3424(*(param_1 + 0x96), iVar6, puVar3, ss_var1);
         if(iVar6 == 0x0)
         {
             iVar6 = 0x21;
         }
         else
         {
-            pass1_1018_3a42(*(param_1 + 0x96), str_var1(param_2, iVar1), puVar3, unaff_SS);
+            pass1_1018_3a42(*(param_1 + 0x96), str_var1(param_2, iVar1), puVar3, ss_var1);
             pass1_1030_8344(globals._PTR_LOOP_1050_5748, (globals._PTR_LOOP_1050_5748 >> 0x10),
                             str_var1(puVar3, iVar6));
             u_var2 = *(iVar6 + 0x10);
@@ -1162,11 +1162,11 @@ void  win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32
             iVar6              = 0x25;
             globals.PTR_LOOP_1050_5f0e = puVar3;
         }
-        pass1_1038_af40(globals.ptr_1050_5b7c, (param_1 + 0x8), iVar6, puVar3, param_1, SEG_1038, unaff_SS);
+        pass1_1038_af40(globals.ptr_1050_5b7c, (param_1 + 0x8), iVar6, puVar3, param_1, SEG_1038, ss_var1);
         LVar4  = SendMessage16(SEG_1038, 0x0, 0x0, 0x1110002);
         iVar6  = 0x1;
-        puVar5 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, unaff_SS, (LVar4 >> 0x10), param_2);
-        pass1_1010_038e(puVar5, iVar6, unaff_SS);
+        puVar5 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2b, ss_var1, (LVar4 >> 0x10), param_2);
+        pass1_1010_038e(puVar5, iVar6, ss_var1);
     }
     else
     {
@@ -1185,16 +1185,16 @@ void  win_ui_op_1040_311a(param_1: i16, param_2: u16, param_3: u16, param_4: u32
 void  enable_win_1040_32a8(param_1: u32)
 
 {
-    SEGPTR lp_string;
+    let mut lp_string: SEGPTR;
     let mut BVar1: BOOL16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut uStack12: u32;
 
     lp_string = param_1 + 0x19a;
     uStack12  = param_1 & 0xffff0000 | lp_string;
-    pass1_1018_3a5c(*(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), param_1 & 0xffff0000 | lp_string, unaff_SS);
+    pass1_1018_3a5c(*(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), param_1 & 0xffff0000 | lp_string, ss_var1);
     SetWindowText16(SEG_1018, lp_string);
-    BVar1 = string_1018_39d8(NULL, unaff_SS, *(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), uStack12);
+    BVar1 = string_1018_39d8(NULL, ss_var1, *(param_1 + 0x96), param_1 & 0xffff0000 | (param_1 + 0x9aU), uStack12);
     EnableWindow16(SEG_1018, BVar1 & 0x1);
     return;
 }
@@ -1253,17 +1253,17 @@ void  show_win_1040_355a(param_1: *mut Struct1, param_2: HWND16)
 }
 
 
-void  set_win_text_1040_3590(param_1: u32, WORD *param_2)
+void  set_win_text_1040_3590(param_1: u32, param_2: *mut u16)
 
 {
     let mut HVar1: HWND16;
-    SEGPTR     lp_string;
+    let mut lp_string: SEGPTR;
     let mut lp_string_00: u16;
     let mut in_DX: *mut u8;
     let mut u_var2: u16;
     let mut iVar3: i16;
     let mut unaff_DI: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut local_59a: [u8;4] = [0;4];
     let mut local_596: [u8;4] = [0;4];
     let mut BStack1426: BOOL16;
@@ -1277,7 +1277,7 @@ void  set_win_text_1040_3590(param_1: u32, WORD *param_2)
     puStack1032 = mixed_1010_20ba(globals.data_1050_0ed0, 0x2, param_2, in_DX, unaff_DI);
     u_var2       = (puStack1032 >> 0x10);
     uStack1036  = (puStack1032 + 0x68);
-    uVar4       = (param_1 >> 0x10);
+    u_var4       = (param_1 >> 0x10);
     iVar3       = param_1;
     GetWindowText16(SEG_1010, 0x80, local_50c);
     wsprintf16(LAST_SEGMENT, local_58e, param_2);
@@ -1367,14 +1367,14 @@ void  set_win_pos_1040_0f10(param_1: HWND16, param_2: u16, i16 param_3)
     let mut u_var2: u32;
     let mut iVar3: i16;
     let mut unaff_DI: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u32;
     let mut puVar6: *mut u16;
     let mut check: u16;
 
     dialog_ui_fn_1040_78e2((param_3 + 0x6), param_1);
     u_var2 = (param_3 + 0x6);
-    uVar4 = (u_var2 >> 0x10);
+    u_var4 = (u_var2 >> 0x10);
     iVar3 = u_var2;
     if((iVar3 + 0x98) == 0x0)
     {
@@ -1419,10 +1419,10 @@ void  set_win_pos_1040_0f10(param_1: HWND16, param_2: u16, i16 param_3)
     (param_3 + -0x14) = iVar3;
     (param_3 + -0x10) = -(iVar3 / 0x2 - (param_3 + -0x2));
     puVar6            = mixed_1010_20ba(globals.data_1050_0ed0, 0x48, param_2, (iVar3 >> 0xf), unaff_DI);
-    uVar4             = (puVar6 >> 0x10);
+    u_var4             = (puVar6 >> 0x10);
     iVar3             = puVar6;
     (param_3 + -0x1c) = iVar3;
-    (param_3 + -0x1a) = uVar4;
+    (param_3 + -0x1a) = u_var4;
     (param_3 + -0x16) = (iVar3 + 0xa);
     (param_3 + -0x18) = (iVar3 + 0xc);
     if((param_3 + -0x16) < (param_3 + -0x12) + (param_3 + -0xe))
@@ -1453,7 +1453,7 @@ void  pass1_1040_1290(param_1: *mut Struct18)
 }
 
 
-void  win_ui_op_1040_12bc(param_1: *mut Struct1, param_2: u16, u8 *param_3)
+void  win_ui_op_1040_12bc(param_1: *mut Struct1, param_2: u16, param_3: u8)
 
 {
     let mut uVar1: u32;
@@ -1598,7 +1598,7 @@ void  win_msg_op_1040_13b2(param_1: u32, param_2: i16, param_3: HWND16, param_4:
                                      str_var1(param_4, local_22e));
                     param_3 = SEG_1028;
                     pass1_1028_8dec(str_var1(param_4, local_22e));
-                    goto LAB_1040_1619;
+                    //goto LAB_1040_1619;
                 }
             }
         }
@@ -1651,7 +1651,7 @@ u32  set_win_pos_1040_162a(param_1: u16, param_2: u32, param_3: u32, param_4: u1
         if((param_3 != 0x9) && (param_3 != 0xa))
         {
             uVar1 = 0x0;
-            goto LAB_1040_164d;
+            //goto LAB_1040_164d;
         }
     }
     uVar1 = 0x1;
@@ -1674,7 +1674,7 @@ void  pass1_1040_1876(param_1: *mut Struct18)
 }
 
 
-void  show_win_1040_18a2(param_1: *mut Struct1, param_2: HWND16, WORD *param_3)
+void  show_win_1040_18a2(param_1: *mut Struct1, param_2: HWND16, param_3: *mut u16)
 
 {
     let mut uVar1: u32;
@@ -1743,14 +1743,14 @@ void  unk_win_ui_op_1040_19ea(param_1: *mut Struct32, param_2: i16, param_3: HWN
     let mut iVar4: *mut Struct32;
     let mut unaff_DI: i16;
     let mut uVar3: *mut Struct32;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
 
     iVar4 = param_1;
     uVar3 = (param_1 >> 0x10);
     if(param_2 != 0x0)
     {
         u_var2 = IsDlgButtonChecked(param_3, 0xfdb);
-        pass1_1010_5d9c(iVar4.field_0x8e, u_var2, in_DX, unaff_DI, unaff_SS);
+        pass1_1010_5d9c(iVar4.field_0x8e, u_var2, in_DX, unaff_DI, ss_var1);
         u_var2          = IsDlgButtonChecked(SEG_1010, 0xfdc);
         uVar1          = iVar4.field_0x8e;
         (uVar1 + 0x20) = u_var2;
@@ -1809,10 +1809,10 @@ void  check_dialog_btn_1040_1afe(param_1: u32)
     let mut uVar1: u32;
     let mut u_var2: u32;
     let mut iVar3: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut unaff_CS: HWND16;
 
-    uVar4 = (param_1 >> 0x10);
+    u_var4 = (param_1 >> 0x10);
     iVar3 = param_1;
     uVar1 = (iVar3 + 0x8e);
     u_var2 = (iVar3 + 0x8e);
@@ -1882,7 +1882,7 @@ void  unk_win_ui_op_1040_1d7a(param_1: *mut Struct33, param_2: i16, param_3: HWN
     let mut uVar3: *mut Struct33;
     let mut HVar3: HWND16;
     let mut HVar4: HWND16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
 
     iVar3 = param_1;
     uVar3 = (param_1 >> 0x10);
@@ -1893,40 +1893,40 @@ void  unk_win_ui_op_1040_1d7a(param_1: *mut Struct33, param_2: i16, param_3: HWN
         if(u_var2 != 0x0)
         {
             HVar3 = SEG_1008;
-            pass1_1008_a930(iVar3.field_0x92, 0x1d5, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1d5, ss_var1);
         }
         HVar4 = LAST_SEGMENT;
         u_var2 = IsDlgButtonChecked(HVar3, 0xe2);
         if(u_var2 != 0x0)
         {
             HVar4 = SEG_1008;
-            pass1_1008_a930(iVar3.field_0x92, 0x1d6, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1d6, ss_var1);
         }
         HVar3 = LAST_SEGMENT;
         u_var2 = IsDlgButtonChecked(HVar4, 0xe3);
         if(u_var2 != 0x0)
         {
             HVar3 = SEG_1008;
-            pass1_1008_a930(iVar3.field_0x92, 0x1d7, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1d7, ss_var1);
         }
         HVar4 = LAST_SEGMENT;
         u_var2 = IsDlgButtonChecked(HVar3, 0xe5);
         if(u_var2 != 0x0)
         {
             HVar4 = SEG_1008;
-            pass1_1008_a930(iVar3.field_0x92, 0x1d8, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1d8, ss_var1);
         }
         HVar3 = LAST_SEGMENT;
         u_var2 = IsDlgButtonChecked(HVar4, 0xe6);
         if(u_var2 != 0x0)
         {
             HVar3 = SEG_1008;
-            pass1_1008_a930(iVar3.field_0x92, 0x1e2, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1e2, ss_var1);
         }
         u_var2 = IsDlgButtonChecked(HVar3, 0xe7);
         if(u_var2 != 0x0)
         {
-            pass1_1008_a930(iVar3.field_0x92, 0x1dc, unaff_SS);
+            pass1_1008_a930(iVar3.field_0x92, 0x1dc, ss_var1);
         }
         return;
     }
@@ -1942,9 +1942,9 @@ void  pass1_1040_205e(param_1: *mut Struct18)
     let mut u_var2: u16;
     let mut ppcVar3: *mut *mut c_void;
     let mut iVar4: *mut Struct624;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
 
-    uVar4              = (param_1 >> 0x10);
+    u_var4              = (param_1 >> 0x10);
     iVar4              = param_1;
     param_1.field_0x0 = addr_table_1040_237e;//0x237e;
     iVar4->fld2_segment = SEG_1040;
@@ -2023,7 +2023,7 @@ void  win_ui_op_1038_ec1a(param_1: u16, param_2: i16)
     let mut pi_var1: *mut i16;
     let mut u_var2: u32;
     let mut uVar3: u32;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut rect: *mut Struct160;
     let mut in_DX: *mut u8;
     let mut puVar5: *mut u8;
@@ -2040,8 +2040,8 @@ void  win_ui_op_1038_ec1a(param_1: u16, param_2: i16)
     globals.dat_1050_5f2e = (puVar10 >> 0x10);
     (param_2 + -0x4)   = puVar10;
     (param_2 + -0x2)   = globals.dat_1050_5f2e;
-    uVar4              = pass1_1010_0892();
-    (param_2 + -0x6)   = uVar4;
+    u_var4              = pass1_1010_0892();
+    (param_2 + -0x6)   = u_var4;
     if(globals._PTR_LOOP_1050_5f2c == 0x0)
     {
         globals.dat_1050_5f2c = mem_op_1000_160a(globals.PTR_LOOP_1050_5f2e, SEG_1000);
@@ -2051,11 +2051,11 @@ void  win_ui_op_1038_ec1a(param_1: u16, param_2: i16)
     }
     (param_2 + -0x18) = globals.dat_1050_5f2c;
     (param_2 + -0x16) = globals.dat_1050_5f2e;
-    uVar4             = fn_ptr_op_1000_1708(((param_2 + -0x6) + 0x2) * 0x4, 0x0, 0x1, globals.dat_1050_5f2c, globals.dat_1050_5f2e, SEG_1000);
+    u_var4             = fn_ptr_op_1000_1708(((param_2 + -0x6) + 0x2) * 0x4, 0x0, 0x1, globals.dat_1050_5f2c, globals.dat_1050_5f2e, SEG_1000);
     u_var2             = (param_2 + 0x6);
     uVar9             = (u_var2 >> 0x10);
     iVar7             = u_var2;
-    (iVar7 + 0x8e)    = uVar4;
+    (iVar7 + 0x8e)    = u_var4;
     (iVar7 + 0x90)    = globals.dat_1050_5f2e;
     (param_2 + -0x8)  = 0x1;
     while(iVar7 = (param_2 + -0x6), pi_var1 = (param_2 + -0x8), *pi_var1 == iVar7 || *pi_var1 < iVar7)

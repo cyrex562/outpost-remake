@@ -45,10 +45,10 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
     let mut in_DX: *mut u8;
     let mut puVar5: *mut u8;
     let mut puVar6: *mut u8;
-    let mut extraout_DX: *mut u8;
-    let mut extraout_DX_00: u16;
+    let mut dx_var1: *mut u8;
+    let mut dx_var1_00: u16;
     short             unaff_DI;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut in_AF: u8;
     let mut puVar7: *mut u16;
     let mut uVar8: u32;
@@ -72,7 +72,7 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
                         str_var1((iVar11 + 0x8), 0xf1),
                         puVar5,
                         NULL,
-                        unaff_SS,
+                        ss_var1,
                         0,
                         0,
                         0,
@@ -91,7 +91,7 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
                         str_var1((iVar11 + 0x8), 0xf2),
                         puVar6,
                         NULL,
-                        unaff_SS,
+                        ss_var1,
                         0,
                         0,
                         0,
@@ -110,14 +110,14 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
                         str_var1((iVar11 + 0x8), 0xf3),
                         puVar5,
                         NULL,
-                        unaff_SS,
+                        ss_var1,
                         0,
                         0,
                         0,
                         0,
                         0);
     }
-    puVar7                      = mixed_1010_20ba(globals.data_1050_0ed0, 0x2d, unaff_SS, puVar5, unaff_DI);
+    puVar7                      = mixed_1010_20ba(globals.data_1050_0ed0, 0x2d, ss_var1, puVar5, unaff_DI);
     uVar9                       = (puVar7 >> 0x10);
     (iVar11 + 0xf2)             = puVar7;
     (iVar11 + 0xf4)             = uVar9;
@@ -129,7 +129,7 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
     uVar1                       = (iVar11 + 0xf2);
     ppcVar2                     = ((iVar11 + 0xf2) + 0x30);
     (**ppcVar2)(LAST_SEGMENT, uVar1, (uVar1 >> 0x10), uVar3, puVar10);
-    puVar5 = extraout_DX;
+    puVar5 = dx_var1;
     mem_op_1000_179c(globals, 0x24, SEG_1000);
     puVar6 = (puVar5 | uVar3);
     if(puVar6 == 0x0)
@@ -138,16 +138,16 @@ pub fn window_op_1020_10a0(globals: &mut Globals, param_1: *mut Struct0)
     }
     else
     {
-        unk_win_ui_op_1020_1418(str_var1(puVar5, uVar3), param_1, unaff_SS);
+        unk_win_ui_op_1020_1418(str_var1(puVar5, uVar3), param_1, ss_var1);
         *(iVar11 + 0xf6) = uVar3;
         (iVar11 + 0xf8)  = puVar6;
     }
     (iVar11 + 0xe8) = (iVar11 + 0xf6);
-    puVar7          = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, unaff_SS, puVar6, unaff_DI);
+    puVar7          = mixed_1010_20ba(globals.data_1050_0ed0, 0x2f, ss_var1, puVar6, unaff_DI);
     uVar8           = pass1_1018_04b8(puVar7);
     puVar5          = (uVar8 >> 0x10);
-    pass1_1010_41d6(*(iVar11 + 0xf2), uVar8, puVar5, unaff_SS, in_AF);
-    uVar8   = pass1_1010_451a(*(iVar11 + 0xf2), puVar5, unaff_DI, unaff_SS);
+    pass1_1010_41d6(*(iVar11 + 0xf2), uVar8, puVar5, ss_var1, in_AF);
+    uVar8   = pass1_1010_451a(*(iVar11 + 0xf2), puVar5, unaff_DI, ss_var1);
     pBVar4  = uVar8;
     uVar1   = param_1;
     ppcVar2 = (uVar1 + 0x14);
@@ -170,7 +170,7 @@ pub fn window_op_1020_2642(globals: &mut Globals, param_1: *mut Struct0)
     //    i16          iVar2;
     let mut unaff_DI: i16;
     //    u16          uVar3;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
 
     create_window_ex_1008_9760(param_1, SEG_1008);
     //    uVar3 = (param_1 >> 0x10);
@@ -180,7 +180,7 @@ pub fn window_op_1020_2642(globals: &mut Globals, param_1: *mut Struct0)
     uVar1 = in_DX | in_AX;
     if(uVar1 != 0x0)
     {
-        pass1_1020_27b0(in_AX, in_DX, (param_1.field_0x8), unaff_DI, unaff_SS);
+        pass1_1020_27b0(in_AX, in_DX, (param_1.field_0x8), unaff_DI, ss_var1);
         (param_1.field_0xee) = in_AX;
         *(param_1.field_0xf0)               = uVar1;
         return;
@@ -286,10 +286,10 @@ pub fn win_ui_op_1008_3c34(globals: &mut Globals, param_1: u32, param_2: u8, hdc
     iVar4 = (int)param_1;
     if ((*(uint *)(iVar4 + 10) | *(uint *)(iVar4 + 8)) != 0) {
         puStack6 = *(u32 **)(iVar4 + 8);
-        if ((*(long *)(iVar4 + 0xc) != 0) && ((param_2 & 1) != 0)) {
+        if ((*(iVar4 + 0xc) != 0) && ((param_2 & 1) != 0)) {
             puStack6 = *(u32 **)(iVar4 + 0xc);
         }
-        if ((*(long *)(iVar4 + 0x10) != 0) && ((param_2 & 4) != 0)) {
+        if ((*(iVar4 + 0x10) != 0) && ((param_2 & 4) != 0)) {
             puStack6 = *(u32 **)(iVar4 + 0x10);
         }
         uVar6 = 0x4230;

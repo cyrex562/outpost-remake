@@ -59,12 +59,12 @@ struct Struct205
 };
 struct Struct206
 {
-    long      field_0x0;
+    let mut field_0x0 = 0i32;
     let mut field_0x4: u8;
     let mut field_0x5: u8;
     let mut field_0x6: u8;
     let mut field_0x7: u8;
-    long      field_0x8;
+    let mut field_0x8 = 0i32;
     let mut field_0xc: u8;
     let mut field_0xd: u8;
     let mut field_0xe: u16;

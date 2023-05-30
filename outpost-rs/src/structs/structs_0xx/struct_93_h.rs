@@ -68,7 +68,7 @@ struct Struct93
     let mut field_0x39: u8;
     let mut field_0x3a: u8;
     let mut field_0x3b: u8;
-    long field_0x3c;
+    let mut field_0x3c = 0i32;
     let mut field_0x40: u8;
     let mut field_0x41: u8;
     let mut field_0x42: u8;

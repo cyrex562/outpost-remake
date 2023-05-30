@@ -978,7 +978,7 @@ typedef struct Globals {
     let mut PTR_LOOP_1050_0396: u16;
     let mut _PTR_LOOP_1050_5b64: u32;
     let mut PTR_LOOP_1050_5b68: u16;
-    u8 PTR_LOOP_1050_5b6a;
+    let mut PTR_LOOP_1050_5b6a = 0u8;
     let mut PTR_LOOP_1050_5b64: u16;
     let mut PTR_LOOP_1050_423e: i32
     let mut _PTR_LOOP_1050_5cd0: i32

@@ -74,7 +74,7 @@ struct Struct653
     let mut field_0x3f: u8;
     let mut field_0x40: u32;
     let mut field_0x44: i16;
-    long       field_0x46;
+    let mut field_0x46 = 0i32;
     let mut field_0x4a: i16;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_6_H_STRUCT_653_H_

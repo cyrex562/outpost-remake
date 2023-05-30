@@ -24,6 +24,6 @@ struct Struct610
     let mut field_0xd: u8;
     let mut field_0xe: u8;
     let mut field_0xf: u8;
-    long field_0x10;
+    let mut field_0x10 = 0i32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_12_H_STRUCT_610_H_

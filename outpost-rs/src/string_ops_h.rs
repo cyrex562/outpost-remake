@@ -91,14 +91,14 @@ pub fn pass1_1010_de78(globals: &mut Globals, struct_1010_ddf6_1 *param_1, param
 
 
 char *load_string_1010_ac92(globals: &mut Globals,
-                            HINSTANCE16 param_1,
+                            param_1: HINSTANCE16,
                             param_2: u16,
                             param_3: u16,
                             i16         param_4);
 
 
 char *string_op_1010_ada6(globals: &mut Globals,
-                          HINSTANCE16 param_1,
+                          param_1: HINSTANCE16,
                           param_2: u16,
                           param_3: u16,
                           param_4: u16,
@@ -118,7 +118,7 @@ char *load_string_1010_847e(cstring param_1_str_buf, HINSTANCE16 param_3_hinstan
 pub fn load_string_1010_84ac(param_1: u16, HINSTANCE16 param_3);
 
 
-pub fn load_string_1010_84e0(HINSTANCE16 in_hinstance_5,
+pub fn load_string_1010_84e0(in_hinstance_5: HINSTANCE16,
                            char       *param_2,
                            in_resc_id_3: u16,
                            char       *in_buffer_4);
@@ -157,7 +157,7 @@ pub fn load_str_and_spri16f_1008_b69c(globals: &mut Globals,
 pub fn load_str_and_spri16f_1008_b78a(globals: &mut Globals,
                                     param_1: u32,
                                     WORD    *param_2,
-                                    u8      *param_3,
+                                    param_3: *mut u8,
                                    param_4: u16);
 
 
@@ -185,7 +185,7 @@ pub fn pass1_1008_48de(param_1: u16,
                     param_5: *mut u16,
                      param_6: i16,
                      param_7: i16,
-                     u8  *param_8,
+                     param_8: *mut u8,
                      param_9: u16,
                      param_10: u16,
                      char param_11,

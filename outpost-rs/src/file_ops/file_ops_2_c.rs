@@ -31,7 +31,7 @@ void  pass1_1030_227a(param_1: u32, param_2: u32, param_3: u16, param_4: u16)
     let mut uVar1: u16;
     let mut iVar2: i16;
     let mut BVar3: BOOL16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
 
     uVar1 = pass1_1030_1978(param_1, param_2, param_3, param_4);
@@ -39,21 +39,21 @@ void  pass1_1030_227a(param_1: u32, param_2: u32, param_3: u16, param_4: u16)
     {
         iVar2 = param_1;
         uVar1 = (param_1 >> 0x10);
-        uVar4 = param_2;
+        u_var4 = param_2;
         uVar5 = (param_2 >> 0x10);
-        BVar3 = write_to_file_1008_7e1c(uVar4, uVar5, iVar2 + 0x10, uVar1, 0x106, SEG_1008);
+        BVar3 = write_to_file_1008_7e1c(u_var4, uVar5, iVar2 + 0x10, uVar1, 0x106, SEG_1008);
         if(BVar3 != 0x0)
         {
-            BVar3 = write_to_file_1008_7e1c(uVar4, uVar5, iVar2 + 0x116, uVar1, 0x86, SEG_1008);
+            BVar3 = write_to_file_1008_7e1c(u_var4, uVar5, iVar2 + 0x116, uVar1, 0x86, SEG_1008);
             if(BVar3 != 0x0)
             {
-                BVar3 = write_to_file_1008_7e1c(uVar4, uVar5, iVar2 + 0x19c, uVar1, 0xa, SEG_1008);
+                BVar3 = write_to_file_1008_7e1c(u_var4, uVar5, iVar2 + 0x19c, uVar1, 0xa, SEG_1008);
                 if(BVar3 != 0x0)
                 {
-                    BVar3 = write_to_file_1008_7e1c(uVar4, uVar5, iVar2 + 0x1a6, uVar1, 0x106, SEG_1008);
+                    BVar3 = write_to_file_1008_7e1c(u_var4, uVar5, iVar2 + 0x1a6, uVar1, 0x106, SEG_1008);
                     if(BVar3 != 0x0)
                     {
-                        BVar3 = write_to_file_1008_7e1c(uVar4, uVar5, iVar2 + 0x2ac, uVar1, 0x106, SEG_1008);
+                        BVar3 = write_to_file_1008_7e1c(u_var4, uVar5, iVar2 + 0x2ac, uVar1, 0x106, SEG_1008);
                         if(BVar3 != 0x0)
                         {
                             return;
@@ -74,7 +74,7 @@ void  pass1_1030_232e(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
     let mut uVar1: u16;
     let mut iVar2: i16;
     let mut BVar3: BOOL16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
 
     file_1030_19b4(param_1, param_2, param_3, param_4, param_5);
@@ -82,21 +82,21 @@ void  pass1_1030_232e(param_1: u32, param_2: u32, param_3: i16, param_4: u16, pa
     {
         iVar2 = param_1;
         uVar1 = (param_1 >> 0x10);
-        uVar4 = param_2;
+        u_var4 = param_2;
         uVar5 = (param_2 >> 0x10);
-        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x10, 0x0, uVar1, 0x106, SEG_1008);
+        BVar3 = read_file_1008_7dee(u_var4, uVar5, iVar2 + 0x10, 0x0, uVar1, 0x106, SEG_1008);
         if(BVar3 != 0x0)
         {
-            BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x116, 0x0, uVar1, 0x86, SEG_1008);
+            BVar3 = read_file_1008_7dee(u_var4, uVar5, iVar2 + 0x116, 0x0, uVar1, 0x86, SEG_1008);
             if(BVar3 != 0x0)
             {
-                BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x19c, 0x0, uVar1, 0xa, SEG_1008);
+                BVar3 = read_file_1008_7dee(u_var4, uVar5, iVar2 + 0x19c, 0x0, uVar1, 0xa, SEG_1008);
                 if(BVar3 != 0x0)
                 {
-                    BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x1a6, 0x0, uVar1, 0x106, SEG_1008);
+                    BVar3 = read_file_1008_7dee(u_var4, uVar5, iVar2 + 0x1a6, 0x0, uVar1, 0x106, SEG_1008);
                     if(BVar3 != 0x0)
                     {
-                        BVar3 = read_file_1008_7dee(uVar4, uVar5, iVar2 + 0x2ac, 0x0, uVar1, 0x106, SEG_1008);
+                        BVar3 = read_file_1008_7dee(u_var4, uVar5, iVar2 + 0x2ac, 0x0, uVar1, 0x106, SEG_1008);
                         if(BVar3 != 0x0)
                         {
                             return;
@@ -123,9 +123,9 @@ void  pass1_1030_2aca(param_1: *mut Struct730, param_2: u32, param_3: u16, param
     let mut uVar6: u16;
     let mut uVar7: u16;
     let mut uVar8: u16;
-    u32   local_18[0x3];
-    u16          local_c[0x3];
-    u16          local_6[0x2];
+    let mut local_18: [u32;0x3];
+    let mut local_c: [u16;0x3];
+    let mut local_6: [u16;0x2];
 
     uVar3 = pass1_1030_1978(param_1, param_2, param_3, param_4);
     if(uVar3 == 0x0)
@@ -196,14 +196,14 @@ pub fn pass1_1030_2c8a(globals: &mut Globals,
                      param_1: *mut Struct373,
                      param_2: u32,
                      param_3: i16,
-                     u8        *param_4,
+                     param_4: *mut u8,
                     param_5: u16)
 
 {
     let mut uVar1: u32;
     let mut u_var2: u16;
     let mut BVar3: BOOL16;
-    let mut puVar4: *mut u8;
+    let mut pu_var4: *mut u8;
     let mut uVar5: u16;
     let mut puVar6: *mut u8;
     let mut iVar7: *mut Struct374;
@@ -254,9 +254,9 @@ pub fn pass1_1030_2c8a(globals: &mut Globals,
     BVar3  = read_file_1008_7dee(u_var2, uVar9, puVar8, 0x0, (puVar8 >> 0x10), 0x2, SEG_1008);
     if(BVar3 != 0x0)
     {
-        puVar4 = local_402;
-        read_file_1008_7c6e(u_var2, uVar9, str_var1(param_5, puVar4), SEG_1008);
-        if(puVar4 != 0x0)
+        pu_var4 = local_402;
+        read_file_1008_7c6e(u_var2, uVar9, str_var1(param_5, pu_var4), SEG_1008);
+        if(pu_var4 != 0x0)
         {
             uVar5            = str_op_1008_60e8(str_var1(param_5, local_402), puVar6);
             puVar8           = param_1.field_0x10;
@@ -317,7 +317,7 @@ void  pass1_1030_16d6(param_1: u32, param_2: u32, param_3: u16)
     let mut BVar1: BOOL16;
     let mut u_var2: u16;
     let mut uVar3: u16;
-    u32 local_10[0x2];
+    let mut local_10: [u32;0x2];
     let mut local_8: u32;
 
     u_var2       = (param_1 >> 0x10);
@@ -387,7 +387,7 @@ void  file_1030_19b4(param_1: *mut Struct370, param_2: u32, param_3: i16, param_
     file_1030_1730(param_1, param_2);
     if(param_3 != 0x0)
     {
-        plVar1 = (long *)(param_1 & 0xffff0000 | (param_1 + 0xc));
+        plVar1 = (param_1 & 0xffff0000 | (param_1 + 0xc));
         file_1008_76e4(param_2, plVar1, SEG_1008, param_5, param_4);
         if(plVar1 == 0x0)
         {
@@ -409,7 +409,7 @@ u16  pass1_1030_1a9c(param_1: u32, param_2: u32, param_3: u16)
     let mut BVar4: BOOL16;
     let mut iVar5: i16;
     let mut uVar6: u16;
-    u16        local_c[0x5];
+    let mut local_c: [u16;0x5];
 
     uVar3 = pass1_1030_1978(param_1, param_2, in_AX, param_3);
     if(uVar3 != 0x0)
@@ -445,14 +445,14 @@ u16 file_1030_1b18(globals: &mut Globals,
                    param_1: *mut Struct370,
                    param_2: u32,
                    param_3: i16,
-                   u8        *param_4,
+                   param_4: *mut u8,
                   param_5: u16)
 
 {
     let mut uVar1: u32;
     let mut piVar2: *mut i16;
     let mut uVar3: u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut BVar5: BOOL16;
     let mut uVar6: u16;
     let mut puVar7: *mut u8;
@@ -475,12 +475,12 @@ u16 file_1030_1b18(globals: &mut Globals,
         else
         {
         }
-        uVar4                       = fn_ptr_op_1000_1708(0x6, 0x0, 0x1, globals.dat_1050_5f2c, globals.dat_1050_5f2e, SEG_1000);
-        &param_1.field_0x10         = uVar4;
+        u_var4                       = fn_ptr_op_1000_1708(0x6, 0x0, 0x1, globals.dat_1050_5f2c, globals.dat_1050_5f2e, SEG_1000);
+        &param_1.field_0x10         = u_var4;
         (&param_1.field_0x10 + 0x2) = globals.dat_1050_5f2e;
         puVar7                      = (&param_1.field_0x10 + 0x2);
-        uVar4                       = (param_2 >> 0x10);
-        BVar5                       = read_file_1008_7dee(param_2, uVar4, &param_1.field_0x10, 0x0, puVar7, 0x2, SEG_1008);
+        u_var4                       = (param_2 >> 0x10);
+        BVar5                       = read_file_1008_7dee(param_2, u_var4, &param_1.field_0x10, 0x0, puVar7, 0x2, SEG_1008);
         if(BVar5 != 0x0)
         {
             piVar2 = param_1.field_0x10;
@@ -498,7 +498,7 @@ u16 file_1030_1b18(globals: &mut Globals,
             iVar7.field_0x4 = puVar7;
             piVar2           = param_1.field_0x10;
             uVar1            = (piVar2 + 0x2);
-            BVar5            = read_file_1008_7dee(param_2, uVar4, uVar1, 0x0, (uVar1 >> 0x10), uVar3, SEG_1008);
+            BVar5            = read_file_1008_7dee(param_2, u_var4, uVar1, 0x0, (uVar1 >> 0x10), uVar3, SEG_1008);
             if(BVar5 != 0x0)
             {
                 return 0x1;
@@ -517,9 +517,9 @@ u16  write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: 
     let mut pu_var2: *mut u8;
     let mut BVar3: BOOL16;
     let mut in_DX: u16;
-    let mut extraout_DX: u16;
+    let mut dx_var1: u16;
     let mut in_stack_0000000c: u32;
-    u32         local_2a[0x3];
+    let mut local_2a: [u32;0x3];
     let mut puStack28: *mut u32;
     let mut uStack24: u32;
     let mut local_14: [u8;8] = [0;8];
@@ -569,8 +569,8 @@ u16  write_file_fn_1028_e56c(param_1: u16, param_2: u16, param_3: u32, param_4: 
             ppcVar1 = (*puStack28 + 0xc);
             (**ppcVar1)(SEG_1008, pu_var2, u_stack6);
             local_2a[0] = local_2a[0] & 0xffff0000 | ZEXT24(pu_var2);
-            u_stack6     = extraout_DX;
-            in_DX       = extraout_DX;
+            u_stack6     = dx_var1;
+            in_DX       = dx_var1;
         } while(pu_var2 != 0x0);
     }
     return in_DX;
@@ -611,13 +611,13 @@ u32  write_to_file_1028_dce2(param_1: *mut u32, param_2: u32, param_3: u16)
     let mut BVar2: BOOL16;
     let mut puVar3: *mut u8;
     let mut in_DX: u16;
-    let mut extraout_DX: u16;
-    let mut uVar4: u16;
+    let mut dx_var1: u16;
+    let mut u_var4: u16;
     let mut iVar5: i16;
     let mut uVar6: u16;
     let mut uVar7: u16;
-    u32 local_26[0x2];
-    u16        local_1e[0x3];
+    let mut local_26: [u32;0x2];
+    let mut local_1e: [u16;0x3];
     let mut uStack24: u32;
     let mut local_14: [u8;12] = [0;12];
 
@@ -637,7 +637,7 @@ u32  write_to_file_1028_dce2(param_1: *mut u32, param_2: u32, param_3: u16)
             {
                 ppcVar1 = (*_PTR_LOOP_1050_5166 + 0xc);
                 (**ppcVar1)(SEG_1008, globals._PTR_LOOP_1050_5166, (globals._PTR_LOOP_1050_5166 >> 0x10), param_2);
-                in_DX = extraout_DX;
+                in_DX = dx_var1;
                 if(BVar2 != 0x0)
                 {
                     BVar2 = write_to_file_1008_7cac(param_2, param_3);
@@ -692,18 +692,18 @@ u32  write_to_file_1028_dce2(param_1: *mut u32, param_2: u32, param_3: u16)
                                                                                         str_var1(param_3, local_14), 0x1, 0x0, 0x400);
                                                                                     while(true)
                                                                                     {
-                                                                                        uVar4  = in_DX;
+                                                                                        u_var4  = in_DX;
                                                                                         puVar3 = local_14;
                                                                                         pass1_1028_e4ec(
                                                                                           str_var1(param_3, puVar3));
-                                                                                        uStack24 = str_var1(uVar4, puVar3);
-                                                                                        in_DX    = uVar4 | puVar3;
+                                                                                        uStack24 = str_var1(u_var4, puVar3);
+                                                                                        in_DX    = u_var4 | puVar3;
                                                                                         if(in_DX == 0x0)
                                                                                             break;
                                                                                         if((puVar3 + 0x200) != 0x8000002)
                                                                                         {
                                                                                             pass1_1038_3ba0(
-                                                                                              str_var1(uVar4, puVar3));
+                                                                                              str_var1(u_var4, puVar3));
                                                                                         }
                                                                                     }
                                                                                     return 0x10000;
@@ -741,20 +741,20 @@ void  read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u16
     let mut unaff_SI: u16;
     let mut unaff_DI: u16;
     let mut uVar3: u16;
-    u8        in_AF;
-    let mut uVar4: u16;
+    let mut in_AF = 0u8;
+    let mut u_var4: u16;
     let mut uVar5: u16;
 
-    uVar4 = param_2;
+    u_var4 = param_2;
     uVar5 = (param_2 >> 0x10);
-    read_file_1008_7cfe(uVar4, uVar5, 0xa, SEG_1008, param_3);
+    read_file_1008_7cfe(u_var4, uVar5, 0xa, SEG_1008, param_3);
     if(param_4 != 0x0)
     {
         uVar3 = (param_1 >> 0x10);
-        BVar2 = read_file_1008_7dee(uVar4, uVar5, param_1, 0x0, uVar3, 0x4, SEG_1008);
+        BVar2 = read_file_1008_7dee(u_var4, uVar5, param_1, 0x0, uVar3, 0x4, SEG_1008);
         if(BVar2 != 0x0)
         {
-            BVar2 = read_file_1008_7dee(uVar4, uVar5, param_1 + 0x8, 0x0, uVar3, 0x2, SEG_1008);
+            BVar2 = read_file_1008_7dee(u_var4, uVar5, param_1 + 0x8, 0x0, uVar3, 0x2, SEG_1008);
             if(BVar2 != 0x0)
             {
                 uVar3   = (*_PTR_LOOP_1050_5166 >> 0x10);
@@ -762,52 +762,52 @@ void  read_file_1028_def2(param_1: u32, param_2: u32, param_3: u16, param_4: u16
                 (**ppcVar1)(SEG_1008, globals._PTR_LOOP_1050_5166, (globals._PTR_LOOP_1050_5166 >> 0x10), param_2);
                 if(BVar2 != 0x0)
                 {
-                    read_file_1008_7cfe(uVar4, uVar5, 0xc, SEG_1008, param_3);
+                    read_file_1008_7cfe(u_var4, uVar5, 0xc, SEG_1008, param_3);
                     if(BVar2 != 0x0)
                     {
-                        pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x100, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                        pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x100, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                         if(BVar2 != 0x0)
                         {
-                            read_file_1008_7cfe(uVar4, uVar5, 0xd, SEG_1008, param_3);
+                            read_file_1008_7cfe(u_var4, uVar5, 0xd, SEG_1008, param_3);
                             if(BVar2 != 0x0)
                             {
-                                pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x200, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x200, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                 if(BVar2 != 0x0)
                                 {
-                                    read_file_1008_7cfe(uVar4, uVar5, 0xe, SEG_1008, param_3);
+                                    read_file_1008_7cfe(u_var4, uVar5, 0xe, SEG_1008, param_3);
                                     if(BVar2 != 0x0)
                                     {
-                                        pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x300, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                        pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x300, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                         if(BVar2 != 0x0)
                                         {
-                                            read_file_1008_7cfe(uVar4, uVar5, 0xf, SEG_1008, param_3);
+                                            read_file_1008_7cfe(u_var4, uVar5, 0xf, SEG_1008, param_3);
                                             if(BVar2 != 0x0)
                                             {
-                                                pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x400, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                                pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x400, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                                 if(BVar2 != 0x0)
                                                 {
-                                                    read_file_1008_7cfe(uVar4, uVar5, 0x10, SEG_1008, param_3);
+                                                    read_file_1008_7cfe(u_var4, uVar5, 0x10, SEG_1008, param_3);
                                                     if(BVar2 != 0x0)
                                                     {
-                                                        pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x500, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                                        pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x500, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                                         if(BVar2 != 0x0)
                                                         {
-                                                            read_file_1008_7cfe(uVar4, uVar5, 0x11, SEG_1008, param_3);
+                                                            read_file_1008_7cfe(u_var4, uVar5, 0x11, SEG_1008, param_3);
                                                             if(BVar2 != 0x0)
                                                             {
-                                                                pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x600, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                                                pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x600, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                                                 if(BVar2 != 0x0)
                                                                 {
-                                                                    read_file_1008_7cfe(uVar4, uVar5, 0x12, SEG_1008, param_3);
+                                                                    read_file_1008_7cfe(u_var4, uVar5, 0x12, SEG_1008, param_3);
                                                                     if(BVar2 != 0x0)
                                                                     {
-                                                                        pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x700, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                                                        pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x700, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                                                         if(BVar2 != 0x0)
                                                                         {
-                                                                            read_file_1008_7cfe(uVar4, uVar5, 0x13, SEG_1008, param_3);
+                                                                            read_file_1008_7cfe(u_var4, uVar5, 0x13, SEG_1008, param_3);
                                                                             if(BVar2 != 0x0)
                                                                             {
-                                                                                pass1_1028_e628(param_1, uVar4, uVar5, 0x0, 0x800, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
+                                                                                pass1_1028_e628(param_1, u_var4, uVar5, 0x0, 0x800, unaff_SI, unaff_DI, uVar3, param_3, in_AF);
                                                                                 if(BVar2 != 0x0)
                                                                                 {
                                                                                     return;
@@ -841,14 +841,14 @@ BOOL16  write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16)
     let mut uVar1: u32;
     let mut BVar2: BOOL16;
     let mut iVar3: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
-    u16        local_e[0x3];
-    u16        local_8[0x2];
+    let mut local_e: [u16;0x3];
+    let mut local_8: [u16;0x2];
     let mut iStack4: i16;
 
-    uVar4      = (param_1 >> 0x10);
+    u_var4      = (param_1 >> 0x10);
     iVar3      = param_1;
     local_e[0] = (iVar3 + 0xc);
     uVar5      = param_2;
@@ -931,7 +931,7 @@ BOOL16  write_to_file_1028_b5ec(param_1: u32, param_2: u32, param_3: u16)
             {
                 local_8[0] = 0x0;
                 BVar2      = write_to_file_1008_7e1c(uVar5, uVar6, local_8, param_3, 0x2, SEG_1008);
-                goto joined_r0x1028b766;
+                //goto joined_r0x1028b766;
             }
             uVar1      = (iVar3 + 0x14);
             local_8[0] = (uVar1 + 0x94);
@@ -992,17 +992,17 @@ joined_r0x1028b766:
 // WARNING: Unable to use type for symbol puVar3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void  file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, u8 *param_5)
+void  file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, param_5: u8)
 
 {
     let mut BVar1: BOOL16;
     let mut iVar2: i16;
-    let mut puVar4: *mut u32;
+    let mut pu_var4: *mut u32;
     let mut uVar5: u16;
     let mut uVar6: u16;
     let mut uVar7: u32;
     let mut uVar8: u16;
-    u16    local_2a[0x2];
+    let mut local_2a: [u16;0x2];
     let mut local_26: [u8;16] = [0;16];
     let mut puStack16: *mut u32;
     let mut puStack14: *mut u8;
@@ -1075,9 +1075,9 @@ void  file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, u8 
     0x1 =>
     2 =>
      3 =>
-        puVar4 = puVar3 + 0x5;
+        pu_var4 = puVar3 + 0x5;
     // LAB_1028_b968:
-        BVar1 = read_file_1008_7dee(uVar5, uVar8, puVar4, 0x0, uVar6, 0x2, SEG_1008);
+        BVar1 = read_file_1008_7dee(uVar5, uVar8, pu_var4, 0x0, uVar6, 0x2, SEG_1008);
         break;
     0x4 =>
         uVar7           = pass1_1028_e0bc(globals._PTR_LOOP_1050_65e2, (puVar3 + 0x3), puVar3, param_5, param_4);
@@ -1086,17 +1086,17 @@ void  file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, u8 
         (puVar3 + 0x16) = puStack14;
         if((puStack14 | (puVar3 + 0x5)) != 0x0)
         {
-            puVar4    = ((puVar3 + 0x5) + 0x94);
+            pu_var4    = ((puVar3 + 0x5) + 0x94);
             uVar6     = puStack14;
-            puStack16 = puVar4;
-            goto LAB_1028_b968;
+            puStack16 = pu_var4;
+            //goto LAB_1028_b968;
         }
         BVar1 = read_file_1008_7dee(uVar5, uVar8, local_26, 0x0, param_4, 0x2, SEG_1008);
         break;
     0x5 =>
-        puVar4 = puVar3;
+        pu_var4 = puVar3;
         pass1_1028_e100(globals._PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
-        (puVar3 + 0x5) = puVar4;
+        (puVar3 + 0x5) = pu_var4;
         (puVar3 + 0x16)         = param_5;
         puStack16               = ((puVar3 + 0x5) + 0xa4);
         puStack14               = param_5;
@@ -1138,13 +1138,13 @@ void  file_1028_b81a(param_1: u32, param_2: u32, param_3: i16, param_4: u16, u8 
         (uVar7 + 0xa6) = uVar5;
         return;
     _ =>
-        goto switchD_1028_ba97_caseD_6;
+        //goto switchD_1028_ba97_caseD_6;
     0x9 =>
-        puVar4 = puVar3;
+        pu_var4 = puVar3;
         pass1_1028_e100(globals._PTR_LOOP_1050_65e2, (puVar3 + 0x3), param_5);
-        (puVar3 + 0x5) = puVar4;
+        (puVar3 + 0x5) = pu_var4;
         (puVar3 + 0x16)         = param_5;
-        goto switchD_1028_ba97_caseD_6;
+        //goto switchD_1028_ba97_caseD_6;
     }
     if(BVar1 == 0x0)
     {
@@ -1156,7 +1156,7 @@ switchD_1028_ba97_caseD_6:
 }
 
 
-BOOL16  pass1_1028_b2c8(param_1: u32, param_2: u32, BOOL16 param_3, param_4: u16)
+BOOL16  pass1_1028_b2c8(param_1: u32, param_2: u32, param_3: bool, param_4: u16)
 
 {
     let mut BVar1: BOOL16;
@@ -1187,7 +1187,7 @@ u16  pass1_1028_64d6(param_1: u32, param_2: u32, param_3: u16)
     let mut uVar1: u32;
     let mut BVar2: BOOL16;
     let mut puVar3: *mut u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
     let mut local_26: u16;
@@ -1195,15 +1195,15 @@ u16  pass1_1028_64d6(param_1: u32, param_2: u32, param_3: u16)
     let mut local_22: u16;
     let mut local_20: u16;
     let mut local_1e: u16;
-    u16        local_1c[0x6];
+    let mut local_1c: [u16;0x6];
     let mut uStack16: u16;
-    long       lStack14;
+    let mut lStack14 = 0i32;
     let mut local_a: [u8;8] = [0;8];
 
     BVar2 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if(BVar2 != 0x0)
     {
-        uVar4 = (param_1 >> 0x10);
+        u_var4 = (param_1 >> 0x10);
         pass1_1008_5784(str_var1(param_3, local_a), *(param_1 + 0x20));
         uVar1       = (param_1 + 0x20);
         local_1c[0] = (uVar1 + 0x8);
@@ -1254,15 +1254,15 @@ void  pass1_1028_65e2(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let mut ppcVar1: *mut *mut c_void;
     let mut u_var2: u16;
     let mut BVar3: BOOL16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
     let mut uVar7: u16;
     let mut uVar8: u16;
     let mut local_16: u16;
     let mut paStack20: *mut Struct99;
-    u16         local_10[0x2];
-    u16         local_c[0x3];
+    let mut local_10: [u16;0x2];
+    let mut local_c: [u16;0x3];
     let mut u_stack6: u16;
     let mut local_4: u16;
 
@@ -1316,9 +1316,9 @@ void  pass1_1028_65e2(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
                 if(BVar3 == 0x0)
                     break;
                 (paStack20 + 0x4) = local_10[0];
-                uVar4             = switch_1008_72bc(uVar7, uVar8, local_c[0]);
+                u_var4             = switch_1008_72bc(uVar7, uVar8, local_c[0]);
                 uVar6             = (paStack20 >> 0x10);
-                (paStack20 + 0x6) = uVar4;
+                (paStack20 + 0x6) = u_var4;
                 (paStack20 + 0x8) = local_16;
                 ppcVar1           = ((param_1 + 0x20) + 0x8);
                 (**ppcVar1)();
@@ -1335,7 +1335,7 @@ BOOL16  write_to_file_1028_5f82(param_1: u32, param_2: u32, param_3: u16)
 
 {
     let mut BVar1: BOOL16;
-    u16    local_c[0x5];
+    let mut local_c: [u16;0x5];
 
     BVar1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if(BVar1 != 0x0)
@@ -1406,8 +1406,8 @@ void  write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4:
     let mut BVar1: BOOL16;
     let mut iVar2: i16;
     let mut uVar3: u16;
-    let mut uVar4: u16;
-    u32 local_10[0x2];
+    let mut u_var4: u16;
+    let mut local_10: [u32;0x2];
     let mut local_8: u32;
 
     BVar1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
@@ -1416,12 +1416,12 @@ void  write_to_file_1028_3d0e(param_1: u32, param_2: u32, param_3: u16, param_4:
         uVar3       = (param_1 >> 0x10);
         iVar2       = param_1;
         local_10[0] = (iVar2 + 0x20);
-        uVar4       = (param_2 >> 0x10);
-        BVar1       = write_to_file_1008_7e1c(param_2, uVar4, local_10, param_3, 0x4, SEG_1008);
+        u_var4       = (param_2 >> 0x10);
+        BVar1       = write_to_file_1008_7e1c(param_2, u_var4, local_10, param_3, 0x4, SEG_1008);
         if(BVar1 != 0x0)
         {
             local_8 = (iVar2 + 0x24);
-            BVar1   = write_to_file_1008_7e1c(param_2, uVar4, &local_8, param_3, 0x4, SEG_1008);
+            BVar1   = write_to_file_1008_7e1c(param_2, u_var4, &local_8, param_3, 0x4, SEG_1008);
             if(BVar1 != 0x0)
             {
                 write_to_file_1008_7a22(param_2, (iVar2 + 0x28), SEG_1008, param_3);
@@ -1443,18 +1443,18 @@ void  pass1_1028_3d92(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let mut iVar1: i16;
     let mut BVar2: BOOL16;
     let mut uVar3: u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
 
     file_1028_b81a(param_1, param_2, param_3, param_6, param_4);
     if(param_3 != 0x0)
     {
         iVar1 = param_1;
         uVar3 = (param_1 >> 0x10);
-        uVar4 = (param_2 >> 0x10);
-        BVar2 = read_file_1008_7dee(param_2, uVar4, iVar1 + 0x20, 0x0, uVar3, 0x4, SEG_1008);
+        u_var4 = (param_2 >> 0x10);
+        BVar2 = read_file_1008_7dee(param_2, u_var4, iVar1 + 0x20, 0x0, uVar3, 0x4, SEG_1008);
         if(BVar2 != 0x0)
         {
-            BVar2 = read_file_1008_7dee(param_2, uVar4, iVar1 + 0x24, 0x0, uVar3, 0x4, SEG_1008);
+            BVar2 = read_file_1008_7dee(param_2, u_var4, iVar1 + 0x24, 0x0, uVar3, 0x4, SEG_1008);
             if(BVar2 != 0x0)
             {
                 uVar3 = pass1_1008_7ad4(param_2, *(long **)(iVar1 + 0x28), param_5, SEG_1008, param_6);
@@ -1476,8 +1476,8 @@ BOOL16  pass1_1028_2418(param_1: u32, param_2: u32, param_3: u16)
     let mut uVar1: u32;
     let mut BVar2: BOOL16;
     let mut uVar3: u16;
-    let mut uVar4: u32;
-    u16        local_1c[0x6];
+    let mut u_var4: u32;
+    let mut local_1c: [u16;0x6];
     let mut uStack16: u16;
     let mut iStack14: i16;
     let mut uStack12: u16;
@@ -1499,15 +1499,15 @@ BOOL16  pass1_1028_2418(param_1: u32, param_2: u32, param_3: u16)
         }
         while(true)
         {
-            uVar4    = pass1_1008_5b12(local_a, param_3);
-            iStack14 = uVar4;
-            if(uVar4 == 0x0)
+            u_var4    = pass1_1008_5b12(local_a, param_3);
+            iStack14 = u_var4;
+            if(u_var4 == 0x0)
                 break;
-            pass1_1038_75ca(uVar4, param_2, iStack14, param_3);
-            uStack12 = (uVar4 >> 0x10);
-            if(uVar4 == 0x0)
+            pass1_1038_75ca(u_var4, param_2, iStack14, param_3);
+            uStack12 = (u_var4 >> 0x10);
+            if(u_var4 == 0x0)
             {
-                return uVar4;
+                return u_var4;
             }
         }
         BVar2 = 0x1;
@@ -1522,10 +1522,10 @@ BOOL16  file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u
     let mut uVar1: u32;
     let mut ppcVar2: *mut *mut c_void;
     let mut BVar3: BOOL16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
-    let mut extraout_DX: *mut u8;
+    let mut dx_var1: *mut u8;
     let mut puVar7: *mut u8;
     let mut uVar8: u16;
     let mut uVar10: u16;
@@ -1555,20 +1555,20 @@ BOOL16  file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u
             puVar7 = (param_4 | uVar6);
             if(puVar7 == 0x0)
             {
-                uVar4  = 0x0;
+                u_var4  = 0x0;
                 puVar7 = 0x0;
             }
             else
             {
                 uVar5 = uVar6;
                 struct_1038_6520(str_var1(param_4, uVar6));
-                uVar4 = uVar6;
+                u_var4 = uVar6;
                 uVar6 = uVar5;
             }
             uVar10 = (uVar9 >> 0x10);
-            uVar5  = uVar4;
+            uVar5  = u_var4;
             file_1038_774e(
-              str_var1(puVar7, uVar4), str_var1(uVar9, uVar8), puVar7, param_5);
+              str_var1(puVar7, u_var4), str_var1(uVar9, uVar8), puVar7, param_5);
             if(uVar5 == 0x0)
             {
                 return 0x0;
@@ -1576,8 +1576,8 @@ BOOL16  file_1028_24a2(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u
             uVar8   = (param_1 >> 0x10);
             uVar1   = (param_1 + 0x20);
             ppcVar2 = ((param_1 + 0x20) + 0x8);
-            (**ppcVar2)(SEG_1038, uVar1, (uVar1 >> 0x10), uVar4, puVar7, uVar10, uVar6);
-            param_4 = extraout_DX;
+            (**ppcVar2)(SEG_1038, uVar1, (uVar1 >> 0x10), u_var4, puVar7, uVar10, uVar6);
+            param_4 = dx_var1;
         }
     }
     return 0x1;
@@ -1590,8 +1590,8 @@ u16  write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16)
     let mut BVar1: BOOL16;
     let mut u_var2: u16;
     let mut uVar3: u16;
-    let mut uVar4: u16;
-    u16    local_c[0x3];
+    let mut u_var4: u16;
+    let mut local_c: [u16;0x3];
     u8    *local_6[0x2];
 
     BVar1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
@@ -1600,16 +1600,16 @@ u16  write_to_file_1028_1452(param_1: u32, param_2: u32, param_3: u16)
         u_var2      = (param_1 >> 0x10);
         local_c[0] = (param_1 + 0x22);
         uVar3      = param_2;
-        uVar4      = (param_2 >> 0x10);
-        BVar1      = write_to_file_1008_7e1c(uVar3, uVar4, local_c, param_3, 0x2, SEG_1008);
+        u_var4      = (param_2 >> 0x10);
+        BVar1      = write_to_file_1008_7e1c(uVar3, u_var4, local_c, param_3, 0x2, SEG_1008);
         if(BVar1 != 0x0)
         {
             local_6[0] = (param_1 + 0x20);
-            BVar1      = write_to_file_1008_7e1c(uVar3, uVar4, local_6, param_3, 0x2, SEG_1008);
+            BVar1      = write_to_file_1008_7e1c(uVar3, u_var4, local_6, param_3, 0x2, SEG_1008);
             if(BVar1 != 0x0)
             {
                 local_6[0] = globals.PTR_LOOP_1050_4fbc;
-                BVar1      = write_to_file_1008_7e1c(uVar3, uVar4, local_6, param_3, 0x2, SEG_1008);
+                BVar1      = write_to_file_1008_7e1c(uVar3, u_var4, local_6, param_3, 0x2, SEG_1008);
                 if(BVar1 != 0x0)
                 {
                     return 0x1;
@@ -1628,7 +1628,7 @@ void  pass1_1028_14d8(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let mut uVar1: u16;
     let mut BVar2: BOOL16;
     let mut uVar3: u16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut local_4: u16;
 
     file_1028_b81a(param_1, param_2, param_3, param_5, param_4);
@@ -1636,16 +1636,16 @@ void  pass1_1028_14d8(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     {
         uVar1 = (param_1 >> 0x10);
         uVar3 = param_2;
-        uVar4 = (param_2 >> 0x10);
-        BVar2 = read_file_1008_7dee(uVar3, uVar4, param_1 + 0x22, 0x0, uVar1, 0x2, SEG_1008);
-        if((BVar2 != 0x0) && (BVar2 = read_file_1008_7dee(uVar3, uVar4, &local_4, 0x0, param_5, 0x2, SEG_1008), BVar2 != 0x0))
+        u_var4 = (param_2 >> 0x10);
+        BVar2 = read_file_1008_7dee(uVar3, u_var4, param_1 + 0x22, 0x0, uVar1, 0x2, SEG_1008);
+        if((BVar2 != 0x0) && (BVar2 = read_file_1008_7dee(uVar3, u_var4, &local_4, 0x0, param_5, 0x2, SEG_1008), BVar2 != 0x0))
         {
             (param_1 + 0x20) = local_4;
             if(globals.dat_1050_0312 < 0x2)
             {
                 return;
             }
-            BVar2 = read_file_1008_7dee(uVar3, uVar4, &PTR_LOOP_1050_4fbc, 0x0, SEG_1050, 0x2, SEG_1008);
+            BVar2 = read_file_1008_7dee(uVar3, u_var4, &PTR_LOOP_1050_4fbc, 0x0, SEG_1050, 0x2, SEG_1008);
             if(BVar2 != 0x0)
             {
                 return;
@@ -1662,7 +1662,7 @@ BOOL16  pass1_1020_e94e(param_1: u32, param_2: u32, param_3: u16)
 {
     let mut in_AX: BOOL16;
     let mut BVar1: BOOL16;
-    u16    local_c[0x5];
+    let mut local_c: [u16;0x5];
 
     pass1_1030_de7c(param_1, param_2, param_3);
     if(in_AX != 0x0)
@@ -1700,19 +1700,19 @@ u16  write_to_file_1028_0234(param_1: u32, param_2: u32, param_3: u16)
     let mut uVar1: u32;
     let mut BVar2: BOOL16;
     let mut iVar3: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut uVar5: u16;
     let mut uVar6: u16;
-    u16        local_1a[0x3];
-    u16        local_14[0x2];
+    let mut local_1a: [u16;0x3];
+    let mut local_14: [u16;0x2];
     let mut uStack16: u16;
-    long       lStack14;
+    let mut lStack14 = 0i32;
     let mut local_a: [u8;8] = [0;8];
 
     BVar2 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if(BVar2 != 0x0)
     {
-        uVar4       = (param_1 >> 0x10);
+        u_var4       = (param_1 >> 0x10);
         iVar3       = param_1;
         local_1a[0] = (iVar3 + 0x20);
         uVar5       = param_2;
@@ -1768,10 +1768,10 @@ void  pass1_1028_0374(param_1: u32, param_2: u32, param_3: i16, param_4: *mut u8
     let mut uVar7: u16;
     let mut uVar8: u16;
     let mut uVar9: u16;
-    u16          local_18[0x2];
+    let mut local_18: [u16;0x2];
     let mut paStack20: *mut Struct99;
-    u16          local_10[0x2];
-    u16          local_c[0x3];
+    let mut local_10: [u16;0x2];
+    let mut local_c: [u16;0x3];
     let mut u_stack6: u16;
     let mut local_4: u16;
     let mut u_var2: *mut Struct728;
@@ -1852,8 +1852,8 @@ BOOL16  write_to_file_1020_e6a4(param_1: u32, param_2: u32, param_3: u16)
     let mut BVar1: BOOL16;
     let mut u_var2: u16;
     let mut uVar3: u16;
-    u16    local_c[0x3];
-    u16    local_6[0x2];
+    let mut local_c: [u16;0x3];
+    let mut local_6: [u16;0x2];
 
     pass1_1030_de7c(param_1, param_2, param_3);
     if(in_AX != 0x0)
@@ -1907,7 +1907,7 @@ BOOL16  write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16)
 
 {
     let mut BVar1: BOOL16;
-    u16    local_c[0x5];
+    let mut local_c: [u16;0x5];
 
     BVar1 = write_to_file_1028_b5ec(param_1, param_2, param_3);
     if(BVar1 != 0x0)
@@ -1925,7 +1925,7 @@ BOOL16  write_to_file_1020_d3d4(param_1: u32, param_2: u32, param_3: u16)
 }
 
 
-BOOL16  pass1_1020_d41a(param_1: u32, param_2: u32, BOOL16 param_3, param_4: *mut u8, param_5: u16)
+BOOL16  pass1_1020_d41a(param_1: u32, param_2: u32, param_3: bool, param_4: *mut u8, param_5: u16)
 
 {
     let mut BVar1: BOOL16;
@@ -1995,7 +1995,7 @@ BOOL16  read_file_1020_a65e(param_1: u32, param_2: u32, param_3: u16, param_4: u
                 {
                     param_4 = read_file_1008_7dee(u_var2, uVar3, local_a, 0x0, param_3, 0x2, SEG_1008);
                     if(param_4 != 0x0)
-                        goto LAB_1020_a6dc;
+                        //goto LAB_1020_a6dc;
                 }
             }
         }
@@ -2011,11 +2011,11 @@ void  pass1_1020_2488(param_1: u32, param_2: u16, param_3: u16)
     let mut in_dlg_id_5: u16;
     let mut u_var2: u16;
     let mut iVar3: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut iStack12: i16;
-    SEGPTR     SStack10;
+    let mut SStack10: SEGPTR;
 
-    uVar4 = (param_1 >> 0x10);
+    u_var4 = (param_1 >> 0x10);
     iVar3 = param_1;
     find_n_load_rsrc_1010_4e9e(*(iVar3 + 0x6), SEG_1010);
     if((param_3 | param_2) != 0x0)
@@ -2041,11 +2041,11 @@ void  pass1_1018_6630(param_1: u32, param_2: u16, param_3: u16)
     let mut dialog_id_5: u16;
     let mut u_var2: u16;
     let mut iVar3: i16;
-    let mut uVar4: u16;
+    let mut u_var4: u16;
     let mut iStack12: i16;
-    SEGPTR     SStack10;
+    let mut SStack10: SEGPTR;
 
-    uVar4 = (param_1 >> 0x10);
+    u_var4 = (param_1 >> 0x10);
     iVar3 = param_1;
     find_n_load_rsrc_1010_4e9e(*(iVar3 + 0x6), SEG_1010);
     if((param_3 | param_2) != 0x0)
@@ -2078,7 +2078,7 @@ void  write_to_file_1010_ed58(param_1: u32, param_2: u32, param_3: u16)
     let mut uVar9: u16;
     let mut local_22: u32;
     let mut uStack30: u16;
-    u32         local_12[0x2];
+    let mut local_12: [u32;0x2];
     let mut local_a: u32;
     let mut iStack4: i16;
 

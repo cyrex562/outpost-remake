@@ -289,7 +289,7 @@ struct Struct30
     let mut field_0xf5: u8;
     let mut field_0xf6: *mut u32;
     let mut field_0xf8: u16;
-    long        field_0xfa;
+    let mut field_0xfa = 0i32;
     let mut field_0xfe: u8;
     let mut field_0xff: u8;
     let mut field_0x100: u8;
@@ -302,7 +302,7 @@ struct Struct30
     let mut field_0x107: u8;
     let mut field_0x108: u8;
     let mut field_0x109: u8;
-    long        field_0x10a;
+    let mut field_0x10a = 0i32;
     let mut field_0x10e: u32;
 };
 struct Struct39

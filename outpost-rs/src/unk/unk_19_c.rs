@@ -29,7 +29,7 @@ pub fn pass1_1038_6984(param_1: u32)
         pass1_1020_c3ae();
         return;
     }
-    if (*(long *)(iVar1 + 0xe) != 0) {
+    if (*(iVar1 + 0xe) != 0) {
         pass1_1020_ba94(*(long **)(iVar1 + 0xe));
         return;
     }
@@ -51,7 +51,7 @@ pub fn pass1_1030_5c8a(param_1: u32,param_2: u32)
     long *plVar1;
     uint uVar2;
     ulong uVar3;
-    uint uVar4;
+    uint u_var4;
     astruct_177 *iVar5;
     undefined2 uVar5;
     ulong uStack_6;
@@ -64,13 +64,13 @@ pub fn pass1_1030_5c8a(param_1: u32,param_2: u32)
     uVar5 = (undefined2)((ulong)_PTR_LOOP_1050_65e2 >> 0x10);
     iVar5 = (astruct_177 *)((int)_PTR_LOOP_1050_65e2 + 10);
     uVar3 = *(ulong *)(iVar5 + uVar2 * 4);
-    uVar4 = *(uint *)(iVar5 + uVar2 * 4 + 2);
+    u_var4 = *(uint *)(iVar5 + uVar2 * 4 + 2);
     if (*(int *)((int)uVar3 + 4) != 0) {
-        pass1_1030_12ca((astruct_176 *)(uVar3 & 0xffff | (ulong)uVar4 << 0x10));
-        uStack_6 = uVar3 & 0xffff | (ulong)uVar4 << 0x10;
+        pass1_1030_12ca((astruct_176 *)(uVar3 & 0xffff | (ulong)u_var4 << 0x10));
+        uStack_6 = uVar3 & 0xffff | (ulong)u_var4 << 0x10;
     }
     if (uStack_6 == 0) {
-        plVar1 = (long *)(uVar2 * 4 + (int)param_1);
+        plVar1 = (uVar2 * 4 + (int)param_1);
         *plVar1 = *plVar1 + 1;
     }
     return;
@@ -83,7 +83,7 @@ pub fn pass1_1028_858c(param_1: *mut Struct318,param_2: *mut u8, param_3: *mut S
     undefined4 *puVar1;
     undefined4 *puVar2;
     let mut iVar3: i32
-    uint uVar4;
+    uint u_var4;
     undefined2 in_register_0000000a;
     astruct_57 *paVar5;
     astruct_319 *iVar5;
@@ -94,9 +94,9 @@ pub fn pass1_1028_858c(param_1: *mut Struct318,param_2: *mut u8, param_3: *mut S
 
     paVar5 = (astruct_57 *)str_var1(in_register_0000000a, param_2);
     mem_op_1000_179c(0x112, paVar5, 0);
-    uVar4 = (uint) paVar5;
-    puStack_a = (undefined2 *)str_var1(uVar4,param_1);
-    if ((uVar4 | (uint)param_1) != 0) {
+    u_var4 = (uint) paVar5;
+    puStack_a = (undefined2 *)str_var1(u_var4,param_1);
+    if ((u_var4 | (uint)param_1) != 0) {
         *puStack_a = 0x389a;
         param_1.field2_0x2 = 0x1008;
         uVar8 = (undefined2)((ulong)param_3 >> 0x10);

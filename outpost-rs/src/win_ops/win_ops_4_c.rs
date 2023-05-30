@@ -27,7 +27,7 @@ pub fn def_win_proc_1008_5632(globals: &mut Globals,
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut unaff_CS: HWND16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut u_var2: u16;
     let mut pu_stack6: *mut u32;
 
@@ -145,17 +145,17 @@ void  window_op_1008_0af8(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
     let mut pi_var1: *mut i16;
     let mut u_var2: u16;
     let mut ppcVar3: *mut *mut c_void;
-    let mut puVar4: *mut u8;
+    let mut pu_var4: *mut u8;
     let mut uVar5: u32;
     let mut puVar6: *mut u8;
-    let mut extraout_DX: u16;
-    let mut extraout_DX_00: *mut u8;
+    let mut dx_var1: u16;
+    let mut dx_var1_00: *mut u8;
     let mut uVar7: u16;
-    let mut extraout_DX_01: *mut u8;
+    let mut dx_var1_01: *mut u8;
     let mut iVar8: i16;
     let mut uVar9: u16;
     let mut uVar10: u16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
     let mut puVar11: *mut u16;
     let mut uVar12: u16;
     let mut uVar13: u16;
@@ -165,34 +165,34 @@ void  window_op_1008_0af8(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
     create_window_ex_1008_9760(param_1, param_3);
     uVar9                       = (param_1 >> 0x10);
     iVar8                       = param_1;
-    puVar4                      = (iVar8 + 0x8);
-    globals.PTR_LOOP_1050_0396 = puVar4;
+    pu_var4                      = (iVar8 + 0x8);
+    globals.PTR_LOOP_1050_0396 = pu_var4;
     mem_op_1000_179c(0x12, param_2, 0);
-    puVar6 = (param_2 | puVar4);
+    puVar6 = (param_2 | pu_var4);
     if(puVar6 != 0x0)
     {
-        puVar11 = pass1_1008_91ba(str_var1(param_2, puVar4), SEG_1000);
+        puVar11 = pass1_1008_91ba(str_var1(param_2, pu_var4), SEG_1000);
         puVar6  = (puVar11 >> 0x10);
-        puVar4  = puVar11;
+        pu_var4  = puVar11;
     }
     mem_op_1000_179c(0x6, puVar6, 0);
-    if((puVar6 | puVar4) == 0x0)
+    if((puVar6 | pu_var4) == 0x0)
     {
         (iVar8 + 0xe0) = 0x0;
     }
     else
     {
-        pass1_1008_392e(str_var1(puVar6, puVar4), (iVar8 + 0x8));
-        (iVar8 + 0xe0) = puVar4;
-        (iVar8 + 0xe2) = extraout_DX;
+        pass1_1008_392e(str_var1(puVar6, pu_var4), (iVar8 + 0x8));
+        (iVar8 + 0xe0) = pu_var4;
+        (iVar8 + 0xe2) = dx_var1;
     }
     ppcVar3 = (param_1 + 0x14);
     (**ppcVar3)(SEG_1000, param_1, 0x0, 0x15a, SEG_1050);
     uVar10 = SEG_1000;
-    puVar6 = extraout_DX_00;
-    mem_op_1000_179c(0xec, extraout_DX_00, 0);
-    paStack6 = (struct Struct20 *)str_var1(puVar6, puVar4);
-    uVar7    = puVar6 | puVar4;
+    puVar6 = dx_var1_00;
+    mem_op_1000_179c(0xec, dx_var1_00, 0);
+    paStack6 = (struct Struct20 *)str_var1(puVar6, pu_var4);
+    uVar7    = puVar6 | pu_var4;
     if(uVar7 == 0x0)
     {
         (iVar8 + 0xe4) = 0x0;
@@ -202,8 +202,8 @@ void  window_op_1008_0af8(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
         pi_var1  = (iVar8 + 0xcc);
         *pi_var1 = *pi_var1 + 0x1;
         uVar10  = SEG_1020;
-        pass1_1020_08b6(unaff_SS, paStack6, (iVar8 + 0xcc), param_1);
-        (iVar8 + 0xe4) = puVar4;
+        pass1_1020_08b6(ss_var1, paStack6, (iVar8 + 0xcc), param_1);
+        (iVar8 + 0xe4) = pu_var4;
         (iVar8 + 0xe6) = uVar7;
     }
     if((iVar8 + 0xce) != 0x0)
@@ -226,19 +226,19 @@ void  window_op_1008_0af8(param_1: *mut Struct0, param_2: *mut u8, param_3: u16)
     uVar7   = uVar5;
     ppcVar3 = ((iVar8 + 0xe8) + 0xc);
     (**ppcVar3)();
-    pass1_1008_6978(param_1 & 0xffff | uVar9 << 0x10, 0x0, *(iVar8 + 0xe8), uVar7, extraout_DX_01);
+    pass1_1008_6978(param_1 & 0xffff | uVar9 << 0x10, 0x0, *(iVar8 + 0xe8), uVar7, dx_var1_01);
     return;
 }
 
 BOOL16 mixed_win_op_1008_0c60(
-  Struct72 **param_1, param_2: u16, BOOL16 param_3, param_4: HWND16, param_5: u16, param_6: u16, Globals *globals)
+  Struct72 **param_1, param_2: u16, param_3: bool, param_4: HWND16, param_5: u16, param_6: u16, Globals *globals)
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut HVar2: HINSTANCE16;
     let mut BVar3: BOOL16;
-    let mut puVar4: *mut u8;
-    let mut extraout_DX: *mut u8;
+    let mut pu_var4: *mut u8;
+    let mut dx_var1: *mut u8;
     let mut struct_var5: *mut Struct72;
     let mut unaff_DI: i16;
     let mut hwnd: HWND16;
@@ -283,11 +283,11 @@ BOOL16 mixed_win_op_1008_0c60(
     0xee =>
         uVar13 = 0x0;
         uVar10 = 0x10;
-        goto LAB_1008_0d18;
+        //goto LAB_1008_0d18;
     0x68 =>
         pass1_1030_8344(globals._PTR_LOOP_1050_5748, (globals._PTR_LOOP_1050_5748 >> 0x10), 0x4000001);
-        puVar4 = (param_6 | param_3);
-        if(puVar4 == 0x0)
+        pu_var4 = (param_6 | param_3);
+        if(pu_var4 == 0x0)
         {
             return param_3;
         }
@@ -299,7 +299,7 @@ BOOL16 mixed_win_op_1008_0c60(
         }
         HStack14 = LoadCursor16(SEG_1030, 0x7f02);
         HStack16 = SetCursor16(LAST_SEGMENT);
-        uStack20 = mixed_1010_20ba(globals.data_1050_0ed0, 0x29, param_5, puVar4, unaff_DI);
+        uStack20 = mixed_1010_20ba(globals.data_1050_0ed0, 0x29, param_5, pu_var4, unaff_DI);
         pass1_1018_262e(uStack20);
         pass1_1030_838e(globals._PTR_LOOP_1050_5748, param_5, in_AF);
         uVar13                      = (globals._PTR_LOOP_1050_5748 >> 0x10);
@@ -309,13 +309,13 @@ BOOL16 mixed_win_op_1008_0c60(
         sys_1000_3f9c(local_64, param_5, 0x19c, SEG_1050, pcVar7, &stack0xfffe, uVar13, SEG_1000, param_5, in_AF);
         ppcVar1 = (*param_1 + 0x14);
         (**ppcVar1)(SEG_1000, param_1, 0x0, 0x9c, param_5);
-        puVar8 = mixed_1010_20ba(globals.data_1050_0ed0, 0x37, param_5, extraout_DX, unaff_DI);
+        puVar8 = mixed_1010_20ba(globals.data_1050_0ed0, 0x37, param_5, dx_var1, unaff_DI);
         pass1_1008_a9ec(puVar8);
         hwnd = LAST_SEGMENT;
         SetCursor16(SEG_1010);
         uVar13 = 0xfc;
         uVar10 = 0x111;
-        goto LAB_1008_0e3d;
+        //goto LAB_1008_0e3d;
     _ =>
         if(((uVar9 + 0xea) | (uVar9 + 0xe8)) == 0x0)
         {
@@ -327,7 +327,7 @@ BOOL16 mixed_win_op_1008_0c60(
         return BVar3;
     0x6e =>
         iVar11 = 0x2;
-        goto LAB_1008_0cba;
+        //goto LAB_1008_0cba;
     0x6f =>
         u_stack6 = unk_io_op_1010_830a(globals.dat_1050_14cc, 0x1f8, param_5);
         BVar3   = WinHelp16(SEG_1010, 0x0, 0x0, str_var1(u_stack6, 0x3));
@@ -345,25 +345,25 @@ BOOL16 mixed_win_op_1008_0c60(
         return BVar3;
     0x7a =>
         uVar12 = 0xb;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x7b =>
         uVar12 = 0x1e;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x7c =>
         uVar12 = 0x1f;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x7d =>
         uVar12 = 0x21;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x7e =>
         uVar12 = 0x35;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x7f =>
         uVar13 = 0x39;
         break;
     0x80 =>
         uVar12 = 0x22;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x81 =>
         uVar13 = 0x36;
         break;
@@ -396,7 +396,7 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0x8b =>
         uVar12 = 0xc;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x8c =>
         uVar13 = 0x41;
         break;
@@ -420,10 +420,10 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0x93 =>
         uVar12 = 0x23;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x94 =>
         uVar12 = 0x24;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x95 =>
         uVar13 = 0x48;
         break;
@@ -441,7 +441,7 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0x9a =>
         uVar12 = 0xd;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0x9b =>
         uVar13 = 0x4d;
         break;
@@ -459,34 +459,34 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0xa0 =>
         uVar12 = 0xe;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa1 =>
         uVar12 = 0xf;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa2 =>
         uVar13 = 0x52;
         break;
     0xa3 =>
         uVar12 = 0x10;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa4 =>
         uVar13 = 0x53;
         break;
     0xa5 =>
         uVar12 = 0x11;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa6 =>
         uVar12 = 0x12;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa7 =>
         uVar13 = 0x57;
         break;
     0xa8 =>
         uVar12 = 0x13;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xa9 =>
         uVar12 = 0x14;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xaa =>
         uVar13 = 0x58;
         break;
@@ -507,7 +507,7 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0xb0 =>
         uVar12 = 0x25;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xb1 =>
         uVar13 = 0x5c;
         break;
@@ -519,7 +519,7 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0xb4 =>
         uVar12 = 0x5e;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xb5 =>
         uVar13 = 0x5f;
         break;
@@ -552,95 +552,95 @@ BOOL16 mixed_win_op_1008_0c60(
         break;
     0xbf =>
         uVar12 = 0x17;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc0 =>
         uVar12 = 0x18;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc1 =>
         uVar12 = 0x19;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc2 =>
         uVar12 = 0x1a;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc3 =>
         uVar12 = 0x1b;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc4 =>
         uVar12 = 0x1c;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc5 =>
         uVar12 = 0x1d;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc6 =>
         uVar12 = 0x4;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc8 =>
         uVar12 = 0x3;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xc9 =>
         uVar12 = 0x1;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xca =>
         uVar12 = 0x5;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xcb =>
         pass1_1008_087e(param_3, param_6, param_5, in_AF);
         uVar12 = 0x6;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xcc =>
         uVar12 = 0x7;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xcd =>
         uVar12 = 0x8;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xce =>
         uVar12 = 0x9;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xcf =>
         uVar12 = 0xa;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd0 =>
         uVar12 = 0x26;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd1 =>
         uVar12 = 0x27;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd2 =>
         uVar12 = 0x28;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd3 =>
         uVar12 = 0x29;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd4 =>
         uVar12 = 0x2a;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd5 =>
         uVar12 = 0x2b;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd6 =>
         uVar12 = 0x2c;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd7 =>
         uVar12 = 0x2d;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd8 =>
         uVar12 = 0x2e;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xd9 =>
         uVar12 = 0x2f;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xda =>
         uVar12 = 0x30;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xdb =>
         uVar12 = 0x31;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xdc =>
         uVar12 = 0x32;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xdd =>
         uVar12 = 0x33;
-        goto LAB_1008_0f3e;
+        //goto LAB_1008_0f3e;
     0xde =>
         uVar12 = 0x34;
     // LAB_1008_0f3e:
@@ -671,7 +671,7 @@ BOOL16 mixed_win_op_1008_0c60(
     ui_op_1008_2c4e(uVar9, struct_var15, uVar13, SEG_1008);
     return param_3;
 }
-void  pass1_1008_818c(param_1: *mut Struct23, HINSTANCE16 param_2, WNDCLASS16 *param_3)
+void  pass1_1008_818c(param_1: *mut Struct23, param_2: HINSTANCE16, WNDCLASS16 *param_3)
 
 {
     let mut BVar1: BOOL16;

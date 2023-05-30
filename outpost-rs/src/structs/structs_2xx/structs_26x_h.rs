@@ -724,12 +724,12 @@ struct Struct263
     let mut field_0x7: u8;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
-    long       field_0xa;
-    long       field_0xe;
-    long       field_0x12;
-    long       field_0x16;
-    long       field_0x1a;
-    long field_0x1e;
+    let mut field_0xa = 0i32;
+    let mut field_0xe = 0i32;
+    let mut field_0x12 = 0i32;
+    let mut field_0x16 = 0i32;
+    let mut field_0x1a = 0i32;
+    let mut field_0x1e = 0i32;
     let mut field_0x22: *mut c_char;
     let mut field_0x23: u8;
     let mut field_0x24: u8;

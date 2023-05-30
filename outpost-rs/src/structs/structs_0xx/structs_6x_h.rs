@@ -1068,7 +1068,7 @@ struct Struct63
     let mut field_0xe5: u8;
     let mut field_0xe6: u8;
     let mut field_0xe7: u8;
-    long      field_0xe8;
+    let mut field_0xe8 = 0i32;
 };
 struct Struct65
 {
@@ -1092,7 +1092,7 @@ struct Struct65
     let mut field_0x11: u8;
     let mut field_0x12: u8;
     let mut field_0x13: u8;
-    long field_0x14;
+    let mut field_0x14 = 0i32;
     let mut field_0x15: u8;
     let mut field_0x16: u8;
     let mut field_0x17: u8;
@@ -1129,7 +1129,7 @@ struct Struct66
     let mut field_0x6: u32;
     let mut field_0xa: u16;
     let mut field_0xc: i16;
-    long      field_0xe;
+    let mut field_0xe = 0i32;
 };
 struct Struct67
 {
@@ -1147,7 +1147,7 @@ struct Struct67
 };
 struct Struct68
 {
-    long      field_0x0;
+    let mut field_0x0 = 0i32;
     let mut field_0x4: i16;
     let mut field_0x6: u8;
     let mut field_0x7: u8;
@@ -1156,6 +1156,6 @@ struct Struct68
     let mut field_0xa: u8;
     let mut field_0xb: u8;
     let mut field_0xc: i16;
-    long      field_0xe;
+    let mut field_0xe = 0i32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_14_H_STRUCTS_6X_H_

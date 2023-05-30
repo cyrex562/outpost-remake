@@ -157,6 +157,6 @@ struct Struct31
     let mut field_0x93: u8;
     let mut field_0x94: u8;
     let mut field_0x95: u8;
-    long field_0x96;
+    let mut field_0x96 = 0i32;
 };
 #endif // OUTPOST_1_SRC_STRUCTS_STRUCTS_11_H_STRUCT_31_H_

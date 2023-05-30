@@ -1881,7 +1881,7 @@ struct Struct482
     let mut field_0x2d: u8;
     let mut field_0x2e: u16;
     let mut field_0x30: u16;
-    long        field_0x32;
+    let mut field_0x32 = 0i32;
 };
 struct Struct483
 {

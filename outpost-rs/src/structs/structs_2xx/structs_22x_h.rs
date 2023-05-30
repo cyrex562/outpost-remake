@@ -126,9 +126,9 @@ struct Struct224
 };
 struct Struct225
 {
-    long field_0x0;
+    let mut field_0x0 = 0i32;
     let mut field_0x4: i16;
-    long field_0x6;
+    let mut field_0x6 = 0i32;
 };
 struct Struct220
 {
@@ -181,7 +181,7 @@ struct Struct227
     let mut field_0x2: u8;
     let mut field_0x3: u8;
     let mut field_0x4: i16;
-    long      field_0x6;
+    let mut field_0x6 = 0i32;
 };
 struct Struct221
 {

@@ -1152,7 +1152,7 @@ struct Struct126
     let mut field_0x178: u8;
     let mut field_0x179: u8;
     let mut field_0x17a: u32;
-    long      field_0x17e;
+    let mut field_0x17e = 0i32;
 };
 struct Struct125
 {

@@ -103,7 +103,7 @@ struct Struct257
 };
 struct Struct251
 {
-    long field_0x0;
+    let mut field_0x0 = 0i32;
     let mut field_0x4: i16;
 };
 struct Struct250

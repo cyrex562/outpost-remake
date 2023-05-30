@@ -12,7 +12,7 @@ struct Struct650
     let mut field_0x1: u8;
     let mut field_0x2: u8;
     let mut field_0x3: u8;
-    long field_0x4;
+    let mut field_0x4 = 0i32;
     let mut field_0x8: u8;
     let mut field_0x9: u8;
     let mut field_0xa: u8;

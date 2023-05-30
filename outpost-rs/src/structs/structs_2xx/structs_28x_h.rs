@@ -525,7 +525,7 @@ struct Struct288
     let mut field_0x2: u16;
     let mut field_0x4: u8;
     let mut field_0x5: u8;
-    long        field_0x6;
+    let mut field_0x6 = 0i32;
     let mut field_0xa: *mut u32;
     let mut field_0xc: u16;
 };

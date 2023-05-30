@@ -17,13 +17,13 @@
 // #include "unk/unk_15.h"
 // #include "utils.h"
 
-void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
+void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, param_4: u8)
 
 {
     let mut ppcVar1: *mut *mut c_void;
     let mut pu_var2: *mut u8;
     let mut uVar3: u16;
-    let mut extraout_DX: u16;
+    let mut dx_var1: u16;
     let mut iVar4: i16;
     let mut uVar5: u16;
     let mut paStack42: *mut Struct76;
@@ -52,7 +52,7 @@ void  file_1008_6414(param_1: *mut u32, param_2: u32, param_3: u16, u8 *param_4)
     ppcVar1 = (*param_1 + 0x14);
     (**ppcVar1)();
     (iVar4 + 0x4) = pu_var2;
-    (iVar4 + 0x6) = extraout_DX;
+    (iVar4 + 0x6) = dx_var1;
     close_file_1008_496c(local_26, param_3);
     return;
 }
@@ -98,16 +98,16 @@ u16  read_file_1008_49e8(param_1: u32, param_2: u16, param_3: u16)
     HFILE16    HVar1;
     let mut iVar2: i16;
     let mut uVar3: u32;
-    let mut uVar4: u32;
+    let mut u_var4: u32;
     let mut puVar5: *mut u8;
     let mut puVar6: *mut u8;
-    let mut extraout_DX: *mut u8;
+    let mut dx_var1: *mut u8;
     let mut iVar7: i16;
     let mut unaff_DI: i16;
     let mut uVar8: u16;
     let mut h_file: u16;
-    let mut unaff_SS: u16;
-    long       lVar9;
+    let mut ss_var1: u16;
+    let mut lVar9 = 0i32;
     let mut local_18: i16;
     let mut uStack22: u32;
     let mut uStack10: u16;
@@ -173,16 +173,16 @@ u16  read_file_1008_49e8(param_1: u32, param_2: u16, param_3: u16)
                 }
                 else
                 {
-                    uVar4 = *(iVar7 + 0x12);
-                    uVar4 = uVar4 & 0xffff0000 | (uVar4 + 0x28);
-                    struct_op_1008_4c98((uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), uVar4, 0x100);
-                    (iVar7 + 0x4) = uVar4;
-                    (iVar7 + 0x6) = extraout_DX;
-                    puVar6        = extraout_DX;
+                    u_var4 = *(iVar7 + 0x12);
+                    u_var4 = u_var4 & 0xffff0000 | (u_var4 + 0x28);
+                    struct_op_1008_4c98((uVar3 & 0xffff | ZEXT24(puVar5) << 0x10), u_var4, 0x100);
+                    (iVar7 + 0x4) = u_var4;
+                    (iVar7 + 0x6) = dx_var1;
+                    puVar6        = dx_var1;
                 }
                 if((iVar7 + 0x22) != 0x0)
                 {
-                    pass1_1008_4b8e(param_1, puVar6, unaff_DI, unaff_SS);
+                    pass1_1008_4b8e(param_1, puVar6, unaff_DI, ss_var1);
                     return puVar6;
                 }
                 return puVar6;
@@ -212,11 +212,11 @@ pub fn save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, pa
     let mut cVar1: char;
     let mut u_var2: u32;
     let mut iVar3: i16;
-    let mut puVar4: *mut u8;
+    let mut pu_var4: *mut u8;
     let mut uVar5: u16;
     let mut BVar6: BOOL16;
     let mut in_DX: *mut u8;
-    let mut extraout_DX: u16;
+    let mut dx_var1: u16;
     let mut uVar7: u16;
     let mut unaff_DI: i16;
     let mut uVar8: u16;
@@ -242,7 +242,7 @@ pub fn save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, pa
     let mut local_40c: [u8;102] = [0;102];
     let mut uStack778: u32;
     let mut puStack774: *mut u16;
-    u8          local_302;
+    let mut local_302 = 0u8;
     let mut local_202: [u8;ff] = [0;ff];
     char        acStack259[0x101];
 
@@ -261,15 +261,15 @@ pub fn save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, pa
         if((uVar10 | paStack1646) != 0x0)
         {
             pass1_1008_5784(str_var1(param_3, local_67e), paStack1646 & 0xffff | uVar10 << 0x10);
-            puVar4 = local_67e;
-            pass1_1008_5b12(puVar4, param_3);
-            paStack1654 = str_var1(extraout_DX, puVar4);
-            if((extraout_DX | puVar4) != 0x0)
+            pu_var4 = local_67e;
+            pass1_1008_5b12(pu_var4, param_3);
+            paStack1654 = str_var1(dx_var1, pu_var4);
+            if((dx_var1 | pu_var4) != 0x0)
             {
-                u_var2           = (puVar4 + 0x4);
+                u_var2           = (pu_var4 + 0x4);
                 uStack778 = u_var2;
                 uVar10          = (u_var2 >> 0x10);
-                goto LAB_1008_3206;
+                //goto LAB_1008_3206;
             }
         }
     }
@@ -347,7 +347,7 @@ pub fn save_file_1008_3178(globals: &mut Globals, param_1: u32, param_2: i16, pa
         if(param_2 != 0x2)
         {
             debug_pri16_1008_6048(s_Unsupported_FileStructType_in_Op_1050_01ca, SEG_1000, param_3);
-            goto LAB_1008_3461;
+            //goto LAB_1008_3461;
         }
         pcVar9 = load_string_1010_847e(globals.dat_1050_14cc, in_buf_len_2, SEG_1010);
         uVar5  = (pcVar9 >> 0x10);

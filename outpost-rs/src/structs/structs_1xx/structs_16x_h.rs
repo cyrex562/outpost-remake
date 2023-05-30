@@ -940,8 +940,8 @@ struct Struct161
     let mut field_0x1: u8;
     let mut field_0x2: u8;
     let mut field_0x3: u8;
-    long      field_0x4;
-    long      field_0x8;
+    let mut field_0x4 = 0i32;
+    let mut field_0x8 = 0i32;
     let mut field_0xc: u8;
     let mut field_0xd: u8;
     let mut field_0xe: u8;

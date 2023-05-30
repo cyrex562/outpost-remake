@@ -70,7 +70,7 @@ BOOL16 DeleteObject16(obj: HGDIOBJ16)
     return 0;
 }
 
-u16 LoadString16(HINSTANCE16 instance, resource_id: u16, cstring buffer, buf_len: u16)
+u16 LoadString16(instance: HINSTANCE16, resource_id: u16, cstring buffer, buf_len: u16)
 {
     // TODO: implement
     return 0;
@@ -122,9 +122,9 @@ DWORD GlobalHandle16(WORD sel)
     return 0;
 }
 
-// u16                       GetModuleFileName16(HINSTANCE16 h_module, LPSTR lp_file_name,
+// u16                       GetModuleFileName16(h_module: HINSTANCE16, lp_file_name: *mut c_char,
 // n_size: u16);
-u16 GetModuleFileName16(HINSTANCE16 h_module, LPSTR lp_file_name, n_size: u16)
+u16 GetModuleFileName16(h_module: HINSTANCE16, lp_file_name: *mut c_char, n_size: u16)
 {
     // TODO: implement
     return 0;
@@ -143,9 +143,9 @@ pub fn FreeProcInstance16(LPVOID func)
     // TODO: implement
 }
 
-// HRSRC16                     FindResource16(HMODULE16 h_module, LPCSTR name, LPCSTR
+// HRSRC16                     FindResource16(HMODULE16 h_module, name: *mut c_char, LPCSTR
 // type);
-HRSRC16 FindResource16(HMODULE16 h_module, LPCSTR name, LPCSTR type)
+HRSRC16 FindResource16(HMODULE16 h_module, name: *mut c_char, LPCSTR type)
 {
     // TODO: implement
     return 0;
@@ -179,8 +179,8 @@ HFILE16 _lclose16(HFILE16 h_file)
     return 0;
 }
 
-// HFILE16                     _lcreat16(LPCSTR path, attr: u16);
-HFILE16 _lcreat16(LPCSTR path, attr: u16)
+// HFILE16                     _lcreat16(path: *mut c_char, attr: u16);
+HFILE16 _lcreat16(path: *mut c_char, attr: u16)
 {
     // TODO: implement
     return 0;
@@ -193,8 +193,8 @@ long _llseek16(HFILE16 h_file, long l_offset, n_origin: u16)
     return 0;
 }
 
-// HFILE16                     _lopen16(LPCSTR path, mode: u16);
-HFILE16 _lopen16(LPCSTR path, mode: u16)
+// HFILE16                     _lopen16(path: *mut c_char, mode: u16);
+HFILE16 _lopen16(path: *mut c_char, mode: u16)
 {
     // TODO: implement
     return 0;
@@ -238,11 +238,11 @@ pub fn OutputDebugString16(LPCSTR str)
     // TODO: implement
 }
 
-// u16                       GetPrivateProfileString16(LPCSTR section, LPCSTR entry,
-// LPCSTR def_val, LPSTR buffer, len: u16, LPCSTR filename);
-u16 GetPrivateProfileString16(LPCSTR section,
-                              LPCSTR entry,
-                              LPCSTR def_val,
+// u16                       GetPrivateProfileString16(section: *mut c_char, entry: *mut c_char,
+// def_val: *mut c_char, buffer: *mut c_char, len: u16, LPCSTR filename);
+u16 GetPrivateProfileString16(section: *mut c_char,
+                              entry: *mut c_char,
+                              def_val: *mut c_char,
                               LPSTR  buffer,
                               len: u16,
                               LPCSTR filename)
@@ -252,10 +252,10 @@ u16 GetPrivateProfileString16(LPCSTR section,
 }
 
 
-// BOOL16                      WritePrivateProfileString16(LPCSTR section, LPCSTR entry,
-// LPCSTR string, LPCSTR filename);
+// BOOL16                      WritePrivateProfileString16(section: *mut c_char, entry: *mut c_char,
+// string: *mut c_char, LPCSTR filename);
 BOOL16
-WritePrivateProfileString16(LPCSTR section, LPCSTR entry, LPCSTR string, LPCSTR filename)
+WritePrivateProfileString16(section: *mut c_char, entry: *mut c_char, string: *mut c_char, LPCSTR filename)
 {
     // TODO: implement
     return false;
@@ -268,8 +268,8 @@ SEGPTR GetDOSEnvironment16()
     return 0;
 }
 
-// HINSTANCE16                 WinExec16(LPCSTR lp_cmd_line, n_cmd_show: u16);
-HINSTANCE16 WinExec16(LPCSTR lp_cmd_line, n_cmd_show: u16)
+// HINSTANCE16                 WinExec16(lp_cmd_line: *mut c_char, n_cmd_show: u16);
+HINSTANCE16 WinExec16(lp_cmd_line: *mut c_char, n_cmd_show: u16)
 {
     // TODO: implement
     return 0;
@@ -315,15 +315,15 @@ pub fn hmemcpy16(LPVOID dsg, LPCVOID src, long count)
     // TODO: implement
 }
 
-// long                        WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count);
-long WIN16_hread(HFILE16 h_file, SEGPTR buffer, long count)
+// long                        WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count);
+long WIN16_hread(HFILE16 h_file, buffer: SEGPTR, long count)
 {
     // TODO: implement
     return 0;
 }
 
-// long                        _hwrite16(HFILE16 h_file, LPCSTR buffer, long count);
-long _hwrite16(HFILE16 h_file, LPCSTR buffer, long count)
+// long                        _hwrite16(HFILE16 h_file, buffer: *mut c_char, long count);
+long _hwrite16(HFILE16 h_file, buffer: *mut c_char, long count)
 {
     // TODO: implement
     return 0;
@@ -387,8 +387,8 @@ BOOL16 TextOut16(hdc: HDC16, x: u16, y: u16, char *str, count: u16)
     return false;
 }
 
-// BOOL16                      Polygon16(hdc: HDC16, POINT16 *pt, count: u16);
-BOOL16 Polygon16(hdc: HDC16, POINT16 *pt, count: u16)
+// BOOL16                      Polygon16(hdc: HDC16, pt: *mut POINT16, count: u16);
+BOOL16 Polygon16(hdc: HDC16, pt: *mut POINT16, count: u16)
 {
     // TODO: implement
     return false;
@@ -402,9 +402,9 @@ HGDIOBJ16 SelectObject16(hdc: HDC16, handle: HGDIOBJ16)
 }
 
 
-// HDC16                       CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output,
+// HDC16                       CreateDC16(driver: *mut c_char, device: *mut c_char, output: *mut c_char,
 // DEVMODEA *init_data);
-HDC16 CreateDC16(LPCSTR driver, LPCSTR device, LPCSTR output, DEVMODEA *init_data)
+HDC16 CreateDC16(driver: *mut c_char, device: *mut c_char, output: *mut c_char, DEVMODEA *init_data)
 {
     // TODO: implement
     return 0;
@@ -457,8 +457,8 @@ HGDIOBJ16 GetStockObject16(obj: u16)
     return 0;
 }
 
-// DWORD                       GetTextExtent16(hdc: HDC16, LPCSTR str, count: u16);
-DWORD GetTextExtent16(hdc: HDC16, LPCSTR str, count: u16)
+// DWORD                       GetTextExtent16(hdc: HDC16, str: *mut c_char, count: u16);
+DWORD GetTextExtent16(hdc: HDC16, str: *mut c_char, count: u16)
 {
     // TODO: implement
     return 0;
@@ -536,9 +536,9 @@ BOOL16 MoveToEx16(hdc: HDC16, x: u16, y: u16, POINT16 *pt)
     return false;
 }
 
-// u16                       MessageBox16(hwnd: HWND16, LPCSTR text, LPCSTR title, u16
+// u16                       MessageBox16(hwnd: HWND16, text: *mut c_char, title: *mut c_char, u16
 // type);
-u16 MessageBox16(hwnd: HWND16, LPCSTR text, LPCSTR title, type: u16)
+u16 MessageBox16(hwnd: HWND16, text: *mut c_char, title: *mut c_char, type: u16)
 {
     // TODO: implement
     return 0;
@@ -610,8 +610,8 @@ HANDLE16 GetProp16(hwnd: HWND16, LPCSTR str)
 }
 
 
-// BOOL16                      SetProp16(hwnd: HWND16, LPCSTR str, handle: HANDLE16);
-BOOL16 SetProp16(hwnd: HWND16, LPCSTR str, handle: HANDLE16)
+// BOOL16                      SetProp16(hwnd: HWND16, str: *mut c_char, handle: HANDLE16);
+BOOL16 SetProp16(hwnd: HWND16, str: *mut c_char, handle: HANDLE16)
 {
     // TODO: implement
     return false;
@@ -665,9 +665,9 @@ BOOL16 IsWindowEnabled16(hwnd: HWND16)
 }
 
 
-// u16                       GetWindowText16(hwnd: HWND16, SEGPTR lp_string, u16
+// u16                       GetWindowText16(hwnd: HWND16, lp_string: SEGPTR, u16
 // n_max_count);
-u16 GetWindowText16(hwn: HWND16, SEGPTR lp_string, n_max_count: u16)
+u16 GetWindowText16(hwn: HWND16, lp_string: SEGPTR, n_max_count: u16)
 {
     // TODO: implement
     return 0;
@@ -697,11 +697,11 @@ BOOL16 EndPaint16(hwnd: HWND16, PAINTSTRUCT16 *lps)
     return false;
 }
 
-// HWND16                      CreateWindow16(LPCSTR class_name, LPCSTR window_name, DWORD
+// HWND16                      CreateWindow16(class_name: *mut c_char, window_name: *mut c_char, DWORD
 // style, x: u16, y: u16, width: u16, height: u16, parent: HWND16, HMENhmenu: u16, HINSTANCE16
 // instance, LPVOID data);
-HWND16 CreateWindow16(LPCSTR class_name,
-                      LPCSTR window_name,
+HWND16 CreateWindow16(class_name: *mut c_char,
+                      window_name: *mut c_char,
                       DWORD  style,
                       x: u16,
                       y: u16,
@@ -709,7 +709,7 @@ HWND16 CreateWindow16(LPCSTR class_name,
                       height: u16,
                       parent: HWND16,
                       HMENmenu: u16,
-                      HINSTANCE16 instance,
+                      instance: HINSTANCE16,
                       LPVOID      data)
 {
     // TODO: implement
@@ -809,24 +809,24 @@ u16 ShowCursor16(BOOL16 b_show)
 }
 
 
-// BOOL16                      PtInRect16(RECT16 *rect, POINT16 pt);
-BOOL16 PtInRect16(RECT16 *rect, POINT16 pt)
+// BOOL16                      PtInRect16(rect: *mut RECT16, POINT16 pt);
+BOOL16 PtInRect16(rect: *mut RECT16, POINT16 pt)
 {
     // TODO: implement
     return false;
 }
 
 
-// u16                       FillRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
-u16 FillRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush)
+// u16                       FillRect16(hdc: HDC16, rect: *mut RECT16, HBRUSH16 hbrush);
+u16 FillRect16(hdc: HDC16, rect: *mut RECT16, HBRUSH16 hbrush)
 {
     // TODO: implement
     return 0;
 }
 
 
-// u16                       FrameRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush);
-u16 FrameRect16(hdc: HDC16, RECT16 *rect, HBRUSH16 hbrush)
+// u16                       FrameRect16(hdc: HDC16, rect: *mut RECT16, HBRUSH16 hbrush);
+u16 FrameRect16(hdc: HDC16, rect: *mut RECT16, HBRUSH16 hbrush)
 {
     // TODO: implement
     return 0;
@@ -841,19 +841,19 @@ BOOL16 DrawIcon16(hdc: HDC16, x: u16, y: u16, h_icon: HICON16)
 }
 
 
-// u16                       DrawText16(hdc: HDC16, LPCSTR str, count: u16, RECT16 *rect,
+// u16                       DrawText16(hdc: HDC16, str: *mut c_char, count: u16, rect: *mut RECT16,
 // flags: u16);
-u16 DrawText16(hdc: HDC16, LPCSTR str, count: u16, RECT16 *rect, flags: u16)
+u16 DrawText16(hdc: HDC16, str: *mut c_char, count: u16, rect: *mut RECT16, flags: u16)
 {
     // TODO: implement
     return 0;
 }
 
 
-// HWND16                      CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template,
+// HWND16                      CreateDialog16(hinst: HINSTANCE16, dlg_template: *mut c_char,
 // owner: HWND16, LPVOID dlg_proc);
 HWND16
-CreateDialog16(HINSTANCE16 hinst, LPCSTR dlg_template, owner: HWND16, LPVOID dlg_proc)
+CreateDialog16(hinst: HINSTANCE16, dlg_template: *mut c_char, owner: HWND16, LPVOID dlg_proc)
 {
     // TODO: implement
     return 0;
@@ -1008,8 +1008,8 @@ pub fn UpdateWindow16(hwnd: HWND16)
 }
 
 
-// void                        InvalidateRect16(hwnd: HWND16, RECT16 *rect, BOOL16 erase);
-pub fn InvalidateRect16(hwnd: HWND16, RECT16 *rect, BOOL16 erase)
+// void                        InvalidateRect16(hwnd: HWND16, rect: *mut RECT16, BOOL16 erase);
+pub fn InvalidateRect16(hwnd: HWND16, rect: *mut RECT16, BOOL16 erase)
 {
     // TODO: implement
 }
@@ -1051,8 +1051,8 @@ long SetWindowLong16(hwnd: HWND16, offset: u16, long newval)
     return 0;
 }
 
-// HMENU16                     LoadMenu16(HINSTANCE16 instance, LPCSTR name);
-HMENU16 LoadMenu16(HINSTANCE16 instance, LPCSTR name)
+// HMENU16                     LoadMenu16(instance: HINSTANCE16, LPCSTR name);
+HMENU16 LoadMenu16(instance: HINSTANCE16, LPCSTR name)
 {
     // TODO: implement
     return 0;
@@ -1089,34 +1089,34 @@ HMENU16 GetSubMenu16(HMENh_menu: u16, n_pos: u16)
     return 0;
 }
 
-// BOOL16                      WinHelp16(hwnd: HWND16, LPCSTR lp_help_file, w_command: u16,
+// BOOL16                      WinHelp16(hwnd: HWND16, lp_help_file: *mut c_char, w_command: u16,
 // DWORD dw_data);
-BOOL16 WinHelp16(hwnd: HWND16, LPCSTR lp_help_file, w_command: u16, DWORD dw_data)
+BOOL16 WinHelp16(hwnd: HWND16, lp_help_file: *mut c_char, w_command: u16, DWORD dw_data)
 {
     // TODO: false
     return false;
 }
 
 
-// HCURSOR16                   LoadCursor16(HINSTANCE16 h_instance, LPCSTR name);
-HCURSOR16 LoadCursor16(HINSTANCE16 h_instance, LPCSTR name)
+// HCURSOR16                   LoadCursor16(h_instance: HINSTANCE16, LPCSTR name);
+HCURSOR16 LoadCursor16(h_instance: HINSTANCE16, LPCSTR name)
 {
     // TODO: implement
     return 0;
 }
 
 
-// HICON16                     LoadIcon16(HINSTANCE16 h_instance, LPCSTR name);
-HICON16 LoadIcon16(HINSTANCE16 h_instance, LPCSTR name)
+// HICON16                     LoadIcon16(h_instance: HINSTANCE16, LPCSTR name);
+HICON16 LoadIcon16(h_instance: HINSTANCE16, LPCSTR name)
 {
     // TODO: implement
     return 0;
 }
 
 
-// HACCEL16                    LoadAccelerators16(HINSTANCE16 instance, LPCSTR
+// HACCEL16                    LoadAccelerators16(instance: HINSTANCE16, LPCSTR
 // lp_table_name);
-HACCEL16 LoadAccelerators16(HINSTANCE16 instance, LPCSTR lp_table_name)
+HACCEL16 LoadAccelerators16(instance: HINSTANCE16, LPCSTR lp_table_name)
 {
     // TODO: implement
     return 0;
@@ -1250,9 +1250,9 @@ BOOL16 SetWindowPlacement16(hwnd: HWND16, WINDOWPLACEMENT16 *wp16)
     return false;
 }
 
-// BOOL16                      GetClassInfo16(HINSTANCE16 h_inst16, SEGPTR name,
+// BOOL16                      GetClassInfo16(h_inst16: HINSTANCE16, name: SEGPTR,
 // WNDCLASS16 *wc);
-BOOL16 GetClassInfo16(HINSTANCE16 h_inst, SEGPTR name, WNDCLASS16 *wc)
+BOOL16 GetClassInfo16(h_inst: HINSTANCE16, name: SEGPTR, WNDCLASS16 *wc)
 {
     // TODO: implement
     return false;
@@ -1296,24 +1296,24 @@ BOOL16 TrackPopupMenu16(HMENhmenu: u16,
     return false;
 }
 
-// u16                       wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist);
-u16 wsprintf16(LPSTR buffer, LPCSTR spec, WORD *valist)
+// u16                       wsprintf16(buffer: *mut c_char, spec: *mut c_char, valist: *mut u16);
+u16 wsprintf16(buffer: *mut c_char, spec: *mut c_char, valist: *mut u16)
 {
     // TODO: implement
     return 0;
 }
 
 
-// u16                       wvsprintf16(LPSTR buffer, LPCSTR spec, WORD *args);
-u16 wvsprintf16(LPSTR buffer, LPCSTR spec, WORD *args)
+// u16                       wvsprintf16(buffer: *mut c_char, spec: *mut c_char, args: *mut u16);
+u16 wvsprintf16(buffer: *mut c_char, spec: *mut c_char, args: *mut u16)
 {
     // TODO: implement
     return 0;
 }
 
-// HWND16                      CreateWIndowEx16(DWORD ex_style, LPCSTR class_name, LPCSTR
+// HWND16                      CreateWIndowEx16(DWORD ex_style, class_name: *mut c_char, LPCSTR
 // window_name, DWORD style, x: u16, y: u16, width: u16, height: u16, parent: HWND16, HMENU16
-// hmenu, HINSTANCE16 instance, LPVOID data);
+// hmenu, instance: HINSTANCE16, LPVOID data);
 HWND16 CreateWindowEx16(DWORD       ex_style,
                         LPCSTR      class_name,
                         LPCSTR      window_name,
@@ -1324,7 +1324,7 @@ HWND16 CreateWindowEx16(DWORD       ex_style,
                         height: u16,
                         parent: HWND16,
                         HMENhmenu: u16,
-                        HINSTANCE16 instance,
+                        instance: HINSTANCE16,
                         LPVOID      data)
 {
     // TODO: implement
@@ -1354,9 +1354,9 @@ DWORD mciSendCommand16(w_dev_id: u16, w_msg: u16, DWORD dw_param1, DWORD p2)
     return 0;
 }
 
-// BOOL16                      mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, u16
+// BOOL16                      mciGetErrorString16(DWORD w_error, lp_str_buffer: *mut c_char, u16
 // u_length);
-BOOL16 mciGetErrorString16(DWORD w_error, LPSTR lp_str_buffer, u_length: u16)
+BOOL16 mciGetErrorString16(DWORD w_error, lp_str_buffer: *mut c_char, u_length: u16)
 {
     // TODO: implement
     return false;

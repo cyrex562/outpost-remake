@@ -14,7 +14,7 @@ void  mci_send_command_1008_5cb6(param_1: u32, param_2: i16, param_3: u16)
 {
     let mut iVar1: i16;
     let mut u_var2: u16;
-    let mut unaff_SS: u16;
+    let mut ss_var1: u16;
 
     mciSendCommand16(param_3, 0x0, 0x0, 0x8040000);
     u_var2 = (param_1 >> 0x10);
@@ -29,7 +29,7 @@ void  mci_send_command_1008_5cb6(param_1: u32, param_2: i16, param_3: u16)
         (iVar1 + 0x10) = 0x0;
         iVar1          = 0x10;
     }
-    pass1_1010_1f62(unaff_SS, param_1 & 0xffff | u_var2 << 0x10, iVar1);
+    pass1_1010_1f62(ss_var1, param_1 & 0xffff | u_var2 << 0x10, iVar1);
     return;
 }
 
