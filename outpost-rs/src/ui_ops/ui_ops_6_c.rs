@@ -29,6 +29,8 @@
 // #include <stdbool.h>
 // #include <stddef.h>
 
+use std::ffi::c_void;
+
 pub fn destroy_window_1020_3b3e(param_1: *mut Struct30, param_2: HWND16)
 
 {
@@ -1084,7 +1086,7 @@ pub fn pass1_1018_2440(param_1: *mut Struct11, param_2: u16)
     return;
 }
 
-pub fn msg_box_op_1010_8bb4(param_1: u16, param_2: u16, param_3: u32, param_4: HINSTANCE16, param_5: u16)
+pub fn msg_box_op_1010_8bb4(param_1: *mut c_void, param_2: u16, param_3: u32, param_4: HINSTANCE16, param_5: u16)
 
 {
     let mut pcVar1: *mut c_char;

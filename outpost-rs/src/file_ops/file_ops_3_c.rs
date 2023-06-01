@@ -13,7 +13,10 @@
 
 // #include <stdbool.h>
 
+use std::os::raw::c_void;
+use crate::fn_ptr_ops::fn_ptr_ops_6_c::mem_op_1000_179c;
 use crate::fn_ptr_ops::fn_ptr_ops_7_c::fn_ptr_1000_17ce;
+use crate::ui_ops::ui_ops_6_c::msg_box_op_1010_8bb4;
 
 pub fn read_file_1008_7dee(param_1: u32, param_2: u32, param_3: u32, param_4: *mut Sstruct10180000, param_5: u32, segment: u16)
 {
@@ -36,7 +39,7 @@ pub unsafe fn pass1_1018_0000(param_1: *mut Sstruct10180000, param_2: u32, param
     let mut uVar7: u16;
     let mut uVar8: u16;
     let mut local_20: [u8;10] = [0;10];
-    let mut iStack16: i16;
+    let mut iStack16: i16 = 0;
 
 
 
@@ -110,61 +113,62 @@ pub unsafe fn pass1_1018_0000(param_1: *mut Sstruct10180000, param_2: u32, param
 }
 
 
-pub fn pass1_1010_89f0(param_1: u16, param_2: u16, param_3: u16, param_4: u32, param_5: HINSTANCE16, param_6: u16)
+pub fn pass1_1010_89f0(globals: &mut Globals, param_1: *mut c_void, param_2: u16, param_3: u16, param_4: u32, param_5: HINSTANCE16, param_6: u16)
 
 {
-    let mut uVar1: u16;
-    let mut u_var2: u16;
-    let mut uVar3: u16;
-    let mut pu_var4: *mut u8;
-    let mut puVar5: *mut u8;
-    let mut iVar6: i16;
-    let mut uVar7: u32;
-    let mut uStack22: u32;
-    let mut uStack8: u16;
+    let mut var1: u16;
+    let mut var2: u16;
+    let mut var3: u16;
+    let mut var4: u32;
+    let mut var5: u32;
+    let mut var6: *mut c_void;
+    let mut var7: u32;
+    let mut var8: u32;
+    let mut var9: u16;
 
-    uVar3 = *(param_1 + 0x67c);
-    uVar1 = *(param_1 + 0x67e);
-    if((uVar1 | uVar3) != 0x0)
+    var3 = *(param_1 + 0x67c);
+    var1 = *(param_1 + 0x67e);
+    if (var1 | var3) != 0x0
     {
-        pass1_1008_64a2(str_var1(uVar1, uVar3));
+        pass1_1008_64a2(str_var1(var1, var3));
         param_5 = SEG_1000;
-        fn_ptr_1000_17ce(str_var1(uVar1, uVar3), SEG_1000);
+        fn_ptr_1000_17ce(str_var1(var1, var3), SEG_1000);
     }
-    uVar7  = set_err_mode_1010_8b14(
+    var7 = set_err_mode_1010_8b14(
       str_var1(param_2, param_1), *((param_1 + 0xe82) * 0x4 + 0x24be), param_6);
-    pu_var4 = (uVar7 >> 0x10);
-    uVar3  = uVar7;
-    iVar6  = (param_1 + 0xe82) * 0x4;
-    if((*(iVar6 + 0x24be) == uVar3) && ((iVar6 + 0x24c0) == pu_var4))
+    var4 = (var7 >> 0x10);
+    var3 = var7 as u16;
+    var6 = (param_1 + 0xe82) * 0x4;
+    if (*(var6 + 0x24be) == var3) && ((var6 + 0x24c0) == var4)
     {
-        msg_box_op_1010_8bb4(param_1, param_2, uVar7, param_5, param_6);
+        msg_box_op_1010_8bb4(param_1, param_2, var7, param_5, param_6);
     }
-    mem_op_1000_179c(0x8, pu_var4, 0);
-    puVar5 = (pu_var4 | uVar3);
-    if(puVar5 == 0x0)
+    mem_op_1000_179c(globals, 0x8, var4 as u16);
+    var5 = (var4 | var3);
+    if var5 == 0x0
     {
-        uVar3  = 0x0;
-        puVar5 = 0x0;
+        var3 = 0x0;
+        var5 = 0x0;
     }
     else
     {
-        file_1008_6414(CONCAT13((pu_var4 >> 0x8), CONCAT12(pu_var4, uVar3)), uVar7, param_6, puVar5);
+        file_1008_6414(CONCAT13((var4 >> 0x8), CONCAT12(var4, var3)), var7, param_6, var5);
     }
-    *(param_1 + 0x67c) = uVar3;
-    (param_1 + 0x67e)  = puVar5;
+    *(param_1 + 0x67c) = var3;
+    (param_1 + 0x67e)  = var5;
     (param_1 + 0x680)  = 0x0;
-    if((*(param_1 + 0x67e) | *(param_1 + 0x67c)) != 0x0)
+    if (*(param_1 + 0x67e) | *(param_1 + 0x67c)) != 0x0
     {
-        for(uStack8 = 0x1; uStack8 < 0xa; uStack8 = uStack8 + 0x1)
+        // for(uStack8 = 0x1; var9 < 0xa; uStack8 = uStack8 + 0x1)
+        for uStack8 in 1..10
         {
-            iVar6 = uStack8 * 0xa;
-            u_var2 = (iVar6 + 0x2558);
-            uVar3 = uStack8;
-            pass1_1008_64c8((param_1 + 0x67c), CONCAT13((u_var2 >> 0x8), CONCAT12(u_var2, (iVar6 + 0x255a))), (iVar6 + 0x2556), uStack8, puVar5);
-            uStack22 = str_var1(puVar5, uVar3);
-            pass1_1010_86de(param_1, param_2, param_3, str_var1(puVar5, uVar3));
-            (uStack8 * 0x4 + param_4) = uStack22;
+            var6 = var9 * 0xa;
+            var2 = (var6 + 0x2558);
+            var3 = var9;
+            pass1_1008_64c8((param_1 + 0x67c), CONCAT13((var2 >> 0x8), CONCAT12(var2, (var6 + 0x255a))), (var6 + 0x2556), var9, var5);
+            var8 = str_var1(var5, var3);
+            pass1_1010_86de(param_1, param_2, param_3, str_var1(var5, var3));
+            (var9 * 0x4 + param_4) = var8;
         }
     }
     return;
