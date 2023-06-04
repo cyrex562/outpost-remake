@@ -1143,7 +1143,7 @@ void  pass1_1008_5784(u32 *param_1, u32 param_2)
 }
 
 
-void  pass1_1008_57a4(u32 *param_1, u32 param_2)
+void  pass1_1008_57a4(char *param_1, u32 param_2)
 
 {
     param_1->field_0x0 = param_2;

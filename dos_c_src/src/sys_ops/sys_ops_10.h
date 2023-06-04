@@ -97,7 +97,8 @@ void  memcpy_op_1008_676e(u32 param_1, u16 param_2, u8 *param_3);
 
 
 
-void  pass1_1008_6978(u32 param_1, i16 param_2, u32 param_3, u16 param_4, u8 *param_5);
+void  pass1_1008_6978(u32 param_1, i16 param_2, u32 param_3,
+                     Struct20 *param_4, u8 *param_5);
 
 
 
@@ -124,7 +125,7 @@ u8 *pass1_1008_5fd8(u16 param_1, u8 *param_2);
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void debug_pri16_1008_6048(u32 param_1, LPSTR param_2, WORD *param_3);
+void debug_pri16_1008_6048(char *param_1, u16 param_2, WNDCLASS16 *param_3);
 
 
 

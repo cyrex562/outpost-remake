@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b738bc8-4397-4594-b3f0-d833d4f9174c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/draw_ops/draw_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/draw_ops/draw_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_ops/draw_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/draw_ops/draw_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_ops/draw_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/draw_ops/draw_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_ops/draw_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/draw_ops/draw_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_ops/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/draw_ops/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_ops/file_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/file_ops/file_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_ops/file_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/file_ops/file_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_ops/file_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/file_ops/file_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_ops/file_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/file_ops/file_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_6_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/fn_ptr_ops/fn_ptr_ops_6_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globals_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/globals_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/main_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/media_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/media/media_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/op_winapi_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/op_winapi_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/op_winapi_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/op_winapi_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/op_windef_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/op_windef_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_ops_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/string_ops_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string_ops_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/string_ops_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_ops/struct_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/struct_ops/struct_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_ops/struct_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/struct_ops/struct_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_ops/struct_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/struct_ops/struct_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_ops/struct_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/struct_ops/struct_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_ops/struct_ops_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/struct_ops/struct_ops_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/struct_31_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/struct_31_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/struct_93_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/struct_93_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/structs_2x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/structs_2x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/structs_3x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/structs_3x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/structs_4x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/structs_4x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/structs_6x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/structs_6x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_0xx/structs_8x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_0xx/structs_8x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_1xx/structs_10x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_1xx/structs_10x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_1xx/structs_11x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_1xx/structs_11x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_1xx/structs_12x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_1xx/structs_12x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_1xx/structs_15x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_1xx/structs_15x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_1xx/structs_16x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_1xx/structs_16x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_20x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_20x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_21x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_21x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_22x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_22x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_25x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_25x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_26x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_26x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_28x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_28x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_2xx/structs_29x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_2xx/structs_29x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_306_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_306_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_310_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_310_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_318_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_318_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_323_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_323_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_354_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_354_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_371_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_371_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_385_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_385_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/struct_397_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/struct_397_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_30x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_30x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_31x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_31x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_32x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_32x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_33x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_33x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_34x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_34x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_35x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_35x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_36x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_36x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_37x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_37x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_38x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_38x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_3xx/structs_39x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_3xx/structs_39x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_40x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_40x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_42x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_42x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_45x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_45x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_46x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_46x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_47x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_47x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_48x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_48x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_4xx/structs_49x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_4xx/structs_49x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_5xx/structs_50x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_5xx/structs_50x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_5xx/structs_51x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_5xx/structs_51x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_5xx/structs_52x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_5xx/structs_52x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_5xx/structs_53x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_5xx/structs_53x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_5xx/structs_59x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_5xx/structs_59x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/struct_610_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/struct_610_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/struct_650_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/struct_650_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/struct_653_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/struct_653_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/struct_654_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/struct_654_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/struct_670_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/struct_670_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_6xx/structs_61x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_6xx/structs_61x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_7xx/structs_70x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_7xx/structs_70x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/structs_7xx/structs_73x_h.rs" beforeDir="false" afterPath="$PROJECT_DIR$/structs/structs_7xx/structs_73x_h.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_10_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_10_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_11_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_11_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_12_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_12_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_6_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_6_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_7_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_7_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_8_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_8_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys_ops/sys_ops_9_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/sys_ops/sys_ops_9_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_6_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_6_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_ops/ui_ops_7_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ui_ops/ui_ops_7_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_10_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_10_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_11_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_11_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_12_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_12_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_13_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_13_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_14_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_14_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_15_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_15_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_16_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_16_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_18_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_18_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_19_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_19_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_6_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_6_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_7_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_7_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_8_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_8_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unk/unk_9_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/unk/unk_9_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_ops/win_ops_1_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/win_ops/win_ops_1_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_ops/win_ops_2_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/win_ops/win_ops_2_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_ops/win_ops_3_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/win_ops/win_ops_3_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_ops/win_ops_4_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/win_ops/win_ops_4_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_ops/win_ops_5_c.rs" beforeDir="false" afterPath="$PROJECT_DIR$/win_ops/win_ops_5_c.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/debug/.fingerprint/outpost-rs-a86362d77364318b/output-bin-outpost-rs" beforeDir="false" afterPath="$PROJECT_DIR$/../target/debug/.fingerprint/outpost-rs-a86362d77364318b/output-bin-outpost-rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/debug/.fingerprint/outpost-rs-c46750bb26d6e9d3/output-test-bin-outpost-rs" beforeDir="false" afterPath="$PROJECT_DIR$/../target/debug/.fingerprint/outpost-rs-c46750bb26d6e9d3/output-test-bin-outpost-rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2QTwRGUtuqbB28TXUikNYLtY0zB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/cyrex/Projects/outpost-remake/outpost-rs"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b738bc8-4397-4594-b3f0-d833d4f9174c" name="Changes" comment="" />
+      <created>1685390868555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685390868555</updated>
+      <workItem from="1685390869671" duration="64000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

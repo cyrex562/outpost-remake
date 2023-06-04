@@ -882,7 +882,7 @@ typedef struct Globals {
     int PTR_LOOP_1050_4e30;
     char *dat_1050_14cc;
     u32 _PTR_LOOP_1050_4230;
-    u32 s_OpWnd__getKid__Unknown_target_mo_1050_01a3;
+    char* s_OpWnd__getKid__Unknown_target_mo_1050_01a3;
     u16 PTR_LOOP_1050_5f6a;
     u16 PTR_LOOP_1050_5f6c;
     int PTR_LOOP_1050_6202;

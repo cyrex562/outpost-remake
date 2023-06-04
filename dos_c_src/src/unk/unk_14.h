@@ -152,7 +152,7 @@ void pass1_1008_53aa(void);
 void pass1_1008_5784(u32 *param_1, u32 param_2);
 
 
-void pass1_1008_57a4(u32 *param_1, u32 param_2);
+void pass1_1008_57a4(char *param_1, u32 param_2);
 
 
 void pass1_1008_57c4(u16 *param_1);
