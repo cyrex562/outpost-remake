@@ -1289,7 +1289,7 @@ void  pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 param_4) {
     u16 *puVar7;
     u16 *puStack8;
 
-    pu_var2 = (param_4 - 0x1U);
+    pu_var2 = (param_4 - 0x1);
     mem_op_1000_179c(0x10, param_1, 0);
     puStack8 = (pu_var2 & 0xffff | ZEXT24(param_1) << 0x10);
     uVar3    = param_1 | pu_var2;
@@ -1301,7 +1301,7 @@ void  pass1_1030_4594(u8 *param_1, u16 param_2, u16 param_3, i16 param_4) {
         pu_var2 = puStack8;
     }
     uVar1 = SUB42(pu_var2, 0x0);
-    iVar4 = (param_4 - 0x1U) * 0x12;
+    iVar4 = (param_4 - 0x1) * 0x12;
     load_string_1010_84acglobals->dat_1050_14cc, SEG_1010);
     uVar6         = (puStack8 >> 0x10);
     iVar5         = puStack8;

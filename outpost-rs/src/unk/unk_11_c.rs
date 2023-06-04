@@ -135,7 +135,7 @@ void  pass1_1018_3d6c(param_1: *mut Struct679)
     iVar6 = param_1;
     u_var4 = iVar6.field_0x142;
     u_var2 = u_var4 + 0x1e;
-    if(iVar6.field_0x144 + 0x1U == (u_var4 < 0xffe2))
+    if(iVar6.field_0x144 + 0x1 == (u_var4 < 0xffe2))
     {
         if(u_var2 != 0x3c)
         {
@@ -2902,7 +2902,7 @@ void  pass1_1010_bf1e(param_1: u32, param_2: *mut i16, param_3: i16, param_4: *m
         (iVar4 + 0x2) = uStack40;
     }
     pass1_1028_dc52(str_var1(param_5, local_16), 0x1, 0x0, 0x100);
-    puStack26 = *(u16 **)(iVar4 + 0x2);
+    puStack26 = (iVar4 + 0x2);
     iStack36  = 0x0;
     while(true)
     {

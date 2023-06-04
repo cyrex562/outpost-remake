@@ -1048,10 +1048,10 @@ pub fn pass1_1010_6034(param_1: u32, param_2: u16)
     pass1_1010_60a0(param_1);
     puVar1 = pass1_1000_4906((param_1 & 0xffff0000 | (iVar2 + 0x22)), 0x0, 0x40);
     load_string_1010_84ac(globals.data_1050_14cc, SEG_1000);
-    *(u16 **)(iVar2 + 0x68) = puVar1;
+    (iVar2 + 0x68) = puVar1;
     (iVar2 + 0x6a)          = param_2;
     load_string_1010_84ac(globals.data_1050_14cc, SEG_1000);
-    *(u16 **)(iVar2 + 0x6c) = puVar1;
+    (iVar2 + 0x6c) = puVar1;
     (iVar2 + 0x6e)          = param_2;
     return;
 }

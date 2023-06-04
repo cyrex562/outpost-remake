@@ -1794,10 +1794,10 @@ void  pass1_1008_87cc(param_1: *mut Struct86, param_2: i16, param_3: i16, param_
     }
     else
     {
-        piVar4 = *(i16 **)&iVar5.field_0x8;
+        piVar4 = &iVar5.field_0x8;
         pass1_1018_20ee(globals._PTR_LOOP_1050_0382, piVar4);
         uStack18 = SUB42(piVar4, 0x0);
-        pass1_1008_add2(*(u16 **)&iVar5.field_0x8);
+        pass1_1008_add2(&iVar5.field_0x8);
         uStack30 = pass1_1008_4772(str_var1(uStack18, uStack18));
         pass1_1018_214e(globals._PTR_LOOP_1050_0382, (globals._PTR_LOOP_1050_0382 >> 0x10), (param_1 & 0xffff0000 | &iVar5.field_0x28), iVar5.field_0x2e);
         local_24 = &iVar5.field_0x1c_addr_base;
@@ -1837,7 +1837,7 @@ pub fn pass1_1008_8b20(param_1: u32, param_2: u16)
         if(uVar3 == 0x0)
         {
             (iVar4 + 0x40) = 0x1;
-            piVar2         = *(i16 **)(iVar4 + 0x8);
+            piVar2         = (iVar4 + 0x8);
             pass1_1018_20ee(globals._PTR_LOOP_1050_0382, piVar2);
             paStack6 = (piVar2 & 0xffff | uVar3 << 0x10);
             pass1_1008_3e94((param_1 & 0xffff0000 | (iVar4 + 0x28U)),
@@ -1868,7 +1868,7 @@ pub fn pass1_1008_8bc6(param_1: u16, param_2: u16, param_3: u32)
     {
         return;
     }
-    pi_var1 = *(i16 **)(iVar2 + 0x8);
+    pi_var1 = (iVar2 + 0x8);
     pass1_1018_20ee(globals._PTR_LOOP_1050_0382, pi_var1);
     paStack6 = (pi_var1 & 0xffff | param_2 << 0x10);
     pass1_1008_3e94((param_3 & 0xffff0000 | (iVar2 + 0x28U)),

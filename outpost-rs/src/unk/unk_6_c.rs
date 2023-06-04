@@ -523,7 +523,7 @@ i16  pass1_1030_2f1a(param_1: u32,param_2: *mut u16, u16 *param_3)
     u_var2 = (param_1 + 0x10);
     iVar3 = u_var2;
     iVar1 = (iVar3 + 0xc);
-    if(iVar1 - 0x1U < 0x9)
+    if(iVar1 - 0x1 < 0x9)
     {
         switch(iVar1)
         {

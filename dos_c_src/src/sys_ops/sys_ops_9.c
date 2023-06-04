@@ -946,7 +946,7 @@ void pass1_1010_0538(u32 param_1, char **param_2, char **param_3, u16 param_4, u
     {
         pass1_1010_09b4(uVar9, uVar10, str_var1(puVar8, pcVar6), param_3, u_var2, puVar8, param_5);
     }
-    if(0x1e < iVar1 - 0x1U)
+    if(0x1e < iVar1 - 0x1)
         goto LAB_1010_0850;
     uVar11 = (param_2 >> 0x10);
     switch(iVar1)

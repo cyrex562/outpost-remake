@@ -249,7 +249,7 @@ u16 pass1_1000_48a8(u32 param_1, u32 param_2, i16 param_3)
             iVar8   = (param_1 >> 0x10);
             puVar7  = param_1;
             uVar4   = ~puVar7;
-            uVar4   = ((param_3 - 0x1U) - uVar4 & -(param_3 - 0x1U < uVar4)) + uVar4;
+            uVar4   = ((param_3 - 0x1) - uVar4 & -(param_3 - 0x1 < uVar4)) + uVar4;
             uVar5   = ~puVar6;
             uVar4   = (uVar4 - uVar5 & -(uVar4 < uVar5)) + uVar5 + 0x1;
             param_3 = param_3 - uVar4;

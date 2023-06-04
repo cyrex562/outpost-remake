@@ -1495,7 +1495,7 @@ void  pass1_1030_53f4(param_1: u32, param_2: u16, param_3: u16, param_4: u8)
         {
             uVar1 = (iVar3 + 0x108);
             pass1_1028_e1ec(globals._PTR_LOOP_1050_65e2, uVar1, (uVar1 >> 0x10));
-            pass1_1010_82f8globals.dat_1050_14cc, **(u16 **)(u_var2 + 0x10));
+            pass1_1010_82f8globals.dat_1050_14cc, *(u_var2 + 0x10));
         }
     }
     return;
@@ -1721,7 +1721,7 @@ void  pass1_1030_35a4(param_1: u32, long param_2, param_3: *mut u8, param_4: u16
         puVar1   = (uVar6 * 0x4 + u_stack6);
         uVar3    = *puVar1;
         *puVar1  = *puVar1 + uVar7;
-        ppu_var2  = (u8 **)(uVar6 * 0x4 + u_stack6 + 0x2);
+        ppu_var2  = (uVar6 * 0x4 + u_stack6 + 0x2);
         *ppu_var2 = globals.dat_1050_5f2e + (*ppu_var2 + CARRY2(uVar3, uVar7));
         pass1_1030_38f2(param_1, 0x3, param_5);
         uVar6  = uVar7;
@@ -1756,9 +1756,9 @@ void  pass1_1030_3694(param_1: u32, param_2: i16, long param_3, param_4: *mut u8
     {
     }
     u_var4  = fn_ptr_op_1000_1708(0x16c, 0x0, 0x1, globals.dat_1050_5f2c, globals.dat_1050_5f2e, SEG_1000);
-    uVar6  = (param_2 - 0x1U);
+    uVar6  = (param_2 - 0x1);
     puVar7 = globals.dat_1050_5f2e;
-    if(((param_2 < 0x1) || (SBORROW2(param_2, 0x1))) || (uVar6 = (param_2 - 0x5U), param_2 - 0x5U != 0x0 && 0x3 < (param_2 - 0x1U)))
+    if(((param_2 < 0x1) || (SBORROW2(param_2, 0x1))) || (uVar6 = (param_2 - 0x5U), param_2 - 0x5U != 0x0 && 0x3 < (param_2 - 0x1)))
     {
         while(uVar5 = uVar6, 0x0 < param_3)
         {
@@ -1768,7 +1768,7 @@ void  pass1_1030_3694(param_1: u32, param_2: i16, long param_3, param_4: *mut u8
             puVar1   = (uVar5 * 0x4 + u_var4);
             uVar3    = *puVar1;
             *puVar1  = *puVar1 + uVar6;
-            ppu_var2  = (u8 **)(uVar5 * 0x4 + u_var4 + 0x2);
+            ppu_var2  = (uVar5 * 0x4 + u_var4 + 0x2);
             *ppu_var2 = puVar7 + (*ppu_var2 + CARRY2(uVar3, uVar6));
         }
     }

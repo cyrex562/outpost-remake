@@ -39,7 +39,7 @@ pub fn pass1_1030_1be2(param_1: u32, param_2: u16, param_3: u8) {
             puVar3        = dx_var1;
         }
     }
-    for(uStack4 = 0x0; pu_var2 = *(u16 **)(iVar4 + 0x10), uStack4 <= *pu_var2 && *pu_var2 != uStack4; uStack4 = uStack4 + 0x1) {
+    for(uStack4 = 0x0; pu_var2 = (iVar4 + 0x10), uStack4 <= *pu_var2 && *pu_var2 != uStack4; uStack4 = uStack4 + 0x1) {
         uVar6   = pass1_1028_e2e0(globals._PTR_LOOP_1050_65e2, puVar3, 0x1);
         ppcVar1 = ((iVar4 + 0xc) + 0x8);
         (**ppcVar1)(SEG_1028, (iVar4 + 0xc), uVar6, (uVar6 >> 0x10), uStack4, 0x0);
@@ -713,7 +713,7 @@ void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param
                                 str_var1(puVar17, uVar19), param_1 & 0xffff0000 | &u_var20.field_0x114, &u_var20.field_0x108, uVar19, puVar17, param_9);
                 if((u_var20.field_0x11a == 0xa) || (u_var20.field_0x11a == 0x37)) {
                     if(u_var20.field_0x11a == 0x37) {
-                        puVar17                       = *(u16 **)(&u_var20.field_0x11e + 0x2);
+                        puVar17                       = (&u_var20.field_0x11e + 0x2);
                         uVar5                         = u_var20.field_0x10c;
                         uStack42                      = uVar5;
                         uStack40                      = (uVar5 >> 0x10);
@@ -724,7 +724,7 @@ void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param
                     uStackY80 = 0x9788;
                     pass1_1028_e2ac(globals._PTR_LOOP_1050_65e2, 0x400);
                     &u_var20.field_0x10c                  = uVar19;
-                    *(u16 **)(&u_var20.field_0x10c + 0x2) = puVar17;
+                    (&u_var20.field_0x10c + 0x2) = puVar17;
                     pass1_1018_0196(local_6,
                                     str_var1(puVar17, &u_var20.field_0x10c), *&u_var20.field_0x108, uVar19, puVar17, param_9);
                     if(u_var20.field_0x11a == 0xa) {
@@ -734,7 +734,7 @@ void  pass1_1028_e628(param_1: *mut Struct349, param_2: u16, param_3: u16, param
                 uVar5 = u_var20.field_0x10c;
                 pass1_1028_e1ec(globals._PTR_LOOP_1050_65e2, uVar5, (uVar5 >> 0x10));
                 &u_var20.field_0x110                  = uVar19;
-                *(u16 **)(&u_var20.field_0x110 + 0x2) = puVar17;
+                (&u_var20.field_0x110 + 0x2) = puVar17;
                 uStack26                              = puVar17 | &u_var20.field_0x110;
                 if(uStack26 != 0x0) {
                     ppcVar7 = (*u_var20.field_0x110 + 0x8);

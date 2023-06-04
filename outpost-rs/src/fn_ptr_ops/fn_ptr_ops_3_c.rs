@@ -449,7 +449,7 @@ void  pass1_1030_4f5a(param_1: u16, param_2: u16, param_3: u32)
 
     plVar3             = &local_a;
     globals.dat_1050_5f2e = read_file_1030_4e70(param_3,
-                                                 str_var1(param_1, plVar3), (u8 **)str_var1(param_1, &local_6), s_bldgbld_dat_1050_56fc, param_2);
+                                                 str_var1(param_1, plVar3), str_var1(param_1, &local_6), s_bldgbld_dat_1050_56fc, param_2);
     pcVar2             = local_6;
     if(plVar3 != 0x0)
     {
@@ -1871,7 +1871,7 @@ void  pass1_1028_8920(param_1: u32, param_2: u16, param_3: u16, param_4: u8)
         {
             if((iVar11 + 0x11a) == 0x37)
             {
-                uStack56 = *(u16 **)(iVar11 + 0x10c);
+                uStack56 = (iVar11 + 0x10c);
             }
             iVar5 = iVar11 + 0x114;
             pass1_1028_e2ac(globals._PTR_LOOP_1050_65e2, 0x400);

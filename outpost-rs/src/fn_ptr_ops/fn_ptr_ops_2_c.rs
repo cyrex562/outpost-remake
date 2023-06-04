@@ -1622,11 +1622,11 @@ pub fn pass1_1030_a044(globals: &mut Globals,
                     str_var1(param_1, &local_24),
                     str_var1(param_1, &local_22));
     iStack14 = local_4 + 0x1;
-    uStack12 = str_var1(local_4 + -0x1, local_6 - 0x1U);
+    uStack12 = str_var1(local_4 + -0x1, local_6 - 0x1);
     iStack16 = local_6 + 0x1;
     if(local_4 + -0x1 < 0x0)
     {
-        uStack12 = (local_6 - 0x1U);
+        uStack12 = (local_6 - 0x1);
     }
     if(local_22 <= iStack14)
     {

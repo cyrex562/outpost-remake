@@ -354,7 +354,7 @@ u32  pass1_1040_a2cc(i16 param_1, u32 param_2, u32 param_3, u16 param_4, u8 *par
 
     if(param_3 == 0x1826)
     {
-        if((param_3 == 0x1) || ((0x1 < param_3 - 0x1U && (param_3 - 0x3U < 0x2))))
+        if((param_3 == 0x1) || ((0x1 < param_3 - 0x1 && (param_3 - 0x3 < 0x2))))
         {
             uVar1 = 0x1;
         }
@@ -372,7 +372,7 @@ u32  pass1_1040_a2cc(i16 param_1, u32 param_2, u32 param_3, u16 param_4, u8 *par
 void  pass1_1040_8b3c(u16 param_1, u32 param_2, u32 param_3, u16 param_4)
 
 {
-    if((param_3 != 0x0) && ((param_3 == (&PTR_LOOP_1050_0000 + 0x1) || param_3 == &PTR_LOOP_1050_0002 || (((&PTR_LOOP_1050_0002 + 0x1U) < param_3 + -0x2 && (param_3 + -0x6 < &PTR_LOOP_1050_0002))))))
+    if((param_3 != 0x0) && ((param_3 == (&PTR_LOOP_1050_0000 + 0x1) || param_3 == &PTR_LOOP_1050_0002 || (((&PTR_LOOP_1050_0002 + 0x1) < param_3 + -0x2 && (param_3 + -0x6 < &PTR_LOOP_1050_0002))))))
     {
         globals->PTR_LOOP_1050_5df4 = 0x0;
         globals->dat_1050_5df8      = param_3;

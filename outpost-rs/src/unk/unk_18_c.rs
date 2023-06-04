@@ -53,7 +53,7 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
   struct_var4 = (param_2 * 4);
 //  uVar6 = (param_1 >> 0x10);
 //  iVar5 = (int)param_1;
-  pu_stack6 = *(u16 **)((int)&struct_var4.field_0x0 + iVar5);
+  pu_stack6 = ((int)&struct_var4.field_0x0 + iVar5);
   if (pu_stack6 != 0x0) {
     return pu_stack6;
   }
@@ -371,7 +371,7 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
     puVar3 = dx_var1;
 // LAB_1010_2683:
     (param_2 * 4 + iVar5) = struct_var4;
-    *(u8 **)(param_2 * 4 + iVar5 + 2) = puVar3;
+    *(param_2 * 4 + iVar5 + 2) = puVar3;
     ppcVar1 = (fn_ptr_1 **)((int)*(u32 *)struct_var4 + 0x10);
     (**ppcVar1)(uVar7, struct_var4,puVar3,u_var2);
     break;
@@ -417,7 +417,7 @@ u16 *mixed_1010_20ba(globals: &mut Globals,
   }
   pu_stack6 = str_var1(puVar3, struct_var4);
 switchD_1010:2765_caseD_38:
-  *(u16 **)(param_2 * 4 + iVar5) = pu_stack6;
+  (param_2 * 4 + iVar5) = pu_stack6;
   return pu_stack6;
 }
 

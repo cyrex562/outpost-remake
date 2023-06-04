@@ -1837,8 +1837,9 @@ pub fn draw_op_1020_3488(param_1: u32)
     pu_stack6 = (u_var2 & 0xffff0000 | (u_var2 + 0x36));
     pass1_1008_3e94(
       pu_stack6, str_var1(ss_var1, &local_a), str_var1(ss_var1, &local_a + 0x2));
-    u_var2 = (local_a - 0x3U) << 0x10;
-    if((local_a - 0x3U) < 0x0)
+    // TODO
+    // u_var2 = (local_a - 0x3) << 0x10;
+    if((local_a - 0x3) < 0x0)
     {
         u_var2 = 0x0;
     }
@@ -2122,7 +2123,7 @@ pub fn pass1_1020_3d08(param_1: u16,
             *pcVar1 = *pcVar1 >> bVar11;
             pcVar1  = (param_4 + iVar13 + 0x6a);
             *pcVar1 = *pcVar1 + param_1
-                    + ((param_1 & 0x1f) != 0x0 && (cVar19 >> bVar11 - 0x1 & 0x1U) != 0x0);
+                    + ((param_1 & 0x1f) != 0x0 && (cVar19 >> bVar11 - 0x1 & 0x1) != 0x0);
             pbVar2  = (param_3 + iVar13);
             *pbVar2 = *pbVar2 | bVar12;
             param_8 = SEG_1020;
@@ -2138,7 +2139,7 @@ pub fn pass1_1020_3d08(param_1: u16,
             pcVar1  = (param_4 + iVar13);
             *pcVar1 = *pcVar1 + bVar30;
             u_var21 = (param_3 + iVar13) * 0x10;
-            if((POPCOUNT(*pcVar1) & 0x1U) == 0x0){
+            if((POPCOUNT(*pcVar1) & 0x1) == 0x0){
                 // goto code_rSEG_10203db1;}
              }
     }}
@@ -2150,7 +2151,7 @@ pub fn pass1_1020_3d08(param_1: u16,
         param_16 = (param_14 & 0x1) * 0x4000 | (param_13 & 0x1) * 0x200
                  | (param_12 & 0x1) * 0x100 | (unsafe{*pbVar2 < '\0'}) * 0x80
                  | (unsafe{*pbVar2 == 0x0}) * 0x40 | (bVar4 | bVar3 | bVar10 & 0x1) * 0x10
-                 | ((POPCOUNT(unsafe { *pbVar2 }) & 0x1U) == 0x0) * 0x4;
+                 | ((POPCOUNT(unsafe { *pbVar2 }) & 0x1) == 0x0) * 0x4;
         pbVar2  = (param_3 + iVar13);
         unsafe { *pbVar2 = *pbVar2 | bVar11 };
 //        bVar12  = in(0x79);
@@ -2177,7 +2178,7 @@ pub fn pass1_1020_3d08(param_1: u16,
             | (SCARRY1(bVar18, bVar12) != SCARRY1(bVar23, bVar30)) * 0x800
             | (param_13 & 0x1) * 0x200 | (param_12 & 0x1) * 0x100 | (cVar19 < '\0') * 0x80
             | (cVar19 == '\0') * 0x40 | (bVar4 | bVar3 | bVar10 & 0x1) * 0x10
-            | ((POPCOUNT(cVar19) & 0x1U) == 0x0) * 0x4
+            | ((POPCOUNT(cVar19) & 0x1) == 0x0) * 0x4
             | (CARRY1(bVar18, bVar12) || CARRY1(bVar23, bVar30)),
           pcStack4._0_1_);
         pcStack4 = (fn_ptr_1)(pcStack4 & 0xff000000 | pcStack4);

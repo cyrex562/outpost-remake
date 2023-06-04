@@ -1289,7 +1289,7 @@ void  pass1_1030_4594(param_1: *mut u8, param_2: u16, param_3: u16, i16 param_4)
     let mut puVar7: *mut u16;
     let mut puStack8: *mut u16;
 
-    pu_var2 = (param_4 - 0x1U);
+    pu_var2 = (param_4 - 0x1);
     mem_op_1000_179c(0x10, param_1, 0);
     puStack8 = (pu_var2 & 0xffff | ZEXT24(param_1) << 0x10);
     uVar3    = param_1 | pu_var2;
@@ -1301,7 +1301,7 @@ void  pass1_1030_4594(param_1: *mut u8, param_2: u16, param_3: u16, i16 param_4)
         pu_var2 = puStack8;
     }
     uVar1 = SUB42(pu_var2, 0x0);
-    iVar4 = (param_4 - 0x1U) * 0x12;
+    iVar4 = (param_4 - 0x1) * 0x12;
     load_string_1010_84acglobals.dat_1050_14cc, SEG_1010);
     uVar6         = (puStack8 >> 0x10);
     iVar5         = puStack8;
@@ -1357,7 +1357,7 @@ void  pass1_1030_4628(param_1: *mut u8, param_2: u16, param_3: u16, i16 param_4)
     pass1_1008_612e(uVar1, (uVar1 >> 0x10), uVar3);
     (iVar5 + 0x22)          = uVar3;
     piVar7                  = (u_var2 * 0x5e + 0x5354);
-    *(i16 **)(iVar5 + 0x24) = piVar7;
+    (iVar5 + 0x24) = piVar7;
     (iVar5 + 0x26)          = SEG_1050;
     iVar6                   = *piVar7;
     pass1_1000_4906(str_var1(0x1050, piVar7), 0x0, 0x1e);
@@ -1490,7 +1490,7 @@ void  pass1_1030_4782(param_1: *mut u8, param_2: u8, param_3: *mut u8, param_4: 
         iStack156         = (iStack154 + 0x4) + -0x1;
         iStack158         = (iStack154 + 0x8) + -0x1;
         if(param_6 != 0x0) {
-            ppuStack160 = (u8 **)(&PTR_LOOP_1050_000e + 0x1);
+            ppuStack160 = (&PTR_LOOP_1050_000e + 0x1);
             if(uStack14 == 0x0) {
                 debug_pri16_1008_6048(s_get_site_data_without_planet__1050_56de, SEG_1008, param_1);
             } else {
@@ -1534,7 +1534,7 @@ void  pass1_1030_4782(param_1: *mut u8, param_2: u8, param_3: *mut u8, param_4: 
                 }
             }
             iVar7             = iStack188 * ppuStack160;
-            ppuStack160       = (u8 **)(iVar7 / 0x64);
+            ppuStack160       = (iVar7 / 0x64);
             pu_var4            = (iVar7 % 0x64);
             uVar8             = (piStack6 >> 0x10);
             (piStack6 + 0x1a) = ppuStack160;

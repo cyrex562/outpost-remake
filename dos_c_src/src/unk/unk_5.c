@@ -1756,9 +1756,9 @@ void  pass1_1030_3694(u32 param_1, i16 param_2, long param_3, u8 *param_4, u16 p
     {
     }
     uVar4  = fn_ptr_op_1000_1708(0x16c, 0x0, 0x1, globals->dat_1050_5f2c, globals->dat_1050_5f2e, SEG_1000);
-    uVar6  = (param_2 - 0x1U);
+    uVar6  = (param_2 - 0x1);
     puVar7 = globals->dat_1050_5f2e;
-    if(((param_2 < 0x1) || (SBORROW2(param_2, 0x1))) || (uVar6 = (param_2 - 0x5U), param_2 - 0x5U != 0x0 && 0x3 < (param_2 - 0x1U)))
+    if(((param_2 < 0x1) || (SBORROW2(param_2, 0x1))) || (uVar6 = (param_2 - 0x5U), param_2 - 0x5U != 0x0 && 0x3 < (param_2 - 0x1)))
     {
         while(uVar5 = uVar6, 0x0 < param_3)
         {

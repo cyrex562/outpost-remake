@@ -1155,7 +1155,7 @@ void  win_sys_op_1010_5404(param_1: *mut Struct54, param_2: u16, param_3: u16, p
         set_struct_1008_574a(str_var1(puVar11, puVar9));
         puVar12 = dx_var1;
     }
-    *(u16 **)&param_1.field_0x64 = puVar9;
+    &param_1.field_0x64 = puVar9;
     (&param_1.field_0x64 + 0x2)  = puVar12;
     pcVar18                       = param_1.field_0xe;
     pass1_1000_5008(pcVar18, (pcVar18 >> 0x10), 0x100, &stack0xfffe);

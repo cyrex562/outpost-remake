@@ -335,7 +335,7 @@ u16  pass1_1010_db2e(u16 param_1, u16 param_2, u16 param_3, u32 param_4, u32 par
     {
         uVar7 = (param_7 >> 0x10);
         iVar4 = (Struct492 *)param_7;
-        if(*param_7 - 0x1U < uStack94)
+        if(*param_7 - 0x1 < uStack94)
         {
             return uStack94;
         }
@@ -486,8 +486,8 @@ void  pass1_1010_debe(u32 param_1, u16 param_2, u16 *param_3, u32 *param_4, u32 
                         }
                     }
                     iVar4    = pass1_1010_e128(uVar5, uVar11, iStack22, iStack20, puVar10 & 0xffff0000 | uVar3);
-                    *param_3 = iVar4 + 0x1U;
-                    if(iVar4 + 0x1U != 0x0)
+                    *param_3 = iVar4 + 0x1;
+                    if(iVar4 + 0x1 != 0x0)
                     {
                         u_var2 = *param_3 * 0x2;
                         mem_op_1000_179c(u_var2, puVar6, 0);
@@ -955,7 +955,7 @@ void  string_op_1010_c446(u16 param_1, u8 param_2, u8 *param_3, u32 param_4, cha
     uVar3 = u_var2;
     struct_1010_dd5e(param_4, (param_4 >> 0x10), param_6);
     iVar1 = (uVar4 + 0x12);
-    if(0x6 < iVar1 - 0x3U)
+    if(0x6 < iVar1 - 0x3)
     {
         return;
     }
@@ -1286,8 +1286,8 @@ void  pass1_1010_c864(u32 param_1, u16 *param_2, Struct104 *param_3, u8 *param_4
                     return;
                 }
                 iVar12 = (uVar9 + 0xc);
-                uVar8  = (iVar12 - 0x1U);
-                if(((0x0 < iVar12) && (!SBORROW2(iVar12, 0x1))) && (uVar8 = (iVar12 - 0x6U), iVar12 - 0x6U == 0x0 || (iVar12 - 0x1U) < 0x5))
+                uVar8  = (iVar12 - 0x1);
+                if(((0x0 < iVar12) && (!SBORROW2(iVar12, 0x1))) && (uVar8 = (iVar12 - 0x6U), iVar12 - 0x6U == 0x0 || (iVar12 - 0x1) < 0x5))
                 {
                     plVar1  = &local_18a + iVar12;
                     *plVar1 = *plVar1 + 0x1;

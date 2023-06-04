@@ -1927,7 +1927,7 @@ void  pass1_1030_8c38(param_1: u32, param_2: i16, param_3: u16)
     iStack4 = 0x0;
     do
     {
-        pass1_1030_877c(*(u16 **)(param_1 + 0x38 + iStack4 * 0x4), param_2, param_3);
+        pass1_1030_877c((param_1 + 0x38 + iStack4 * 0x4), param_2, param_3);
         iStack4 = iStack4 + 0x1;
     } while(iStack4 < 0x5);
     return;

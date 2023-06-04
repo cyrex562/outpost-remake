@@ -633,7 +633,7 @@ u16  pass1_1000_09ca(i16 param_1, u32 *param_2)
     {
         uVar3        = param_2;
         iVar2        = (uVar3 + 0x18);
-        param_2[0x9] = (iVar2 - 0x5U & ~-(iVar2 + 0x3U < 0x8)) + 0x8;
+        param_2[0x9] = (iVar2 - 0x5U & ~-(iVar2 + 0x3 < 0x8)) + 0x8;
     }
     puVar4[-0x1]                 = puVar4 - puVar1;
     *puVar1                      = puVar4 - puVar1 | 0x2;

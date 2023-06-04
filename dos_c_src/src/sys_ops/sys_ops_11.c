@@ -1424,7 +1424,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
     puVar5  = DAT_1050_5f8a;
     iStack2 = unaff_BP + 0x1;
     puVar7  = DAT_1050_5f8a;
-    if((globals->PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals->PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1U)))
+    if((globals->PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals->PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1)))
     {
         param_1 = DAT_1050_5f8a;
     }
@@ -1526,7 +1526,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
                 uVar8  = param_1 - puVar5;
                 cVar24 = uVar8 < 0x0;
                 cVar23 = uVar8 == 0x0;
-                cVar21 = (POPCOUNT(uVar8 & 0xff) & 0x1U) == 0x0;
+                cVar21 = (POPCOUNT(uVar8 & 0xff) & 0x1) == 0x0;
                 if((bool)bVar20)
                 {
                     bVar20 = 0x0;
@@ -1547,7 +1547,7 @@ u8 *mixed_dos3_call_1000_39f2(u8 *param_1, char *param_2, u8 *param_3, u16 param
                     uVar8    = pi_var11 - piVar9;
                     cVar24   = uVar8 < 0x0;
                     cVar23   = uVar8 == 0x0;
-                    cVar21   = (POPCOUNT(uVar8 & 0xff) & 0x1U) == 0x0;
+                    cVar21   = (POPCOUNT(uVar8 & 0xff) & 0x1) == 0x0;
                     piStack6 = piVar9;
                     if((bool)bVar20 || (bool)cVar23)
                     {
@@ -1670,7 +1670,7 @@ u16 mixed_dos3_call_1000_3ad9(u16 param_1, i16 param_2, i16 param_3, i16 param_4
     uVar5  = uVar8 - *puVar1;
     cVar13 = uVar5 < 0x0;
     cVar12 = uVar5 == 0x0;
-    cVar11 = (POPCOUNT(uVar5 & 0xff) & 0x1U) == 0x0;
+    cVar11 = (POPCOUNT(uVar5 & 0xff) & 0x1) == 0x0;
     if((bool)bVar9)
     {
         bVar9  = 0x0;
@@ -1693,7 +1693,7 @@ u16 mixed_dos3_call_1000_3ad9(u16 param_1, i16 param_2, i16 param_3, i16 param_4
         uVar5   = piVar7 - piVar6;
         cVar13  = uVar5 < 0x0;
         cVar12  = uVar5 == 0x0;
-        cVar11  = (POPCOUNT(uVar5 & 0xff) & 0x1U) == 0x0;
+        cVar11  = (POPCOUNT(uVar5 & 0xff) & 0x1) == 0x0;
         if((bool)bVar9 || (bool)cVar12)
         {
             return param_1;
@@ -2103,7 +2103,7 @@ i16 *pass1_1000_25d2(i16 param_1, i16 param_2, u16 param_3, u16 param_4, u16 par
     char  *pcVar8;
     i16    iVar9;
 
-    puVar4 = (param_2 + 0x1U & 0xfffe);
+    puVar4 = (param_2 + 0x1 & 0xfffe);
     if((puVar4 < &param_1) && (uVar5 = -(puVar4 - &param_1), puVar1 = &PTR_LOOP_1050_000a, *puVar1 < uVar5 || *puVar1 == uVar5))
     {
         puVar1 = &PTR_LOOP_1050_000c;
@@ -2179,7 +2179,7 @@ i16 *exit_1000_25f2(u16 param_1, u16 param_2, i16 param_3, i16 param_4, u16 para
     i16   *piVar8;
     char  *pcVar9;
 
-    puVar4 = (param_4 + 0x1U & 0xfffe);
+    puVar4 = (param_4 + 0x1 & 0xfffe);
     if((puVar4 < &param_3) && (piVar5 = -(puVar4 - &param_3), ppi_var1 = (i16 **)&PTR_LOOP_1050_000a, *ppi_var1 < piVar5 || *ppi_var1 == piVar5))
     {
         ppi_var1 = (i16 **)&PTR_LOOP_1050_000c;

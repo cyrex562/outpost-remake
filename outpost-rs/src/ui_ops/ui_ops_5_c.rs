@@ -1664,7 +1664,7 @@ void  mixed_menu_op_1020_44ec(param_1: u32, param_2: u16, param_3: i16, HMENpara
             uStack268    = (uStack278 + 0x200);
             local_108[0] = struct_op_1030_73a8(CONCAT13((in_DX >> 0x8), CONCAT12(in_DX, uVar6)));
             uVar11       = (local_108[0] >> 0x10);
-            pu_stack6     = *(u16 **)(local_108[0] + 0x1c);
+            pu_stack6     = (local_108[0] + 0x1c);
             uVar6        = (local_108[0] + 0x1e);
             if((uVar6 | pu_stack6) != 0x0)
             {
@@ -2246,7 +2246,7 @@ void  win_sys_op_1020_493c(param_1: *mut u32, param_2: u16, param_3: *mut u8, pa
                 uVar12         = (uVar9 + 0x108);
                 uVar11         = (uVar12 >> 0x10);
                 iVar4          = uVar12;
-                uStack26       = *(u16 **)(iVar4 + 0x42);
+                uStack26       = (iVar4 + 0x42);
                 param_3        = (iVar4 + 0x44);
                 uStack26._3_1_ = (uStack26 >> 0x18);
                 puStack14      = uStack26._3_1_;
@@ -2267,7 +2267,7 @@ void  win_sys_op_1020_493c(param_1: *mut u32, param_2: u16, param_3: *mut u8, pa
                     uVar12         = (uVar9 + 0x108);
                     uVar11         = (uVar12 >> 0x10);
                     iVar4          = uVar12;
-                    uStack26       = *(u16 **)(iVar4 + 0x42);
+                    uStack26       = (iVar4 + 0x42);
                     param_3        = (iVar4 + 0x44);
                     uStack26._3_1_ = (uStack26 >> 0x18);
                     puStack14      = uStack26._3_1_;

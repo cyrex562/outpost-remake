@@ -699,7 +699,7 @@ void  pass1_1020_cac2(u32 param_1, u8 *param_2, u16 param_3, u16 param_4, u16 pa
                     if(puStack8 == &DAT_1050_0004)
                     {
                         iVar6    = (puVar3 + 0x6) * 0x3;
-                        iStack52 = (iVar6 + (iVar6 >> 0xf & 0x3U)) >> 0x2;
+                        iStack52 = (iVar6 + (iVar6 >> 0xf & 0x3)) >> 0x2;
                     }
                 }
                 pi_var1            = (puVar3 + 0x6);
@@ -719,7 +719,7 @@ void  pass1_1020_cac2(u32 param_1, u8 *param_2, u16 param_3, u16 param_4, u16 pa
         {
             iVar6 = (puVar3 + 0x6);
         LAB_1020_cba7:
-            puVar4    = ((iVar6 + (iVar6 >> 0xf & 0x3U)) >> 0x2);
+            puVar4    = ((iVar6 + (iVar6 >> 0xf & 0x3)) >> 0x2);
             puStack36 = puVar4;
         }
         else
@@ -1477,11 +1477,11 @@ void  pass1_1020_ad90(u16 param_1, u16 param_2, u16 param_3, u16 param_4, u16 *p
                     str_var1(param_1, &local_24),
                     str_var1(param_1, &local_22));
     iStack14 = local_4 + 0x1;
-    uStack12 = str_var1(local_4 + -0x1, local_6 - 0x1U);
+    uStack12 = str_var1(local_4 + -0x1, local_6 - 0x1);
     iStack16 = local_6 + 0x1;
     if(local_4 + -0x1 < 0x0)
     {
-        uStack12 = (local_6 - 0x1U);
+        uStack12 = (local_6 - 0x1);
     }
     if(local_22 <= iStack14)
     {

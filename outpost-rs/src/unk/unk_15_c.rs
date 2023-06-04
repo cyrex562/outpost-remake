@@ -249,7 +249,7 @@ u16 pass1_1000_48a8(param_1: u32, param_2: u32, i16 param_3)
             iVar8   = (param_1 >> 0x10);
             puVar7  = param_1;
             u_var4   = ~puVar7;
-            u_var4   = ((param_3 - 0x1U) - u_var4 & -(param_3 - 0x1U < u_var4)) + u_var4;
+            u_var4   = ((param_3 - 0x1) - u_var4 & -(param_3 - 0x1 < u_var4)) + u_var4;
             uVar5   = ~puVar6;
             u_var4   = (u_var4 - uVar5 & -(u_var4 < uVar5)) + uVar5 + 0x1;
             param_3 = param_3 - u_var4;
@@ -1239,10 +1239,10 @@ pub fn pass1_1000_3cb7(i16 param_1)
     let mut uVar1: u16;
     let mut pu_var2: *mut u16;
 
-    pu_var2 = *(u16 **)(param_1 + 0xa);
-    if(pu_var2 == *(u16 **)(param_1 + 0xc))
+    pu_var2 = (param_1 + 0xa);
+    if(pu_var2 == (param_1 + 0xc))
     {
-        pu_var2 = *(u16 **)(param_1 + 0x8);
+        pu_var2 = (param_1 + 0x8);
     }
     while(true)
     {
@@ -2214,7 +2214,7 @@ u16 pass1_1000_34cf(param_1: i16, param_2: u16)
     let mut uVar1: u16;
     let mut pu_var2: *mut u16;
 
-    pu_var2          = *(u16 **)(param_1 + 0xe);
+    pu_var2          = (param_1 + 0xe);
     uVar1           = *pu_var2;
     (param_1 + 0xe) = pu_var2 + 0x2;
     return uVar1;

@@ -395,7 +395,7 @@ u16 mixed_1010_20ba(param_1: u32, param_2: u16, param_3: u16, param_4: u16, i16 
     paVar4   = (param_2 * 0x4);
     uVar6    = (param_1 >> 0x10);
     iVar5    = param_1;
-    pu_stack6 = *(u16 **)(&paVar4->fld0_addr_table + iVar5);
+    pu_stack6 = (&paVar4->fld0_addr_table + iVar5);
     if(pu_stack6 != 0x0)
     {
         return pu_stack6;
@@ -802,7 +802,7 @@ u16 mixed_1010_20ba(param_1: u32, param_2: u16, param_3: u16, param_4: u16, i16 
     }
     pu_stack6 = str_var1(puVar3, paVar4);
 switchD_1010_2765_caseD_38:
-    *(u16 **)(param_2 * 0x4 + iVar5) = pu_stack6;
+    (param_2 * 0x4 + iVar5) = pu_stack6;
     return pu_stack6;
 }
 
@@ -946,7 +946,7 @@ pub fn pass1_1010_0538(param_1: u32, char **param_2, char **param_3, param_4: u1
     {
         pass1_1010_09b4(uVar9, uVar10, str_var1(puVar8, pcVar6), param_3, u_var2, puVar8, param_5);
     }
-    if(0x1e < iVar1 - 0x1U)
+    if(0x1e < iVar1 - 0x1)
         //goto LAB_1010_0850;
     uVar11 = (param_2 >> 0x10);
     switch(iVar1)

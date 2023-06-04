@@ -1424,7 +1424,7 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
     puVar5  = DAT_1050_5f8a;
     iStack2 = unaff_BP + 0x1;
     puVar7  = DAT_1050_5f8a;
-    if((globals.PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals.PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1U)))
+    if((globals.PTR_LOOP_1050_61ec != 0x0) && (puVar7 = globals.PTR_s_ed_in_Op_Op_1050_0028_1050_5f8e, param_1 < (&PTR_LOOP_1050_0002 + 0x1)))
     {
         param_1 = DAT_1050_5f8a;
     }
@@ -1526,7 +1526,7 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
                 uVar8  = param_1 - puVar5;
                 cVar24 = uVar8 < 0x0;
                 cVar23 = uVar8 == 0x0;
-                cVar21 = (POPCOUNT(uVar8 & 0xff) & 0x1U) == 0x0;
+                cVar21 = (POPCOUNT(uVar8 & 0xff) & 0x1) == 0x0;
                 if((bool)bVar20)
                 {
                     bVar20 = 0x0;
@@ -1547,7 +1547,7 @@ u8 *mixed_dos3_call_1000_39f2(param_1: *mut u8, char *param_2, param_3: *mut u8,
                     uVar8    = pi_var11 - piVar9;
                     cVar24   = uVar8 < 0x0;
                     cVar23   = uVar8 == 0x0;
-                    cVar21   = (POPCOUNT(uVar8 & 0xff) & 0x1U) == 0x0;
+                    cVar21   = (POPCOUNT(uVar8 & 0xff) & 0x1) == 0x0;
                     piStack6 = piVar9;
                     if((bool)bVar20 || (bool)cVar23)
                     {
@@ -1670,7 +1670,7 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
     uVar5  = uVar8 - *puVar1;
     cVar13 = uVar5 < 0x0;
     cVar12 = uVar5 == 0x0;
-    cVar11 = (POPCOUNT(uVar5 & 0xff) & 0x1U) == 0x0;
+    cVar11 = (POPCOUNT(uVar5 & 0xff) & 0x1) == 0x0;
     if((bool)bVar9)
     {
         bVar9  = 0x0;
@@ -1693,7 +1693,7 @@ u16 mixed_dos3_call_1000_3ad9(param_1: u16, param_2: i16, param_3: i16, param_4:
         uVar5   = piVar7 - piVar6;
         cVar13  = uVar5 < 0x0;
         cVar12  = uVar5 == 0x0;
-        cVar11  = (POPCOUNT(uVar5 & 0xff) & 0x1U) == 0x0;
+        cVar11  = (POPCOUNT(uVar5 & 0xff) & 0x1) == 0x0;
         if((bool)bVar9 || (bool)cVar12)
         {
             return param_1;
@@ -1808,12 +1808,12 @@ pub fn pass1_1000_3bc0(param_1: i16, param_2: i16,param_3: *mut u16, param_4: u1
                 }
                 iVar5                    = uVar8 - (param_2 + 0x4);
                 (param_2 + 0x4)          = uVar8;
-                *(u16 **)(param_2 + 0xa) = param_3;
-                pi_var1                   = *(i16 **)(param_2 + 0xc);
+                (param_2 + 0xa) = param_3;
+                pi_var1                   = (param_2 + 0xc);
                 *pi_var1                  = iVar5 + -0x1;
                 puVar6                   = (pi_var1 + iVar5);
                 *puVar6                  = 0xfffe;
-                *(u16 **)(param_2 + 0xc) = puVar6;
+                (param_2 + 0xc) = puVar6;
             }
         }
     }
@@ -1997,7 +1997,7 @@ u16 pass1_1000_30a4(param_1: i16, param_2: u16, param_3: u16, param_4: u16, para
     (param_1 + -0x6) = param_8;
     (param_1 + -0x8) = 0x30c5;
     exit_1000_25f2((param_1 + -0x8), (param_1 + -0x6), (param_1 + -0x4), 0x214, param_7, param_8, param_9);
-    *(u16 **)(param_1 + -0x6) = puVar6;
+    (param_1 + -0x6) = puVar6;
     (param_1 + -0x8)          = param_6 ^ puVar6;
     (param_1 + -0xc)          = 0x0;
     *(param_1 + -0x9)         = 0x0;
@@ -2067,7 +2067,7 @@ i16 pass1_1000_3503(char param_1, param_2: u16, param_3: i16, param_4: u16, para
     let mut piVar5: *mut i16;
     let mut uVar6: u16;
 
-    ppcVar3 = (char **)*(i16 **)(param_3 + 0x6);
+    ppcVar3 = (char **)(param_3 + 0x6);
     uVar6   = (ppcVar3 >> 0x10);
     piVar5  = ppcVar3;
     pi_var1  = piVar5 + 0x2;
@@ -2103,7 +2103,7 @@ i16 *pass1_1000_25d2(param_1: i16, param_2: i16, param_3: u16, param_4: u16, par
     let mut pcVar8: *mut c_char;
     let mut iVar9: i16;
 
-    pu_var4 = (param_2 + 0x1U & 0xfffe);
+    pu_var4 = (param_2 + 0x1 & 0xfffe);
     if((pu_var4 < &param_1) && (uVar5 = -(pu_var4 - &param_1), puVar1 = &PTR_LOOP_1050_000a, *puVar1 < uVar5 || *puVar1 == uVar5))
     {
         puVar1 = &PTR_LOOP_1050_000c;
@@ -2179,13 +2179,13 @@ i16 *exit_1000_25f2(param_1: u16, param_2: u16, param_3: i16, param_4: i16, para
     let mut piVar8: *mut i16;
     let mut pcVar9: *mut c_char;
 
-    pu_var4 = (param_4 + 0x1U & 0xfffe);
+    pu_var4 = (param_4 + 0x1 & 0xfffe);
     if((pu_var4 < &param_3) && (piVar5 = -(pu_var4 - &param_3), ppi_var1 = (i16 **)&PTR_LOOP_1050_000a, *ppi_var1 < piVar5 || *ppi_var1 == piVar5))
     {
         ppi_var1 = (i16 **)&PTR_LOOP_1050_000c;
         if(piVar5 <= *ppi_var1 && *ppi_var1 != piVar5)
         {
-            *(i16 **)&PTR_LOOP_1050_000c = piVar5;
+            &PTR_LOOP_1050_000c = piVar5;
         }
         piVar5[-0x1] = param_2;
         piVar5[-0x2] = param_1;

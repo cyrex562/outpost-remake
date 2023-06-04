@@ -1458,7 +1458,7 @@ void  pass1_1028_9114(param_1: u32, param_2: *mut u8, param_3: i16, param_4: u16
     paVar4 = mixed_1010_20ba(globals.data_1050_0ed0, 0x37, param_4, param_2, param_3);
     uVar3  = param_1;
     iVar10 = (uVar3 + 0x108);
-    if(iVar10 - 0x1U < 0x8)
+    if(iVar10 - 0x1 < 0x8)
     {
         uStack10 = *_PTR_LOOP_1050_65e2;
         iVar8    = (*_PTR_LOOP_1050_65e2 >> 0x10);

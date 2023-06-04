@@ -1053,7 +1053,7 @@ void  pass1_1030_951a(param_1: u16, param_2: u16, param_3: u32, param_4: *mut u3
         iStack28  = 0x0;
         puStack32 = mixed_1010_20ba(globals.data_1050_0ed0, 0x8, param_1, puVar9, unaff_DI);
         uVar14    = (puStack32 >> 0x10);
-        puStack36 = *(u16 **)(puStack32 + 0xe);
+        puStack36 = (puStack32 + 0xe);
         uVar6     = (puStack32 + 0x10);
         if((uVar6 | puStack36) != 0x0)
         {

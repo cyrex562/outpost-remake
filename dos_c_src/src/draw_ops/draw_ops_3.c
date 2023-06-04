@@ -633,11 +633,11 @@ void unk_draw_op_1020_0000(u32 param_1, HWND16 param_2, u16 param_3)
     BeginPaint16(param_2, &local_22);
     u_var2     = (iVar5 + 0x14);
     puStack38 = (u_var2 + 0xa);
-    pass1_1008_3e94((param_1 & 0xffff0000 | (iVar5 + 0x18U)),
+    pass1_1008_3e94((param_1 & 0xffff0000 | (iVar5 + 0x18)),
                     str_var1(param_3, &local_2a),
                     str_var1(param_3, &local_28));
     hwnd = SEG_1008;
-    pass1_1008_4480(puStack38, (param_1 & 0xffff0000 | (iVar5 + 0x18U)), *(Struct76 **)(iVar5 + 0x24), param_3);
+    pass1_1008_4480(puStack38, (param_1 & 0xffff0000 | (iVar5 + 0x18)), *(Struct76 **)(iVar5 + 0x24), param_3);
     paStack46 = (Struct76 *)0x0;
     for(iStack48 = 0x0; iStack48 < 0x6; iStack48 = iStack48 + 0x1)
     {
@@ -1873,7 +1873,7 @@ i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3)
         LAB_1010_413e:
             if((uStack4 != 0x0) && (0x3 < globals->PTR_LOOP_1050_3960))
             {
-                puVar10 = mixed_1010_20ba(globals->u16_1050_0ed0, iStack6 + 0xcU, unaff_SS, in_DX, unaff_DI);
+                puVar10 = mixed_1010_20ba(globals->u16_1050_0ed0, iStack6 + 0xc, unaff_SS, in_DX, unaff_DI);
                 puVar7  = (puVar10 >> 0x10);
                 uVar4   = pass1_1018_0afa(puVar10);
                 if(uVar4 == 0x0)
@@ -1895,7 +1895,7 @@ i16 pt_in_rect_1010_40f8(u32 param_1, POINT16 *param_2, RECT16 *param_3)
                     puStack16 = str_var1(puVar8, iVar6);
                     ppcVar2   = (*puStack16 + 0x74);
                     (**ppcVar2)(uVar9, iVar6, puVar8);
-                    pass1_1010_209e(globals->u16_1050_0ed0, iStack6 + 0xcU);
+                    pass1_1010_209e(globals->u16_1050_0ed0, iStack6 + 0xc);
                     uStack4 = uVar4;
                 }
             }

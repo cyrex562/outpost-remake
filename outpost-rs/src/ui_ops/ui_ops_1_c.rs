@@ -1151,7 +1151,7 @@ pub fn pass1_1040_b45e(param_1: u32, param_2: HWND16)
         uVar1          = (iVar3 + 0x90);
         pIStack6       = (uVar1 + 0x2);
         for(iStack8 = 0x0;
-            piVar2  = *(i16 **)(iVar3 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2;
+            piVar2  = (iVar3 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2;
             iStack8 = iStack8 + 0x1)
         {
             SetDlgItemText16(param_2, *pIStack6, (SEGPTR) * (pIStack6 + 0x2));

@@ -1,34 +1,3 @@
-// #include "draw_ops_1.h"
-
-// #include "../fn_ptr_defs.h"
-// #include "../op_int.h"
-// #include "../ui_ops/ui_ops_1.h"
-// #include "../unk/unk_11.h"
-// #include "../unk/unk_17.h"
-// #include "../unk/unk_18.h"
-// #include "../utils.h"
-// #include "address_tables/function_tables.h"
-// #include "draw_ops_4.h"
-// #include "fn_ptr_ops/fn_ptr_ops_7.h"
-// #include "globals.h"
-// #include "op_winapi.h"
-// #include "op_windef.h"
-// #include "string_ops.h"
-// #include "struct_20.h"
-// #include "struct_43.h"
-// #include "structs/structs_0xx/struct_18.h"
-// #include "structs/structs_0xx/struct_37.h"
-// #include "structs/structs_0xx/structs_7x.h"
-// #include "structs/structs_3xx/struct_380.h"
-// #include "structs/structs_5xx/struct_513.h"
-// #include "unk/unk_1.h"
-// #include "unk/unk_12.h"
-// #include "unk/unk_14.h"
-// #include "unk/unk_15.h"
-// #include "win_ops/win_ops_1.h"
-
-// #include <stdbool.h>
-// #include <stddef.h>
 
 pub fn pass1_1040_d1bc(globals: &mut Globals, param_1: *mut Struct18)
 

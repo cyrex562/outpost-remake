@@ -288,7 +288,7 @@ void  pass1_1040_b17c(param_1: u32, param_2: u32, param_3: *mut u8, param_4: i16
     {
         uVar6  = (param_1 >> 0x10);
         iVar5  = param_1;
-        pi_var1 = *(i16 **)(iVar5 + 0x90);
+        pi_var1 = (iVar5 + 0x90);
         puVar7 = (pi_var1 >> 0x10);
         if(*pi_var1 == iStack4 || *pi_var1 < iStack4)
             break;
@@ -301,8 +301,8 @@ void  pass1_1040_b17c(param_1: u32, param_2: u32, param_3: *mut u8, param_4: i16
     puVar8    = mixed_1010_20ba(globals.data_1050_0ed0, 0x3, param_6, param_3, param_5);
     u_var4     = (puVar8 >> 0x10);
     u_var2     = (iVar5 + 0x90);
-    puStack12 = *(u16 **)(u_var2 + 0x2);
-    for(iStack4 = 0x0; pi_var1 = *(i16 **)(iVar5 + 0x90), *pi_var1 != iStack4 && iStack4 <= *pi_var1; iStack4 = iStack4 + 0x1)
+    puStack12 = (u_var2 + 0x2);
+    for(iStack4 = 0x0; pi_var1 = (iVar5 + 0x90), *pi_var1 != iStack4 && iStack4 <= *pi_var1; iStack4 = iStack4 + 0x1)
     {
         u_var2  = (iVar5 + 0x90);
         u_var2  = (u_var2 + 0x6);
@@ -354,7 +354,7 @@ u32  pass1_1040_a2cc(param_1: i16, param_2: u32, param_3: u32, param_4: u16, par
 
     if(param_3 == 0x1826)
     {
-        if((param_3 == 0x1) || ((0x1 < param_3 - 0x1U && (param_3 - 0x3U < 0x2))))
+        if((param_3 == 0x1) || ((0x1 < param_3 - 0x1 && (param_3 - 0x3 < 0x2))))
         {
             uVar1 = 0x1;
         }
@@ -372,7 +372,7 @@ u32  pass1_1040_a2cc(param_1: i16, param_2: u32, param_3: u32, param_4: u16, par
 void  pass1_1040_8b3c(param_1: u16, param_2: u32, param_3: u32, param_4: u16)
 
 {
-    if((param_3 != 0x0) && ((param_3 == (&PTR_LOOP_1050_0000 + 0x1) || param_3 == &PTR_LOOP_1050_0002 || (((&PTR_LOOP_1050_0002 + 0x1U) < param_3 + -0x2 && (param_3 + -0x6 < &PTR_LOOP_1050_0002))))))
+    if((param_3 != 0x0) && ((param_3 == (&PTR_LOOP_1050_0000 + 0x1) || param_3 == &PTR_LOOP_1050_0002 || (((&PTR_LOOP_1050_0002 + 0x1) < param_3 + -0x2 && (param_3 + -0x6 < &PTR_LOOP_1050_0002))))))
     {
         globals.PTR_LOOP_1050_5df4 = 0x0;
         globals.dat_1050_5df8      = param_3;
@@ -992,7 +992,7 @@ void  pass1_1040_4d7e(param_1: u32)
     uVar1    = (param_1 + 0x90);
     pu_stack6 = (uVar1 + 0x2);
     iStack8  = 0x0;
-    while((piVar2 = *(i16 **)(param_1 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2 && ((pu_stack6 + 0x4) != 0x1770)))
+    while((piVar2 = (param_1 + 0x90), *piVar2 != iStack8 && iStack8 <= *piVar2 && ((pu_stack6 + 0x4) != 0x1770)))
     {
         iStack8  = iStack8 + 0x1;
         pu_stack6 = (pu_stack6 & 0xffff0000 | (pu_stack6 + 0xa));

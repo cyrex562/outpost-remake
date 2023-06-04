@@ -771,7 +771,7 @@ void  pass1_1038_7356(param_1: *mut Struct615, param_2: u32, param_3: u16, param
             uVar16  = pass1_1028_45e2(uVar16, uVar7, puVar11, param_3);
             puVar11 = (uVar16 >> 0x10);
             uVar9   = uVar16;
-            ppuVar1 = (u8 **)&iVar9.field_0x18;
+            ppuVar1 = &iVar9.field_0x18;
             bVar15  = *ppuVar1 < puVar11;
             if((bVar15 || *ppuVar1 == puVar11) && ((bVar15 || (pu_var2 = &iVar9.field_0x16, *pu_var2 < uVar9 || *pu_var2 == uVar9))))
                 //goto code_r0x10387545;
@@ -782,7 +782,7 @@ void  pass1_1038_7356(param_1: *mut Struct615, param_2: u32, param_3: u16, param
         uVar17  = pass1_1028_62c8(uVar16, param_3);
         puVar11 = (uVar17 >> 0x10);
         uVar9   = uVar17;
-        ppuVar1 = (u8 **)&iVar9.field_0x18;
+        ppuVar1 = &iVar9.field_0x18;
         bVar15  = *ppuVar1 < puVar11;
         if((bVar15 || *ppuVar1 == puVar11) && ((bVar15 || (pu_var2 = &iVar9.field_0x16, *pu_var2 < uVar9 || *pu_var2 == uVar9))))
         {

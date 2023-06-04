@@ -582,11 +582,11 @@ BOOL16 mem_op_1000_1dfa(param_1: i16, param_2: u8, param_3: u16, param_4: u16)
     if(param_1 != 0x0)
     {
         uVar1 = SegmentLimit(param_4);
-        if(CARRY2(param_3, param_1 - 0x1U))
+        if(CARRY2(param_3, param_1 - 0x1))
         {
             return 0x1;
         }
-        if(uVar1 < param_3 + (param_1 - 0x1U))
+        if(uVar1 < param_3 + (param_1 - 0x1))
         {
             return 0x1;
         }
@@ -767,7 +767,7 @@ u16  pass1_1000_21d2(param_1: u8, long param_2, param_3: u16, param_4: u16, para
                 {
                     return 0x1;
                 }
-                if((!CARRY4(param_3, param_2 - 0x1U)) && (param_3 + (param_2 - 0x1U) <= uVar1))
+                if((!CARRY4(param_3, param_2 - 0x1)) && (param_3 + (param_2 - 0x1) <= uVar1))
                 {
                     return 0x1;
                 }
@@ -1241,8 +1241,8 @@ u16 pass1_1000_0e08(param_1: i16, param_2: u16)
         puVar5[0x2]                                 = globals.PTR_LOOP_1050_0010;
         uVar3                                       = (globals.PTR_LOOP_1050_0010 + 0x2);
         puVar5[0x1]                                 = uVar3;
-        *(u16 **)((globals.PTR_LOOP_1050_0010 + 0x2) + 0x4) = puVar5;
-        *(u16 **)(globals.PTR_LOOP_1050_0010 + 0x2)         = puVar5;
+        ((globals.PTR_LOOP_1050_0010 + 0x2) + 0x4) = puVar5;
+        (globals.PTR_LOOP_1050_0010 + 0x2)         = puVar5;
     }
     globals.dat_1050_000a = globals.dat_1050_000a + -0x1;
     if(u16_1050_000a == 0x0)
@@ -2504,7 +2504,7 @@ u32 mem_op_1000_0838(param_1: u16, param_2: u16)
     let mut u_stack6: u16;
     let mut piStack4: *mut i16;
 
-    piVar9   = *(i16 **)(param_1 + 0x2);
+    piVar9   = (param_1 + 0x2);
     piStack4 = piVar9;
     if(param_1.fld2_segment == 0x0)
         //goto LAB_1000_085b;
@@ -2521,7 +2521,7 @@ u32 mem_op_1000_0838(param_1: u16, param_2: u16)
                     &PTR_LOOP_1050_000e      = *pu_var4;
                     piVar2                   = &u16_1050_000a;
                     *piVar2                  = *piVar2 + 0x1;
-                    *(i16 **)param_1.fld2_segment = piVar9;
+                    param_1.fld2_segment = piVar9;
                     return str_var1(iVar3, pu_var4);
                 }
                 *piVar9 = 0x0;
@@ -2570,7 +2570,7 @@ u32 mem_op_1000_0838(param_1: u16, param_2: u16)
                 }
             }
         }
-        piVar9   = *(i16 **)(param_1 + 0x2);
+        piVar9   = (param_1 + 0x2);
         piStack4 = piVar9[0x2];
     } while(true);
 }
@@ -2591,7 +2591,7 @@ u16  pass1_1000_093a(param_1: *mut i16, param_2: u16, param_3: u16)
     {
         &DAT_1050_0004 = 0x1;
     }
-    *(i16 **)&PTR_LOOP_1050_000e = param_1;
+    &PTR_LOOP_1050_000e = param_1;
     pi_var1                       = &u16_1050_000a;
     *pi_var1                      = *pi_var1 + -0x1;
     if(*pi_var1 == 0x0)
@@ -2707,7 +2707,7 @@ u32 mem_op_1000_0b20(param_1: u16, param_2: u16, param_3: u16, param_4: u16)
     u_var4    = param_3 + 0x5 & 0xfffc;
     u_var4    = u_var4 - 0x8 & ~-(u_var4 < 0x8);
     uVar5    = u_var4 + 0x8;
-    puVar7   = *(u16 **)(u_var2 * 0x2 + param_2);
+    puVar7   = (u_var2 * 0x2 + param_2);
     uStack20 = param_1;
     pu_stack6 = puVar7;
     if(puVar7 == 0x0)
@@ -2718,7 +2718,7 @@ u32 mem_op_1000_0b20(param_1: u16, param_2: u16, param_3: u16, param_4: u16)
         {
             if((uVar5 <= *puVar7) && (uVar10 = pass1_1000_0c32(uVar5, uStack20, 0x0), uVar10 != 0x0))
             {
-                *(u16 **)(u_var2 * 0x2 + param_2) = puVar7;
+                (u_var2 * 0x2 + param_2) = puVar7;
                 return uVar10;
             }
             puVar7 = puVar7[0x2];
@@ -2754,7 +2754,7 @@ u32 mem_op_1000_0b20(param_1: u16, param_2: u16, param_3: u16, param_4: u16)
                 //goto LAB_1000_0b9e;
             uStack20 = uStack20 | 0x40;
         }
-        puVar7   = *(u16 **)(u_var2 * 0x2 + param_2);
+        puVar7   = (u_var2 * 0x2 + param_2);
         pu_stack6 = puVar7[0x2];
     } while(true);
 }

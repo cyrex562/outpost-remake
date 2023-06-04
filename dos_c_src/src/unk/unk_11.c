@@ -135,7 +135,7 @@ void  pass1_1018_3d6c(Struct679 *param_1)
     iVar6 = (Struct679 *)param_1;
     uVar4 = iVar6->field_0x142;
     u_var2 = uVar4 + 0x1e;
-    if(iVar6->field_0x144 + 0x1U == (uVar4 < 0xffe2))
+    if(iVar6->field_0x144 + 0x1 == (uVar4 < 0xffe2))
     {
         if(u_var2 != 0x3c)
         {

@@ -1057,7 +1057,7 @@ void  pass1_1020_b2da(param_1: u16, param_2: u16, param_3: u16, param_4: i16,par
         }
         else
         {
-            ppuVar7 = (u8 **)0x10484236;
+            ppuVar7 = 0x10484236;
         }
         pass1_1008_3eb4(ppuVar7,
                         str_var1(param_1, &local_8),

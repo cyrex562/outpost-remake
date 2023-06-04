@@ -138,7 +138,7 @@ pub fn pass1_1018_c402(param_1: &mut Struct20, param_2: u16, param_3: u16, param
     {
         load_string_1010_84acglobals.dat_1050_14cc, SEG_1010);
     }
-    *(u16 **)&iVar4[0x1].field_0x26 = pu_var2;
+    &iVar4[0x1].field_0x26 = pu_var2;
     (&iVar4[0x1].field_0x26 + 0x2)  = param_10;
 // LAB_1018_c4bb:
     puVar3                = mixed_1010_20ba(globals.data_1050_0ed0, 0x48, param_9, param_10, unaff_DI);
@@ -2121,7 +2121,7 @@ pub fn pass1_1010_d448(param_1: *mut u8, param_2: u32,param_3: *mut u16, param_4
             uVar13    = (param_1 >> 0x10);
             pass1_1010_d984(param_1, uVar13,
                             str_var1(param_4, puVar5), 0x3, uStack1034 & 0xffff | uVar1 << 0x10, &PTR_DAT_1050_1805_1050_368e, param_3, param_4, param_5);
-            pu_var2         = *(u16 **)(iVar10 + 0x2);
+            pu_var2         = (iVar10 + 0x2);
             uVar9          = (iVar10 + 0x4);
             (pu_var2 + 0x4) = globals.PTR_DAT_1050_1805_1050_368e;
             uVar3          = (iVar10 + 0x6);

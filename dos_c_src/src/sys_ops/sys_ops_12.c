@@ -582,11 +582,11 @@ BOOL16 mem_op_1000_1dfa(i16 param_1, u8 param_2, u16 param_3, u16 param_4)
     if(param_1 != 0x0)
     {
         uVar1 = SegmentLimit(param_4);
-        if(CARRY2(param_3, param_1 - 0x1U))
+        if(CARRY2(param_3, param_1 - 0x1))
         {
             return 0x1;
         }
-        if(uVar1 < param_3 + (param_1 - 0x1U))
+        if(uVar1 < param_3 + (param_1 - 0x1))
         {
             return 0x1;
         }
@@ -767,7 +767,7 @@ u16  pass1_1000_21d2(u8 param_1, long param_2, u16 param_3, u16 param_4, u8 para
                 {
                     return 0x1;
                 }
-                if((!CARRY4(param_3, param_2 - 0x1U)) && (param_3 + (param_2 - 0x1U) <= uVar1))
+                if((!CARRY4(param_3, param_2 - 0x1)) && (param_3 + (param_2 - 0x1) <= uVar1))
                 {
                     return 0x1;
                 }
